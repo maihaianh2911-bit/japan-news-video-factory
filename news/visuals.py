@@ -30,8 +30,10 @@ class Photo:
     license_url: str
 
     def credit(self):
-        return {key: getattr(self, key)
-                for key in ("page", "title", "creator", "license", "license_url")}
+        record = {key: getattr(self, key)
+                  for key in ("page", "title", "creator", "license", "license_url")}
+        record["edits"] = "Cropped and animated for the vertical frame"
+        return record
 
 
 def text_field(metadata, key):
@@ -53,7 +55,7 @@ def load_photo(url, page, title, creator, license_name, license_url):
 def candidates(category):
     params = urlencode({
         "action": "query", "format": "json", "generator": "categorymembers",
-        "gcmtitle": f"Category:{category}", "gcmtype": "file", "gcmlimit": 20,
+        "gcmtitle": f"Category:{category}", "gcmtype": "file", "gcmlimit": 45,
         "prop": "imageinfo", "iiprop": "url|size|mime|extmetadata",
         "iiextmetadatafilter": "LicenseShortName|LicenseUrl|Artist|ImageDescription",
         "iiurlwidth": 1600,
@@ -76,9 +78,13 @@ def candidates(category):
             continue
         if not re.search(r"bank of japan|日本銀行|経済産業省|ministry of economy", title + " " + description, re.I):
             continue
-        if re.search(r"interior|floor plan|model|stamp|logo|館内|模型", title, re.I):
+        if re.search(r"interior|floor plan|model|stamp|logo|vault|parking|entrance|postcard|nippon ginkko|館内|模型|金庫|駐車",
+                     title + " " + description, re.I):
             continue
-        results.append((abs(info["width"] / info["height"] - 1.15),
+        if re.search(r"building \(\d+\)", title, re.I):
+            continue
+        exterior = bool(re.search(r"headquarters|head office|main building|本店|本館|庁舎", title, re.I))
+        results.append((int(not exterior) + abs(info["width"] / info["height"] - 1.5),
                         info.get("thumburl") or info["url"], info["descriptionurl"], title,
                         creator or "Wikimedia Commons contributor", license_name, license_url))
     return sorted(results)
@@ -92,7 +98,9 @@ def find_photos(publisher, count):
     try:
         for _, *photo in candidates(category)[:4]:
             try:
-                photos.append(load_photo(*photo))
+                candidate = load_photo(*photo)
+                if candidate.page not in {item.page for item in photos}:
+                    photos.append(candidate)
             except (OSError, ValueError) as error:
                 print(f"Skipping Commons image: {error}")
             if len(photos) == count:
