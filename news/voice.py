@@ -33,6 +33,7 @@ def speaker_id():
 
 def caption_chunks(line):
     # Keep decimals, Latin acronyms and numeric expressions intact when wrapping.
+    line = re.sub(r"([0-9０-９])パーセント", r"\g<1>％", line)
     tokens = re.findall(r"[A-Za-z0-9０-９]+(?:[.,．，][0-9０-９]+)*(?:％|%|兆円|億円|万円|円)?|.", line)
     chunks = []
     block = ""

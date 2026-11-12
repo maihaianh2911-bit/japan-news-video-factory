@@ -6,9 +6,9 @@ import unicodedata
 from .sources import Release
 
 NUMBER = re.compile(r"[+＋−-]?\d+(?:[,.]\d+)*(?:\s*兆円|\s*億円|\s*万円|\s*円|\s*%|\s*％|\s*ポイント|\s*万件|\s*万人)")
-BOJ_TARGET = re.compile(r"無担保コールレート.{0,32}?(\d+(?:\.\d+)?)\s*%\s*程度")
-BOJ_LENDING = re.compile(r"基準貸付利率.{0,26}?(\d+(?:\.\d+)?)\s*%\s*とする")
-BOJ_DEPOSIT = re.compile(r"付利金利.{0,12}?(\d+(?:\.\d+)?)\s*%\s*とする")
+BOJ_TARGET = re.compile(r"無担保コールレート.{0,32}?([+−-]?\d+(?:\.\d+)?)\s*%\s*程度")
+BOJ_LENDING = re.compile(r"基準貸付利率.{0,26}?([+−-]?\d+(?:\.\d+)?)\s*%\s*とする")
+BOJ_DEPOSIT = re.compile(r"付利金利.{0,12}?([+−-]?\d+(?:\.\d+)?)\s*%\s*とする")
 BOJ_EFFECTIVE = re.compile(r"新たな金融市場調節方針は、翌営業日[（(](\d{1,2}月\d{1,2}日)[）)]から適用")
 VOTE = re.compile(r"賛成\s*(\d+)\s*反対\s*(\d+)")
 VOICE_CREDIT = "VOICEVOX:青山龍星"
