@@ -28,7 +28,9 @@ chat. Everything runs in `.github/workflows/news-video.yml`; results go to the `
    credits), `stills/sheet.jpg`. Look at the stills and the subtitles, then give the owner the links
    `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and the two others).
 
-A scene without `photo` is a text card. Wikimedia refuses requests from Claude's cloud session (429), which is why
+Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting
+picture: write 2–3 searches per scene from the start and search again until each scene has one; a text card is
+the exception (pure figures), and the owner is told which scenes have none and why. Wikimedia refuses requests from Claude's cloud session (429), which is why
 the search runs on GitHub. The voice engine runs only on GitHub (Docker).
 
 ## Changing the pipeline
