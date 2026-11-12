@@ -1,8 +1,6 @@
 name: Japan News Video
 
 on:
-  schedule:
-    - cron: '0 21 * * *'
   workflow_dispatch:
     inputs:
       mode:

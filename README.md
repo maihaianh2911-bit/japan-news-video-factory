@@ -1,6 +1,6 @@
 # Japan News Video Factory
 
-Mỗi sáng lúc **06:00 giờ Nhật (JST)**, GitHub Actions tìm một tin chính sách hoặc kinh tế Nhật Bản, soạn lời dẫn tiếng Nhật, tìm hình và dựng một video dọc 1080 × 1920. Artifact chứa video H.264/AAC, ảnh bìa, phụ đề SRT, lời dẫn và danh sách nguồn. Lịch GitHub Actions có thể chạy trễ khi hệ thống bận.
+Lịch tự chạy mỗi sáng đã tắt: video chỉ được dựng khi bấm **Run workflow**. Khi chạy, GitHub Actions tìm một tin chính sách hoặc kinh tế Nhật Bản, soạn lời dẫn tiếng Nhật, tìm hình và dựng một video dọc 1080 × 1920. Artifact chứa video H.264/AAC, ảnh bìa, phụ đề SRT, lời dẫn và danh sách nguồn.
 
 ## Luồng xử lý
 
