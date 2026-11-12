@@ -1,0 +1,134 @@
+[
+ {
+  "k": 1,
+  "query": "incategory:\"Bank of Japan Head Office\" exterior",
+  "results": []
+ },
+ {
+  "k": 2,
+  "query": "Japanese yen banknotes 10000",
+  "results": [
+   {
+    "title": "File:10000 yen banknote (Series E), obverse.png",
+    "page": "https://commons.wikimedia.org/wiki/File:10000_yen_banknote_(Series_E),_obverse.png",
+    "width": 1854,
+    "height": 888,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Nippon Ginko, Government of Japan",
+    "description": "The obverse of the 10000 yen banknote, Series E, depicts Fukuzawa Yukichi.",
+    "file": "2-1.jpg"
+   },
+   {
+    "title": "File:10000 yen banknote (Series E), reverse.png",
+    "page": "https://commons.wikimedia.org/wiki/File:10000_yen_banknote_(Series_E),_reverse.png",
+    "width": 1854,
+    "height": 889,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Nippon Ginko, Government of Japan",
+    "description": "The reverse of the 10000 yen banknote, Series E, depicts the phoenix statue from Byōdō-in.",
+    "file": "2-2.jpg"
+   }
+  ]
+ },
+ {
+  "k": 3,
+  "query": "Tokyo housing residential aerial",
+  "results": []
+ },
+ {
+  "k": 4,
+  "query": "Japan supermarket shoppers",
+  "results": [
+   {
+    "title": "File:JP 日本 Japan 京都 Kyoto 四条通 Shijo Dori side lane shop supermarket milk June 2026 N13P 06.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_%E4%BA%AC%E9%83%BD_Kyoto_%E5%9B%9B%E6%9D%A1%E9%80%9A_Shijo_Dori_side_lane_shop_supermarket_milk_June_2026_N13P_06.jpg",
+    "width": 960,
+    "height": 540,
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "TKdows 2026",
+    "description": "JP 日本 Japan 京都 Kyoto 四条通 Shijo Dori side lane shop supermarket milk in June 2026",
+    "file": "4-1.jpg"
+   },
+   {
+    "title": "File:Interior of Supermarket in Japan 02.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Interior_of_Supermarket_in_Japan_02.jpg",
+    "width": 2496,
+    "height": 1664,
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "Corpse Reviver",
+    "description": "兵庫県南西部にある店舗など。撮影地（姫路・佐用）。 スーパーマーケット店内に陳列された精肉。",
+    "file": "4-2.jpg"
+   },
+   {
+    "title": "File:Interior of Supermarket in Japan 05.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Interior_of_Supermarket_in_Japan_05.jpg",
+    "width": 2496,
+    "height": 1664,
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "Corpse Reviver",
+    "description": "兵庫県南西部にある店舗など。撮影地（姫路・佐用）。 スーパーマーケット店内に並ぶ揚げ物類。",
+    "file": "4-3.jpg"
+   },
+   {
+    "title": "File:Interior of Supermarket in Japan 04.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Interior_of_Supermarket_in_Japan_04.jpg",
+    "width": 2496,
+    "height": 1664,
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "Corpse Reviver",
+    "description": "兵庫県南西部にある店舗など。撮影地（姫路・佐用）。 スーパーマーケット店内にある弁当やおにぎり。",
+    "file": "4-4.jpg"
+   },
+   {
+    "title": "File:Shopping cart in supermarket - Tokyo area Japan - Nov 24 2018.jpeg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shopping_cart_in_supermarket_-_Tokyo_area_Japan_-_Nov_24_2018.jpeg",
+    "width": 1344,
+    "height": 1109,
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "artist": "Nesnad",
+    "description": "Shopping cart (ショッピングカート)",
+    "file": "4-5.jpg"
+   },
+   {
+    "title": "File:札幌東急ストア麻生店.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:%E6%9C%AD%E5%B9%8C%E6%9D%B1%E6%80%A5%E3%82%B9%E3%83%88%E3%82%A2%E9%BA%BB%E7%94%9F%E5%BA%97.jpg",
+    "width": 1280,
+    "height": 960,
+    "license": "CC BY-SA 3.0",
+    "license_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "artist": "Mukku",
+    "description": "札幌東急ストア麻生店 (札幌市北区)",
+    "file": "4-6.jpg"
+   },
+   {
+    "title": "File:Supermarket in 2006 (646332846).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Supermarket_in_2006_(646332846).jpg",
+    "width": 2000,
+    "height": 3008,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Simon Helle Nielsen",
+    "description": "Supermarket",
+    "file": "4-7.jpg"
+   },
+   {
+    "title": "File:Supermarket Yoneya Asamai store.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Supermarket_Yoneya_Asamai_store.jpg",
+    "width": 3488,
+    "height": 1962,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Raripochi",
+    "description": "秋田県横手市平鹿町浅舞にあるスーパーマーケット「よねや」浅舞店の外観。2022年9月30日をもって閉店した。",
+    "file": "4-8.jpg"
+   }
+  ]
+ }
+]
