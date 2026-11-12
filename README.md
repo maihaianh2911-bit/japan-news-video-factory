@@ -1,10 +1,10 @@
 # Japan News Video Factory
 
-Lịch tự chạy mỗi sáng đã tắt: video chỉ được dựng khi bấm **Run workflow**. Khi chạy, GitHub Actions tìm một tin chính sách hoặc kinh tế Nhật Bản, soạn lời dẫn tiếng Nhật, tìm hình và dựng một video dọc 1080 × 1920. Artifact chứa video H.264/AAC, ảnh bìa, phụ đề SRT, lời dẫn và danh sách nguồn.
+Máy dựng video tin tức Nhật Bản dạng dọc 1080 × 1920: ảnh thật, giọng đọc tiếng Nhật, phụ đề khớp với giọng. Lịch tự chạy mỗi sáng đã tắt. Video được dựng khi chủ repo dán kịch bản vào chat với Claude (cách dùng chính, bên dưới), hoặc khi bấm **Run workflow**.
 
 ## Dựng từ kịch bản (cách dùng chính)
 
-Dán kịch bản vào một phiên chat Claude có kết nối repo này. Claude viết `stories/<tên>.json`, máy tìm ảnh thật trên Wikimedia Commons theo từng cảnh, Claude xem và chọn ảnh, máy tạo giọng đọc và dựng video. Kết quả nằm ở nhánh `renders`, thư mục `<tên>/` (video, phụ đề, nguồn ảnh). Chi tiết: `CLAUDE.md`.
+Dán kịch bản vào một phiên chat Claude có kết nối repo này. Claude viết `stories/<tên>.json`, máy tìm ảnh thật trên Wikimedia Commons theo từng cảnh, Claude xem và chọn ảnh, máy tạo giọng đọc và dựng video. Mỗi file trong `stories/` được đẩy lên `main` chạy riêng một lần. Kết quả nằm ở nhánh `renders`, thư mục `<tên>/` (video, phụ đề, nguồn ảnh, ảnh tĩnh); ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit, để biết kết quả là mới hay cũ. Chi tiết: `CLAUDE.md`.
 
 ## Luồng tự tìm tin (chạy tay)
 
@@ -19,11 +19,14 @@ Mở [Actions → Japan News Video](https://github.com/maihaianh2911-bit/japan-n
 
 | Chế độ | Đầu vào |
 | --- | --- |
+| `story` | Tên file trong `stories/` (không có `.json`): tìm ảnh hoặc dựng video, theo `stage` trong file |
 | `daily` | Tìm tin trong ngày hoặc hôm trước theo giờ Nhật |
 | `demo` | Quyết định lãi suất BOJ ngày 24/01/2025, đánh dấu là tin cũ để thử dựng |
 | `source` | Dán link thông cáo HTML của BOJ, METI hoặc trang CPI toàn quốc vào `source_url` |
 
-Khi job xong, tải `japan-news-video-<run>` trong **Artifacts**. Artifact được giữ 14 ngày. Chạy thử bằng nguồn cũ sẽ hiển thị ngày công bố trên video.
+Đẩy mã (không phải kịch bản) lên `main` chỉ chạy một bước kiểm tra không cần mạng: dựng ảnh tĩnh của `stories/mau-boj.json`, không tạo giọng, không đọc trang BOJ. Video mẫu `demo` chỉ chạy khi chọn tay.
+
+Khi job xong, tải `japan-news-video-<run>-<n>` trong **Artifacts**. Artifact được giữ 14 ngày. Chạy thử bằng nguồn cũ sẽ hiển thị ngày công bố trên video.
 
 ## Chạy trên máy
 
@@ -40,6 +43,13 @@ Mở terminal khác rồi chạy:
 python -m news --demo
 python -m news --plan-only
 python -m news --url 'https://www.boj.or.jp/mopo/mpmdeci/state_2025/k250124a.htm'
+```
+
+Xem trước một kịch bản (không cần VOICEVOX, cần font Noto CJK và `budoux` trong `requirements.txt`):
+
+```sh
+python -m news.custom stories/mau-boj.json            # kiểm tra file kịch bản
+python -m news --story stories/mau-boj.json --pictures <thư mục find> --stills /tmp/stills
 ```
 
 `--plan-only` in nguồn và lời dẫn. Chạy dựng đầy đủ sẽ lưu kết quả trong `dist/`.

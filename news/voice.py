@@ -26,10 +26,17 @@ def request(path, *, params=None, data=None):
         return response.read()
 
 
+SPEAKER, STYLE = "青山龍星", "ノーマル"
+
+
 def speaker_id():
     speakers = json.loads(request("/speakers"))
-    return next(style["id"] for speaker in speakers if speaker["name"] == "青山龍星"
-                for style in speaker["styles"] if style["name"] == "ノーマル")
+    found = next((style["id"] for speaker in speakers if speaker["name"] == SPEAKER
+                  for style in speaker["styles"] if style["name"] == STYLE), None)
+    if found is None:
+        available = ", ".join(f"{speaker['name']}/{style['name']}" for speaker in speakers for style in speaker["styles"])
+        raise RuntimeError(f"VOICEVOX voice {SPEAKER}/{STYLE} not found in this engine. Available: {available}")
+    return found
 
 
 def narration(beats, destination: Path, speed):

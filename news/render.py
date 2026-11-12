@@ -15,6 +15,7 @@ FONT = "/usr/share/fonts/opentype/noto/NotoSansCJK"
 WHITE, PAPER, INK = "#ffffff", "#f6f3ec", "#142232"
 NAVY, MUTED, RED, GOLD = "#132133", "#99a9bb", "#b91835", "#ffda76"
 CAPTION_WIDTH, CAPTION_SIZE = 866, 52
+PHOTO_TEXT_BOTTOM = 1490   # the caption box (two lines) starts at about 1502
 PHRASES = budoux.load_default_japanese_parser()
 
 
@@ -24,21 +25,76 @@ def font(size, bold=True):
     return ImageFont.truetype(f"{FONT}-{weight}.ttc", size, index=0)
 
 
-def wrap(value, width, face, maximum):
+# Japanese line breaking rules (kinsoku): a line never ends with an opening bracket and never starts with
+# a closing bracket, punctuation, a long-vowel mark or a small kana.
+NO_END = "(（「『[〔【〈《"
+NO_START = ")）」』]〕】〉》、。，．,.！？!?：；:;・ー…‥ぁぃぅぇぉっゃゅょゎァィゥェォッャュョヮヵヶ％%"
+NUMBER_END = re.compile(r"[0-9０-９.,．，]$")
+NUMBER_TAIL = re.compile(r"[0-9０-９.,．，％%]|[兆億万]?円")
+
+
+def phrases(value):
+    """Split one line of text into the pieces a line may break between: BudouX phrases, with an opening bracket
+    kept with what follows it, a closing bracket or punctuation kept with what precedes it, and numbers whole."""
+    parts = []
+    for phrase in PHRASES.parse(value):
+        # a bracket inside a phrase starts a new piece ("引き上げ(見本)" -> "引き上げ" + "(見本)")
+        for piece in re.split(f"(?=[{re.escape(NO_END)}])", phrase):
+            if not piece:
+                continue
+            if parts and (piece[0] in NO_START or parts[-1][-1] in NO_END or piece.isspace()
+                          or (NUMBER_END.search(parts[-1]) and NUMBER_TAIL.match(piece))):
+                parts[-1] += piece
+            else:
+                parts.append(piece)
+    return parts
+
+
+def split_wide(piece, width, face):
+    """Cut a piece wider than the box, between characters, keeping the kinsoku rules (last resort)."""
+    out = []
+    while face.getlength(piece) > width and len(piece) > 1:
+        fits = max(1, max((i for i in range(1, len(piece)) if face.getlength(piece[:i]) <= width), default=1))
+        allowed = [i for i in range(1, fits + 1) if piece[i] not in NO_START and piece[i - 1] not in NO_END]
+        natural = [i for i in allowed if piece[i - 1] in " 、。）」』)]〕】"]   # after a space, comma or bracket
+        cut = (natural or allowed or [fits])[-1]
+        out.append(piece[:cut].rstrip())
+        piece = piece[cut:]
+    out.append(piece)
+    return out
+
+
+def wrap_lines(value, width, face):
+    """Break text into lines no wider than width, at phrase boundaries. Never drops text."""
     lines = []
-    for part in value.splitlines():
+    for part in value.splitlines() or [""]:
         line = ""
-        for character in part:
-            if line and face.getlength(line + character) > width and character not in "、。！？）」":
-                lines.append(line)
+        for phrase in phrases(part):
+            if line and face.getlength(line + phrase) > width:
+                lines.append(line.rstrip())
                 line = ""
-            line += character
-        if line:
-            lines.append(line)
-    if len(lines) > maximum:
-        lines = lines[:maximum]
-        lines[-1] = lines[-1][:-1] + "…"
-    return "\n".join(lines)
+            if not line and face.getlength(phrase) > width:
+                *full, phrase = split_wide(phrase.lstrip(), width, face)
+                lines.extend(full)
+            line += phrase.lstrip() if not line else phrase
+        lines.append(line.rstrip())
+    return lines
+
+
+def fit(value, width, size, maximum, *, bold=True, smallest=None):
+    """Wrap text in at most `maximum` lines, making the font smaller when needed (down to `smallest`).
+    Returns (text with newlines, size). Text is never cut: at the smallest size every line is kept."""
+    smallest = smallest or max(18, round(size * 0.7))
+    for candidate in range(size, smallest - 1, -2):
+        lines = wrap_lines(value, width, font(candidate, bold))
+        if len(lines) <= maximum:
+            return "\n".join(lines), candidate
+    print(f"warning: text needs {len(lines)} lines (more than {maximum}) even at size {smallest}: {value!r}")
+    return "\n".join(lines), smallest
+
+
+def block_height(value, size, spacing=18):
+    return len(value.splitlines()) * (size + spacing) - spacing
 
 
 def balanced(parts, fits, size):
@@ -64,35 +120,25 @@ def caption_chunks(line):
     """Split a spoken line into captions of one or two lines, broken only between Japanese phrases."""
     face = font(CAPTION_SIZE)
     line = re.sub(r"([0-9０-９])パーセント", r"\g<1>％", line)
-    parts = []
-    for part in PHRASES.parse(line):
-        number = parts and re.search(r"[0-9０-９.,．，]$", parts[-1]) and re.match(r"[0-9０-９.,．，％%]|[兆億万]?円", part)
-        if parts and (number or part[0] in "、。！？）」』"):
-            parts[-1] += part
-            continue
-        parts.append(part)
-    pieces = []
-    for part in parts:
-        while face.getlength(part) > CAPTION_WIDTH:   # one phrase wider than the box: cut by characters
-            cut = next(i for i in range(len(part) - 1, 0, -1) if face.getlength(part[:i]) <= CAPTION_WIDTH)
-            pieces.append(part[:cut])
-            part = part[cut:]
-        pieces.append(part)
+    pieces = [piece for part in phrases(line) for piece in split_wide(part, CAPTION_WIDTH, face)]
     if not pieces:
         return []
+
     def one_line(group):
         return face.getlength("".join(group)) <= CAPTION_WIDTH
 
     def lines(group):
-        return ["".join(line) for line in balanced(group, one_line, face.getlength)]
+        return ["".join(line).strip() for line in balanced(group, one_line, face.getlength)]
 
     captions = balanced(pieces, lambda group: len(lines(group)) <= 2, face.getlength)
     return ["\n".join(lines(group)) for group in captions]
 
 
 def text(draw, x, y, value, size, fill=WHITE, *, bold=True, anchor="lt", spacing=18):
+    """Draw lines of text from y; returns the y just below the last line."""
     for line_index, line in enumerate(value.splitlines()):
         draw.text((x, y + line_index * (size + spacing)), line, font=font(size, bold), fill=fill, anchor=anchor)
+    return y + block_height(value, size, spacing)
 
 
 def label(draw, x, y, value, fill=RED):
@@ -141,30 +187,40 @@ def layout(beat, release, photo, demo):
     label(draw, 70, 261, beat.label, "#33475e")
 
     if photo:
+        # Picture scene: picture, then headline, value (big figure) and evidence (small text) under each other.
         draw.rectangle((0, 338, W, 1054), fill="#29394a")
         draw.rectangle((0, 1038, W, 1054), fill=RED)
         label(draw, 70, 380, "資料写真", NAVY)
-        headline_size = 70 if len(beat.headline) < 25 else 51
-        text(draw, 70, 1100, wrap(beat.headline, 925, font(headline_size), 3), headline_size)
+        headline, size = fit(beat.headline, 925, 70 if len(beat.headline) < 25 else 51, 3, smallest=44)
+        y = text(draw, 70, 1100, headline, size)
         if beat.value:
-            text(draw, 70, 1320, beat.value, 90, GOLD)
-        else:
-            text(draw, 70, 1355, release.publisher, 42, MUTED)
+            value, value_size = fit(beat.value, 925, 90, 1, smallest=60)
+            y = text(draw, 70, y + 34, value, value_size, GOLD)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 925, 34, 2, bold=False, smallest=26)
+            if y + 26 + block_height(evidence, evidence_size, 12) <= PHOTO_TEXT_BOTTOM:
+                text(draw, 70, y + 26, evidence, evidence_size, WHITE, bold=False, spacing=12)
+            else:
+                print(f"warning: no room for the evidence under the headline of scene {beat.label!r}: "
+                      f"{beat.evidence!r} is not shown (shorten the headline or the evidence)")
+        elif not beat.value:
+            text(draw, 70, y + 40, release.publisher, 42, MUTED)
     else:
+        # Text card: headline, then value and evidence. Nothing else from the story is shown on it.
         draw.rounded_rectangle((70, 350, 1010, 1410), radius=32, fill=PAPER)
         draw.rectangle((117, 419, 172, 426), fill=RED)
         text(draw, 119, 472, release.publisher, 38, "#5d6671")
-        size = 60 if len(beat.headline) < 27 else 48
-        text(draw, 119, 570, wrap(beat.headline, 840, font(size), 3), size, INK)
+        headline, size = fit(beat.headline, 840, 60 if len(beat.headline) < 27 else 48, 3, smallest=40)
+        y = text(draw, 119, 570, headline, size, INK)
         if beat.value:
-            value_size = 144 if len(beat.value) <= 7 else 98
-            text(draw, 119, 813, beat.value, value_size, RED)
+            value, value_size = fit(beat.value, 840, 144 if len(beat.value) <= 7 else 98, 1, smallest=56)
+            y = text(draw, 119, max(813, y + 60), value, value_size, RED)
             if beat.evidence:
-                text(draw, 119, 1055, wrap(beat.evidence, 830, font(33, False), 5), 33,
-                     INK, bold=False)
-        else:
-            evidence = beat.evidence or release.title
-            text(draw, 119, 839, wrap(evidence, 830, font(47, False), 5), 47, INK, bold=False)
+                evidence, evidence_size = fit(beat.evidence, 830, 33, 5, bold=False, smallest=24)
+                text(draw, 119, max(1055, y + 50), evidence, evidence_size, INK, bold=False)
+        elif beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 47, 5, bold=False, smallest=30)
+            text(draw, 119, max(839, y + 70), evidence, evidence_size, INK, bold=False)
         if release.publisher:
             text(draw, 119, 1304, "公表資料", 29, "#5d6671")
 
@@ -173,8 +229,8 @@ def layout(beat, release, photo, demo):
         text(draw, 70, 1742, f"出典  {release.publisher}", 29, MUTED, bold=False)
     text(draw, W - 70, 1742, VOICE_CREDIT, 24, MUTED, bold=False, anchor="rt")
     if photo:
-        text(draw, 70, 1806, wrap(f"写真  {photo.creator} / {photo.license}", 940, font(23, False), 2),
-             23, MUTED, bold=False)
+        credit, credit_size = fit(f"写真  {photo.creator} / {photo.license}", 940, 23, 2, bold=False, smallest=16)
+        text(draw, 70, 1806, credit, credit_size, MUTED, bold=False)
     return image
 
 

@@ -8,7 +8,7 @@ from pathlib import Path
 import tempfile
 import wave
 
-from .custom import load_story
+from .custom import StoryError, load_story
 from .render import encode, stills, write_subtitles
 from .sources import JST, discover, get_release
 from .story import VOICE_CREDIT, build_story
@@ -25,15 +25,13 @@ def prepare(args, today):
         if not beats:
             raise ValueError("This release has too little readable material for a grounded video")
         return release, beats
-    for entry in discover(today, previous_day_only=args.previous_day_only)[:8]:
+    for entry in discover(today)[:8]:
         try:
             release = get_release(entry.url, entry)
         except (OSError, ValueError) as error:
             print(f"Skipping unreadable release: {error}")
             continue
-        earliest = today - timedelta(days=1)
-        latest = earliest if args.previous_day_only else today
-        if not earliest <= release.published <= latest:
+        if not today - timedelta(days=1) <= release.published <= today:
             continue
         beats = build_story(release)
         if beats:
@@ -59,14 +57,16 @@ def main():
     mode.add_argument("--story", type=Path, help="A hand-written story, stories/<name>.json")
     parser.add_argument("--pictures", type=Path, help="Folder of the pictures found for the story")
     parser.add_argument("--stills", type=Path, help="Only save one frame per scene of the story here")
-    parser.add_argument("--previous-day-only", action="store_true", help="Use yesterday in JST for the daily schedule")
     parser.add_argument("--out", type=Path, default=Path("dist"))
     parser.add_argument("--plan-only", action="store_true", help="Print the selected source and Japanese script")
     args = parser.parse_args()
     today = datetime.now(JST).date()
     scene_photos = None
     if args.story:
-        release, beats, scene_photos = load_story(args.story, args.pictures)
+        try:
+            release, beats, scene_photos = load_story(args.story, args.pictures)
+        except StoryError as error:
+            raise SystemExit(f"error: {error}") from None
         if args.stills:
             args.stills.mkdir(parents=True, exist_ok=True)
             stills(beats, release, scene_photos, args.stills)

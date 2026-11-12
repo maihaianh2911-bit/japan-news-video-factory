@@ -26,14 +26,58 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: japan-news-video-${{ github.event_name }}
-  cancel-in-progress: false
+# No concurrency group: a group keeps only one pending run and cancels the others, which silently dropped
+# story pushes. Runs may overlap; tools/publish.sh rebuilds on the newest renders tip, so none is lost.
 
 jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      items: ${{ steps.plan.outputs.items }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Choose what to make
+        id: plan
+        env:
+          MODE: ${{ inputs.mode }}
+          STORY: ${{ inputs.story }}
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          # A push makes every story file it adds, changes or renames (one job each); a push that only
+          # deletes stories makes nothing; a push of code only runs the offline check (stills of the sample).
+          if [[ "$EVENT_NAME" == "push" ]]; then
+            git cat-file -e "$BEFORE^{commit}" 2>/dev/null || BEFORE=HEAD~1
+            git -c core.quotePath=false diff -z --name-only --no-renames --diff-filter=AM "$BEFORE" HEAD -- 'stories/*.json' > /tmp/stories
+            git -c core.quotePath=false diff -z --name-only --no-renames "$BEFORE" HEAD -- . ':!stories' > /tmp/code
+            python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          stories = [name.removeprefix("stories/").removesuffix(".json")
+                     for name in open("/tmp/stories", encoding="utf-8").read().split("\0") if name]
+          code = [name for name in open("/tmp/code", encoding="utf-8").read().split("\0") if name]
+          items = [{"mode": "story", "story": story} for story in stories]
+          if not items and code:
+              items = [{"mode": "check", "story": "mau-boj"}]
+          print("items=" + json.dumps(items, ensure_ascii=False))
+          PY
+          else
+            python3 -c 'import json, os; print("items=" + json.dumps([{"mode": os.environ["MODE"], "story": os.environ["STORY"]}], ensure_ascii=False))' >> "$GITHUB_OUTPUT"
+          fi
+          cat "$GITHUB_OUTPUT"
+
   video:
+    needs: plan
+    if: needs.plan.outputs.items != '[]'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.items) }}
+    name: ${{ matrix.mode }} ${{ matrix.story }}
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -45,28 +89,23 @@ jobs:
         with:
           python-version: '3.12'
           cache: pip
-      - name: Choose what to make
+      - name: Check the story
         id: plan
         env:
-          MODE: ${{ inputs.mode }}
-          STORY: ${{ inputs.story }}
-          EVENT_NAME: ${{ github.event_name }}
-          BEFORE: ${{ github.event.before }}
+          MODE: ${{ matrix.mode }}
+          STORY: ${{ matrix.story }}
         run: |
-          # A pushed story file is made at once; a push of code only renders the demo as a check.
-          if [[ "$EVENT_NAME" == "push" ]]; then
-            git cat-file -e "$BEFORE^{commit}" 2>/dev/null || BEFORE=HEAD~1
-            STORY=$(git diff --name-only --diff-filter=AM "$BEFORE" HEAD -- 'stories/*.json' | head -n 1)
-            STORY=${STORY#stories/}; STORY=${STORY%.json}
-            MODE=demo; [[ -n "$STORY" ]] && MODE=story
-          fi
           STAGE=
           if [[ "$MODE" == "story" ]]; then
-            [[ "$STORY" =~ ^[A-Za-z0-9._-]+$ && -f "stories/$STORY.json" ]] || { echo "::error::stories/$STORY.json not found"; exit 1; }
+            if [[ ! "$STORY" =~ ^[A-Za-z0-9._-]+$ ]]; then
+              echo "::error::Story file name 'stories/$STORY.json': use only ASCII letters, digits, '.', '_' and '-' (no spaces, no Japanese or Vietnamese characters)"; exit 1
+            fi
+            [[ -f "stories/$STORY.json" ]] || { echo "::error::stories/$STORY.json not found"; exit 1; }
+            python -m pip install -q -r requirements.txt
+            python -m news.custom "stories/$STORY.json"
             STAGE=$(python -c "import json,sys; print(json.load(open(sys.argv[1], encoding='utf-8')).get('stage', 'find'))" "stories/$STORY.json")
-            [[ "$STAGE" == "find" || "$STAGE" == "render" ]] || { echo "::error::stage must be find or render"; exit 1; }
           fi
-          echo "mode=$MODE" >> "$GITHUB_OUTPUT"; echo "story=$STORY" >> "$GITHUB_OUTPUT"; echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
+          echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
           echo "mode=$MODE story=$STORY stage=$STAGE"
       - name: Install video dependencies
         run: |
@@ -74,9 +113,9 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
       - name: Get the pictures already found for the story
-        if: steps.plan.outputs.mode == 'story'
+        if: matrix.mode == 'story' || matrix.mode == 'check'
         env:
-          STORY: ${{ steps.plan.outputs.story }}
+          STORY: ${{ matrix.story }}
         run: |
           mkdir -p pictures
           URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
@@ -84,16 +123,42 @@ jobs:
             git archive origin/renders "$STORY/find" 2>/dev/null | tar -x --strip-components=2 -C pictures || true
           fi
           ls pictures | head -50
+      - name: Offline check (code push)
+        if: matrix.mode == 'check'
+        run: |
+          # No live sources and no voice engine: compile, check every story, draw the stills of the sample.
+          python -m compileall -q news
+          for story in stories/*.json; do python -m news.custom "$story"; done
+          [[ -f pictures/index.json ]] || { echo "::error::renders/mau-boj/find is missing: the sample stills need its pictures"; exit 1; }
+          python -m news.custom stories/mau-boj.json pictures
+          python -m news --story stories/mau-boj.json --pictures pictures --stills dist/stills
+          echo "Kiểm tra mã: OK (ảnh tĩnh của stories/mau-boj.json trong Artifacts)." >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload the check stills
+        if: matrix.mode == 'check'
+        uses: actions/upload-artifact@v4
+        with:
+          name: japan-news-check-${{ github.run_number }}
+          path: dist/stills/
+          if-no-files-found: error
+          retention-days: 7
       - name: Find pictures
         if: steps.plan.outputs.stage == 'find'
         env:
-          STORY: ${{ steps.plan.outputs.story }}
+          STORY: ${{ matrix.story }}
         run: |
+          # Exit 3 = some searches failed: what was found is still published (status.json: "partial"),
+          # then the run is marked failed. Any other error publishes nothing.
+          set +e
           python -m news.find "stories/$STORY.json" pictures
-          tools/publish.sh "$STORY/find" pictures
-          echo "Đã tìm ảnh cho \`$STORY\`: nhánh renders, thư mục \`$STORY/find\`." >> "$GITHUB_STEP_SUMMARY"
+          status=$?
+          set -e
+          if [[ $status != 0 && $status != 3 ]]; then exit $status; fi
+          OUTCOME=ok; [[ $status == 3 ]] && OUTCOME=partial
+          OUTCOME=$OUTCOME tools/publish.sh "$STORY/find" pictures find
+          echo "Đã tìm ảnh cho \`$STORY\` ($OUTCOME): nhánh renders, thư mục \`$STORY/find\`." >> "$GITHUB_STEP_SUMMARY"
+          if [[ $status == 3 ]]; then echo "::error::Some searches failed; see \"error\" in $STORY/find/index.json"; exit 1; fi
       - name: Start Japanese voice engine
-        if: steps.plan.outputs.stage != 'find'
+        if: steps.plan.outputs.stage == 'render' || matrix.mode == 'demo' || matrix.mode == 'source' || matrix.mode == 'daily'
         run: |
           docker run --detach --name voicevox --publish 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-latest
           for attempt in $(seq 1 40); do
@@ -106,15 +171,15 @@ jobs:
           exit 1
       - name: Voice and render
         id: render
-        if: steps.plan.outputs.stage != 'find'
+        if: steps.plan.outputs.stage == 'render' || matrix.mode == 'demo' || matrix.mode == 'source' || matrix.mode == 'daily'
         env:
-          MODE: ${{ steps.plan.outputs.mode }}
-          STORY: ${{ steps.plan.outputs.story }}
+          MODE: ${{ matrix.mode }}
+          STORY: ${{ matrix.story }}
           SOURCE_URL: ${{ inputs.source_url }}
         run: |
           if [[ "$MODE" == "story" ]]; then
-            python -m news --story "stories/$STORY.json" --pictures pictures
             python -m news --story "stories/$STORY.json" --pictures pictures --stills dist/stills
+            python -m news --story "stories/$STORY.json" --pictures pictures
           elif [[ "$MODE" == "demo" ]]; then
             python -m news --demo
           elif [[ "$MODE" == "source" ]]; then
@@ -126,7 +191,7 @@ jobs:
       - name: Verify video and audio
         if: steps.render.outputs.ready == 'true'
         env:
-          MODE: ${{ steps.plan.outputs.mode }}
+          MODE: ${{ matrix.mode }}
         run: |
           ffprobe -v error -show_entries stream=codec_name,codec_type,width,height,r_frame_rate:format=duration -of json dist/video.mp4 > /tmp/japan-news-probe.json
           python - <<'PY'
@@ -142,17 +207,18 @@ jobs:
           print(probe)
           PY
       - name: Publish the story video
-        if: steps.render.outputs.ready == 'true' && steps.plan.outputs.mode == 'story'
+        if: steps.render.outputs.ready == 'true' && matrix.mode == 'story'
         env:
-          STORY: ${{ steps.plan.outputs.story }}
+          STORY: ${{ matrix.story }}
         run: |
-          tools/publish.sh "$STORY" dist
+          # Replaces renders/<story>/ as a whole (old video, stills, subtitles), keeping the pictures in find/.
+          tools/publish.sh "$STORY" dist render find
           echo "Video: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/blob/renders/$STORY/video.mp4" >> "$GITHUB_STEP_SUMMARY"
       - name: Upload the video and sources
         if: steps.render.outputs.ready == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: japan-news-video-${{ github.run_number }}
+          name: japan-news-video-${{ github.run_number }}-${{ strategy.job-index }}
           path: dist/
           if-no-files-found: error
           retention-days: 14
