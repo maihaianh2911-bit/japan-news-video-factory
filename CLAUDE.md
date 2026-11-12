@@ -10,6 +10,10 @@ the voice. The daily schedule is off (owner, 12/11/2026): a video is made only w
 chat. Everything runs in `.github/workflows/news-video.yml`; results go to the `renders` branch.
 
 ## When the owner pastes a script
+The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
+for this way of working on 12/11/2026). If the session may only push to its own branch, say so in one line and
+ask the owner to allow `main`.
+
 1. Write `stories/<date>-<short-name>.json` (see `stories/mau-boj.json`) and push it to `main`:
    - `title`, `date` (shown on screen), `source` (shown as 出典; leave out if there is none), `stage: "find"`.
    - `scenes`: one idea each. `label` (short tag), `headline` (≤ 2 lines, `\n` between), `lines` (the script, in
