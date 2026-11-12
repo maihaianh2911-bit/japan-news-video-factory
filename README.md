@@ -2,9 +2,13 @@
 
 Lịch tự chạy mỗi sáng đã tắt: video chỉ được dựng khi bấm **Run workflow**. Khi chạy, GitHub Actions tìm một tin chính sách hoặc kinh tế Nhật Bản, soạn lời dẫn tiếng Nhật, tìm hình và dựng một video dọc 1080 × 1920. Artifact chứa video H.264/AAC, ảnh bìa, phụ đề SRT, lời dẫn và danh sách nguồn.
 
-## Luồng xử lý
+## Dựng từ kịch bản (cách dùng chính)
 
-1. Đọc thông cáo từ [Ngân hàng Trung ương Nhật Bản](https://www.boj.or.jp/rss/whatsnew.xml) [Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản](https://www.meti.go.jp/press/index.html) và [Cục Thống kê Nhật Bản](https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html). Lịch 06:00 đọc tin công bố hôm trước theo giờ Nhật để tránh dựng lại cùng một tin vào hai buổi sáng. Nếu thiếu tin đủ mới và có đủ dữ kiện, ghi lý do trong run summary.
+Dán kịch bản vào một phiên chat Claude có kết nối repo này. Claude viết `stories/<tên>.json`, máy tìm ảnh thật trên Wikimedia Commons theo từng cảnh, Claude xem và chọn ảnh, máy tạo giọng đọc và dựng video. Kết quả nằm ở nhánh `renders`, thư mục `<tên>/` (video, phụ đề, nguồn ảnh). Chi tiết: `CLAUDE.md`.
+
+## Luồng tự tìm tin (chạy tay)
+
+1. Đọc thông cáo từ [Ngân hàng Trung ương Nhật Bản](https://www.boj.or.jp/rss/whatsnew.xml) [Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản](https://www.meti.go.jp/press/index.html) và [Cục Thống kê Nhật Bản](https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html). Nếu thiếu tin đủ mới và có đủ dữ kiện, ghi lý do trong run summary.
 2. Dùng mẫu lời dẫn tiếng Nhật bám theo thông cáo. Tin về lãi suất và CPI có phần giải thích theo loại số liệu. Những tin khác dùng các câu trích có ghi nguồn từ thông cáo. Mục tiêu là 60–90 giây. Bản tin có thể ngắn hơn khi thông cáo ngắn.
 3. Tìm ảnh đúng cơ quan trên Wikimedia Commons và lọc theo giấy phép. Ảnh được ghi rõ là ảnh tư liệu (資料写真), kèm credit. Các cảnh số liệu và tài liệu dùng nội dung gốc, ngày công bố và tên cơ quan. Khi thiếu ảnh phù hợp, cảnh mở dùng thẻ thông cáo.
 4. Tạo giọng đọc tiếng Nhật với VOICEVOX:青山龍星, canh phụ đề theo lời đọc rồi xuất MP4. Video được lưu trong Actions để tải về.

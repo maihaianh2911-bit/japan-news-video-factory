@@ -8,7 +8,8 @@ from pathlib import Path
 import tempfile
 import wave
 
-from .render import encode, write_subtitles
+from .custom import load_story
+from .render import encode, stills, write_subtitles
 from .sources import JST, discover, get_release
 from .story import VOICE_CREDIT, build_story
 from .visuals import find_photos
@@ -55,12 +56,23 @@ def main():
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--demo", action="store_true")
     mode.add_argument("--url", help="Official METI, Bank of Japan or national CPI release URL")
+    mode.add_argument("--story", type=Path, help="A hand-written story, stories/<name>.json")
+    parser.add_argument("--pictures", type=Path, help="Folder of the pictures found for the story")
+    parser.add_argument("--stills", type=Path, help="Only save one frame per scene of the story here")
     parser.add_argument("--previous-day-only", action="store_true", help="Use yesterday in JST for the daily schedule")
     parser.add_argument("--out", type=Path, default=Path("dist"))
     parser.add_argument("--plan-only", action="store_true", help="Print the selected source and Japanese script")
     args = parser.parse_args()
     today = datetime.now(JST).date()
-    release, beats = prepare(args, today)
+    scene_photos = None
+    if args.story:
+        release, beats, scene_photos = load_story(args.story, args.pictures)
+        if args.stills:
+            args.stills.mkdir(parents=True, exist_ok=True)
+            stills(beats, release, scene_photos, args.stills)
+            return
+    else:
+        release, beats = prepare(args, today)
     if not beats:
         summary(f"Không có thông cáo đủ mới và đủ dữ kiện ngày {today} (JST).", False)
         return
@@ -70,9 +82,10 @@ def main():
         print(script)
         return
 
-    photo_scenes = [index for index, beat in enumerate(beats) if beat.visual == "photo"]
-    photos = find_photos(release.publisher, len(photo_scenes))
-    scene_photos = dict(zip(photo_scenes, photos))
+    if scene_photos is None:
+        photo_scenes = [index for index, beat in enumerate(beats) if beat.visual == "photo"]
+        scene_photos = dict(zip(photo_scenes, find_photos(release.publisher, len(photo_scenes))))
+    photos = list(scene_photos.values())
     if args.demo and not photos:
         raise RuntimeError("Demo could not retrieve a verified Bank of Japan archival photograph")
     for photo in photos:
@@ -83,10 +96,10 @@ def main():
         wav = Path(scratch) / "voice.wav"
         intervals, captions = narration(beats, wav, speed=0.96)
         duration = intervals[-1][1]
-        if duration > 90:
+        if duration > 90 and not args.story:
             intervals, captions = narration(beats, wav, speed=min(1.25, 0.96 * duration / 87))
             duration = intervals[-1][1]
-        if duration > 90:
+        if duration > 90 and not args.story:
             raise RuntimeError(f"Grounded narration exceeds the 90-second format: {duration:.1f}s")
         with wave.open(str(wav)) as voice:
             if voice.getnframes() == 0:
@@ -110,7 +123,7 @@ def main():
     }
     (args.out / "sources.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     summary(f"{release.publisher} · {release.published} · {duration:.1f} s · "
-            f"{len(beats)} cảnh · {len(report['photos'])} ảnh tư liệu.\n\n{release.url}", True)
+            f"{len(beats)} cảnh · {len(report['photos'])} ảnh.\n\n{release.url}", True)
 
 
 if __name__ == "__main__":

@@ -22,6 +22,7 @@ class Beat:
     visual: str = "document"
     value: str = ""
     evidence: str = ""
+    say: tuple[str, ...] = ()   # what the voice reads when it differs from the caption (kanji readings)
 
 
 def japanese_date(release):
