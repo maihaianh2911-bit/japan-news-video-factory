@@ -8,7 +8,9 @@
     "incategory:\"Bank of Japan Head Office\" exterior",
     "Japanese yen banknotes 10000",
     "Tokyo housing residential aerial",
-    "Japan supermarket shoppers"
+    "Japan supermarket shoppers",
+    "incategory:\"Bank of Japan Head Office\"",
+    "Tokyo residential houses"
   ],
   "scenes": [
     {"label": "金融政策", "headline": "日銀が利上げ\n短期金利の目安", "value": "0.5％",

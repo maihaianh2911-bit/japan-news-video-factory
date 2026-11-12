@@ -41,7 +41,7 @@ def plain(value):
 def search(query):
     params = urlencode({
         "action": "query", "format": "json", "generator": "search", "gsrsearch": query, "gsrnamespace": 6,
-        "gsrlimit": 14, "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 2000,
+        "gsrlimit": 30, "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 2000,
     })
     data = json.loads(get(f"https://commons.wikimedia.org/w/api.php?{params}"))
     pages = sorted(data.get("query", {}).get("pages", {}).values(), key=lambda page: page.get("index", 0))
