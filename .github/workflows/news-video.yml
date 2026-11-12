@@ -11,7 +11,7 @@ on:
         options: [daily, demo, source]
         default: daily
       source_url:
-        description: 'Link thông cáo HTML của BOJ hoặc METI khi chọn source'
+        description: 'Link thông cáo HTML của BOJ, METI hoặc trang CPI toàn quốc'
         type: string
   push:
     branches: [main]
@@ -67,6 +67,8 @@ jobs:
           elif [[ "$MODE" == "source" ]]; then
             : "${SOURCE_URL:?Enter an official release URL}"
             python -m news --url "$SOURCE_URL"
+          elif [[ "$EVENT_NAME" == "schedule" ]]; then
+            python -m news --previous-day-only
           else
             python -m news
           fi

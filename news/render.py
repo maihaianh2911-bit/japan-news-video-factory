@@ -125,9 +125,9 @@ def frame_for(base, photo, fraction, caption):
     return frame
 
 
-def encode(beats, release, photo, demo, intervals, captions, wav, out):
+def encode(beats, release, photos, demo, intervals, captions, wav, out):
     cover_beat = beats[0]
-    first_photo = photo if cover_beat.visual == "photo" else None
+    first_photo = photos.get(0)
     cover = frame_for(layout(cover_beat, release, first_photo, demo), first_photo, 0.22, captions[0].text)
     cover.save(out / "cover.jpg", quality=92)
 
@@ -142,8 +142,8 @@ def encode(beats, release, photo, demo, intervals, captions, wav, out):
     frame_index = 0
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
         try:
-            for beat, (start, end) in zip(beats, intervals, strict=True):
-                scene_photo = photo if beat.visual == "photo" else None
+            for scene, (beat, (start, end)) in enumerate(zip(beats, intervals, strict=True)):
+                scene_photo = photos.get(scene)
                 base = layout(beat, release, scene_photo, demo)
                 cache = {}
                 while frame_index < math.ceil(end * FPS):

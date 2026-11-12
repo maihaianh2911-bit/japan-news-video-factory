@@ -8,30 +8,31 @@ from pathlib import Path
 import tempfile
 import wave
 
-from .demo import DEMO
 from .render import encode, write_subtitles
 from .sources import JST, discover, get_release
 from .story import VOICE_CREDIT, build_story
-from .visuals import find_photo
+from .visuals import find_photos
 from .voice import narration
+
+DEMO_URL = "https://www.boj.or.jp/mopo/mpmdeci/state_2025/k250124a.htm"
 
 
 def prepare(args, today):
-    if args.demo:
-        return DEMO, build_story(DEMO)
-    if args.url:
-        release = get_release(args.url)
+    if args.demo or args.url:
+        release = get_release(DEMO_URL if args.demo else args.url)
         beats = build_story(release)
         if not beats:
             raise ValueError("This release has too little readable material for a grounded video")
         return release, beats
-    for entry in discover(today)[:8]:
+    for entry in discover(today, previous_day_only=args.previous_day_only)[:8]:
         try:
             release = get_release(entry.url, entry)
         except (OSError, ValueError) as error:
             print(f"Skipping unreadable release: {error}")
             continue
-        if not today - timedelta(days=1) <= release.published <= today:
+        earliest = today - timedelta(days=1)
+        latest = earliest if args.previous_day_only else today
+        if not earliest <= release.published <= latest:
             continue
         beats = build_story(release)
         if beats:
@@ -53,7 +54,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--demo", action="store_true")
-    mode.add_argument("--url", help="Official METI or Bank of Japan HTML release URL")
+    mode.add_argument("--url", help="Official METI, Bank of Japan or national CPI release URL")
+    parser.add_argument("--previous-day-only", action="store_true", help="Use yesterday in JST for the daily schedule")
     parser.add_argument("--out", type=Path, default=Path("dist"))
     parser.add_argument("--plan-only", action="store_true", help="Print the selected source and Japanese script")
     args = parser.parse_args()
@@ -68,9 +70,13 @@ def main():
         print(script)
         return
 
-    photo = find_photo(release.publisher)
-    if args.demo and photo is None:
-        raise RuntimeError("Demo could not retrieve the verified Bank of Japan archival photograph")
+    photo_scenes = [index for index, beat in enumerate(beats) if beat.visual == "photo"]
+    photos = find_photos(release.publisher, len(photo_scenes))
+    scene_photos = dict(zip(photo_scenes, photos))
+    if args.demo and not photos:
+        raise RuntimeError("Demo could not retrieve a verified Bank of Japan archival photograph")
+    for photo in photos:
+        print(f"Archival photo: {photo.page} ({photo.license})")
 
     args.out.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="news-") as scratch:
@@ -85,7 +91,7 @@ def main():
         with wave.open(str(wav)) as voice:
             if voice.getnframes() == 0:
                 raise RuntimeError("No voice audio produced")
-        encode(beats, release, photo, args.demo, intervals, captions, wav, args.out)
+        encode(beats, release, scene_photos, args.demo, intervals, captions, wav, args.out)
     write_subtitles(captions, args.out / "subtitles.srt")
     (args.out / "script-ja.txt").write_text(script, encoding="utf-8")
     report = {
@@ -93,10 +99,14 @@ def main():
         "duration_seconds": round(duration, 2),
         "release": {"url": release.url, "published": release.published.isoformat(),
                     "publisher": release.publisher, "title": release.title},
-        "photos": [photo.credit()] if photo else [],
+        "photos": [photo.credit() for photo in photos],
         "voice_credit": VOICE_CREDIT,
-        "scenes": [dict(asdict(beat), visual=beat.visual if photo or beat.visual != "photo" else "document")
-                   for beat in beats],
+        "scenes": [
+            dict(asdict(beat),
+                 visual=beat.visual if index in scene_photos or beat.visual != "photo" else "document",
+                 image_url=scene_photos[index].page if index in scene_photos else None)
+            for index, beat in enumerate(beats)
+        ],
     }
     (args.out / "sources.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     summary(f"{release.publisher} · {release.published} · {duration:.1f} s · "

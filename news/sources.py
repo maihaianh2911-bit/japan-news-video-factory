@@ -16,12 +16,14 @@ USER_AGENT = "JapanNewsVideoFactory/1.0 (https://github.com/maihaianh2911-bit/ja
 PUBLISHERS = {
     "www.boj.or.jp": "日本銀行",
     "www.meti.go.jp": "経済産業省",
+    "www.stat.go.jp": "総務省統計局",
 }
 FEEDS = (
     "https://www.boj.or.jp/rss/whatsnew.xml",
     "https://www.meti.go.jp/ml_index_release_atom.xml",
 )
 METI_INDEX = "https://www.meti.go.jp/press/index.html"
+CPI_INDEX = "https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html"
 TOPICS = re.compile(r"物価|賃金|補助|税制|予算|金利|金融政策|金融市場調節|国債|貿易|ガソリン|電気料金|エネルギー|鉱工業|生産指数|商業動態|消費|設備投資|景気|産業|経済|雇用")
 EXCLUDED = re.compile(r"開催案内|傍聴|入札|人事|採用|挨拶|挨さつ|募集開始|議事要旨|主な意見|訂正|公募")
 DATE_PATTERN = r"(20\d{2})年\s*(\d{1,2})月\s*(\d{1,2})日"
@@ -74,11 +76,14 @@ def release_url(url):
         r"/(?:mopo|statistics|research|announcements|about)/[\w/-]+\.html?", parts.path
     )
     meti = parts.hostname == "www.meti.go.jp" and re.fullmatch(
-        r"/press/20\d{2}/\d{2}/20\d{8}/20\d{8}\.html", parts.path
+        r"/press/20\d{2}/\d{2}/20\d{9}/20\d{9}\.html", parts.path
     )
-    if parts.scheme not in ("http", "https") or not (boj or meti) or parts.username or parts.password:
+    cpi = parts.hostname == "www.stat.go.jp" and parts.path in (
+        "/data/cpi/sokuhou/tsuki/index-z.htm", "/data/cpi/sokuhou/tsuki/index-z.html"
+    )
+    if parts.scheme not in ("http", "https") or not (boj or meti or cpi) or parts.username or parts.password:
         raise ValueError(f"URL is outside the supported release pages: {url}")
-    return urlunsplit(("https", parts.hostname, parts.path, "", ""))
+    return CPI_INDEX if cpi else urlunsplit(("https", parts.hostname, parts.path, "", ""))
 
 
 def parse_date(value):
@@ -104,7 +109,8 @@ def parse_feed(content, source):
         if item.tag.rsplit("}", 1)[-1] not in ("entry", "item"):
             continue
         fields = {child.tag.rsplit("}", 1)[-1]: child for child in item}
-        link = fields.get("link")
+        link = next((child for child in item if child.tag.rsplit("}", 1)[-1] == "link"
+                     and child.get("rel", "alternate") == "alternate"), None)
         if link is None:
             continue
         title = compact("".join(fields["title"].itertext())) if "title" in fields else ""
@@ -132,21 +138,27 @@ def meti_index():
     return entries
 
 
-def discover(today):
+def discover(today, *, previous_day_only=False):
     def retrieve(url):
         try:
-            return meti_index() if url == METI_INDEX else parse_feed(fetch(url, PUBLISHERS), url)
+            if url == METI_INDEX:
+                return meti_index()
+            if url == CPI_INDEX:
+                release = get_release(url)
+                return [Entry(release.url, release.title, release.published)]
+            return parse_feed(fetch(url, PUBLISHERS), url)
         except (OSError, ValueError, ET.ParseError) as error:
             print(f"Source unavailable: {url} ({error})")
             return None
 
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        batches = list(pool.map(retrieve, (*FEEDS, METI_INDEX)))
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        batches = list(pool.map(retrieve, (*FEEDS, METI_INDEX, CPI_INDEX)))
     if all(batch is None for batch in batches):
         raise RuntimeError("All primary sources are unavailable")
     earliest = today - timedelta(days=1)
+    latest = earliest if previous_day_only else today
     found = {item.url: item for batch in reversed(batches) for item in (batch or [])
-             if earliest <= item.published <= today and TOPICS.search(item.title)
+             if earliest <= item.published <= latest and TOPICS.search(item.title)
              and not EXCLUDED.search(item.title)}
     def rank(item):
         decision = bool(re.search(r"金融市場調節方針|当面の金融政策運営|消費者物価|補助金|賃上げ", item.title))
@@ -161,7 +173,8 @@ def get_release(url, fallback=None):
     main_nodes = doc.xpath("//main | //*[@id='main' or @id='contents' or @id='content']")
     area = next((node for node in main_nodes if node.xpath(".//h1")), main_nodes[0] if main_nodes else doc)
     headings = area.xpath(".//h1") or doc.xpath("//h1")
-    title = compact(headings[0].text_content()) if headings else (fallback.title if fallback else "")
+    title = next((compact(heading.text_content()) for heading in headings
+                  if compact(heading.text_content())), fallback.title if fallback else "")
     if not title:
         raise ValueError("Release headline not found")
     body = area.xpath(".//*[self::p or self::li or self::dd or self::td]")
@@ -177,6 +190,8 @@ def get_release(url, fallback=None):
         if value and value not in paragraphs:
             paragraphs.append(value)
     page_dates = area.xpath(".//time/@datetime | .//meta[@itemprop='datePublished']/@content")
+    if url == CPI_INDEX:
+        page_dates.insert(0, title)
     page_dates += paragraphs[:14]
     published = next((value for raw in page_dates if (value := parse_date(raw))), None)
     if published is None and publisher == "経済産業省":

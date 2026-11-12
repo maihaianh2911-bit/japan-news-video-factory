@@ -8,7 +8,8 @@ from .sources import Release
 NUMBER = re.compile(r"[+＋−-]?\d+(?:[,.]\d+)*(?:\s*兆円|\s*億円|\s*万円|\s*円|\s*%|\s*％|\s*ポイント|\s*万件|\s*万人)")
 BOJ_TARGET = re.compile(r"無担保コールレート.{0,32}?(\d+(?:\.\d+)?)\s*%\s*程度")
 BOJ_LENDING = re.compile(r"基準貸付利率.{0,26}?(\d+(?:\.\d+)?)\s*%\s*とする")
-BOJ_DEPOSIT = re.compile(r"(?:付利金利|適用利率).{0,38}?(\d+(?:\.\d+)?)\s*%\s*とする")
+BOJ_DEPOSIT = re.compile(r"付利金利.{0,12}?(\d+(?:\.\d+)?)\s*%\s*とする")
+BOJ_EFFECTIVE = re.compile(r"新たな金融市場調節方針は、翌営業日[（(](\d{1,2}月\d{1,2}日)[）)]から適用")
 VOTE = re.compile(r"賛成\s*(\d+)\s*反対\s*(\d+)")
 VOICE_CREDIT = "VOICEVOX:青山龍星"
 
@@ -46,22 +47,83 @@ def boj_policy(release):
              "data", f"{target}％程度", rate[0]),
     ]
     vote = VOTE.search(body)
+    effective = BOJ_EFFECTIVE.search(body)
     if vote:
+        lines = [f"この金融市場調節方針は、賛成{vote[1]}、反対{vote[2]}で決まりました。"]
+        evidence = f"賛成 {vote[1]} / 反対 {vote[2]}"
+        if effective:
+            lines.append(f"新しい方針の適用は、翌営業日の{effective[1]}からです。")
+            evidence += f" / 適用開始 {effective[1]}"
         beats.append(Beat("決定会合", "政策委員会の\n採決結果",
-                          (f"この金融市場調節方針は、賛成{vote[1]}、反対{vote[2]}で決まりました。",
-                           f"発表は、{japanese_date(release)}の金融政策決定会合に基づくものです。"),
-                          "document", evidence=vote[0]))
+                          tuple(lines), "document", evidence=evidence))
     lending, deposit = BOJ_LENDING.search(body), BOJ_DEPOSIT.search(body)
     if lending and deposit:
         beats.append(Beat("適用金利", "日銀の貸し出しと\n当座預金への付利",
                           (f"日銀が金融機関に貸し出す際の基準貸付利率は、{lending[1]}パーセント。",
                            f"所要準備額にあたる部分を除いた当座預金への付利は、{deposit[1]}パーセントです。"),
                           "data", f"{lending[1]}％", lending[0] + " / " + deposit[0]))
-    beats.append(Beat("確認ポイント", "住宅ローンの金利は\n契約ごとに確認",
-                      ("この発表の数字は、金融機関の間で動く金利の目安です。",
-                       "住宅ローンの適用金利を確認するときは、借入先の案内や契約条件を見てください。"),
-                      "document", evidence=rate[0]))
+    if "2%の「物価安定の目標」" in body and "金融緩和の度合いを調整" in body:
+        beats.append(Beat("決定の背景", "日銀が掲げる\n物価安定の目標",
+                          ("日銀は、2パーセントの物価安定目標を持続的に実現するため、金融緩和の度合いを調整すると説明しています。",
+                           "住宅ローンの適用金利は、金融機関や借り入れの契約によって異なります。"),
+                          "photo", evidence="2％の物価安定目標 / 金融緩和の度合いを調整"))
+    else:
+        beats.append(Beat("確認ポイント", "住宅ローンの金利は\n契約ごとに確認",
+                          ("日銀が公表した金利の目安は、短期金融市場に関するものです。",
+                           "住宅ローンの適用金利は、金融機関や借り入れの契約によって異なります。"),
+                          "photo", evidence=rate[0]))
     return beats
+
+
+CPI_ROW = re.compile(
+    r"(総合|生鮮食品を除く総合|生鮮食品及びエネルギーを除く総合)指数は"
+    r"(?:20\d{2}年を100として)?\s*(\d+(?:\.\d+)?)\s+"
+    r"前年同月比は\s*(?:(\d+(?:\.\d+)?)\s*%\s*の)?(上昇|下落|横ばい|変わらず)"
+)
+
+
+def consumer_prices(release):
+    if release.publisher != "総務省統計局":
+        return []
+    title = unicodedata.normalize("NFKC", release.title)
+    month = re.search(r"(20\d{2})年\s*(?:\([^)]*\))?\s*(\d{1,2})月分", title)
+    base = re.search(r"(20\d{2})年基準", title)
+    body = unicodedata.normalize("NFKC", " ".join(release.paragraphs))
+    rows = {match[1]: match for match in CPI_ROW.finditer(body)}
+    names = ("総合", "生鮮食品を除く総合", "生鮮食品及びエネルギーを除く総合")
+    if not month or not base or not all(name in rows for name in names):
+        return []
+    period = f"{month[1]}年{month[2]}月"
+    def change(row):
+        return f"{row[3]}パーセント{row[4]}" if row[3] else "横ばい"
+    def display(row):
+        if not row[3]:
+            return "横ばい"
+        sign = "＋" if row[4] == "上昇" else "−"
+        return f"{sign}{row[3]}％"
+    total, core, stripped = (rows[name] for name in names)
+    return [
+        Beat("物価", "全国の消費者物価\n前年同月との比較",
+             (f"{period}の全国の消費者物価は、前年の同じ月と比べて{change(total)}でした。",
+              f"総務省統計局が{japanese_date(release)}に発表しました。"),
+             "data", display(total), f"総合指数 {total[2]} / 前年同月比"),
+        Beat("総合指数", "基準年を100とした\n全国の物価水準",
+             (f"総合指数は{total[2]}。基準の{base[1]}年の平均を100とした値です。",
+              "指数は基準年から見た水準で、前年同月比は一年前からの変化を表します。"),
+             "document", evidence=f"{base[1]}年平均 = 100 / {period} {total[2]}"),
+        Beat("生鮮食品を除く", "生鮮食品を除く\n総合指数",
+             (f"生鮮食品を除く総合指数は{core[2]}でした。",
+              f"一年前との比較では、{change(core)}です。"),
+             "data", display(core), f"指数 {core[2]} / 前年同月比"),
+        Beat("生鮮食品・エネルギーを除く", "生鮮食品とエネルギーを\n除いた場合",
+             (f"生鮮食品とエネルギーの両方を除いた指数は、{stripped[2]}。",
+              f"前年の同じ月と比べて、{change(stripped)}でした。"),
+             "data", display(stripped), f"指数 {stripped[2]} / 前年同月比"),
+        Beat("確認ポイント", "集計範囲をそろえて\n物価の変化を見る",
+             ("消費者物価指数は、集計に含める品目によって値が変わります。",
+              "月ごとの動きを比べるときは、同じ範囲の指数を確認してください。"),
+             evidence="総合 / 生鮮食品を除く総合 / 生鮮食品及びエネルギーを除く総合"),
+    ]
 
 
 def generic_release(release: Release):
@@ -92,14 +154,12 @@ def generic_release(release: Release):
              (f"{release.publisher}が、{japanese_date(release)}に、「{release.title}」を公表しました。",
               "発表資料に記載された内容を確認します。"), "photo"),
     ]
-    for index, sentence in enumerate(selected):
-        value = NUMBER.search(sentence)
-        beats.append(Beat("発表資料", "発表資料の記載", (sentence,),
-                          "data" if value else "document", value[0] if value else "", sentence))
+    for sentence in selected:
+        beats.append(Beat("発表資料", headline, (sentence,), evidence=sentence))
     if sum(len(line) for beat in beats for line in beat.lines) < 255:
         return []
     return beats
 
 
 def build_story(release):
-    return boj_policy(release) or generic_release(release)
+    return boj_policy(release) or consumer_prices(release) or generic_release(release)

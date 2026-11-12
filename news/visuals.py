@@ -40,7 +40,7 @@ def text_field(metadata, key):
 
 
 def load_photo(url, page, title, creator, license_name, license_url):
-    data = fetch(url, {UPLOAD}, limit=9_000_000, timeout=12)
+    data = fetch(url, {UPLOAD, "thumb.wikimedia.org"}, limit=9_000_000, timeout=12)
     with Image.open(BytesIO(data)) as original:
         if original.format not in ("JPEG", "PNG", "WEBP") or original.width * original.height > 30_000_000:
             raise ValueError("Unsupported photograph")
@@ -84,27 +84,30 @@ def candidates(category):
     return sorted(results)
 
 
-def find_photo(publisher):
+def find_photos(publisher, count):
     category = CATEGORIES.get(publisher)
-    if category is None:
-        return None
+    if category is None or not count:
+        return []
+    photos = []
     try:
-        for _, *photo in candidates(category)[:3]:
+        for _, *photo in candidates(category)[:4]:
             try:
-                return load_photo(*photo)
+                photos.append(load_photo(*photo))
             except (OSError, ValueError) as error:
                 print(f"Skipping Commons image: {error}")
+            if len(photos) == count:
+                return photos
     except (OSError, ValueError) as error:
         print(f"Commons category unavailable: {error}")
-    if publisher == "日本銀行":
+    if publisher == "日本銀行" and len(photos) < count and not any(BOJ_FILENAME in p.page for p in photos):
         digest = md5(BOJ_FILENAME.encode(), usedforsecurity=False).hexdigest()
         filename = quote(BOJ_FILENAME, safe=",")
         try:
-            return load_photo(
+            photos.append(load_photo(
                 f"https://{UPLOAD}/wikipedia/commons/{digest[0]}/{digest[:2]}/{filename}",
                 f"https://{COMMONS}/wiki/File:{filename}", BOJ_FILENAME.replace("_", " "),
                 "Wikimedia Commons contributor", "Public domain", "",
-            )
+            ))
         except (OSError, ValueError) as error:
             print(f"Commons reference photo unavailable: {error}")
-    return None
+    return photos
