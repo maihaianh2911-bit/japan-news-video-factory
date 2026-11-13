@@ -10,8 +10,9 @@ the voice. The daily schedule is off (owner, 12/11/2026). Since 13/11/2026 it wo
 one issue `[Tin Nhật] …` = one video, opened by the owner from the issue form or by you from a chat. The machine
 steps run in `.github/workflows/news-video.yml` (results on the `renders` branch); Claude's steps at each label are
 in `AGENT_JNEWS.md`. Unattended, the owner's Claude task "japan-video-factory" does them when GitHub calls it
-(it also checks `jnews-*` issues, see `maihaianh2911-bit/japan-video-factory` → `AGENT_NIGHTLY.md`); that needs the
-secrets `CLAUDE_TASK_URL` and `CLAUDE_TASK_TOKEN` in this repo. There is no hourly run: a missed call waits for the
+(it also checks `jnews-*` issues, see `maihaianh2911-bit/japan-video-factory` → `AGENT_NIGHTLY.md`), or this
+repo's own task when each repo has its own Claude seat (its prompt: "Làm theo AGENT_JNEWS.md của repo
+maihaianh2911-bit/japan-news-video-factory."); either needs the secrets `CLAUDE_TASK_URL` and `CLAUDE_TASK_TOKEN` in this repo. There is no hourly run: a missed call waits for the
 button "Gọi Claude ngay" (`wake.yml`) or a chat.
 
 ## When the owner pastes a script in a chat
