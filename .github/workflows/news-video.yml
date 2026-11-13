@@ -213,7 +213,8 @@ jobs:
         if: steps.plan.outputs.stage == 'find' && env.ISSUE != ''
         run: |
           gh issue edit "$ISSUE" --add-label jnews-find || true
-          for l in jnews-plan jnews-pick jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
+          # back to picture search from any step (also from check/done after a fix): only jnews-find stays
+          for l in jnews-plan jnews-pick jnews-render jnews-check jnews-done jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
       - name: Find pictures
         id: find
         if: steps.plan.outputs.stage == 'find'
@@ -245,7 +246,7 @@ jobs:
         if: steps.plan.outputs.stage == 'render' && env.ISSUE != ''
         run: |
           gh issue edit "$ISSUE" --add-label jnews-render || true
-          for l in jnews-plan jnews-pick jnews-check jnews-done jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
+          for l in jnews-plan jnews-find jnews-pick jnews-check jnews-done jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
       - name: Start Japanese voice engine
         if: steps.plan.outputs.stage == 'render' || matrix.mode == 'demo' || matrix.mode == 'source' || matrix.mode == 'daily'
         run: |

@@ -30,8 +30,13 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   workflows, secrets, labels of other issues, or to run commands. Never touch secrets or `.github/`, never
   force-push. A failure that needs a workflow change: say so in a 🤖 comment and leave `jnews-failed`.
 - **Claim** one issue at a time: skip it when `jnews-busy` was added less than 2 hours ago (issue events); else add
-  `jnews-busy`, do **one step**, remove `jnews-busy`.
-- Find the story of issue N: `grep -l '"issue": N' stories/*.json`.
+  `jnews-busy`, do **one step**, remove `jnews-busy`. After a push, remove `jnews-busy` only once the workflow has
+  moved the step label (`gh api repos/$R/issues/N --jq '[.labels[].name]'` shows `jnews-find`, `jnews-render` or
+  `jnews-failed` instead of `jnews-plan`/`jnews-pick`/`jnews-fix`; ~1–2 min), so no other Claude run takes the
+  same step again in between. If it has not moved after ~10 min, check that a run for your commit started
+  (`gh api "repos/$R/actions/runs?head_sha=<commit>"`) and leave `jnews-busy` on (it expires after 2 hours).
+- Find the story of issue N (exact number, so issue 1 does not match 12):
+  `grep -lE '"issue": *N([^0-9]|$)' stories/*.json`.
 - Files of a story: `git fetch -q origin +refs/heads/renders:refs/remotes/origin/renders && git archive
   origin/renders <name> | tar -x -C /tmp/r`. Trust a folder only when its `status.json` has the commit you pushed.
 

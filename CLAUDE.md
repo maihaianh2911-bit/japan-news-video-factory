@@ -25,9 +25,12 @@ adds a line such as "Phiếu tin Nhật số 2: ảnh đã tìm xong, chờ ch�
    the sections of the issue form (`.github/ISSUE_TEMPLATE/tin-nhat.yml`): `### Kịch bản (bắt buộc)` = the script
    exactly as pasted, `### Nguồn tin (không bắt buộc)`, `### Ngày của tin (không bắt buộc)`, `### Ghi chú (không
    bắt buộc)` (`_No response_` when empty). No labels: the workflow adds them.
-2. Do the steps of `AGENT_JNEWS.md` for that issue right away (claim with `jnews-busy`). While a machine step runs,
-   say so in one line and wait; if the owner does not want to wait, stop after any step: the Claude task continues
-   from the labels when GitHub calls it.
+2. Add `jnews-busy` to the issue right after creating it (the workflow wakes the Claude task at the same time; the
+   label keeps it off this issue), then do the steps of `AGENT_JNEWS.md` for that issue right away. Remove
+   `jnews-busy` only after your push and once the workflow has moved the step label (see "Claim" in
+   `AGENT_JNEWS.md` §0); claim again before each later step. While a machine step runs, say so in one line and
+   wait; if the owner does not want to wait, stop after any step: the Claude task continues from the labels when
+   GitHub calls it.
 3. Give the owner the links to the video, the subtitles and `credits.txt`.
 
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
@@ -62,7 +65,7 @@ ask the owner to allow `main`.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
    the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts). Preview before rendering:
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
-   (needs `sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
+   (needs `sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
    folder>`: `git archive origin/renders <name>/find | tar -x -C <dir>`). It also checks the picks against the
    find `index.json` and lists the scenes without a picture. Then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
