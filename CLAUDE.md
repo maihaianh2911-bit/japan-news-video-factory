@@ -15,6 +15,11 @@ repo's own task when each repo has its own Claude seat (its prompt: "Làm theo A
 maihaianh2911-bit/japan-news-video-factory."); either needs the secrets `CLAUDE_TASK_URL` and `CLAUDE_TASK_TOKEN` in this repo. There is no hourly run: a missed call waits for the
 button "Gọi Claude ngay" (`wake.yml`) or a chat.
 
+## When you were started by GitHub (a Claude task, nobody in the chat)
+The prompt may be as short as "Làm việc đang chờ trong repo này" ("do the work waiting in this repo"), and GitHub
+adds a line such as "Phiếu tin Nhật số 2: ảnh đã tìm xong, chờ chọn ảnh". Then: follow `AGENT_JNEWS.md` from §0 (its first check lists the `jnews-*` issues waiting for you). Nobody answers questions, so do not ask; comments go on the issues
+(🤖, Vietnamese).
+
 ## When the owner pastes a script in a chat
 1. Create one issue in this repo: title `[Tin Nhật] <Japanese headline> — <main idea in Vietnamese>`, body with
    the sections of the issue form (`.github/ISSUE_TEMPLATE/tin-nhat.yml`): `### Kịch bản (bắt buộc)` = the script
