@@ -6,18 +6,34 @@ picture, a script the owner sends is translated faithfully to Japanese and never
 traded for usage).
 
 This repo makes vertical Japanese news shorts (1080×1920): news frame, VOICEVOX voice 青山龍星, captions timed to
-the voice. The daily schedule is off (owner, 12/11/2026): a video is made only when the owner pastes a script in a
-chat. Everything runs in `.github/workflows/news-video.yml`; results go to the `renders` branch.
+the voice. The daily schedule is off (owner, 12/11/2026). Since 13/11/2026 it works like the owner's other channels:
+one issue `[Tin Nhật] …` = one video, opened by the owner from the issue form or by you from a chat. The machine
+steps run in `.github/workflows/news-video.yml` (results on the `renders` branch); Claude's steps at each label are
+in `AGENT_JNEWS.md`. Unattended, the owner's Claude task "japan-video-factory" does them when GitHub calls it
+(it also checks `jnews-*` issues, see `maihaianh2911-bit/japan-video-factory` → `AGENT_NIGHTLY.md`); that needs the
+secrets `CLAUDE_TASK_URL` and `CLAUDE_TASK_TOKEN` in this repo. There is no hourly run: a missed call waits for the
+button "Gọi Claude ngay" (`wake.yml`) or a chat.
 
-## When the owner pastes a script
+## When the owner pastes a script in a chat
+1. Create one issue in this repo: title `[Tin Nhật] <Japanese headline> — <main idea in Vietnamese>`, body with
+   the sections of the issue form (`.github/ISSUE_TEMPLATE/tin-nhat.yml`): `### Kịch bản (bắt buộc)` = the script
+   exactly as pasted, `### Nguồn tin (không bắt buộc)`, `### Ngày của tin (không bắt buộc)`, `### Ghi chú (không
+   bắt buộc)` (`_No response_` when empty). No labels: the workflow adds them.
+2. Do the steps of `AGENT_JNEWS.md` for that issue right away (claim with `jnews-busy`). While a machine step runs,
+   say so in one line and wait; if the owner does not want to wait, stop after any step: the Claude task continues
+   from the labels when GitHub calls it.
+3. Give the owner the links to the video, the subtitles and `credits.txt`.
+
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
 for this way of working on 12/11/2026). If the session may only push to its own branch, say so in one line and
 ask the owner to allow `main`.
 
+## Story format, pictures and preview (used by `AGENT_JNEWS.md`)
 1. Write `stories/<date>-<short-name>.json` (see `stories/mau-boj.json`; file name in ASCII letters, digits, `.`,
    `_`, `-` only) and push it to `main`. Every story file added, changed or renamed in a push gets its own run.
    - `title` (not shown in the video), `date` (shown on screen), `source` (shown as 出典; leave out if there is
-     none), `stage: "find"`.
+     none), `stage: "find"`, `issue` (the issue number: the workflow then moves its labels, comments and calls
+     Claude after each step).
    - `scenes`: one idea each. `label` (short tag), `headline` (≤ 2 lines, `\n` between; longer ones get a smaller
      font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — every sentence of the
      owner's script, nothing added), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
@@ -44,7 +60,7 @@ ask the owner to allow `main`.
    folder>`: `git archive origin/renders <name>/find | tar -x -C <dir>`). It also checks the picks against the
    find `index.json` and lists the scenes without a picture. Then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
-   `sources.json` (picture credits), `stills/sheet.jpg`, `status.json`. Check the run succeeded and that
+   `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `stills/sheet.jpg`, `status.json`. Check the run succeeded and that
    `status.json` has your commit (an old video stays there when a render fails). Look at the stills and the
    subtitles, then give the owner the links
    `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and the two

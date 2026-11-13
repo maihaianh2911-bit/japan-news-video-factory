@@ -1,10 +1,16 @@
 # Japan News Video Factory
 
-Máy dựng video tin tức Nhật Bản dạng dọc 1080 × 1920: ảnh thật, giọng đọc tiếng Nhật, phụ đề khớp với giọng. Lịch tự chạy mỗi sáng đã tắt. Video được dựng khi chủ repo dán kịch bản vào chat với Claude (cách dùng chính, bên dưới), hoặc khi bấm **Run workflow**.
+Máy dựng video tin tức Nhật Bản dạng dọc 1080 × 1920: ảnh thật, giọng đọc tiếng Nhật, phụ đề khớp với giọng. Lịch tự chạy mỗi sáng đã tắt. Mỗi video là một phiếu `[Tin Nhật] …`, giống các kênh khác của chủ repo.
 
 ## Dựng từ kịch bản (cách dùng chính)
 
-Dán kịch bản vào một phiên chat Claude có kết nối repo này. Claude viết `stories/<tên>.json`, máy tìm ảnh thật trên Wikimedia Commons theo từng cảnh, Claude xem và chọn ảnh, máy tạo giọng đọc và dựng video. Mỗi file trong `stories/` được đẩy lên `main` chạy riêng một lần. Kết quả nằm ở nhánh `renders`, thư mục `<tên>/` (video, phụ đề, nguồn ảnh, ảnh tĩnh); ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit, để biết kết quả là mới hay cũ. Chi tiết: `CLAUDE.md`.
+1. Mở phiếu mới bằng mẫu **📰 Video tin Nhật (ảnh thật)**, dán kịch bản, bấm **Create**. Hoặc dán kịch bản vào một phiên chat Claude có kết nối repo này: Claude tự mở phiếu.
+2. Không cần làm gì thêm. Claude dịch sát sang tiếng Nhật và chia cảnh (`stories/<tên>.json`), máy tìm ảnh thật trên Wikimedia Commons, Claude xem và chọn ảnh cho từng cảnh, máy tạo giọng đọc VOICEVOX:青山龍星 và dựng video, Claude kiểm tra từng cảnh. Mỗi bước xong đều báo trong phiếu; link video ở bình luận cuối.
+3. Muốn sửa thì viết bình luận trong phiếu.
+
+Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề, `credits.txt` (nguồn ảnh để dán vào mô tả video), ảnh tĩnh; ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit. Chi tiết cho Claude: `CLAUDE.md`, `AGENT_JNEWS.md`.
+
+**Cấu hình:** để GitHub gọi Claude sau mỗi bước, repo cần hai secret `CLAUDE_TASK_URL` và `CLAUDE_TASK_TOKEN` (cùng giá trị như ở `japan-video-factory`). Không có lượt chạy mỗi giờ: nếu Claude lỡ một lần gọi (ví dụ hết hạn mức), vào **Actions → Gọi Claude ngay → Run workflow**. Nhãn của phiếu được tạo bằng workflow **Tạo nhãn**.
 
 ## Luồng tự tìm tin (chạy tay)
 

@@ -1,6 +1,14 @@
 name: Japan News Video
 
+# One issue "[Tin Nhật] …" = one video (like the owner's other channels). The owner opens the issue → Claude writes
+# stories/<name>.json with "issue": N → this workflow finds pictures → Claude picks them → this workflow makes the
+# voice and the video → Claude checks every scene → done. An owner comment → Claude fixes. Claude's side:
+# AGENT_JNEWS.md. GitHub calls Claude after every step (secrets CLAUDE_TASK_URL / CLAUDE_TASK_TOKEN); no hourly run.
 on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
   workflow_dispatch:
     inputs:
       mode:
@@ -25,12 +33,61 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 # No concurrency group: a group keeps only one pending run and cancels the others, which silently dropped
 # story pushes. Runs may overlap; tools/publish.sh rebuilds on the newest renders tip, so none is lost.
 
 jobs:
+  # 1) The owner opens a [Tin Nhật] issue → labels, a comment, and Claude is called to write the story
+  start:
+    if: >-
+      github.event_name == 'issues' && startsWith(github.event.issue.title, '[Tin Nhật]')
+      && github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false, sparse-checkout: tools }
+      - name: Nhận phiếu
+        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
+        run: |
+          gh issue edit "$N" --add-label jnews,jnews-plan
+          gh issue comment "$N" --body "🤖 Đã nhận kịch bản. Claude sẽ dịch sát sang tiếng Nhật và chia cảnh, máy tìm ảnh, Claude chọn ảnh cho từng cảnh, máy tạo giọng và dựng video, Claude kiểm tra lại từng cảnh. Mỗi bước xong sẽ báo ở đây."
+      - name: Gọi Claude
+        env:
+          CLAUDE_TASK_URL: ${{ secrets.CLAUDE_TASK_URL }}
+          CLAUDE_TASK_TOKEN: ${{ secrets.CLAUDE_TASK_TOKEN }}
+          N: ${{ github.event.issue.number }}
+        run: bash tools/wake_claude.sh "Phiếu tin Nhật mới số $N."
+
+  # 2) The owner comments on a video issue → Claude reads it and fixes
+  fix:
+    if: >-
+      github.event_name == 'issue_comment' && github.event.issue.state == 'open'
+      && !github.event.issue.pull_request
+      && contains(github.event.issue.labels.*.name, 'jnews')
+      && github.event.comment.user.login == github.repository_owner
+      && !startsWith(github.event.comment.body, '🤖')
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false, sparse-checkout: tools }
+      - name: Nhận yêu cầu sửa
+        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
+        run: |
+          gh issue edit "$N" --add-label jnews-fix || true
+          gh issue edit "$N" --remove-label jnews-done || true
+          gh issue comment "$N" --body "🤖 Đã nhận yêu cầu. Claude sẽ sửa và máy dựng lại."
+      - name: Gọi Claude
+        env:
+          CLAUDE_TASK_URL: ${{ secrets.CLAUDE_TASK_URL }}
+          CLAUDE_TASK_TOKEN: ${{ secrets.CLAUDE_TASK_TOKEN }}
+          N: ${{ github.event.issue.number }}
+        run: bash tools/wake_claude.sh "Chủ kênh yêu cầu sửa phiếu tin Nhật số $N."
+
+  # 3) A pushed story (or a manual run) → pictures, or the voice and the video
   plan:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
     outputs:
       items: ${{ steps.plan.outputs.items }}
@@ -80,6 +137,9 @@ jobs:
     name: ${{ matrix.mode }} ${{ matrix.story }}
     env:
       GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      CLAUDE_TASK_URL: ${{ secrets.CLAUDE_TASK_URL }}
+      CLAUDE_TASK_TOKEN: ${{ secrets.CLAUDE_TASK_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -96,6 +156,14 @@ jobs:
           STORY: ${{ matrix.story }}
         run: |
           STAGE=
+          if [[ "$MODE" == "story" && -f "stories/$STORY.json" ]]; then
+            # the issue this story belongs to (read first, so even a broken story reports to its issue)
+            ISSUE=$(python -c "import json,sys
+          try: n = json.load(open(sys.argv[1], encoding='utf-8')).get('issue')
+          except Exception: n = None
+          print(n if isinstance(n, int) and not isinstance(n, bool) and n > 0 else '')" "stories/$STORY.json")
+            echo "ISSUE=$ISSUE" >> "$GITHUB_ENV"
+          fi
           if [[ "$MODE" == "story" ]]; then
             if [[ ! "$STORY" =~ ^[A-Za-z0-9._-]+$ ]]; then
               echo "::error::Story file name 'stories/$STORY.json': use only ASCII letters, digits, '.', '_' and '-' (no spaces, no Japanese or Vietnamese characters)"; exit 1
@@ -141,7 +209,13 @@ jobs:
           path: dist/stills/
           if-no-files-found: error
           retention-days: 7
+      - name: 'Phiếu: đang tìm ảnh'
+        if: steps.plan.outputs.stage == 'find' && env.ISSUE != ''
+        run: |
+          gh issue edit "$ISSUE" --add-label jnews-find || true
+          for l in jnews-plan jnews-pick jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
       - name: Find pictures
+        id: find
         if: steps.plan.outputs.stage == 'find'
         env:
           STORY: ${{ matrix.story }}
@@ -157,6 +231,21 @@ jobs:
           OUTCOME=$OUTCOME tools/publish.sh "$STORY/find" pictures find
           echo "Đã tìm ảnh cho \`$STORY\` ($OUTCOME): nhánh renders, thư mục \`$STORY/find\`." >> "$GITHUB_STEP_SUMMARY"
           if [[ $status == 3 ]]; then echo "::error::Some searches failed; see \"error\" in $STORY/find/index.json"; exit 1; fi
+      - name: 'Phiếu: ảnh đã tìm xong'
+        if: steps.find.outcome == 'success' && env.ISSUE != ''
+        env:
+          STORY: ${{ matrix.story }}
+        run: |
+          gh issue edit "$ISSUE" --add-label jnews-pick || true
+          gh issue edit "$ISSUE" --remove-label jnews-find || true
+          COUNT=$(python -c "import json; print(sum(len(q.get('results', [])) for q in json.load(open('pictures/index.json', encoding='utf-8'))))" 2>/dev/null || echo "?")
+          gh issue comment "$ISSUE" --body "🤖 Ảnh đã tìm xong ($COUNT ảnh). Claude sẽ chọn ảnh cho từng cảnh." || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: ảnh đã tìm xong, chờ chọn ảnh." || true
+      - name: 'Phiếu: đang dựng video'
+        if: steps.plan.outputs.stage == 'render' && env.ISSUE != ''
+        run: |
+          gh issue edit "$ISSUE" --add-label jnews-render || true
+          for l in jnews-plan jnews-pick jnews-check jnews-done jnews-fix jnews-failed; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
       - name: Start Japanese voice engine
         if: steps.plan.outputs.stage == 'render' || matrix.mode == 'demo' || matrix.mode == 'source' || matrix.mode == 'daily'
         run: |
@@ -212,8 +301,23 @@ jobs:
           STORY: ${{ matrix.story }}
         run: |
           # Replaces renders/<story>/ as a whole (old video, stills, subtitles), keeping the pictures in find/.
+          python tools/credits.py dist/sources.json dist/credits.txt
           tools/publish.sh "$STORY" dist render find
           echo "Video: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/blob/renders/$STORY/video.mp4" >> "$GITHUB_STEP_SUMMARY"
+      - name: 'Phiếu: video đã dựng'
+        if: steps.render.outputs.ready == 'true' && matrix.mode == 'story' && env.ISSUE != ''
+        env:
+          STORY: ${{ matrix.story }}
+        run: |
+          gh issue edit "$ISSUE" --add-label jnews-check || true
+          gh issue edit "$ISSUE" --remove-label jnews-render || true
+          LEN=$(python -c "import json; d = round(json.load(open('dist/sources.json', encoding='utf-8'))['duration_seconds']); print(f'{d // 60} phút {d % 60:02d} giây')" 2>/dev/null || echo "?")
+          B="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/blob/renders/$STORY"
+          gh issue comment "$ISSUE" --body "🤖 Đã dựng xong bản video ($LEN). Claude đang kiểm tra lại từng cảnh trước khi giao.
+
+          - Video: $B/video.mp4
+          - Ảnh các cảnh: $B/stills/sheet.jpg" || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: video đã dựng, chờ kiểm tra." || true
       - name: Upload the video and sources
         if: steps.render.outputs.ready == 'true'
         uses: actions/upload-artifact@v4
@@ -222,3 +326,13 @@ jobs:
           path: dist/
           if-no-files-found: error
           retention-days: 14
+      - name: 'Phiếu: báo lỗi'
+        # any failure or cancel of a story run is reported on its issue, so it never waits silently
+        if: (failure() || cancelled()) && env.ISSUE != ''
+        env:
+          STORY: ${{ matrix.story }}
+        run: |
+          gh issue edit "$ISSUE" --add-label jnews-failed || true
+          for l in jnews-find jnews-render; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
+          gh issue comment "$ISSUE" --body "🤖 Máy gặp lỗi khi làm \`$STORY\` — xem nhật ký: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID . Claude sẽ xem và sửa." || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE bị lỗi." || true

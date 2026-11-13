@@ -15,7 +15,7 @@ from .sources import Release
 from .story import Beat
 from .visuals import Photo
 
-STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes"}
+STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue"}
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo"}
 LINE_KEYS = {"text", "say"}
 PHOTO_KEYS = {"pick", "focus", "fit"}
@@ -84,6 +84,9 @@ def validate(data, name=None):
         problems.append(f'"date" must be YYYY-MM-DD, got {data.get("date")!r}')
     if data.get("stage", "find") not in ("find", "render"):
         problems.append(f'"stage" must be "find" or "render", got {data.get("stage")!r}')
+    issue = data.get("issue")
+    if issue is not None and (not isinstance(issue, int) or isinstance(issue, bool) or issue < 1):
+        problems.append(f'"issue" must be the issue number (a whole number), got {issue!r}')
     problems += text_problem(data.get("source"), '"source"', required=False)
     problems += text_problem(data.get("source_url"), '"source_url"', required=False)
     searches = data.get("searches", [])

@@ -1,0 +1,33 @@
+name: 📰 Video tin Nhật (ảnh thật)
+description: Dán kịch bản → máy làm video tin tức dọc có giọng Nhật (青山龍星), ảnh thật và phụ đề chạy theo giọng
+title: "[Tin Nhật] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Cách dùng:** dán kịch bản rồi bấm **Create**. Không cần làm gì thêm: Claude dịch sát sang tiếng Nhật và chia cảnh, máy tìm ảnh, Claude chọn ảnh hợp từng cảnh, máy tạo giọng và dựng video, Claude kiểm tra lại từng cảnh. Link video sẽ hiện ở bình luận cuối.
+        Muốn sửa gì thì viết bình luận (ví dụ "cảnh 3 đổi ảnh khác").
+  - type: textarea
+    id: script
+    attributes:
+      label: Kịch bản (bắt buộc)
+      description: Tiếng Việt hoặc tiếng Nhật. Kịch bản được giữ nguyên ý, không cắt, không thêm; nếu là tiếng Việt, Claude dịch sát sang tiếng Nhật.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Nguồn tin (không bắt buộc)
+      description: Tên cơ quan hoặc báo đưa tin (hiện trên video là 出典) và link nếu có
+      placeholder: 日本銀行 https://www.boj.or.jp/...
+  - type: input
+    id: date
+    attributes:
+      label: Ngày của tin (không bắt buộc)
+      description: Để trống = ngày mở phiếu
+  - type: textarea
+    id: notes
+    attributes:
+      label: Ghi chú (không bắt buộc)
+      description: Ảnh nên có hoặc nên tránh, con số cần làm nổi bật…

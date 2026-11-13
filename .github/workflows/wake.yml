@@ -1,0 +1,21 @@
+name: Gọi Claude ngay
+
+# Manual button: starts the Claude task now. There is no hourly run, so press it when a step waits for Claude
+# (for example after the usage limit was reset, or after the secrets were added). Its log also shows whether
+# the secrets CLAUDE_TASK_URL / CLAUDE_TASK_TOKEN work.
+on: workflow_dispatch
+
+permissions:
+  contents: read
+
+jobs:
+  wake:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false, sparse-checkout: tools }
+      - name: Gọi Claude
+        env: { CLAUDE_TASK_URL: '${{ secrets.CLAUDE_TASK_URL }}', CLAUDE_TASK_TOKEN: '${{ secrets.CLAUDE_TASK_TOKEN }}' }
+        run: |
+          bash tools/wake_claude.sh "Chủ kênh bấm gọi Claude, xem các phiếu tin Nhật đang chờ."

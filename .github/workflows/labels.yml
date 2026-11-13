@@ -1,0 +1,33 @@
+name: Tạo nhãn
+
+# Tạo (hoặc cập nhật) các nhãn mà dây chuyền dùng. Tự chạy khi file này thay đổi, hoặc chạy tay.
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/labels.yml']
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Tạo nhãn
+        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}' }
+        run: |
+          while IFS='|' read -r name color desc; do
+            gh label create "$name" --color "$color" --description "$desc" --force
+          done <<'LABELS'
+          jnews|1d76db|Video tin Nhật
+          jnews-plan|fbca04|Tin Nhật: chờ Claude dịch và chia cảnh
+          jnews-find|c2e0c6|Tin Nhật: máy đang tìm ảnh
+          jnews-pick|fbca04|Tin Nhật: chờ Claude chọn ảnh
+          jnews-render|c2e0c6|Tin Nhật: máy đang tạo giọng và dựng video
+          jnews-check|fbca04|Tin Nhật: chờ Claude kiểm tra từng cảnh
+          jnews-done|0b6e3a|Tin Nhật: video xong
+          jnews-fix|e99695|Tin Nhật: chủ kênh yêu cầu sửa
+          jnews-failed|b60205|Tin Nhật: máy gặp lỗi
+          jnews-busy|5319e7|Tin Nhật: Claude đang làm phiếu này
+          LABELS
