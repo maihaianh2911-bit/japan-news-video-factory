@@ -269,6 +269,9 @@ jobs:
           python -m news --story stories/mau-boj.json --pictures pictures --stills dist/stills
           # 3 seconds of real video in both frames (no voice engine: silence), so a fault in the encoder shows here
           python tools/encode_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/encode-test"
+          # every move and cut of the catalogue (news/edits.py), 1 second each; the two sheets go to the Artifacts
+          python tools/edits_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/edits-test" 1
+          cp "$RUNNER_TEMP/edits-test/moves.jpg" "$RUNNER_TEMP/edits-test/cuts.jpg" dist/stills/
           echo "Kiểm tra mã: OK (ảnh tĩnh của stories/mau-boj.json trong Artifacts; dựng thử 3 giây video)." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload the check stills
         if: matrix.mode == 'check'
@@ -397,7 +400,8 @@ jobs:
           gh issue comment "$ISSUE" --body "🤖 Đã dựng xong bản video ($LEN). Claude đang kiểm tra lại từng cảnh trước khi giao.
 
           - Video: $B/video.mp4
-          - Ảnh các cảnh: $B/stills/sheet.jpg" || true
+          - Ảnh các cảnh: $B/stills/sheet.jpg
+          - Cách edit từng cảnh: $B/stills/edits.md" || true
           bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: video đã dựng, chờ kiểm tra." "$ISSUE" || true
       - name: Upload the video and sources
         if: steps.render.outputs.ready == 'true'
