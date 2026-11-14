@@ -1,0 +1,92 @@
+[
+ {
+  "k": 1,
+  "query": "web:三笠宮家 三親王 寛仁親王 宜仁親王 憲仁親王",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 2,
+  "query": "web:三笠宮崇仁親王 百合子妃 家族 写真",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 3,
+  "query": "web:寛仁親王 ヒゲの殿下",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 4,
+  "query": "web:寛仁親王 殿下 写真",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 5,
+  "query": "web:寛仁親王 晩年 笑顔",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 6,
+  "query": "web:Prince Tomohito of Mikasa",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 7,
+  "query": "web:桂宮宜仁親王",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 8,
+  "query": "web:桂宮宜仁親王 若い頃",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 9,
+  "query": "web:桂宮宜仁親王 車椅子 公務",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 10,
+  "query": "web:高円宮憲仁親王",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 11,
+  "query": "web:高円宮憲仁親王 家族 女王",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 12,
+  "query": "web:高円宮憲仁親王 久子さま 結婚",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 13,
+  "query": "web:高円宮 久子妃 1984 結婚の儀",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 14,
+  "query": "web:三笠宮家 集合写真",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ },
+ {
+  "k": 15,
+  "query": "web:三笠宮邸",
+  "results": [],
+  "error": "RuntimeError: no web image search answered"
+ }
+]
