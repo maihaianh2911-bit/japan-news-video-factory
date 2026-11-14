@@ -1,0 +1,215 @@
+{
+  "demo": false,
+  "duration_seconds": 68.66,
+  "release": {
+    "url": "",
+    "published": "2026-11-14",
+    "publisher": "",
+    "title": "三笠宮家の三親王 壮絶なる生き様"
+  },
+  "photos": [
+    {
+      "page": "https://www.sankei.com/article/20241115-OQ5DU5SLVNLRXDVB5TYBTMMKHI/",
+      "title": "ご子息お3人に先立たれ、車いすで葬儀ご参列も 三笠宮妃百合子 ...",
+      "creator": "sankei.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://intojapanwaraku.com/rock/culture-rock/198464/",
+      "title": "エッセイで知る寬仁親王殿下の素顔（第1回）『ひげの殿下日記 ...",
+      "creator": "intojapanwaraku.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.huffingtonpost.jp/princess-akiko/gift-from-father_b_7528198.html",
+      "title": "寬仁親王殿下薨去から3年「父からの最高の宝物──三笠宮家との ...",
+      "creator": "huffingtonpost.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.wikiwand.com/ja/%E6%A1%82%E5%AE%AE%E5%AE%9C%E4%BB%81%E8%A6%AA%E7%8E%8B",
+      "title": "桂宮宜仁親王 - Wikiwand",
+      "creator": "wikiwand.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://x.com/satocchi120/status/880392014407155713",
+      "title": "どら猫さとっち on X: \"RT @TAMA6SI: バニラエアの件で思い出し ...",
+      "creator": "x.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.suzukimethod.or.jp/monthly/miyasama.html",
+      "title": "高円宮憲仁親王殿下を偲んで",
+      "creator": "suzukimethod.or.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://ameblo.jp/sakuhana-osk/entry-12776869167.html",
+      "title": "久子さまのティアラ。 | 咲くやこの花のキラキラパラダイス",
+      "creator": "ameblo.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "http://toriton.blog2.fc2.com/blog-entry-3080.html",
+      "title": "桂宮宜仁親王殿下、御薨去・・・ | 韓流研究室",
+      "creator": "toriton.blog2.fc2.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "scenes": [
+    {
+      "label": "三笠宮家",
+      "headline": "三笠宮家の三親王\n壮絶なる生き様",
+      "lines": [
+        "三笠宮家の三親王、壮絶なる生き様。",
+        "皇族である前に、一人の人間として。",
+        "三笠宮家に生を受け、激動の時代を駆け抜けた三人の親王がいた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "寛仁親王・桂宮宜仁親王・高円宮憲仁親王",
+      "say": [
+        "みかさのみやけのさんしんのう、壮絶なる生きざま。",
+        "皇族である前に、一人の人間として。",
+        "みかさのみやけに生をうけ、激動の時代を駆け抜けた三人のしんのうがいた。"
+      ],
+      "image_url": "https://www.sankei.com/article/20241115-OQ5DU5SLVNLRXDVB5TYBTMMKHI/"
+    },
+    {
+      "label": "長男",
+      "headline": "長男・寛仁親王\n「正直であれ」",
+      "lines": [
+        "長男・寛仁親王。",
+        "「正直であれ」を信条とし、時に皇籍離脱を口にするほど自由を愛した。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "ちょうなん、ともひとしんのう。",
+        "正直であれを信条とし、時にこうせきりだつを口にするほど自由を愛した。"
+      ],
+      "image_url": "https://intojapanwaraku.com/rock/culture-rock/198464/"
+    },
+    {
+      "label": "ヒゲの殿下",
+      "headline": "16回のがん手術に耐え\n国民に身近な存在",
+      "lines": [
+        "16回のがん手術に耐え、",
+        "ありのままを貫いた「ヒゲの殿下」は、誰よりも国民に身近な存在だった。"
+      ],
+      "visual": "photo",
+      "value": "16回",
+      "evidence": "",
+      "say": [
+        "16回のがん手術に耐え、",
+        "ありのままを貫いた、ヒゲのでんかは、誰よりも国民に身近な存在だった。"
+      ],
+      "image_url": "https://www.huffingtonpost.jp/princess-akiko/gift-from-father_b_7528198.html"
+    },
+    {
+      "label": "次男",
+      "headline": "次男・桂宮宜仁親王\n生涯独身を選ぶ",
+      "lines": [
+        "次男・桂宮宜仁親王。",
+        "幼き日の心無い一言に傷つき、",
+        "「誰も巻き込みたくない」",
+        "生涯独身を選んだ。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "じなん、かつらのみや、よしひとしんのう。",
+        "幼き日の心無い一言に傷つき、",
+        "「誰も巻き込みたくない」",
+        "生涯独身を選んだ。"
+      ],
+      "image_url": "https://www.wikiwand.com/ja/%E6%A1%82%E5%AE%AE%E5%AE%9C%E4%BB%81%E8%A6%AA%E7%8E%8B"
+    },
+    {
+      "label": "車椅子の公務",
+      "headline": "病に倒れても\n車椅子で公務を全う",
+      "lines": [
+        "突然の病に自由を奪われながらも、",
+        "車椅子で公務を全うした姿は、気高き誇りに満ちていた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "突然の病に自由を奪われながらも、",
+        "車椅子で公務をまっとうした姿は、けだかき誇りに満ちていた。"
+      ],
+      "image_url": "https://x.com/satocchi120/status/880392014407155713"
+    },
+    {
+      "label": "三男",
+      "headline": "三男・高円宮憲仁親王\n「最高のお父様」",
+      "lines": [
+        "三男・高円宮憲仁親王。",
+        "澄んだ瞳で家族を愛し、「最高のお父様」と慕われた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "さんなん、たかまどのみや、のりひとしんのう。",
+        "澄んだひとみで家族を愛し、最高のおとうさまと、したわれた。"
+      ],
+      "image_url": "https://www.suzukimethod.or.jp/monthly/miyasama.html"
+    },
+    {
+      "label": "記念日の指輪",
+      "headline": "47歳で急逝\n妻に届いた記念日の指輪",
+      "lines": [
+        "四十七歳の若さで急逝するも、",
+        "遺された妻のもとには、旅立ちの直前に用意されていた記念日の指輪が届く。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "よんじゅうななさいの若さで、きゅうせいするも、",
+        "遺された妻のもとには、旅立ちの直前に用意されていた記念日の指輪が届く。"
+      ],
+      "image_url": "https://ameblo.jp/sakuhana-osk/entry-12776869167.html"
+    },
+    {
+      "label": "三つの魂",
+      "headline": "それぞれの誠実さで\n生き抜いた三つの魂",
+      "lines": [
+        "重責に揺れ葛藤しながらも、",
+        "それぞれの誠実さで生き抜いた三つの魂。",
+        "その気高き足跡は、今も静かに胸を打つ。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "重責に揺れ、かっとうしながらも、",
+        "それぞれの誠実さで生き抜いた三つの魂。",
+        "そのけだかき足跡は、今も静かに胸を打つ。"
+      ],
+      "image_url": "http://toriton.blog2.fc2.com/blog-entry-3080.html"
+    }
+  ]
+}
