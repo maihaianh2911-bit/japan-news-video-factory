@@ -1,4 +1,5 @@
 """Render vertical news video with timed Japanese captions and stable motion."""
+from dataclasses import dataclass
 from functools import lru_cache
 import math
 from pathlib import Path
@@ -11,18 +12,60 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
-FONT = "/usr/share/fonts/opentype/noto/NotoSansCJK"
+FONT = "/usr/share/fonts/opentype/noto/Noto{}CJK"
 WHITE, PAPER, INK = "#ffffff", "#f6f3ec", "#142232"
 NAVY, MUTED, RED, GOLD = "#132133", "#99a9bb", "#b91835", "#ffda76"
+
+
+@dataclass(frozen=True)
+class Style:
+    """Colours and typeface of the frame. "news": dark blue TV-news frame; "paper": pale yellow old newspaper."""
+    family: str = "Sans"
+    background: str = NAVY
+    text: str = WHITE          # headline and evidence on a picture scene
+    muted: str = MUTED         # date, source, credits
+    accent: str = RED          # top bar, line under the picture, kicker
+    tag: str = "#33475e"       # scene label
+    tag_text: str = WHITE
+    photo_bed: str = "#29394a"
+    photo_tag: str = NAVY      # 資料写真 over the picture
+    photo_tag_text: str = WHITE
+    value: str = GOLD          # big figure on a picture scene
+    card: str = PAPER
+    card_ink: str = INK
+    card_muted: str = "#5d6671"
+    rule: str = "#506075"
+    caption_box: str = "#0b1421"
+    caption_text: str = WHITE
+    grain: bool = False
+
+
+STYLES = {
+    "news": Style(),
+    "paper": Style(family="Serif", background="#eee2bf", text="#2a1d10", muted="#6f5d40", accent="#8e2b1b",
+                   tag="#4a3520", tag_text="#f6ecd2", photo_bed="#d8c79e", photo_tag="#eee2bf", photo_tag_text="#2a1d10", value="#8e2b1b", card="#f7eed6",
+                   card_ink="#2a1d10", card_muted="#6f5d40", rule="#9c8a68", caption_box="#2e2114",
+                   caption_text="#f8f0da", grain=True),
+}
+style = STYLES["news"]
+
+
+def use_style(name):
+    global style
+    style = STYLES[name]
 CAPTION_WIDTH, CAPTION_SIZE = 866, 52
 PHOTO_TEXT_BOTTOM = 1490   # the caption box (two lines) starts at about 1502
 PHRASES = budoux.load_default_japanese_parser()
 
 
-@lru_cache(maxsize=64)
 def font(size, bold=True):
+    return face_of(style.family, size, bold)
+
+
+@lru_cache(maxsize=128)
+def face_of(family, size, bold):
     weight = "Bold" if bold else "Regular"
-    return ImageFont.truetype(f"{FONT}-{weight}.ttc", size, index=0)
+    return ImageFont.truetype(f"{FONT.format(family)}-{weight}.ttc", size, index=0)
 
 
 # Japanese line breaking rules (kinsoku): a line never ends with an opening bracket and never starts with
@@ -134,17 +177,36 @@ def caption_chunks(line):
     return ["\n".join(lines(group)) for group in captions]
 
 
-def text(draw, x, y, value, size, fill=WHITE, *, bold=True, anchor="lt", spacing=18):
+def text(draw, x, y, value, size, fill=None, *, bold=True, anchor="lt", spacing=18):
     """Draw lines of text from y; returns the y just below the last line."""
+    fill = fill or style.text
     for line_index, line in enumerate(value.splitlines()):
         draw.text((x, y + line_index * (size + spacing)), line, font=font(size, bold), fill=fill, anchor=anchor)
     return y + block_height(value, size, spacing)
 
 
-def label(draw, x, y, value, fill=RED):
+def label(draw, x, y, value, fill=None, color=None):
     width = int(font(28).getlength(value)) + 42
-    draw.rounded_rectangle((x, y, x + width, y + 58), radius=9, fill=fill)
-    text(draw, x + 21, y + 14, value, 28)
+    draw.rounded_rectangle((x, y, x + width, y + 58), radius=9, fill=fill or style.accent)
+    text(draw, x + 21, y + 14, value, 28, color or style.tag_text)
+
+
+@lru_cache(maxsize=2)
+def paper_grain(color):
+    """A flat paper colour with faint fibres and darker, aged edges."""
+    import random
+    rng = random.Random(7)
+    small = Image.new("L", (W // 4, H // 4))
+    small.putdata([rng.randint(0, 255) for _ in range(small.width * small.height)])
+    noise = small.filter(ImageFilter.GaussianBlur(1.2)).resize((W, H), Image.Resampling.BICUBIC)
+    base = Image.new("RGB", (W, H), color)
+    darker = Image.eval(base, lambda level: int(level * 0.86))
+    vignette = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(vignette).rounded_rectangle((60, 60, W - 60, H - 60), radius=200, fill=255)
+    edges = Image.eval(vignette.filter(ImageFilter.GaussianBlur(110)), lambda level: 255 - level)
+    aged = Image.composite(darker, base, edges)
+    speckle = Image.eval(noise, lambda level: max(0, 150 - level) // 6)   # 0..25, mostly 0
+    return Image.composite(Image.eval(aged, lambda level: int(level * 0.93)), aged, speckle)
 
 
 def crop_photo(image, position, height, focus=(0.5, 0.5)):
@@ -177,60 +239,67 @@ def whole_photo(image, position, height):
 
 
 def layout(beat, release, photo, demo):
-    image = Image.new("RGB", (W, H), NAVY)
+    image = paper_grain(style.background).copy() if style.grain else Image.new("RGB", (W, H), style.background)
     draw = ImageDraw.Draw(image)
-    draw.rectangle((0, 0, W, 14), fill=RED)
-    label(draw, 70, 68, "日本のニュース")
-    text(draw, 70, 152, japanese_date(release), 35, MUTED)
+    draw.rectangle((0, 0, W, 14), fill=style.accent)
+    if style.grain:   # newspaper masthead rules
+        draw.rectangle((40, 40, W - 40, 44), fill=style.text)
+        draw.rectangle((40, 50, W - 40, 51), fill=style.text)
+        draw.rectangle((40, 234, W - 40, 235), fill=style.text)
+        draw.rectangle((40, 240, W - 40, 244), fill=style.text)
+    label(draw, 70, 68, release.kicker or "日本のニュース")
+    text(draw, 70, 152, japanese_date(release), 35, style.muted)
     if demo:
         text(draw, W - 70, 95, "過去のニュース・動作確認", 28, GOLD, anchor="rt")
-    label(draw, 70, 261, beat.label, "#33475e")
+    label(draw, 70, 261, beat.label, style.tag)
 
     if photo:
         # Picture scene: picture, then headline, value (big figure) and evidence (small text) under each other.
-        draw.rectangle((0, 338, W, 1054), fill="#29394a")
-        draw.rectangle((0, 1038, W, 1054), fill=RED)
-        label(draw, 70, 380, "資料写真", NAVY)
+        draw.rectangle((0, 338, W, 1054), fill=style.photo_bed)
+        draw.rectangle((0, 1038, W, 1054), fill=style.accent)
+        label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
         headline, size = fit(beat.headline, 925, 70 if len(beat.headline) < 25 else 51, 3, smallest=44)
         y = text(draw, 70, 1100, headline, size)
         if beat.value:
             value, value_size = fit(beat.value, 925, 90, 1, smallest=60)
-            y = text(draw, 70, y + 34, value, value_size, GOLD)
+            y = text(draw, 70, y + 34, value, value_size, style.value)
         if beat.evidence:
             evidence, evidence_size = fit(beat.evidence, 925, 34, 2, bold=False, smallest=26)
             if y + 26 + block_height(evidence, evidence_size, 12) <= PHOTO_TEXT_BOTTOM:
-                text(draw, 70, y + 26, evidence, evidence_size, WHITE, bold=False, spacing=12)
+                text(draw, 70, y + 26, evidence, evidence_size, style.text, bold=False, spacing=12)
             else:
                 print(f"warning: no room for the evidence under the headline of scene {beat.label!r}: "
                       f"{beat.evidence!r} is not shown (shorten the headline or the evidence)")
         elif not beat.value:
-            text(draw, 70, y + 40, release.publisher, 42, MUTED)
+            text(draw, 70, y + 40, release.publisher, 42, style.muted)
     else:
         # Text card: headline, then value and evidence. Nothing else from the story is shown on it.
-        draw.rounded_rectangle((70, 350, 1010, 1410), radius=32, fill=PAPER)
-        draw.rectangle((117, 419, 172, 426), fill=RED)
-        text(draw, 119, 472, release.publisher, 38, "#5d6671")
+        draw.rounded_rectangle((70, 350, 1010, 1410), radius=32, fill=style.card,
+                               outline=style.rule if style.grain else None, width=3)
+        draw.rectangle((117, 419, 172, 426), fill=style.accent)
+        text(draw, 119, 472, release.publisher, 38, style.card_muted)
         headline, size = fit(beat.headline, 840, 60 if len(beat.headline) < 27 else 48, 3, smallest=40)
-        y = text(draw, 119, 570, headline, size, INK)
+        y = text(draw, 119, 570, headline, size, style.card_ink)
         if beat.value:
             value, value_size = fit(beat.value, 840, 144 if len(beat.value) <= 7 else 98, 1, smallest=56)
-            y = text(draw, 119, max(813, y + 60), value, value_size, RED)
+            y = text(draw, 119, max(813, y + 60), value, value_size, style.accent)
             if beat.evidence:
                 evidence, evidence_size = fit(beat.evidence, 830, 33, 5, bold=False, smallest=24)
-                text(draw, 119, max(1055, y + 50), evidence, evidence_size, INK, bold=False)
+                text(draw, 119, max(1055, y + 50), evidence, evidence_size, style.card_ink, bold=False)
         elif beat.evidence:
             evidence, evidence_size = fit(beat.evidence, 830, 47, 5, bold=False, smallest=30)
-            text(draw, 119, max(839, y + 70), evidence, evidence_size, INK, bold=False)
+            text(draw, 119, max(839, y + 70), evidence, evidence_size, style.card_ink, bold=False)
         if release.publisher:
-            text(draw, 119, 1304, "公表資料", 29, "#5d6671")
+            text(draw, 119, 1304, "公表資料", 29, style.card_muted)
 
-    draw.line((70, 1704, W - 70, 1704), fill="#506075", width=2)
+    draw.line((70, 1704, W - 70, 1704), fill=style.rule, width=2)
     if release.publisher:
-        text(draw, 70, 1742, f"出典  {release.publisher}", 29, MUTED, bold=False)
-    text(draw, W - 70, 1742, VOICE_CREDIT, 24, MUTED, bold=False, anchor="rt")
+        text(draw, 70, 1742, f"出典  {release.publisher}", 29, style.muted, bold=False)
+    text(draw, W - 70, 1742, VOICE_CREDIT, 24, style.muted, bold=False, anchor="rt")
     if photo:
-        credit, credit_size = fit(f"写真  {photo.creator} / {photo.license}", 940, 23, 2, bold=False, smallest=16)
-        text(draw, 70, 1806, credit, credit_size, MUTED, bold=False)
+        credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
+        credit, credit_size = fit(credit, 940, 23, 2, bold=False, smallest=16)
+        text(draw, 70, 1806, credit, credit_size, style.muted, bold=False)
     return image
 
 
@@ -239,10 +308,10 @@ def draw_captions(image, caption):
     face = font(CAPTION_SIZE)
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
-    draw.rounded_rectangle((69, 1598 - height // 2, 1011, 1598 + height // 2), radius=19, fill="#0b1421")
+    draw.rounded_rectangle((69, 1598 - height // 2, 1011, 1598 + height // 2), radius=19, fill=style.caption_box)
     for line_index, line in enumerate(contents):
         draw.text((W / 2, 1598 - height / 2 + 21 + 83 * line_index), line,
-                  font=face, fill=WHITE, anchor="mt", stroke_width=1, stroke_fill=WHITE)
+                  font=face, fill=style.caption_text, anchor="mt", stroke_width=1, stroke_fill=style.caption_text)
 
 
 def frame_for(base, photo, fraction, caption):
@@ -253,7 +322,7 @@ def frame_for(base, photo, fraction, caption):
                    else crop_photo(photo.image, ease, 700, photo.focus))
         frame.paste(picture, (0, 338))
         draw = ImageDraw.Draw(frame)
-        label(draw, 70, 380, "資料写真", NAVY)
+        label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
     draw_captions(frame, caption)
     return frame
 

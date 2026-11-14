@@ -50,8 +50,12 @@ ask the owner to allow `main`.
      (evidence only if it fits above the captions — the preview prints a warning when it does not); on a text card
      (no picture), headline, value, then evidence. A card shows nothing else: no title, so give a text card an
      `evidence` or a `value`. A line the voice may misread is written `{"text": "caption", "say": "reading in kana"}`.
+   - Optional `style`: `"news"` (dark blue, default) or `"paper"` (pale yellow old newspaper, serif type), and
+     `kicker`: the red tag at the top (default `日本のニュース`; e.g. `皇室の物語` for a story that is not news).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
-     person, building or place). Only append to the list later: the picks use the numbers, and a pick whose search
+     person, building or place). A search `web:<words>` is a free web image search
+     (Bing, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
+     takes one picture; their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
    - Check before pushing: `python -m news.custom stories/<name>.json` lists every problem (unknown keys such as
      `photos`, `lines` not a list, bad `focus`/`fit`, missing fields) and the scenes without a picture.
@@ -75,7 +79,8 @@ ask the owner to allow `main`.
    `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and the two
    others), and say which scenes have no picture and why.
 
-Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting
+Owner, 14/11/2026: pictures may come from anywhere on the web (`web:` searches), for the best pictures; the owner
+was told about the copyright risk and accepted it. Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting
 picture: write 2–3 searches per scene from the start and search again until each scene has one; a text card is
 the exception (pure figures), and the owner is told which scenes have none and why. Wikimedia refuses requests from Claude's cloud session (429), which is why
 the search runs on GitHub. The voice engine runs only on GitHub (Docker).

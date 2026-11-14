@@ -15,7 +15,8 @@ from .sources import Release
 from .story import Beat
 from .visuals import Photo
 
-STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue"}
+STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker"}
+STYLES = ("news", "paper")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo"}
 LINE_KEYS = {"text", "say"}
 PHOTO_KEYS = {"pick", "focus", "fit"}
@@ -89,6 +90,9 @@ def validate(data, name=None):
         problems.append(f'"issue" must be the issue number (a whole number), got {issue!r}')
     problems += text_problem(data.get("source"), '"source"', required=False)
     problems += text_problem(data.get("source_url"), '"source_url"', required=False)
+    problems += text_problem(data.get("kicker"), '"kicker"', required=False)
+    if data.get("style", "news") not in STYLES:
+        problems.append(f'"style" must be one of {", ".join(STYLES)}, got {data.get("style")!r}')
     searches = data.get("searches", [])
     if not isinstance(searches, list) or not all(isinstance(s, str) and s.strip() for s in searches):
         problems.append(f'"searches" must be a list of non-empty strings, got {searches!r}')
@@ -184,7 +188,7 @@ def report_without_picture(data):
 def load_story(path, pictures=None):
     data = read(path)
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
-                      data.get("source", ""), ())
+                      data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""))
     found = found_pictures(data, pictures)
     report_without_picture(data)
     beats, photos = [], {}
@@ -205,7 +209,7 @@ def load_story(path, pictures=None):
             with Image.open(Path(pictures) / entry["file"]) as original:
                 image = ImageOps.exif_transpose(original).convert("RGB")
             photos[index] = Photo(image, entry["page"], entry["title"].removeprefix("File:"),
-                                  entry.get("artist") or "Wikimedia Commons", entry["license"],
+                                  entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                   entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
                                   pick.get("fit", "cover"))
     return release, beats, photos

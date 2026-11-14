@@ -10,7 +10,7 @@ if release.get("publisher") or release.get("url"):
     lines += ["出典 / Nguồn tin", "- " + " ".join(x for x in (release.get("publisher"), release.get("url")) if x), ""]
 photos = data.get("photos") or []
 if photos:
-    lines.append("写真 / Ảnh (Wikimedia Commons)")
+    lines.append("写真 / Ảnh")
     for photo in photos:
         licence = photo.get("license") or ""
         lines.append(f"- {photo.get('title', '')} — {photo.get('creator') or 'không rõ tác giả'}"

@@ -1,8 +1,13 @@
-"""Find free-to-use pictures on Wikimedia Commons for the searches of a story.
+"""Find pictures for the searches of a story.
 
 python -m news.find stories/<name>.json <out_dir>
-For every entry of "searches" not searched before: up to 8 pictures whose licence allows use in a video
-(public domain, CC0, CC BY, CC BY-SA), without small files and repeated scans. Writes <out_dir>/<k>-<n>.jpg,
+For every entry of "searches" not searched before:
+- "<words>": Wikimedia Commons, up to 8 pictures whose licence allows use in a video (public domain, CC0, CC BY,
+  CC BY-SA), without small files and repeated scans.
+- "web:<words>": a free web image search (Bing, else DuckDuckGo), up to 12 pictures from any site, without stock
+  sites (watermarks). The licence is unknown: the owner chose to use such pictures (13/11/2026); the site is
+  credited on screen and in credits.txt.
+- "url:<picture address> [<page address>]": that one picture. Writes <out_dir>/<k>-<n>.jpg,
 index.json (file page, licence, author) and sheet_<k>.jpg, a numbered contact sheet to choose from.
 A search with no usable picture has no sheet. A search that fails (network, Commons refusing) is recorded in
 index.json with "error" and no results, is tried again on the next run, and makes the exit status 3; the other
@@ -15,7 +20,10 @@ import re
 import sys
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlsplit
+from urllib.request import Request, urlopen
+
+from lxml import html
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -24,7 +32,10 @@ from .sources import fetch
 
 HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
 ALLOWED = re.compile(r"^(public domain|pd|cc0|cc[- ]by(-sa)?[- ]?\d|cc[- ]by(-sa)?$)", re.I)
-KEEP, MIN_SIDE = 8, 400
+KEEP, WEB_KEEP, MIN_SIDE, LARGEST = 8, 12, 400, 2400
+BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+STOCK = re.compile(r"gettyimages|alamy|shutterstock|istockphoto|dreamstime|123rf|depositphotos|pixta|aflo|"
+                   r"stock\.adobe|agefotostock|bridgemanimages|pinimg|pinterest", re.I)
 
 
 def get(url):
@@ -40,6 +51,94 @@ def get(url):
                 raise
             print(f"  network error, trying again: {error}")
         time.sleep(10 * (attempt + 1))
+
+
+def web_get(url, referer=None, limit=12_000_000):
+    """Fetch any public http(s) address the way a browser does (web searches and their pictures)."""
+    parts = urlsplit(url)
+    if parts.scheme not in ("http", "https") or not parts.hostname or parts.username or parts.password \
+            or parts.hostname == "localhost" or re.fullmatch(r"[0-9.:\[\]]+", parts.hostname):
+        raise ValueError(f"Unsupported URL: {url}")
+    headers = {"User-Agent": BROWSER, "Accept-Language": "ja,en;q=0.8"}
+    if referer:
+        headers["Referer"] = referer
+    with urlopen(Request(url, headers=headers), timeout=30) as response:
+        content = response.read(limit + 1)
+    if len(content) > limit:
+        raise ValueError(f"Response exceeds size limit: {url}")
+    return content
+
+
+def site(url):
+    return (urlsplit(url).hostname or "").removeprefix("www.")
+
+
+def bing(query):
+    page = web_get("https://www.bing.com/images/search?" + urlencode(
+        {"q": query, "form": "HDRSC2", "first": 1, "setlang": "ja", "cc": "JP"})).decode("utf-8", "replace")
+    for meta in html.fromstring(page).xpath('//a[contains(concat(" ", @class, " "), " iusc ")]/@m'):
+        try:
+            item = json.loads(meta)
+        except ValueError:
+            continue
+        if item.get("murl"):
+            yield item["murl"], item.get("purl") or item["murl"], plain(item.get("t") or "")
+
+
+def duckduckgo(query):
+    page = web_get("https://duckduckgo.com/?" + urlencode({"q": query, "iax": "images", "ia": "images"}))
+    token = re.search(rb"vqd=[\"']?([0-9-]+)", page)
+    if not token:
+        raise ValueError("DuckDuckGo gave no search token")
+    data = json.loads(web_get("https://duckduckgo.com/i.js?" + urlencode(
+        {"l": "jp-jp", "o": "json", "q": query, "vqd": token[1].decode(), "f": ",,,,,", "p": "1"}),
+        referer="https://duckduckgo.com/"))
+    for item in data.get("results", []):
+        if item.get("image"):
+            yield item["image"], item.get("url") or item["image"], plain(item.get("title") or "")
+
+
+def web_search(query):
+    """Candidates (picture address, page address, title) of a web image search, stock sites left out."""
+    results = []
+    for engine in (bing, duckduckgo):
+        try:
+            results = list(engine(query))
+        except (OSError, ValueError) as error:
+            print(f"  {engine.__name__} failed: {error}")
+        if results:
+            print(f"  {engine.__name__}: {len(results)} results")
+            break
+    if not results:
+        raise RuntimeError("no web image search answered")
+    return [result for result in results if not STOCK.search(result[0] + " " + result[1])]
+
+
+def web_find(candidates, k, out, seen, keep):
+    kept = []
+    for image, page, title in candidates:
+        if len(kept) == keep:
+            break
+        try:
+            with Image.open(BytesIO(web_get(image, referer=page))) as original:
+                original.draft("RGB", (LARGEST, LARGEST))
+                picture = original.convert("RGB")
+        except Exception as error:   # a dead link or an odd file: skip it
+            print(f"  skipped {image[:120]}: {type(error).__name__}: {error}")
+            continue
+        if min(picture.size) < MIN_SIDE:
+            continue
+        mark = fingerprint(picture)
+        if any(bin(mark ^ other).count("1") <= 10 for other in seen.values()):
+            continue
+        picture.thumbnail((LARGEST, LARGEST))
+        entry = {"title": title or image.rsplit("/", 1)[-1][:100], "page": page, "image": image,
+                 "width": picture.width, "height": picture.height, "license": "", "license_url": "",
+                 "artist": site(page), "description": title, "file": f"{k}-{len(kept) + 1}.jpg"}
+        seen[entry["file"]] = mark
+        picture.save(out / entry["file"], quality=90)
+        kept.append(entry)
+    return kept
 
 
 def plain(value):
@@ -81,7 +180,8 @@ def sheet(entries, out, path):
         with Image.open(out / entry["file"]) as picture:
             picture.thumbnail((360, 360))
             board.paste(picture, (index % 4 * 380 + (380 - picture.width) // 2, index // 4 * 400 + 10))
-        label = f"#{index + 1}  {entry['width']}x{entry['height']}  {entry['license'].replace('Public domain', 'PD')}"
+        where = entry["license"].replace("Public domain", "PD") or entry.get("artist", "")
+        label = f"#{index + 1}  {entry['width']}x{entry['height']}  {where}"
         ImageDraw.Draw(board).text((index % 4 * 380 + 10, index // 4 * 400 + 374), label[:40], fill="#ffd25a", font=face)
     board.save(path, quality=85)
 
@@ -92,6 +192,14 @@ def save_index(index, path):
 
 
 def find(query, k, out, seen):
+    if query.startswith("web:"):
+        return web_find(web_search(query[4:].strip()), k, out, seen, WEB_KEEP)
+    if query.startswith("url:"):
+        image, _, page = query[4:].strip().partition(" ")
+        kept = web_find([(image, page.strip() or image, "")], k, out, seen, 1)
+        if not kept:
+            raise RuntimeError(f"could not load the picture {image}")
+        return kept
     kept = []
     for result in search(query):
         if len(kept) == KEEP:

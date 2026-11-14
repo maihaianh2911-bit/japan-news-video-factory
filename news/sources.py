@@ -43,6 +43,8 @@ class Release:
     published: date
     publisher: str
     paragraphs: tuple[str, ...]
+    style: str = "news"          # frame: "news" (dark blue) or "paper" (pale yellow old newspaper)
+    kicker: str = ""             # red tag at the top; "" shows 日本のニュース
 
 
 def compact(value):

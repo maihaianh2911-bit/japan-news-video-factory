@@ -42,6 +42,8 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
 
 ## Owner's standing decisions
 - Real pictures only, never AI pictures. You look at every picture yourself.
+- Pictures may come from anywhere on the web (owner, 14/11/2026, risk accepted): `web:` searches (`CLAUDE.md` step
+  1) next to Commons ones. Skip pictures with a watermark, a logo or text burnt in, or a small blurred copy.
 - The script is the owner's and is approved: translate it faithfully into Japanese (a Japanese script: the owner's
   words exactly), sentence by sentence. Do not cut, add, reorder or correct anything, and do not ask for another
   approval. Only write proper names the canonical way.
