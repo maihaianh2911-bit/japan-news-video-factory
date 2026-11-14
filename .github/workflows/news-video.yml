@@ -35,8 +35,11 @@ permissions:
   contents: write
   issues: write
 
-# No concurrency group: a group keeps only one pending run and cancels the others, which silently dropped
-# story pushes. Runs may overlap; tools/publish.sh rebuilds on the newest renders tip, so none is lost.
+# No concurrency group for the whole workflow: a group keeps only one pending run and cancels the others, which
+# silently dropped the pushes of other stories. The video job has one group per story instead (below): two runs
+# of the same story never work at the same time, and of several waiting runs only the newest is kept, which is
+# the one with the newest story file. Different stories may overlap; tools/publish.sh rebuilds on the newest
+# renders tip, so none is lost.
 
 jobs:
   # 1) The owner opens a [Tin Nhật] issue → labels, a comment, and Claude is called to write the story
@@ -176,6 +179,9 @@ jobs:
       matrix:
         include: ${{ fromJSON(needs.plan.outputs.items) }}
     name: ${{ matrix.mode }} ${{ matrix.story }}
+    concurrency:
+      group: jnews-${{ matrix.mode }}-${{ matrix.story }}
+      cancel-in-progress: false
     env:
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
