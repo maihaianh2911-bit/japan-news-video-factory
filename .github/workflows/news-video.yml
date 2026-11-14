@@ -295,6 +295,14 @@ jobs:
           limit = 600 if os.environ['MODE'] == 'story' else 91
           assert 10 < float(probe['format']['duration']) <= limit
           print(probe)
+          # GitHub refuses a file over 100 MB on the renders branch (news/render.py aims at 88 MB at most)
+          size = Path('dist/video.mp4').stat().st_size / 1e6
+          print(f'video.mp4: {size:.1f} MB')
+          if size > 98:
+              why = f'video nặng {size:.0f} MB, quá giới hạn 100 MB của GitHub nên không đăng lên được'
+              with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
+                  env.write(f'WHY={why}\n')
+              raise SystemExit(f'::error::{why} (video.mp4 is too large to publish)')
           PY
       - name: Publish the story video
         if: steps.render.outputs.ready == 'true' && matrix.mode == 'story'
@@ -335,5 +343,5 @@ jobs:
         run: |
           gh issue edit "$ISSUE" --add-label jnews-failed || true
           for l in jnews-find jnews-render; do gh issue edit "$ISSUE" --remove-label "$l" || true; done
-          gh issue comment "$ISSUE" --body "🤖 Máy gặp lỗi khi làm \`$STORY\` — xem nhật ký: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID . Claude sẽ xem và sửa." || true
-          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE bị lỗi." || true
+          gh issue comment "$ISSUE" --body "🤖 Máy gặp lỗi khi làm \`$STORY\`${WHY:+: $WHY} — xem nhật ký: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID . Claude sẽ xem và sửa." || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE bị lỗi." "$ISSUE" || true
