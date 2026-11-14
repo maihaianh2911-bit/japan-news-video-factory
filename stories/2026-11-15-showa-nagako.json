@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 3,
   "title": "女子一人守れぬ者に国は守れるか 昭和天皇と香淳皇后",
   "date": "2026-11-15",
@@ -26,7 +26,10 @@
     "web:香淳皇后 崩御 2000年",
     "web:香淳皇后 昭和天皇 那須",
     "web:昭和天皇 香淳皇后 晩年",
-    "web:昭和天皇 香淳皇后 御用邸 散歩"
+    "web:昭和天皇 香淳皇后 御用邸 散歩",
+    "web:昭和天皇 香淳皇后 戦時中",
+    "web:昭和天皇 大元帥 軍服 白馬",
+    "web:香淳皇后 戦時中 慰問"
   ],
   "scenes": [
     {
@@ -46,16 +49,19 @@
       "photo": [
         {
           "pick": "2-6",
-          "fit": "contain"
+          "fit": "contain",
+          "move": "push-in"
         },
         {
           "pick": "1-3",
           "focus": [
             0.5,
-            0.15
-          ]
+            0.2
+          ],
+          "move": "rise"
         }
-      ]
+      ],
+      "why": "Mở đầu bằng chân dung Thái tử 19 tuổi, ảnh lớn dần; rồi lia từ ngực áo lên mặt khi nói về sức ép."
     },
     {
       "label": "婚約",
@@ -74,18 +80,22 @@
         {
           "pick": "4-3",
           "focus": [
-            0.5,
-            0.25
-          ]
+            0.47,
+            0.28
+          ],
+          "move": "push-in"
         },
         {
           "pick": "6-9",
           "focus": [
-            0.5,
-            0.2
-          ]
+            0.42,
+            0.15
+          ],
+          "move": "close-up"
         }
-      ]
+      ],
+      "cut": "page",
+      "why": "Sang nhân vật mới (bà Nagako) nên lật trang; tiến vào bà vì bà là mục tiêu, rồi cận mặt nghiêm của Yamagata khi nói về sức ép."
     },
     {
       "label": "揺るぎない意志",
@@ -106,17 +116,21 @@
           "pick": "4-8",
           "focus": [
             0.5,
-            0.3
-          ]
+            0.35
+          ],
+          "move": "pan-right"
         },
         {
           "pick": "5-1",
           "focus": [
             0.5,
-            0.2
-          ]
+            0.25
+          ],
+          "move": "reveal"
         }
-      ]
+      ],
+      "cut": "fade",
+      "why": "Lia từ Thái tử sang bà (không buông tay), rồi từ cận hai người mở ra cả khung cửa sáng: tương lai mở ra."
     },
     {
       "label": "結婚後",
@@ -135,20 +149,24 @@
       ],
       "photo": [
         {
-          "pick": "5-4",
-          "focus": [
-            0.4,
-            0.5
-          ]
-        },
-        {
           "pick": "5-3",
           "focus": [
             0.5,
-            0.2
-          ]
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "5-4",
+          "focus": [
+            0.5,
+            0.38
+          ],
+          "move": "push-in"
         }
-      ]
+      ],
+      "cut": "page",
+      "why": "Chương mới sau đám cưới nên lật trang; lia từ dưới lên mặt các công chúa, rồi tiến chậm vào Hoàng hậu đang chịu sức ép."
     },
     {
       "label": "側室",
@@ -177,16 +195,20 @@
           "focus": [
             0.5,
             0.5
-          ]
+          ],
+          "move": "pan-left"
         },
         {
           "pick": "13-1",
           "focus": [
             0.5,
-            0.2
-          ]
+            0.08
+          ],
+          "move": "punch-in"
         }
-      ]
+      ],
+      "cut": "fade",
+      "why": "Lia từ Hoàng hậu về phía Thiên hoàng, người sắp trả lời; câu \"Nagako là được\" là đỉnh điểm nên giật nhanh vào hai người (chỉ dùng một lần)."
     },
     {
       "label": "戦火の中で",
@@ -206,17 +228,21 @@
           "pick": "21-2",
           "focus": [
             0.5,
-            0.4
-          ]
+            0.45
+          ],
+          "move": "pan-right"
         },
         {
-          "pick": "16-3",
+          "pick": "8-4",
           "focus": [
-            0.5,
-            0.3
-          ]
+            0.45,
+            0.35
+          ],
+          "move": "push-in"
         }
-      ]
+      ],
+      "cut": "hard",
+      "why": "Chiến tranh ập đến nên cắt thẳng; lia theo hướng hai người bước đi, rồi tiến vào nụ cười của Hoàng hậu bên chồng."
     },
     {
       "label": "2000年",
@@ -235,17 +261,21 @@
           "pick": "10-3",
           "focus": [
             0.5,
-            0.3
-          ]
+            0.45
+          ],
+          "move": "close-up"
         },
         {
           "pick": "19-1",
           "focus": [
             0.5,
             0.3
-          ]
+          ],
+          "move": "rise"
         }
-      ]
+      ],
+      "cut": "dip",
+      "why": "Nhảy tới năm 2000 và sự ra đi nên tối dần rồi sáng lại; cận di ảnh, gần như đứng yên, rồi lia từ cỏ lên hai người lúc về già."
     },
     {
       "label": "一途な愛",
@@ -262,20 +292,24 @@
       ],
       "photo": [
         {
-          "pick": "12-9",
-          "focus": [
-            0.5,
-            0.4
-          ]
-        },
-        {
           "pick": "17-1",
           "focus": [
             0.5,
-            0.3
-          ]
+            0.4
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "12-9",
+          "focus": [
+            0.5,
+            0.55
+          ],
+          "move": "pull-back"
         }
-      ]
+      ],
+      "cut": "fade",
+      "why": "Lia từ Thiên hoàng sang người phụ nữ ông bảo vệ, rồi lùi dần khỏi hai người nắm tay nhau để kết."
     }
   ]
 }
