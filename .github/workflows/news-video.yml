@@ -45,20 +45,32 @@ jobs:
       github.event_name == 'issues' && startsWith(github.event.issue.title, '[Tin Nhật]')
       && github.event.issue.user.login == github.repository_owner
     runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: { contents: read, issues: write }
+    env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
     steps:
       - uses: actions/checkout@v4
         with: { persist-credentials: false, sparse-checkout: tools }
-      - name: Nhận phiếu
-        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
-        run: |
-          gh issue edit "$N" --add-label jnews,jnews-plan
-          gh issue comment "$N" --body "🤖 Đã nhận kịch bản. Claude sẽ dịch sát sang tiếng Nhật và chia cảnh, máy tìm ảnh, Claude chọn ảnh cho từng cảnh, máy tạo giọng và dựng video, Claude kiểm tra lại từng cảnh. Mỗi bước xong sẽ báo ở đây."
+      - name: Gắn nhãn
+        run: gh issue edit "$N" --add-label jnews,jnews-plan
       - name: Gọi Claude
+        id: wake
         env:
           CLAUDE_TASK_URL: ${{ secrets.CLAUDE_TASK_URL }}
           CLAUDE_TASK_TOKEN: ${{ secrets.CLAUDE_TASK_TOKEN }}
-          N: ${{ github.event.issue.number }}
-        run: bash tools/wake_claude.sh "Phiếu tin Nhật mới số $N."
+          WAKE_COMMENT: 'no'   # the next step writes the one comment
+        run: bash tools/wake_claude.sh "Phiếu tin Nhật mới số $N." "$N"
+      - name: Nhận phiếu
+        env:
+          WAKE: ${{ steps.wake.outputs.wake }}
+          NOTE: ${{ steps.wake.outputs.note }}
+        run: |
+          # promise the next steps only when Claude was really called (or is already on it in a chat: busy)
+          if [[ "$WAKE" == ok || "$WAKE" == busy ]]; then
+            gh issue comment "$N" --body "🤖 Đã nhận kịch bản. Claude sẽ dịch sát sang tiếng Nhật và chia cảnh, máy tìm ảnh, Claude chọn ảnh cho từng cảnh, máy tạo giọng và dựng video, Claude kiểm tra lại từng cảnh. Mỗi bước xong sẽ báo ở đây."
+          else
+            gh issue comment "$N" --body "🤖 Đã nhận kịch bản, nhưng Claude chưa bắt đầu làm. ${NOTE#🤖 }"
+          fi
 
   # 2) The owner comments on a video issue → Claude reads it and fixes
   fix:
@@ -69,21 +81,50 @@ jobs:
       && github.event.comment.user.login == github.repository_owner
       && !startsWith(github.event.comment.body, '🤖')
     runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: { contents: read, issues: write }
+    env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
     steps:
       - uses: actions/checkout@v4
         with: { persist-credentials: false, sparse-checkout: tools }
-      - name: Nhận yêu cầu sửa
-        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
+      - name: Gắn nhãn
         run: |
           gh issue edit "$N" --add-label jnews-fix || true
           gh issue edit "$N" --remove-label jnews-done || true
-          gh issue comment "$N" --body "🤖 Đã nhận yêu cầu. Claude sẽ sửa và máy dựng lại."
       - name: Gọi Claude
+        id: wake
         env:
           CLAUDE_TASK_URL: ${{ secrets.CLAUDE_TASK_URL }}
           CLAUDE_TASK_TOKEN: ${{ secrets.CLAUDE_TASK_TOKEN }}
-          N: ${{ github.event.issue.number }}
-        run: bash tools/wake_claude.sh "Chủ kênh yêu cầu sửa phiếu tin Nhật số $N."
+          WAKE_COMMENT: 'no'   # the next step writes the one comment
+        run: bash tools/wake_claude.sh "Chủ kênh yêu cầu sửa phiếu tin Nhật số $N." "$N"
+      - name: Nhận yêu cầu sửa
+        env:
+          WAKE: ${{ steps.wake.outputs.wake }}
+          NOTE: ${{ steps.wake.outputs.note }}
+        run: |
+          if [[ "$WAKE" == ok || "$WAKE" == busy ]]; then
+            gh issue comment "$N" --body "🤖 Đã nhận yêu cầu. Claude sẽ sửa và máy dựng lại."
+          else
+            gh issue comment "$N" --body "🤖 Đã nhận yêu cầu sửa, nhưng Claude chưa bắt đầu làm. ${NOTE#🤖 }"
+          fi
+
+  # 2b) The owner comments on a closed video issue → a short note instead of silence
+  closed:
+    if: >-
+      github.event_name == 'issue_comment' && github.event.issue.state == 'closed'
+      && !github.event.issue.pull_request
+      && contains(github.event.issue.labels.*.name, 'jnews')
+      && github.event.comment.user.login == github.repository_owner
+      && !startsWith(github.event.comment.body, '🤖')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: { issues: write }
+    steps:
+      - name: Báo phiếu đã đóng
+        env: { GH_TOKEN: '${{ github.token }}', GH_REPO: '${{ github.repository }}', N: '${{ github.event.issue.number }}' }
+        run: |
+          gh issue comment "$N" --body "🤖 Phiếu này đã đóng nên Claude không nhận yêu cầu ở đây. Muốn sửa video này: bấm nút Reopen issue (mở lại phiếu) ở cuối trang, rồi viết lại yêu cầu trong một bình luận mới."
 
   # 3) A pushed story (or a manual run) → pictures, or the voice and the video
   plan:
@@ -256,7 +297,7 @@ jobs:
           gh issue edit "$ISSUE" --remove-label jnews-find || true
           COUNT=$(python -c "import json; print(sum(len(q.get('results', [])) for q in json.load(open('pictures/index.json', encoding='utf-8'))))" 2>/dev/null || echo "?")
           gh issue comment "$ISSUE" --body "🤖 Ảnh đã tìm xong ($COUNT ảnh). Claude sẽ chọn ảnh cho từng cảnh." || true
-          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: ảnh đã tìm xong, chờ chọn ảnh." || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: ảnh đã tìm xong, chờ chọn ảnh." "$ISSUE" || true
       - name: 'Phiếu: đang dựng video'
         if: steps.plan.outputs.stage == 'render' && env.ISSUE != ''
         run: |
@@ -341,7 +382,7 @@ jobs:
 
           - Video: $B/video.mp4
           - Ảnh các cảnh: $B/stills/sheet.jpg" || true
-          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: video đã dựng, chờ kiểm tra." || true
+          bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: video đã dựng, chờ kiểm tra." "$ISSUE" || true
       - name: Upload the video and sources
         if: steps.render.outputs.ready == 'true'
         uses: actions/upload-artifact@v4
