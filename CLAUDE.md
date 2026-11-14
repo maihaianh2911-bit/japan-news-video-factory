@@ -1,6 +1,7 @@
 # japan-news-video-factory — notes for Claude
 
-The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. Their standing decisions
+The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
+"mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
 picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten, quality is not
 traded for usage).
