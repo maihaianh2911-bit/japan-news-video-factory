@@ -185,12 +185,27 @@ jobs:
         env:
           STORY: ${{ matrix.story }}
         run: |
+          # The renders branch must be read (3 tries): with an empty folder the picture search would start
+          # again from nothing and the pictures already chosen ("k-n") could become other pictures.
+          set -o pipefail
           mkdir -p pictures
           URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          if git fetch -q --depth 1 "$URL" "+refs/heads/renders:refs/remotes/origin/renders"; then
-            git archive origin/renders "$STORY/find" 2>/dev/null | tar -x --strip-components=2 -C pictures || true
+          GOT=
+          for attempt in 1 2 3; do
+            status=0; git ls-remote --exit-code --heads "$URL" renders > /dev/null || status=$?
+            if [[ $status == 2 ]]; then GOT=none; break; fi   # no renders branch yet (very first video)
+            if [[ $status == 0 ]] && git fetch -q --depth 1 "$URL" "+refs/heads/renders:refs/remotes/origin/renders"; then GOT=yes; break; fi
+            echo "could not read the renders branch (attempt $attempt)"
+            [[ $attempt == 3 ]] || sleep $((attempt * 10))
+          done
+          if [[ -z "$GOT" ]]; then
+            echo "WHY=không đọc được nhánh renders trên GitHub (lỗi mạng tạm thời), chạy lại là được" >> "$GITHUB_ENV"
+            echo "::error::Could not fetch the renders branch after 3 attempts"; exit 1
           fi
-          ls pictures | head -50
+          if [[ $GOT == yes ]] && git cat-file -e "origin/renders:$STORY/find" 2>/dev/null; then
+            git archive origin/renders "$STORY/find" | tar -x --strip-components=2 -C pictures
+          fi
+          ls pictures | head -50 || true
       - name: Offline check (code push)
         if: matrix.mode == 'check'
         run: |
