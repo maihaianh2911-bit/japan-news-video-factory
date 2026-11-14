@@ -30,6 +30,7 @@ class Photo:
     license_url: str
     focus: tuple[float, float] = (0.5, 0.5)   # the point of the picture that stays in the frame
     fit: str = "cover"                        # "contain" shows the whole picture
+    move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
 
     def credit(self):
         record = {key: getattr(self, key)

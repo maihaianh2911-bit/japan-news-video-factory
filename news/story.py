@@ -23,6 +23,8 @@ class Beat:
     value: str = ""
     evidence: str = ""
     say: tuple[str, ...] = ()   # what the voice reads when it differs from the caption (kanji readings)
+    cut: str = ""               # how the scene arrives: a name of news/edits.py CUTS; "" = the cut of the frame
+    why: str = ""               # why these edits were chosen (for the owner's list, never drawn)
 
 
 def japanese_date(release):

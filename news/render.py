@@ -9,6 +9,7 @@ import subprocess
 import budoux
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
+from .edits import AUTO_CUT, CUTS, MOVES, edit_list
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
@@ -266,6 +267,88 @@ def moving_photo(photo, t, kind, height=PHOTO_HEIGHT):
     return crop_photo(photo.image, height, photo.focus, zoom=1.18, shift=direction * (-0.3 + 0.6 * t))
 
 
+# --- Moves chosen by name (news/edits.py MOVES). Their speed follows the time the picture is on screen: a short
+# picture moves a shorter way, a long one a longer way, so neither rushes nor crawls.
+
+def clamp(value, low, high):
+    return min(high, max(low, value))
+
+
+def view(image, height, zoom, x, y):
+    """The window of the picture at `zoom` (1 fills the frame); x and y (0 to 1) place it within the room left."""
+    iw, ih = image.size
+    scale = max(W / iw, height / ih) * zoom
+    cw, ch = W / scale, height / scale
+    left, top = (iw - cw) * clamp(x, 0, 1), (ih - ch) * clamp(y, 0, 1)
+    return image.resize((W, height), Image.Resampling.BICUBIC, box=(left, top, left + cw, top + ch))
+
+
+def pan_plan(size, across, along, centre, seconds):
+    """Zoom, start and end (0 to 1 of the room) and length in pixels of a pan along one side of the picture.
+    `size` is that side of the picture and `across` the same side of the frame; `along` is the scale that fills
+    the frame. About 70 pixels a second around the focus point, kept inside the picture."""
+    travel = clamp(70 * seconds, 120, 520)
+    zoom = clamp((across + travel) / (size * along), 1.08, 1.35)
+    room = size * along * zoom - across
+    half = min(travel, room) / room / 2
+    middle = clamp(centre, half, 1 - half)
+    return zoom, middle - half, middle + half, min(travel, room)
+
+
+def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT):
+    """The picture at time t (0 at its start, 1 at its end, a little more while it fades out) for a move of the
+    catalogue; `seconds` is how long the picture stays."""
+    t = clamp(t, 0.0, 1.25)
+    image, (fx, fy) = photo.image, photo.focus
+    if photo.fit == "contain":   # the whole picture: it grows, shrinks or stays
+        small = 1 - clamp(0.028 * seconds, 0.07, 0.16)
+        size = {"push-in": small + (1 - small) * min(1, t), "pull-back": 1 - (1 - small) * min(1, t)}.get(name, 1.0)
+        return whole_photo(image, (size - 0.86) / 0.14, height)
+    gain = clamp(0.04 * seconds, 0.10, 0.26)
+    if name == "push-in":
+        return view(image, height, 1.0 + gain * t, fx, fy)
+    if name == "pull-back":
+        return view(image, height, max(1.0, 1.05 + gain * (1 - t)), fx, fy)
+    if name == "close-up":
+        return view(image, height, 1.55 + clamp(0.012 * seconds, 0.03, 0.10) * t, fx, fy)
+    if name == "reveal":
+        start, done = 1.0 + clamp(0.16 * seconds, 0.45, 0.8), 1 - (1 - min(1, t)) ** 2
+        return view(image, height, start - (start - 1.0) * done, fx, fy)
+    if name == "punch-in":
+        quick, now = min(0.35, seconds * 0.25), t * seconds
+        if now < quick:
+            return view(image, height, 1.0 + 0.26 * (1 - (1 - now / quick) ** 2), fx, fy)
+        return view(image, height, 1.26 + 0.012 * (now - quick), fx, fy)
+    fill = max(W / image.width, height / image.height)
+    if name in ("pan-right", "pan-left"):
+        zoom, first, last, _ = pan_plan(image.width, W, fill, fx, seconds)
+        if name == "pan-left":
+            first, last = last, first
+        return view(image, height, zoom, first + (last - first) * t, fy)
+    if name in ("rise", "fall"):
+        zoom, first, last, _ = pan_plan(image.height, height, fill, fy, seconds)
+        if name == "rise":
+            first, last = last, first
+        return view(image, height, zoom, fx, first + (last - first) * t)
+    return view(image, height, 1.0, fx, fy)   # hold
+
+
+def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
+    """Why the chosen move will not look good on this picture, or None."""
+    image, name = photo.image, photo.move
+    if not name or photo.fit == "contain":
+        return None
+    fill = max(W / image.width, height / image.height)
+    if name in ("pan-right", "pan-left") and pan_plan(image.width, W, fill, photo.focus[0], seconds)[3] < 100:
+        return f"{name}: the picture is not wide enough to pan across (try rise, fall or push-in)"
+    if name in ("rise", "fall") and pan_plan(image.height, height, fill, photo.focus[1], seconds)[3] < 100:
+        return f"{name}: the picture is not tall enough to move along (try pan-left, pan-right or push-in)"
+    closest = {"close-up": 1.65, "reveal": 1.8, "punch-in": 1.3}.get(name)
+    if closest and W / (fill * closest) < 500:
+        return f"{name}: the picture is small ({image.width}x{image.height}), it will look soft that close"
+    return None
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
@@ -344,6 +427,7 @@ class Scene:
 
     def __init__(self, index, beat, release, photos, demo, start, end):
         self.index, self.photos, self.start, self.end = index, list(photos or ()), start, max(end, start + 0.1)
+        self.cut = beat.cut
         self.background, self.text = layout(beat, release, bool(self.photos), demo)
         self.settled = self.background.copy()
         self.settled.paste(self.text, (0, 0), self.text)
@@ -353,12 +437,18 @@ class Scene:
         length = (self.end - self.start) / count
         number = min(count - 1, max(0, int((moment - self.start) // length)))
         local = (moment - self.start - number * length) / length
-        kind = MOTIONS[(self.index + number) % len(MOTIONS)]
-        picture = moving_photo(self.photos[number], local, kind)
+        picture = self.shot(number, local, length)
         if number and local * length < PHOTO_FADE:   # the previous picture fades into this one
-            previous = moving_photo(self.photos[number - 1], 1 + local, MOTIONS[(self.index + number - 1) % len(MOTIONS)])
+            previous = self.shot(number - 1, 1 + local, length)
             picture = Image.blend(previous, picture, ease(local * length / PHOTO_FADE))
         return picture, self.photos[number]
+
+    def shot(self, number, local, length):
+        """Picture `number` at its time `local`: the move chosen for it, else the four old moves in turn."""
+        photo = self.photos[number]
+        if photo.move:
+            return named_photo(photo, local, photo.move, length)
+        return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)])
 
     def render(self, moment):
         age = moment - self.start
@@ -389,10 +479,18 @@ def page_shadow():
     return shadow
 
 
-def transition(old, new, amount):
-    """From one scene to the next: a page turned from the right (paper) or a cross-fade (news)."""
-    if not style.grain:
+CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0}
+
+
+def transition(old, new, amount, cut=""):
+    """From one scene to the next. Without a chosen cut: a page turned from the right (paper) or a cross-fade
+    (news). "dip": the old scene goes dark, then the new one comes up."""
+    cut = cut or ("page" if style.grain else "fade")
+    if cut == "fade":
         return Image.blend(old, new, amount)
+    if cut == "dip":
+        dark = Image.new("RGB", (W, H), "#07090c" if not style.grain else "#1c140b")
+        return Image.blend(old, dark, ease(amount * 2)) if amount < 0.5 else Image.blend(dark, new, ease(amount * 2 - 1))
     offset = round(W * (1 - amount))
     frame = old.copy()
     if offset < W:
@@ -462,9 +560,12 @@ def scenes_for(beats, release, photos, demo, intervals):
 
 def frame_at(scenes, number, moment):
     frame = scenes[number].render(moment)
-    if number and moment - scenes[number].start < TRANSITION:
+    cut = scenes[number].cut
+    length = CUT_SECONDS[cut] if cut else TRANSITION
+    if number and moment - scenes[number].start < length:
         old = scenes[number - 1].render(moment)
-        frame = transition(old, frame, ease((moment - scenes[number].start) / TRANSITION))
+        amount = (moment - scenes[number].start) / length
+        frame = transition(old, frame, amount if cut == "dip" else ease(amount), cut)
     return frame
 
 
@@ -537,6 +638,19 @@ def stills(beats, release, photos, out):
     for index, tile in enumerate(tiles):
         sheet.paste(tile, (10 + index % columns * 415, 10 + index // columns * 730))
     sheet.save(out / "sheet.jpg", quality=85)
+    # The list of edits, scene by scene: the owner answers with "cảnh 5 đổi sang kiểu …" (names: news/edits.py).
+    lines = edit_list(beats, photos, "paper" if style.grain else "news")
+    (out / "edits.md").write_text(
+        "# Cách edit từng cảnh\n\n" + "\n".join(f"- {line}" for line in lines)
+        + f"\n\nCác kiểu chuyển động của ảnh: {', '.join(MOVES)}.\nCác kiểu vào cảnh: {', '.join(CUTS)}.\n"
+        "Muốn đổi: bình luận, ví dụ \"cảnh 5 đổi sang kiểu pull-back\".\n", encoding="utf-8")
+    print("Edits (also in edits.md):")
+    for line in lines:
+        print(f"  {line}")
+    for index in sorted(photos):
+        for number, photo in enumerate(photos[index], 1):
+            if warning := move_warning(photo):
+                print(f"warning: scene {index + 1}, picture {number}: {warning}")
 
 
 def srt_time(seconds):

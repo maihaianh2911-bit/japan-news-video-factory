@@ -11,15 +11,16 @@ import sys
 
 from PIL import Image, ImageOps
 
+from .edits import cut_problems, move_problems
 from .sources import Release
 from .story import Beat
 from .visuals import Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker"}
 STYLES = ("news", "paper")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo"}
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why"}
 LINE_KEYS = {"text", "say"}
-PHOTO_KEYS = {"pick", "focus", "fit"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move"}
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
 
@@ -83,6 +84,7 @@ def check_photo(photo, where, searches):
             problems.append(f'{where}: "focus" must be [x, y] with numbers from 0 to 1, got {focus!r}')
     if "fit" in photo and photo["fit"] not in ("cover", "contain"):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
+    problems += move_problems(photo, where)
     return problems
 
 
@@ -140,6 +142,7 @@ def validate(data, name=None):
                     problems += text_problem(line, at)
         if "photo" in scene:
             problems += check_photos(scene["photo"], where, searches)
+        problems += cut_problems(scene, where)
     return problems
 
 
@@ -213,7 +216,8 @@ def load_story(path, pictures=None):
         picks = picks_of(scene)
         visual = "photo" if picks else "data" if scene.get("value") else "document"
         beats.append(Beat(scene.get("label", "ニュース"), scene["headline"], tuple(lines), visual,
-                          scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else ()))
+                          scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else (),
+                          scene.get("cut", ""), scene.get("why", "")))
         if picks:
             if found is None:
                 raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "
@@ -226,7 +230,7 @@ def load_story(path, pictures=None):
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                           pick.get("fit", "cover")))
+                                           pick.get("fit", "cover"), pick.get("move", "")))
     return release, beats, photos
 
 
