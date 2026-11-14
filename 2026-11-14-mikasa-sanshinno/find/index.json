@@ -2,91 +2,1591 @@
  {
   "k": 1,
   "query": "web:三笠宮家 三親王 寛仁親王 宜仁親王 憲仁親王",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "桂宮宜仁親王 - Wikiwand",
+    "page": "https://www.wikiwand.com/ja/%E6%A1%82%E5%AE%AE%E5%AE%9C%E4%BB%81%E8%A6%AA%E7%8E%8B",
+    "image": "https://img.wikiwand.com/wikipedia/commons/thumb/6/6f/Prince_Yoshi.jpg/1280px-Prince_Yoshi.jpg",
+    "width": 1280,
+    "height": 1834,
+    "license": "",
+    "license_url": "",
+    "artist": "wikiwand.com",
+    "description": "桂宮宜仁親王 - Wikiwand",
+    "file": "1-1.jpg"
+   },
+   {
+    "title": "そこまで殿下がおっしゃるなら…」寛仁さまが、麻生太郎氏の実妹 ...",
+    "page": "https://bunshun.jp/articles/-/83753?page=1",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/8/d/414wm/img_8dd124e64423767ff04854c9088e21e8223951.jpg",
+    "width": 414,
+    "height": 856,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "そこまで殿下がおっしゃるなら…」寛仁さまが、麻生太郎氏の実妹 ...",
+    "file": "1-2.jpg"
+   },
+   {
+    "title": "桂宮宜仁親王がご薨去 - ウィキニュース",
+    "page": "https://ja.wikinews.org/wiki/%E6%A1%82%E5%AE%AE%E5%AE%9C%E4%BB%81%E8%A6%AA%E7%8E%8B%E3%81%8C%E3%81%94%E8%96%A8%E5%8E%BB",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Princess_Mikasa_and_her_children.jpg?utm_source=ja.wikinews.org&utm_campaign=index&utm_content=original",
+    "width": 686,
+    "height": 707,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikinews.org",
+    "description": "桂宮宜仁親王がご薨去 - ウィキニュース",
+    "file": "1-3.jpg"
+   },
+   {
+    "title": "解説資料⑪現在の宮家は女性皇族しかおられず、いずれ廃絶する ...",
+    "page": "https://kdentou.com/archives/3040",
+    "image": "https://kdentou.com/wp-content/uploads/2021/02/siryou5-1-page-002thumbnail.jpg",
+    "width": 1500,
+    "height": 1125,
+    "license": "",
+    "license_url": "",
+    "artist": "kdentou.com",
+    "description": "解説資料⑪現在の宮家は女性皇族しかおられず、いずれ廃絶する ...",
+    "file": "1-4.jpg"
+   },
+   {
+    "title": "皇室特集～三笠宮家・桂宮家・高円宮家～ | 写真特集 IMAGELINK ...",
+    "page": "https://imagelink.kyodonews.jp/pick?id=478",
+    "image": "https://il-data.s3.ap-northeast-1.amazonaws.com/apps/front/features/img/TOP/478/478S.jpg",
+    "width": 588,
+    "height": 415,
+    "license": "",
+    "license_url": "",
+    "artist": "imagelink.kyodonews.jp",
+    "description": "皇室特集～三笠宮家・桂宮家・高円宮家～ | 写真特集 IMAGELINK ...",
+    "file": "1-5.jpg"
+   },
+   {
+    "title": "十一宮家物語〈第九回〉】「皇族の養子縁組」の意義と皇室の現状 ...",
+    "page": "https://kdentou.com/archives/4320",
+    "image": "https://kdentou.com/wp-content/uploads/2022/11/5621deba8a18b839c7a4321764bb05e8-6.jpg",
+    "width": 720,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "kdentou.com",
+    "description": "十一宮家物語〈第九回〉】「皇族の養子縁組」の意義と皇室の現状 ...",
+    "file": "1-6.jpg"
+   },
+   {
+    "title": "高円宮憲仁親王 - Wikiwand",
+    "page": "https://www.wikiwand.com/ja/%E9%AB%98%E5%86%86%E5%AE%AE%E6%86%B2%E4%BB%81%E8%A6%AA%E7%8E%8B",
+    "image": "https://img.wikiwand.com/wikipedia/commons/thumb/2/2d/The_Late_Prince_Takamado.jpg/1280px-The_Late_Prince_Takamado.jpg",
+    "width": 1280,
+    "height": 1280,
+    "license": "",
+    "license_url": "",
+    "artist": "wikiwand.com",
+    "description": "高円宮憲仁親王 - Wikiwand",
+    "file": "1-7.jpg"
+   },
+   {
+    "title": "ヒゲの殿下”三笠宮家の寛仁さま 「7年越しのプロポーズ」 婚約 ...",
+    "page": "https://www.youtube.com/watch?v=4gRdb-lq-lg",
+    "image": "https://i.ytimg.com/vi/4gRdb-lq-lg/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "ヒゲの殿下”三笠宮家の寛仁さま 「7年越しのプロポーズ」 婚約 ...",
+    "file": "1-8.jpg"
+   },
+   {
+    "title": "三笠宮家の現在はどうなる？彬子さまと信子さまの動向と存続論争 ...",
+    "page": "https://ftp.vestfoldmaritim.no/hqgvondx/8556496/",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/f22001a908184be3a55f787686647934/f125e636-75af-4e5a-a7a1-737d279bdeb7.jpg?w=1200",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "ftp.vestfoldmaritim.no",
+    "description": "三笠宮家の現在はどうなる？彬子さまと信子さまの動向と存続論争 ...",
+    "file": "1-9.jpg"
+   },
+   {
+    "title": "画像・写真13枚目】三笠宮家・彬子さま 『徹子の部屋』ご出演も ...",
+    "page": "https://jisin.jp/koushitsu/2372122/image/12/",
+    "image": "https://img.jisin.jp/uploads/2024/09/mikasanomiya2_jmpa.jpg.webp",
+    "width": 800,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "jisin.jp",
+    "description": "画像・写真13枚目】三笠宮家・彬子さま 『徹子の部屋』ご出演も ...",
+    "file": "1-10.jpg"
+   },
+   {
+    "title": "桂宮宜仁親王_百度百科",
+    "page": "https://baike.baidu.com/ja/item/%E6%A1%82%E5%AE%AE%E5%AE%9C%E4%BB%81%E8%A6%AA%E7%8E%8B/1389992",
+    "image": "https://gbaike-image.cdn.bcebos.com/95eef01f3a292df5e0febd7de6684b6034a85edfd518/95eef01f3a292df5e0febd7de6684b6034a85edfd518_16_9?x-bce-process=image/format,f_auto",
+    "width": 1080,
+    "height": 1329,
+    "license": "",
+    "license_url": "",
+    "artist": "baike.baidu.com",
+    "description": "桂宮宜仁親王_百度百科",
+    "file": "1-11.jpg"
+   },
+   {
+    "title": "大河阪急＠HK-08 on X: \"三笠宮崇仁親王殿下とその妃百合子殿下 ...",
+    "page": "https://x.com/hankyu_taiga/status/1857425485485191170",
+    "image": "https://jf.x.com/images/media-preview/1857425485485191170",
+    "width": 1200,
+    "height": 538,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "大河阪急＠HK-08 on X: \"三笠宮崇仁親王殿下とその妃百合子殿下 ...",
+    "file": "1-12.jpg"
+   }
+  ]
  },
  {
   "k": 2,
   "query": "web:三笠宮崇仁親王 百合子妃 家族 写真",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/06/post-509f66.html",
+    "image": "http://kusagusa.cocolog-nifty.com/photos/uncategorized/mikasap2_20190621191701.jpg",
+    "width": 600,
+    "height": 717,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "file": "2-1.jpg"
+   },
+   {
+    "title": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/06/post-509f66.html",
+    "image": "http://kusagusa.cocolog-nifty.com/dairy/images/1349035787884.jpg",
+    "width": 595,
+    "height": 482,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "file": "2-2.jpg"
+   },
+   {
+    "title": "緊迫の激論、三笠宮さまの悔い…百合子さまが見つめた玉音放送の ...",
+    "page": "https://mainichi.jp/articles/20241115/k00/00m/040/044000c",
+    "image": "https://cdn.mainichi.jp/vol1/2024/11/15/20241115k0000m040029000p/0c10.jpg?1",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "緊迫の激論、三笠宮さまの悔い…百合子さまが見つめた玉音放送の ...",
+    "file": "2-3.jpg"
+   },
+   {
+    "title": "ご子息お3人に先立たれ、車いすで葬儀ご参列も 三笠宮妃百合子 ...",
+    "page": "https://www.sankei.com/article/20241115-OQ5DU5SLVNLRXDVB5TYBTMMKHI/",
+    "image": "https://www.sankei.com/resizer/v2/UJOJSPZM4BOSDOHTNGFRYTJENA.jpg?auth=3a0c904084f8224fc04ab7b7bb664b73e856e39af49c183693c6f4fd78ea23d2&quality=40&smart=true&width=1200",
+    "width": 1200,
+    "height": 1331,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "ご子息お3人に先立たれ、車いすで葬儀ご参列も 三笠宮妃百合子 ...",
+    "file": "2-4.jpg"
+   },
+   {
+    "title": "記者梅花新聞網高陸/綜合報導| 日皇室最高齡成員三笠宮崇仁親 ...",
+    "page": "https://www.i-meihua.com/Article/Detail/17160",
+    "image": "https://www.i-meihua.com/FileUploads/ArticlePhoto/aae3a41b-269d-42d1-aa78-c7c4a25c2d8f.jpg",
+    "width": 679,
+    "height": 452,
+    "license": "",
+    "license_url": "",
+    "artist": "i-meihua.com",
+    "description": "記者梅花新聞網高陸/綜合報導| 日皇室最高齡成員三笠宮崇仁親 ...",
+    "file": "2-5.jpg"
+   },
+   {
+    "title": "秋篠宮ご一家“大変お寂しい思い” 三笠宮妃百合子さまのご逝去 ...",
+    "page": "https://news.ntv.co.jp/category/society/e62579f0df95492fbc2e6c56aee3a83c",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/bc0f50e8bf63437898c4e5d2415bb20d/3d5b98ef-0667-456e-af58-789721fb3278.png?w=1200",
+    "width": 1200,
+    "height": 1800,
+    "license": "",
+    "license_url": "",
+    "artist": "news.ntv.co.jp",
+    "description": "秋篠宮ご一家“大変お寂しい思い” 三笠宮妃百合子さまのご逝去 ...",
+    "file": "2-6.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子さまご逝去…その生涯は 孫・彬子さま「目標となる ...",
+    "page": "https://news.ntv.co.jp/category/society/d5bbddd30edc4373a8f3296b84da11b9",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/84344456b2c74c79a2f2db9823b753a7/8406f1b7-5ebf-4230-8de2-063f4692f950.jpeg?w=1200",
+    "width": 960,
+    "height": 540,
+    "license": "",
+    "license_url": "",
+    "artist": "news.ntv.co.jp",
+    "description": "三笠宮妃百合子さまご逝去…その生涯は 孫・彬子さま「目標となる ...",
+    "file": "2-7.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子妃殿下 薨去 | たくのブログ",
+    "page": "https://ameblo.jp/takuchan-sing/entry-12875073577.html",
+    "image": "https://stat.ameba.jp/user_images/20241115/09/takuchan-sing/a8/c6/j/o1080071715510159872.jpg",
+    "width": 1080,
+    "height": 717,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "三笠宮妃百合子妃殿下 薨去 | たくのブログ",
+    "file": "2-8.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子妃殿下 薨去 | たくのブログ",
+    "page": "https://ameblo.jp/takuchan-sing/entry-12875073577.html",
+    "image": "https://stat.ameba.jp/user_images/20241115/12/takuchan-sing/48/06/j/o0640047915510216604.jpg",
+    "width": 640,
+    "height": 479,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "三笠宮妃百合子妃殿下 薨去 | たくのブログ",
+    "file": "2-9.jpg"
+   },
+   {
+    "title": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/06/post-509f66.html",
+    "image": "http://kusagusa.cocolog-nifty.com/photos/uncategorized/rsd76971.jpg",
+    "width": 1000,
+    "height": 759,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "file": "2-10.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子さま逝去 「宮さま」慕い、5人の子育て その歩み ...",
+    "page": "https://mainichi.jp/articles/20241115/k00/00m/040/021000c",
+    "image": "https://cdn.mainichi.jp/vol1/2024/11/15/20241115k0000m040028000p/9.jpg?1",
+    "width": 800,
+    "height": 622,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "三笠宮妃百合子さま逝去 「宮さま」慕い、5人の子育て その歩み ...",
+    "file": "2-11.jpg"
+   },
+   {
+    "title": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/06/post-509f66.html",
+    "image": "http://kusagusa.cocolog-nifty.com/photos/uncategorized/imsscantt01161330f1000x1000.jpg",
+    "width": 735,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "三笠宮崇仁親王妃百合子殿下のお着物: 雪姉ちゃんは目のふちが気 ...",
+    "file": "2-12.jpg"
+   }
+  ]
  },
  {
   "k": 3,
   "query": "web:寛仁親王 ヒゲの殿下",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "寬仁親王殿下のありのままの姿を伝える。『ひげの殿下日記～The ...",
+    "page": "https://www.shogakukan.co.jp/news/475358",
+    "image": "https://www.shogakukan.co.jp/storage/files/article/2022/Bearded%20Prince_main.jpg",
+    "width": 611,
+    "height": 614,
+    "license": "",
+    "license_url": "",
+    "artist": "shogakukan.co.jp",
+    "description": "寬仁親王殿下のありのままの姿を伝える。『ひげの殿下日記～The ...",
+    "file": "3-1.jpg"
+   },
+   {
+    "title": "ヒゲの殿下」と呼ばれた寛仁さま 震災後も精力的に公務を続けた ...",
+    "page": "https://www.asahi.com/articles/AST5W21R0T5WUTIL008M.html",
+    "image": "https://www.asahicom.jp/imgopt/img/da9194665d/hd640/AS20250527002439.jpg",
+    "width": 551,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "asahi.com",
+    "description": "ヒゲの殿下」と呼ばれた寛仁さま 震災後も精力的に公務を続けた ...",
+    "file": "3-2.jpg"
+   },
+   {
+    "title": "エッセイで知る寬仁親王殿下の素顔（第1回）『ひげの殿下日記 ...",
+    "page": "https://intojapanwaraku.com/rock/culture-rock/198464/",
+    "image": "https://intojapanwaraku.com/wp-content/uploads/2022/04/C82A20A7-13AF-484D-8B6E-B7ED7CF358B4-1024x683.jpeg",
+    "width": 1024,
+    "height": 683,
+    "license": "",
+    "license_url": "",
+    "artist": "intojapanwaraku.com",
+    "description": "エッセイで知る寬仁親王殿下の素顔（第1回）『ひげの殿下日記 ...",
+    "file": "3-3.jpg"
+   },
+   {
+    "title": "寬仁親王殿下 薨去から10年、書籍『ひげの殿下日記～The Diary ...",
+    "page": "https://intojapanwaraku.com/rock/culture-rock/201698/",
+    "image": "http://intojapanwaraku.com/wp-content/uploads/2022/05/CE887C0F-D138-46EF-9296-E18B86842655-1024x576.jpeg",
+    "width": 1024,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "intojapanwaraku.com",
+    "description": "寬仁親王殿下 薨去から10年、書籍『ひげの殿下日記～The Diary ...",
+    "file": "3-4.jpg"
+   },
+   {
+    "title": "ひげの殿下日記: The Diary of the Bearded Prince | 寛仁 親王 ...",
+    "page": "https://www.amazon.co.jp/%E3%81%B2%E3%81%92%E3%81%AE%E6%AE%BF%E4%B8%8B%E6%97%A5%E8%A8%98-Bearded-Prince-%E5%AF%9B%E4%BB%81-%E8%A6%AA%E7%8E%8B/dp/4093888590",
+    "image": "https://m.media-amazon.com/images/I/51SYaBTSnYL._AC_UF1000,1000_QL80_.jpg",
+    "width": 708,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "ひげの殿下日記: The Diary of the Bearded Prince | 寛仁 親王 ...",
+    "file": "3-5.jpg"
+   },
+   {
+    "title": "三笠宮家の寛仁さま逝去 66歳、\"ひげの殿下\" - YouTube",
+    "page": "https://www.youtube.com/watch?v=_EFVVsVkEoE",
+    "image": "https://i.ytimg.com/vi/_EFVVsVkEoE/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "三笠宮家の寛仁さま逝去 66歳、\"ひげの殿下\" - YouTube",
+    "file": "3-6.jpg"
+   },
+   {
+    "title": "三笠宮家・百合子さま、“ヒゲの殿下”寛仁さま逝去から10年も母娘 ...",
+    "page": "https://www.jprime.jp/articles/-/24217?display=b",
+    "image": "https://jprime.ismcdn.jp/mwimgs/a/8/620mw/img_a8e477809c10d5d7d9c0ced98c532df7259522.jpg",
+    "width": 620,
+    "height": 413,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "三笠宮家・百合子さま、“ヒゲの殿下”寛仁さま逝去から10年も母娘 ...",
+    "file": "3-7.jpg"
+   },
+   {
+    "title": "そこまで殿下がおっしゃるなら…」寛仁さまが、麻生太郎氏の実妹 ...",
+    "page": "https://bunshun.jp/articles/-/83753?page=1",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/4/3/414wm/img_4391711091307d15b24e40c22d98386e176249.jpg",
+    "width": 414,
+    "height": 414,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "そこまで殿下がおっしゃるなら…」寛仁さまが、麻生太郎氏の実妹 ...",
+    "file": "3-8.jpg"
+   },
+   {
+    "title": "お座敷天ぷら みつや 寛仁親王殿下(通称:ヒゲの殿下)、みつやへ ...",
+    "page": "https://tempura-mitsuya.fc2.net/blog-entry-11.html",
+    "image": "https://blog-imgs-140.fc2.com/t/e/m/tempuramitsuya/Tempura_Mitsuya_Tomohito_Shinno_Memorial.jpg",
+    "width": 1215,
+    "height": 911,
+    "license": "",
+    "license_url": "",
+    "artist": "tempura-mitsuya.fc2.net",
+    "description": "お座敷天ぷら みつや 寛仁親王殿下(通称:ヒゲの殿下)、みつやへ ...",
+    "file": "3-9.jpg"
+   },
+   {
+    "title": "重要書籍紹介)「ひげの殿下日記」 文／寬仁親王 監／彬子女王 ...",
+    "page": "https://kdentou.com/archives/4090",
+    "image": "https://kdentou.com/wp-content/uploads/2022/10/1a66df0b92ed89da0f2d1f9ea9f80df8-706x1024.jpg",
+    "width": 706,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "kdentou.com",
+    "description": "重要書籍紹介)「ひげの殿下日記」 文／寬仁親王 監／彬子女王 ...",
+    "file": "3-10.jpg"
+   },
+   {
+    "title": "なぜトド？ 「ひげの殿下」が生前30年間にわたって書き残した ...",
+    "page": "https://books.j-cast.com/topics/2022/06/05018263.html",
+    "image": "https://books.j-cast.com/images/2022/06/book_20220602145514.jpg",
+    "width": 598,
+    "height": 598,
+    "license": "",
+    "license_url": "",
+    "artist": "books.j-cast.com",
+    "description": "なぜトド？ 「ひげの殿下」が生前30年間にわたって書き残した ...",
+    "file": "3-11.jpg"
+   }
+  ]
  },
  {
   "k": 4,
   "query": "web:寛仁親王 殿下 写真",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "Dog And Cat Coloring Pages",
+    "page": "https://veri-art.net/dog-and-cat-coloring-pages/",
+    "image": "https://d.newsweek.com/en/full/2235747/golden-retriever-bernese-mountain-dog.jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "veri-art.net",
+    "description": "Dog And Cat Coloring Pages",
+    "file": "4-1.jpg"
+   },
+   {
+    "title": "10 Most Popular Dog Breeds",
+    "page": "https://www.readersdigest.ca/pets/breeds/10-most-popular-dog-breeds",
+    "image": "https://www.readersdigest.ca/wp-content/uploads/2013/02/beagle-most-popular-dog-breeds.jpg",
+    "width": 1000,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "readersdigest.ca",
+    "description": "10 Most Popular Dog Breeds",
+    "file": "4-2.jpg"
+   },
+   {
+    "title": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "page": "https://caringforadog.com/choosing-dogs-by-climate/",
+    "image": "https://koala.sh/api/image/v2-7jc5w-ozc97.jpg?width=1216&height=832&dream",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "caringforadog.com",
+    "description": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "file": "4-3.jpg"
+   },
+   {
+    "title": "Domestic Dog: Facts, Characteristics, Anatomy, Pictures",
+    "page": "https://animalvivid.com/animals/mammals/dog/",
+    "image": "https://animalvivid.com/wp-content/uploads/2023/03/Different-Dog-Breeds-Sitting-on-Grass-768x512.jpg",
+    "width": 768,
+    "height": 512,
+    "license": "",
+    "license_url": "",
+    "artist": "animalvivid.com",
+    "description": "Domestic Dog: Facts, Characteristics, Anatomy, Pictures",
+    "file": "4-4.jpg"
+   },
+   {
+    "title": "Top 5 Japanese Dog Breeds",
+    "page": "https://spotpetinsurance.ca/blog/breed-tips/japanese-dog-breeds",
+    "image": "https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198404/755489113b480b4fb7c386820bc528c8/Top-5-Japanese-Dog-Breeds.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "spotpetinsurance.ca",
+    "description": "Top 5 Japanese Dog Breeds",
+    "file": "4-5.jpg"
+   },
+   {
+    "title": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "page": "https://iheartdogs.com/nature-loving-dog-breeds-who-thrive-in-woods-and-water/",
+    "image": "https://iheartdogs.com/wp-content/uploads/2025/05/dog-grass-4-1.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "iheartdogs.com",
+    "description": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "file": "4-6.jpg"
+   },
+   {
+    "title": "400,000+ Free Cute Dog Wallpaper & Dog Images - Pixabay",
+    "page": "https://pixabay.com/images/search/cute dog wallpaper/",
+    "image": "https://cdn.pixabay.com/photo/2022/01/23/16/06/dog-6961236_1280.jpg",
+    "width": 1280,
+    "height": 853,
+    "license": "",
+    "license_url": "",
+    "artist": "pixabay.com",
+    "description": "400,000+ Free Cute Dog Wallpaper & Dog Images - Pixabay",
+    "file": "4-7.jpg"
+   },
+   {
+    "title": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "page": "https://caringforadog.com/choosing-dogs-by-climate/",
+    "image": "https://koala.sh/api/image/v2-7jc0g-rmtjf.jpg?width=1216&height=832&dream",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "caringforadog.com",
+    "description": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "file": "4-8.jpg"
+   },
+   {
+    "title": "Older Woman Mouth Open Tongue Out Photos, Download The BEST Free Older ...",
+    "page": "https://www.pexels.com/search/older woman mouth open tongue out/",
+    "image": "https://images.pexels.com/photos/19024652/pexels-photo-19024652.jpeg?cs=srgb&dl=pexels-csibeman-19024652.jpg&fm=jpg",
+    "width": 1600,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Older Woman Mouth Open Tongue Out Photos, Download The BEST Free Older ...",
+    "file": "4-9.jpg"
+   },
+   {
+    "title": "The Domestic Dog: Origins, Evolution, and Fascinating Facts",
+    "page": "https://www.nahf.org/article/domestic-dog",
+    "image": "https://images.pexels.com/photos/8924984/pexels-photo-8924984.jpeg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "The Domestic Dog: Origins, Evolution, and Fascinating Facts",
+    "file": "4-10.jpg"
+   },
+   {
+    "title": "Names Of Dogs In Movies 60 Photos - Moonagedaydream.film",
+    "page": "https://moonagedaydream.film/movie/names-of-dogs-in-movies",
+    "image": "https://englishilm.com/wp-content/uploads/2025/06/Dog-Breeds-with-Pictures.png",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "moonagedaydream.film",
+    "description": "Names Of Dogs In Movies 60 Photos - Moonagedaydream.film",
+    "file": "4-11.jpg"
+   },
+   {
+    "title": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "page": "https://www.nahf.org/article/natural-breeds-of-dogs",
+    "image": "https://images.pexels.com/photos/29590685/pexels-photo-29590685.jpeg?auto=compress&cs=tinysrgb&w=1056",
+    "width": 1056,
+    "height": 704,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "file": "4-12.jpg"
+   }
+  ]
  },
  {
   "k": 5,
   "query": "web:寛仁親王 晩年 笑顔",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "寛仁親王の生涯と家族関係の深層｜ヒゲの殿下が遺した闘病と皇室 ...",
+    "page": "https://api.gutenberghub.com/kuan-ren-qin-wangno-sheng-yato-jia-zu-guan-xino-shen-ceng-higeno-dian-xiaga-yishita-dou-bingto-huang-shino-jin-00440285.html",
+    "image": "https://www.merit-times.com/newsimport/%E7%A6%8F%E5%A0%B1%E9%9B%BB%E5%AD%90%E5%A0%B120120607081000/images/76004034.webp",
+    "width": 1200,
+    "height": 1730,
+    "license": "",
+    "license_url": "",
+    "artist": "api.gutenberghub.com",
+    "description": "寛仁親王の生涯と家族関係の深層｜ヒゲの殿下が遺した闘病と皇室 ...",
+    "file": "5-1.jpg"
+   },
+   {
+    "title": "寬仁親王殿下薨去から3年「父からの最高の宝物──三笠宮家との ...",
+    "page": "https://www.huffingtonpost.jp/princess-akiko/gift-from-father_b_7528198.html",
+    "image": "https://img.huffingtonpost.com/asset/5c63be372400000802a272e5.jpeg?ops=1200_630",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "huffingtonpost.jp",
+    "description": "寬仁親王殿下薨去から3年「父からの最高の宝物──三笠宮家との ...",
+    "file": "5-2.jpg"
+   },
+   {
+    "title": "ともひとしんのう_百度百科",
+    "page": "https://baike.baidu.com/ja/item/%E3%81%A8%E3%82%82%E3%81%B2%E3%81%A8%E3%81%97%E3%82%93%E3%81%AE%E3%81%86/1174157",
+    "image": "https://gbaike-image.cdn.bcebos.com/e1fe9925bc315c6034a8d2b57beadc1349540923d96f/e1fe9925bc315c6034a8d2b57beadc1349540923d96f_1_1?x-bce-process=image/format,f_auto",
+    "width": 600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "baike.baidu.com",
+    "description": "ともひとしんのう_百度百科",
+    "file": "5-3.jpg"
+   },
+   {
+    "title": "写真特集19/18] | 毎日新聞",
+    "page": "https://mainichi.jp/graphs/20161027/hpj/00m/040/001000g/20161027hpj00m040009000q",
+    "image": "https://cdn.mainichi.jp/vol1/2016/10/27/20161027hpj00m040010000q/9.jpg?1",
+    "width": 618,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "写真特集19/18] | 毎日新聞",
+    "file": "5-4.jpg"
+   },
+   {
+    "title": "ともひとしんのう_百度百科",
+    "page": "https://baike.baidu.com/ja/item/%E3%81%A8%E3%82%82%E3%81%B2%E3%81%A8%E3%81%97%E3%82%93%E3%81%AE%E3%81%86/1174157",
+    "image": "https://gbaike-image.cdn.bcebos.com/71cf3bc79f3df8dcd10009cb3b4a658b4710b912826f/71cf3bc79f3df8dcd10009cb3b4a658b4710b912826f_1_1?x-bce-process=image/format,f_auto",
+    "width": 600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "baike.baidu.com",
+    "description": "ともひとしんのう_百度百科",
+    "file": "5-5.jpg"
+   },
+   {
+    "title": "三笠宮寛仁 1978年 東京 赤坂[22973001789]の写真・イラスト素材 ...",
+    "page": "https://amanaimages.com/info/infoRM.aspx?SearchKey=22973001789",
+    "image": "https://static.amanaimages.com/imgroom/cen3tzG4fTr7Gtw1PoeRer/22973/22973001789.jpg",
+    "width": 491,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "amanaimages.com",
+    "description": "三笠宮寛仁 1978年 東京 赤坂[22973001789]の写真・イラスト素材 ...",
+    "file": "5-6.jpg"
+   },
+   {
+    "title": "彬子女王の父、寛仁親王による伝説の『オールナイトニッポン』と ...",
+    "page": "https://cyzo.jp/cyzowoman/post_384349/",
+    "image": "https://cyzo.jp/wp-content/uploads/2025/05/TomohitoofMikasa-1.jpg",
+    "width": 520,
+    "height": 700,
+    "license": "",
+    "license_url": "",
+    "artist": "cyzo.jp",
+    "description": "彬子女王の父、寛仁親王による伝説の『オールナイトニッポン』と ...",
+    "file": "5-7.jpg"
+   }
+  ]
  },
  {
   "k": 6,
   "query": "web:Prince Tomohito of Mikasa",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "Prince Tomohito of Mikasa - Simple English Wikipedia, the ...",
+    "page": "https://simple.wikipedia.org/wiki/Prince_Tomohito_of_Mikasa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/Tomohito.JPG?utm_source=simple.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 633,
+    "height": 556,
+    "license": "",
+    "license_url": "",
+    "artist": "simple.wikipedia.org",
+    "description": "Prince Tomohito of Mikasa - Simple English Wikipedia, the ...",
+    "file": "6-1.jpg"
+   },
+   {
+    "title": "Her Imperial Highness Princess Tomohito of Mikasa Was ...",
+    "page": "https://www.ijf.org/news/show/her-imperial-highness-princess-tomohito-of-mikasa-was-welcomed-at-ijf-headquarters",
+    "image": "https://res.cloudinary.com/duu3v9gfg/image/fetch/t_fit_1920/https://78884ca60822a34fb0e6-082b8fd5551e97bc65e327988b444396.ssl.cf3.rackcdn.com/up/2023/08/_S_I3713-Enhanced-NR-169108445-1691084456.jpg",
+    "width": 1478,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "ijf.org",
+    "description": "Her Imperial Highness Princess Tomohito of Mikasa Was ...",
+    "file": "6-2.jpg"
+   }
+  ]
  },
  {
   "k": 7,
   "query": "web:桂宮宜仁親王",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "桂宮さま逝去 両陛下や皇太子ご夫妻が弔問(14/06/09) - YouTube",
+    "page": "https://www.youtube.com/watch?v=USdGcOEUOsM",
+    "image": "https://i.ytimg.com/vi/USdGcOEUOsM/sddefault.jpg",
+    "width": 640,
+    "height": 480,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "桂宮さま逝去 両陛下や皇太子ご夫妻が弔問(14/06/09) - YouTube",
+    "file": "7-1.jpg"
+   },
+   {
+    "title": "日本財団図書館（電子図書館） 第48回桂宮杯全日本水上スキー ...",
+    "page": "https://nippon.zaidan.info/seikabutsu/2002/00648/contents/001.htm",
+    "image": "https://nippon.zaidan.info/seikabutsu/2002/00648/images/002.jpg",
+    "width": 450,
+    "height": 641,
+    "license": "",
+    "license_url": "",
+    "artist": "nippon.zaidan.info",
+    "description": "日本財団図書館（電子図書館） 第48回桂宮杯全日本水上スキー ...",
+    "file": "7-2.jpg"
+   },
+   {
+    "title": "オーストラリア国立大大学院留学を前に記者会見される…：桂宮 ...",
+    "page": "https://www.jiji.com/jc/d4?p=ktm406-jpp04781579&d=d4_jj",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_jj/ktm406-jpp04781579.jpg",
+    "width": 452,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "オーストラリア国立大大学院留学を前に記者会見される…：桂宮 ...",
+    "file": "7-3.jpg"
+   },
+   {
+    "title": "月见炒饭主席（公式）【💧🕊️】→【🌾⚙️】 on X: \"桂宮宜仁 ...",
+    "page": "https://x.com/Izuminnaga10/status/2068736876094357748",
+    "image": "https://pbs.twimg.com/media/HLVLjxYbAAA3iFr?format=webp&name=large",
+    "width": 1520,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "月见炒饭主席（公式）【💧🕊️】→【🌾⚙️】 on X: \"桂宮宜仁 ...",
+    "file": "7-4.jpg"
+   },
+   {
+    "title": "桂宫宜仁亲王- 抖音百科",
+    "page": "https://m.baike.com/wikiid/6271238090936081598",
+    "image": "https://p3-sdbk2-media.byteimg.com/tos-cn-i-xv4ileqgde/e8a8e2b064ce445f933f26483dcde850~tplv-xv4ileqgde-resize-w:720.image",
+    "width": 529,
+    "height": 673,
+    "license": "",
+    "license_url": "",
+    "artist": "m.baike.com",
+    "description": "桂宫宜仁亲王- 抖音百科",
+    "file": "7-5.jpg"
+   }
+  ]
  },
  {
   "k": 8,
   "query": "web:桂宮宜仁親王 若い頃",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "桂宮さま：桂宮宜仁さま 写真特集：時事ドットコム",
+    "page": "https://www.jiji.com/jc/d4?p=ktm406-jpp017317388&d=d4_jj",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_jj/ktm406-jpp017317388.jpg",
+    "width": 436,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "桂宮さま：桂宮宜仁さま 写真特集：時事ドットコム",
+    "file": "8-1.jpg"
+   },
+   {
+    "title": "桂宮宜仁親王殿下、御薨去・・・ | 韓流研究室",
+    "page": "http://toriton.blog2.fc2.com/blog-entry-3080.html",
+    "image": "http://blog-imgs-70.fc2.com/t/o/r/toriton/miimg_2.jpg",
+    "width": 800,
+    "height": 821,
+    "license": "",
+    "license_url": "",
+    "artist": "toriton.blog2.fc2.com",
+    "description": "桂宮宜仁親王殿下、御薨去・・・ | 韓流研究室",
+    "file": "8-2.jpg"
+   },
+   {
+    "title": "月见炒饭主席（公式）【💧🕊️】→【🌾⚙️】 on X: \"桂宮宜仁 ...",
+    "page": "https://x.com/Izuminnaga10/status/2068736876094357748",
+    "image": "https://pbs.twimg.com/media/HLVLjxbboAArQpF?format=webp&name=large",
+    "width": 1547,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "月见炒饭主席（公式）【💧🕊️】→【🌾⚙️】 on X: \"桂宮宜仁 ...",
+    "file": "8-3.jpg"
+   }
+  ]
  },
  {
   "k": 9,
   "query": "web:桂宮宜仁親王 車椅子 公務",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "どら猫さとっち on X: \"RT @TAMA6SI: バニラエアの件で思い出し ...",
+    "page": "https://x.com/satocchi120/status/880392014407155713",
+    "image": "https://pbs.twimg.com/media/DDaxwdgVoAAQ4wK?format=webp&name=large",
+    "width": 407,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "どら猫さとっち on X: \"RT @TAMA6SI: バニラエアの件で思い出し ...",
+    "file": "9-1.jpg"
+   },
+   {
+    "title": "フォトギャラリー】【皇室ウイークリー】（387）両陛下、桂宮 ...",
+    "page": "https://www.sankei.com/gallery/20150612-7RAPIVVJZBOMDNE7W5FFWAYALA/",
+    "image": "https://www.sankei.com/resizer/v2/N2EB7DVV3NPFFA567RBLBBSJSY.jpg?auth=3bf1003b70d274c9904bb50b92f5556bce43f79afaaaa65bc2c5b5bf942cb681&quality=40&smart=true&width=402&height=600",
+    "width": 402,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "フォトギャラリー】【皇室ウイークリー】（387）両陛下、桂宮 ...",
+    "file": "9-2.jpg"
+   },
+   {
+    "title": "皇室ウイークリー】（387）両陛下、桂宮さまの墓前でご拝礼 ...",
+    "page": "https://www.sankei.com/article/20150613-AH77TDO5MRNTPB3JYQGT4IW654/",
+    "image": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/7WIV6TEYZNMWZASXPCIBMMFDWE.jpg",
+    "width": 600,
+    "height": 408,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "皇室ウイークリー】（387）両陛下、桂宮さまの墓前でご拝礼 ...",
+    "file": "9-3.jpg"
+   }
+  ]
  },
  {
   "k": 10,
   "query": "web:高円宮憲仁親王",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "高円宮憲仁親王の急逝と偉業｜Aed普及・サッカーW杯と家族の現在 ...",
+    "page": "https://info.cemiar.com/gao-yuan-gong-xian-ren-qin-wangno-ji-shito-wei-ye-aed-pu-ji-sakkaw-beito-jia-zuno-xian-zai-00337686.html",
+    "image": "https://www.suzukimethod.or.jp/monthly/_src/96908/miyasama8.jpg?v=1701129087599",
+    "width": 1500,
+    "height": 1008,
+    "license": "",
+    "license_url": "",
+    "artist": "info.cemiar.com",
+    "description": "高円宮憲仁親王の急逝と偉業｜Aed普及・サッカーW杯と家族の現在 ...",
+    "file": "10-1.jpg"
+   },
+   {
+    "title": "佐田興三 高円宮憲仁親王殿下 | 太平洋美術会",
+    "page": "https://www.taiheiyobijutu.or.jp/members/95/works/15951",
+    "image": "https://www.taiheiyobijutu.or.jp/images/works/95/06af26392de9a1936359b78bd63cd5425c48d9ebb2102982b363069af4ba4c5e.jpg",
+    "width": 1098,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "taiheiyobijutu.or.jp",
+    "description": "佐田興三 高円宮憲仁親王殿下 | 太平洋美術会",
+    "file": "10-2.jpg"
+   },
+   {
+    "title": "高円宮さまって本当に皇太子殿下のことを思ってくださっていた ...",
+    "page": "http://retsugaiha.blog.fc2.com/blog-entry-1473.html",
+    "image": "http://blog-imgs-92.fc2.com/r/e/t/retsugaiha/img20071210120640_20160610234658f3ds.jpg",
+    "width": 417,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "retsugaiha.blog.fc2.com",
+    "description": "高円宮さまって本当に皇太子殿下のことを思ってくださっていた ...",
+    "file": "10-3.jpg"
+   },
+   {
+    "title": "高円宮憲仁親王殿下を偲んで",
+    "page": "https://www.suzukimethod.or.jp/monthly/miyasama.html",
+    "image": "https://www.suzukimethod.or.jp/monthly/_src/96897/miyasama3.jpg?v=1701129087599",
+    "width": 817,
+    "height": 460,
+    "license": "",
+    "license_url": "",
+    "artist": "suzukimethod.or.jp",
+    "description": "高円宮憲仁親王殿下を偲んで",
+    "file": "10-4.jpg"
+   },
+   {
+    "title": "高円宮憲仁親王殿下を偲んで",
+    "page": "https://www.suzukimethod.or.jp/monthly/miyasama.html",
+    "image": "https://www.suzukimethod.or.jp/monthly/_src/96902/miyasama5.jpg?v=1701129087599",
+    "width": 1500,
+    "height": 996,
+    "license": "",
+    "license_url": "",
+    "artist": "suzukimethod.or.jp",
+    "description": "高円宮憲仁親王殿下を偲んで",
+    "file": "10-5.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 写真 高円宮 憲仁親王 憲仁親王妃久子 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/k1185352336",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0105/user/9cea2a17148c36fe3ea36c8da9b322b6955f7094ae92811d63ac0507bbeffb50/i-img900x1200-17475714614437pfbbmw34.jpg",
+    "width": 900,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 写真 高円宮 憲仁親王 憲仁親王妃久子 ...",
+    "file": "10-6.jpg"
+   }
+  ]
  },
  {
   "k": 11,
   "query": "web:高円宮憲仁親王 家族 女王",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "高円宮憲仁親王殿下を偲んで",
+    "page": "https://www.suzukimethod.or.jp/monthly/miyasama.html",
+    "image": "https://www.suzukimethod.or.jp/monthly/_src/96896/miyasama2.jpg?v=1701129087599",
+    "width": 1500,
+    "height": 994,
+    "license": "",
+    "license_url": "",
+    "artist": "suzukimethod.or.jp",
+    "description": "高円宮憲仁親王殿下を偲んで",
+    "file": "11-1.jpg"
+   },
+   {
+    "title": "承子女王 - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E6%89%BF%E5%AD%90%E5%A5%B3%E7%8E%8B",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Princess_Tsuguko_cropped_1_The_New_Year_Greeting_2011_at_the_Tokyo_Imperial_Palace.jpg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 752,
+    "height": 1328,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "承子女王 - Wikipedia",
+    "file": "11-2.jpg"
+   },
+   {
+    "title": "憲仁親王妃久子 - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E6%86%B2%E4%BB%81%E8%A6%AA%E7%8E%8B%E5%A6%83%E4%B9%85%E5%AD%90",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Princess_Takamado_and_Lieutenant_Governor_Elizabeth_Dowdeswell_%28cropped%29.jpeg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 1016,
+    "height": 1274,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "憲仁親王妃久子 - Wikipedia",
+    "file": "11-3.jpg"
+   },
+   {
+    "title": "日本の女王が婚約を発表 結婚後は皇籍を離脱--人民網日本語版 ...",
+    "page": "https://j.people.com.cn/n/2014/0528/c94659-8733910.html",
+    "image": "https://j.people.com.cn/NMediaFile/2014/0528/FOREIGN201405281412000562741141164.jpg",
+    "width": 850,
+    "height": 577,
+    "license": "",
+    "license_url": "",
+    "artist": "j.people.com.cn",
+    "description": "日本の女王が婚約を発表 結婚後は皇籍を離脱--人民網日本語版 ...",
+    "file": "11-4.jpg"
+   },
+   {
+    "title": "あきミカン on X: \"＃承子女王 ＃承子さま 3月8日 本日は高円宮 ...",
+    "page": "https://x.com/akimikann_momo/status/1500971312965046275",
+    "image": "https://pbs.twimg.com/media/FNSFcyiVEAILvO9?format=webp&name=large",
+    "width": 2048,
+    "height": 1365,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "あきミカン on X: \"＃承子女王 ＃承子さま 3月8日 本日は高円宮 ...",
+    "file": "11-5.jpg"
+   },
+   {
+    "title": "家系図】高円宮家とは？現当主久子さまの実家は名家の鳥取家 ...",
+    "page": "https://entamefamily.com/takamadonomiya-familytree/",
+    "image": "https://entamefamily.com/wp-content/uploads/2024/09/takamadonomiya-1.jpg",
+    "width": 500,
+    "height": 566,
+    "license": "",
+    "license_url": "",
+    "artist": "entamefamily.com",
+    "description": "家系図】高円宮家とは？現当主久子さまの実家は名家の鳥取家 ...",
+    "file": "11-6.jpg"
+   },
+   {
+    "title": "高円宮承子さまの結婚相手はメガバンク男性？長年交際の真相と ...",
+    "page": "https://www.abvmucet25.co.in/ockipxzd/2739545/",
+    "image": "https://www.dailyshincho.com/wp-content/uploads/2025/03/1263300_2.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "abvmucet25.co.in",
+    "description": "高円宮承子さまの結婚相手はメガバンク男性？長年交際の真相と ...",
+    "file": "11-7.jpg"
+   },
+   {
+    "title": "憲仁親王妃 久子殿下 カナダストーリ-｜特集 トロントと日本を ...",
+    "page": "https://torja.ca/takamadonomiyahi-story/",
+    "image": "https://torja.ca/wp/wp-content/uploads/2019/10/takamadonomiyahi-story01.jpg",
+    "width": 1300,
+    "height": 860,
+    "license": "",
+    "license_url": "",
+    "artist": "torja.ca",
+    "description": "憲仁親王妃 久子殿下 カナダストーリ-｜特集 トロントと日本を ...",
+    "file": "11-8.jpg"
+   },
+   {
+    "title": "高円宮憲仁親王殿下を偲んで",
+    "page": "https://www.suzukimethod.or.jp/monthly/miyasama.html",
+    "image": "https://www.suzukimethod.or.jp/monthly/_src/96903/miyasama6.jpg?v=1701129087599",
+    "width": 1034,
+    "height": 743,
+    "license": "",
+    "license_url": "",
+    "artist": "suzukimethod.or.jp",
+    "description": "高円宮憲仁親王殿下を偲んで",
+    "file": "11-9.jpg"
+   }
+  ]
  },
  {
   "k": 12,
   "query": "web:高円宮憲仁親王 久子さま 結婚",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "画像・写真7枚目】ドレス姿もいろいろ…皇族13人ご結婚の本誌秘蔵 ...",
+    "page": "https://jisin.jp/koushitsu/2104312/image/6/",
+    "image": "https://img.jisin.jp/uploads/2022/06/koushitsu_wedding7.jpg.webp",
+    "width": 600,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "jisin.jp",
+    "description": "画像・写真7枚目】ドレス姿もいろいろ…皇族13人ご結婚の本誌秘蔵 ...",
+    "file": "12-1.jpg"
+   },
+   {
+    "title": "高円宮妃久子妃と長女承子さまがヨルダン皇太子の結婚式に参列 ...",
+    "page": "https://www.harpersbazaar.com/jp/fashion/celeb-fashion/a44070799/princess-hisako-tsuguko-japanese-royals-prince-hussein-rajwa-al-saif-wedding-photos-230602-lift1/",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/52942775377-14dda1e1bb-k-6478eba6de875.jpg?crop=1.00xw:0.667xh;0,0.185xh&resize=640:*",
+    "width": 640,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "harpersbazaar.com",
+    "description": "高円宮妃久子妃と長女承子さまがヨルダン皇太子の結婚式に参列 ...",
+    "file": "12-2.jpg"
+   },
+   {
+    "title": "TANE on X: \"久子さまご結婚前の職業は通訳。三笠宮殿下の通訳も ...",
+    "page": "https://x.com/tane_haruyo/status/2099436004415295530",
+    "image": "https://pbs.twimg.com/media/HSKx6rlaEAEAqQt?format=webp&name=large",
+    "width": 600,
+    "height": 851,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "TANE on X: \"久子さまご結婚前の職業は通訳。三笠宮殿下の通訳も ...",
+    "file": "12-3.jpg"
+   },
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/16/aaaribbon/d3/06/j/o0640064015292445710.jpg",
+    "width": 640,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "12-4.jpg"
+   },
+   {
+    "title": "久子さまのティアラ。 | 咲くやこの花のキラキラパラダイス",
+    "page": "https://ameblo.jp/sakuhana-osk/entry-12776869167.html",
+    "image": "https://stat.ameba.jp/user_images/20221129/13/sakuhana-osk/b4/02/j/o1080090715209686802.jpg",
+    "width": 1080,
+    "height": 907,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "久子さまのティアラ。 | 咲くやこの花のキラキラパラダイス",
+    "file": "12-5.jpg"
+   },
+   {
+    "title": "平成の妃殿下方のお着物を振り返る〜高円宮憲仁親王妃久子殿下 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/03/post-6617.html",
+    "image": "http://kusagusa.cocolog-nifty.com/photos/uncategorized/bginzay20170421.jpg",
+    "width": 1600,
+    "height": 1876,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "平成の妃殿下方のお着物を振り返る〜高円宮憲仁親王妃久子殿下 ...",
+    "file": "12-6.jpg"
+   },
+   {
+    "title": "高円宮妃久子妃と長女承子さまがヨルダン皇太子の結婚式に参列 ...",
+    "page": "https://www.harpersbazaar.com/jp/fashion/celeb-fashion/a44070799/princess-hisako-tsuguko-japanese-royals-prince-hussein-rajwa-al-saif-wedding-photos-230602-lift1/",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/52942775377-14dda1e1bb-k-6478eba6de875.jpg?crop=1xw:0.4998779296875xh;center,top&resize=1200:*",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "harpersbazaar.com",
+    "description": "高円宮妃久子妃と長女承子さまがヨルダン皇太子の結婚式に参列 ...",
+    "file": "12-7.jpg"
+   },
+   {
+    "title": "支え合われた母娘…久子さま「送り出す喜び」知人に 絢子さまご ...",
+    "page": "https://www.sankei.com/article/20181029-VDWQQIEETRPA7D6CBVALIRQAB4/",
+    "image": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/MYOL7Q6FDVOATEVKL7OEU7YM7U.jpg",
+    "width": 1024,
+    "height": 683,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "支え合われた母娘…久子さま「送り出す喜び」知人に 絢子さまご ...",
+    "file": "12-8.jpg"
+   },
+   {
+    "title": "雅子さま “ご成婚の恩人”の悲しみに寄り添われ…久子さまとの交流 ...",
+    "page": "https://jisin.jp/koushitsu/2229406/",
+    "image": "https://img.jisin.jp/uploads/2023/08/masako_sama_fb-1.jpg",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "jisin.jp",
+    "description": "雅子さま “ご成婚の恩人”の悲しみに寄り添われ…久子さまとの交流 ...",
+    "file": "12-9.jpg"
+   },
+   {
+    "title": "久子さま 夫・高円宮さまの墓地拝礼 47歳の突然死から21年…初孫 ...",
+    "page": "https://www.fnn.jp/articles/-/618631",
+    "image": "https://fnn.ismcdn.jp/mwimgs/e/6/1200/img_e631fdc156375b0629d8c2937425d592768205.jpg",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "fnn.jp",
+    "description": "久子さま 夫・高円宮さまの墓地拝礼 47歳の突然死から21年…初孫 ...",
+    "file": "12-10.jpg"
+   }
+  ]
  },
  {
   "k": 13,
   "query": "web:高円宮 久子妃 1984 結婚の儀",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/16/aaaribbon/73/4b/j/o0600079915292434279.jpg",
+    "width": 600,
+    "height": 799,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "13-1.jpg"
+   },
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/15/aaaribbon/2c/f3/j/o0660100015292411999.jpg",
+    "width": 660,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "13-2.jpg"
+   },
+   {
+    "title": "雅やかな十二単の世界〜結婚の儀シリーズ（昭和戦後）: 雪 ...",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2018/07/post-4657.html",
+    "image": "http://kusagusa.cocolog-nifty.com/dairy/images/2018/07/11/takamado1.png",
+    "width": 400,
+    "height": 527,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "雅やかな十二単の世界〜結婚の儀シリーズ（昭和戦後）: 雪 ...",
+    "file": "13-3.jpg"
+   },
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/21/aaaribbon/cf/6c/j/o1080081015292690052.jpg",
+    "width": 1080,
+    "height": 810,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "13-4.jpg"
+   },
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/16/aaaribbon/37/ed/j/o0638100015292445726.jpg",
+    "width": 638,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "13-5.jpg"
+   },
+   {
+    "title": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "page": "https://ameblo.jp/aaaribbon/entry-12805588044.html",
+    "image": "https://stat.ameba.jp/user_images/20230601/21/aaaribbon/1c/79/j/o0564084515292680715.jpg",
+    "width": 564,
+    "height": 845,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "高円宮久子様のドレスとティアラ | aaa-ribbon 世界のロイヤル ...",
+    "file": "13-6.jpg"
+   },
+   {
+    "title": "スウェーデンのロイヤルファミリー、国王夫妻の金婚式に大集合 ...",
+    "page": "https://www.elle.com/jp/culture/celebgossip/a71582347/sweden-wedding-celebration-260615/",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/d519422c-fe8b-450a-8282-7b3d4b14a41f.jpeg?crop=0.88863xw:1xh;center,top&resize=1200:*",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "elle.com",
+    "description": "スウェーデンのロイヤルファミリー、国王夫妻の金婚式に大集合 ...",
+    "file": "13-7.jpg"
+   },
+   {
+    "title": "憲仁 の写真・画像 : 報道写真・ニュース映像の提供購入サービス ...",
+    "page": "https://imagelink.kyodonews.jp/search?product_type=1,2,11&keyword=%E6%86%B2%E4%BB%81",
+    "image": "https://imagelink.kyodonews.jp/VItemImageW/imagelink_2005120500294.jpg?key=143485366",
+    "width": 459,
+    "height": 512,
+    "license": "",
+    "license_url": "",
+    "artist": "imagelink.kyodonews.jp",
+    "description": "憲仁 の写真・画像 : 報道写真・ニュース映像の提供購入サービス ...",
+    "file": "13-8.jpg"
+   },
+   {
+    "title": "束帯 の写真・画像 : 報道写真・ニュース映像の提供購入サービス ...",
+    "page": "https://imagelink.kyodonews.jp/search?product_type=1,2,11&keyword=%E6%9D%9F%E5%B8%AF",
+    "image": "https://imagelink.kyodonews.jp/VItemImageW/imagelink_2002112100249.jpg?key=25099604",
+    "width": 512,
+    "height": 470,
+    "license": "",
+    "license_url": "",
+    "artist": "imagelink.kyodonews.jp",
+    "description": "束帯 の写真・画像 : 報道写真・ニュース映像の提供購入サービス ...",
+    "file": "13-9.jpg"
+   },
+   {
+    "title": "あふれる行動力・国際性・社交性 久子さまの母 鳥取二三子さん ...",
+    "page": "https://www.fnn.jp/articles/-/560365?display=full",
+    "image": "https://fnn.ismcdn.jp/mwimgs/4/8/1200/img_4869c6d4cd1e82ca58a5b51ef99356a3933467.jpg",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "fnn.jp",
+    "description": "あふれる行動力・国際性・社交性 久子さまの母 鳥取二三子さん ...",
+    "file": "13-10.jpg"
+   },
+   {
+    "title": "皇太子徳仁親王と小和田雅子の結婚の儀 - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%A4%AA%E5%AD%90%E5%BE%B3%E4%BB%81%E8%A6%AA%E7%8E%8B%E3%81%A8%E5%B0%8F%E5%92%8C%E7%94%B0%E9%9B%85%E5%AD%90%E3%81%AE%E7%B5%90%E5%A9%9A%E3%81%AE%E5%84%80",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/66/Emperor_Naruhito_and_Empress_Masako_in_formal_wedding_robes.jpg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 1500,
+    "height": 985,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "皇太子徳仁親王と小和田雅子の結婚の儀 - Wikipedia",
+    "file": "13-11.jpg"
+   },
+   {
+    "title": "久子さま 本誌記者が同席していた“婚約者との初対面現場 | 女性自身",
+    "page": "https://jisin.jp/koushitsu/1645813/",
+    "image": "https://img.jisin.jp/uploads/2018/07/hisako_sama_1_line_tw.jpg.webp",
+    "width": 600,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "jisin.jp",
+    "description": "久子さま 本誌記者が同席していた“婚約者との初対面現場 | 女性自身",
+    "file": "13-12.jpg"
+   }
+  ]
  },
  {
   "k": 14,
   "query": "web:三笠宮家 集合写真",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "75年に及ぶ結婚生活 三笠宮さまご夫妻の仲むつまじいエピソード ...",
+    "page": "https://www.asahi.com/articles/AST9T1P80T9TUTIL00QM.html",
+    "image": "https://www.asahicom.jp/imgopt/img/3cb1edba08/hd640/AS20251010004649.jpg",
+    "width": 640,
+    "height": 453,
+    "license": "",
+    "license_url": "",
+    "artist": "asahi.com",
+    "description": "75年に及ぶ結婚生活 三笠宮さまご夫妻の仲むつまじいエピソード ...",
+    "file": "14-1.jpg"
+   },
+   {
+    "title": "今月の市村清 2019年5月 / 創業者・市村清 | 三愛会",
+    "page": "https://www.san-ai-kai.jp/ichimura/past/monthly201905.html",
+    "image": "https://www.san-ai-kai.jp/assets/img/ichimura/past/1905/monthly_ph02.jpg",
+    "width": 648,
+    "height": 445,
+    "license": "",
+    "license_url": "",
+    "artist": "san-ai-kai.jp",
+    "description": "今月の市村清 2019年5月 / 創業者・市村清 | 三愛会",
+    "file": "14-2.jpg"
+   },
+   {
+    "title": "三笠宮崇仁さま 写真特集：時事ドットコム",
+    "page": "https://www.jiji.com/jc/d4?p=mks027&d=d4_bbb",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_bbb/mks027-0022620527.jpg",
+    "width": 650,
+    "height": 431,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "三笠宮崇仁さま 写真特集：時事ドットコム",
+    "file": "14-3.jpg"
+   },
+   {
+    "title": "三笠宮さま 斂葬の儀 皇族・首相ら580人参列 - 日本経済新聞",
+    "page": "https://www.nikkei.com/article/DGKKASDG03H4Q_U6A101C1MM0000/",
+    "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSKKZO0913328004112016MM0000-PN1-4.jpg?s=201148f1fc61b67288ccd7aae3710d04",
+    "width": 555,
+    "height": 402,
+    "license": "",
+    "license_url": "",
+    "artist": "nikkei.com",
+    "description": "三笠宮さま 斂葬の儀 皇族・首相ら580人参列 - 日本経済新聞",
+    "file": "14-4.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子さま「お舟入」儀式、喪主・彬子さま参列…宮邸の ...",
+    "page": "https://www.yomiuri.co.jp/koushitsu/20241116-OYT1T50149/",
+    "image": "https://www.yomiuri.co.jp/media/2024/11/20241116-OYT1I50120-1.jpg?type=large",
+    "width": 602,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "yomiuri.co.jp",
+    "description": "三笠宮妃百合子さま「お舟入」儀式、喪主・彬子さま参列…宮邸の ...",
+    "file": "14-5.jpg"
+   },
+   {
+    "title": "三笠宮彬子女王殿下、欧州拠点のispace EUROPEを訪問 | 株式会社 ...",
+    "page": "https://prtimes.jp/main/html/rd/p/000000138.000140640.html",
+    "image": "https://prcdn.freetls.fastly.net/release_image/140640/138/140640-138-78edc29a77ed3a6a9b75e7ccc9337f03-800x533.jpg?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "width": 800,
+    "height": 533,
+    "license": "",
+    "license_url": "",
+    "artist": "prtimes.jp",
+    "description": "三笠宮彬子女王殿下、欧州拠点のispace EUROPEを訪問 | 株式会社 ...",
+    "file": "14-6.jpg"
+   },
+   {
+    "title": "天皇陛下「国民の幸せと国の発展を祈ります」…三笠宮家と高円宮 ...",
+    "page": "https://www.yomiuri.co.jp/koushitsu/20250101-OYT1T50037/",
+    "image": "https://www.yomiuri.co.jp/media/2025/01/20250101-OYT1I50068-1.jpg?type=large",
+    "width": 584,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "yomiuri.co.jp",
+    "description": "天皇陛下「国民の幸せと国の発展を祈ります」…三笠宮家と高円宮 ...",
+    "file": "14-7.jpg"
+   },
+   {
+    "title": "三笠宮家のご活動 – 宮内庁",
+    "page": "https://www.kunaicho.go.jp/watch/activity/activity06/",
+    "image": "https://www.kunaicho.go.jp/activity/activity/06/img/activity06-ph-01_high.jpg",
+    "width": 1004,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "kunaicho.go.jp",
+    "description": "三笠宮家のご活動 – 宮内庁",
+    "file": "14-8.jpg"
+   },
+   {
+    "title": "三笠宮妃百合子さまの「葬場の儀」、一般拝礼には903人 ...",
+    "page": "https://www.yomiuri.co.jp/koushitsu/20241126-OYT1T50172/",
+    "image": "https://www.yomiuri.co.jp/media/2024/11/20241126-OYT1I50139-1.jpg?type=large",
+    "width": 530,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "yomiuri.co.jp",
+    "description": "三笠宮妃百合子さまの「葬場の儀」、一般拝礼には903人 ...",
+    "file": "14-9.jpg"
+   }
+  ]
  },
  {
   "k": 15,
   "query": "web:三笠宮邸",
-  "results": [],
-  "error": "RuntimeError: no web image search answered"
+  "results": [
+   {
+    "title": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "page": "https://www.nahf.org/article/natural-breeds-of-dogs",
+    "image": "https://images.pexels.com/photos/18472389/pexels-photo-18472389.jpeg",
+    "width": 2400,
+    "height": 1802,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "file": "15-1.jpg"
+   },
+   {
+    "title": "Breed-Specific Behaviors: Understanding Your Dog's Natural Instincts ...",
+    "page": "https://lifewithmydogs.com/breed-specific-behaviors-understanding-your-dogs-natural-instincts-2/",
+    "image": "https://koala.sh/api/image/v2-q5f5f-94xre.jpg",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "lifewithmydogs.com",
+    "description": "Breed-Specific Behaviors: Understanding Your Dog's Natural Instincts ...",
+    "file": "15-2.jpg"
+   },
+   {
+    "title": "28 Dog Breeds Known for Their Exceptionally Friendly Nature - Epic dogs ...",
+    "page": "https://epicdogstales.com/28-dog-breeds-known-for-their-exceptionally-friendly-nature/",
+    "image": "https://epicdogstales.com/wp-content/uploads/2025/02/28-Dog-Breeds-Known-for-Their-Exceptionally-Friendly-Nature.jpeg",
+    "width": 1200,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "epicdogstales.com",
+    "description": "28 Dog Breeds Known for Their Exceptionally Friendly Nature - Epic dogs ...",
+    "file": "15-3.jpg"
+   },
+   {
+    "title": "10 Dog Breeds That Can Live Happily Outdoors Year-Round (And 10 That ...",
+    "page": "https://exploringanimals.com/dog-breeds-that-can-live-happily-outdoors-year-round-and-that-never-could/",
+    "image": "https://exploringanimals.com/wp-content/uploads/2025/05/10-Dog-Breeds-That-Can-Live-Happily-Outdoors-Year-Round-And-10-That-Never-Could.jpeg",
+    "width": 1200,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "exploringanimals.com",
+    "description": "10 Dog Breeds That Can Live Happily Outdoors Year-Round (And 10 That ...",
+    "file": "15-4.jpg"
+   },
+   {
+    "title": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "page": "https://caringforadog.com/choosing-dogs-by-climate/",
+    "image": "https://koala.sh/api/image/v2-7jc3m-4kttu.jpg?width=1216&height=832&dream",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "caringforadog.com",
+    "description": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "file": "15-5.jpg"
+   },
+   {
+    "title": "28 Black Dog Breeds That'll Steal Your Heart With Every Bark",
+    "page": "https://worldanimalfoundation.org/dogs/black-dog-breeds/",
+    "image": "https://worldanimalfoundation.org/wp-content/uploads/2023/09/Black-Dogs-1536x864.jpg",
+    "width": 1536,
+    "height": 864,
+    "license": "",
+    "license_url": "",
+    "artist": "worldanimalfoundation.org",
+    "description": "28 Black Dog Breeds That'll Steal Your Heart With Every Bark",
+    "file": "15-6.jpg"
+   },
+   {
+    "title": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "page": "https://iheartdogs.com/nature-loving-dog-breeds-who-thrive-in-woods-and-water/",
+    "image": "https://iheartdogs.com/wp-content/uploads/2025/05/dog-nature-autumn-mood-border-collie-leaf-fall-forest-3-1-768x511.jpg",
+    "width": 768,
+    "height": 511,
+    "license": "",
+    "license_url": "",
+    "artist": "iheartdogs.com",
+    "description": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "file": "15-7.jpg"
+   },
+   {
+    "title": "New model shows dogs could have domesticated themselves | National ...",
+    "page": "https://www.nationalgeographic.com/animals/article/math-model-dog-self-domestication",
+    "image": "https://i.natgeofe.com/n/37e29d3e-db5a-4f48-b578-16137c32d937/NationalGeographic_2733106_square.jpg",
+    "width": 2400,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "nationalgeographic.com",
+    "description": "New model shows dogs could have domesticated themselves | National ...",
+    "file": "15-8.jpg"
+   },
+   {
+    "title": "Dog Breeds Collection 9640097 Vector Art at Vecteezy",
+    "page": "https://www.vecteezy.com/vector-art/9640097-dog-breeds-collection",
+    "image": "https://static.vecteezy.com/system/resources/previews/009/640/097/large_2x/dog-breeds-collection-vector.jpg",
+    "width": 1920,
+    "height": 1564,
+    "license": "",
+    "license_url": "",
+    "artist": "vecteezy.com",
+    "description": "Dog Breeds Collection 9640097 Vector Art at Vecteezy",
+    "file": "15-9.jpg"
+   },
+   {
+    "title": "Domestic Dog Class: Traits and Characteristics Explained",
+    "page": "https://www.nahf.org/article/domestic-dog-class",
+    "image": "https://images.pexels.com/photos/7210626/pexels-photo-7210626.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "width": 1920,
+    "height": 1280,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "Domestic Dog Class: Traits and Characteristics Explained",
+    "file": "15-10.jpg"
+   },
+   {
+    "title": "Breeds of dogs",
+    "page": "http://mytopcollection.blogspot.com/2012/05/breeds-of-dogs.html",
+    "image": "http://4.bp.blogspot.com/-CGMBSohvoT0/T7ZReEf846I/AAAAAAAABrs/w8vmLip3gMA/s1600/breeds+of+dogs+5.jpg",
+    "width": 864,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "mytopcollection.blogspot.com",
+    "description": "Breeds of dogs",
+    "file": "15-11.jpg"
+   },
+   {
+    "title": "Photo of Domestic Dogs in a Forest · Free Stock Photo",
+    "page": "https://www.pexels.com/photo/photo-of-domestic-dogs-in-a-forest-20523421/",
+    "image": "https://images.pexels.com/photos/20523421/pexels-photo-20523421.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200",
+    "width": 1200,
+    "height": 627,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Photo of Domestic Dogs in a Forest · Free Stock Photo",
+    "file": "15-12.jpg"
+   }
+  ]
  }
 ]

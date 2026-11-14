@@ -1,8 +1,8 @@
 {
  "stage": "find",
- "outcome": "partial",
- "run_id": "43582642335",
- "run_url": "https://github.com/maihaianh2911-bit/japan-news-video-factory/actions/runs/43582642335",
- "commit": "d94ae12e001dd3aee32ccc6bb1c39a569751d51d",
- "published_utc": "2026-11-14T09:54:28Z"
+ "outcome": "ok",
+ "run_id": "43582810559",
+ "run_url": "https://github.com/maihaianh2911-bit/japan-news-video-factory/actions/runs/43582810559",
+ "commit": "bd3d7a244cf6d76a4eaa2ffcbac45486c9ed64ca",
+ "published_utc": "2026-11-14T10:00:48Z"
 }
