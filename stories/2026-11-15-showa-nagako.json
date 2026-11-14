@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 3,
   "title": "女子一人守れぬ者に国は守れるか 昭和天皇と香淳皇后",
   "date": "2026-11-15",
@@ -225,10 +225,10 @@
       ],
       "photo": [
         {
-          "pick": "21-2",
+          "pick": "22-1",
           "focus": [
             0.5,
-            0.45
+            0.15
           ],
           "move": "pan-right"
         },
@@ -242,7 +242,7 @@
         }
       ],
       "cut": "hard",
-      "why": "Chiến tranh ập đến nên cắt thẳng; lia theo hướng hai người bước đi, rồi tiến vào nụ cười của Hoàng hậu bên chồng."
+      "why": "Chiến tranh ập đến nên cắt thẳng; lia ngang qua hàng quân nhân tới Hoàng hậu thời chiến (ảnh mới tìm thêm), rồi tiến vào nụ cười bà dành cho chồng."
     },
     {
       "label": "2000年",
