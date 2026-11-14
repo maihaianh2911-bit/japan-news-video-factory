@@ -149,7 +149,8 @@ jobs:
           BEFORE: ${{ github.event.before }}
         run: |
           # A push makes every story file it adds, changes or renames (one job each); a push that only
-          # deletes stories makes nothing; a push of code only runs the offline check (stills of the sample).
+          # deletes stories makes nothing; a push that changes code also runs the offline check (stills and a
+          # short encode of the sample), next to the stories of the same push.
           if [[ "$EVENT_NAME" == "push" ]]; then
             git cat-file -e "$BEFORE^{commit}" 2>/dev/null || BEFORE=HEAD~1
             git -c core.quotePath=false diff -z --name-only --no-renames --diff-filter=AM "$BEFORE" HEAD -- 'stories/*.json' > /tmp/stories
@@ -160,8 +161,8 @@ jobs:
                      for name in open("/tmp/stories", encoding="utf-8").read().split("\0") if name]
           code = [name for name in open("/tmp/code", encoding="utf-8").read().split("\0") if name]
           items = [{"mode": "story", "story": story} for story in stories]
-          if not items and code:
-              items = [{"mode": "check", "story": "mau-boj"}]
+          if code:
+              items.append({"mode": "check", "story": "mau-boj"})
           print("items=" + json.dumps(items, ensure_ascii=False))
           PY
           else
@@ -263,7 +264,9 @@ jobs:
           [[ -f pictures/index.json ]] || { echo "::error::renders/mau-boj/find is missing: the sample stills need its pictures"; exit 1; }
           python -m news.custom stories/mau-boj.json pictures
           python -m news --story stories/mau-boj.json --pictures pictures --stills dist/stills
-          echo "Kiểm tra mã: OK (ảnh tĩnh của stories/mau-boj.json trong Artifacts)." >> "$GITHUB_STEP_SUMMARY"
+          # 3 seconds of real video in both frames (no voice engine: silence), so a fault in the encoder shows here
+          python tools/encode_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/encode-test"
+          echo "Kiểm tra mã: OK (ảnh tĩnh của stories/mau-boj.json trong Artifacts; dựng thử 3 giây video)." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload the check stills
         if: matrix.mode == 'check'
         uses: actions/upload-artifact@v4
