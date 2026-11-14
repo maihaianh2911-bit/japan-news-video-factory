@@ -1,0 +1,88 @@
+name: Dọn video cũ (nhánh renders)
+
+# Mỗi tuần: xóa thư mục của các video cũ trên nhánh renders (phiếu đã đóng quá 2 ngày, hoặc không có hoạt động
+# trong KEEP_DAYS ngày), rồi thay lịch sử nhánh bằng một commit duy nhất để GitHub dọn dung lượng cũ (mỗi lần
+# dựng lại, bản video cũ vẫn nằm trong lịch sử). Link của các video đã xóa sẽ hết hiệu lực: hãy tải video về
+# trước khi đóng phiếu. Luôn giữ mau-boj (bước kiểm tra mã cần ảnh trong mau-boj/find). Quy tắc: tools/renders_cleanup.py.
+on:
+  schedule:
+    - cron: '23 20 * * 0'   # Chủ nhật 20:23 UTC = thứ Hai 3:23 sáng giờ VN
+  workflow_dispatch:
+    inputs:
+      keep_days:
+        description: Giữ video của phiếu có hoạt động trong bao nhiêu ngày gần đây
+        default: '14'
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: renders-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      KEEP_DAYS: ${{ inputs.keep_days || '14' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            stories
+            tools
+      - name: Lấy nhánh renders
+        id: fetch
+        run: |
+          [[ "$KEEP_DAYS" =~ ^[0-9]+$ ]] || { echo "::error::keep_days phải là một số (ví dụ 14)"; exit 1; }
+          URL="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          status=0; git ls-remote --exit-code --heads "$URL" renders > /dev/null || status=$?
+          if [[ $status == 2 ]]; then
+            echo "Chưa có nhánh renders: không có gì để dọn." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "found=no" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          [[ $status == 0 ]] || { echo "::error::Không đọc được nhánh renders (lỗi mạng?). Chạy lại sau."; exit 1; }
+          git init -q "$RUNNER_TEMP/r" && cd "$RUNNER_TEMP/r"
+          git remote add origin "$URL"
+          git fetch -q --depth 1 origin renders
+          git checkout -q FETCH_HEAD
+          git rev-parse FETCH_HEAD > ../old_sha
+          # a tip that has a parent = there is old history to drop even when no folder is deleted
+          echo "parents=$(git cat-file -p FETCH_HEAD | grep -c '^parent ' || true)" >> "$GITHUB_OUTPUT"
+          echo "found=yes" >> "$GITHUB_OUTPUT"
+          du -sh --exclude=.git .
+      - name: Xóa thư mục của video cũ
+        id: clean
+        if: steps.fetch.outputs.found == 'yes'
+        run: |
+          set -o pipefail
+          cd "$RUNNER_TEMP/r"
+          python3 "$GITHUB_WORKSPACE/tools/renders_cleanup.py" "$GITHUB_WORKSPACE/stories" | tee ../cleanup.log
+          grep '^removed=' ../cleanup.log | tail -n 1 >> "$GITHUB_OUTPUT"
+          [[ -d mau-boj/find ]] || echo "::warning::renders không có mau-boj/find: bước kiểm tra mã sẽ báo lỗi cho đến khi dựng lại bài mẫu"
+          du -sh --exclude=.git .
+      - name: Thay lịch sử nhánh renders bằng một commit
+        if: steps.fetch.outputs.found == 'yes'
+        env:
+          REMOVED: ${{ steps.clean.outputs.removed }}
+          PARENTS: ${{ steps.fetch.outputs.parents }}
+        run: |
+          cd "$RUNNER_TEMP/r"
+          if [[ "${REMOVED:-0}" == 0 && "${PARENTS:-0}" == 0 ]]; then
+            echo "Không có gì để dọn: không có video cũ và lịch sử đã gọn." | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git checkout -q --orphan fresh
+          git add -A
+          git -c user.name=render-bot -c user.email=render-bot@users.noreply.github.com \
+            commit -q --allow-empty -m "renders: keep the videos of the last $KEEP_DAYS days ($(date -u +%F))"
+          # --force-with-lease: if a video was published while this ran, the push is refused and nothing is lost
+          if git push -q --force-with-lease="renders:$(cat ../old_sha)" origin fresh:renders; then
+            { echo "Đã dọn nhánh renders: xóa ${REMOVED:-0} thư mục video cũ, lịch sử còn một commit."; echo; echo '```'; cat ../cleanup.log; echo '```'; } | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::warning::Chưa dọn được: có video vừa được đăng lên renders trong lúc dọn. Không mất gì; tuần sau dọn lại (hoặc bấm Run workflow)."
+          fi
