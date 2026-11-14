@@ -427,13 +427,16 @@ class Grain:
         for seed in range(self.FRAMES):
             rng = random.Random(seed)
             for target in (self.light, self.dark):
-                small = Image.new("L", (W // 2, H // 2))
-                small.putdata([max(0, rng.randint(-14, 9)) for _ in range(small.width * small.height)])
-                target.append(small.resize((W, H), Image.Resampling.NEAREST).convert("RGB"))
+                # soft, coarse grain that changes every other frame: it reads as film without making the video
+                # too big to store (fine grain on every frame made a 70-second video 180 MB)
+                small = Image.new("L", (W // 4, H // 4))
+                small.putdata([max(0, rng.randint(-10, 7)) for _ in range(small.width * small.height)])
+                target.append(small.resize((W, H), Image.Resampling.BILINEAR).convert("RGB"))
 
     def apply(self, frame, index):
-        frame = ImageChops.subtract(ImageChops.add(frame, self.light[index % self.FRAMES]),
-                                    self.dark[(index * 7 + 3) % self.FRAMES])
+        step = index // 2
+        frame = ImageChops.subtract(ImageChops.add(frame, self.light[step % self.FRAMES]),
+                                    self.dark[(step * 7 + 3) % self.FRAMES])
         rng = self.random.Random(index // 2)   # dust stays two frames
         draw = ImageDraw.Draw(frame)
         for _ in range(rng.choice((0, 0, 1, 2, 3))):
@@ -472,7 +475,8 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", f"{W}x{H}", "-framerate", str(FPS), "-i", "-",
-        "-i", str(wav), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
+        "-i", str(wav), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", "6M", "-bufsize", "12M",
+        "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "128k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7",
         "-movflags", "+faststart", "-shortest", str(out / "video.mp4"),
     ]
