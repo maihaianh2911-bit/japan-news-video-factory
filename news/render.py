@@ -7,7 +7,7 @@ import re
 import subprocess
 
 import budoux
-from PIL import Image, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 from .story import VOICE_CREDIT, japanese_date
 
@@ -209,19 +209,31 @@ def paper_grain(color):
     return Image.composite(Image.eval(aged, lambda level: int(level * 0.93)), aged, speckle)
 
 
-def crop_photo(image, position, height, focus=(0.5, 0.5)):
+# --- motion: pictures that move, text that comes in, transitions between scenes, film grain (paper) ---
+PHOTO_TOP, PHOTO_HEIGHT = 338, 700
+TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
+MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
+
+
+def ease(value):
+    value = min(1.0, max(0.0, value))
+    return value * value * (3 - 2 * value)
+
+
+def crop_photo(image, height, focus=(0.5, 0.5), zoom=1.0, shift=0.0):
+    """The part of the picture shown: `zoom` 1 fills the frame, `shift` moves the window sideways (-1 to 1)."""
     iw, ih = image.size
-    scale = max(W / iw, height / ih) * (1.0 + 0.15 * position)
+    scale = max(W / iw, height / ih) * zoom
     cw, ch = W / scale, height / scale
-    left = (iw - cw) * min(1, max(0, focus[0] - 0.04 + 0.08 * position))
-    top = (ih - ch) * min(1, max(0, focus[1] - 0.10 * position))
+    left = (iw - cw) * min(1, max(0, focus[0] + shift))
+    top = (ih - ch) * min(1, max(0, focus[1]))
     return image.resize((W, height), Image.Resampling.BICUBIC, box=(left, top, left + cw, top + ch))
 
 
 @lru_cache(maxsize=8)
 def backdrop(key, height):
     image = BACKDROPS[key]
-    soft = crop_photo(image, 0, height).resize((W // 8, height // 8)).filter(ImageFilter.GaussianBlur(6))
+    soft = crop_photo(image, height).resize((W // 8, height // 8)).filter(ImageFilter.GaussianBlur(6))
     return Image.eval(soft.resize((W, height), Image.Resampling.BICUBIC), lambda level: level * 0.45)
 
 
@@ -229,16 +241,31 @@ BACKDROPS = {}
 
 
 def whole_photo(image, position, height):
-    """Show the whole picture (portraits, charts, documents) over a blurred copy of itself."""
+    """Show the whole picture (portraits, charts, documents) over a blurred copy of itself; it grows slowly."""
     BACKDROPS[id(image)] = image
     frame = backdrop(id(image), height).copy()
-    scale = min(W / image.width, height / image.height) * (0.94 + 0.06 * position)
+    scale = min(W / image.width, height / image.height) * (0.86 + 0.14 * position)
     size = (round(image.width * scale), round(image.height * scale))
     frame.paste(image.resize(size, Image.Resampling.BICUBIC), ((W - size[0]) // 2, (height - size[1]) // 2))
     return frame
 
 
-def layout(beat, release, photo, demo):
+def moving_photo(photo, t, kind, height=PHOTO_HEIGHT):
+    """The picture at time t (0 at its start, 1 at its end, a little more while it fades out)."""
+    t = min(1.25, max(0.0, t))
+    if photo.fit == "contain":
+        return whole_photo(photo.image, t if kind in ("in", "right") else 1 - min(1, t), height)
+    if kind == "in":
+        return crop_photo(photo.image, height, photo.focus, zoom=1.0 + 0.2 * t)
+    if kind == "out":
+        return crop_photo(photo.image, height, photo.focus, zoom=1.25 - 0.2 * t)
+    direction = 1 if kind == "right" else -1
+    return crop_photo(photo.image, height, photo.focus, zoom=1.18, shift=direction * (-0.3 + 0.6 * t))
+
+
+def layout(beat, release, has_photo, demo):
+    """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
+    (it slides in at the start of the scene)."""
     image = paper_grain(style.background).copy() if style.grain else Image.new("RGB", (W, H), style.background)
     draw = ImageDraw.Draw(image)
     draw.rectangle((0, 0, W, 14), fill=style.accent)
@@ -251,13 +278,19 @@ def layout(beat, release, photo, demo):
     text(draw, 70, 152, japanese_date(release), 35, style.muted)
     if demo:
         text(draw, W - 70, 95, "過去のニュース・動作確認", 28, GOLD, anchor="rt")
-    label(draw, 70, 261, beat.label, style.tag)
-
-    if photo:
-        # Picture scene: picture, then headline, value (big figure) and evidence (small text) under each other.
-        draw.rectangle((0, 338, W, 1054), fill=style.photo_bed)
+    if has_photo:
+        draw.rectangle((0, PHOTO_TOP, W, 1054), fill=style.photo_bed)
         draw.rectangle((0, 1038, W, 1054), fill=style.accent)
-        label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
+    draw.line((70, 1704, W - 70, 1704), fill=style.rule, width=2)
+    if release.publisher:
+        text(draw, 70, 1742, f"出典  {release.publisher}", 29, style.muted, bold=False)
+    text(draw, W - 70, 1742, VOICE_CREDIT, 24, style.muted, bold=False, anchor="rt")
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    label(draw, 70, 261, beat.label, style.tag)
+    if has_photo:
+        # Picture scene: picture, then headline, value (big figure) and evidence (small text) under each other.
         headline, size = fit(beat.headline, 925, 70 if len(beat.headline) < 25 else 51, 3, smallest=44)
         y = text(draw, 70, 1100, headline, size)
         if beat.value:
@@ -291,46 +324,149 @@ def layout(beat, release, photo, demo):
             text(draw, 119, max(839, y + 70), evidence, evidence_size, style.card_ink, bold=False)
         if release.publisher:
             text(draw, 119, 1304, "公表資料", 29, style.card_muted)
-
-    draw.line((70, 1704, W - 70, 1704), fill=style.rule, width=2)
-    if release.publisher:
-        text(draw, 70, 1742, f"出典  {release.publisher}", 29, style.muted, bold=False)
-    text(draw, W - 70, 1742, VOICE_CREDIT, 24, style.muted, bold=False, anchor="rt")
-    if photo:
-        credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
-        credit, credit_size = fit(credit, 940, 23, 2, bold=False, smallest=16)
-        text(draw, 70, 1806, credit, credit_size, style.muted, bold=False)
-    return image
+    return image, layer
 
 
-def draw_captions(image, caption):
-    draw = ImageDraw.Draw(image)
+def faded(layer, amount):
+    """The layer with its opacity multiplied by amount (0 to 1)."""
+    alpha = layer.getchannel("A").point(lambda level: round(level * amount))
+    out = layer.copy()
+    out.putalpha(alpha)
+    return out
+
+
+class Scene:
+    """Draws one scene at any moment: its pictures one after the other, each moving and fading into the next,
+    and its text coming in at the start."""
+
+    def __init__(self, index, beat, release, photos, demo, start, end):
+        self.index, self.photos, self.start, self.end = index, list(photos or ()), start, max(end, start + 0.1)
+        self.background, self.text = layout(beat, release, bool(self.photos), demo)
+        self.settled = self.background.copy()
+        self.settled.paste(self.text, (0, 0), self.text)
+
+    def picture(self, moment):
+        count = len(self.photos)
+        length = (self.end - self.start) / count
+        number = min(count - 1, max(0, int((moment - self.start) // length)))
+        local = (moment - self.start - number * length) / length
+        kind = MOTIONS[(self.index + number) % len(MOTIONS)]
+        picture = moving_photo(self.photos[number], local, kind)
+        if number and local * length < PHOTO_FADE:   # the previous picture fades into this one
+            previous = moving_photo(self.photos[number - 1], 1 + local, MOTIONS[(self.index + number - 1) % len(MOTIONS)])
+            picture = Image.blend(previous, picture, ease(local * length / PHOTO_FADE))
+        return picture, self.photos[number]
+
+    def render(self, moment):
+        age = moment - self.start
+        if age < TEXT_IN:
+            amount = ease(age / TEXT_IN)
+            frame = self.background.copy()
+            layer = faded(self.text, amount)
+            frame.paste(layer, (0, round(36 * (1 - amount))), layer)
+        else:
+            frame = self.settled.copy()
+        if self.photos:
+            picture, photo = self.picture(moment)
+            frame.paste(picture, (0, PHOTO_TOP))
+            draw = ImageDraw.Draw(frame)
+            label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
+            credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
+            credit, credit_size = fit(credit, 940, 23, 2, bold=False, smallest=16)
+            text(draw, 70, 1806, credit, credit_size, style.muted, bold=False)
+        return frame
+
+
+@lru_cache(maxsize=1)
+def page_shadow():
+    shadow = Image.new("RGBA", (48, 1460), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shadow)
+    for x in range(48):
+        draw.line((x, 0, x, 1460), fill=(20, 12, 4, round(110 * (x / 48) ** 2)))
+    return shadow
+
+
+def transition(old, new, amount):
+    """From one scene to the next: a page turned from the right (paper) or a cross-fade (news)."""
+    if not style.grain:
+        return Image.blend(old, new, amount)
+    offset = round(W * (1 - amount))
+    frame = old.copy()
+    if offset < W:
+        frame.paste(new.crop((0, 245, W - offset, 1700)), (offset, 245))
+    if offset >= 48:
+        frame.paste(page_shadow(), (offset - 48, 245 - 5), page_shadow())
+    return frame
+
+
+def draw_captions(image, caption, age=1.0):
     face = font(CAPTION_SIZE)
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
-    draw.rounded_rectangle((69, 1598 - height // 2, 1011, 1598 + height // 2), radius=19, fill=style.caption_box)
+    amount = ease(age / CAPTION_IN) if age < CAPTION_IN else 1.0
+    layer = Image.new("RGBA", (W, height + 4), (0, 0, 0, 0)) if amount < 1 else None
+    draw = ImageDraw.Draw(layer if layer else image)
+    top = 0 if layer else 1598 - height // 2
+    draw.rounded_rectangle((69, top, 1011, top + height), radius=19, fill=style.caption_box)
     for line_index, line in enumerate(contents):
-        draw.text((W / 2, 1598 - height / 2 + 21 + 83 * line_index), line,
+        draw.text((W / 2, top + 21 + 83 * line_index), line,
                   font=face, fill=style.caption_text, anchor="mt", stroke_width=1, stroke_fill=style.caption_text)
+    if layer:
+        layer = faded(layer, amount)
+        image.paste(layer, (0, 1598 - height // 2 + round(14 * (1 - amount))), layer)
 
 
-def frame_for(base, photo, fraction, caption):
-    frame = base.copy()
-    if photo:
-        ease = fraction * fraction * (3 - 2 * fraction)
-        picture = (whole_photo(photo.image, ease, 700) if photo.fit == "contain"
-                   else crop_photo(photo.image, ease, 700, photo.focus))
-        frame.paste(picture, (0, 338))
+class Grain:
+    """Old film on the paper frame: moving grain and now and then a speck of dust or a thin scratch."""
+    FRAMES = 6
+
+    def __init__(self):
+        import random
+        self.random = random
+        self.light, self.dark = [], []
+        for seed in range(self.FRAMES):
+            rng = random.Random(seed)
+            for target in (self.light, self.dark):
+                small = Image.new("L", (W // 2, H // 2))
+                small.putdata([max(0, rng.randint(-14, 9)) for _ in range(small.width * small.height)])
+                target.append(small.resize((W, H), Image.Resampling.NEAREST).convert("RGB"))
+
+    def apply(self, frame, index):
+        frame = ImageChops.subtract(ImageChops.add(frame, self.light[index % self.FRAMES]),
+                                    self.dark[(index * 7 + 3) % self.FRAMES])
+        rng = self.random.Random(index // 2)   # dust stays two frames
         draw = ImageDraw.Draw(frame)
-        label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
-    draw_captions(frame, caption)
+        for _ in range(rng.choice((0, 0, 1, 2, 3))):
+            x, y, r = rng.randrange(W), rng.randrange(H), rng.choice((1, 1, 2, 3))
+            draw.ellipse((x - r, y - r, x + r, y + r), fill=(58, 44, 30))
+        if rng.random() < 0.06:
+            x = rng.randrange(80, W - 80)
+            draw.line((x, rng.randrange(0, H // 2), x + rng.randint(-6, 6), rng.randrange(H // 2, H)),
+                      fill=(214, 200, 168), width=1)
+        return frame
+
+
+def scenes_for(beats, release, photos, demo, intervals):
+    scenes, start = [], 0.0
+    for index, (beat, (_, end)) in enumerate(zip(beats, intervals, strict=True)):
+        scenes.append(Scene(index, beat, release, photos.get(index), demo, start, end))
+        start = end
+    return scenes
+
+
+def frame_at(scenes, number, moment):
+    frame = scenes[number].render(moment)
+    if number and moment - scenes[number].start < TRANSITION:
+        old = scenes[number - 1].render(moment)
+        frame = transition(old, frame, ease((moment - scenes[number].start) / TRANSITION))
     return frame
 
 
 def encode(beats, release, photos, demo, intervals, captions, wav, out):
-    cover_beat = beats[0]
-    first_photo = photos.get(0)
-    cover = frame_for(layout(cover_beat, release, first_photo, demo), first_photo, 0.22, captions[0].text)
+    scenes = scenes_for(beats, release, photos, demo, intervals)
+    grain = Grain() if style.grain else None
+    cover = scenes[0].render(min(1.5, intervals[0][1] * 0.3))
+    draw_captions(cover, captions[0].text)
     cover.save(out / "cover.jpg", quality=92)
 
     cmd = [
@@ -344,23 +480,16 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     frame_index = 0
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
         try:
-            for scene, (beat, (start, end)) in enumerate(zip(beats, intervals, strict=True)):
-                scene_photo = photos.get(scene)
-                base = layout(beat, release, scene_photo, demo)
-                cache = {}
-                while frame_index < math.ceil(end * FPS):
+            for number, scene in enumerate(scenes):
+                while frame_index < math.ceil(scene.end * FPS):
                     moment = frame_index / FPS
                     while cue + 1 < len(captions) and moment >= captions[cue].end:
                         cue += 1
-                    current = captions[cue].text
-                    if scene_photo:
-                        fraction = min(1, max(0, (moment - start) / (end - start)))
-                        raw = frame_for(base, scene_photo, fraction, current).tobytes()
-                    else:
-                        if current not in cache:
-                            cache[current] = frame_for(base, None, 0, current).tobytes()
-                        raw = cache[current]
-                    process.stdin.write(raw)
+                    frame = frame_at(scenes, number, moment)
+                    draw_captions(frame, captions[cue].text, moment - captions[cue].start)
+                    if grain:
+                        frame = grain.apply(frame, frame_index)
+                    process.stdin.write(frame.tobytes())
                     frame_index += 1
         finally:
             process.stdin.close()
@@ -369,13 +498,20 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
 
 
 def stills(beats, release, photos, out):
-    """One frame per scene, without the voice, to check pictures and text before rendering."""
+    """One frame per picture, without the voice, to check pictures and text before rendering."""
+    grain = Grain() if style.grain else None
     tiles = []
-    for scene, beat in enumerate(beats):
-        photo = photos.get(scene)
-        frame = frame_for(layout(beat, release, photo, False), photo, 0.5, caption_chunks(beat.lines[0])[0])
-        frame.save(out / f"scene-{scene + 1:02}.jpg", quality=88)
-        tiles.append(frame.resize((405, 720), Image.Resampling.BICUBIC))
+    for index, beat in enumerate(beats):
+        scene = Scene(index, beat, release, photos.get(index), False, 0.0, 10.0)   # a 10-second scene
+        count = max(1, len(scene.photos))
+        for number in range(count):
+            frame = scene.render(10 * (number + 0.5) / count)
+            draw_captions(frame, caption_chunks(beat.lines[0])[0])
+            if grain:
+                frame = grain.apply(frame, index * 10 + number)
+            name = f"scene-{index + 1:02}" + (f"-{number + 1}" if count > 1 else "")
+            frame.save(out / f"{name}.jpg", quality=88)
+            tiles.append(frame.resize((405, 720), Image.Resampling.BICUBIC))
     columns = min(5, len(tiles))
     rows = math.ceil(len(tiles) / columns)
     sheet = Image.new("RGB", (columns * 415 + 10, rows * 730 + 10), "#000000")

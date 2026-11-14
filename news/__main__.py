@@ -85,8 +85,9 @@ def main():
 
     if scene_photos is None:
         photo_scenes = [index for index, beat in enumerate(beats) if beat.visual == "photo"]
-        scene_photos = dict(zip(photo_scenes, find_photos(release.publisher, len(photo_scenes))))
-    photos = list(scene_photos.values())
+        scene_photos = {index: [photo] for index, photo
+                        in zip(photo_scenes, find_photos(release.publisher, len(photo_scenes)))}
+    photos = [photo for scene in scene_photos.values() for photo in scene]
     if args.demo and not photos:
         raise RuntimeError("Demo could not retrieve a verified Bank of Japan archival photograph")
     for photo in photos:
@@ -118,7 +119,8 @@ def main():
         "scenes": [
             dict(asdict(beat),
                  visual=beat.visual if index in scene_photos or beat.visual != "photo" else "document",
-                 image_url=scene_photos[index].page if index in scene_photos else None)
+                 image_url=scene_photos[index][0].page if index in scene_photos else None,
+                 image_urls=[photo.page for photo in scene_photos.get(index, [])])
             for index, beat in enumerate(beats)
         ],
     }

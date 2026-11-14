@@ -45,6 +45,23 @@ def text_problem(value, where, *, required=True):
     return []
 
 
+def picks_of(scene):
+    """The pictures of a scene as a list of {"pick": …} (a scene may have one picture or a list of them)."""
+    photo = scene.get("photo")
+    if photo is None:
+        return []
+    return [{"pick": item} if isinstance(item, str) else item for item in (photo if isinstance(photo, list) else [photo])]
+
+
+def check_photos(photo, where, searches):
+    if isinstance(photo, list):
+        if not 1 <= len(photo) <= 4:
+            return [f'{where}: "photo" as a list must have 1 to 4 pictures, got {len(photo)}']
+        return [problem for number, item in enumerate(photo, 1)
+                for problem in check_photo(item, f"{where}, picture {number}", searches)]
+    return check_photo(photo, where, searches)
+
+
 def check_photo(photo, where, searches):
     problems = []
     if isinstance(photo, str):
@@ -122,7 +139,7 @@ def validate(data, name=None):
                 else:
                     problems += text_problem(line, at)
         if "photo" in scene:
-            problems += check_photo(scene["photo"], where, searches)
+            problems += check_photos(scene["photo"], where, searches)
     return problems
 
 
@@ -148,22 +165,20 @@ def found_pictures(data, pictures):
     searches = data.get("searches", [])
     problems = []
     for number, scene in enumerate(data["scenes"], 1):
-        if "photo" not in scene:
-            continue
-        pick = scene["photo"] if isinstance(scene["photo"], str) else scene["photo"]["pick"]
-        k, n = map(int, PICK.match(pick).groups())
-        group = groups.get(k)
-        if group is None:
-            problems.append(f"scene {number}: picture {pick}: search {k} has not been run yet (stage find)")
-        elif group["query"] != searches[k - 1]:
-            problems.append(f"scene {number}: picture {pick} was found by search {k} = {group['query']!r}, but "
-                            f"searches[{k}] in the story is now {searches[k - 1]!r}. Searches must only be "
-                            "appended; put the old search back or pick again after a new find")
-        elif group.get("error") and not group["results"]:
-            problems.append(f"scene {number}: picture {pick}: search {k} failed ({group['error']})")
-        elif n > len(group["results"]):
-            problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
-                            f"pictures found by search {k}")
+        for pick in (item["pick"] for item in picks_of(scene)):
+            k, n = map(int, PICK.match(pick).groups())
+            group = groups.get(k)
+            if group is None:
+                problems.append(f"scene {number}: picture {pick}: search {k} has not been run yet (stage find)")
+            elif group["query"] != searches[k - 1]:
+                problems.append(f"scene {number}: picture {pick} was found by search {k} = {group['query']!r}, but "
+                                f"searches[{k}] in the story is now {searches[k - 1]!r}. Searches must only be "
+                                "appended; put the old search back or pick again after a new find")
+            elif group.get("error") and not group["results"]:
+                problems.append(f"scene {number}: picture {pick}: search {k} failed ({group['error']})")
+            elif n > len(group["results"]):
+                problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
+                                f"pictures found by search {k}")
     if problems:
         raise StoryError(f"{len(problems)} pick problem(s):\n  - " + "\n  - ".join(problems))
     return {f"{k}-{number}": result for k, group in groups.items()
@@ -195,23 +210,23 @@ def load_story(path, pictures=None):
     for index, scene in enumerate(data["scenes"]):
         lines = [line if isinstance(line, str) else line["text"] for line in scene["lines"]]
         say = [line if isinstance(line, str) else line.get("say", line["text"]) for line in scene["lines"]]
-        pick = scene.get("photo")
-        if isinstance(pick, str):
-            pick = {"pick": pick}
-        visual = "photo" if pick else "data" if scene.get("value") else "document"
+        picks = picks_of(scene)
+        visual = "photo" if picks else "data" if scene.get("value") else "document"
         beats.append(Beat(scene.get("label", "ニュース"), scene["headline"], tuple(lines), visual,
                           scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else ()))
-        if pick:
+        if picks:
             if found is None:
-                raise StoryError(f"Scene {index + 1} picks picture {pick['pick']}, but no find folder with "
+                raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "
                                  "index.json was given (--pictures)")
-            entry = found[pick["pick"]]
-            with Image.open(Path(pictures) / entry["file"]) as original:
-                image = ImageOps.exif_transpose(original).convert("RGB")
-            photos[index] = Photo(image, entry["page"], entry["title"].removeprefix("File:"),
-                                  entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
-                                  entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                  pick.get("fit", "cover"))
+            photos[index] = []
+            for pick in picks:
+                entry = found[pick["pick"]]
+                with Image.open(Path(pictures) / entry["file"]) as original:
+                    image = ImageOps.exif_transpose(original).convert("RGB")
+                photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
+                                           entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
+                                           entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
+                                           pick.get("fit", "cover")))
     return release, beats, photos
 
 

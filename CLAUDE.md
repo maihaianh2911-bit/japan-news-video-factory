@@ -67,7 +67,10 @@ ask the owner to allow `main`.
    `"outcome": "partial"` — run it again (re-run the job, or Run workflow → `story` + the name) and only the
    failed searches are tried again. If a scene has no fitting picture, append searches and push again.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
-   the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts). Preview before rendering:
+   the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts), or a list of 1–4 of these:
+   the scene shows them one after the other. Owner, 14/11/2026: give each scene 2 pictures (a new picture every
+   4–5 seconds); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
+   slides in, captions fade in, scenes change with a cross-fade (`news`) or a page turn plus film grain (`paper`). Preview before rendering:
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
    (needs `sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
    folder>`: `git archive origin/renders <name>/find | tar -x -C <dir>`). It also checks the picks against the
