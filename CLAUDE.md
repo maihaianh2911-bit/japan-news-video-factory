@@ -33,6 +33,18 @@ adds a line such as "Phiếu tin Nhật số 2: ảnh đã tìm xong, chờ ch�
    GitHub calls it.
 3. Give the owner the links to the video, the subtitles and `credits.txt`.
 
+## When the owner sends an original video (every morning since 14/11/2026)
+A scheduled task reminds the owner at about 8:00 (Vietnam time) to send the day's source video (someone else's
+short). Its words are the script; our video retells them in our frame:
+1. Read every caption burnt into the video: `ffmpeg -i <video> -vf "fps=1,crop=1080:500:0:700,scale=540:-1,
+   drawtext=text='%{pts\:hms}':x=5:y=5:fontcolor=yellow:fontsize=24,tile=3x10" cap%02d.jpg` (move the crop to
+   where the captions are) and look at the sheets. The narration starts at 0 s, so an opening title is spoken
+   too. Write the script exactly, line by line, in a chat message so the owner can check it.
+2. Then as "When the owner pastes a script" above, with `style: "paper"` and a fitting `kicker` (e.g. `皇室の物語`
+   for a story about the imperial family), `web:` searches (2–3 per scene, Japanese words), 2 pictures per scene.
+   Never take pictures out of the source video itself. Names the voice may misread get a `say` in kana.
+3. Send the owner the finished video file in the chat (they want it there, not only as a link) and the links.
+
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
 for this way of working on 12/11/2026). If the session may only push to its own branch, say so in one line and
 ask the owner to allow `main`.
