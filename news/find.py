@@ -4,7 +4,7 @@ python -m news.find stories/<name>.json <out_dir>
 For every entry of "searches" not searched before:
 - "<words>": Wikimedia Commons, up to 8 pictures whose licence allows use in a video (public domain, CC0, CC BY,
   CC BY-SA), without small files and repeated scans.
-- "web:<words>": a free web image search (Bing, else DuckDuckGo), up to 12 pictures from any site, without stock
+- "web:<words>": a free web image search (Bing, else Yahoo! JAPAN, else DuckDuckGo), up to 12 pictures from any site, without stock
   sites (watermarks). The licence is unknown: the owner chose to use such pictures (13/11/2026); the site is
   credited on screen and in credits.txt.
 - "url:<picture address> [<page address>]": that one picture. Writes <out_dir>/<k>-<n>.jpg,
@@ -13,6 +13,7 @@ A search with no usable picture has no sheet. A search that fails (network, Comm
 index.json with "error" and no results, is tried again on the next run, and makes the exit status 3; the other
 searches still run and index.json is written after every search, so what was found can still be published.
 """
+from html import unescape
 from io import BytesIO
 import json
 from pathlib import Path
@@ -73,43 +74,79 @@ def site(url):
     return (urlsplit(url).hostname or "").removeprefix("www.")
 
 
+DEBUG = {}   # engine -> last page received, saved next to the pictures when a web search finds nothing
+
+
 def bing(query):
     page = web_get("https://www.bing.com/images/search?" + urlencode(
-        {"q": query, "form": "HDRSC2", "first": 1, "setlang": "ja", "cc": "JP"})).decode("utf-8", "replace")
-    for meta in html.fromstring(page).xpath('//a[contains(concat(" ", @class, " "), " iusc ")]/@m'):
+        {"q": query, "form": "HDRSC2", "first": 1, "setlang": "ja", "cc": "JP", "mkt": "ja-JP"}))
+    DEBUG["bing"] = page
+    text = unescape(page.decode("utf-8", "replace"))
+    seen = set()
+    for meta in re.finditer(r'\{[^{}]*?"murl":"[^{}]*?\}', text):
         try:
-            item = json.loads(meta)
+            item = json.loads(meta[0])
         except ValueError:
             continue
-        if item.get("murl"):
+        if item.get("murl") and item["murl"] not in seen:
+            seen.add(item["murl"])
             yield item["murl"], item.get("purl") or item["murl"], plain(item.get("t") or "")
+
+
+def yahoo(query):
+    page = web_get("https://search.yahoo.co.jp/image/search?" + urlencode({"p": query, "ei": "UTF-8"}))
+    DEBUG["yahoo"] = page
+    match = re.search(rb'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', page, re.S)
+    if not match:
+        return
+
+    def walk(node):
+        if isinstance(node, dict):
+            original = node.get("original")
+            if isinstance(original, dict) and isinstance(original.get("url"), str):
+                yield (original["url"], node.get("refererUrl") or node.get("url") or original["url"],
+                       plain(node.get("title") or ""))
+                return
+            for value in node.values():
+                yield from walk(value)
+        elif isinstance(node, list):
+            for value in node:
+                yield from walk(value)
+
+    yield from walk(json.loads(match[1]))
 
 
 def duckduckgo(query):
     page = web_get("https://duckduckgo.com/?" + urlencode({"q": query, "iax": "images", "ia": "images"}))
+    DEBUG["duckduckgo"] = page
     token = re.search(rb"vqd=[\"']?([0-9-]+)", page)
     if not token:
         raise ValueError("DuckDuckGo gave no search token")
-    data = json.loads(web_get("https://duckduckgo.com/i.js?" + urlencode(
+    data = web_get("https://duckduckgo.com/i.js?" + urlencode(
         {"l": "jp-jp", "o": "json", "q": query, "vqd": token[1].decode(), "f": ",,,,,", "p": "1"}),
-        referer="https://duckduckgo.com/"))
-    for item in data.get("results", []):
+        referer="https://duckduckgo.com/")
+    DEBUG["duckduckgo"] = data
+    for item in json.loads(data).get("results", []):
         if item.get("image"):
             yield item["image"], item.get("url") or item["image"], plain(item.get("title") or "")
 
 
-def web_search(query):
+def web_search(query, out=None):
     """Candidates (picture address, page address, title) of a web image search, stock sites left out."""
     results = []
-    for engine in (bing, duckduckgo):
+    DEBUG.clear()
+    for engine in (bing, yahoo, duckduckgo):
         try:
             results = list(engine(query))
         except (OSError, ValueError) as error:
-            print(f"  {engine.__name__} failed: {error}")
+            print(f"  {engine.__name__} failed: {type(error).__name__}: {error}", flush=True)
+        print(f"  {engine.__name__}: {len(results)} results", flush=True)
         if results:
-            print(f"  {engine.__name__}: {len(results)} results")
             break
     if not results:
+        if out:
+            for name, page in DEBUG.items():
+                (out / f"debug_{name}.html").write_bytes(page[:400_000])
         raise RuntimeError("no web image search answered")
     return [result for result in results if not STOCK.search(result[0] + " " + result[1])]
 
@@ -193,7 +230,7 @@ def save_index(index, path):
 
 def find(query, k, out, seen):
     if query.startswith("web:"):
-        return web_find(web_search(query[4:].strip()), k, out, seen, WEB_KEEP)
+        return web_find(web_search(query[4:].strip(), out), k, out, seen, WEB_KEEP)
     if query.startswith("url:"):
         image, _, page = query[4:].strip().partition(" ")
         kept = web_find([(image, page.strip() or image, "")], k, out, seen, 1)

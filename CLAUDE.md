@@ -54,7 +54,7 @@ ask the owner to allow `main`.
      `kicker`: the red tag at the top (default `日本のニュース`; e.g. `皇室の物語` for a story that is not news).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
-     (Bing, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
+     (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
      takes one picture; their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
    - Check before pushing: `python -m news.custom stories/<name>.json` lists every problem (unknown keys such as
