@@ -198,11 +198,10 @@ jobs:
         run: |
           STAGE=
           if [[ "$MODE" == "story" && -f "stories/$STORY.json" ]]; then
-            # the issue this story belongs to (read first, so even a broken story reports to its issue)
-            ISSUE=$(python -c "import json,sys
-          try: n = json.load(open(sys.argv[1], encoding='utf-8')).get('issue')
-          except Exception: n = None
-          print(n if isinstance(n, int) and not isinstance(n, bool) and n > 0 else '')" "stories/$STORY.json")
+            # The issue this story belongs to, read first so that a story with problems reports to its issue.
+            # A file that is not valid JSON is searched for its "issue": N as text; if that is not found
+            # either, the failure shows only in this run (red) and the issue keeps its label.
+            ISSUE=$(python tools/story_issue.py "stories/$STORY.json")
             echo "ISSUE=$ISSUE" >> "$GITHUB_ENV"
           fi
           if [[ "$MODE" == "story" ]]; then
@@ -211,7 +210,9 @@ jobs:
             fi
             [[ -f "stories/$STORY.json" ]] || { echo "::error::stories/$STORY.json not found"; exit 1; }
             python -m pip install -q -r requirements.txt
-            python -m news.custom "stories/$STORY.json"
+            python -m news.custom "stories/$STORY.json" || {
+              echo "WHY=file kịch bản stories/$STORY.json có lỗi (sai cú pháp hoặc thiếu mục)" >> "$GITHUB_ENV"
+              echo "::error::stories/$STORY.json has problems (listed above): fix the story file and push again"; exit 1; }
             STAGE=$(python -c "import json,sys; print(json.load(open(sys.argv[1], encoding='utf-8')).get('stage', 'find'))" "stories/$STORY.json")
           fi
           echo "stage=$STAGE" >> "$GITHUB_OUTPUT"
