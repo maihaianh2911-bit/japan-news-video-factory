@@ -83,7 +83,12 @@ ask the owner to allow `main`.
    failed searches are tried again. If a scene has no fitting picture, append searches and push again.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
    the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts), or a list of 1–4 of these:
-   the scene shows them one after the other. Owner, 14/11/2026: give each scene 2 pictures (a new picture every
+   the scene shows them one after the other. How a picture moves and how a scene arrives is your choice, by the
+   meaning of the lines (owner, 14/11/2026): `"move": "<name>"` in a picture entry, `"cut": "<name>"` and `"why":
+   "<one short Vietnamese sentence>"` in the scene, from the table "Bảng cách edit" in `AGENT_JNEWS.md` (moves:
+   `push-in`, `pull-back`, `pan-right`, `pan-left`, `rise`, `fall`, `close-up`, `reveal`, `punch-in`, `hold`;
+   cuts: `fade`, `page`, `hard`, `dip`). Without them the old automatic choice stays. The preview prints the list
+   of edits and writes it to `edits.md`. Owner, 14/11/2026: give each scene 2 pictures (a new picture every
    4–5 seconds); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
    slides in, captions fade in, scenes change with a cross-fade (`news`) or a page turn plus film grain (`paper`). Preview before rendering:
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
@@ -110,7 +115,9 @@ the search runs on GitHub. The voice engine runs only on GitHub (Docker).
 `python3 -m compileall -q news`, `python -m news.custom` on every story, and a stills preview of
 `stories/mau-boj.json` (look at the sheet), and after a change to the frames or the encoder
 `python tools/encode_test.py stories/mau-boj.json <find folder> <out>` (3 seconds of real video in both frames,
-needs ffmpeg). A push of code to `main` runs the same check on GitHub, offline (no voice, no live sources; the
+needs ffmpeg) and `python tools/edits_test.py stories/mau-boj.json <find folder> <out>` (every move and cut of
+the catalogue: look at `moves.jpg` and `cuts.jpg`). `stories/mau-boj.json` has no `move`/`cut` on purpose: its
+stills must stay the same, which proves that old stories render as before. A push of code to `main` runs the same check on GitHub, offline (no voice, no live sources; the
 stills are in the run's Artifacts), also when the same push carries a story. The live demo (`--demo`, boj.or.jp + VOICEVOX)
 runs only from Run workflow → `demo`. `tools/publish.sh` replaces a folder of `renders` as a whole and writes
 `status.json`. Never touch secrets. No pull requests unless asked.
