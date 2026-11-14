@@ -89,17 +89,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://yamagatadantsu.co.jp/column/2235/",
-      "title": "1960年・昭和天皇、香淳皇后 工房ご視察 ｜ 山形緞通",
-      "creator": "yamagatadantsu.co.jp",
+      "page": "https://mainichi.jp/articles/20251008/k00/00m/040/086000c",
+      "title": "香淳皇后は終戦の日をどう迎えたのか? 実録に記された前夜の様子 ...",
+      "creator": "mainichi.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://search.showakan.go.jp/search/photo/detail.php?id=90143060",
-      "title": "全国植樹祭に参加した香淳皇后 | 昭和館デジタルアーカイブ",
-      "creator": "search.showakan.go.jp",
+      "page": "https://bunshun.jp/articles/photo_front/84250?utm_source=news.yahoo.co.jp&utm_medium=referral&utm_campaign=partnerLink&pn=2",
+      "title": "これまで知られていなかった終戦史の一端が明かされた」原武史氏 ...",
+      "creator": "bunshun.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -121,17 +121,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://showa-g.org/photos/view/127",
-      "title": "昭和天皇陛下、香淳皇后陛下 御寫眞の写真 | 昭和ガイド",
-      "creator": "showa-g.org",
+      "page": "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
+      "title": "香淳皇后実録、晩年の記述が問題提起する皇室の高齢化「伝統と ...",
+      "creator": "sankei.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
-      "title": "香淳皇后実録、晩年の記述が問題提起する皇室の高齢化「伝統と ...",
-      "creator": "sankei.com",
+      "page": "https://showa-g.org/photos/view/127",
+      "title": "昭和天皇陛下、香淳皇后陛下 御寫眞の写真 | 昭和ガイド",
+      "creator": "showa-g.org",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -153,6 +153,8 @@
         "じょし一人、まもれぬ者に、国はまもれるか。",
         "じゃっかん19歳のこうたいし、のちのしょうわてんのうは、巨大な政治圧力のかちゅうにいた。"
       ],
+      "cut": "",
+      "why": "Mở đầu bằng chân dung Thái tử 19 tuổi, ảnh lớn dần; rồi lia từ ngực áo lên mặt khi nói về sức ép.",
       "image_url": "https://note.com/yoshizuka/n/n1f6201ba3a04",
       "image_urls": [
         "https://note.com/yoshizuka/n/n1f6201ba3a04",
@@ -173,6 +175,8 @@
         "ひょうてきは、こんやくしゃ、ながこさま。",
         "大人たちは家系の問題を口実に、しつように婚約解消を迫る。"
       ],
+      "cut": "page",
+      "why": "Sang nhân vật mới (bà Nagako) nên lật trang; tiến vào bà vì bà là mục tiêu, rồi cận mặt nghiêm của Yamagata khi nói về sức ép.",
       "image_url": "https://www.sankei.com/article/20210523-6BLD4BUS6JOMJOWPRQ6QIWTJOI/",
       "image_urls": [
         "https://www.sankei.com/article/20210523-6BLD4BUS6JOMJOWPRQ6QIWTJOI/",
@@ -195,6 +199,8 @@
         "ながこでよい。",
         "ゆるぎない意志が、あんうんを切り裂き、二人の未来をこじ開けた。"
       ],
+      "cut": "fade",
+      "why": "Lia từ Thái tử sang bà (không buông tay), rồi từ cận hai người mở ra cả khung cửa sáng: tương lai mở ra.",
       "image_url": "https://note.com/yoshizuka/n/nad5f7aebd355",
       "image_urls": [
         "https://note.com/yoshizuka/n/nad5f7aebd355",
@@ -217,6 +223,8 @@
         "4人続けて誕生したのは、こうじょ。",
         "あとつぎをという無言の圧力が、二人を追い詰めた。"
       ],
+      "cut": "page",
+      "why": "Chương mới sau đám cưới nên lật trang; lia từ dưới lên mặt các công chúa, rồi tiến chậm vào Hoàng hậu đang chịu sức ép.",
       "image_url": "https://x.com/Reki_Shock_/status/1618262550713442305",
       "image_urls": [
         "https://x.com/Reki_Shock_/status/1618262550713442305",
@@ -241,6 +249,8 @@
         "ながこがいい。",
         "しょうわてんのうは、きぜんと言い放った。"
       ],
+      "cut": "fade",
+      "why": "Lia từ Hoàng hậu về phía Thiên hoàng, người sắp trả lời; câu \"Nagako là được\" là đỉnh điểm nên giật nhanh vào hai người (chỉ dùng một lần).",
       "image_url": "https://aucview.aucfan.com/yahoo/d1188394468/",
       "image_urls": [
         "https://aucview.aucfan.com/yahoo/d1188394468/",
@@ -261,10 +271,12 @@
         "戦火のぼうくうごうでも、二人は共に歩む。",
         "苦悩する夫を、ほほえみで支え続けたこうごう。"
       ],
-      "image_url": "https://yamagatadantsu.co.jp/column/2235/",
+      "cut": "hard",
+      "why": "Chiến tranh ập đến nên cắt thẳng; lia ngang qua hàng quân nhân tới Hoàng hậu thời chiến (ảnh mới tìm thêm), rồi tiến vào nụ cười bà dành cho chồng.",
+      "image_url": "https://mainichi.jp/articles/20251008/k00/00m/040/086000c",
       "image_urls": [
-        "https://yamagatadantsu.co.jp/column/2235/",
-        "https://search.showakan.go.jp/search/photo/detail.php?id=90143060"
+        "https://mainichi.jp/articles/20251008/k00/00m/040/086000c",
+        "https://bunshun.jp/articles/photo_front/84250?utm_source=news.yahoo.co.jp&utm_medium=referral&utm_campaign=partnerLink&pn=2"
       ]
     },
     {
@@ -283,6 +295,8 @@
         "97歳で旅立ったこうごうの、かたわらには、",
         "あの日から一度も揺らぐことのない愛があった。"
       ],
+      "cut": "dip",
+      "why": "Nhảy tới năm 2000 và sự ra đi nên tối dần rồi sáng lại; cận di ảnh, gần như đứng yên, rồi lia từ cỏ lên hai người lúc về già.",
       "image_url": "https://bunshun.jp/articles/-/38694?page=1",
       "image_urls": [
         "https://bunshun.jp/articles/-/38694?page=1",
@@ -303,10 +317,12 @@
         "ただ一人の女性を守り抜いた、しょうわてんのう。",
         "そのいちずすぎる愛が、一つの時代を形作った。"
       ],
-      "image_url": "https://showa-g.org/photos/view/127",
+      "cut": "fade",
+      "why": "Lia từ Thiên hoàng sang người phụ nữ ông bảo vệ, rồi lùi dần khỏi hai người nắm tay nhau để kết.",
+      "image_url": "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
       "image_urls": [
-        "https://showa-g.org/photos/view/127",
-        "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/"
+        "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
+        "https://showa-g.org/photos/view/127"
       ]
     }
   ]
