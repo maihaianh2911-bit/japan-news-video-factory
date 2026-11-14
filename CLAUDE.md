@@ -27,11 +27,13 @@ adds a line such as "Phiếu tin Nhật số 2: ảnh đã tìm xong, chờ ch�
    exactly as pasted, `### Nguồn tin (không bắt buộc)`, `### Ngày của tin (không bắt buộc)`, `### Ghi chú (không
    bắt buộc)` (`_No response_` when empty). No labels: the workflow adds them.
 2. Add `jnews-busy` to the issue right after creating it (the workflow wakes the Claude task at the same time; the
-   label keeps it off this issue), then do the steps of `AGENT_JNEWS.md` for that issue right away. Remove
-   `jnews-busy` only after your push and once the workflow has moved the step label (see "Claim" in
-   `AGENT_JNEWS.md` §0); claim again before each later step. While a machine step runs, say so in one line and
-   wait; if the owner does not want to wait, stop after any step: the Claude task continues from the labels when
-   GitHub calls it.
+   label keeps it off this issue), then do the steps of `AGENT_JNEWS.md` for that issue right away. Keep
+   `jnews-busy` on while you work and wait in the chat: for an issue with a fresh `jnews-busy` (added less than
+   2 hours ago) the workflow does not call the Claude task after a machine step and does not write "chưa gọi được
+   Claude" on the issue. On a longer chat remove and add it again; remove it after the closing comment. While a
+   machine step runs, say so in one line and wait; if the owner does not want to wait, stop right after one of
+   your pushes (once the workflow has moved the step label, see "Claim" in `AGENT_JNEWS.md` §0) and remove
+   `jnews-busy`: the Claude task continues from the labels when GitHub calls it after that step.
 3. Give the owner the links to the video, the subtitles and `credits.txt`.
 
 ## When the owner sends an original video (every morning since 14/11/2026)
@@ -73,7 +75,7 @@ ask the owner to allow `main`.
    - Check before pushing: `python -m news.custom stories/<name>.json` lists every problem (unknown keys such as
      `photos`, `lines` not a list, bad `focus`/`fit`, missing fields) and the scenes without a picture.
 2. The push runs the workflow (find stage, ~2 min). First check that the run for your commit succeeded (the
-   session's GitHub tools `actions_list` / `actions_get`); then `git fetch origin renders` and check that
+   session's GitHub tools `actions_list` / `actions_get`); then `git fetch --depth 1 origin +refs/heads/renders:refs/remotes/origin/renders` and check that
    `<name>/find/status.json` has your commit (`commit`) before trusting the folder. Look at
    `<name>/find/sheet_<k>.jpg` yourself. A search with no usable picture has no `sheet_<k>.jpg` (0 results in
    `index.json`); a search that failed has `"error"` in `index.json`, the run is red and `status.json` says
@@ -93,7 +95,10 @@ ask the owner to allow `main`.
    `status.json` has your commit (an old video stays there when a render fails). Look at the stills and the
    subtitles, then give the owner the links
    `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and the two
-   others), and say which scenes have no picture and why.
+   others), and say which scenes have no picture and why. GitHub refuses a file over 100 MB, so the video is
+   kept under about 88 MB: full quality up to about 1 min 50 s, a lower bitrate beyond (`news/render.py`). Old
+   videos are deleted from `renders` every week (`renders-cleanup.yml`: issue closed for 2 days, or no activity
+   for 14 days; `mau-boj` always stays), so tell the owner to download the video.
 
 Owner, 14/11/2026: pictures may come from anywhere on the web (`web:` searches), for the best pictures; the owner
 was told about the copyright risk and accepted it. Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting
@@ -103,7 +108,9 @@ the search runs on GitHub. The voice engine runs only on GitHub (Docker).
 
 ## Changing the pipeline
 `python3 -m compileall -q news`, `python -m news.custom` on every story, and a stills preview of
-`stories/mau-boj.json` (look at the sheet). A push of code to `main` runs the same check on GitHub, offline (no
-voice, no live sources; the stills are in the run's Artifacts). The live demo (`--demo`, boj.or.jp + VOICEVOX)
+`stories/mau-boj.json` (look at the sheet), and after a change to the frames or the encoder
+`python tools/encode_test.py stories/mau-boj.json <find folder> <out>` (3 seconds of real video in both frames,
+needs ffmpeg). A push of code to `main` runs the same check on GitHub, offline (no voice, no live sources; the
+stills are in the run's Artifacts), also when the same push carries a story. The live demo (`--demo`, boj.or.jp + VOICEVOX)
 runs only from Run workflow → `demo`. `tools/publish.sh` replaces a folder of `renders` as a whole and writes
 `status.json`. Never touch secrets. No pull requests unless asked.

@@ -5,7 +5,7 @@ For every entry of "searches" not searched before:
 - "<words>": Wikimedia Commons, up to 8 pictures whose licence allows use in a video (public domain, CC0, CC BY,
   CC BY-SA), without small files and repeated scans.
 - "web:<words>": a free web image search (Bing, else Yahoo! JAPAN, else DuckDuckGo), up to 12 pictures from any site, without stock
-  sites (watermarks). The licence is unknown: the owner chose to use such pictures (13/11/2026); the site is
+  sites (watermarks). The licence is unknown: the owner chose to use such pictures (14/11/2026); the site is
   credited on screen and in credits.txt.
 - "url:<picture address> [<page address>]": that one picture. Writes <out_dir>/<k>-<n>.jpg,
 index.json (file page, licence, author) and sheet_<k>.jpg, a numbered contact sheet to choose from.

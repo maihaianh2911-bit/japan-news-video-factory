@@ -5,12 +5,14 @@ Máy dựng video tin tức Nhật Bản dạng dọc 1080 × 1920: ảnh thật
 ## Dựng từ kịch bản (cách dùng chính)
 
 1. Mở phiếu mới bằng mẫu **📰 Video tin Nhật (ảnh thật)**, dán kịch bản, bấm **Create**. Hoặc dán kịch bản vào một phiên chat Claude có kết nối repo này: Claude tự mở phiếu.
-2. Không cần làm gì thêm. Claude dịch sát sang tiếng Nhật và chia cảnh (`stories/<tên>.json`), máy tìm ảnh thật trên Wikimedia Commons, Claude xem và chọn ảnh cho từng cảnh, máy tạo giọng đọc VOICEVOX:青山龍星 và dựng video, Claude kiểm tra từng cảnh. Mỗi bước xong đều báo trong phiếu; link video ở bình luận cuối.
+2. Không cần làm gì thêm. Claude dịch sát sang tiếng Nhật và chia cảnh (`stories/<tên>.json`), máy tìm ảnh thật trên Wikimedia Commons và trên web (báo, blog; ảnh trên web có thể có bản quyền, chủ kênh đã chấp nhận), Claude xem và chọn ảnh cho từng cảnh, máy tạo giọng đọc VOICEVOX:青山龍星 và dựng video, Claude kiểm tra từng cảnh. Mỗi bước xong đều báo trong phiếu; link video ở bình luận cuối.
 3. Muốn sửa thì viết bình luận trong phiếu.
 
 Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề, `credits.txt` (nguồn ảnh để dán vào mô tả video), ảnh tĩnh; ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit. Chi tiết cho Claude: `CLAUDE.md`, `AGENT_JNEWS.md`.
 
-**Cấu hình:** để GitHub gọi Claude sau mỗi bước, repo cần hai secret `CLAUDE_TASK_URL` và `CLAUDE_TASK_TOKEN` (cùng giá trị như ở `japan-video-factory`). Không có lượt chạy mỗi giờ: nếu Claude lỡ một lần gọi (ví dụ hết hạn mức), vào **Actions → Gọi Claude ngay → Run workflow**. Nhãn của phiếu được tạo bằng workflow **Tạo nhãn**.
+**Tải video về máy:** mỗi tuần workflow **Dọn video cũ (nhánh renders)** xóa video của phiếu đã đóng quá 2 ngày hoặc không có hoạt động trong 14 ngày, khi đó link video hết hiệu lực. Video luôn nhẹ hơn 100 MB (giới hạn của GitHub); video dài hơn khoảng 1 phút 50 giây được nén nhiều hơn một chút.
+
+**Cấu hình:** để GitHub gọi Claude sau mỗi bước, repo cần hai secret `CLAUDE_TASK_URL` và `CLAUDE_TASK_TOKEN` (cùng giá trị như ở `japan-video-factory`). Không có lượt chạy mỗi giờ: nếu Claude lỡ một lần gọi (ví dụ hết hạn mức), vào **Actions → Gọi Claude ngay → Run workflow**. Khi chưa gọi được Claude, máy ghi rõ điều đó trong phiếu kèm link nút bấm. Nhãn của phiếu được tạo bằng workflow **Tạo nhãn**.
 
 ## Luồng tự tìm tin (chạy tay)
 
@@ -30,7 +32,7 @@ Mở [Actions → Japan News Video](https://github.com/maihaianh2911-bit/japan-n
 | `demo` | Quyết định lãi suất BOJ ngày 24/01/2025, đánh dấu là tin cũ để thử dựng |
 | `source` | Dán link thông cáo HTML của BOJ, METI hoặc trang CPI toàn quốc vào `source_url` |
 
-Đẩy mã (không phải kịch bản) lên `main` chỉ chạy một bước kiểm tra không cần mạng: dựng ảnh tĩnh của `stories/mau-boj.json`, không tạo giọng, không đọc trang BOJ. Video mẫu `demo` chỉ chạy khi chọn tay.
+Đẩy mã (không phải kịch bản) lên `main` chạy một bước kiểm tra không cần mạng: dựng ảnh tĩnh và 3 giây video thử của `stories/mau-boj.json`, không tạo giọng, không đọc trang BOJ. Video mẫu `demo` chỉ chạy khi chọn tay.
 
 Khi job xong, tải `japan-news-video-<run>-<n>` trong **Artifacts**. Artifact được giữ 14 ngày. Chạy thử bằng nguồn cũ sẽ hiển thị ngày công bố trên video.
 
@@ -40,7 +42,7 @@ Cần Python 3.12, FFmpeg, font Noto Sans CJK JP và Docker. VOICEVOX chạy c�
 
 ```sh
 python -m pip install -r requirements.txt
-docker run --rm -p 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-latest
+docker run --rm -p 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-0.26.1
 ```
 
 Mở terminal khác rồi chạy:

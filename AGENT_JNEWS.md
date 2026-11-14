@@ -35,10 +35,14 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   `jnews-failed` instead of `jnews-plan`/`jnews-pick`/`jnews-fix`; ~1–2 min), so no other Claude run takes the
   same step again in between. If it has not moved after ~10 min, check that a run for your commit started
   (`gh api "repos/$R/actions/runs?head_sha=<commit>"`) and leave `jnews-busy` on (it expires after 2 hours).
+  Do not keep `jnews-busy` longer than that when unattended: GitHub does not call you for an issue that still
+  carries a fresh `jnews-busy` when its machine step ends (it belongs to a Claude working in a chat); such an
+  issue then waits for the button "Gọi Claude ngay".
 - Find the story of issue N (exact number, so issue 1 does not match 12):
   `grep -lE '"issue": *N([^0-9]|$)' stories/*.json`.
-- Files of a story: `git fetch -q origin +refs/heads/renders:refs/remotes/origin/renders && git archive
-  origin/renders <name> | tar -x -C /tmp/r`. Trust a folder only when its `status.json` has the commit you pushed.
+- Files of a story: `git fetch -q --depth 1 origin +refs/heads/renders:refs/remotes/origin/renders && git archive
+  origin/renders <name> | tar -x -C /tmp/r` (`--depth 1`: the branch holds many videos, and its history is
+  replaced by one commit every week). Trust a folder only when its `status.json` has the commit you pushed.
 
 ## Owner's standing decisions
 - Real pictures only, never AI pictures. You look at every picture yourself.
@@ -49,6 +53,8 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   approval. Only write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
+- Two pictures per scene (owner, 14/11/2026): a new picture every 4–5 seconds (`"photo"` as a list, `CLAUDE.md`
+  step 3).
 - Quality is not traded for usage: preview before rendering.
 
 ## 1. `jnews-plan` → `stories/<name>.json`
@@ -78,12 +84,13 @@ against the script. Push a corrected story only for a real fault (a cut face, th
 write it `{"text": …, "say": "kana"}`). Otherwise remove `jnews-check`, add `jnews-done` and comment (🤖, short,
 Vietnamese): the video link `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4`,
 its length, links to `subtitles.srt` and `credits.txt` (to paste into the video description), which scenes have no
-picture and why, "bình luận nếu muốn sửa".
+picture and why, "bình luận nếu muốn sửa", and that the owner should download the video: its link stops working
+2 days after the issue is closed, or after 14 days without activity on the issue (weekly clean-up of `renders`).
 
 ## 4. `jnews-fix` and `jnews-failed`
 - `jnews-fix`: the request = owner comments after your last `🤖` comment. Wording → `lines`; pictures → picks or new
   searches (then `stage: "find"`). Push, one-line 🤖 comment, remove `jnews-fix`.
-- `jnews-failed`: read the failed run's log (link in the issue; `gh api repos/$R/actions/runs/<id>/jobs`, then
+- `jnews-failed`: read the reason in the issue comment, if it gives one, and the failed run's log (link in the issue; `gh api repos/$R/actions/runs/<id>/jobs`, then
   `gh api repos/$R/actions/jobs/<job>/logs`), fix the cause (your story file, or `news/*` checked as in `CLAUDE.md`
   "Changing the pipeline"). A push of the story starts the run again; without a story change, re-run with
   `gh api -X POST repos/$R/actions/workflows/news-video.yml/dispatches -f ref=main -f 'inputs[mode]=story' -f 'inputs[story]=<name>'`.
