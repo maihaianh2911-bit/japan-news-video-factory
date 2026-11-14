@@ -12,6 +12,9 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
+# GitHub refuses a file over 100 MB on the renders branch: the video is kept under about 90 MB. Up to about
+# 1 min 50 s it gets the full quality (6 Mbit/s at most); a longer one gets a lower bitrate instead of failing.
+SIZE_BUDGET, MAX_VIDEO_KBPS, AUDIO_KBPS = 88_000_000, 6000, 128
 FONT = "/usr/share/fonts/opentype/noto/Noto{}CJK"
 WHITE, PAPER, INK = "#ffffff", "#f6f3ec", "#142232"
 NAVY, MUTED, RED, GOLD = "#132133", "#99a9bb", "#b91835", "#ffda76"
@@ -465,6 +468,21 @@ def frame_at(scenes, number, moment):
     return frame
 
 
+def video_kbps(duration, budget=SIZE_BUDGET):
+    """The highest video bitrate (kbit/s) that keeps a video of `duration` seconds within `budget` bytes."""
+    room = budget * 8 / 1000 / max(duration, 1.0) * 0.98 - AUDIO_KBPS   # 2 % for the container
+    return max(300, min(MAX_VIDEO_KBPS, int(room)))
+
+
+def codec_args(duration):
+    """FFmpeg output options: H.264 at constant quality, capped so that the file fits the size budget."""
+    kbps = video_kbps(duration)
+    return ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", f"{kbps}k", "-bufsize", f"{2 * kbps}k",
+            "-pix_fmt", "yuv420p",
+            "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7",
+            "-movflags", "+faststart", "-shortest"]
+
+
 def encode(beats, release, photos, demo, intervals, captions, wav, out):
     scenes = scenes_for(beats, release, photos, demo, intervals)
     grain = Grain() if style.grain else None
@@ -475,10 +493,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", f"{W}x{H}", "-framerate", str(FPS), "-i", "-",
-        "-i", str(wav), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", "6M", "-bufsize", "12M",
-        "-pix_fmt", "yuv420p",
-        "-c:a", "aac", "-b:a", "128k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7",
-        "-movflags", "+faststart", "-shortest", str(out / "video.mp4"),
+        "-i", str(wav), *codec_args(intervals[-1][1]), str(out / "video.mp4"),
     ]
     cue = 0
     frame_index = 0

@@ -7,12 +7,21 @@
 # Subfolders named after the stage are kept as they are (render: "find", so the pictures found stay).
 # OUTCOME (env, default "ok") is written in status.json, e.g. "partial" when some searches failed.
 # PUBLISH_REMOTE (env) replaces the GitHub URL, for tests against a local repository.
+# A file over 100 MB is refused by GitHub for good: it is reported at once (exit 2), not tried again.
+# PUBLISH_MAX_BYTES (env) replaces that limit, for tests.
 set -euo pipefail
 DEST="${1:?dest_dir}"; SRC="${2:?source_dir}"; STAGE="${3:?stage}"; shift 3
 KEEP=("$@")
 [[ -d "$SRC" ]] || { echo "::error::nothing to publish: $SRC is not a folder"; exit 1; }
 [[ "$DEST" != /* && "$DEST" != *..* && -n "${DEST//[\/.]/}" ]] || { echo "::error::bad dest_dir: $DEST"; exit 1; }
 SRC=$(cd "$SRC" && pwd)
+MAX_BYTES="${PUBLISH_MAX_BYTES:-100000000}"
+BIG=$(find "$SRC" -type f -size +"${MAX_BYTES}c" -printf '%P (%s bytes)\n' | head -5)
+if [[ -n "$BIG" ]]; then
+  echo "::error::File quá nặng, GitHub không nhận file trên 100 MB (too large to publish): $BIG"
+  exit 2
+fi
+PUSH_LOG=$(mktemp)
 URL="${PUBLISH_REMOTE:-https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git}"
 RUN_URL="${GITHUB_SERVER_URL:-https://github.com}/${GITHUB_REPOSITORY:-local}/actions/runs/${GITHUB_RUN_ID:-0}"
 COMMIT="${GITHUB_SHA:-$(git rev-parse HEAD)}"
@@ -51,8 +60,15 @@ open(sys.argv[1], "w", encoding="utf-8").write(json.dumps(status, indent=1) + "\
 PY
   local who=(-c user.name=render-bot -c user.email=render-bot@users.noreply.github.com)
   git -C "$wt" "${who[@]}" add -A &&
-    git -C "$wt" "${who[@]}" commit -q -m "publish $DEST ($STAGE, run ${GITHUB_RUN_ID:-local}, ${COMMIT:0:7})" &&
-    git -C "$wt" push -q "$URL" HEAD:refs/heads/renders
+    git -C "$wt" "${who[@]}" commit -q -m "publish $DEST ($STAGE, run ${GITHUB_RUN_ID:-local}, ${COMMIT:0:7})" || return 1
+  git -C "$wt" push -q "$URL" HEAD:refs/heads/renders 2> "$PUSH_LOG" && status=0 || status=$?
+  cat "$PUSH_LOG" >&2
+  return $status
+}
+
+# A refusal that trying again cannot change (GitHub's file size limit, a rule on the branch).
+permanent() {
+  grep -qiE "GH001|exceeds GitHub's file size limit|pre-receive hook declined|protected branch" "$PUSH_LOG"
 }
 
 cleanup() {
@@ -69,6 +85,11 @@ for attempt in 1 2 3 4 5; do
     exit 0
   fi
   cleanup "$WT"
+  if permanent; then
+    echo "::error::GitHub từ chối nhận $DEST (refused for good, not trying again): xem dòng \"remote: error\" ở trên"
+    exit 2
+  fi
+  : > "$PUSH_LOG"
   echo "publish attempt $attempt failed (renders moved or network error); starting again from the new tip"
   sleep $((attempt * 5))
 done
