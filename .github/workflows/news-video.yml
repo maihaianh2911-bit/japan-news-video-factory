@@ -31,9 +31,9 @@ on:
       - 'requirements.txt'
       - '.github/workflows/news-video.yml'
 
+# Each job asks for what it needs (the video job alone may write to the renders branch).
 permissions:
-  contents: write
-  issues: write
+  contents: read
 
 # No concurrency group for the whole workflow: a group keeps only one pending run and cancels the others, which
 # silently dropped the pushes of other stories. The video job has one group per story instead (below): two runs
@@ -133,6 +133,8 @@ jobs:
   plan:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions: { contents: read }
     outputs:
       items: ${{ steps.plan.outputs.items }}
     steps:
@@ -175,6 +177,7 @@ jobs:
     if: needs.plan.outputs.items != '[]'
     runs-on: ubuntu-24.04
     timeout-minutes: 40
+    permissions: { contents: write, issues: write }
     strategy:
       fail-fast: false
       matrix:
@@ -316,7 +319,10 @@ jobs:
       - name: Start Japanese voice engine
         if: steps.plan.outputs.stage == 'render' || matrix.mode == 'demo' || matrix.mode == 'source' || matrix.mode == 'daily'
         run: |
-          docker run --detach --name voicevox --publish 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-latest
+          # Pinned (cpu-latest was this version on 14/11/2026): a new engine can change the voice or its timing.
+          IMAGE=voicevox/voicevox_engine:cpu-0.26.1
+          for attempt in 1 2 3; do docker pull --quiet "$IMAGE" && break; echo "docker pull failed (attempt $attempt)"; sleep $((attempt * 15)); done
+          docker run --detach --name voicevox --publish 127.0.0.1:50021:50021 "$IMAGE"
           for attempt in $(seq 1 40); do
             if curl --fail --silent --max-time 4 http://127.0.0.1:50021/version; then
               exit 0
