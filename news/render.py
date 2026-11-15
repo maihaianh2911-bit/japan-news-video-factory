@@ -828,10 +828,12 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     while cue + 1 < len(captions) and moment >= captions[cue].end:
                         cue += 1
                     frame = frame_at(scenes, number, moment)
-                    if quotes[cue]:
-                        draw_quote(frame, quotes[cue][0], moment - quotes[cue][1])
+                    # in the silence between two lines the last caption (or quote) stays until the next one starts
+                    shown = cue - 1 if cue and moment < captions[cue].start else cue
+                    if quotes[shown]:
+                        draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
                     else:
-                        draw_captions(frame, captions[cue].text, moment - captions[cue].start)
+                        draw_captions(frame, captions[shown].text, moment - captions[shown].start)
                     if grain:
                         frame = grain.apply(frame, frame_index)
                     process.stdin.write(frame.tobytes())
