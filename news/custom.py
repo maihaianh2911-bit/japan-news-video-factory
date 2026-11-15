@@ -24,7 +24,7 @@ SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut",
 LINE_KEYS = {"text", "say", "quote"}
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone"}
 TONES = ("sepia", "mono", "color")
-MUSIC_KEYS = {"pick", "volume"}
+MUSIC_KEYS = {"pick", "volume", "start"}
 PACE_KEYS = {"speed", "line_pause", "scene_pause"}
 PACE_LIMITS = {"speed": (0.7, 1.3), "line_pause": (0.0, 2.0), "scene_pause": (0.0, 3.0)}
 
@@ -37,7 +37,8 @@ class Music:
     page: str
     creator: str
     license: str
-    volume: float = 1.0   # 1 = the usual level under the voice (about 18 dB below it); 0.5 quieter, 1.5 louder
+    volume: float = 1.0   # 1 = the usual level under the voice (about 17 dB below it); 0.5 quieter, 1.5 louder
+    start: float = 0.0    # seconds of the recording skipped (a silence or a noise at its beginning)
 
     def credit(self):
         return {"title": self.title, "page": self.page, "creator": self.creator, "license": self.license}
@@ -152,6 +153,9 @@ def validate(data, name=None):
             volume = music.get("volume", 1.0)
             if not isinstance(volume, (int, float)) or isinstance(volume, bool) or not 0.2 <= volume <= 3:
                 problems.append(f'"music": "volume" must be a number from 0.2 to 3, got {volume!r}')
+            start = music.get("start", 0.0)
+            if not isinstance(start, (int, float)) or isinstance(start, bool) or not 0 <= start <= 120:
+                problems.append(f'"music": "start" must be seconds from 0 to 120, got {start!r}')
     pace = data.get("pace")
     if pace is not None:
         if not isinstance(pace, dict):
@@ -276,7 +280,7 @@ def load_story(path, pictures=None):
         entry = found[data["music"]["pick"]]
         music = Music(str(Path(pictures) / entry["file"]), entry["title"].removeprefix("File:"), entry["page"],
                       entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
-                      float(data["music"].get("volume", 1.0)))
+                      float(data["music"].get("volume", 1.0)), float(data["music"].get("start", 0.0)))
     pace = data.get("pace") or {}
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,

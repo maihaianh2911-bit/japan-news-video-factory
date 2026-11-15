@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "女子一人守れぬ者に国は守れるか 昭和天皇と香淳皇后（物語版・試作）",
   "date": "2026-11-15",
   "style": "story",
@@ -337,5 +337,9 @@
     "speed": 0.92,
     "line_pause": 0.35,
     "scene_pause": 0.5
+  },
+  "music": {
+    "pick": "17-4",
+    "start": 2.0
   }
 }

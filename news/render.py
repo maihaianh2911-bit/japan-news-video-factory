@@ -795,7 +795,8 @@ def music_args(music, duration):
              f"[2:a]aformat=channel_layouts=mono,loudnorm=I={level:.1f}:TP=-9:LRA=11,aresample=44100,"
              f"afade=t=in:st=0:d=2,afade=t=out:st={fade_out:.2f}:d=3,atrim=0:{duration:.2f}[music];"
              f"[voice][music]amix=inputs=2:duration=first:normalize=0,{LOUDNESS},aresample=44100[mix]")
-    return ["-stream_loop", "-1", "-i", music.path], ["-filter_complex", graph, "-map", "0:v", "-map", "[mix]"]
+    skip = ["-ss", f"{music.start:.2f}"] if getattr(music, "start", 0) else []
+    return [*skip, "-stream_loop", "-1", "-i", music.path], ["-filter_complex", graph, "-map", "0:v", "-map", "[mix]"]
 
 
 def encode(beats, release, photos, demo, intervals, captions, wav, out):
