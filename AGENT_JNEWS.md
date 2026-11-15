@@ -100,14 +100,14 @@ owner: why these edits; never drawn in the video).
 
 | `move` | What it looks like | When (the meaning of the line) |
 | --- | --- | --- |
-| `push-in` | slowly closer to the focus point | a person, a feeling, a decision; the line is about who is in the picture |
-| `pull-back` | slowly wider | a place or a situation; the last picture of a story (ending) |
+| `push-in` | slowly closer to the focus point (16–30 % closer, by the time on screen) | a person, a feeling, a decision; the line is about who is in the picture |
+| `pull-back` | slowly wider (as much as `push-in`) | a place or a situation; the last picture of a story (ending) |
 | `pan-right` / `pan-left` | travels across a wide picture | an action or a journey, a row of people, a street; towards where they look or move. Needs a wide picture |
 | `rise` | travels up a tall picture | a building, a standing person, growth, hope, rising numbers. Needs a tall picture |
 | `fall` | travels down a tall picture | decline, loss, mourning, falling numbers; reading down a page. Needs a tall picture |
-| `close-up` | very close on the focus point, almost still | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Needs a large picture |
+| `close-up` | very close on the focus point (1.8 times), almost still | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Always give `focus` (the preview warns without it); needs a large picture. On a portrait whose face already fills the picture it cuts the forehead: use `push-in` there |
 | `reveal` | starts very close, quickly opens to the whole picture | a comparison or a surprise of context ("but in fact…"), the first picture of a new place |
-| `punch-in` | jumps closer in a third of a second, then holds | a shock: a death, an accident, a scandal, a hard number. At most once or twice in a video |
+| `punch-in` | jumps closer in a third of a second, then holds. The picture arrives by a hard cut (no fade from the picture before), and on the first picture of a scene the jump waits until the scene has arrived | a shock: a death, an accident, a scandal, a hard number. At most once or twice in a video |
 | `hold` | still | a document, a chart, a map, a number to read; with `"fit": "contain"` the whole picture is shown |
 
 With `"fit": "contain"` only `push-in`, `pull-back` and `hold` exist (the whole picture grows, shrinks or stays).
@@ -115,13 +115,13 @@ With `"fit": "contain"` only `push-in`, `pull-back` and `hold` exist (the whole 
 | `cut` | What it looks like | When |
 | --- | --- | --- |
 | `fade` | cross-fade, half a second | the story simply goes on (default of `news`) |
-| `page` | a page turned from the right | a new chapter or a new person (default of `paper`) |
+| `page` | `paper`: a page turned from the right; `news`: the new scene slides in from the right behind a red edge | a new chapter or a new person (default of `paper`) |
 | `hard` | no transition | a shock, a contrast, a quick list; before a `punch-in` |
-| `dip` | goes dark, comes back (0.9 s) | a jump in time ("ten years later"), a death, the ending scene |
+| `dip` | the picture and the scene text go dark and come back (0.9 s); the header and the caption stay | a jump in time ("ten years later"), a death, the ending scene |
 
 `python -m news.custom` refuses an unknown name and lists the valid ones. Names and code: `news/edits.py`,
 `news/render.py` (`named_photo`, `transition`); every edit can be seen with `python tools/edits_test.py
-stories/mau-boj.json <find folder of mau-boj> <out>` (`moves.jpg`, `cuts.jpg` and two short videos).
+stories/mau-boj.json <find folder of mau-boj> <out>` (`moves.jpg`, `cuts.jpg`, `punch.jpg` and two short videos).
 
 ## 3. `jnews-check` → done
 Fetch `<name>/` (its `status.json` must have your commit). Look at `stills/sheet.jpg` and read `subtitles.srt`
