@@ -270,6 +270,9 @@ def moving_photo(photo, t, kind, height=PHOTO_HEIGHT):
 # --- Moves chosen by name (news/edits.py MOVES). Their speed follows the time the picture is on screen: a short
 # picture moves a shorter way, a long one a longer way, so neither rushes nor crawls.
 
+CLOSE_UP = 1.8   # how close a close-up starts (1 = the picture fills the frame)
+
+
 def clamp(value, low, high):
     return min(high, max(low, value))
 
@@ -295,27 +298,29 @@ def pan_plan(size, across, along, centre, seconds):
     return zoom, middle - half, middle + half, min(travel, room)
 
 
-def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT):
+def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
     """The picture at time t (0 at its start, 1 at its end, a little more while it fades out) for a move of the
-    catalogue; `seconds` is how long the picture stays."""
+    catalogue; `seconds` is how long the picture stays. `delay`: seconds a punch-in waits (until the scene has
+    arrived), so that its hit is seen."""
     t = clamp(t, 0.0, 1.25)
     image, (fx, fy) = photo.image, photo.focus
     if photo.fit == "contain":   # the whole picture: it grows, shrinks or stays
-        small = 1 - clamp(0.028 * seconds, 0.07, 0.16)
+        small = 1 - clamp(0.035 * seconds, 0.10, 0.18)
         size = {"push-in": small + (1 - small) * min(1, t), "pull-back": 1 - (1 - small) * min(1, t)}.get(name, 1.0)
         return whole_photo(image, (size - 0.86) / 0.14, height)
-    gain = clamp(0.04 * seconds, 0.10, 0.26)
+    # at least 16 % closer or wider, so that even a 2-second picture is seen to move; 30 % at most
+    gain = clamp(0.05 * seconds, 0.16, 0.30)
     if name == "push-in":
         return view(image, height, 1.0 + gain * t, fx, fy)
     if name == "pull-back":
-        return view(image, height, max(1.0, 1.05 + gain * (1 - t)), fx, fy)
-    if name == "close-up":
-        return view(image, height, 1.55 + clamp(0.012 * seconds, 0.03, 0.10) * t, fx, fy)
+        return view(image, height, max(1.0, 1.02 + gain * (1 - t)), fx, fy)
+    if name == "close-up":   # tight around the focus point, creeping closer
+        return view(image, height, CLOSE_UP + clamp(0.015 * seconds, 0.04, 0.12) * t, fx, fy)
     if name == "reveal":
         start, done = 1.0 + clamp(0.16 * seconds, 0.45, 0.8), 1 - (1 - min(1, t)) ** 2
         return view(image, height, start - (start - 1.0) * done, fx, fy)
     if name == "punch-in":
-        quick, now = min(0.35, seconds * 0.25), t * seconds
+        quick, now = min(0.35, seconds * 0.25), max(0.0, t * seconds - delay)
         if now < quick:
             return view(image, height, 1.0 + 0.26 * (1 - (1 - now / quick) ** 2), fx, fy)
         return view(image, height, 1.26 + 0.012 * (now - quick), fx, fy)
@@ -343,7 +348,9 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
         return f"{name}: the picture is not wide enough to pan across (try rise, fall or push-in)"
     if name in ("rise", "fall") and pan_plan(image.height, height, fill, photo.focus[1], seconds)[3] < 100:
         return f"{name}: the picture is not tall enough to move along (try pan-left, pan-right or push-in)"
-    closest = {"close-up": 1.65, "reveal": 1.8, "punch-in": 1.3}.get(name)
+    if name == "close-up" and tuple(photo.focus) == (0.5, 0.5):
+        return "close-up: no \"focus\" given, it closes in on the middle of the picture (put focus on the detail)"
+    closest = {"close-up": CLOSE_UP + 0.1, "reveal": 1.8, "punch-in": 1.3}.get(name)
     if closest and W / (fill * closest) < 500:
         return f"{name}: the picture is small ({image.width}x{image.height}), it will look soft that close"
     return None
@@ -428,6 +435,8 @@ class Scene:
     def __init__(self, index, beat, release, photos, demo, start, end):
         self.index, self.photos, self.start, self.end = index, list(photos or ()), start, max(end, start + 0.1)
         self.cut = beat.cut
+        # how long the scene takes to arrive: a punch-in on its first picture waits for it
+        self.arrival = 0.0 if not index else CUT_SECONDS[beat.cut] if beat.cut else TRANSITION
         self.background, self.text = layout(beat, release, bool(self.photos), demo)
         self.settled = self.background.copy()
         self.settled.paste(self.text, (0, 0), self.text)
@@ -438,7 +447,8 @@ class Scene:
         number = min(count - 1, max(0, int((moment - self.start) // length)))
         local = (moment - self.start - number * length) / length
         picture = self.shot(number, local, length)
-        if number and local * length < PHOTO_FADE:   # the previous picture fades into this one
+        # the previous picture fades into this one; a punch-in arrives by a hard cut, or its hit would be hidden
+        if number and local * length < PHOTO_FADE and self.photos[number].move != "punch-in":
             previous = self.shot(number - 1, 1 + local, length)
             picture = Image.blend(previous, picture, ease(local * length / PHOTO_FADE))
         return picture, self.photos[number]
@@ -447,7 +457,7 @@ class Scene:
         """Picture `number` at its time `local`: the move chosen for it, else the four old moves in turn."""
         photo = self.photos[number]
         if photo.move:
-            return named_photo(photo, local, photo.move, length)
+            return named_photo(photo, local, photo.move, length, delay=0.0 if number else self.arrival)
         return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)])
 
     def render(self, moment):
@@ -482,6 +492,15 @@ def page_shadow():
 CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0}
 
 
+@lru_cache(maxsize=1)
+def slide_shadow():
+    shadow = Image.new("RGBA", (140, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shadow)
+    for x in range(140):
+        draw.line((x, 0, x, H), fill=(0, 0, 0, round(170 * (x / 140) ** 2)))
+    return shadow
+
+
 def transition(old, new, amount, cut=""):
     """From one scene to the next. Without a chosen cut: a page turned from the right (paper) or a cross-fade
     (news). "dip": the old scene goes dark, then the new one comes up."""
@@ -489,8 +508,29 @@ def transition(old, new, amount, cut=""):
     if cut == "fade":
         return Image.blend(old, new, amount)
     if cut == "dip":
-        dark = Image.new("RGB", (W, H), "#07090c" if not style.grain else "#1c140b")
-        return Image.blend(old, dark, ease(amount * 2)) if amount < 0.5 else Image.blend(dark, new, ease(amount * 2 - 1))
+        # Only the scene (picture and its text) goes dark; the header and the foot change quietly and the caption,
+        # drawn afterwards, stays readable.
+        frame = Image.blend(old, new, ease(amount))
+        area = (0, 245, W, 1700)
+        dark = Image.new("RGB", (W, area[3] - area[1]), "#07090c" if not style.grain else "#1c140b")
+        scene = (Image.blend(old.crop(area), dark, ease(amount * 2)) if amount < 0.5
+                 else Image.blend(dark, new.crop(area), ease(amount * 2 - 1)))
+        frame.paste(scene, area[:2])
+        return frame
+    if not style.grain:
+        # "page" in the news frame: the new scene slides in from the right over the whole height, behind a red
+        # edge and a soft shadow (the paper page turn below is too faint on the dark frame).
+        offset = round(W * (1 - amount))
+        frame = old.copy()
+        if offset < W:
+            frame.paste(new.crop((0, 0, W - offset, H)), (offset, 0))
+        if offset > 0:
+            shadow = slide_shadow()
+            left = max(0, offset - shadow.width)
+            frame.paste(shadow.crop((shadow.width - (offset - left), 0, shadow.width, H)), (left, 0),
+                        shadow.crop((shadow.width - (offset - left), 0, shadow.width, H)))
+            ImageDraw.Draw(frame).rectangle((offset, 0, min(W, offset + 9), H), fill=style.accent)
+        return frame
     offset = round(W * (1 - amount))
     frame = old.copy()
     if offset < W:

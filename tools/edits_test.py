@@ -4,7 +4,8 @@ python tools/edits_test.py stories/mau-boj.json <its find folder> <out folder> [
 
 Writes <out>/edits-sample.json (a story that uses every move and every cut: it is read through the same checks as
 a real story), <out>/moves.jpg (each move at its start, middle and end, for a picture shown 5 seconds),
-<out>/cuts.jpg (each cut a quarter, half and three quarters through, in both frames) and <out>/news/video.mp4,
+<out>/cuts.jpg (each cut a quarter, half and three quarters through, in both frames), <out>/punch.jpg (eight
+frames in a row around a punch-in that follows another picture: it must arrive by a hard cut) and <out>/news/video.mp4,
 <out>/paper/video.mp4 (every move for a few seconds, the cuts in turn, silence as the voice). Also checks that
 wrong names are refused. There is no sample video for this channel: these files are what the owner and Claude
 look at to judge the edits.
@@ -104,6 +105,28 @@ def cuts_sheet(release, beats, photos, out):
     sheet.save(out / "cuts.jpg", quality=88)
 
 
+def punch_sheet(release, beats, photos, out):
+    """Eight frames in a row where a punch-in follows another picture of the same scene."""
+    names = list(MOVES)
+    pair = [photos[names.index("push-in")][0], photos[names.index("punch-in")][0]]
+    render.use_style("news")
+    scene = render.scenes_for(beats[:1], release, {0: pair}, False, [(0.0, 4.0)])[0]   # the pictures change at 2 s
+    sheet = Image.new("RGB", (8 * 280 + 10, 500), "#000000")
+    frames = []
+    for column in range(8):
+        moment = 2.0 + (column - 1) / render.FPS
+        picture = scene.picture(moment)[0]
+        frames.append(picture)
+        frame = picture.resize((270, 175), Image.Resampling.BICUBIC)
+        sheet.paste(tag(frame, f"{moment:.3f} s", 16), (10 + column * 280, 10))
+    sheet = sheet.crop((0, 0, sheet.width, 195))
+    sheet.save(out / "punch.jpg", quality=90)
+    # the frame before the change is the old picture alone, the first one after it the new picture alone (no mix)
+    alone = render.named_photo(pair[1], 0.0, "punch-in", 2.0)
+    if frames[1].tobytes() != alone.tobytes():
+        sys.exit("error: a punch-in after another picture must arrive by a hard cut, but the pictures are mixed")
+
+
 def video(release, beats, photos, seconds, name, out):
     folder = out / name
     folder.mkdir(parents=True, exist_ok=True)
@@ -135,6 +158,7 @@ def main():
             sys.exit(f"error: the sample picture of {beats[index].label} does not suit its move ({warning})")
     moves_sheet(photos, out)
     cuts_sheet(release, beats, photos, out)
+    punch_sheet(release, beats, photos, out)
     render.use_style("news")
     render.stills(beats, release, photos, out)   # sheet.jpg and edits.md, as for a real story
     for name in ("news", "paper"):
