@@ -7,7 +7,9 @@ For every entry of "searches" not searched before:
 - "web:<words>": a free web image search (Bing, else Yahoo! JAPAN, else DuckDuckGo), up to 12 pictures from any site, without stock
   sites (watermarks). The licence is unknown: the owner chose to use such pictures (14/11/2026); the site is
   credited on screen and in credits.txt.
-- "url:<picture address> [<page address>]": that one picture. Writes <out_dir>/<k>-<n>.jpg,
+- "url:<picture address> [<page address>]": that one picture.
+- "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
+  12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence. Writes <out_dir>/<k>-<n>.jpg,
 index.json (file page, licence, author) and sheet_<k>.jpg, a numbered contact sheet to choose from.
 A search with no usable picture has no sheet. A search that fails (network, Commons refusing) is recorded in
 index.json with "error" and no results, is tried again on the next run, and makes the exit status 3; the other
@@ -34,6 +36,9 @@ from .sources import fetch
 HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
 ALLOWED = re.compile(r"^(public domain|pd|cc0|cc[- ]by(-sa)?[- ]?\d|cc[- ]by(-sa)?$)", re.I)
 KEEP, WEB_KEEP, MIN_SIDE, LARGEST = 8, 12, 400, 2400
+MUSIC_KEEP, MUSIC_LIMIT = 4, 12_000_000
+AUDIO = {"application/ogg": "ogg", "audio/ogg": "ogg", "audio/mpeg": "mp3", "audio/webm": "webm",
+         "audio/x-flac": "flac", "audio/flac": "flac", "audio/wav": "wav", "audio/x-wav": "wav"}
 BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 STOCK = re.compile(r"gettyimages|alamy|shutterstock|istockphoto|dreamstime|123rf|depositphotos|pixta|aflo|"
                    r"stock\.adobe|agefotostock|bridgemanimages|pinimg|pinterest", re.I)
@@ -228,7 +233,60 @@ def save_index(index, path):
     path.write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
 
+def music_search(query):
+    """Recordings on Commons with a licence that allows use, smallest first among the best matches."""
+    params = urlencode({
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": f"{query} filetype:audio",
+        "gsrnamespace": 6, "gsrlimit": 20, "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime",
+    })
+    data = json.loads(get(f"https://commons.wikimedia.org/w/api.php?{params}"))
+    pages = sorted(data.get("query", {}).get("pages", {}).values(), key=lambda page: page.get("index", 0))
+    for page in pages:
+        info = (page.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        licence = plain(meta.get("LicenseShortName", {}).get("value"))
+        if info.get("mime") not in AUDIO or not ALLOWED.search(licence) or info.get("size", 0) > MUSIC_LIMIT:
+            continue
+        yield {"title": page["title"], "page": info["descriptionurl"], "url": info["url"],
+               "ext": AUDIO[info["mime"]], "size": info.get("size", 0), "license": licence,
+               "license_url": plain(meta.get("LicenseUrl", {}).get("value")),
+               "artist": plain(meta.get("Artist", {}).get("value"))[:120],
+               "description": plain(meta.get("ImageDescription", {}).get("value"))[:300]}
+
+
+def seconds_of(path):
+    """Length of an audio file in seconds (ffprobe), or None."""
+    try:
+        import subprocess
+        result = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
+                                 str(path)], capture_output=True, text=True, timeout=30, check=True)
+        return round(float(result.stdout.strip()), 1)
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return None
+
+
+def music_find(query, k, out):
+    kept = []
+    for result in music_search(query):
+        if len(kept) == MUSIC_KEEP:
+            break
+        try:
+            data = get(result.pop("url"))
+        except (OSError, ValueError) as error:
+            print(f"  skipped {result['title']}: {error}")
+            continue
+        finally:
+            time.sleep(1)
+        result["file"] = f"{k}-{len(kept) + 1}.{result.pop('ext')}"
+        (out / result["file"]).write_bytes(data)
+        result["seconds"] = seconds_of(out / result["file"])
+        kept.append(result)
+    return kept
+
+
 def find(query, k, out, seen):
+    if query.startswith("music:"):
+        return music_find(query[6:].strip(), k, out)
     if query.startswith("web:"):
         return web_find(web_search(query[4:].strip(), out), k, out, seen, WEB_KEEP)
     if query.startswith("url:"):
@@ -260,7 +318,7 @@ def find(query, k, out, seen):
 
 
 def clear(out, k, seen):
-    for old in [*out.glob(f"{k}-*.jpg"), out / f"sheet_{k}.jpg"]:
+    for old in [*out.glob(f"{k}-*.*"), out / f"sheet_{k}.jpg"]:
         old.unlink(missing_ok=True)
         seen.pop(old.name, None)
 
@@ -294,7 +352,7 @@ def main():
             failed.append(k)
             print(f"{k}. {query}: FAILED ({group['error']})")
         else:
-            if group["results"]:
+            if group["results"] and not query.startswith("music:"):
                 sheet(group["results"], out, out / f"sheet_{k}.jpg")
             print(f"{k}. {query}: {len(group['results'])} pictures" + ("" if group["results"] else " (no sheet)"))
         index.append(group)

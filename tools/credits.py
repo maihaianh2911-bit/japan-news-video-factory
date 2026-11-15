@@ -17,6 +17,12 @@ if photos:
                      f"{', ' + licence if licence else ''}{' (' + photo['license_url'] + ')' if photo.get('license_url') else ''}"
                      f" — {photo.get('page', '')}")
     lines.append("")
+music = data.get("music")
+if music:
+    licence = music.get("license") or ""
+    lines += ["音楽 / Nhạc nền",
+              f"- {music.get('title', '')} — {music.get('creator') or 'không rõ'}{', ' + licence if licence else ''}"
+              f" — {music.get('page', '')}", ""]
 lines.append(data.get("voice_credit") or "VOICEVOX:青山龍星")
 open(sys.argv[2], "w", encoding="utf-8").write("\n".join(lines) + "\n")
 print("\n".join(lines))

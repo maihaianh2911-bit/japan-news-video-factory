@@ -2,6 +2,7 @@
 
 python -m news.custom stories/<name>.json [<find folder>]   checks a story (and its picks against the find index)
 """
+from dataclasses import dataclass
 from datetime import date
 from difflib import get_close_matches
 import json
@@ -16,11 +17,30 @@ from .sources import Release
 from .story import Beat
 from .visuals import Photo
 
-STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker"}
-STYLES = ("news", "paper")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why"}
-LINE_KEYS = {"text", "say"}
-PHOTO_KEYS = {"pick", "focus", "fit", "move"}
+STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
+              "music", "pace"}
+STYLES = ("news", "paper", "story")
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
+LINE_KEYS = {"text", "say", "quote"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone"}
+TONES = ("sepia", "mono", "color")
+MUSIC_KEYS = {"pick", "volume"}
+PACE_KEYS = {"speed", "line_pause", "scene_pause"}
+PACE_LIMITS = {"speed": (0.7, 1.3), "line_pause": (0.0, 2.0), "scene_pause": (0.0, 3.0)}
+
+
+@dataclass(frozen=True)
+class Music:
+    """A quiet piece under the voice: a file of the find folder (search "music:…") and its credit."""
+    path: str
+    title: str
+    page: str
+    creator: str
+    license: str
+    volume: float = 1.0   # 1 = the usual level under the voice (about 18 dB below it); 0.5 quieter, 1.5 louder
+
+    def credit(self):
+        return {"title": self.title, "page": self.page, "creator": self.creator, "license": self.license}
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
 
@@ -84,6 +104,8 @@ def check_photo(photo, where, searches):
             problems.append(f'{where}: "focus" must be [x, y] with numbers from 0 to 1, got {focus!r}')
     if "fit" in photo and photo["fit"] not in ("cover", "contain"):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
+    if "tone" in photo and photo["tone"] not in TONES:
+        problems.append(f'{where}: "tone" must be one of {", ".join(TONES)}, got {photo["tone"]!r}')
     problems += move_problems(photo, where)
     return problems
 
@@ -116,6 +138,30 @@ def validate(data, name=None):
     if not isinstance(searches, list) or not all(isinstance(s, str) and s.strip() for s in searches):
         problems.append(f'"searches" must be a list of non-empty strings, got {searches!r}')
         searches = []
+    music = data.get("music")
+    if music is not None:
+        if not isinstance(music, dict):
+            problems.append(f'"music" must be {{"pick": "<k>-<n>", "volume": 1}}, got {music!r}')
+        else:
+            problems += unknown(music, MUSIC_KEYS, "music")
+            match = PICK.match(music.get("pick", "")) if isinstance(music.get("pick"), str) else None
+            if not match:
+                problems.append(f'"music": "pick" must look like "25-1", got {music.get("pick")!r}')
+            elif int(match[1]) > len(searches) or not searches[int(match[1]) - 1].startswith("music:"):
+                problems.append(f'"music": pick {music["pick"]} must come from a "music:…" search')
+            volume = music.get("volume", 1.0)
+            if not isinstance(volume, (int, float)) or isinstance(volume, bool) or not 0.2 <= volume <= 3:
+                problems.append(f'"music": "volume" must be a number from 0.2 to 3, got {volume!r}')
+    pace = data.get("pace")
+    if pace is not None:
+        if not isinstance(pace, dict):
+            problems.append(f'"pace" must be {{"speed": 0.9, "line_pause": 0.3, "scene_pause": 0.6}}, got {pace!r}')
+        else:
+            problems += unknown(pace, PACE_KEYS, "pace")
+            for key, (low, high) in PACE_LIMITS.items():
+                value = pace.get(key, low)
+                if not isinstance(value, (int, float)) or isinstance(value, bool) or not low <= value <= high:
+                    problems.append(f'"pace": "{key}" must be a number from {low} to {high}, got {value!r}')
     scenes = data.get("scenes")
     if not isinstance(scenes, list) or not scenes:
         return problems + ['"scenes" must be a non-empty list']
@@ -126,7 +172,7 @@ def validate(data, name=None):
             continue
         problems += unknown(scene, SCENE_KEYS, where)
         problems += text_problem(scene.get("headline"), f'{where}: "headline"')
-        for key in ("label", "value", "evidence"):
+        for key in ("label", "value", "evidence", "era"):
             problems += text_problem(scene.get(key), f'{where}: "{key}"', required=False)
         lines = scene.get("lines")
         if not isinstance(lines, list) or not lines:
@@ -138,6 +184,8 @@ def validate(data, name=None):
                     problems += unknown(line, LINE_KEYS, at)
                     problems += text_problem(line.get("text"), f'{at}: "text"')
                     problems += text_problem(line.get("say"), f'{at}: "say"', required=False)
+                    if "quote" in line and not isinstance(line["quote"], bool):
+                        problems.append(f'{at}: "quote" must be true or false, got {line["quote"]!r}')
                 else:
                     problems += text_problem(line, at)
         if "photo" in scene:
@@ -182,6 +230,11 @@ def found_pictures(data, pictures):
             elif n > len(group["results"]):
                 problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
                                 f"pictures found by search {k}")
+    if isinstance(data.get("music"), dict):
+        k, n = map(int, PICK.match(data["music"]["pick"]).groups())
+        group = groups.get(k)
+        if group is None or not group["results"] or n > len(group["results"]):
+            problems.append(f"music {data['music']['pick']}: not among the files found by search {k} (stage find)")
     if problems:
         raise StoryError(f"{len(problems)} pick problem(s):\n  - " + "\n  - ".join(problems))
     return {f"{k}-{number}": result for k, group in groups.items()
@@ -203,11 +256,32 @@ def report_without_picture(data):
         print(f"  scene {number} {label}" + ("" if has_value else "  (no value: not a pure-figure scene)"))
 
 
+def toned(image, tone):
+    """Old-photograph tones: "sepia" (warm brown, as old prints), "mono" (black and white), "color" (as it is)."""
+    if tone == "color":
+        return image
+    grey = ImageOps.autocontrast(image.convert("L"), cutoff=1)
+    if tone == "mono":
+        return grey.convert("RGB")
+    return ImageOps.colorize(grey, black="#1d130a", mid="#8c6c47", white="#f6e8cb")
+
+
 def load_story(path, pictures=None):
     data = read(path)
-    release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
-                      data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""))
     found = found_pictures(data, pictures)
+    music = None
+    if data.get("music"):
+        if found is None:
+            raise StoryError("the story has music, but no find folder with index.json was given (--pictures)")
+        entry = found[data["music"]["pick"]]
+        music = Music(str(Path(pictures) / entry["file"]), entry["title"].removeprefix("File:"), entry["page"],
+                      entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
+                      float(data["music"].get("volume", 1.0)))
+    pace = data.get("pace") or {}
+    release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
+                      data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
+                      float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
+                      float(pace.get("scene_pause", 0.0)))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
@@ -217,7 +291,9 @@ def load_story(path, pictures=None):
         visual = "photo" if picks else "data" if scene.get("value") else "document"
         beats.append(Beat(scene.get("label", "ニュース"), scene["headline"], tuple(lines), visual,
                           scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else (),
-                          scene.get("cut", ""), scene.get("why", "")))
+                          scene.get("cut", ""), scene.get("why", ""), scene.get("era", ""),
+                          tuple(number for number, line in enumerate(scene["lines"])
+                                if isinstance(line, dict) and line.get("quote"))))
         if picks:
             if found is None:
                 raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "
@@ -226,7 +302,7 @@ def load_story(path, pictures=None):
             for pick in picks:
                 entry = found[pick["pick"]]
                 with Image.open(Path(pictures) / entry["file"]) as original:
-                    image = ImageOps.exif_transpose(original).convert("RGB")
+                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), pick.get("tone", "color"))
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),

@@ -96,7 +96,8 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="news-") as scratch:
         wav = Path(scratch) / "voice.wav"
-        intervals, captions = narration(beats, wav, speed=0.96)
+        intervals, captions = narration(beats, wav, speed=release.speed, line_pause=release.line_pause,
+                                        scene_pause=release.scene_pause)
         duration = intervals[-1][1]
         if duration > 90 and not args.story:
             intervals, captions = narration(beats, wav, speed=min(1.25, 0.96 * duration / 87))
@@ -116,6 +117,7 @@ def main():
                     "publisher": release.publisher, "title": release.title},
         "photos": [photo.credit() for photo in photos],
         "voice_credit": VOICE_CREDIT,
+        "music": release.music.credit() if release.music else None,
         "scenes": [
             dict(asdict(beat),
                  visual=beat.visual if index in scene_photos or beat.visual != "photo" else "document",

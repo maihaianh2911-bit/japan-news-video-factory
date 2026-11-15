@@ -39,9 +39,10 @@ class Style:
     card_ink: str = INK
     card_muted: str = "#5d6671"
     rule: str = "#506075"
-    caption_box: str = "#0b1421"
+    caption_box: str = "#0b1421"   # "" = no box: the caption is printed on the page
     caption_text: str = WHITE
     grain: bool = False
+    layout: str = "news"           # "news": picture in the upper part; "story": a large picture with the text on it
 
 
 STYLES = {
@@ -50,6 +51,14 @@ STYLES = {
                    tag="#4a3520", tag_text="#f6ecd2", photo_bed="#d8c79e", photo_tag="#eee2bf", photo_tag_text="#2a1d10", value="#8e2b1b", card="#f7eed6",
                    card_ink="#2a1d10", card_muted="#6f5d40", rule="#9c8a68", caption_box="#2e2114",
                    caption_text="#f8f0da", grain=True),
+    # "story": the old-newspaper page for a story told in pictures (history, a life, a love story): the picture
+    # fills most of the page, the year of the scene stands at the top, the headline lies on the foot of the picture
+    # and a quote is printed big over the picture while it is spoken.
+    "story": Style(family="Serif", background="#eee2bf", text="#f8efd9", muted="#6f5d40", accent="#8e2b1b",
+                   tag="#8e2b1b", tag_text="#f8efd9", photo_bed="#1a120a", photo_tag="#eee2bf",
+                   photo_tag_text="#2a1d10", value="#f1c96b", card="#f7eed6", card_ink="#2a1d10",
+                   card_muted="#6f5d40", rule="#9c8a68", caption_box="", caption_text="#2a1d10", grain=True,
+                   layout="story"),
 }
 style = STYLES["news"]
 
@@ -215,6 +224,21 @@ def paper_grain(color):
 
 # --- motion: pictures that move, text that comes in, transitions between scenes, film grain (paper) ---
 PHOTO_TOP, PHOTO_HEIGHT = 338, 700
+STORY_TOP, STORY_HEIGHT = 172, 1258     # "story": the picture from under the masthead to above the captions
+
+
+def photo_box():
+    """Top and height of the picture in the current frame."""
+    return (STORY_TOP, STORY_HEIGHT) if style.layout == "story" else (PHOTO_TOP, PHOTO_HEIGHT)
+
+
+def page_area():
+    """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
+    return (0, 0, W, 1752) if style.layout == "story" else (0, 245, W, 1700)
+
+
+def caption_centre():
+    return 1590 if style.layout == "story" else 1598
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
 
@@ -356,9 +380,91 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
     return None
 
 
+STORY_TEXT = "#f8efd9"
+
+
+def story_layout(beat, release, has_photo, demo):
+    """The "story" page: masthead with the kicker and the year of the scene, a large picture with the headline on its
+    foot, the captions printed on the page under it, the credits at the bottom."""
+    image = paper_grain(style.background).copy()
+    draw = ImageDraw.Draw(image)
+    ink = "#2a1d10"
+    draw.rectangle((0, 0, W, 10), fill=style.accent)
+    draw.rectangle((36, 26, W - 36, 31), fill=ink)
+    draw.rectangle((36, 36, W - 36, 37), fill=ink)
+    draw.rectangle((36, 146, W - 36, 147), fill=ink)
+    draw.rectangle((36, 152, W - 36, 157), fill=ink)
+    label(draw, 60, 62, release.kicker or "日本のニュース", style.accent, STORY_TEXT)
+    if demo:
+        text(draw, W // 2, 76, "動作確認", 28, GOLD, anchor="mt")
+    if has_photo:
+        draw.rectangle((0, STORY_TOP - 4, W, STORY_TOP + STORY_HEIGHT + 4), fill=style.photo_bed)
+    draw.line((60, 1752, W - 60, 1752), fill=style.rule, width=2)
+    if release.publisher:
+        text(draw, 60, 1812, f"出典  {release.publisher}", 24, style.muted, bold=False)
+    text(draw, W - 60, 1774, VOICE_CREDIT, 24, style.muted, bold=False, anchor="rt")
+    if release.music:
+        music = f"音楽  {release.music.title.rsplit('.', 1)[0]}"
+        music, music_size = fit(music, 600, 22, 1, bold=False, smallest=16)
+        text(draw, W - 60, 1812, music, music_size, style.muted, bold=False, anchor="rt")
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if beat.era:
+        era, era_size = fit(beat.era, 520, 68, 1, smallest=40)
+        text(draw, W - 60, 46, era, era_size, style.accent, anchor="rt")
+    else:
+        text(draw, W - 60, 74, japanese_date(release), 35, style.muted, anchor="rt")
+    if not has_photo:   # a text card in the place of the picture
+        draw.rounded_rectangle((70, 260, 1010, 1340), radius=32, fill=style.card, outline=style.rule, width=3)
+        headline, size = fit(beat.headline, 840, 64, 3, smallest=40)
+        y = text(draw, 119, 360, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 840, 120, 1, smallest=56)
+            y = text(draw, 119, y + 70, value, value_size, style.accent)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 40, 5, bold=False, smallest=26)
+            text(draw, 119, y + 60, evidence, evidence_size, style.card_ink, bold=False)
+        return image, layer
+    label(draw, 60, STORY_TOP + 34, beat.label, style.tag, STORY_TEXT)
+    # the headline lies on the foot of the picture, over a dark gradient; built from the bottom up
+    bottom = STORY_TOP + STORY_HEIGHT - 44
+    blocks = []
+    if beat.value:
+        value, value_size = fit(beat.value, 960, 80, 1, smallest=56)
+        blocks.append((value, value_size, style.value, True, 18))
+    headline, size = fit(beat.headline, 960, 68 if len(beat.headline) < 25 else 56, 3, smallest=46)
+    blocks.append((headline, size, STORY_TEXT, True, 18))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, STORY_TEXT, False, 12))
+    heights = [block_height(value, size, spacing) for value, size, _, _, spacing in blocks]
+    y = bottom - sum(heights) - 22 * (len(blocks) - 1)
+    for (value, size, colour, bold, spacing), height in zip(blocks, heights):
+        text(draw, 60, y, value, size, colour, bold=bold, spacing=spacing)
+        y += height + 22
+    return image, layer
+
+
+@lru_cache(maxsize=2)
+def story_shade(height):
+    """Dark gradients over the picture of the "story" page: a strong one at the foot (the headline lies on it) and a
+    light one at the top (the tag)."""
+    shade = Image.new("RGBA", (W, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shade)
+    start = int(height * 0.52)
+    for y in range(start, height):
+        draw.line((0, y, W, y), fill=(14, 9, 4, round(225 * ((y - start) / (height - start)) ** 1.6)))
+    for y in range(0, 150):
+        draw.line((0, y, W, y), fill=(14, 9, 4, round(90 * (1 - y / 150) ** 2)))
+    return shade
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
+    if style.layout == "story":
+        return story_layout(beat, release, has_photo, demo)
     image = paper_grain(style.background).copy() if style.grain else Image.new("RGB", (W, H), style.background)
     draw = ImageDraw.Draw(image)
     draw.rectangle((0, 0, W, 14), fill=style.accent)
@@ -437,9 +543,11 @@ class Scene:
         self.cut = beat.cut
         # how long the scene takes to arrive: a punch-in on its first picture waits for it
         self.arrival = 0.0 if not index else CUT_SECONDS[beat.cut] if beat.cut else TRANSITION
-        self.background, self.text = layout(beat, release, bool(self.photos), demo)
-        self.settled = self.background.copy()
-        self.settled.paste(self.text, (0, 0), self.text)
+        self.background, text_layer = layout(beat, release, bool(self.photos), demo)
+        self.top, self.height = photo_box()
+        # the text layer is pasted over the picture each frame: keep only the part that holds text
+        box = text_layer.getbbox() or (0, 0, 1, 1)
+        self.text, self.text_at = text_layer.crop(box), box[:2]
 
     def picture(self, moment):
         count = len(self.photos)
@@ -457,35 +565,41 @@ class Scene:
         """Picture `number` at its time `local`: the move chosen for it, else the four old moves in turn."""
         photo = self.photos[number]
         if photo.move:
-            return named_photo(photo, local, photo.move, length, delay=0.0 if number else self.arrival)
-        return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)])
+            return named_photo(photo, local, photo.move, length, self.height, delay=0.0 if number else self.arrival)
+        return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)], self.height)
 
     def render(self, moment):
         age = moment - self.start
-        if age < TEXT_IN:
-            amount = ease(age / TEXT_IN)
-            frame = self.background.copy()
-            layer = faded(self.text, amount)
-            frame.paste(layer, (0, round(36 * (1 - amount))), layer)
-        else:
-            frame = self.settled.copy()
+        frame = self.background.copy()
+        photo = None
         if self.photos:
             picture, photo = self.picture(moment)
-            frame.paste(picture, (0, PHOTO_TOP))
+            frame.paste(picture, (0, self.top))
+            if style.layout == "story":
+                shade = story_shade(self.height)
+                frame.paste(shade, (0, self.top), shade)
+        amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
+        layer = faded(self.text, amount) if amount < 1 else self.text
+        frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
+        if photo:
             draw = ImageDraw.Draw(frame)
-            label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
             credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
-            credit, credit_size = fit(credit, 940, 23, 2, bold=False, smallest=16)
-            text(draw, 70, 1806, credit, credit_size, style.muted, bold=False)
+            if style.layout == "story":
+                credit, credit_size = fit(credit, 560, 24, 1, bold=False, smallest=16)
+                text(draw, 60, 1774, credit, credit_size, style.muted, bold=False)
+            else:
+                label(draw, 70, 380, "資料写真", style.photo_tag, style.photo_tag_text)
+                credit, credit_size = fit(credit, 940, 23, 2, bold=False, smallest=16)
+                text(draw, 70, 1806, credit, credit_size, style.muted, bold=False)
         return frame
 
 
-@lru_cache(maxsize=1)
-def page_shadow():
-    shadow = Image.new("RGBA", (48, 1460), (0, 0, 0, 0))
+@lru_cache(maxsize=2)
+def page_shadow(height=1460):
+    shadow = Image.new("RGBA", (48, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(shadow)
     for x in range(48):
-        draw.line((x, 0, x, 1460), fill=(20, 12, 4, round(110 * (x / 48) ** 2)))
+        draw.line((x, 0, x, height), fill=(20, 12, 4, round(110 * (x / 48) ** 2)))
     return shadow
 
 
@@ -511,7 +625,7 @@ def transition(old, new, amount, cut=""):
         # Only the scene (picture and its text) goes dark; the header and the foot change quietly and the caption,
         # drawn afterwards, stays readable.
         frame = Image.blend(old, new, ease(amount))
-        area = (0, 245, W, 1700)
+        area = page_area()
         dark = Image.new("RGB", (W, area[3] - area[1]), "#07090c" if not style.grain else "#1c140b")
         scene = (Image.blend(old.crop(area), dark, ease(amount * 2)) if amount < 0.5
                  else Image.blend(dark, new.crop(area), ease(amount * 2 - 1)))
@@ -533,10 +647,12 @@ def transition(old, new, amount, cut=""):
         return frame
     offset = round(W * (1 - amount))
     frame = old.copy()
+    _, top, _, bottom = page_area()
     if offset < W:
-        frame.paste(new.crop((0, 245, W - offset, 1700)), (offset, 245))
+        frame.paste(new.crop((0, top, W - offset, bottom)), (offset, top))
     if offset >= 48:
-        frame.paste(page_shadow(), (offset - 48, 245 - 5), page_shadow())
+        shadow = page_shadow(bottom - top + 10)
+        frame.paste(shadow, (offset - 48, max(0, top - 5)), shadow)
     return frame
 
 
@@ -544,17 +660,59 @@ def draw_captions(image, caption, age=1.0):
     face = font(CAPTION_SIZE)
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
+    centre = caption_centre()
     amount = ease(age / CAPTION_IN) if age < CAPTION_IN else 1.0
     layer = Image.new("RGBA", (W, height + 4), (0, 0, 0, 0)) if amount < 1 else None
     draw = ImageDraw.Draw(layer if layer else image)
-    top = 0 if layer else 1598 - height // 2
-    draw.rounded_rectangle((69, top, 1011, top + height), radius=19, fill=style.caption_box)
+    top = 0 if layer else centre - height // 2
+    if style.caption_box:
+        draw.rounded_rectangle((69, top, 1011, top + height), radius=19, fill=style.caption_box)
     for line_index, line in enumerate(contents):
         draw.text((W / 2, top + 21 + 83 * line_index), line,
                   font=face, fill=style.caption_text, anchor="mt", stroke_width=1, stroke_fill=style.caption_text)
     if layer:
         layer = faded(layer, amount)
-        image.paste(layer, (0, 1598 - height // 2 + round(14 * (1 - amount))), layer)
+        image.paste(layer, (0, centre - height // 2 + round(14 * (1 - amount))), layer)
+
+
+QUOTE_IN = 0.35
+
+
+def draw_quote(image, line, age):
+    """A quote printed big over the picture while it is spoken: the picture darkens, the words stand in the
+    middle between two short red rules."""
+    top, height = photo_box()
+    amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
+    if amount <= 0:
+        return
+    dark = Image.new("RGBA", (W, height), (12, 8, 4, round(178 * amount)))
+    image.paste(dark, (0, top), dark)
+    # break where the captions break (after a comma, between phrases), each piece on its own line if it fits
+    pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
+    words, size = fit("\n".join(pieces), 900, 104, max(len(pieces), 2), smallest=56)
+    block = block_height(words, size, 26)
+    layer = Image.new("RGBA", (W, block + 140), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    draw.rectangle((W // 2 - 60, 0, W // 2 + 60, 5), fill=style.accent)
+    for index, row in enumerate(words.splitlines()):
+        draw.text((W // 2, 60 + index * (size + 26)), row, font=font(size), fill=STORY_TEXT, anchor="mt")
+    draw.rectangle((W // 2 - 60, block + 120, W // 2 + 60, block + 125), fill=style.accent)
+    layer = faded(layer, amount)
+    image.paste(layer, (0, top + (height - layer.height) // 2 + round(24 * (1 - amount))), layer)
+
+
+def quote_lines(beats, captions):
+    """For each caption: (the whole quote line, when its first caption starts) when it belongs to a line marked
+    "quote", else None. Captions are made line by line in order (voice.narration), so they follow the lines."""
+    marks, number = [], 0
+    for beat in beats:
+        for index, line in enumerate(beat.lines):
+            chunks = caption_chunks(line)
+            first = captions[number].start if number < len(captions) else 0.0
+            for _ in chunks:
+                marks.append((line, first) if index in beat.quotes else None)
+            number += len(chunks)
+    return marks if len(marks) == len(captions) else [None] * len(captions)
 
 
 class Grain:
@@ -615,26 +773,49 @@ def video_kbps(duration, budget=SIZE_BUDGET):
     return max(300, min(MAX_VIDEO_KBPS, int(room)))
 
 
-def codec_args(duration):
-    """FFmpeg output options: H.264 at constant quality, capped so that the file fits the size budget."""
+LOUDNESS = "loudnorm=I=-16:TP=-1.5:LRA=7"
+MUSIC_LUFS = -35   # the music sits about 17 dB under the voice (VOICEVOX speaks at about -18 LUFS)
+
+
+def codec_args(duration, mixed=False):
+    """FFmpeg output options: H.264 at constant quality, capped so that the file fits the size budget. `mixed`:
+    the audio comes from a -filter_complex (voice and music), already brought to the loudness."""
     kbps = video_kbps(duration)
     return ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", f"{kbps}k", "-bufsize", f"{2 * kbps}k",
             "-pix_fmt", "yuv420p",
-            "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=7",
+            "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", *([] if mixed else ["-af", LOUDNESS]),
             "-movflags", "+faststart", "-shortest"]
+
+
+def music_args(music, duration):
+    """Inputs and audio graph that lay the music (looped if short, faded in and out) under the voice (input 1)."""
+    level = MUSIC_LUFS + 20 * math.log10(max(0.2, music.volume))
+    fade_out = max(0.0, duration - 3.0)
+    graph = (f"[1:a]aformat=sample_rates=44100:channel_layouts=mono[voice];"
+             f"[2:a]aformat=channel_layouts=mono,loudnorm=I={level:.1f}:TP=-9:LRA=11,aresample=44100,"
+             f"afade=t=in:st=0:d=2,afade=t=out:st={fade_out:.2f}:d=3,atrim=0:{duration:.2f}[music];"
+             f"[voice][music]amix=inputs=2:duration=first:normalize=0,{LOUDNESS},aresample=44100[mix]")
+    return ["-stream_loop", "-1", "-i", music.path], ["-filter_complex", graph, "-map", "0:v", "-map", "[mix]"]
 
 
 def encode(beats, release, photos, demo, intervals, captions, wav, out):
     scenes = scenes_for(beats, release, photos, demo, intervals)
     grain = Grain() if style.grain else None
+    quotes = quote_lines(beats, captions)
     cover = scenes[0].render(min(1.5, intervals[0][1] * 0.3))
-    draw_captions(cover, captions[0].text)
+    if quotes[0]:
+        draw_quote(cover, quotes[0][0], 1.0)
+    else:
+        draw_captions(cover, captions[0].text)
     cover.save(out / "cover.jpg", quality=92)
 
+    duration = intervals[-1][1]
+    music = getattr(release, "music", None)
+    inputs, mapping = music_args(music, duration) if music else ([], [])
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-f", "rawvideo", "-pixel_format", "rgb24", "-video_size", f"{W}x{H}", "-framerate", str(FPS), "-i", "-",
-        "-i", str(wav), *codec_args(intervals[-1][1]), str(out / "video.mp4"),
+        "-i", str(wav), *inputs, *mapping, *codec_args(duration, mixed=bool(music)), str(out / "video.mp4"),
     ]
     cue = 0
     frame_index = 0
@@ -646,7 +827,10 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     while cue + 1 < len(captions) and moment >= captions[cue].end:
                         cue += 1
                     frame = frame_at(scenes, number, moment)
-                    draw_captions(frame, captions[cue].text, moment - captions[cue].start)
+                    if quotes[cue]:
+                        draw_quote(frame, quotes[cue][0], moment - quotes[cue][1])
+                    else:
+                        draw_captions(frame, captions[cue].text, moment - captions[cue].start)
                     if grain:
                         frame = grain.apply(frame, frame_index)
                     process.stdin.write(frame.tobytes())
@@ -666,7 +850,10 @@ def stills(beats, release, photos, out):
         count = max(1, len(scene.photos))
         for number in range(count):
             frame = scene.render(10 * (number + 0.5) / count)
-            draw_captions(frame, caption_chunks(beat.lines[0])[0])
+            if 0 in beat.quotes and number == 0:
+                draw_quote(frame, beat.lines[0], 1.0)
+            else:
+                draw_captions(frame, caption_chunks(beat.lines[0])[0])
             if grain:
                 frame = grain.apply(frame, index * 10 + number)
             name = f"scene-{index + 1:02}" + (f"-{number + 1}" if count > 1 else "")
@@ -689,7 +876,7 @@ def stills(beats, release, photos, out):
         print(f"  {line}")
     for index in sorted(photos):
         for number, photo in enumerate(photos[index], 1):
-            if warning := move_warning(photo):
+            if warning := move_warning(photo, height=photo_box()[1]):
                 print(f"warning: scene {index + 1}, picture {number}: {warning}")
 
 

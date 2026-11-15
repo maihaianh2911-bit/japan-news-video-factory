@@ -45,6 +45,10 @@ class Release:
     paragraphs: tuple[str, ...]
     style: str = "news"          # frame: "news" (dark blue) or "paper" (pale yellow old newspaper)
     kicker: str = ""             # red tag at the top; "" shows 日本のニュース
+    music: object = None         # custom.Music: a quiet piece under the voice, or None
+    speed: float = 0.96          # speed of the voice
+    line_pause: float = 0.0      # seconds of silence after each line (more around a quote)
+    scene_pause: float = 0.0     # seconds of silence at the end of each scene
 
 
 def compact(value):

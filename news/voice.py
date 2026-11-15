@@ -39,7 +39,9 @@ def speaker_id():
     return found
 
 
-def narration(beats, destination: Path, speed):
+def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0):
+    """The voice of every line, one after the other, with `line_pause` seconds of silence after each line (a quote
+    also gets one before it and a longer one after it) and `scene_pause` more at the end of each scene."""
     speaker = speaker_id()
     captions = []
     intervals = []
@@ -47,9 +49,18 @@ def narration(beats, destination: Path, speed):
     rate = 24000
     with wave.open(str(destination), "wb") as output:
         output.setparams((1, 2, rate, 0, "NONE", "not compressed"))
+        def silence(seconds):
+            nonlocal position
+            frames = round(rate * seconds)
+            if frames > 0:
+                output.writeframesraw(b"\x00\x00" * frames)
+                position += frames / rate
+
         for beat in beats:
             start = position
             for index, line in enumerate(beat.lines):
+                if index in beat.quotes and index:
+                    silence(line_pause)
                 spoken = beat.say[index] if beat.say else line
                 query = json.loads(request("/audio_query", params={"text": spoken, "speaker": speaker}, data=b""))
                 query.update(speedScale=speed, prePhonemeLength=0.07, postPhonemeLength=0.12,
@@ -68,5 +79,7 @@ def narration(beats, destination: Path, speed):
                     captions.append(Caption(cue, end, chunk))
                     cue = end
                 position += duration
+                silence(line_pause * (1.6 if index in beat.quotes else 1.0))
+            silence(scene_pause)
             intervals.append((start, position))
     return intervals, captions

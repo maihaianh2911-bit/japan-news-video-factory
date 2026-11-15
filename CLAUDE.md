@@ -67,6 +67,16 @@ ask the owner to allow `main`.
      `evidence` or a `value`. A line the voice may misread is written `{"text": "caption", "say": "reading in kana"}`.
    - Optional `style`: `"news"` (dark blue, default) or `"paper"` (pale yellow old newspaper, serif type), and
      `kicker`: the red tag at the top (default `日本のニュース`; e.g. `皇室の物語` for a story that is not news).
+   - `"style": "story"` (trial of 15/11/2026, the owner compares it with `paper`): the old-newspaper page for a
+     story told in pictures: the picture fills most of the page, the scene's `era` (`"1921年"`, `"昭和初期"`)
+     stands at the top instead of the date, the headline lies on the foot of the picture, the captions are printed
+     on the page. Also usable in any frame: a line `{"text": …, "quote": true}` is printed big over the darkened
+     picture while it is spoken (instead of the caption); a picture `"tone": "sepia"` / `"mono"` / `"color"`
+     (sepia for the old years, colour as the story reaches today); `"music": {"pick": "<k>-<n>", "volume": 1}`
+     from a search `music:<words>` (recordings on Wikimedia Commons with a free licence, e.g. `music:Gymnopédie
+     Satie piano`; index.json gives title, `seconds` and licence; the piece loops, fades in and out, about 17 dB
+     under the voice, credited on screen and in credits.txt); `"pace": {"speed": 0.92, "line_pause": 0.35,
+     "scene_pause": 0.5}` (slower voice, silence after each line, more around a quote and at the end of a scene).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
      (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`

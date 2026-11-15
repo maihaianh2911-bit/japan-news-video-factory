@@ -25,6 +25,8 @@ class Beat:
     say: tuple[str, ...] = ()   # what the voice reads when it differs from the caption (kanji readings)
     cut: str = ""               # how the scene arrives: a name of news/edits.py CUTS; "" = the cut of the frame
     why: str = ""               # why these edits were chosen (for the owner's list, never drawn)
+    era: str = ""               # "story" frame: the year of the scene, shown at the top ("1921年")
+    quotes: tuple[int, ...] = ()   # indexes of the lines shown as a big quote over the picture
 
 
 def japanese_date(release):
