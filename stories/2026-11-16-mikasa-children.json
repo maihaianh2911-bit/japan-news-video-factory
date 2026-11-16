@@ -5,7 +5,11 @@
   "date": "2026-11-16",
   "style": "story",
   "kicker": "皇室の物語",
-  "pace": {"speed": 0.92, "line_pause": 0.3, "scene_pause": 0.45},
+  "pace": {
+    "speed": 0.92,
+    "line_pause": 0.3,
+    "scene_pause": 0.45
+  },
   "searches": [
     "web:近衛甯子 若い頃",
     "web:三笠宮家 家族写真 昭和",
@@ -26,7 +30,17 @@
     "web:三笠宮ご夫妻",
     "web:高円宮 斂葬の儀 2002",
     "music:Chopin Nocturne piano",
-    "music:Satie Gnossienne piano"
+    "music:Satie Gnossienne piano",
+    "file:stories/media/2026-11-16-mikasa-children/mikasa-car.jpg",
+    "file:stories/media/2026-11-16-konoe-yasuko/yasuko-kimono.jpg",
+    "file:stories/media/2026-11-16-nobuko/tomohito-bw.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/tomohito-green.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/yoshihito-stairs.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/yoshihito-wheelchair.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/yoshihito-old.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/masako-tiara.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/masako-kimono.jpg",
+    "file:stories/media/2026-11-16-mikasa-children/norihito-soccer.jpg"
   ],
   "scenes": [
     {
@@ -34,93 +48,366 @@
       "era": "昭和",
       "headline": "三笠宮家\n子どもたちの波乱の人生",
       "lines": [
-        {"text": "三笠宮家、子どもたちの波乱の人生。", "say": "みかさのみやけ、子どもたちの、はらんの人生。", "quote": true}
-      ]
+        {
+          "text": "三笠宮家、子どもたちの波乱の人生。",
+          "say": "みかさのみやけ、子どもたちの、はらんの人生。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-5",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cả nhà Mikasa năm 1966 (ảnh màu), rồi ông bà Mikasa trên xe: mở đầu câu chuyện gia đình."
     },
     {
       "label": "長女",
       "era": "1944年〜",
       "headline": "長女・近衛甯子さん\n質実剛健に",
       "lines": [
-        {"text": "長女・近衛甯子さん。", "say": "長女、このえやすこさん。"},
-        {"text": "「宮家であっても窮乏生活に耐えられるよう」", "say": "みやけであっても、きゅうぼう生活に耐えられるよう。", "quote": true},
-        {"text": "『質実剛健』に育てられた。", "say": "しつじつごうけんに、育てられた。"}
-      ]
+        {
+          "text": "長女・近衛甯子さん。",
+          "say": "長女、このえやすこさん。"
+        },
+        {
+          "text": "「宮家であっても窮乏生活に耐えられるよう」",
+          "say": "みやけであっても、きゅうぼう生活に耐えられるよう。",
+          "quote": true
+        },
+        {
+          "text": "『質実剛健』に育てられた。",
+          "say": "しつじつごうけんに、育てられた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái cả Yasuko: ảnh kimono màu, rồi ảnh đen trắng cười tươi."
     },
     {
       "label": "長男",
       "era": "1982年",
       "headline": "長男・寛仁親王\n皇族離脱発言",
       "lines": [
-        {"text": "長男・寛仁親王。", "say": "長男、ともひとしんのう。"},
-        {"text": "『皇族離脱発言』をして世間を騒がせた。", "say": "こうぞくりだつ発言をして、世間を騒がせた。"}
-      ]
+        {
+          "text": "長男・寛仁親王。",
+          "say": "長男、ともひとしんのう。"
+        },
+        {
+          "text": "『皇族離脱発言』をして世間を騒がせた。",
+          "say": "こうぞくりだつ発言をして、世間を騒がせた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        }
+      ],
+      "cut": "page",
+      "why": "Con trai cả Tomohito thời trẻ, năm ông nói muốn rời Hoàng tộc."
     },
     {
       "label": "長男",
       "era": "2012年",
       "headline": "66歳で薨去",
       "lines": [
-        {"text": "癌やアルコール依存症に悩まされ、", "say": "がんや、アルコール依存症に悩まされ、"},
-        {"text": "多臓器不全のため66歳で薨去。", "say": "たぞうきふぜんのため、66歳で、こうきょ。"}
-      ]
+        {
+          "text": "癌やアルコール依存症に悩まされ、",
+          "say": "がんや、アルコール依存症に悩まされ、"
+        },
+        {
+          "text": "多臓器不全のため66歳で薨去。",
+          "say": "たぞうきふぜんのため、66歳で、こうきょ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "24-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Tomohito về già, nụ cười quen thuộc; tối dần vì nói về cái chết."
     },
     {
       "label": "次男",
       "era": "昭和",
       "headline": "次男・桂宮宜仁親王\n独身を貫く",
       "lines": [
-        {"text": "次男・桂宮宜仁親王。", "say": "次男、かつらのみや、よしひとしんのう。"},
-        {"text": "「皇族が結婚することは苦しむ人間を一人増やすことだから」", "say": "皇族が結婚することは、苦しむ人間を、一人増やすことだから。", "quote": true},
-        {"text": "「結婚しない」と独身を貫いた。", "say": "結婚しないと、独身を貫いた。"}
-      ]
+        {
+          "text": "次男・桂宮宜仁親王。",
+          "say": "次男、かつらのみや、よしひとしんのう。"
+        },
+        {
+          "text": "「皇族が結婚することは苦しむ人間を一人増やすことだから」",
+          "say": "皇族が結婚することは、苦しむ人間を、一人増やすことだから。",
+          "quote": true
+        },
+        {
+          "text": "「結婚しない」と独身を貫いた。",
+          "say": "結婚しないと、独身を貫いた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "25-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Con trai thứ Yoshihito đứng trên bậc thềm; câu nói về hôn nhân hiện to trên ảnh ông lúc trẻ."
     },
     {
       "label": "次男",
       "era": "2014年",
       "headline": "車いすで公務へ\n66歳で薨去",
       "lines": [
-        {"text": "後遺症で車いすを使用しながら公務に復帰するも、", "say": "こういしょうで、くるまいすを使用しながら、公務に復帰するも、"},
-        {"text": "急性心不全のため66歳で薨去。", "say": "急性心不全のため、66歳で、こうきょ。"}
-      ]
+        {
+          "text": "後遺症で車いすを使用しながら公務に復帰するも、",
+          "say": "こういしょうで、くるまいすを使用しながら、公務に復帰するも、"
+        },
+        {
+          "text": "急性心不全のため66歳で薨去。",
+          "say": "急性心不全のため、66歳で、こうきょ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "26-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "27-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Ông ngồi xe lăn đi làm việc công, rồi gương mặt lúc về già."
     },
     {
       "label": "次女",
       "era": "留学時代",
       "headline": "次女・千容子さん\nパリ留学時代",
       "lines": [
-        {"text": "次女・千容子さん。", "say": "次女、せんまさこさん。"},
-        {"text": "パリ留学時代、派手な生活ぶりに、", "say": "パリ留学時代、はでな生活ぶりに、"},
-        {"text": "百合子さまが心配し家へ連れ戻した。", "say": "ゆりこさまが心配し、家へ連れ戻した。"}
-      ]
+        {
+          "text": "次女・千容子さん。",
+          "say": "次女、せんまさこさん。"
+        },
+        {
+          "text": "パリ留学時代、派手な生活ぶりに、",
+          "say": "パリ留学時代、はでな生活ぶりに、"
+        },
+        {
+          "text": "百合子さまが心配し家へ連れ戻した。",
+          "say": "ゆりこさまが心配し、家へ連れ戻した。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "12-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "pan-left"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái thứ Masako, rồi đường phố Paris thập niên 70 khi kể chuyện du học."
     },
     {
       "label": "婚約",
       "era": "1983年",
       "headline": "婚約中に立った\n噂",
       "lines": [
-        {"text": "婚約中「容子さんを追いかけ来日したフランス人男性が」", "say": "婚約中、まさこさんを追いかけ、らいにちした、フランス人男性が、"},
-        {"text": "「金銭的なものを要求してきた」と噂がたつ。", "say": "金銭的なものを要求してきたと、うわさがたつ。"}
-      ]
+        {
+          "text": "婚約中「容子さんを追いかけ来日したフランス人男性が」",
+          "say": "婚約中、まさこさんを追いかけ、らいにちした、フランス人男性が、"
+        },
+        {
+          "text": "「金銭的なものを要求してきた」と噂がたつ。",
+          "say": "金銭的なものを要求してきたと、うわさがたつ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "29-1",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pan-left"
+        },
+        {
+          "pick": "9-6",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Bà Masako mặc kimono, rồi ngày cưới với ông Sen Soshitsu."
     },
     {
       "label": "三男",
       "era": "2002年",
       "headline": "三男・高円宮憲仁親王\n47歳で薨去",
       "lines": [
-        {"text": "三男・高円宮憲仁親王。", "say": "三男、たかまどのみや、のりひとしんのう。"},
-        {"text": "スカッシュの練習中、心室細動による心不全で倒れ、", "say": "スカッシュの練習中、しんしつさいどうによる心不全で倒れ、"},
-        {"text": "47歳で薨去。", "say": "47歳で、こうきょ。"}
-      ]
+        {
+          "text": "三男・高円宮憲仁親王。",
+          "say": "三男、たかまどのみや、のりひとしんのう。"
+        },
+        {
+          "text": "スカッシュの練習中、心室細動による心不全で倒れ、",
+          "say": "スカッシュの練習中、しんしつさいどうによる心不全で倒れ、"
+        },
+        {
+          "text": "47歳で薨去。",
+          "say": "47歳で、こうきょ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "30-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.55,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "15-2",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Con trai út Norihito yêu thể thao, bên vợ con chơi đàn; mất năm 47 tuổi."
     },
     {
       "label": "ご夫妻",
       "era": "平成",
       "headline": "三笠宮ご夫妻の\n深い悲しみ",
       "lines": [
-        {"text": "最愛のご子息に先立たれた三笠宮ご夫妻の悲しみは、", "say": "最愛のごしそくに先立たれた、みかさのみや、ごふさいの悲しみは、"},
-        {"text": "計り知れない。", "say": "はかりしれない。"}
-      ]
+        {
+          "text": "最愛のご子息に先立たれた三笠宮ご夫妻の悲しみは、",
+          "say": "最愛のごしそくに先立たれた、みかさのみや、ごふさいの悲しみは、"
+        },
+        {
+          "text": "計り知れない。",
+          "say": "はかりしれない。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Ông bà Mikasa lúc già, xe lăn và khung tập đi: nỗi buồn mất con."
     }
-  ]
+  ],
+  "music": {
+    "pick": "19-2"
+  }
 }
