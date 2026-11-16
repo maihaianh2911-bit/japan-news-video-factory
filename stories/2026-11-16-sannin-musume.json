@@ -52,32 +52,23 @@
       ],
       "photo": [
         {
-          "pick": "1-1",
+          "pick": "10-8",
           "focus": [
-            0.45,
-            0.3
+            0.5,
+            0.5
           ],
-          "tone": "sepia",
           "move": "push-in"
         },
         {
-          "pick": "2-1",
+          "pick": "4-4",
           "focus": [
-            0.45,
-            0.3
+            0.5,
+            0.4
           ],
-          "move": "rise"
-        },
-        {
-          "pick": "3-1",
-          "focus": [
-            0.67,
-            0.35
-          ],
-          "move": "push-in"
+          "move": "pull-back"
         }
       ],
-      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to."
+      "why": "Câu mở: bìa tạp chí 東宝 năm 1955 có cả ba người; rồi ảnh màu ba người cười."
     },
     {
       "label": "同い年",
@@ -304,7 +295,7 @@
         }
       ],
       "cut": "dip",
-      "why": "Chiemi những năm cuối; lễ tang năm ấy, đen trắng; Hibari trên sân khấu những năm 1980."
+      "why": "Chiemi những năm cuối; Hibari đến viếng Chiemi năm 1982 (ảnh thật); Hibari trên sân khấu những năm 1980."
     },
     {
       "label": "今も",
@@ -319,22 +310,24 @@
       ],
       "photo": [
         {
-          "pick": "6-2",
+          "pick": "4-8",
           "focus": [
             0.5,
-            0.35
+            0.4
           ],
-          "tone": "sepia",
           "move": "push-in"
         },
         {
-          "pick": "4-3",
-          "fit": "contain",
+          "pick": "4-5",
+          "focus": [
+            0.5,
+            0.4
+          ],
           "move": "pull-back"
         }
       ],
       "cut": "fade",
-      "why": "Ba người đứng chung một micro; khép lại bằng ảnh màu ba người cười, lùi ra."
+      "why": "Ba người trong phim 「三人よれば」 năm 1964; khép lại bằng poster phim có tên cả ba."
     }
   ],
   "music": {
