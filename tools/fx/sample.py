@@ -462,7 +462,11 @@ def main():
             if not depth.exists() or not sharp.exists() or photo.fit == "contain":
                 continue
             with Image.open(sharp) as better:   # the sharper copy (2), same picture
-                photo = replace(photo, image=better.convert("RGB"))
+                better = better.convert("RGB")
+            if better.size != photo.image.size:
+                # 60 % of the Real-ESRGAN copy over the plain enlargement: sharper, without the painted look
+                better = Image.blend(photo.image.resize(better.size, Image.Resampling.LANCZOS), better, 0.6)
+            photo = replace(photo, image=better)
             photos[index][number] = photo
             DeepScene.deep[(index, number)] = Deep(
                 photo, cv2.imread(str(depth), cv2.IMREAD_UNCHANGED).astype(np.float32) / 65535, height)
