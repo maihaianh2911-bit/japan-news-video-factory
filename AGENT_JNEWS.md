@@ -1,5 +1,12 @@
 # Japanese news videos from an issue — runbook for Claude
 
+> **Iron rules (owner, 16/11/2026; full text at the top of `CLAUDE.md`).** (1) Voice, script lines, subtitles and
+> on-screen text are in **Japanese**, never another language; check before the voice step and on the finished video.
+> (2) **No video under 60 seconds**: estimate before the voice step and read the real speech length after it; if it
+> would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
+> issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
+> owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
+
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
 result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星, captions timed to the
 voice. The story format, the picture rules and the preview are in `CLAUDE.md` (steps 1–4); this file says what to
