@@ -32,12 +32,17 @@
     "music:Debussy Clair de lune piano",
     "music:Satie Gymnopédie piano",
     "url:https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/GZPUR7WDL5KNDBXHUYTUZONJ6E.jpg https://www.sankei.com/article/20210815-77MQXGHDDFKYXOX3B422BB5UNA/",
-    "url:https://assets.st-note.com/production/uploads/images/56054712/rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg https://note.com/yoshizuka/n/nad5f7aebd355",
+    "web:昭和天皇 香淳皇后 1920年代",
     "url:https://img.buzzfeed.com/buzzfeed-static/static/2019-04/28/21/asset/buzzfeed-prod-web-04/sub-buzz-31641-1556502274-1.jpg?downsize=900:*&output-format=auto&output-quality=auto https://www.buzzfeed.com/jp/keiyoshikawa/emperor-hirohito",
-    "url:https://yamagatadantsu.co.jp/login/wp-content/uploads/2024/09/S__229212169_0.jpg https://yamagatadantsu.co.jp/column/2235/",
-    "url:https://www.sankei.com/resizer/v2/3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156&quality=40&smart=true&width=1200 https://www.sankei.com/article/20251009-F3L2BXCQFBL2FOEOPISGQ3AJNM/",
-    "url:https://showa-g.org/img/00127_l.webp https://showa-g.org/photos/view/127",
-    "url:https://www.sankei.com/resizer/v2/BHJUKQL7PBO6FM7QAF63WWCX3Y.jpg?auth=d499bab4d90a83e013ab024725dc7d33554ce07d5883fe08742f0c31898897fc&quality=40&focal=2386%2C1864&width=1200 https://www.sankei.com/article/20260103-UFTGE3ETLJJVPEAN3LYDOS6ELU/"
+    "web:香淳皇后 若い頃 写真",
+    "web:昭和天皇 皇太子 洋装",
+    "web:昭和天皇 香淳皇后 記念写真",
+    "url:https://www.sankei.com/resizer/v2/BHJUKQL7PBO6FM7QAF63WWCX3Y.jpg?auth=d499bab4d90a83e013ab024725dc7d33554ce07d5883fe08742f0c31898897fc&quality=40&focal=2386%2C1864&width=1200 https://www.sankei.com/article/20260103-UFTGE3ETLJJVPEAN3LYDOS6ELU/",
+    "file:stories/media/2026-11-16-showa-ichizu/couple-garden.jpg",
+    "file:stories/media/2026-11-16-showa-ichizu/couple-baby.jpg",
+    "file:stories/media/2026-11-16-showa-ichizu/couple-elderly-hands.jpg",
+    "file:stories/media/2026-11-16-showa-ichizu/nagako-hat.jpg",
+    "file:stories/media/2026-11-16-showa-ichizu/hirohito-uniform.jpg"
   ],
   "scenes": [
     {
@@ -54,7 +59,28 @@
           "text": "側室をもうけず、香淳皇后（良子女王）だけを愛した昭和天皇が素敵だった。",
           "say": "そくしつをもうけず、こうじゅんこうごう、ながこじょおうだけを愛した、しょうわてんのうが、すてきだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-3",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "close-up"
+        }
+      ],
+      "why": "Đôi vợ chồng trẻ năm 1920 dưới câu 'Chỉ cần mình Nagako'; rồi cận mặt bà Nagako."
     },
     {
       "label": "一夫一婦制",
@@ -65,7 +91,29 @@
           "text": "昭和天皇は『一夫一婦制』を確立する。",
           "say": "しょうわてんのうは、いっぷいっぷせいを、確立する。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "32-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "17-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Thiên hoàng lập chế độ một vợ một chồng: chân dung ông, rồi hai vợ chồng đứng cạnh nhau."
     },
     {
       "label": "背景",
@@ -80,7 +128,38 @@
           "text": "『冷遇される実母』に「深い悲しみ」を覚えたことも影響していた。",
           "say": "れいぐうされる、じつぼに、深い悲しみを覚えたことも、影響していた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-9",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "dip",
+      "why": "Lùi về đời trước: Thiên hoàng Taisho, Hoàng hậu Teimei, rồi bà Yanagiwara Naruko, người mẹ ruột bị đối xử lạnh nhạt."
     },
     {
       "label": "良宮とお上",
@@ -95,7 +174,25 @@
           "text": "手をつないで散歩していると、側近から小言を言われたそう。",
           "say": "手をつないで散歩していると、そっきんから、こごとを言われたそう。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-5",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "cut": "page",
+      "why": "Hai người đi dạo trong vườn, lúc trẻ rồi lúc già: cặp vợ chồng thân thiết."
     },
     {
       "label": "癒し",
@@ -110,7 +207,28 @@
           "text": "温和で朗らか、聞き上手な皇后にホッと癒された。",
           "say": "おんわで、ほがらか、聞き上手なこうごうに、ほっと、いやされた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-11",
+          "focus": [
+            0.3,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Thiên hoàng nghiêm túc bên kính hiển vi; Hoàng hậu cười hiền hậu."
     },
     {
       "label": "皇女",
@@ -126,7 +244,26 @@
           "text": "「女腹」と非難を浴びてしまう。",
           "say": "おんなばらと、非難を浴びてしまう。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "29-1",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Hai vợ chồng bế công chúa đầu lòng; Hoàng hậu với con nhỏ."
     },
     {
       "label": "良宮がよい",
@@ -151,7 +288,23 @@
           "text": "毅然と言い放ち黙らせた。",
           "say": "きぜんと言い放ち、だまらせた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-7",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "14-2",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "hard",
+      "why": "Câu 'Nagako là được' hiện to trên ảnh hai người cười đùa; câu 'có 3 em trai' trên ảnh mấy anh em."
     },
     {
       "label": "支え合い",
@@ -162,7 +315,25 @@
           "text": "妻だけを愛し、皇后もそれに応えるように昭和天皇を支えた。",
           "say": "妻だけを愛し、こうごうも、それに応えるように、しょうわてんのうを支えた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "31-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai vợ chồng già cùng xem album; rồi bà Nagako thời trẻ, người luôn ở bên chồng."
     },
     {
       "label": "おしどり夫婦",
@@ -177,7 +348,40 @@
           "text": "側室をもうけず、香淳皇后だけを愛した昭和天皇が素敵過ぎた。",
           "say": "そくしつをもうけず、こうじゅんこうごうだけを愛した、しょうわてんのうが、すてきすぎた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "30-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Đôi vợ chồng già nắm tay: 'đôi uyên ương'; kết bằng ảnh đôi trẻ ngày xưa, lùi ra."
     }
-  ]
+  ],
+  "music": {
+    "pick": "19-2",
+    "start": 5.2
+  }
 }
