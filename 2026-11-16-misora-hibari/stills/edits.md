@@ -1,6 +1,6 @@
 # Cách edit từng cảnh
 
-- Cảnh 1 · 昭和の歌姫 美空ひばり · ảnh 1: push-in · ảnh 2: pull-back · vì: Mở đầu bằng chân dung cô bé Hibari, tiến chậm vào mặt; rồi ảnh cô cười, lùi ra.
+- Cảnh 1 · 昭和の歌姫 美空ひばり · ảnh 1: push-in · ảnh 2: rise · ảnh 3: push-in · vì: Mở đầu bằng 3 thời kỳ để người xem nhận ra ngay: lúc bé (nâu cũ), lúc trẻ đẹp nhất (màu), đêm nhạc 不死鳥 năm 1988.
 - Cảnh 2 · 横浜の魚屋に生まれて · ảnh 1: pan-right · ảnh 2: push-in · ảnh 3: pull-back · vào cảnh: fade · vì: Lia ngang vùng biển Isogo (Yokohama) ngày xưa; ảnh bé lúc nhỏ; rồi cô bé hát múa.
 - Cảnh 3 · 12歳でデビュー · ảnh 1: rise · ảnh 2: pan-right · ảnh 3: push-in · vào cảnh: fade · vì: Đi dọc tấm poster phim 悲しき口笛 năm 1949; cảnh trong phim; rồi tiến vào cô bé đội mũ cao.
 - Cảnh 4 · ヒットは続く · ảnh 1: rise · ảnh 2: push-in · ảnh 3: pull-back · vào cảnh: fade · vì: Lúc nhận Giải Đĩa hát 1965 (đen trắng); bìa đĩa 真赤な太陽 (ảnh màu); lùi ra cảnh bà dang tay trên sân khấu.

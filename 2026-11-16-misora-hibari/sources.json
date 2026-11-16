@@ -17,9 +17,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://www.u-canshop.jp/shop/pages/hibari.aspx",
-      "title": "ひばり物語 ― 終わりなき歌の旅路 ―：【公式】ユーキャンの通販 ...",
-      "creator": "u-canshop.jp",
+      "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+      "title": "美空ひばり - Wikipedia",
+      "creator": "ja.wikipedia.org",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
+      "title": "美空ひばり「不死鳥コンサート」39曲熱唱5万人が熱狂した伝説 ...",
+      "creator": "hochi.news",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -200,7 +208,7 @@
         "その名は、みそらひばり。"
       ],
       "cut": "",
-      "why": "Mở đầu bằng chân dung cô bé Hibari, tiến chậm vào mặt; rồi ảnh cô cười, lùi ra.",
+      "why": "Mở đầu bằng 3 thời kỳ để người xem nhận ra ngay: lúc bé (nâu cũ), lúc trẻ đẹp nhất (màu), đêm nhạc 不死鳥 năm 1988.",
       "era": "昭和",
       "quotes": [
         1
@@ -208,7 +216,8 @@
       "image_url": "https://www.chunichi.co.jp/article/1315303",
       "image_urls": [
         "https://www.chunichi.co.jp/article/1315303",
-        "https://www.u-canshop.jp/shop/pages/hibari.aspx"
+        "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+        "https://hochi.news/articles/20220405-OHT1T51076.html"
       ]
     },
     {
