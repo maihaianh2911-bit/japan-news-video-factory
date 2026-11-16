@@ -16,7 +16,8 @@
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
-picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (only exception: iron rule 2 below, a script too short for 60 seconds), quality is not
+picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (exceptions: iron rule 2 below, a script too short for 60 seconds; and the words of a
+source video, which are rewritten, see "When the owner sends an original video"), quality is not
 traded for usage).
 
 This repo makes vertical Japanese news shorts (1080×1920): news frame, VOICEVOX voice 青山龍星, captions timed to
@@ -51,18 +52,33 @@ adds a line such as "Phiếu tin Nhật số 2: ảnh đã tìm xong, chờ ch�
 
 ## When the owner sends an original video (every morning since 14/11/2026)
 A scheduled task reminds the owner at about 8:00 (Vietnam time) to send the day's source video (someone else's
-short). Its words are the script; our video retells them in our frame:
+short). Its words are the content; our video retells it in our own words and frame (owner, 16/11/2026: "chỉnh
+sửa nhẹ kịch bản, giữ khung nội dung nhưng làm cho hay hơn, cuốn hơn, có thể thêm bớt; đọc nhanh như video gốc;
+kèm caption cho mỗi video"):
 1. Read every caption burnt into the video: `ffmpeg -i <video> -vf "fps=1,crop=1080:500:0:700,scale=540:-1,
    drawtext=text='%{pts\:hms}':x=5:y=5:fontcolor=yellow:fontsize=24,tile=3x10" cap%02d.jpg` (move the crop to
    where the captions are) and look at the sheets. The narration starts at 0 s, so an opening title is spoken
-   too. Write the script exactly, line by line, in a chat message so the owner can check it.
-2. Then as "When the owner pastes a script" above, with `style: "paper"` and a fitting `kicker` (e.g. `皇室の物語`
+   too.
+2. Rewrite it in Japanese, lightly: the same story and facts in the same order of scenes, but our own sentences,
+   more gripping. Open with one hook line printed big (`"quote": true`, e.g. 「夫の葬儀にさえ、参列を許されなかった
+   妃がいる。」), keep the rhythm tight, end with a line that stays. You may cut repetition and add a few true,
+   well-known details on the same subject (dates, ages, what became of a person); never invent, never change a
+   fact or a quote of the source. Keep the quotes of the people as they are. Read it fast like the source:
+   `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
+   characters a second at speed 1.0 plus the pauses (iron rule 2: over 60 s). Tell the owner in the chat what you
+   added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
+3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
+   rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), `web:` searches (2–3 per scene, Japanese words), 2 pictures per scene.
    Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
    burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
    `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
    Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
-3. Send the owner the finished video file in the chat (they want it there, not only as a link) and the links.
+4. Write the caption for posting, in Japanese, in `captions/<name>.txt` (see `captions/2026-11-16-nobuko.txt`):
+   【タイトル】 a short hooking title with `#皇室` (or the topic), 【説明文】 3–4 lines on the story, then 8–10
+   hashtags ending with `#shorts`, and a last line asking to paste `credits.txt`. Push it with the story.
+5. Send the owner the finished video file and its caption file in the chat (they want them there, not only as
+   links) and the links.
 
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
 for this way of working on 12/11/2026). If the session may only push to its own branch, say so in one line and
