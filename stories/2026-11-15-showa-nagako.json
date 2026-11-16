@@ -1,9 +1,9 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 3,
   "title": "女子一人守れぬ者に国は守れるか 昭和天皇と香淳皇后",
   "date": "2026-11-15",
-  "style": "paper",
+  "style": "story",
   "kicker": "皇室の物語",
   "searches": [
     "web:昭和天皇 皇太子時代 写真",
@@ -29,7 +29,8 @@
     "web:昭和天皇 香淳皇后 御用邸 散歩",
     "web:昭和天皇 香淳皇后 戦時中",
     "web:昭和天皇 大元帥 軍服 白馬",
-    "web:香淳皇后 戦時中 慰問"
+    "web:香淳皇后 戦時中 慰問",
+    "music:Satie Gymnopédie piano"
   ],
   "scenes": [
     {
@@ -39,18 +40,24 @@
       "lines": [
         {
           "text": "「女子一人守れぬ者に、国は守れるか」",
-          "say": "じょし一人、まもれぬ者に、国はまもれるか。"
+          "say": "じょし一人、まもれぬ者に、国はまもれるか。",
+          "quote": true
         },
         {
-          "text": "弱冠19歳の皇太子、後の昭和天皇は、巨大な政治圧力の渦中にいた。",
-          "say": "じゃっかん19歳のこうたいし、のちのしょうわてんのうは、巨大な政治圧力のかちゅうにいた。"
+          "text": "19歳の皇太子、のちの昭和天皇。",
+          "say": "19歳のこうたいし、のちの、しょうわてんのう。"
+        },
+        {
+          "text": "彼は、巨大な政治圧力の渦中にいた。",
+          "say": "彼は、巨大な政治圧力の、かちゅうにいた。"
         }
       ],
       "photo": [
         {
           "pick": "2-6",
           "fit": "contain",
-          "move": "push-in"
+          "move": "push-in",
+          "tone": "sepia"
         },
         {
           "pick": "1-3",
@@ -58,22 +65,24 @@
             0.5,
             0.2
           ],
-          "move": "rise"
+          "move": "rise",
+          "tone": "sepia"
         }
       ],
-      "why": "Mở đầu bằng chân dung Thái tử 19 tuổi, ảnh lớn dần; rồi lia từ ngực áo lên mặt khi nói về sức ép."
+      "why": "Mở đầu bằng chân dung Thái tử 19 tuổi, ảnh lớn dần; rồi lia từ ngực áo lên mặt khi nói về sức ép.",
+      "era": "1920年"
     },
     {
       "label": "婚約",
       "headline": "標的は\n婚約者・良子さま",
       "lines": [
         {
-          "text": "標的は婚約者・良子さま。",
-          "say": "ひょうてきは、こんやくしゃ、ながこさま。"
+          "text": "標的は、婚約者の良子さま。",
+          "say": "ひょうてきは、こんやくしゃの、ながこさま。"
         },
         {
-          "text": "大人たちは家系の問題を口実に、執拗に婚約解消を迫る。",
-          "say": "大人たちは家系の問題を口実に、しつように婚約解消を迫る。"
+          "text": "母方の家系の色覚を口実に、元老・山縣有朋らが、執拗に婚約解消を迫ったのだ。",
+          "say": "ははかたの家系の、しきかくを口実に、げんろう、やまがたありともらが、しつように婚約解消を迫ったのだ。"
         }
       ],
       "photo": [
@@ -83,7 +92,8 @@
             0.47,
             0.28
           ],
-          "move": "push-in"
+          "move": "push-in",
+          "tone": "sepia"
         },
         {
           "pick": "6-9",
@@ -91,24 +101,30 @@
             0.42,
             0.15
           ],
-          "move": "close-up"
+          "move": "close-up",
+          "tone": "sepia"
         }
       ],
       "cut": "page",
-      "why": "Sang nhân vật mới (bà Nagako) nên lật trang; tiến vào bà vì bà là mục tiêu, rồi cận mặt nghiêm của Yamagata khi nói về sức ép."
+      "why": "Sang nhân vật mới (bà Nagako) nên lật trang; tiến vào bà vì bà là mục tiêu, rồi cận mặt nghiêm của Yamagata khi nói về sức ép.",
+      "era": "1920年"
     },
     {
       "label": "揺るぎない意志",
       "headline": "「良子でよい」\n若き皇太子の決意",
       "lines": [
-        "だが若き皇太子はただ一人、その手を離さなかった。",
         {
-          "text": "「良子でよい」",
-          "say": "ながこでよい。"
+          "text": "それでも若き皇太子は、ただ一人、その手を離さなかった。",
+          "say": "それでも若きこうたいしは、ただ一人、その手を離さなかった。"
         },
         {
-          "text": "揺るぎない意志が暗雲を切り裂き、二人の未来をこじ開けた。",
-          "say": "ゆるぎない意志が、あんうんを切り裂き、二人の未来をこじ開けた。"
+          "text": "「良子でよい」",
+          "say": "ながこでよい。",
+          "quote": true
+        },
+        {
+          "text": "揺るぎない意志が暗雲を切り裂き、1924年、二人は結ばれる。",
+          "say": "ゆるぎない意志が、あんうんを切り裂き、1924年、二人は結ばれる。"
         }
       ],
       "photo": [
@@ -118,7 +134,8 @@
             0.5,
             0.35
           ],
-          "move": "pan-right"
+          "move": "pan-right",
+          "tone": "sepia"
         },
         {
           "pick": "5-1",
@@ -126,25 +143,27 @@
             0.5,
             0.25
           ],
-          "move": "reveal"
+          "move": "reveal",
+          "tone": "sepia"
         }
       ],
       "cut": "fade",
-      "why": "Lia từ Thái tử sang bà (không buông tay), rồi từ cận hai người mở ra cả khung cửa sáng: tương lai mở ra."
+      "why": "Lia từ Thái tử sang bà (không buông tay), rồi từ cận hai người mở ra cả khung cửa sáng: tương lai mở ra.",
+      "era": "1921〜1924年"
     },
     {
       "label": "結婚後",
       "headline": "4人続けて皇女\n跡継ぎへの重圧",
-      "value": "皇女 4人",
       "lines": [
-        "結婚後、さらなる嵐が襲う。",
         {
-          "text": "4人続けて誕生したのは皇女。",
-          "say": "4人続けて誕生したのは、こうじょ。"
+          "text": "だが、結婚後も嵐は続いた。"
         },
         {
-          "text": "跡継ぎをという無言の圧力が、二人を追い詰めた。",
-          "say": "あとつぎをという無言の圧力が、二人を追い詰めた。"
+          "text": "生まれた子は、4人続けて女の子。"
+        },
+        {
+          "text": "「跡継ぎを」という無言の圧力が、二人を追い詰めていく。",
+          "say": "あとつぎをという、無言の圧力が、二人を追い詰めていく。"
         }
       ],
       "photo": [
@@ -154,7 +173,8 @@
             0.5,
             0.4
           ],
-          "move": "rise"
+          "move": "rise",
+          "tone": "sepia"
         },
         {
           "pick": "5-4",
@@ -162,31 +182,35 @@
             0.5,
             0.38
           ],
-          "move": "push-in"
+          "move": "push-in",
+          "tone": "sepia"
         }
       ],
       "cut": "page",
-      "why": "Chương mới sau đám cưới nên lật trang; lia từ dưới lên mặt các công chúa, rồi tiến chậm vào Hoàng hậu đang chịu sức ép."
+      "why": "Chương mới sau đám cưới nên lật trang; lia từ dưới lên mặt các công chúa, rồi tiến chậm vào Hoàng hậu đang chịu sức ép.",
+      "era": "1925〜1931年"
     },
     {
       "label": "側室",
       "headline": "側室を拒んだ\n昭和天皇",
       "lines": [
         {
-          "text": "側室を勧める周囲の声に、",
-          "say": "そくしつを勧める周囲の声に、"
+          "text": "側室を勧める周囲の声に、天皇はこう言い放った。",
+          "say": "そくしつを勧める周囲の声に、天皇は、こう言い放った。"
         },
         {
           "text": "「人倫に反することはできない」",
-          "say": "じんりんに反することはできない。"
+          "say": "じんりんに反することは、できない。",
+          "quote": true
         },
         {
           "text": "「良子がいい」",
-          "say": "ながこがいい。"
+          "say": "ながこがいい。",
+          "quote": true
         },
         {
-          "text": "昭和天皇は毅然と言い放った。",
-          "say": "しょうわてんのうは、きぜんと言い放った。"
+          "text": "そして1933年、待望の皇太子・明仁さまが誕生する。",
+          "say": "そして1933年、待望のこうたいし、あきひとさまが誕生する。"
         }
       ],
       "photo": [
@@ -196,7 +220,8 @@
             0.5,
             0.5
           ],
-          "move": "pan-left"
+          "move": "pan-left",
+          "tone": "sepia"
         },
         {
           "pick": "13-1",
@@ -204,23 +229,25 @@
             0.5,
             0.08
           ],
-          "move": "punch-in"
+          "move": "punch-in",
+          "tone": "sepia"
         }
       ],
       "cut": "fade",
-      "why": "Lia từ Hoàng hậu về phía Thiên hoàng, người sắp trả lời; câu \"Nagako là được\" là đỉnh điểm nên giật nhanh vào hai người (chỉ dùng một lần)."
+      "why": "Lia từ Hoàng hậu về phía Thiên hoàng, người sắp trả lời; câu \"Nagako là được\" là đỉnh điểm nên giật nhanh vào hai người (chỉ dùng một lần).",
+      "era": "昭和初期"
     },
     {
       "label": "戦火の中で",
       "headline": "戦火の中でも\n夫を支えた皇后",
       "lines": [
         {
-          "text": "戦火の防空壕でも、二人は共に歩む。",
-          "say": "戦火のぼうくうごうでも、二人は共に歩む。"
+          "text": "やがて戦争の時代。空襲が続く中も、二人は防空壕で共に過ごした。",
+          "say": "やがて戦争の時代。空襲が続く中も、二人は、ぼうくうごうで共に過ごした。"
         },
         {
-          "text": "苦悩する夫を微笑みで支え続けた皇后。",
-          "say": "苦悩する夫を、ほほえみで支え続けたこうごう。"
+          "text": "苦悩する夫を、皇后は微笑みで支え続けた。",
+          "say": "苦悩する夫を、こうごうは、ほほえみで支え続けた。"
         }
       ],
       "photo": [
@@ -230,7 +257,8 @@
             0.5,
             0.15
           ],
-          "move": "pan-right"
+          "move": "pan-right",
+          "tone": "sepia"
         },
         {
           "pick": "8-4",
@@ -238,23 +266,30 @@
             0.45,
             0.35
           ],
-          "move": "push-in"
+          "move": "push-in",
+          "tone": "sepia"
         }
       ],
       "cut": "hard",
-      "why": "Chiến tranh ập đến nên cắt thẳng; lia ngang qua hàng quân nhân tới Hoàng hậu thời chiến (ảnh mới tìm thêm), rồi tiến vào nụ cười bà dành cho chồng."
+      "why": "Chiến tranh ập đến nên cắt thẳng; lia ngang qua hàng quân nhân tới Hoàng hậu thời chiến (ảnh mới tìm thêm), rồi tiến vào nụ cười bà dành cho chồng.",
+      "era": "1941〜1945年"
     },
     {
       "label": "2000年",
       "headline": "97歳で旅立った\n香淳皇后",
-      "value": "2000年",
       "lines": [
-        "2000年。",
         {
-          "text": "97歳で旅立った皇后の傍らには、",
-          "say": "97歳で旅立ったこうごうの、かたわらには、"
+          "text": "1989年、昭和天皇崩御。",
+          "say": "1989年、しょうわてんのう、ほうぎょ。"
         },
-        "あの日から一度も揺らぐことのない愛があった。"
+        {
+          "text": "そして2000年、皇后も97歳で旅立つ。",
+          "say": "そして2000年、こうごうも、97歳で旅立つ。"
+        },
+        {
+          "text": "その傍らには、あの日から一度も揺らぐことのない愛があった。",
+          "say": "その、かたわらには、あの日から一度も揺らぐことのない愛があった。"
+        }
       ],
       "photo": [
         {
@@ -263,7 +298,8 @@
             0.5,
             0.45
           ],
-          "move": "close-up"
+          "move": "close-up",
+          "tone": "color"
         },
         {
           "pick": "19-1",
@@ -271,23 +307,26 @@
             0.5,
             0.3
           ],
-          "move": "rise"
+          "move": "rise",
+          "tone": "color"
         }
       ],
       "cut": "dip",
-      "why": "Nhảy tới năm 2000 và sự ra đi nên tối dần rồi sáng lại; cận di ảnh, gần như đứng yên, rồi lia từ cỏ lên hai người lúc về già."
+      "why": "Nhảy tới năm 2000 và sự ra đi nên tối dần rồi sáng lại; cận di ảnh, gần như đứng yên, rồi lia từ cỏ lên hai người lúc về già.",
+      "era": "1989〜2000年"
     },
     {
       "label": "一途な愛",
       "headline": "ただ一人の女性を\n守り抜いた昭和天皇",
       "lines": [
         {
-          "text": "ただ一人の女性を守り抜いた昭和天皇。",
-          "say": "ただ一人の女性を守り抜いた、しょうわてんのう。"
+          "text": "ただ一人の女性を、守り抜いた昭和天皇。",
+          "say": "ただ一人の女性を、守り抜いた、しょうわてんのう。"
         },
         {
-          "text": "その一途すぎる愛が、一つの時代を形作った。",
-          "say": "そのいちずすぎる愛が、一つの時代を形作った。"
+          "text": "その一途な愛が、一つの時代を形作った。",
+          "say": "そのいちずな愛が、一つの時代を形作った。",
+          "quote": true
         }
       ],
       "photo": [
@@ -297,7 +336,8 @@
             0.5,
             0.4
           ],
-          "move": "pan-right"
+          "move": "pan-right",
+          "tone": "color"
         },
         {
           "pick": "12-9",
@@ -305,11 +345,22 @@
             0.5,
             0.55
           ],
-          "move": "pull-back"
+          "move": "pull-back",
+          "tone": "color"
         }
       ],
       "cut": "fade",
-      "why": "Lia từ Thiên hoàng sang người phụ nữ ông bảo vệ, rồi lùi dần khỏi hai người nắm tay nhau để kết."
+      "why": "Lia từ Thiên hoàng sang người phụ nữ ông bảo vệ, rồi lùi dần khỏi hai người nắm tay nhau để kết.",
+      "era": "昭和"
     }
-  ]
+  ],
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "music": {
+    "pick": "25-4",
+    "start": 2.0
+  }
 }
