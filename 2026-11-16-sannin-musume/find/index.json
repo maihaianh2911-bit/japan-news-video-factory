@@ -1,0 +1,2337 @@
+[
+ {
+  "k": 1,
+  "query": "url:https://static.chunichi.co.jp/image/article/size1/4/b/2/a/4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg https://www.chunichi.co.jp/article/1315303",
+  "results": [
+   {
+    "title": "4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
+    "page": "https://www.chunichi.co.jp/article/1315303",
+    "image": "https://static.chunichi.co.jp/image/article/size1/4/b/2/a/4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
+    "width": 788,
+    "height": 1220,
+    "license": "",
+    "license_url": "",
+    "artist": "chunichi.co.jp",
+    "description": "",
+    "file": "1-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 2,
+  "query": "url:https://upload.wikimedia.org/wikipedia/commons/9/97/Misora-Hibari-4.png https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+  "results": [
+   {
+    "title": "Misora-Hibari-4.png",
+    "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/Misora-Hibari-4.png",
+    "width": 550,
+    "height": 715,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "",
+    "file": "2-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 3,
+  "query": "url:https://hochi.news/images/2022/04/05/20220405-OHT1I51121-L.jpg https://hochi.news/articles/20220405-OHT1T51076.html",
+  "results": [
+   {
+    "title": "20220405-OHT1I51121-L.jpg",
+    "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
+    "image": "https://hochi.news/images/2022/04/05/20220405-OHT1I51121-L.jpg",
+    "width": 1200,
+    "height": 812,
+    "license": "",
+    "license_url": "",
+    "artist": "hochi.news",
+    "description": "",
+    "file": "3-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 4,
+  "query": "web:三人娘 美空ひばり 江利チエミ 雪村いづみ",
+  "results": [
+   {
+    "title": "ひばり、チエミ、いづみが歌って踊る「三人娘」シリーズまとめて ...",
+    "page": "https://natalie.mu/eiga/news/146760",
+    "image": "https://ogre.natalie.mu/media/news/eiga/2015/0511/3ninmusume_201505_003.jpg?impolicy=m&imwidth=750&imdensity=1",
+    "width": 750,
+    "height": 422,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "ひばり、チエミ、いづみが歌って踊る「三人娘」シリーズまとめて ...",
+    "file": "4-1.jpg"
+   },
+   {
+    "title": "写真・画像 1/2枚】「三人娘」時代の（左から）江利チエミさん ...",
+    "page": "https://mantan-web.jp/article/20150619dog00m200016000c/photopage/001.html",
+    "image": "https://storage.mantan-web.jp/w=964,h=1100,f=webp:auto/images/2015/06/19/20150619dog00m200016000c/001_size8.jpg",
+    "width": 964,
+    "height": 1100,
+    "license": "",
+    "license_url": "",
+    "artist": "mantan-web.jp",
+    "description": "写真・画像 1/2枚】「三人娘」時代の（左から）江利チエミさん ...",
+    "file": "4-2.jpg"
+   },
+   {
+    "title": "初代三人娘ー☆ジャンケン娘（美空ひばり、江利チエミ、雪村 ...",
+    "page": "https://youtu.be/4ddrYR-HRrU?si=KViCmwMe-wnpaaMQ",
+    "image": "https://i.ytimg.com/vi/4ddrYR-HRrU/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtu.be",
+    "description": "初代三人娘ー☆ジャンケン娘（美空ひばり、江利チエミ、雪村 ...",
+    "file": "4-3.jpg"
+   },
+   {
+    "title": "長崎は今日も雨だった on X: \"戦後、江利チエミさん・美空ひばり ...",
+    "page": "https://x.com/kohji_musha/status/2031434823232008370",
+    "image": "https://pbs.twimg.com/media/HDEbNM_bEAAYp0t?format=webp&name=large",
+    "width": 658,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "長崎は今日も雨だった on X: \"戦後、江利チエミさん・美空ひばり ...",
+    "file": "4-4.jpg"
+   },
+   {
+    "title": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+    "page": "https://www.jackandbetty.net/cinema/detail/1658/",
+    "image": "http://www.jackandbetty.net/upload/main/3ninyoreba.jpg",
+    "width": 591,
+    "height": 833,
+    "license": "",
+    "license_url": "",
+    "artist": "jackandbetty.net",
+    "description": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+    "file": "4-5.jpg"
+   },
+   {
+    "title": "雪村いづみ×美空ひばり×江利チエミが歌う「トゥ・ヤング ...",
+    "page": "https://natalie.mu/music/news/192070",
+    "image": "https://ogre.natalie.mu/media/news/music/2016/0624/TooYoung_20160624.jpg?impolicy=m&imwidth=750&imdensity=1",
+    "width": 750,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "雪村いづみ×美空ひばり×江利チエミが歌う「トゥ・ヤング ...",
+    "file": "4-6.jpg"
+   },
+   {
+    "title": "元祖“三人娘”雪村いづみ79歳「スタアは消えていくもの ...",
+    "page": "https://news.livedoor.com/article/detail/11546374/",
+    "image": "https://image.news.livedoor.com/newsimage/9/6/96a5f_1212_30d712bb29d9dc9c8c3d524e0998defb.jpg",
+    "width": 600,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "news.livedoor.com",
+    "description": "元祖“三人娘”雪村いづみ79歳「スタアは消えていくもの ...",
+    "file": "4-7.jpg"
+   },
+   {
+    "title": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+    "page": "https://www.jackandbetty.net/cinema/detail/1658/",
+    "image": "https://www.jackandbetty.net/upload/information/3ninyoreba02.jpg",
+    "width": 468,
+    "height": 590,
+    "license": "",
+    "license_url": "",
+    "artist": "jackandbetty.net",
+    "description": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+    "file": "4-8.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ロマンス娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "page": "https://www.amazon.co.jp/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B0007G8DGU",
+    "image": "https://m.media-amazon.com/images/I/61E0NPEYRRL._AC_UF894,1000_QL80_.jpg",
+    "width": 706,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ロマンス娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "file": "4-9.jpg"
+   },
+   {
+    "title": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=359093083",
+    "image": "https://www.kosho.or.jp/upload/save_image/42000010/20210302161741297901_f13c9f283035cee2bdc18594cce3c96c.jpg",
+    "width": 449,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "file": "4-10.jpg"
+   },
+   {
+    "title": "はな、うらない on X: \"初代三人娘。 当時はまだ18歳。 私が18歳 ...",
+    "page": "https://x.com/solflonot/status/2012892711704305817",
+    "image": "https://pbs.twimg.com/media/G-87PuVWsAAszU6?format=webp&name=large",
+    "width": 805,
+    "height": 1199,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "はな、うらない on X: \"初代三人娘。 当時はまだ18歳。 私が18歳 ...",
+    "file": "4-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 5,
+  "query": "web:元祖三人娘 写真",
+  "results": [
+   {
+    "title": "元祖三人娘”や吉永小百合の主演作など上映、脚本家・井手俊郎の ...",
+    "page": "https://natalie.mu/eiga/news/190141",
+    "image": "https://ogre.natalie.mu/media/news/eiga/2016/0608/idetoshiro_20160612_01.jpg?impolicy=m&imwidth=750&imdensity=1",
+    "width": 750,
+    "height": 542,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "元祖三人娘”や吉永小百合の主演作など上映、脚本家・井手俊郎の ...",
+    "file": "5-1.jpg"
+   },
+   {
+    "title": "ゆかり・ミエ・まり 3人娘メモリアルコンサート｜公演案内｜一般 ...",
+    "page": "https://www.min-on.or.jp/play/detail_161818_.html",
+    "image": "https://www.min-on.or.jp/img/perform/171114154604_i1.jpg",
+    "width": 580,
+    "height": 580,
+    "license": "",
+    "license_url": "",
+    "artist": "min-on.or.jp",
+    "description": "ゆかり・ミエ・まり 3人娘メモリアルコンサート｜公演案内｜一般 ...",
+    "file": "5-2.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 近代映画 「花の十代三人娘」 吉永小百合 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/d1125242230",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0502/users/ae930a82b9c7dc4775030fb9fbfeb4b645fe84f2/i-img900x1200-1708069207zxg3ax7.jpg",
+    "width": 900,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 近代映画 「花の十代三人娘」 吉永小百合 ...",
+    "file": "5-3.jpg"
+   }
+  ]
+ },
+ {
+  "k": 6,
+  "query": "web:三人娘 昭和30年代",
+  "results": [
+   {
+    "title": "三人娘乾杯！",
+    "page": "https://www.shochiku.co.jp/cinema/database/03479/",
+    "image": "https://www.shochiku.co.jp/wp-content/uploads/2022/05/c03479.jpg",
+    "width": 1003,
+    "height": 1395,
+    "license": "",
+    "license_url": "",
+    "artist": "shochiku.co.jp",
+    "description": "三人娘乾杯！",
+    "file": "6-1.jpg"
+   },
+   {
+    "title": "2024年7月に亡くなった方々/「三人娘」園まりさんに「かしまし娘 ...",
+    "page": "https://www.sankei.com/article/20241229-QPKULKITIFFEDOWPDGLSKRRFOI/",
+    "image": "https://www.sankei.com/resizer/v2/ZU7M35LDCFP7RDVHGSRSHIM7QY.jpg?auth=44462d38e21965cc700e64fcac08a3a030f0a5c90249c5e1d12b3e6592dacea4&quality=40&focal=1985%2C775&width=1200",
+    "width": 1200,
+    "height": 883,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "2024年7月に亡くなった方々/「三人娘」園まりさんに「かしまし娘 ...",
+    "file": "6-2.jpg"
+   },
+   {
+    "title": "ハイハイ3人娘』（1963年1月29日・宝塚・佐伯幸三）｜佐藤利明 ...",
+    "page": "https://note.com/toshiakis/n/nc608f748f01e",
+    "image": "https://assets.st-note.com/production/uploads/images/56803746/picture_pc_edbc9415ce2c71ee15b7c4a94a8c994b.jpeg",
+    "width": 466,
+    "height": 659,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "ハイハイ3人娘』（1963年1月29日・宝塚・佐伯幸三）｜佐藤利明 ...",
+    "file": "6-3.jpg"
+   },
+   {
+    "title": "中尾ミエ スパーク3人娘の知られざる事実「それぞれ先にデビュー ...",
+    "page": "https://www.sponichi.co.jp/entertainment/news/2025/05/19/kiji/20250519s00041000364000c.html",
+    "image": "https://www.sponichi.co.jp/entertainment/news/2025/05/18/jpeg/20250518s10041000424000p_view.webp",
+    "width": 1200,
+    "height": 849,
+    "license": "",
+    "license_url": "",
+    "artist": "sponichi.co.jp",
+    "description": "中尾ミエ スパーク3人娘の知られざる事実「それぞれ先にデビュー ...",
+    "file": "6-4.jpg"
+   },
+   {
+    "title": "芸能界 3人娘の歴史 | 歌謡曲大好き人間の独り言",
+    "page": "https://ameblo.jp/inishiesakura/entry-12870036759.html",
+    "image": "https://stat.ameba.jp/user_images/20241004/21/inishiesakura/c2/8a/j/o0810108015494093791.jpg",
+    "width": 810,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "芸能界 3人娘の歴史 | 歌謡曲大好き人間の独り言",
+    "file": "6-5.jpg"
+   },
+   {
+    "title": "三人娘 中尾ミエ・伊藤ゆかり・園まり/三人娘",
+    "page": "https://tower.jp/item/697069",
+    "image": "https://cdn.tower.jp/za/o/9W/zaP5_A4012499W.JPG",
+    "width": 500,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "tower.jp",
+    "description": "三人娘 中尾ミエ・伊藤ゆかり・園まり/三人娘",
+    "file": "6-6.jpg"
+   },
+   {
+    "title": "ハイハイ3人娘』（1963年1月29日・宝塚・佐伯幸三）｜佐藤利明 ...",
+    "page": "https://note.com/toshiakis/n/nc608f748f01e",
+    "image": "https://assets.st-note.com/production/uploads/images/56804070/rectangle_large_type_2_9cb1f38590bf5c29d113fbf7e327ba83.jpeg?width=1200",
+    "width": 1200,
+    "height": 625,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "ハイハイ3人娘』（1963年1月29日・宝塚・佐伯幸三）｜佐藤利明 ...",
+    "file": "6-7.jpg"
+   }
+  ]
+ },
+ {
+  "k": 7,
+  "query": "web:江利チエミ テネシーワルツ",
+  "results": [
+   {
+    "title": "テネシー・ワルツ~江利チエミ ベスト・ポップス~ - Amazon.com Music",
+    "page": "https://www.amazon.com/%E3%83%86%E3%83%8D%E3%82%B7%E3%83%BC%E3%83%BB%E3%83%AF%E3%83%AB%E3%83%84-%E6%B1%9F%E5%88%A9%E3%83%81%E3%82%A8%E3%83%9F-%E3%83%99%E3%82%B9%E3%83%88%E3%83%BB%E3%83%9D%E3%83%83%E3%83%97%E3%82%B9/dp/B09D6DGJFJ",
+    "image": "https://m.media-amazon.com/images/I/41DNNgVxeWL._UF1000,1000_QL80_.jpg",
+    "width": 1000,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.com",
+    "description": "テネシー・ワルツ~江利チエミ ベスト・ポップス~ - Amazon.com Music",
+    "file": "7-1.jpg"
+   },
+   {
+    "title": "テネシー・ワルツ/カモンナ・マイ・ハウス | RELEASE | SOUND FUJI",
+    "page": "https://soundfuji.kingrecords.co.jp/release/8754/",
+    "image": "https://soundfuji.kingrecords.co.jp/shared/img/2025/12/NOPA-8219_1.jpg",
+    "width": 1050,
+    "height": 1050,
+    "license": "",
+    "license_url": "",
+    "artist": "soundfuji.kingrecords.co.jp",
+    "description": "テネシー・ワルツ/カモンナ・マイ・ハウス | RELEASE | SOUND FUJI",
+    "file": "7-2.jpg"
+   },
+   {
+    "title": "テネシー・ワルツ - YouTube",
+    "page": "https://www.youtube.com/watch?v=gczgaLZNbl4",
+    "image": "https://i.ytimg.com/vi/gczgaLZNbl4/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "テネシー・ワルツ - YouTube",
+    "file": "7-3.jpg"
+   },
+   {
+    "title": "江利チエミ / テネシー・ワルツ | ACTION TIME VISION",
+    "page": "https://atvrecords.stores.jp/items/6229802730344b69a4ce9054",
+    "image": "https://imagedelivery.net/QondspN4HIUvB_R16-ddAQ/5ec200a755fa031f8a06e83b/e1f2ad34ab4b6708cc16.jpg/fit=cover,w=800,h=800",
+    "width": 800,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "atvrecords.stores.jp",
+    "description": "江利チエミ / テネシー・ワルツ | ACTION TIME VISION",
+    "file": "7-4.jpg"
+   },
+   {
+    "title": "江利チエミ / 涙のテネシーワルツ [7inch - SB-7209]：JAPANESE ...",
+    "page": "https://www.stereo-records.com/detail.php?itemCd=98737",
+    "image": "https://www.stereo-records.com/user/151/photo/sam/98737.webp",
+    "width": 600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "stereo-records.com",
+    "description": "江利チエミ / 涙のテネシーワルツ [7inch - SB-7209]：JAPANESE ...",
+    "file": "7-5.jpg"
+   },
+   {
+    "title": "江利チエミ「テネシー・ワルツ」に込められた思い | 文春 ...",
+    "page": "https://books.bunshun.jp/articles/-/1879",
+    "image": "https://books.bunshun.jp/mwimgs/0/e/-/img_0ecf5be7089154a938936bae897325a8166622.jpg",
+    "width": 535,
+    "height": 535,
+    "license": "",
+    "license_url": "",
+    "artist": "books.bunshun.jp",
+    "description": "江利チエミ「テネシー・ワルツ」に込められた思い | 文春 ...",
+    "file": "7-6.jpg"
+   },
+   {
+    "title": "テネシーワルツ物語・後編〜江利チエミが愛した歌、彼女を愛した ...",
+    "page": "https://www.tapthepop.net/machinouta/29352",
+    "image": "https://www.tapthepop.net/wp/wp-content/uploads/2015/05/944c39b09f6197038f4d334d432df99a.jpg",
+    "width": 1366,
+    "height": 768,
+    "license": "",
+    "license_url": "",
+    "artist": "tapthepop.net",
+    "description": "テネシーワルツ物語・後編〜江利チエミが愛した歌、彼女を愛した ...",
+    "file": "7-7.jpg"
+   },
+   {
+    "title": "Amazon.com: 江利チエミ物語―テネシー・ワルツが聴こえる ...",
+    "page": "https://www.amazon.com/-/es/Yuukou-Huziwara/dp/4860951395",
+    "image": "https://m.media-amazon.com/images/I/41HTXV0XBTL._AC_UF1000,1000_QL80_.jpg",
+    "width": 680,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.com",
+    "description": "Amazon.com: 江利チエミ物語―テネシー・ワルツが聴こえる ...",
+    "file": "7-8.jpg"
+   },
+   {
+    "title": "江利チエミ テネシー・ワルツ SKD88 | レコード買取",
+    "page": "https://www.snowrecords.jp/?pid=105552449",
+    "image": "https://img07.shop-pro.jp/PA01027/662/product/105552449.jpg?cmsp_timestamp=20250315114512",
+    "width": 500,
+    "height": 495,
+    "license": "",
+    "license_url": "",
+    "artist": "snowrecords.jp",
+    "description": "江利チエミ テネシー・ワルツ SKD88 | レコード買取",
+    "file": "7-9.jpg"
+   },
+   {
+    "title": "SPレコード 江利チエミ 家へおいでよ！ / テネシー・ワルツ ...",
+    "page": "https://straight-records.jp/?pid=169001717",
+    "image": "https://img08.shop-pro.jp/PA01036/052/product/169001717_o1.jpg?cmsp_timestamp=20220620175137",
+    "width": 449,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "straight-records.jp",
+    "description": "SPレコード 江利チエミ 家へおいでよ！ / テネシー・ワルツ ...",
+    "file": "7-10.jpg"
+   },
+   {
+    "title": "テネシー・ワルツ - lagu dan lirik oleh Chiemi Eri | Spotify",
+    "page": "https://open.spotify.com/intl-id/track/1phIq90btt7y4gZ88sHBAp",
+    "image": "https://i.scdn.co/image/ab67616d0000b273cfd56d47d19bf41ee74d13ff",
+    "width": 640,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "open.spotify.com",
+    "description": "テネシー・ワルツ - lagu dan lirik oleh Chiemi Eri | Spotify",
+    "file": "7-11.jpg"
+   },
+   {
+    "title": "2006年8月公演 テネシー・ワルツ 江利チエミ物語 - 明治座 公式 ...",
+    "page": "https://www.meijiza.co.jp/pastinfo/pastinfo-2004-2008/2006_08single/",
+    "image": "https://www.meijiza.co.jp/wp-content/themes/meijiza/images/info/2006/08_single/l.jpg",
+    "width": 450,
+    "height": 634,
+    "license": "",
+    "license_url": "",
+    "artist": "meijiza.co.jp",
+    "description": "2006年8月公演 テネシー・ワルツ 江利チエミ物語 - 明治座 公式 ...",
+    "file": "7-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 8,
+  "query": "web:雪村いづみ 若い頃",
+  "results": [
+   {
+    "title": "Dog Commands In Mexican Spanish - Dibujos Cute Para Imprimir",
+    "page": "https://komunikatory.org/blog/dog-commands-in-mexican-spanish",
+    "image": "https://d.newsweek.com/en/full/2235747/golden-retriever-bernese-mountain-dog.jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "komunikatory.org",
+    "description": "Dog Commands In Mexican Spanish - Dibujos Cute Para Imprimir",
+    "file": "8-1.jpg"
+   },
+   {
+    "title": "Dog & Field - The Original Clone - Fasankok dummy - 500 gr.",
+    "page": "https://www.biorigami.com/?c=dog-field-the-original-clone-fasankok-y-gefqPejKx",
+    "image": "https://images.ctfassets.net/m5ehn3s5t7ec/wp-image-198404/755489113b480b4fb7c386820bc528c8/Top-5-Japanese-Dog-Breeds.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "biorigami.com",
+    "description": "Dog & Field - The Original Clone - Fasankok dummy - 500 gr.",
+    "file": "8-2.jpg"
+   },
+   {
+    "title": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "page": "https://caringforadog.com/choosing-dogs-by-climate/",
+    "image": "https://koala.sh/api/image/v2-7jc5w-ozc97.jpg?width=1216&height=832&dream",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "caringforadog.com",
+    "description": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "file": "8-3.jpg"
+   },
+   {
+    "title": "Domestic Dog: Facts, Characteristics, Anatomy, Pictures",
+    "page": "https://animalvivid.com/animals/mammals/dog/",
+    "image": "https://animalvivid.com/wp-content/uploads/2023/03/Different-Dog-Breeds-Sitting-on-Grass-768x512.jpg",
+    "width": 768,
+    "height": 512,
+    "license": "",
+    "license_url": "",
+    "artist": "animalvivid.com",
+    "description": "Domestic Dog: Facts, Characteristics, Anatomy, Pictures",
+    "file": "8-4.jpg"
+   },
+   {
+    "title": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "page": "https://iheartdogs.com/nature-loving-dog-breeds-who-thrive-in-woods-and-water/",
+    "image": "https://iheartdogs.com/wp-content/uploads/2025/05/dog-grass-4-1.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "iheartdogs.com",
+    "description": "13 Nature-Loving Dog Breeds Who Thrive In Woods And Water - iHeartDogs.com",
+    "file": "8-5.jpg"
+   },
+   {
+    "title": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "page": "https://caringforadog.com/choosing-dogs-by-climate/",
+    "image": "https://koala.sh/api/image/v2-7jc0g-rmtjf.jpg?width=1216&height=832&dream",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "caringforadog.com",
+    "description": "Dogs By Climate: Choose a Breed That Thrives in Your Environment ...",
+    "file": "8-6.jpg"
+   },
+   {
+    "title": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "page": "https://www.nahf.org/article/natural-breeds-of-dogs",
+    "image": "https://images.pexels.com/photos/29590685/pexels-photo-29590685.jpeg?auto=compress&cs=tinysrgb&w=1434",
+    "width": 1434,
+    "height": 956,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "Discovering Natural Breeds of Dogs: Origins and Traits",
+    "file": "8-7.jpg"
+   },
+   {
+    "title": "The Domestic Dog: Origins, Evolution, and Fascinating Facts",
+    "page": "https://www.nahf.org/article/domestic-dog",
+    "image": "https://images.pexels.com/photos/8924984/pexels-photo-8924984.jpeg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "nahf.org",
+    "description": "The Domestic Dog: Origins, Evolution, and Fascinating Facts",
+    "file": "8-8.jpg"
+   },
+   {
+    "title": "Breed-Specific Behaviors: Understanding Your Dog's Natural Instincts ...",
+    "page": "https://lifewithmydogs.com/breed-specific-behaviors-understanding-your-dogs-natural-instincts-2/",
+    "image": "https://koala.sh/api/image/v2-q5f5f-94xre.jpg",
+    "width": 1213,
+    "height": 832,
+    "license": "",
+    "license_url": "",
+    "artist": "lifewithmydogs.com",
+    "description": "Breed-Specific Behaviors: Understanding Your Dog's Natural Instincts ...",
+    "file": "8-9.jpg"
+   },
+   {
+    "title": "Markiesje: The Elegant and Friendly Dutch Tulip Hound",
+    "page": "https://www.dogpackapp.com/blog/dog-breeds/markiesje-dutch-tulip-hound/",
+    "image": "https://www.dogpackapp.com/blog/wp-content/uploads/2025/01/dogpack-ad-happy-dog-2-1-1024x1024.webp",
+    "width": 1024,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "dogpackapp.com",
+    "description": "Markiesje: The Elegant and Friendly Dutch Tulip Hound",
+    "file": "8-10.jpg"
+   },
+   {
+    "title": "28 Dog Breeds Known for Their Exceptionally Friendly Nature - Epic dogs ...",
+    "page": "https://epicdogstales.com/28-dog-breeds-known-for-their-exceptionally-friendly-nature/",
+    "image": "https://epicdogstales.com/wp-content/uploads/2025/02/28-Dog-Breeds-Known-for-Their-Exceptionally-Friendly-Nature.jpeg",
+    "width": 1200,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "epicdogstales.com",
+    "description": "28 Dog Breeds Known for Their Exceptionally Friendly Nature - Epic dogs ...",
+    "file": "8-11.jpg"
+   },
+   {
+    "title": "43 Best Small Dog Breeds",
+    "page": "https://www.goodhousekeeping.com/life/pets/advice/g1754/small-dog-breeds/",
+    "image": "https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/30/pembroke-welsh-corgi.jpg?crop=1.00xw:0.667xh;0",
+    "width": 1155,
+    "height": 1733,
+    "license": "",
+    "license_url": "",
+    "artist": "goodhousekeeping.com",
+    "description": "43 Best Small Dog Breeds",
+    "file": "8-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 9,
+  "query": "web:江利チエミ 若い頃",
+  "results": [
+   {
+    "title": "江利チエミ企画】秘蔵写真と音楽で辿る江利チエミHistory ...",
+    "page": "https://soundfuji.kingrecords.co.jp/column/9110/",
+    "image": "https://soundfuji.kingrecords.co.jp/shared/img/2026/01/IMG_5506-scaled.jpg",
+    "width": 1676,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "soundfuji.kingrecords.co.jp",
+    "description": "江利チエミ企画】秘蔵写真と音楽で辿る江利チエミHistory ...",
+    "file": "9-1.jpg"
+   },
+   {
+    "title": "江利チエミ[23007001246]の写真・イラスト素材｜アマナイメージズ",
+    "page": "https://amanaimages.com/info/infoRM.aspx?SearchKey=23007001246",
+    "image": "https://static.amanaimages.com/imgroom/cen3tzG4fTr7Gtw1PoeRer/23007/23007001246.jpg",
+    "width": 640,
+    "height": 636,
+    "license": "",
+    "license_url": "",
+    "artist": "amanaimages.com",
+    "description": "江利チエミ[23007001246]の写真・イラスト素材｜アマナイメージズ",
+    "file": "9-2.jpg"
+   },
+   {
+    "title": "江利チエミ - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E5%88%A9%E3%83%81%E3%82%A8%E3%83%9F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Eri_Chiemi_1951.jpg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 560,
+    "height": 840,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "江利チエミ - Wikipedia",
+    "file": "9-3.jpg"
+   },
+   {
+    "title": "高倉健にキスをする江利チエミ（若い頃）の写真 | 昭和ガイド",
+    "page": "https://showa-g.org/photos/view/1235",
+    "image": "https://showa-g.org/img/01235_l.webp",
+    "width": 700,
+    "height": 926,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-g.org",
+    "description": "高倉健にキスをする江利チエミ（若い頃）の写真 | 昭和ガイド",
+    "file": "9-4.jpg"
+   },
+   {
+    "title": "江利チエミ | キングレコードオフィシャルサイト",
+    "page": "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=10412",
+    "image": "https://www.kingrecords.co.jp/img/artist/1/9977c7cbd52946dda55c899f508412ff.jpg",
+    "width": 1200,
+    "height": 1480,
+    "license": "",
+    "license_url": "",
+    "artist": "kingrecords.co.jp",
+    "description": "江利チエミ | キングレコードオフィシャルサイト",
+    "file": "9-5.jpg"
+   },
+   {
+    "title": "江利チエミ | キングレコードオフィシャルサイト",
+    "page": "https://www.kingrecords.co.jp/cs/artist/artist.aspx?artist=10412",
+    "image": "https://www.kingrecords.co.jp/img/goods/S/KICX-5736_d477e36458624d44983fd721c8d8c0cd.jpg",
+    "width": 1702,
+    "height": 1729,
+    "license": "",
+    "license_url": "",
+    "artist": "kingrecords.co.jp",
+    "description": "江利チエミ | キングレコードオフィシャルサイト",
+    "file": "9-6.jpg"
+   },
+   {
+    "title": "江利チエミリサイタル 昭和34年1月名古屋労音例会 名古屋市 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=280879455",
+    "image": "https://www.kosho.or.jp/upload/save_image/26020250/20190922125848672314_6e3e32574360e47422fc94048f74494e.jpg",
+    "width": 426,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "江利チエミリサイタル 昭和34年1月名古屋労音例会 名古屋市 ...",
+    "file": "9-7.jpg"
+   },
+   {
+    "title": "朝ドラでは描かれない江利チエミ45年の壮絶人生…高倉健と結婚 ...",
+    "page": "https://president.jp/articles/-/79852",
+    "image": "https://president.jp/mwimgs/f/a/670/img_fa116dd1c4c8b907bee860873cc1b5ce478750.jpg",
+    "width": 670,
+    "height": 479,
+    "license": "",
+    "license_url": "",
+    "artist": "president.jp",
+    "description": "朝ドラでは描かれない江利チエミ45年の壮絶人生…高倉健と結婚 ...",
+    "file": "9-8.jpg"
+   },
+   {
+    "title": "江利チエミ全曲集 | 江利チエミ | キングレコードオフィシャルサイト",
+    "page": "https://www.kingrecords.co.jp/cs/g/gKICX-5705/",
+    "image": "https://www.kingrecords.co.jp/img/goods/L/167a382dc96b458692f2b48a79fafbec.jpg",
+    "width": 1000,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "kingrecords.co.jp",
+    "description": "江利チエミ全曲集 | 江利チエミ | キングレコードオフィシャルサイト",
+    "file": "9-9.jpg"
+   },
+   {
+    "title": "1962年 「十年歌手」江利チエミさんと夫の高倉健さん、家庭 ...",
+    "page": "https://amanaimages.com/info/infoRM.aspx?SearchKey=23027013684",
+    "image": "https://static.amanaimages.com/imgroom/cen3tzG4fTr7Gtw1PoeRer/23027/23027013684.jpg",
+    "width": 640,
+    "height": 423,
+    "license": "",
+    "license_url": "",
+    "artist": "amanaimages.com",
+    "description": "1962年 「十年歌手」江利チエミさんと夫の高倉健さん、家庭 ...",
+    "file": "9-10.jpg"
+   },
+   {
+    "title": "夫婦だった高倉健と江利チエミの写真 | 昭和ガイド",
+    "page": "https://showa-g.org/photos/view/643",
+    "image": "https://showa-g.org/img/00643_l.webp",
+    "width": 700,
+    "height": 751,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-g.org",
+    "description": "夫婦だった高倉健と江利チエミの写真 | 昭和ガイド",
+    "file": "9-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 10,
+  "query": "web:ジャンケン娘 1955 映画",
+  "results": [
+   {
+    "title": "ジャンケン娘｜衛星劇場",
+    "page": "https://www.eigeki.com/series/S3410",
+    "image": "https://www.eigeki.com/images/series/S3410.jpg",
+    "width": 1000,
+    "height": 667,
+    "license": "",
+    "license_url": "",
+    "artist": "eigeki.com",
+    "description": "ジャンケン娘｜衛星劇場",
+    "file": "10-1.jpg"
+   },
+   {
+    "title": "じゃんけん娘 DVD 1955年 日本映画 - メルカリ",
+    "page": "https://jp.mercari.com/item/m22281391889",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m22281391889_1.jpg?1728213974",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "じゃんけん娘 DVD 1955年 日本映画 - メルカリ",
+    "file": "10-2.jpg"
+   },
+   {
+    "title": "ジャンケン娘』(1955：杉江敏男) - ぴくちゃあ通信",
+    "page": "https://hati8823.hatenablog.com/entry/2022/07/01/233000",
+    "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/h/hati8823/20220703/20220703010951.jpg",
+    "width": 600,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "hati8823.hatenablog.com",
+    "description": "ジャンケン娘』(1955：杉江敏男) - ぴくちゃあ通信",
+    "file": "10-3.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ジャンケン娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "page": "https://www.amazon.co.jp/%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B1%E3%83%B3%E5%A8%98-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B0007G8DG0",
+    "image": "https://m.media-amazon.com/images/I/51CF5AA6FRL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
+    "width": 1910,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ジャンケン娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "file": "10-4.jpg"
+   },
+   {
+    "title": "じゃんけん娘 DVD 1955年 日本映画 - メルカリ",
+    "page": "https://jp.mercari.com/item/m22281391889",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m22281391889_3.jpg?1728213974",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "じゃんけん娘 DVD 1955年 日本映画 - メルカリ",
+    "file": "10-5.jpg"
+   },
+   {
+    "title": "Janken Musume (ジャンケン娘) - Misora Hibari, Eri Chiemi ...",
+    "page": "https://www.youtube.com/watch?v=l_oRF9v7CaY",
+    "image": "https://i.ytimg.com/vi/l_oRF9v7CaY/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "Janken Musume (ジャンケン娘) - Misora Hibari, Eri Chiemi ...",
+    "file": "10-6.jpg"
+   },
+   {
+    "title": "カエル純 on X: \"映画出演（端役）「ゴジラの逆襲」1955 ...",
+    "page": "https://x.com/kaerujun/status/1132260274000449537",
+    "image": "https://pbs.twimg.com/media/D7aX6sLUEAAxWoV?format=webp&name=large",
+    "width": 685,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "カエル純 on X: \"映画出演（端役）「ゴジラの逆襲」1955 ...",
+    "file": "10-7.jpg"
+   },
+   {
+    "title": "長崎は今日も雨だった on X: \"東宝映画『ジャンケン娘』の 美空 ...",
+    "page": "https://x.com/kohji_musha/status/2020204433825812920",
+    "image": "https://pbs.twimg.com/media/HAk1OO5aAAAOV7T?format=webp&name=large",
+    "width": 720,
+    "height": 942,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "長崎は今日も雨だった on X: \"東宝映画『ジャンケン娘』の 美空 ...",
+    "file": "10-8.jpg"
+   },
+   {
+    "title": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "page": "https://jp.mercari.com/item/m62809847100",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m62809847100_1.jpg?1791731349",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "file": "10-9.jpg"
+   },
+   {
+    "title": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "page": "https://jp.mercari.com/item/m62809847100",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m62809847100_2.jpg?1791731349",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "file": "10-10.jpg"
+   },
+   {
+    "title": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "page": "https://jp.mercari.com/item/m62809847100",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m62809847100_3.jpg?1791731349",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "値下げしました 美空ひばり 江利チエミ 雪村いづみジャンケン娘 ...",
+    "file": "10-11.jpg"
+   },
+   {
+    "title": "經典電影】「香港三人娘」映画｜Sugarplum電影網| カンカン",
+    "page": "https://note.com/k9mk9m/n/n3ccd96e26801",
+    "image": "https://assets.st-note.com/img/1767692588-0K8ZHyqekJQrwBX6baR2uUW9.jpg",
+    "width": 541,
+    "height": 759,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "經典電影】「香港三人娘」映画｜Sugarplum電影網| カンカン",
+    "file": "10-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 11,
+  "query": "web:ジャンケン娘 ポスター",
+  "results": [
+   {
+    "title": "Amazon.co.jp: ジャンケン娘／杉江敏男（監督）杉原貞雄（製作 ...",
+    "page": "https://www.amazon.co.jp/%E3%83%8E%E3%83%BC%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89%E5%93%81-400192-%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B1%E3%83%B3%E5%A8%98%EF%BC%8F%E6%9D%89%E6%B1%9F%E6%95%8F%E7%94%B7%EF%BC%88%E7%9B%A3%E7%9D%A3%EF%BC%89%E6%9D%89%E5%8E%9F%E8%B2%9E%E9%9B%84%EF%BC%88%E8%A3%BD%E4%BD%9C%EF%BC%89%E5%85%AB%E7%94%B0%E5%B0%9A%E4%B9%8B%EF%BC%88%E8%84%9A%E6%9C%AC%EF%BC%89%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A%E6%B1%9F%E5%88%A9%E3%83%81%E3%82%A8%E3%83%9F%E9%9B%AA%E6%9D%91%E3%81%84%E3%81%A5%E3%81%BF%E5%B1%B1%E7%94%B0%E7%9C%9F%E4%BA%8C%E6%B1%9F%E5%8E%9F%E9%81%94%E6%80%A1/dp/B0CFL9Q3NL",
+    "image": "https://m.media-amazon.com/images/I/51iyoyo929L._AC_UF894,1000_QL80_.jpg",
+    "width": 711,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ジャンケン娘／杉江敏男（監督）杉原貞雄（製作 ...",
+    "file": "11-1.jpg"
+   },
+   {
+    "title": "ひばり・チエミ・いづみの ジャンケン娘 映画パンフ | ¥1,000 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=315437784",
+    "image": "https://www.kosho.or.jp/upload/save_image/31320070/20200503094816699555_86cbd68ff9c2039317bc83caad465a37.jpg",
+    "width": 432,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "ひばり・チエミ・いづみの ジャンケン娘 映画パンフ | ¥1,000 ...",
+    "file": "11-2.jpg"
+   },
+   {
+    "title": "FC限定 ミニモニ。ジャンケンぴょん!/春夏秋冬だいすっき! 告知 ...",
+    "page": "https://aucview.aucfan.com/yahoo/x776096209/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0204/users/4f74795f286afc5d8b3d2f3a76feace76514652a/i-img857x1200-1618584895sddadb3966.jpg",
+    "width": 857,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "FC限定 ミニモニ。ジャンケンぴょん!/春夏秋冬だいすっき! 告知 ...",
+    "file": "11-3.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ジャンケン娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "page": "https://www.amazon.co.jp/%E3%82%B8%E3%83%A3%E3%83%B3%E3%82%B1%E3%83%B3%E5%A8%98-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B0007G8DG0",
+    "image": "https://images-fe.ssl-images-amazon.com/images/I/515f5zdTkhL._AC_UL600_SR600,600_.jpg",
+    "width": 600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ジャンケン娘 [DVD] : 美空ひばり, 江利チエミ ...",
+    "file": "11-4.jpg"
+   },
+   {
+    "title": "映画チラシ ジャンケン娘 超稀少・初公開時正規版 美空ひばり ...",
+    "page": "https://pinehavenestate.co.za/?l=b1e3l3l9b5i2r7d21725",
+    "image": "https://auctions.afimg.jp/v1068316640/ya/image/v1068316640.1.jpg",
+    "width": 729,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "pinehavenestate.co.za",
+    "description": "映画チラシ ジャンケン娘 超稀少・初公開時正規版 美空ひばり ...",
+    "file": "11-5.jpg"
+   },
+   {
+    "title": "ひばり・チエミ・いづみの ジャンケン娘 映画パンフ | ¥1,000 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=315437784",
+    "image": "https://www.kosho.or.jp/upload/save_image/31320070/20200503094824974989_30652e88f599d7eba016591fe1a5ae0e.jpg",
+    "width": 600,
+    "height": 434,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "ひばり・チエミ・いづみの ジャンケン娘 映画パンフ | ¥1,000 ...",
+    "file": "11-6.jpg"
+   }
+  ]
+ },
+ {
+  "k": 12,
+  "query": "web:ロマンス娘 1956 映画",
+  "results": [
+   {
+    "title": "ロマンス娘｜衛星劇場",
+    "page": "https://www.eigeki.com/series/S5564",
+    "image": "https://www.eigeki.com/images/series/S5564.jpg",
+    "width": 1000,
+    "height": 667,
+    "license": "",
+    "license_url": "",
+    "artist": "eigeki.com",
+    "description": "ロマンス娘｜衛星劇場",
+    "file": "12-1.jpg"
+   },
+   {
+    "title": "Romantic Daughters (ロマンス娘, Toshio Sugie, 1956 ...",
+    "page": "https://windowsonworlds.com/2016/05/31/romantic-daughters-%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-toshio-sugie-1956/",
+    "image": "https://windowsonworlds.com/wp-content/uploads/2016/05/vlcsnap-2016-05-30-23h55m41s358.png?w=750",
+    "width": 720,
+    "height": 540,
+    "license": "",
+    "license_url": "",
+    "artist": "windowsonworlds.com",
+    "description": "Romantic Daughters (ロマンス娘, Toshio Sugie, 1956 ...",
+    "file": "12-2.jpg"
+   },
+   {
+    "title": "近代映画 臨時増刊 「ロマンス娘」特集号（美空ひばり・江利 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=403646448",
+    "image": "https://www.kosho.or.jp/upload/save_image/12061190/20220123145902926965_5d73685f1d315aa02d235141364fc90f.jpg",
+    "width": 600,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "近代映画 臨時増刊 「ロマンス娘」特集号（美空ひばり・江利 ...",
+    "file": "12-3.jpg"
+   },
+   {
+    "title": "ひばり・チエミ・いづみの ロマンス娘 映画」の検索結果 - Yahoo ...",
+    "page": "https://search.yahoo.co.jp/mvredirect?page=detail&cinemaId=137397",
+    "image": "https://7net.omni7.jp/dw/image/v2/BLHS_PRD/on/demandware.static/-/Sites-dvd-m-catalog/ja_JP/dw7252a5a3/920259/1400605538.jpg?sw=640",
+    "width": 640,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "search.yahoo.co.jp",
+    "description": "ひばり・チエミ・いづみの ロマンス娘 映画」の検索結果 - Yahoo ...",
+    "file": "12-4.jpg"
+   },
+   {
+    "title": "ロマンス娘 DVD 1956年 - メルカリ",
+    "page": "https://jp.mercari.com/item/m30306676329",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m30306676329_4.jpg?1750511130",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "ロマンス娘 DVD 1956年 - メルカリ",
+    "file": "12-5.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "page": "https://www.amazon.co.jp/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-%E6%9D%89%E6%B1%9F%E6%95%8F%E7%94%B7/dp/B0FSFPJ47S",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/cfffdfe6e2dde4c47339327951ceabe07833baea70a98a4eff4b1e73a72a51b6.jpg",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "file": "12-6.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "page": "https://www.amazon.co.jp/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-%E6%9D%89%E6%B1%9F%E6%95%8F%E7%94%B7/dp/B0FSFPJ47S",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/d731366462cd2da7e67b993a13da975804861de8bbb31341bd4c53d635c230de._UR1920,1080_.jpg",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "file": "12-7.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "page": "https://www.amazon.co.jp/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-%E6%9D%89%E6%B1%9F%E6%95%8F%E7%94%B7/dp/B0FSFPJ47S",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/15f3317c1f27b03736590f7d07e3b93bd2456f0dc8c782bf93d51e69e200cea2.jpg",
+    "width": 1800,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "file": "12-8.jpg"
+   },
+   {
+    "title": "映画DVD「ロマンス娘／美空ひばり,江利チエミ,雪村いづみ,森繁 ...",
+    "page": "https://aucview.aucfan.com/yahoo/1085847830/",
+    "image": "https://auctions.afimg.jp/1085847830/ya/image/1085847830.1.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "映画DVD「ロマンス娘／美空ひばり,江利チエミ,雪村いづみ,森繁 ...",
+    "file": "12-9.jpg"
+   },
+   {
+    "title": "昭和31年 東宝映画「ロマンス娘」映画ポスター （プレスシート ...",
+    "page": "https://www.aarmusa.com/shops/jovialist/l0o2n1g6i4f9o4l3i3u1s25",
+    "image": "https://blog-imgs-154.fc2.com/a/t/w/atwonder/202208161552538d9.jpg",
+    "width": 689,
+    "height": 989,
+    "license": "",
+    "license_url": "",
+    "artist": "aarmusa.com",
+    "description": "昭和31年 東宝映画「ロマンス娘」映画ポスター （プレスシート ...",
+    "file": "12-10.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "page": "https://www.amazon.co.jp/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E5%A8%98-%E6%9D%89%E6%B1%9F%E6%95%8F%E7%94%B7/dp/B0FSFPJ47S",
+    "image": "https://m.media-amazon.com/images/S/pv-target-images/e46870e5b1a1db83aeb8ab3abb60eb97d70319ebf2bfdb1cd04be3dae75bdb1c._UR1920,1080_.jpg",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ロマンス娘を観る | Prime Video",
+    "file": "12-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 13,
+  "query": "web:三人娘 共演 ステージ",
+  "results": [
+   {
+    "title": "3人娘Z 屋外ステージで初の配信曲リリース記念イベ 田中あいみ ...",
+    "page": "https://www.sponichi.co.jp/entertainment/news/2025/03/03/kiji/20250303s00041000312000c.html",
+    "image": "https://www.sponichi.co.jp/entertainment/news/2025/03/03/jpeg/20250303s10041000320000p_view.webp",
+    "width": 1200,
+    "height": 1023,
+    "license": "",
+    "license_url": "",
+    "artist": "sponichi.co.jp",
+    "description": "3人娘Z 屋外ステージで初の配信曲リリース記念イベ 田中あいみ ...",
+    "file": "13-1.jpg"
+   },
+   {
+    "title": "3人娘Zとして初のキャンペーン！田中あいみさん 舞乃空さん 梅谷 ...",
+    "page": "https://www.gakuendo.net/diary-detail/479",
+    "image": "https://www.gakuendo.net/data/gakuendo/image/20241218_4041c3.jpg",
+    "width": 900,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "gakuendo.net",
+    "description": "3人娘Zとして初のキャンペーン！田中あいみさん 舞乃空さん 梅谷 ...",
+    "file": "13-2.jpg"
+   },
+   {
+    "title": "3人娘Zとして初のキャンペーン！田中あいみさん 舞乃空さん 梅谷 ...",
+    "page": "https://www.gakuendo.net/diary-detail/479",
+    "image": "https://www.gakuendo.net/data/gakuendo/image/20241218_aeb7dc.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "gakuendo.net",
+    "description": "3人娘Zとして初のキャンペーン！田中あいみさん 舞乃空さん 梅谷 ...",
+    "file": "13-3.jpg"
+   },
+   {
+    "title": "辻希美、親子3人でステージ初共演 夫・杉浦太陽＆長女・希空との ...",
+    "page": "https://news.ntv.co.jp/category/culture/1b26e3e390da499b83b55b7d4f65a767",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/f417fddb41d54e6a8782c741e54b76ac/b12ac096-bb69-4541-a45e-7e7b56ed7cbe.JPG?w=1200",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "news.ntv.co.jp",
+    "description": "辻希美、親子3人でステージ初共演 夫・杉浦太陽＆長女・希空との ...",
+    "file": "13-4.jpg"
+   },
+   {
+    "title": "田中あいみ、舞乃空、梅谷心愛のユニット・3人娘Z、都内で ...",
+    "page": "https://www.utabito.jp/news/20037/",
+    "image": "http://www.utabito.jp/wp-content/uploads/2024/12/3%E4%BA%BA%E5%A8%98Z-2.jpg",
+    "width": 740,
+    "height": 493,
+    "license": "",
+    "license_url": "",
+    "artist": "utabito.jp",
+    "description": "田中あいみ、舞乃空、梅谷心愛のユニット・3人娘Z、都内で ...",
+    "file": "13-5.jpg"
+   },
+   {
+    "title": "3人娘Z（田中あいみ、舞乃空、梅谷心愛）／クリスマス ...",
+    "page": "https://news.utate.co.jp/12131",
+    "image": "https://news.utate.co.jp/wp-content/uploads/2024/12/0W9A5188-1-724x1024.jpg",
+    "width": 724,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "news.utate.co.jp",
+    "description": "3人娘Z（田中あいみ、舞乃空、梅谷心愛）／クリスマス ...",
+    "file": "13-6.jpg"
+   },
+   {
+    "title": "エンタメミニ情報】「3人娘Z」 、大阪に続いて福岡で初ライブ ...",
+    "page": "https://dempa-digital.com/article/614154",
+    "image": "https://dempa-digital.com/wp-content/uploads/2024/12/63498_pimg01.jpg",
+    "width": 1000,
+    "height": 667,
+    "license": "",
+    "license_url": "",
+    "artist": "dempa-digital.com",
+    "description": "エンタメミニ情報】「3人娘Z」 、大阪に続いて福岡で初ライブ ...",
+    "file": "13-7.jpg"
+   },
+   {
+    "title": "3人娘Zが1stシングル「イマサラ」の配信開始記念イベントを開催 ...",
+    "page": "https://color-ful.net/news/26223/",
+    "image": "https://color-ful.net/wp-content/uploads/2025/03/DSC_1733-scaled.jpeg",
+    "width": 2400,
+    "height": 1599,
+    "license": "",
+    "license_url": "",
+    "artist": "color-ful.net",
+    "description": "3人娘Zが1stシングル「イマサラ」の配信開始記念イベントを開催 ...",
+    "file": "13-8.jpg"
+   },
+   {
+    "title": "公式】3人娘Z (@3ninmusumeZ) / X",
+    "page": "https://x.com/3ninmusumeZ",
+    "image": "https://pbs.twimg.com/profile_images/1893872968641761280/5Bz_5JBn_400x400.jpg",
+    "width": 400,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "公式】3人娘Z (@3ninmusumeZ) / X",
+    "file": "13-9.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "web:美空ひばり 江利チエミ ツーショット",
+  "results": [
+   {
+    "title": "Amazon.co.jp: ひばり・チエミの弥次喜多道中 [DVD] : 美空 ...",
+    "page": "https://www.amazon.co.jp/%E3%81%B2%E3%81%B0%E3%82%8A%E3%83%BB%E3%83%81%E3%82%A8%E3%83%9F%E3%81%AE%E5%BC%A5%E6%AC%A1%E5%96%9C%E5%A4%9A%E9%81%93%E4%B8%AD-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B073GM62VC",
+    "image": "https://m.media-amazon.com/images/I/914xZC7hYxL._AC_UF1000,1000_QL80_.jpg",
+    "width": 708,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ひばり・チエミの弥次喜多道中 [DVD] : 美空 ...",
+    "file": "14-1.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ひばり・チエミのおしどり千両傘 [DVD] : 美空 ...",
+    "page": "https://www.amazon.co.jp/%E3%81%B2%E3%81%B0%E3%82%8A%E3%83%BB%E3%83%81%E3%82%A8%E3%83%9F%E3%81%AE%E3%81%8A%E3%81%97%E3%81%A9%E3%82%8A%E5%8D%83%E4%B8%A1%E5%82%98-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B074DZMP1S",
+    "image": "https://m.media-amazon.com/images/I/916InZPoCxL._AC_UF894,1000_QL80_.jpg",
+    "width": 709,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ひばり・チエミのおしどり千両傘 [DVD] : 美空 ...",
+    "file": "14-2.jpg"
+   },
+   {
+    "title": "江利チエミさんの遺影に最後のお別れをする美…：歌手・美空 ...",
+    "page": "https://www.jiji.com/jc/d4?p=uta100-jlp01140264&d=d4_oldnews",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_oldnews/uta100-jlp01140264.jpg",
+    "width": 600,
+    "height": 401,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "江利チエミさんの遺影に最後のお別れをする美…：歌手・美空 ...",
+    "file": "14-3.jpg"
+   },
+   {
+    "title": "ひばり・チエミのおしどり千両傘 | 横浜の映画館・ミニシアター ...",
+    "page": "https://www.jackandbetty.net/cinema/detail/1441/",
+    "image": "http://www.jackandbetty.net/upload/main/oshidorisenryo.jpg",
+    "width": 568,
+    "height": 793,
+    "license": "",
+    "license_url": "",
+    "artist": "jackandbetty.net",
+    "description": "ひばり・チエミのおしどり千両傘 | 横浜の映画館・ミニシアター ...",
+    "file": "14-4.jpg"
+   },
+   {
+    "title": "美空ひばり 江利チエミ 雪村いづみ - video Dailymotion",
+    "page": "https://www.dailymotion.com/video/x54ived",
+    "image": "https://s2.dmcdn.net/v/IUITr1gq2E1WDR4iJ/x1080",
+    "width": 1436,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "dailymotion.com",
+    "description": "美空ひばり 江利チエミ 雪村いづみ - video Dailymotion",
+    "file": "14-5.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - p30154美空ひばり雪村いづみ江利チエミ ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/u127666545",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0212/users/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855/i-img599x442-1482390883mianji9232.jpg",
+    "width": 599,
+    "height": 442,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - p30154美空ひばり雪村いづみ江利チエミ ...",
+    "file": "14-6.jpg"
+   },
+   {
+    "title": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=359093083",
+    "image": "https://www.kosho.or.jp/upload/save_image/42000010/20210302161949002993_99bbacbdefaa6ed245989e7be10cabc1.jpg",
+    "width": 424,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "file": "14-7.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - p41319『三人よれば』スチル 美空ひばり ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/e1015353031",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0210/users/c6a5dcbdf811267ac9c31d1a7abe5849d89df380/i-img1200x853-1635319731p1h9zg4287.jpg",
+    "width": 1200,
+    "height": 853,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - p41319『三人よれば』スチル 美空ひばり ...",
+    "file": "14-8.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "web:美空ひばり 雪村いづみ ツーショット",
+  "results": [
+   {
+    "title": "昭和レインボー「昭和特撮大好き！」 on X: \"「＃女学生の友 ...",
+    "page": "https://x.com/TokudaiRainbow/status/2102648663046582433/photo/4",
+    "image": "https://pbs.twimg.com/media/HS4bUQDa8AAT1oq?format=webp&name=large",
+    "width": 1704,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "昭和レインボー「昭和特撮大好き！」 on X: \"「＃女学生の友 ...",
+    "file": "15-1.jpg"
+   },
+   {
+    "title": "はな、うらない on X: \"初代三人娘。 当時はまだ18歳。 私が18歳 ...",
+    "page": "https://x.com/solflonot/status/2012892711704305817",
+    "image": "https://pbs.twimg.com/media/G-87PuZXAAAyqrN?format=webp&name=large",
+    "width": 1000,
+    "height": 751,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "はな、うらない on X: \"初代三人娘。 当時はまだ18歳。 私が18歳 ...",
+    "file": "15-2.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 美空ひばり江利チエミ雪村いづみ主演 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/j1161651775",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0511/users/a8bf7ae048dddd31aaf46434817c29e667123983/i-img452x629-1731923728rjwnqp7.jpg",
+    "width": 452,
+    "height": 629,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 美空ひばり江利チエミ雪村いづみ主演 ...",
+    "file": "15-3.jpg"
+   },
+   {
+    "title": "TooYoung_20160624.jpg?impolicy ...",
+    "page": "https://natalie.mu/music/news/192070",
+    "image": "https://ogre.natalie.mu/media/news/music/2016/0624/TooYoung_20160624.jpg?impolicy=ogp_fill&cropPlace=Center",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "TooYoung_20160624.jpg?impolicy ...",
+    "file": "15-4.jpg"
+   },
+   {
+    "title": "はな、うらない on X: \"#真帆志ぶき、#美空ひばり、#雪村いづみ ...",
+    "page": "https://x.com/solflonot/status/1867905415788528076",
+    "image": "https://pbs.twimg.com/media/Gewf6RRa8AARvCz?format=webp&name=large",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "はな、うらない on X: \"#真帆志ぶき、#美空ひばり、#雪村いづみ ...",
+    "file": "15-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "web:江利チエミ 高倉健 結婚",
+  "results": [
+   {
+    "title": "高倉健、江利チエミとの結婚、帝国ホテル＝1959（昭和34 ...",
+    "page": "https://amanaimages.com/info/infoRM.aspx?SearchKey=23023003780",
+    "image": "https://static.amanaimages.com/imgroom/cen3tzG4fTr7Gtw1PoeRer/23023/23023003780.jpg",
+    "width": 433,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "amanaimages.com",
+    "description": "高倉健、江利チエミとの結婚、帝国ホテル＝1959（昭和34 ...",
+    "file": "16-1.jpg"
+   },
+   {
+    "title": "結婚式でウエディングケーキを切る俳優の高倉健さん（左…：高倉 ...",
+    "page": "https://www.jiji.com/jc/d4?p=tkk011-jpp01108669&d=d4_hh",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_hh/tkk011-jpp01108669.jpg",
+    "width": 406,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "結婚式でウエディングケーキを切る俳優の高倉健さん（左…：高倉 ...",
+    "file": "16-2.jpg"
+   },
+   {
+    "title": "utsuwa-Shun on X: \"今日は1959年（昭和34）高倉健さんと江利 ...",
+    "page": "https://x.com/ShunUtsuwa/status/1758463736891773348",
+    "image": "https://pbs.twimg.com/media/FLiPYnNVIAMdBZA?format=webp&name=large",
+    "width": 457,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "utsuwa-Shun on X: \"今日は1959年（昭和34）高倉健さんと江利 ...",
+    "file": "16-3.jpg"
+   },
+   {
+    "title": "あのころ＞高倉健、江利チエミが挙式 仲人は東映大川社長夫妻 ...",
+    "page": "https://www.47news.jp/4525109.html",
+    "image": "https://img.cf.47news.jp/public/photo/1bb46a744f031c5a2bac0b6016bafa23/photo.jpg",
+    "width": 1000,
+    "height": 789,
+    "license": "",
+    "license_url": "",
+    "artist": "47news.jp",
+    "description": "あのころ＞高倉健、江利チエミが挙式 仲人は東映大川社長夫妻 ...",
+    "file": "16-4.jpg"
+   },
+   {
+    "title": "誰も見たことのない高倉健『高倉健・江利チエミ夫妻の新婚生活の ...",
+    "page": "https://www.youtube.com/watch?v=ylnU5_CNK0Q",
+    "image": "https://i.ytimg.com/vi/ylnU5_CNK0Q/sddefault.jpg",
+    "width": 640,
+    "height": 480,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "誰も見たことのない高倉健『高倉健・江利チエミ夫妻の新婚生活の ...",
+    "file": "16-5.jpg"
+   },
+   {
+    "title": "高倉健・江利チエミ結婚式 (コード 2018060700466)の写真・画像 ...",
+    "page": "https://imagelink.kyodonews.jp/detail?id=5349648",
+    "image": "https://imagelink.kyodonews.jp/VItemImageW/imagelink_2018060700466.jpg?key=155769915",
+    "width": 512,
+    "height": 499,
+    "license": "",
+    "license_url": "",
+    "artist": "imagelink.kyodonews.jp",
+    "description": "高倉健・江利チエミ結婚式 (コード 2018060700466)の写真・画像 ...",
+    "file": "16-6.jpg"
+   },
+   {
+    "title": "愛の証”発掘秘話》高倉健さん、養女が知らない「幻のポルシェ ...",
+    "page": "https://j7p.jp/171845/2",
+    "image": "https://j7p.jp/wp-content/uploads/2026/06/takakura_ken_04.jpg",
+    "width": 800,
+    "height": 995,
+    "license": "",
+    "license_url": "",
+    "artist": "j7p.jp",
+    "description": "愛の証”発掘秘話》高倉健さん、養女が知らない「幻のポルシェ ...",
+    "file": "16-7.jpg"
+   },
+   {
+    "title": "写真特集]銀幕のスター・高倉健さん死去～「不器用」体現した ...",
+    "page": "https://news.yahoo.co.jp/articles/eff6766ee1bd9fa114b87e4a7a173a775f52b520/images/005",
+    "image": "https://news-pctr.c.yimg.jp/uUzvQ3lML_bkIqyakc1vFhNrRI0RUQxg5aFkrX0xDg1_T0wXrbEJjtNGtrf1o9y37yKWRd6q-WpfCoatIfmS10rlbJiFdPpyogb7SmV0i29UeHBft_f9PHedd9LMzrvgFpEtqmaZX_VmRjI4GGb_DShThCpRalq6kq-ZIkMJASGbqRKJVY_QPrdGrQUDS1_C",
+    "width": 650,
+    "height": 646,
+    "license": "",
+    "license_url": "",
+    "artist": "news.yahoo.co.jp",
+    "description": "写真特集]銀幕のスター・高倉健さん死去～「不器用」体現した ...",
+    "file": "16-8.jpg"
+   },
+   {
+    "title": "昭和の大スター 高倉健さん、江利チエミさんの結婚式の写真 ...",
+    "page": "https://jp.mercari.com/item/m92040929716",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m92040929716_1.jpg?1641523416",
+    "width": 1080,
+    "height": 1440,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "昭和の大スター 高倉健さん、江利チエミさんの結婚式の写真 ...",
+    "file": "16-9.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "web:江利チエミ 高倉健 1959",
+  "results": [
+   {
+    "title": "朝ドラでは描かれない江利チエミ45年の壮絶人生…高倉健と結婚 ...",
+    "page": "https://president.jp/articles/-/79840?page=1",
+    "image": "https://president.ismcdn.jp/mwimgs/3/f/1200wm/img_3f452724f273f4526165999b189648001254673.jpg",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "president.jp",
+    "description": "朝ドラでは描かれない江利チエミ45年の壮絶人生…高倉健と結婚 ...",
+    "file": "17-1.jpg"
+   },
+   {
+    "title": "今日は何の日？】2月16日＝高倉健と江利チエミが結婚式（1959年 ...",
+    "page": "https://kaigoshoku.mynavi.jp/contents/kaigonomirailab/news/today/20240216_00/",
+    "image": "https://kaigoshoku.mynavi.jp/contents/kaigonomirailab/news/2024/02/1ac2a17adb8054497dddbfac9e0648f86e63321a.jpg",
+    "width": 900,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "kaigoshoku.mynavi.jp",
+    "description": "今日は何の日？】2月16日＝高倉健と江利チエミが結婚式（1959年 ...",
+    "file": "17-2.jpg"
+   },
+   {
+    "title": "上着のポケットに帯封のついた札束が…》高倉健さん没後10年 ...",
+    "page": "https://j7p.jp/124645",
+    "image": "https://j7p.jp/wp-content/uploads/2024/11/teikyo_takakura_ken_01.jpg",
+    "width": 800,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "j7p.jp",
+    "description": "上着のポケットに帯封のついた札束が…》高倉健さん没後10年 ...",
+    "file": "17-3.jpg"
+   },
+   {
+    "title": "YouTube Music",
+    "page": "https://music.youtube.com/podcast/tR3D3FqhOEs",
+    "image": "https://i.ytimg.com/vi/tR3D3FqhOEs/hq720.jpg?sqp=-oaymwEKCNUGEN8DIABIWg&rs=AMzJL3mgCr9OVC1c8zPRX810bm4AVk-lYA",
+    "width": 853,
+    "height": 479,
+    "license": "",
+    "license_url": "",
+    "artist": "music.youtube.com",
+    "description": "YouTube Music",
+    "file": "17-4.jpg"
+   },
+   {
+    "title": "utsuwa-Shun on X: \"今日は1959年（昭和34）高倉健さんと江利 ...",
+    "page": "https://x.com/ShunUtsuwa/status/1758463736891773348",
+    "image": "https://jf.x.com/images/media-preview/1758463736891773348",
+    "width": 1200,
+    "height": 553,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "utsuwa-Shun on X: \"今日は1959年（昭和34）高倉健さんと江利 ...",
+    "file": "17-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "web:江利チエミ 高倉健 写真",
+  "results": [
+   {
+    "title": "ファイル:Takakura ken eri chiemi 1960.jpeg - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Takakura_ken_eri_chiemi_1960.jpeg",
+    "image": "https://upload.wikimedia.org/wikipedia/ja/a/a3/Takakura_ken_eri_chiemi_1960.jpeg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 486,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "ファイル:Takakura ken eri chiemi 1960.jpeg - Wikipedia",
+    "file": "18-1.jpg"
+   },
+   {
+    "title": "写真特集]銀幕のスター・高倉健さん死去～「不器用」体現した ...",
+    "page": "https://news.yahoo.co.jp/articles/eff6766ee1bd9fa114b87e4a7a173a775f52b520/images/006",
+    "image": "https://news-pctr.c.yimg.jp/uUzvQ3lML_bkIqyakc1vFhNrRI0RUQxg5aFkrX0xDg1_T0wXrbEJjtNGtrf1o9y37yKWRd6q-WpfCoatIfmS10rlbJiFdPpyogb7SmV0i2_0BVprjuzNup2KwNi-FpLA7_7ZwIAI1tF3ndZJAie6a0fpXLFNnYLXiajhpBa_6I0Li8mytbBHK59K2D4nSmRv",
+    "width": 650,
+    "height": 482,
+    "license": "",
+    "license_url": "",
+    "artist": "news.yahoo.co.jp",
+    "description": "写真特集]銀幕のスター・高倉健さん死去～「不器用」体現した ...",
+    "file": "18-2.jpg"
+   },
+   {
+    "title": "高倉健』さんと『江利チエミ』さん",
+    "page": "https://ganshoji.com/pages/31?detail=1&b_id=1287&r_id=15254",
+    "image": "https://ganshoji.com/files/libs/33761/2022042422570358.jpg",
+    "width": 1918,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "ganshoji.com",
+    "description": "高倉健』さんと『江利チエミ』さん",
+    "file": "18-3.jpg"
+   },
+   {
+    "title": "上着のポケットに帯封のついた札束が…》高倉健さん没後10年 ...",
+    "page": "https://j7p.jp/124645",
+    "image": "https://j7p.jp/wp-content/uploads/2024/11/teikyo_takakura_ken_02.jpg",
+    "width": 800,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "j7p.jp",
+    "description": "上着のポケットに帯封のついた札束が…》高倉健さん没後10年 ...",
+    "file": "18-4.jpg"
+   },
+   {
+    "title": "週刊平凡（昭和36年4月5日号）】石原裕次郎・高倉健・江利 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=382231114",
+    "image": "https://www.kosho.or.jp/upload/save_image/7000240/20210814174554216370_cce6b431f0e2d8802bdfeeea28199331.jpg",
+    "width": 600,
+    "height": 444,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "週刊平凡（昭和36年4月5日号）】石原裕次郎・高倉健・江利 ...",
+    "file": "18-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "web:江利チエミ 晩年",
+  "results": [
+   {
+    "title": "彼女の手は電話の方に伸びていた」杉良太郎が見た江利チエミの ...",
+    "page": "https://bunshun.jp/articles/-/68277",
+    "image": "https://bunshun.jp/mwimgs/6/8/-/img_6863221eefccb38558e3be4055d31c77806843.jpg",
+    "width": 1280,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "彼女の手は電話の方に伸びていた」杉良太郎が見た江利チエミの ...",
+    "file": "19-1.jpg"
+   },
+   {
+    "title": "江利チエミ三十一回忌 | 安倍寧オフィシャルブログ「好奇心を ...",
+    "page": "https://ameblo.jp/abe-yasushi/entry-11158715338.html",
+    "image": "http://stat.ameba.jp/user_images/20120207/17/abe-yasushi/ce/b7/j/o0800106711780256413.jpg",
+    "width": 800,
+    "height": 1067,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "江利チエミ三十一回忌 | 安倍寧オフィシャルブログ「好奇心を ...",
+    "file": "19-2.jpg"
+   },
+   {
+    "title": "The sad final years of Eri Chiemi, who lost both her fortune ...",
+    "page": "https://www.youtube.com/watch?v=YAjQ7UWImq0",
+    "image": "https://i.ytimg.com/vi/YAjQ7UWImq0/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "The sad final years of Eri Chiemi, who lost both her fortune ...",
+    "file": "19-3.jpg"
+   },
+   {
+    "title": "江利チエミの死因と45歳の急死｜高倉健との愛と波乱の生涯を解明",
+    "page": "https://winners.pittappillilonline.com/saka1/8177136/",
+    "image": "https://www.magmoe.com/wp-content/uploads/2024/06/1718541248_maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "winners.pittappillilonline.com",
+    "description": "江利チエミの死因と45歳の急死｜高倉健との愛と波乱の生涯を解明",
+    "file": "19-4.jpg"
+   },
+   {
+    "title": "江利チエミ 昭和歌謡を歌う BHST-231 by : Amazon.co.uk: CDs ...",
+    "page": "https://www.amazon.co.uk/%E6%B1%9F%E5%88%A9%E3%83%81%E3%82%A8%E3%83%9F-%E6%98%AD%E5%92%8C%E6%AD%8C%E8%AC%A1%E3%82%92%E6%AD%8C%E3%81%86-BHST-231/dp/B07QFV77H4",
+    "image": "https://m.media-amazon.com/images/I/81cGaE9qrRL._UF894,1000_QL80_.jpg",
+    "width": 894,
+    "height": 895,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.uk",
+    "description": "江利チエミ 昭和歌謡を歌う BHST-231 by : Amazon.co.uk: CDs ...",
+    "file": "19-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "web:江利チエミ 1982 葬儀",
+  "results": [
+   {
+    "title": "Impossible Images:AI-powered platform offering a vast library of unique ...",
+    "page": "https://moge.ai/product/impossible-images",
+    "image": "https://image.moge.ai/screen/impossible-images.jpg",
+    "width": 1024,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "moge.ai",
+    "description": "Impossible Images:AI-powered platform offering a vast library of unique ...",
+    "file": "20-1.jpg"
+   },
+   {
+    "title": "1000+ Beautiful Natural Photos · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/natural/",
+    "image": "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=landscape-nature-sky-236047.jpg&fm=jpg",
+    "width": 2048,
+    "height": 1364,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "1000+ Beautiful Natural Photos · Pexels · Free Stock Photos",
+    "file": "20-2.jpg"
+   },
+   {
+    "title": "Deployment Manager :Features,Alternatives,FAQ, and More | Toolerific",
+    "page": "https://toolerific.ai/ai-tools/sites/hidden-images-vercel-app",
+    "image": "https://toolerific.ai/screenshots/hidden-images.vercel.app.jpg",
+    "width": 1360,
+    "height": 764,
+    "license": "",
+    "license_url": "",
+    "artist": "toolerific.ai",
+    "description": "Deployment Manager :Features,Alternatives,FAQ, and More | Toolerific",
+    "file": "20-3.jpg"
+   },
+   {
+    "title": "100,000+ Best Natural Images & Pictures · 100% Free Download · Pexels ...",
+    "page": "https://www.pexels.com/search/natural/",
+    "image": "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1705,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "100,000+ Best Natural Images & Pictures · 100% Free Download · Pexels ...",
+    "file": "20-4.jpg"
+   },
+   {
+    "title": "Impossible Images – AI Stock Image Generator Tool for Designers ...",
+    "page": "https://itirupati.com/impossible-images/",
+    "image": "https://itirupati.com/wp-content/uploads/2024/06/Impossible-Images-ai-Landing-Webpage.webp",
+    "width": 1200,
+    "height": 628,
+    "license": "",
+    "license_url": "",
+    "artist": "itirupati.com",
+    "description": "Impossible Images – AI Stock Image Generator Tool for Designers ...",
+    "file": "20-5.jpg"
+   },
+   {
+    "title": "Nature images · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/nature/",
+    "image": "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?cs=srgb&dl=cascade-clouds-cool-wallpaper-210186.jpg&fm=jpg",
+    "width": 2200,
+    "height": 1331,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Nature images · Pexels · Free Stock Photos",
+    "file": "20-6.jpg"
+   },
+   {
+    "title": "Nature Background Images Photos, Download The BEST Free Nature ...",
+    "page": "https://www.pexels.com/search/nature background images/",
+    "image": "https://images.pexels.com/photos/30994370/pexels-photo-30994370.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-30994370.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1705,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Nature Background Images Photos, Download The BEST Free Nature ...",
+    "file": "20-7.jpg"
+   },
+   {
+    "title": "High Resolution Birds Photos, Download The BEST Free High Resolution ...",
+    "page": "https://www.pexels.com/search/high resolution birds/",
+    "image": "https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-222549-6348018.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "High Resolution Birds Photos, Download The BEST Free High Resolution ...",
+    "file": "20-8.jpg"
+   },
+   {
+    "title": "1000+ Beautiful Mountains Photos · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/mountains/",
+    "image": "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1139,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "1000+ Beautiful Mountains Photos · Pexels · Free Stock Photos",
+    "file": "20-9.jpg"
+   },
+   {
+    "title": "AI Images Editor - Online AI Photo Editing & Background Removal",
+    "page": "https://tiorai.com/tools/ai-images-editor/",
+    "image": "https://tiorai.com/wp-content/uploads/2026/01/tiora-ai-images-editor-screenshot.png",
+    "width": 1366,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "tiorai.com",
+    "description": "AI Images Editor - Online AI Photo Editing & Background Removal",
+    "file": "20-10.jpg"
+   },
+   {
+    "title": "ChatGPT Images 2.0: Nueva IA para la generación de imágenes con IA",
+    "page": "https://www.hostingtg.com/blog/chatgpt-images-2-0/",
+    "image": "https://www.hostingtg.com/blog/wp-content/uploads/2026/04/chatgpt-images.webp",
+    "width": 900,
+    "height": 580,
+    "license": "",
+    "license_url": "",
+    "artist": "hostingtg.com",
+    "description": "ChatGPT Images 2.0: Nueva IA para la generación de imágenes con IA",
+    "file": "20-11.jpg"
+   },
+   {
+    "title": "Free Doodle Images Photos, Download The BEST Free Free Doodle Images ...",
+    "page": "https://www.pexels.com/search/free doodle images/",
+    "image": "https://images.pexels.com/photos/31256342/pexels-photo-31256342.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31256342.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1944,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Free Doodle Images Photos, Download The BEST Free Free Doodle Images ...",
+    "file": "20-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "web:美空ひばり 1980年代",
+  "results": [
+   {
+    "title": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "page": "https://thetv.jp/news/detail/1403466/",
+    "image": "https://thetv.jp/i/nw/1403466/17545387.jpg?w=1284",
+    "width": 968,
+    "height": 743,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "file": "21-1.jpg"
+   },
+   {
+    "title": "美空ひばりの1980年代の輝きがここに ホームドラマチャンネルで3 ...",
+    "page": "https://realsound.jp/movie/2026/04/post-2374253.html",
+    "image": "https://realsound.jp/wp-content/uploads/2026/04/20260421-misorahibari-00001-924x633.jpg",
+    "width": 924,
+    "height": 633,
+    "license": "",
+    "license_url": "",
+    "artist": "realsound.jp",
+    "description": "美空ひばりの1980年代の輝きがここに ホームドラマチャンネルで3 ...",
+    "file": "21-2.jpg"
+   },
+   {
+    "title": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "page": "https://thetv.jp/news/detail/1403466/",
+    "image": "https://thetv.jp/i/nw/1403466/17545393.jpg?w=1284",
+    "width": 1284,
+    "height": 929,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "file": "21-3.jpg"
+   },
+   {
+    "title": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 ...",
+    "page": "https://prtimes.jp/main/html/rd/p/000000005.000158250.html",
+    "image": "https://prcdn.freetls.fastly.net/release_image/158250/5/158250-5-8b92de3e10bab3d95d1dc59dfa6d74a1-1909x2700.jpg?width=1950&height=1350&quality=85%2C65&format=jpeg&auto=webp&fit=bounds&bg-color=fff",
+    "width": 955,
+    "height": 1350,
+    "license": "",
+    "license_url": "",
+    "artist": "prtimes.jp",
+    "description": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 ...",
+    "file": "21-4.jpg"
+   },
+   {
+    "title": "画像・写真 円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の ...",
+    "page": "https://thetv.jp/news/detail/1403466/17545392/",
+    "image": "https://thetv.jp/i/nw/1403466/17545392.jpg?w=1284",
+    "width": 1284,
+    "height": 1712,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "画像・写真 円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の ...",
+    "file": "21-5.jpg"
+   },
+   {
+    "title": "画像・写真 円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の ...",
+    "page": "https://thetv.jp/news/detail/1403466/17545388/",
+    "image": "https://thetv.jp/i/nw/1403466/17545388.jpg?w=1284",
+    "width": 1054,
+    "height": 778,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "画像・写真 円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の ...",
+    "file": "21-6.jpg"
+   },
+   {
+    "title": "6月24日は美空ひばりの命日 − 52歳で終わってしまった80年代の挑戦",
+    "page": "https://reminder.top/321826699/",
+    "image": "https://reminder.top/article_img/321826699_pic1_full.jpeg?u=1",
+    "width": 730,
+    "height": 730,
+    "license": "",
+    "license_url": "",
+    "artist": "reminder.top",
+    "description": "6月24日は美空ひばりの命日 − 52歳で終わってしまった80年代の挑戦",
+    "file": "21-7.jpg"
+   },
+   {
+    "title": "美空ひばり芸能生活80周年 未発表のオリジナル音源を発掘 ...",
+    "page": "https://prtimes.jp/main/html/rd/p/000004912.000019470.html",
+    "image": "https://prcdn.freetls.fastly.net/release_image/19470/4912/19470-4912-531af8770faeff3477c3739da45be9c9-1920x2194.png?format=jpeg&auto=webp&fit=bounds&width=2400&height=1260",
+    "width": 1103,
+    "height": 1260,
+    "license": "",
+    "license_url": "",
+    "artist": "prtimes.jp",
+    "description": "美空ひばり芸能生活80周年 未発表のオリジナル音源を発掘 ...",
+    "file": "21-8.jpg"
+   },
+   {
+    "title": "美空ひばり生誕80周年 特別企画 in 東京ドーム 不死鳥コンサート ...",
+    "page": "https://www.tbs.co.jp/tbs-ch/item/o1989/",
+    "image": "https://www.tbs.co.jp/tbs-ch/item/o1989/thumbs/title-752.jpg",
+    "width": 752,
+    "height": 423,
+    "license": "",
+    "license_url": "",
+    "artist": "tbs.co.jp",
+    "description": "美空ひばり生誕80周年 特別企画 in 東京ドーム 不死鳥コンサート ...",
+    "file": "21-9.jpg"
+   },
+   {
+    "title": "昴(すばる)・美空ひばり(Cover)・1980年発売【60代70代シニア ...",
+    "page": "https://www.youtube.com/shorts/hKh_d4hHdvA",
+    "image": "https://i.ytimg.com/vi/hKh_d4hHdvA/oar2.jpg?sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLDu8tynOkivAxLT2ICMWWrB9Eg3kA",
+    "width": 405,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "昴(すばる)・美空ひばり(Cover)・1980年発売【60代70代シニア ...",
+    "file": "21-10.jpg"
+   },
+   {
+    "title": "Amazon | うたの宝石箱 - 美空ひばり | 美空ひばり | 歌謡曲 ...",
+    "page": "https://www.amazon.co.jp/%E3%81%86%E3%81%9F%E3%81%AE%E5%AE%9D%E7%9F%B3%E7%AE%B1-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B0GWLNGL9M",
+    "image": "https://m.media-amazon.com/images/I/81T9NaTzT5L._UF1000,1000_QL80_.jpg",
+    "width": 1000,
+    "height": 852,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon | うたの宝石箱 - 美空ひばり | 美空ひばり | 歌謡曲 ...",
+    "file": "21-11.jpg"
+   },
+   {
+    "title": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 ...",
+    "page": "https://prtimes.jp/main/html/rd/p/000000005.000158250.html",
+    "image": "https://prcdn.freetls.fastly.net/release_image/158250/5/158250-5-b6df41173cfc2b1977b8f47998c3572a-1909x2700.jpg?width=1950&height=1350&quality=85%2C65&format=jpeg&auto=webp&fit=bounds&bg-color=fff",
+    "width": 955,
+    "height": 1350,
+    "license": "",
+    "license_url": "",
+    "artist": "prtimes.jp",
+    "description": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 ...",
+    "file": "21-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "web:三人娘 美空ひばり 江利チエミ 雪村いづみ 晩年",
+  "results": [
+   {
+    "title": "昭和の三人娘 🪙美空ひばり『 EVERGREEN ☆HIBAR I』 🪙雪村 ...",
+    "page": "https://jp.mercari.com/shops/product/2JTNcyrct384EDniRMmvKL",
+    "image": "https://assets.mercari-shops-static.com/-/large/plain/2JTNcSSyzjGKeC3wMFQvRf.jpg@jpg",
+    "width": 1200,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "昭和の三人娘 🪙美空ひばり『 EVERGREEN ☆HIBAR I』 🪙雪村 ...",
+    "file": "22-1.jpg"
+   },
+   {
+    "title": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=359093083",
+    "image": "https://www.kosho.or.jp/upload/save_image/42000010/20210302162052005712_a95bedfe86e97128d27fbacd27d74ffa.jpg",
+    "width": 424,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "歌う3人娘ポート集 ポートレート付 美空ひばり/江利チエミ/雪村 ...",
+    "file": "22-2.jpg"
+   },
+   {
+    "title": "雪村いづみ・美空ひばり・江利チエミ】三人娘 ― 二人は青春の ...",
+    "page": "https://www.youtube.com/watch?v=gIXDWb_VwIY",
+    "image": "https://i.ytimg.com/vi/gIXDWb_VwIY/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "雪村いづみ・美空ひばり・江利チエミ】三人娘 ― 二人は青春の ...",
+    "file": "22-3.jpg"
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "web:雪村いづみ 美空ひばり 江利チエミ",
+  "results": [
+   {
+    "title": "Too Young | 株式会社ベストショップ",
+    "page": "https://www.best-shop.co.jp/product/goods.php?id=135",
+    "image": "https://www.best-shop.co.jp/product/img/135_a.png",
+    "width": 900,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "best-shop.co.jp",
+    "description": "Too Young | 株式会社ベストショップ",
+    "file": "23-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 24,
+  "query": "web:三人娘 コンサート",
+  "results": [
+   {
+    "title": "3人娘メモリアルコンサート～ファイナルスパーク2018～",
+    "page": "http://www.aiesu.co.jp/3m/index.html",
+    "image": "https://www.aiesu.co.jp/_src/4167/3m_concert2018.jpg",
+    "width": 500,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "aiesu.co.jp",
+    "description": "3人娘メモリアルコンサート～ファイナルスパーク2018～",
+    "file": "24-1.jpg"
+   },
+   {
+    "title": "3人娘スペシャルコンサート | 伊東ゆかりオフィシャルブログ ...",
+    "page": "https://ameblo.jp/ito-yukari/entry-12633776405.html",
+    "image": "https://stat.ameba.jp/user_images/20201025/13/ito-yukari/40/e0/j/o1080108014840297003.jpg",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "3人娘スペシャルコンサート | 伊東ゆかりオフィシャルブログ ...",
+    "file": "24-2.jpg"
+   },
+   {
+    "title": "園まりさん死去、「三人娘」中尾ミエ＆伊東ゆかりが追悼コメント ...",
+    "page": "https://www.chunichi.co.jp/article/936984",
+    "image": "https://static.chunichi.co.jp/image/article/size1/c/3/4/3/c343a775aef613c16399c7c572e93b12_1.jpg",
+    "width": 1220,
+    "height": 998,
+    "license": "",
+    "license_url": "",
+    "artist": "chunichi.co.jp",
+    "description": "園まりさん死去、「三人娘」中尾ミエ＆伊東ゆかりが追悼コメント ...",
+    "file": "24-3.jpg"
+   },
+   {
+    "title": "三人娘」の中尾ミエさんが園まりさんを追悼 「楽しい思い出を ...",
+    "page": "https://www.sankei.com/article/20240801-X4X4WYXKSZMM5PQP4FGX6AKECM/",
+    "image": "https://www.sankei.com/resizer/v2/SEBYVTDUANIGVPCYMOM5JYLO34.jpg?auth=9ab6062b473e22209ca981aacf17bf1eb27f2a926b8c624c2ab2b4db9ffbb5cc&quality=40&smart=true&width=1200",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "三人娘」の中尾ミエさんが園まりさんを追悼 「楽しい思い出を ...",
+    "file": "24-4.jpg"
+   },
+   {
+    "title": "邦楽3人娘10周年記念コンサート ～同級生トリオが紡ぐ邦楽絵巻 ...",
+    "page": "https://kashima-able.com/news/archives/600",
+    "image": "https://kashima-able.com/files/bgeditor/img/2102__6YKm5qW9M_S6uuWomDEw5ZGo5bm0X0E044Kq44Oi44OG.jpg",
+    "width": 1200,
+    "height": 1697,
+    "license": "",
+    "license_url": "",
+    "artist": "kashima-able.com",
+    "description": "邦楽3人娘10周年記念コンサート ～同級生トリオが紡ぐ邦楽絵巻 ...",
+    "file": "24-5.jpg"
+   },
+   {
+    "title": "ゆかり ミエ まり 3人娘メモリアルコンサート ～ファイナル ...",
+    "page": "https://www.kanagawa-kenminhall.com/event/34754",
+    "image": "https://www.kanagawa-kenminhall.com/public_kanagawa-arts.or.jp/img/photo/34754_1.jpg",
+    "width": 600,
+    "height": 848,
+    "license": "",
+    "license_url": "",
+    "artist": "kanagawa-kenminhall.com",
+    "description": "ゆかり ミエ まり 3人娘メモリアルコンサート ～ファイナル ...",
+    "file": "24-6.jpg"
+   },
+   {
+    "title": "田中あいみ、舞乃空、梅谷心愛のユニット・3人娘Z、都内で ...",
+    "page": "https://www.utabito.jp/news/20037/",
+    "image": "https://www.utabito.jp/wp-content/uploads/2024/12/3ninmusumez.jpg",
+    "width": 740,
+    "height": 493,
+    "license": "",
+    "license_url": "",
+    "artist": "utabito.jp",
+    "description": "田中あいみ、舞乃空、梅谷心愛のユニット・3人娘Z、都内で ...",
+    "file": "24-7.jpg"
+   },
+   {
+    "title": "東北っこ三人娘コンサートのお知らせ | 羽山みずきオフィシャル ...",
+    "page": "https://ameblo.jp/hayama-mizuki/entry-12351193552.html",
+    "image": "https://stat.ameba.jp/user_images/20180208/18/hayama-mizuki/be/f6/j/o0480067914127712216.jpg",
+    "width": 480,
+    "height": 679,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "東北っこ三人娘コンサートのお知らせ | 羽山みずきオフィシャル ...",
+    "file": "24-8.jpg"
+   },
+   {
+    "title": "♪三人娘ファイナルコンサート♪ | ひまひまねこさんのきまぐれ ...",
+    "page": "https://plaza.rakuten.co.jp/himahimanekosan/diary/201710080000/",
+    "image": "https://image.space.rakuten.co.jp/d/strg/ctrl/9/d3d007cee285a2e8c6e0ba0ec61afb052383643d.16.2.9.2.jpeg",
+    "width": 419,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "plaza.rakuten.co.jp",
+    "description": "♪三人娘ファイナルコンサート♪ | ひまひまねこさんのきまぐれ ...",
+    "file": "24-9.jpg"
+   }
+  ]
+ },
+ {
+  "k": 25,
+  "query": "music:Gymnopédie Satie piano",
+  "results": [
+   {
+    "title": "File:Satie Gymnopedie No. 3 for piano solo 01.wav",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No._3_for_piano_solo_01.wav",
+    "size": 5357612,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Satie",
+    "description": "Satie Gymnopedie No. 3 for piano solo",
+    "file": "25-1.wav",
+    "seconds": 30.4
+   },
+   {
+    "title": "File:Erik Satie -Gymnopedie No.1 - Arr for alto saxophone and piano - David Hernando Vitores.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-Gymnopedie_No.1_-_Arr_for_alto_saxophone_and_piano_-_David_Hernando_Vitores.ogg",
+    "size": 9817830,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Erik Satie",
+    "description": "Gymnopedie No.1 - Arr for alto saxophone and piano.",
+    "file": "25-2.ogg",
+    "seconds": 220.0
+   },
+   {
+    "title": "File:Satie Gymnopedie No 3 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_3_performed_by_Michael_Laucke.flac",
+    "size": 6941233,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "25-3.flac",
+    "seconds": 123.1
+   },
+   {
+    "title": "File:Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "size": 3696351,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Robin Alciatore",
+    "description": "Gymnopédies - la 1ére. lent et douloureux",
+    "file": "25-4.ogg",
+    "seconds": 183.6
+   }
+  ]
+ },
+ {
+  "k": 26,
+  "query": "music:Chopin Nocturne piano",
+  "results": [
+   {
+    "title": "File:Chopin, Nocturne op 32 no 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_op_32_no_1.ogg",
+    "size": 4852417,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Constantin Stephan, piano",
+    "description": "Nocturne op 32 no 1 by Frédéric Chopin performed by Constantin Stephan",
+    "file": "26-1.ogg",
+    "seconds": 283.0
+   },
+   {
+    "title": "File:Chopin, Nocturne in C-sharp minor, Op. Posth.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg",
+    "size": 5302273,
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "Frédéric Chopin",
+    "description": "Nocturne No. 20 in C-sharp minor, Op. posth.",
+    "file": "26-2.ogg",
+    "seconds": 252.5
+   },
+   {
+    "title": "File:Chopin Nocturne Op.27 No.1.oga",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin_Nocturne_Op.27_No.1.oga",
+    "size": 692632,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Frédéric Chopin",
+    "description": "nocturne op. 27 n° 1 Chopin, piano",
+    "file": "26-3.ogg",
+    "seconds": 49.3
+   }
+  ]
+ },
+ {
+  "k": 27,
+  "query": "music:Debussy Clair de lune piano",
+  "results": [
+   {
+    "title": "File:Moonlight - Clair de Lune (As the rememberance of Sir Debussy.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moonlight_-_Clair_de_Lune_(As_the_rememberance_of_Sir_Debussy.ogg",
+    "size": 2808758,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Jason M. C., Han",
+    "description": "Jason's versions played in Wikiversity: 1. Notation-reading and Notation-learning from the page 93-98 of the edition from 'Standard Grade Testing Course of Piano - Central Musical College Grading-Test Committe of China' (中央音乐学院标准考级教程编委会-海内外音乐考级), 2. and, as the respect of the impacts of UK's Trinity",
+    "file": "27-1.ogg",
+    "seconds": 251.1
+   },
+   {
+    "title": "File:Clair de Lune by Claude Debussy (1905, piano solo).opus",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_by_Claude_Debussy_(1905,_piano_solo).opus",
+    "size": 5214866,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy",
+    "description": "Clair de Lune (No. 3 from Suite Bergamasque) by Claude Debussy 1905 pub.",
+    "file": "27-2.ogg",
+    "seconds": 275.8
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track violins.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_violins.ogg",
+    "size": 3822700,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "violins backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "27-3.ogg",
+    "seconds": 236.2
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track basses.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_basses.ogg",
+    "size": 3822746,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "bass backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "27-4.ogg",
+    "seconds": 236.2
+   }
+  ]
+ }
+]
