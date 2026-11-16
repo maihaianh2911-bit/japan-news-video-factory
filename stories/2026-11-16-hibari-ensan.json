@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 10,
   "title": "美空ひばり 塩酸事件",
   "date": "2026-11-16",
@@ -47,7 +47,35 @@
           "say": "日本一の人気歌手は、19歳のとき、ファンにえんさんをかけられた。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.67,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to."
     },
     {
       "label": "浅草",
@@ -62,7 +90,29 @@
           "text": "満員の劇場で、19歳の美空ひばりは、舞台袖で出番を待っていました。",
           "say": "満員の劇場で、19歳のみそらひばりは、ぶたいそでで出番を待っていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-8",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "4-7",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        }
+      ],
+      "cut": "fade",
+      "why": "Nhà hát Kokusai ở Asakusa thời đó: đi dọc tháp nhà hát, rồi lia ngang mặt tiền về đêm."
     },
     {
       "label": "塩酸",
@@ -77,7 +127,23 @@
           "text": "「熱い！」ひばりの叫び声が響きました。",
           "say": "あつい！ひばりの叫び声が響きました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-4",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-2",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "hold"
+        }
+      ],
+      "cut": "hard",
+      "why": "Cú sốc: cắt thẳng vào gương mặt Hibari 19 tuổi; rồi trang báo năm 1957 「美空ひばりの顔に塩酸」."
     },
     {
       "label": "犯人",
@@ -90,7 +156,35 @@
           "text": "それは、ひばりへの行き過ぎた想いだったと言われています。",
           "say": "それは、ひばりへの、行き過ぎた想いだったと言われています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "7-7",
+          "focus": [
+            0.75,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-4",
+          "focus": [
+            0.4,
+            0.25
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Fan thời đó: lia qua những tấm ảnh ngôi sao fan sưu tầm; bài báo 「暴発するあこがれ」; tạp chí hội fan của Hibari."
     },
     {
       "label": "やけど",
@@ -100,7 +194,29 @@
         "ひばりは顔の左半分にやけどを負い、病院へ運ばれました。",
         "歌手にとって、そして女優にとって、顔は命です。",
         "もう舞台には戻れないかもしれない。誰もがそう思いました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-6",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Ảnh thật lúc Hibari quấn băng trên mặt sau vụ tạt axit; rồi chân dung cô trước đó: gương mặt là tất cả."
     },
     {
       "label": "復帰",
@@ -109,7 +225,29 @@
       "lines": [
         "しかし、やけどは幸い深くありませんでした。",
         "そして、わずか16日後。ひばりは、大阪の舞台に立っていたのです。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-4",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "15-3",
+          "focus": [
+            0.72,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Nhà hát ở Osaka thời đó; Hibari đứng hát trở lại."
     },
     {
       "label": "女王",
@@ -126,7 +264,38 @@
           "text": "次回は、美空ひばりのただ一度の結婚の話です。",
           "say": "次回は、みそらひばりの、ただ一度の結婚の話です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "focus": [
+            0.65,
+            0.6
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-2",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "18-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Đĩa 港町十三番地; trang tạp chí in bài hát; khép lại bằng gương mặt cười của 'nữ hoàng'."
     }
-  ]
+  ],
+  "music": {
+    "pick": "23-2"
+  }
 }

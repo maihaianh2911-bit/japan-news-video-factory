@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 12,
   "title": "昭和の三人娘",
   "date": "2026-11-16",
@@ -49,7 +49,35 @@
           "text": "昭和を代表する三人の歌姫は、同じ年に生まれた親友だった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.67,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to."
     },
     {
       "label": "同い年",
@@ -61,7 +89,25 @@
           "say": "みそらひばり、えりチエミ、ゆきむらいづみ。"
         },
         "三人とも、1937年生まれの同い年です。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Ảnh màu 「初代三人娘」 ba người cười; rồi ảnh đen trắng ba cô gái thời trẻ, đi lên dáng người."
     },
     {
       "label": "ヒット",
@@ -72,7 +118,36 @@
           "text": "チエミは「テネシー・ワルツ」、いづみは「想い出のワルツ」でヒットを飛ばし、ひばりと並ぶ人気歌手になりました。",
           "say": "チエミはテネシーワルツ、いづみは、おもいでのワルツでヒットを飛ばし、ひばりと並ぶ人気歌手になりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-2",
+          "focus": [
+            0.75,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "cut": "fade",
+      "why": "Đĩa 「テネシー・ワルツ」 của Chiemi; chân dung Chiemi; trang tạp chí Hibari và Izumi."
     },
     {
       "label": "映画",
@@ -91,7 +166,43 @@
           "text": "その後も「ロマンス娘」など、共演作が続きます。",
           "say": "その後も、ロマンスむすめなど、共演作が続きます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "10-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "4-9",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Cảnh trong phim 「ジャンケン娘」; poster phim; cảnh trong 「ロマンス娘」; poster 「ロマンス娘」."
     },
     {
       "label": "ライバル",
@@ -100,7 +211,27 @@
       "lines": [
         "いつもライバルとして比べられた三人。",
         "それでも、三人は互いを認め合う仲でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Poster phim Hibari và Chiemi đóng chung; ba người trên bìa 「大当り三色娘」."
     },
     {
       "label": "チエミ",
@@ -112,7 +243,29 @@
           "say": "1959年、チエミは俳優、たかくらけんと結婚し、日本中の話題になります。"
         },
         "しかし、その結婚は1971年に終わりを迎えました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "16-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Chương mới: đám cưới Chiemi và Takakura Ken năm 1959; hai vợ chồng thời mới cưới."
     },
     {
       "label": "別れ",
@@ -122,7 +275,36 @@
         "そして1982年2月、チエミは45歳の若さでこの世を去ります。",
         "前の年に母を亡くしたばかりのひばりにとって、それは大きな悲しみでした。",
         "その7年後、ひばりも52歳で旅立ちました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-5",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-3",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "tone": "mono",
+          "move": "pan-right"
+        },
+        {
+          "pick": "21-6",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Chiemi những năm cuối; lễ tang năm ấy, đen trắng; Hibari trên sân khấu những năm 1980."
     },
     {
       "label": "今も",
@@ -134,7 +316,28 @@
           "text": "三人娘の歌声は、今も昭和の思い出とともに生き続けています。",
           "say": "さんにんむすめの歌声は、今も昭和の思い出とともに生き続けています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-3",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Ba người đứng chung một micro; khép lại bằng ảnh màu ba người cười, lùi ra."
     }
-  ]
+  ],
+  "music": {
+    "pick": "27-2"
+  }
 }

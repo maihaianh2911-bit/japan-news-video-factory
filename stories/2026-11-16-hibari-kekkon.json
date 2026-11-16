@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 11,
   "title": "美空ひばり ただ一度の結婚",
   "date": "2026-11-16",
@@ -46,7 +46,35 @@
           "text": "昭和最大のスター同士の結婚は、わずか2年で終わった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.67,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to."
     },
     {
       "label": "花婿",
@@ -65,7 +93,33 @@
           "text": "「渡り鳥」シリーズで、若者のあこがれだった俳優です。",
           "say": "わたりどりシリーズで、若者のあこがれだった俳優です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "focus": [
+            0.4,
+            0.65
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-8",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "5-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Bìa tạp chí đính hôn hai người; chân dung Kobayashi Akira thời trẻ; poster phim 「ギターを持った渡り鳥」."
     },
     {
       "label": "披露宴",
@@ -81,7 +135,37 @@
           "text": "東京・日比谷で開かれた披露宴は、戦後最大級の結婚式と言われました。",
           "say": "東京、ひびやで開かれた披露宴は、戦後最大級の結婚式と言われました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-3",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai người tình tứ; ảnh thật đám cưới năm 1962 giữa rừng phóng viên; trang tạp chí 「華燭の典」."
     },
     {
       "label": "母",
@@ -97,7 +181,37 @@
           "say": "いちらんせいおやこと呼ばれるほど、片時も離れない母と娘。"
         },
         "夫の入る場所は、少しずつなくなっていきました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-7",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-10",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "12-9",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai mẹ con ôm nhau; bài báo 「美空ひばりの母」; mẹ ngồi cạnh con cả trong buổi họp báo."
     },
     {
       "label": "入院",
@@ -109,7 +223,29 @@
           "text": "見舞いに来た旭は、なぜか病室に入れてもらえなかったと語っています。",
           "say": "見舞いに来たあきらは、なぜか病室に入れてもらえなかったと語っています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Một phòng bệnh thời đó (minh hoạ); gương mặt trầm ngâm của Akira."
     },
     {
       "label": "離婚",
@@ -121,7 +257,28 @@
           "text": "のちに旭は、離婚は「九分九厘、おふくろさんの考えだった」と振り返っています。",
           "say": "のちにあきらは、離婚は、くぶくりん、おふくろさんの考えだったと振り返っています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "mono",
+          "move": "pan-left"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Rừng phóng viên trong buổi họp báo; bìa hồi ký 「マイトガイは死なず」 của Kobayashi Akira."
     },
     {
       "label": "柔",
@@ -141,7 +298,48 @@
           "text": "次回は、ひばりと「三人娘」の友情の話です。",
           "say": "次回は、ひばりと、さんにんむすめの友情の話です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-8",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "tone": "mono",
+          "move": "rise"
+        },
+        {
+          "pick": "19-3",
+          "focus": [
+            0.6,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "21-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "hold"
+        },
+        {
+          "pick": "21-2",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Nhảy thời gian sang 1965: nhận Giải Đĩa hát; đĩa 「柔」; chân dung kimono; khép lại bằng bà trên sân khấu."
     }
-  ]
+  ],
+  "music": {
+    "pick": "22-4"
+  }
 }
