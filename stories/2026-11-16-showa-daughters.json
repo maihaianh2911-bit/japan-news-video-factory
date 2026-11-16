@@ -30,7 +30,18 @@
     "web:昭和天皇 皇女 成人",
     "web:昭和天皇 内親王 着物",
     "music:Chopin Prelude piano",
-    "music:Schumann Kinderszenen piano"
+    "music:Schumann Kinderszenen piano",
+    "file:stories/media/2026-11-16-showa-daughters/family-five.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/shigeko-wedding.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/shigeko-kids.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/shigeko-face.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/kazuko-wedding.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/atsuko-kimono.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/atsuko-couple.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/ikeda-zoo.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/takako-press.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/hirohito-cherry.jpg",
+    "file:stories/media/2026-11-16-showa-daughters/family-group.jpg"
   ],
   "scenes": [
     {
@@ -43,7 +54,25 @@
           "say": "しょうわてんのう、5人の娘たちの、そうぜつな人生。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-1",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Cả nhà Thiên hoàng với các con gái nhỏ dưới câu tựa; rồi ảnh đại gia đình."
     },
     {
       "label": "長女",
@@ -62,7 +91,38 @@
           "text": "特売品を買って倹約に努めた。",
           "say": "とくばいひんを買って、けんやくに努めた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái cả Shigeko lúc nhỏ, ngày cưới, rồi lúc làm mẹ thời hậu chiến."
     },
     {
       "label": "長女",
@@ -77,7 +137,29 @@
           "text": "末期癌のため35歳で逝去した。",
           "say": "まっきがんのため、35歳で、せいきょした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "24-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Bà Shigeko giữa đám trẻ, rồi cận gương mặt: mất năm 35 tuổi."
     },
     {
       "label": "次女",
@@ -92,7 +174,26 @@
           "text": "敗血症のため、わずか生後半年で夭折した。",
           "say": "はいけつしょうのため、わずか生後半年で、ようせつした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-7",
+          "focus": [
+            0.45,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "dip",
+      "why": "Hoàng hậu bế các con nhỏ; tấm ảnh kỷ niệm cả nhà: cô con gái thứ hai mất khi mới nửa tuổi."
     },
     {
       "label": "三女",
@@ -107,7 +208,26 @@
           "text": "夫が行きつけのバーのママとスキャンダラスな事故◯を遂げると、",
           "say": "夫が、行きつけのバーのママと、スキャンダラスな、じこしを遂げると、"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "25-1",
+          "tone": "sepia",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-2",
+          "focus": [
+            0.15,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pan-left"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái thứ ba Kazuko ngày cưới với ông Takatsukasa."
     },
     {
       "label": "三女",
@@ -122,7 +242,29 @@
           "text": "心不全のため59歳で逝去した。",
           "say": "心不全のため、59歳で、せいきょした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-3",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        },
+        {
+          "pick": "9-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "dip",
+      "why": "Bà Kazuko sống lặng lẽ sau biến cố; tối dần khi nói về cái chết."
     },
     {
       "label": "四女",
@@ -146,7 +288,43 @@
           "text": "夫の夢だった動物園の運営を妻として支えた。",
           "say": "夫の夢だった、動物園の運営を、妻として支えた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "26-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "27-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        },
+        {
+          "pick": "12-6",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        },
+        {
+          "pick": "28-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái thứ tư Atsuko, chồng bà, vườn thú Ikeda ngày xưa và bây giờ."
     },
     {
       "label": "五女",
@@ -161,7 +339,29 @@
           "text": "2回もの誘拐未遂事件に巻き込まれる。",
           "say": "2回もの、ゆうかいみすい事件に、巻き込まれる。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "29-1",
+          "focus": [
+            0.6,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "pan-left"
+        }
+      ],
+      "cut": "page",
+      "why": "Con gái út Takako lúc trẻ, rồi buổi họp báo đính hôn năm 1960."
     },
     {
       "label": "国際結婚",
@@ -176,7 +376,24 @@
           "text": "「昭和天皇の孫が国際結婚」と話題になった。",
           "say": "しょうわてんのうの孫が、国際結婚と、話題になった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "30-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "16-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Thiên hoàng bên hoa anh đào; bà Takako cùng chồng lúc về già."
     },
     {
       "label": "娘たち",
@@ -196,7 +413,29 @@
           "say": "きぜんと、生き抜いた。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-4",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "31-1",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Kết: các con gái bên mẹ, rồi cả đại gia đình, lùi dần ra."
     }
-  ]
+  ],
+  "music": {
+    "pick": "19-3"
+  }
 }
