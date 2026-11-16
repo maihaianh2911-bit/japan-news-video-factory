@@ -50,32 +50,24 @@
       ],
       "photo": [
         {
-          "pick": "1-1",
+          "pick": "18-4",
           "focus": [
-            0.45,
-            0.3
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-2",
+          "focus": [
+            0.5,
+            0.12
           ],
           "tone": "sepia",
           "move": "push-in"
-        },
-        {
-          "pick": "2-1",
-          "focus": [
-            0.45,
-            0.3
-          ],
-          "move": "rise"
-        },
-        {
-          "pick": "3-1",
-          "focus": [
-            0.67,
-            0.35
-          ],
-          "move": "push-in"
         }
       ],
-      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to."
+      "why": "Câu mở: ngôi sao 19 tuổi cười trên bìa tạp chí năm 1957, rồi tít báo thật 「美空ひばりの顔に塩酸」."
     },
     {
       "label": "浅草",
@@ -131,19 +123,22 @@
       "photo": [
         {
           "pick": "8-4",
-          "tone": "sepia",
           "fit": "contain",
+          "tone": "sepia",
           "move": "push-in"
         },
         {
-          "pick": "7-2",
+          "pick": "7-7",
+          "focus": [
+            0.6,
+            0.4
+          ],
           "tone": "sepia",
-          "fit": "contain",
-          "move": "hold"
+          "move": "pan-right"
         }
       ],
       "cut": "hard",
-      "why": "Cú sốc: cắt thẳng vào gương mặt Hibari 19 tuổi; rồi trang báo năm 1957 「美空ひばりの顔に塩酸」."
+      "why": "Cắt thẳng vào gương mặt Hibari; rồi trang tạp chí アサヒグラフ ra ngay sau vụ việc."
     },
     {
       "label": "犯人",
@@ -167,14 +162,6 @@
           "move": "pan-right"
         },
         {
-          "pick": "7-7",
-          "focus": [
-            0.75,
-            0.35
-          ],
-          "move": "push-in"
-        },
-        {
           "pick": "10-4",
           "focus": [
             0.4,
@@ -184,7 +171,7 @@
         }
       ],
       "cut": "fade",
-      "why": "Fan thời đó: lia qua những tấm ảnh ngôi sao fan sưu tầm; bài báo 「暴発するあこがれ」; tạp chí hội fan của Hibari."
+      "why": "Fan thời đó: những tấm ảnh ngôi sao fan sưu tầm; tạp chí hội fan của Hibari."
     },
     {
       "label": "やけど",
@@ -283,16 +270,16 @@
           "move": "pan-right"
         },
         {
-          "pick": "18-4",
+          "pick": "8-8",
           "focus": [
             0.5,
-            0.35
+            0.45
           ],
           "move": "pull-back"
         }
       ],
       "cut": "fade",
-      "why": "Đĩa 港町十三番地; trang tạp chí in bài hát; khép lại bằng gương mặt cười của 'nữ hoàng'."
+      "why": "Đĩa 港町十三番地; trang tạp chí in bài hát; khép lại bằng bìa アサヒグラフ năm 1957 với gương mặt cô."
     }
   ],
   "music": {
