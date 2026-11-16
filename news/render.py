@@ -252,9 +252,9 @@ def crop_photo(image, height, focus=(0.5, 0.5), zoom=1.0, shift=0.0):
     """The part of the picture shown: `zoom` 1 fills the frame, `shift` moves the window sideways (-1 to 1)."""
     iw, ih = image.size
     scale = max(W / iw, height / ih) * zoom
-    cw, ch = W / scale, height / scale
-    left = (iw - cw) * min(1, max(0, focus[0] + shift))
-    top = (ih - ch) * min(1, max(0, focus[1]))
+    cw, ch = min(iw, W / scale), min(ih, height / scale)
+    left = max(0.0, (iw - cw) * min(1, max(0, focus[0] + shift)))
+    top = max(0.0, (ih - ch) * min(1, max(0, focus[1])))
     return image.resize((W, height), Image.Resampling.BICUBIC, box=(left, top, left + cw, top + ch))
 
 
@@ -305,8 +305,9 @@ def view(image, height, zoom, x, y):
     """The window of the picture at `zoom` (1 fills the frame); x and y (0 to 1) place it within the room left."""
     iw, ih = image.size
     scale = max(W / iw, height / ih) * zoom
-    cw, ch = W / scale, height / scale
-    left, top = (iw - cw) * clamp(x, 0, 1), (ih - ch) * clamp(y, 0, 1)
+    # rounding can make the window a hair larger than the picture (a negative offset, refused by Pillow)
+    cw, ch = min(iw, W / scale), min(ih, height / scale)
+    left, top = max(0.0, (iw - cw) * clamp(x, 0, 1)), max(0.0, (ih - ch) * clamp(y, 0, 1))
     return image.resize((W, height), Image.Resampling.BICUBIC, box=(left, top, left + cw, top + ch))
 
 
