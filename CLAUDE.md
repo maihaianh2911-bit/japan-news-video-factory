@@ -45,7 +45,10 @@ short). Its words are the script; our video retells them in our frame:
    too. Write the script exactly, line by line, in a chat message so the owner can check it.
 2. Then as "When the owner pastes a script" above, with `style: "paper"` and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), `web:` searches (2–3 per scene, Japanese words), 2 pictures per scene.
-   Never take pictures out of the source video itself. Names the voice may misread get a `say` in kana.
+   Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
+   burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
+   `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
+   Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
 3. Send the owner the finished video file in the chat (they want it there, not only as a link) and the links.
 
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
@@ -80,7 +83,7 @@ ask the owner to allow `main`.
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
      (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
-     takes one picture; their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
+     takes one picture (`file:stories/media/…` a picture kept in the repository); their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
    - Check before pushing: `python -m news.custom stories/<name>.json` lists every problem (unknown keys such as
      `photos`, `lines` not a list, bad `focus`/`fit`, missing fields) and the scenes without a picture.

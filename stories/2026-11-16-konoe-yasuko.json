@@ -5,7 +5,11 @@
   "date": "2026-11-16",
   "style": "story",
   "kicker": "皇室の物語",
-  "pace": {"speed": 0.92, "line_pause": 0.35, "scene_pause": 0.5},
+  "pace": {
+    "speed": 0.92,
+    "line_pause": 0.35,
+    "scene_pause": 0.5
+  },
   "searches": [
     "web:近衛甯子",
     "web:甯子内親王",
@@ -33,7 +37,12 @@
     "web:近衛甯子 活動",
     "music:Debussy Arabesque piano",
     "music:Schumann Träumerei piano",
-    "music:Chopin Waltz piano"
+    "music:Chopin Waltz piano",
+    "file:stories/media/2026-11-16-konoe-yasuko/yasuko-kimono.jpg",
+    "file:stories/media/2026-11-16-konoe-yasuko/mikasa-yuriko.jpg",
+    "file:stories/media/2026-11-16-konoe-yasuko/wedding-1966.jpg",
+    "file:stories/media/2026-11-16-konoe-yasuko/konoe-couple.jpg",
+    "file:stories/media/2026-11-16-konoe-yasuko/yasuko-tiara.jpg"
   ],
   "scenes": [
     {
@@ -41,70 +50,294 @@
       "era": "1944年〜",
       "headline": "三笠宮家の長女\n近衛甯子さんの半生",
       "lines": [
-        {"text": "三笠宮家の長女、近衛甯子さんの半生。", "say": "みかさのみやけの長女、このえやすこさんの半生。", "quote": true},
-        {"text": "『個性派揃い』の三笠宮家の中で、容姿端麗・文武両道、明るく素直なお人柄で愛された。", "say": "個性派ぞろいの、みかさのみやけの中で、ようしたんれい、ぶんぶりょうどう、明るく素直なおひとがらで愛された。"}
-      ]
+        {
+          "text": "三笠宮家の長女、近衛甯子さんの半生。",
+          "say": "みかさのみやけの長女、このえやすこさんの半生。",
+          "quote": true
+        },
+        {
+          "text": "『個性派揃い』の三笠宮家の中で、容姿端麗・文武両道、明るく素直なお人柄で愛された。",
+          "say": "個性派ぞろいの、みかさのみやけの中で、ようしたんれい、ぶんぶりょうどう、明るく素直なおひとがらで愛された。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "28-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu bằng chân dung bà Yasuko cười tươi dưới câu tựa; rồi ảnh kimono màu, lùi ra cho thấy dáng người."
     },
     {
       "label": "幼少期",
       "era": "1940年代",
       "headline": "祖母・貞明皇后に\n愛された幼少期",
       "lines": [
-        {"text": "祖母にあたる大正天皇の妃、貞明皇后には特に可愛がられ、「おばばさま」と呼んで懐いていたそう。", "say": "祖母にあたる、たいしょうてんのうのきさき、ていめいこうごうには、特にかわいがられ、おばばさまと呼んで、なついていたそう。"},
-        {"text": "「ばばが、ありったけのイタズラを教えてあげましょう」", "say": "ばばが、ありったけのいたずらを、教えてあげましょう。", "quote": true},
-        {"text": "羽つきやおままごとなど、よくお遊びになったとか。", "say": "はねつきや、おままごとなど、よくお遊びになったとか。"}
-      ]
+        {
+          "text": "祖母にあたる大正天皇の妃、貞明皇后には特に可愛がられ、「おばばさま」と呼んで懐いていたそう。",
+          "say": "祖母にあたる、たいしょうてんのうのきさき、ていめいこうごうには、特にかわいがられ、おばばさまと呼んで、なついていたそう。"
+        },
+        {
+          "text": "「ばばが、ありったけのイタズラを教えてあげましょう」",
+          "say": "ばばが、ありったけのいたずらを、教えてあげましょう。",
+          "quote": true
+        },
+        {
+          "text": "羽つきやおままごとなど、よくお遊びになったとか。",
+          "say": "はねつきや、おままごとなど、よくお遊びになったとか。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "5-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-8",
+          "fit": "contain",
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Hoàng hậu Teimei lúc trẻ rồi lúc về già (người bà); lia ngang cảnh chơi cầu lông Nhật (羽つき)."
     },
     {
       "label": "母の教え",
       "era": "1950年代",
       "headline": "母・百合子さまの\n質実剛健な教え",
       "lines": [
-        {"text": "一方、母親の百合子さまは、", "say": "一方、母親のゆりこさまは、"},
-        {"text": "「宮家であっても窮乏生活に耐えられるよう」", "say": "みやけであっても、きゅうぼう生活に耐えられるよう。", "quote": true},
-        {"text": "「どんな所に嫁いだとしても大丈夫なように」", "say": "どんな所にとついだとしても、大丈夫なように。", "quote": true},
-        {"text": "質実剛健に育てた。", "say": "しつじつごうけんに育てた。"}
-      ]
+        {
+          "text": "一方、母親の百合子さまは、",
+          "say": "一方、母親のゆりこさまは、"
+        },
+        {
+          "text": "「宮家であっても窮乏生活に耐えられるよう」",
+          "say": "みやけであっても、きゅうぼう生活に耐えられるよう。",
+          "quote": true
+        },
+        {
+          "text": "「どんな所に嫁いだとしても大丈夫なように」",
+          "say": "どんな所にとついだとしても、大丈夫なように。",
+          "quote": true
+        },
+        {
+          "text": "質実剛健に育てた。",
+          "say": "しつじつごうけんに育てた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "29-1",
+          "focus": [
+            0.35,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Bà Yuriko (mẹ) bên chồng, rồi bà với các con nhỏ: câu dạy con hiện to giữa ảnh."
     },
     {
       "label": "結婚",
       "era": "1966年",
       "headline": "近衛忠煇さんと結婚\n民間人に",
       "lines": [
-        {"text": "大学在学中に、細川元首相の弟で、日本赤十字社職員の近衛忠煇さんと結婚し、民間人となる。", "say": "大学在学中に、ほそかわ元首相の弟で、にほんせきじゅうじしゃ職員の、このえただてるさんと結婚し、民間人となる。"}
-      ]
+        {
+          "text": "大学在学中に、細川元首相の弟で、日本赤十字社職員の近衛忠煇さんと結婚し、民間人となる。",
+          "say": "大学在学中に、ほそかわ元首相の弟で、にほんせきじゅうじしゃ職員の、このえただてるさんと結婚し、民間人となる。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "30-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "31-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Lễ cưới 1966: đồ cưới cung đình rồi ảnh hai vợ chồng mặc âu phục."
     },
     {
       "label": "素顔",
       "era": "学生時代",
       "headline": "電車で通学した\n飾らない内親王",
       "lines": [
-        {"text": "内親王でありながら学校へは電車で通学し、買い物も自分で行くようなところにも好感を持ったという。", "say": "ないしんのうでありながら、学校へは電車で通学し、買い物も自分で行くようなところにも、好感を持ったという。"}
-      ]
+        {
+          "text": "内親王でありながら学校へは電車で通学し、買い物も自分で行くようなところにも好感を持ったという。",
+          "say": "ないしんのうでありながら、学校へは電車で通学し、買い物も自分で行くようなところにも、好感を持ったという。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "14-5",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pan-left"
+        },
+        {
+          "pick": "14-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "fall"
+        }
+      ],
+      "cut": "fade",
+      "why": "Học sinh trên tàu điện thời Showa, cảnh bình dị như cuộc sống bà chọn."
     },
     {
       "label": "ジュネーブ",
       "era": "1970年代",
       "headline": "夫の転勤で\nスイス・ジュネーブへ",
       "lines": [
-        {"text": "長男を出産後、夫の転勤でスイスのジュネーブへ渡ると、", "say": "ちょうなんを出産後、夫の転勤で、スイスのジュネーブへ渡ると、"}
-      ]
+        {
+          "text": "長男を出産後、夫の転勤でスイスのジュネーブへ渡ると、",
+          "say": "ちょうなんを出産後、夫の転勤で、スイスのジュネーブへ渡ると、"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-5",
+          "focus": [
+            0.3,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        },
+        {
+          "pick": "17-11",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        }
+      ],
+      "cut": "dip",
+      "why": "Nhảy sang Thụy Sĩ: đài phun nước Genève, chỉnh màu nâu cũ cho ra thập niên 70."
     },
     {
       "label": "赤十字",
       "era": "帰国後",
       "headline": "日本赤十字社\n副総裁として",
       "lines": [
-        {"text": "帰国後は日本赤十字社副総裁を務めた。", "say": "帰国後は、にほんせきじゅうじしゃ、ふくそうさいを務めた。"}
-      ]
+        {
+          "text": "帰国後は日本赤十字社副総裁を務めた。",
+          "say": "帰国後は、にほんせきじゅうじしゃ、ふくそうさいを務めた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "20-2",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Hội Chữ thập đỏ: ông Konoe Tadateru, chồng bà, Chủ tịch Hội Chữ thập đỏ Nhật."
     },
     {
       "label": "現在",
       "era": "現在",
       "headline": "今もなお\n様々な活動の中心に",
       "lines": [
-        {"text": "容姿端麗で優等生だった甯子さんは今もなお、様々な活動の中心となり、ご活躍されている。", "say": "ようしたんれいで、ゆうとうせいだったやすこさんは今もなお、様々な活動の中心となり、ご活躍されている。"}
-      ]
+        {
+          "text": "容姿端麗で優等生だった甯子さんは今もなお、様々な活動の中心となり、ご活躍されている。",
+          "say": "ようしたんれいで、ゆうとうせいだったやすこさんは今もなお、様々な活動の中心となり、ご活躍されている。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "32-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "23-2",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.35,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Từ cô gái đội vương miện ngày xưa đến bà Yasuko bây giờ, đang phát biểu ở Dương Minh văn khố (của dòng họ Konoe)."
     }
-  ]
+  ],
+  "music": {
+    "pick": "26-1"
+  }
 }

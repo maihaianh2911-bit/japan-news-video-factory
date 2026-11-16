@@ -8,6 +8,8 @@ For every entry of "searches" not searched before:
   sites (watermarks). The licence is unknown: the owner chose to use such pictures (14/11/2026); the site is
   credited on screen and in credits.txt.
 - "url:<picture address> [<page address>]": that one picture.
+- "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
+  video, owner 16/11/2026), credited as 元動画 (the source video).
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
   12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence. Writes <out_dir>/<k>-<n>.jpg,
 index.json (file page, licence, author) and sheet_<k>.jpg, a numbered contact sheet to choose from.
@@ -284,7 +286,27 @@ def music_find(query, k, out):
     return kept
 
 
+REPO = Path(__file__).resolve().parent.parent
+
+
+def file_find(path, k, out):
+    """One picture kept in the repository under stories/media/."""
+    source = (REPO / path).resolve()
+    if not str(source).startswith(str((REPO / "stories" / "media").resolve()) + "/") or not source.is_file():
+        raise ValueError(f"file: must name a picture under stories/media/, got {path!r}")
+    with Image.open(source) as original:
+        picture = original.convert("RGB")
+    picture.thumbnail((LARGEST, LARGEST))
+    entry = {"title": source.name, "page": "", "width": picture.width, "height": picture.height, "license": "",
+             "license_url": "", "artist": "元動画", "description": f"from the source video: {path}",
+             "file": f"{k}-1.jpg"}
+    picture.save(out / entry["file"], quality=93)
+    return [entry]
+
+
 def find(query, k, out, seen):
+    if query.startswith("file:"):
+        return file_find(query[5:].strip(), k, out)
     if query.startswith("music:"):
         return music_find(query[6:].strip(), k, out)
     if query.startswith("web:"):
