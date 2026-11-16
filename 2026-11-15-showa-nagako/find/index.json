@@ -2470,5 +2470,55 @@
     "file": "24-8.jpg"
    }
   ]
+ },
+ {
+  "k": 25,
+  "query": "music:Satie Gymnopédie piano",
+  "results": [
+   {
+    "title": "File:Satie Gymnopedie No. 3 for piano solo 01.wav",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No._3_for_piano_solo_01.wav",
+    "size": 5357612,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Satie",
+    "description": "Satie Gymnopedie No. 3 for piano solo",
+    "file": "25-1.wav",
+    "seconds": 30.4
+   },
+   {
+    "title": "File:Erik Satie -Gymnopedie No.1 - Arr for alto saxophone and piano - David Hernando Vitores.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-Gymnopedie_No.1_-_Arr_for_alto_saxophone_and_piano_-_David_Hernando_Vitores.ogg",
+    "size": 9817830,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Erik Satie",
+    "description": "Gymnopedie No.1 - Arr for alto saxophone and piano.",
+    "file": "25-2.ogg",
+    "seconds": 220.0
+   },
+   {
+    "title": "File:Satie Gymnopedie No 3 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_3_performed_by_Michael_Laucke.flac",
+    "size": 6941233,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "25-3.flac",
+    "seconds": 123.1
+   },
+   {
+    "title": "File:Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "size": 3696351,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Robin Alciatore",
+    "description": "Gymnopédies - la 1ére. lent et douloureux",
+    "file": "25-4.ogg",
+    "seconds": 183.6
+   }
+  ]
  }
 ]
