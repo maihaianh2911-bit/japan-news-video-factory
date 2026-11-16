@@ -5,7 +5,11 @@
   "date": "2026-11-16",
   "style": "story",
   "kicker": "皇室の物語",
-  "pace": {"speed": 0.92, "line_pause": 0.3, "scene_pause": 0.45},
+  "pace": {
+    "speed": 0.92,
+    "line_pause": 0.3,
+    "scene_pause": 0.45
+  },
   "searches": [
     "web:寛仁親王妃信子さま",
     "web:信子さま 2025",
@@ -28,7 +32,16 @@
     "web:信子さま 近影",
     "web:信子さま お手振り",
     "music:Chopin Prelude E minor Op. 28 No. 4 piano",
-    "music:Satie Gnossienne piano"
+    "music:Satie Gnossienne piano",
+    "file:stories/media/2026-11-16-nobuko/akiko-suit.jpg",
+    "file:stories/media/2026-11-16-nobuko/nobuko-judo.jpg",
+    "file:stories/media/2026-11-16-nobuko/nobuko-daughters.jpg",
+    "file:stories/media/2026-11-16-nobuko/three-tiaras.jpg",
+    "file:stories/media/2026-11-16-nobuko/tomohito-bw.jpg",
+    "file:stories/media/2026-11-16-nobuko/couple-color.jpg",
+    "file:stories/media/2026-11-16-nobuko/tomohito-seated.jpg",
+    "file:stories/media/2026-11-16-nobuko/nobuko-wave.jpg",
+    "file:stories/media/2026-11-16-nobuko/tomohito-daughter.jpg"
   ],
   "scenes": [
     {
@@ -36,9 +49,43 @@
       "era": "2025年",
       "headline": "三笠宮家に\n別れを告げた信子さま",
       "lines": [
-        {"text": "三笠宮家に別れを告げた信子さま。", "say": "みかさのみやけに、別れを告げた、のぶこさま。", "quote": true},
-        {"text": "皇室経済会議で、三笠宮家の長女、彬子さまが当主に決定。", "say": "こうしつけいざいかいぎで、みかさのみやけの長女、あきこさまが、とうしゅに決定。"}
-      ]
+        {
+          "text": "三笠宮家に別れを告げた信子さま。",
+          "say": "みかさのみやけに、別れを告げた、のぶこさま。",
+          "quote": true
+        },
+        {
+          "text": "皇室経済会議で、三笠宮家の長女、彬子さまが当主に決定。",
+          "say": "こうしつけいざいかいぎで、みかさのみやけの長女、あきこさまが、とうしゅに決定。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.3,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Nobuko dưới câu tựa; phòng họp Hội nghị Kinh tế Hoàng gia; rồi bà Akiko, người được chọn làm chủ nhà."
     },
     {
       "label": "新当主",
@@ -46,70 +93,284 @@
       "headline": "未婚の女性皇族が\n当主に",
       "value": "163年ぶり",
       "lines": [
-        {"text": "未婚の女性皇族が当主を継ぐことは、江戸時代以来163年ぶりのこと。", "say": "みこんの女性皇族が、とうしゅを継ぐことは、えど時代以来、ひゃくろくじゅうさんねんぶりのこと。"}
-      ]
+        {
+          "text": "未婚の女性皇族が当主を継ぐことは、江戸時代以来163年ぶりのこと。",
+          "say": "みこんの女性皇族が、とうしゅを継ぐことは、えど時代以来、ひゃくろくじゅうさんねんぶりのこと。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-9",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Bà Akiko trong lễ phục 12 lớp, rồi ảnh đời thường: nữ chủ nhà chưa chồng đầu tiên sau 163 năm."
     },
     {
       "label": "新たな宮家",
       "era": "2025年",
       "headline": "「三笠宮寛仁親王妃家」\nを創設",
       "lines": [
-        {"text": "その裏で信子さまは三笠宮家を離れ、「三笠宮寛仁親王妃家」を創設。", "say": "その裏で、のぶこさまは、みかさのみやけを離れ、みかさのみや、ともひとしんのうひけを、創設。"},
-        {"text": "『ご家族で話し合われた結果』というが、このようなケースは“前例にない”そう。", "say": "ご家族で話し合われた結果というが、このようなケースは、前例にないそう。"}
-      ]
+        {
+          "text": "その裏で信子さまは三笠宮家を離れ、「三笠宮寛仁親王妃家」を創設。",
+          "say": "その裏で、のぶこさまは、みかさのみやけを離れ、みかさのみや、ともひとしんのうひけを、創設。"
+        },
+        {
+          "text": "『ご家族で話し合われた結果』というが、このようなケースは“前例にない”そう。",
+          "say": "ご家族で話し合われた結果というが、このようなケースは、前例にないそう。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "24-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-3",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Bà Nobuko lập nhà riêng: hai ảnh bà gần đây."
     },
     {
       "label": "確執",
       "era": "背景",
       "headline": "母と娘たちの\n“確執”",
       "lines": [
-        {"text": "三笠宮家分裂の背景には、信子さまと娘たちとの“確執”があった。", "say": "みかさのみやけ分裂の背景には、のぶこさまと、娘たちとの、かくしつがあった。"}
-      ]
+        {
+          "text": "三笠宮家分裂の背景には、信子さまと娘たちとの“確執”があった。",
+          "say": "みかさのみやけ分裂の背景には、のぶこさまと、娘たちとの、かくしつがあった。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "25-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "26-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "page",
+      "why": "Mẹ con vui vẻ ngày xưa, rồi ba mẹ con đứng cạnh nhau mà lạnh nhạt: nói về sự bất hoà."
     },
     {
       "label": "寛仁親王",
       "era": "1980年代〜",
       "headline": "病に苦しんだ\n夫・寛仁親王",
       "lines": [
-        {"text": "夫の寛仁親王は若い頃からタバコやお酒を好み、がんやアルコール依存症に悩まされていた。", "say": "夫の、ともひとしんのうは、若い頃からタバコやお酒を好み、がんや、アルコール依存症に悩まされていた。"}
-      ]
+        {
+          "text": "夫の寛仁親王は若い頃からタバコやお酒を好み、がんやアルコール依存症に悩まされていた。",
+          "say": "夫の、ともひとしんのうは、若い頃からタバコやお酒を好み、がんや、アルコール依存症に悩まされていた。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "27-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        }
+      ],
+      "cut": "dip",
+      "why": "Lùi về quá khứ: thân vương Tomohito thời trẻ, màu nâu cũ."
     },
     {
       "label": "別居",
       "era": "2004年〜",
       "headline": "支え続けた信子さまも\n療養へ",
       "lines": [
-        {"text": "献身的に支えた信子さまも、ストレス性ぜんそくによる療養のため、", "say": "けんしんてきに支えた、のぶこさまも、ストレス性ぜんそくによる、りょうようのため、"},
+        {
+          "text": "献身的に支えた信子さまも、ストレス性ぜんそくによる療養のため、",
+          "say": "けんしんてきに支えた、のぶこさまも、ストレス性ぜんそくによる、りょうようのため、"
+        },
         "事実上の別居生活が続くと、"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "14-8",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Vợ chồng bên nhau, rồi bà Nobuko một mình: bắt đầu sống riêng."
     },
     {
       "label": "亀裂",
       "era": "2000年代",
       "headline": "娘たちとの間に\n深い亀裂",
       "lines": [
-        {"text": "「病気のお父さまを置き去りにするなんて許せない」", "say": "病気のおとうさまを、置き去りにするなんて、許せない。", "quote": true},
-        {"text": "「公務を放棄している」と深い亀裂ができてしまう。", "say": "公務を、ほうきしていると、深い、きれつができてしまう。"}
-      ]
+        {
+          "text": "「病気のお父さまを置き去りにするなんて許せない」",
+          "say": "病気のおとうさまを、置き去りにするなんて、許せない。",
+          "quote": true
+        },
+        {
+          "text": "「公務を放棄している」と深い亀裂ができてしまう。",
+          "say": "公務を、ほうきしていると、深い、きれつができてしまう。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "29-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "16-8",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "punch-in"
+        }
+      ],
+      "cut": "hard",
+      "why": "Câu trách móc hiện to trên ảnh người cha ốm; hai chị em; rồi bà Akiko phát biểu, giật vào khi nói đến rạn nứt."
     },
     {
       "label": "葬儀",
       "era": "2012年",
       "headline": "喪主は彬子さま\n参列も許されず",
       "lines": [
-        {"text": "寛仁親王の葬儀も喪主は彬子さまが務め、", "say": "ともひとしんのうの葬儀も、もしゅは、あきこさまが務め、"},
-        {"text": "信子さまは葬儀への参列も許されなかった。", "say": "のぶこさまは、葬儀への参列も、許されなかった。"}
-      ]
+        {
+          "text": "寛仁親王の葬儀も喪主は彬子さまが務め、",
+          "say": "ともひとしんのうの葬儀も、もしゅは、あきこさまが務め、"
+        },
+        {
+          "text": "信子さまは葬儀への参列も許されなかった。",
+          "say": "のぶこさまは、葬儀への参列も、許されなかった。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "cut": "dip",
+      "why": "Tang lễ 2012: bà Akiko đội mạng đen, đoàn người đưa tang."
     },
     {
       "label": "現在",
       "era": "現在",
       "headline": "家族の雪解けは\n二度とない",
       "lines": [
-        {"text": "三笠宮家に別れを告げた信子さまだが、", "say": "みかさのみやけに、別れを告げた、のぶこさまだが、"},
-        {"text": "『家族の雪解けは二度とない』", "say": "家族の、ゆきどけは、二度とない。", "quote": true},
+        {
+          "text": "三笠宮家に別れを告げた信子さまだが、",
+          "say": "みかさのみやけに、別れを告げた、のぶこさまだが、"
+        },
+        {
+          "text": "『家族の雪解けは二度とない』",
+          "say": "家族の、ゆきどけは、二度とない。",
+          "quote": true
+        },
         "断言したようなもので切ない。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "30-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "31-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Bà Nobuko bây giờ; câu 'tan băng' hiện to; kết bằng ảnh cũ cha con cười, lùi dần ra."
     }
-  ]
+  ],
+  "music": {
+    "pick": "21-1"
+  }
 }
