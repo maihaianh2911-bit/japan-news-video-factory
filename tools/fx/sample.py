@@ -13,6 +13,7 @@ The voice, the music and the caption times come from the finished video, so the 
 """
 from dataclasses import replace
 import math
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -468,6 +469,8 @@ def main():
                 better = Image.blend(photo.image.resize(better.size, Image.Resampling.LANCZOS), better, 0.6)
             photo = replace(photo, image=better)
             photos[index][number] = photo
+            if os.environ.get("FX_3D", "1") == "0":   # owner, 16/11/2026: the 3D camera looks worse than the old moves
+                continue
             DeepScene.deep[(index, number)] = Deep(
                 photo, cv2.imread(str(depth), cv2.IMREAD_UNCHANGED).astype(np.float32) / 65535, height)
     scenes, start = [], 0.0
