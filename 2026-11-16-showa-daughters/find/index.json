@@ -1718,5 +1718,192 @@
     "seconds": 44.0
    }
   ]
+ },
+ {
+  "k": 21,
+  "query": "file:stories/media/2026-11-16-showa-daughters/family-five.jpg",
+  "results": [
+   {
+    "title": "family-five.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 463,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/family-five.jpg",
+    "file": "21-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "file:stories/media/2026-11-16-showa-daughters/shigeko-wedding.jpg",
+  "results": [
+   {
+    "title": "shigeko-wedding.jpg",
+    "page": "",
+    "width": 808,
+    "height": 1486,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/shigeko-wedding.jpg",
+    "file": "22-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "file:stories/media/2026-11-16-showa-daughters/shigeko-kids.jpg",
+  "results": [
+   {
+    "title": "shigeko-kids.jpg",
+    "page": "",
+    "width": 840,
+    "height": 944,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/shigeko-kids.jpg",
+    "file": "23-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 24,
+  "query": "file:stories/media/2026-11-16-showa-daughters/shigeko-face.jpg",
+  "results": [
+   {
+    "title": "shigeko-face.jpg",
+    "page": "",
+    "width": 690,
+    "height": 1178,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/shigeko-face.jpg",
+    "file": "24-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 25,
+  "query": "file:stories/media/2026-11-16-showa-daughters/kazuko-wedding.jpg",
+  "results": [
+   {
+    "title": "kazuko-wedding.jpg",
+    "page": "",
+    "width": 775,
+    "height": 1082,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/kazuko-wedding.jpg",
+    "file": "25-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 26,
+  "query": "file:stories/media/2026-11-16-showa-daughters/atsuko-kimono.jpg",
+  "results": [
+   {
+    "title": "atsuko-kimono.jpg",
+    "page": "",
+    "width": 676,
+    "height": 964,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/atsuko-kimono.jpg",
+    "file": "26-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 27,
+  "query": "file:stories/media/2026-11-16-showa-daughters/atsuko-couple.jpg",
+  "results": [
+   {
+    "title": "atsuko-couple.jpg",
+    "page": "",
+    "width": 836,
+    "height": 1168,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/atsuko-couple.jpg",
+    "file": "27-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 28,
+  "query": "file:stories/media/2026-11-16-showa-daughters/ikeda-zoo.jpg",
+  "results": [
+   {
+    "title": "ikeda-zoo.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 780,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/ikeda-zoo.jpg",
+    "file": "28-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 29,
+  "query": "file:stories/media/2026-11-16-showa-daughters/takako-press.jpg",
+  "results": [
+   {
+    "title": "takako-press.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 783,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/takako-press.jpg",
+    "file": "29-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 30,
+  "query": "file:stories/media/2026-11-16-showa-daughters/hirohito-cherry.jpg",
+  "results": [
+   {
+    "title": "hirohito-cherry.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 880,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/hirohito-cherry.jpg",
+    "file": "30-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 31,
+  "query": "file:stories/media/2026-11-16-showa-daughters/family-group.jpg",
+  "results": [
+   {
+    "title": "family-group.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 835,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-daughters/family-group.jpg",
+    "file": "31-1.jpg"
+   }
+  ]
  }
 ]
