@@ -9,25 +9,17 @@
   },
   "photos": [
     {
-      "page": "https://www.chunichi.co.jp/article/1315303",
-      "title": "4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
-      "creator": "chunichi.co.jp",
+      "page": "https://jp.mercari.com/item/m11026580806",
+      "title": "美空ひばり/小林旭 永遠に幸あれ カップル レコード2枚組 - メルカリ",
+      "creator": "jp.mercari.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-      "title": "Misora-Hibari-4.png",
-      "creator": "ja.wikipedia.org",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
-      "title": "20220405-OHT1I51121-L.jpg",
-      "creator": "hochi.news",
+      "page": "https://www.roman-blog.com/books/%E6%9B%B8%E8%A9%95-%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%80%8C%E5%B0%8F%E6%9E%97%E6%97%AD%E3%80%8D%E4%BC%9D%E8%AA%AC%E2%91%A3%E3%80%9C%E8%87%AA%E4%BC%9D-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0",
+      "title": "書評 マイトガイ「小林旭」伝説④〜自伝 美空ひばりとの結婚 ...",
+      "creator": "roman-blog.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -188,16 +180,15 @@
       "evidence": "",
       "say": [],
       "cut": "",
-      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to.",
+      "why": "Câu mở: ảnh màu hai vợ chồng Hibari và Kobayashi Akira; rồi ảnh thật hai người cắt bánh cưới năm 1962.",
       "era": "1962年",
       "quotes": [
         0
       ],
-      "image_url": "https://www.chunichi.co.jp/article/1315303",
+      "image_url": "https://jp.mercari.com/item/m11026580806",
       "image_urls": [
-        "https://www.chunichi.co.jp/article/1315303",
-        "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-        "https://hochi.news/articles/20220405-OHT1T51076.html"
+        "https://jp.mercari.com/item/m11026580806",
+        "https://www.roman-blog.com/books/%E6%9B%B8%E8%A9%95-%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%80%8C%E5%B0%8F%E6%9E%97%E6%97%AD%E3%80%8D%E4%BC%9D%E8%AA%AC%E2%91%A3%E3%80%9C%E8%87%AA%E4%BC%9D-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0"
       ]
     },
     {
