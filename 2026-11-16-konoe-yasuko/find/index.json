@@ -2142,5 +2142,90 @@
     "seconds": 114.3
    }
   ]
+ },
+ {
+  "k": 28,
+  "query": "file:stories/media/2026-11-16-konoe-yasuko/yasuko-kimono.jpg",
+  "results": [
+   {
+    "title": "yasuko-kimono.jpg",
+    "page": "",
+    "width": 870,
+    "height": 1085,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-konoe-yasuko/yasuko-kimono.jpg",
+    "file": "28-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 29,
+  "query": "file:stories/media/2026-11-16-konoe-yasuko/mikasa-yuriko.jpg",
+  "results": [
+   {
+    "title": "mikasa-yuriko.jpg",
+    "page": "",
+    "width": 1000,
+    "height": 1320,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-konoe-yasuko/mikasa-yuriko.jpg",
+    "file": "29-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 30,
+  "query": "file:stories/media/2026-11-16-konoe-yasuko/wedding-1966.jpg",
+  "results": [
+   {
+    "title": "wedding-1966.jpg",
+    "page": "",
+    "width": 985,
+    "height": 1445,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-konoe-yasuko/wedding-1966.jpg",
+    "file": "30-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 31,
+  "query": "file:stories/media/2026-11-16-konoe-yasuko/konoe-couple.jpg",
+  "results": [
+   {
+    "title": "konoe-couple.jpg",
+    "page": "",
+    "width": 935,
+    "height": 955,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-konoe-yasuko/konoe-couple.jpg",
+    "file": "31-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 32,
+  "query": "file:stories/media/2026-11-16-konoe-yasuko/yasuko-tiara.jpg",
+  "results": [
+   {
+    "title": "yasuko-tiara.jpg",
+    "page": "",
+    "width": 855,
+    "height": 927,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-konoe-yasuko/yasuko-tiara.jpg",
+    "file": "32-1.jpg"
+   }
+  ]
  }
 ]
