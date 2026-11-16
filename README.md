@@ -8,7 +8,7 @@ Máy dựng video tin tức Nhật Bản dạng dọc 1080 × 1920: ảnh thật
 2. Không cần làm gì thêm. Claude dịch sát sang tiếng Nhật và chia cảnh (`stories/<tên>.json`), máy tìm ảnh thật trên Wikimedia Commons và trên web (báo, blog; ảnh trên web có thể có bản quyền, chủ kênh đã chấp nhận), Claude xem và chọn ảnh cho từng cảnh, máy tạo giọng đọc VOICEVOX:青山龍星 và dựng video, Claude kiểm tra từng cảnh. Mỗi bước xong đều báo trong phiếu; link video ở bình luận cuối.
 3. Muốn sửa thì viết bình luận trong phiếu.
 
-Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề, `credits.txt` (nguồn ảnh để dán vào mô tả video), ảnh tĩnh; ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit. Chi tiết cho Claude: `CLAUDE.md`, `AGENT_JNEWS.md`.
+Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề, `credits.txt` (nguồn ảnh để dán vào mô tả video), `caption.txt` (lời giới thiệu để đăng kèm video: tiêu đề, vài câu, hashtag), ảnh tĩnh; ảnh tìm được ở `<tên>/find/`. Mỗi lần đăng, thư mục được thay mới hoàn toàn và có `status.json` ghi lần chạy và commit. Chi tiết cho Claude: `CLAUDE.md`, `AGENT_JNEWS.md`.
 
 **Tải video về máy:** mỗi tuần workflow **Dọn video cũ (nhánh renders)** xóa video của phiếu đã đóng quá 2 ngày hoặc không có hoạt động trong 14 ngày, khi đó link video hết hiệu lực. Video luôn nhẹ hơn 100 MB (giới hạn của GitHub); video dài hơn khoảng 1 phút 50 giây được nén nhiều hơn một chút.
 

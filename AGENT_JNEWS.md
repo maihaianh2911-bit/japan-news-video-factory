@@ -85,7 +85,9 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
 4. Choose the edit of every picture and scene from the table below ("Bảng cách edit") and write `move`, `cut` and
    `why` in the story; preview again: the preview prints the list of edits and its warnings (a picture too narrow
    to pan, too small for a close-up).
-5. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you
+5. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
+   script) and check it with `python -m news.captions captions/<name>.txt`; it is published with the video.
+6. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you
    are called at `jnews-check`.)
 
 ## Bảng cách edit (the catalogue of edits)
@@ -135,14 +137,16 @@ Fetch `<name>/` (its `status.json` must have your commit). Look at `stills/sheet
 against the script. Push a corrected story only for a real fault (a cut face, the wrong subject, a misread word:
 write it `{"text": …, "say": "kana"}`). Otherwise remove `jnews-check`, add `jnews-done` and comment (🤖, short,
 Vietnamese): the video link `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4`,
-its length, links to `subtitles.srt` and `credits.txt` (to paste into the video description), which scenes have no
+its length, links to `subtitles.srt`, `credits.txt` (to paste into the video description) and `caption.txt` (the
+posting caption; if it is missing, write `captions/<name>.txt` and push it alone: only the caption is published, the
+video is not made again), which scenes have no
 picture and why, the list of edits pasted from `<name>/stills/edits.md` (one line per scene: the move of each
 picture, the cut, the reason) so that the owner can answer "cảnh 5 đổi sang kiểu pull-back", "bình luận nếu muốn sửa", and that the owner should download the video: its link stops working
 2 days after the issue is closed, or after 14 days without activity on the issue (weekly clean-up of `renders`).
 
 ## 4. `jnews-fix` and `jnews-failed`
 - `jnews-fix`: the request = owner comments after your last `🤖` comment. Wording → `lines`; pictures → picks or new
-  searches (then `stage: "find"`); an edit ("cảnh 5 đổi sang kiểu …", "chậm lại", "đừng giật") → `move`/`cut` of
+  searches (then `stage: "find"`); the posting caption → `captions/<name>.txt` alone (no new render); an edit ("cảnh 5 đổi sang kiểu …", "chậm lại", "đừng giật") → `move`/`cut` of
   that scene from the table (the stage stays `render`). Push, one-line 🤖 comment, remove `jnews-fix`.
 - `jnews-failed`: read the reason in the issue comment, if it gives one, and the failed run's log (link in the issue; `gh api repos/$R/actions/runs/<id>/jobs`, then
   `gh api repos/$R/actions/jobs/<job>/logs`), fix the cause (your story file, or `news/*` checked as in `CLAUDE.md`

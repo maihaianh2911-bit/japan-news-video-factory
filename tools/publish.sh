@@ -9,6 +9,9 @@
 # PUBLISH_REMOTE (env) replaces the GitHub URL, for tests against a local repository.
 # A file over 100 MB is refused by GitHub for good: it is reported at once (exit 2), not tried again.
 # PUBLISH_MAX_BYTES (env) replaces that limit, for tests.
+# PUBLISH_MODE=add (env): only add or replace the files of <source_dir> in an existing <dest_dir>; nothing else in
+# it is removed and status.json is left as it is (used for the posting caption beside a finished video). Exit 3
+# when <dest_dir> does not exist on renders yet (nothing to add to).
 set -euo pipefail
 DEST="${1:?dest_dir}"; SRC="${2:?source_dir}"; STAGE="${3:?stage}"; shift 3
 KEEP=("$@")
@@ -38,6 +41,17 @@ attempt_publish() {
     (cd "$wt" && git checkout -q --orphan "publish-tmp-$$" && { git rm -rfq . >/dev/null 2>&1 || true; } && git clean -fdqx) || return 1
   else
     return 1
+  fi
+  if [[ "${PUBLISH_MODE:-}" == add ]]; then
+    [[ -d "$wt/$DEST" ]] || return 3
+    cp -r "$SRC"/. "$wt/$DEST/" || return 1
+    git -C "$wt" add -A || return 1
+    if git -C "$wt" diff --cached --quiet; then NOTHING=yes; return 0; fi
+    git -C "$wt" -c user.name=render-bot -c user.email=render-bot@users.noreply.github.com \
+      commit -q -m "publish $DEST ($STAGE, run ${GITHUB_RUN_ID:-local}, ${COMMIT:0:7})" || return 1
+    git -C "$wt" push -q "$URL" HEAD:refs/heads/renders 2> "$PUSH_LOG" && status=0 || status=$?
+    cat "$PUSH_LOG" >&2
+    return $status
   fi
   # Replace the folder, keeping only the listed subfolders. (Called from 'if': set -e is off here, so every
   # step checks its own status.)
@@ -79,21 +93,27 @@ cleanup() {
   git branch -D "publish-tmp-$$" >/dev/null 2>&1 || true
 }
 
-for attempt in 1 2 3 4 5; do
+# Several jobs of one push may publish at the same time: up to 8 tries, with a random wait so they spread out.
+for attempt in 1 2 3 4 5 6 7 8; do
   WT=$(mktemp -d); rmdir "$WT"
-  if attempt_publish "$WT"; then
-    cleanup "$WT"
-    echo "published to renders/$DEST ($STAGE)"
+  NOTHING=no
+  attempt_publish "$WT" && result=0 || result=$?
+  cleanup "$WT"
+  if [[ $result == 0 ]]; then
+    [[ $NOTHING == yes ]] && echo "renders/$DEST already has these files: nothing to publish" || echo "published to renders/$DEST ($STAGE)"
     exit 0
   fi
-  cleanup "$WT"
+  if [[ $result == 3 ]]; then
+    echo "renders/$DEST does not exist yet: nothing to add to"
+    exit 3
+  fi
   if permanent; then
     echo "::error::GitHub từ chối nhận $DEST (refused for good, not trying again): xem dòng \"remote: error\" ở trên"
     exit 2
   fi
   : > "$PUSH_LOG"
   echo "publish attempt $attempt failed (renders moved or network error); starting again from the new tip"
-  sleep $((attempt * 5))
+  sleep $((attempt * 4 + RANDOM % 7))
 done
-echo "::error::could not publish $DEST to the renders branch after 5 attempts"
+echo "::error::could not publish $DEST to the renders branch after 8 attempts"
 exit 1

@@ -74,9 +74,8 @@ kèm caption cho mỗi video"):
    burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
    `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
    Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
-4. Write the caption for posting, in Japanese, in `captions/<name>.txt` (see `captions/2026-11-16-nobuko.txt`):
-   【タイトル】 a short hooking title with `#皇室` (or the topic), 【説明文】 3–4 lines on the story, then 8–10
-   hashtags ending with `#shorts`, and a last line asking to paste `credits.txt`. Push it with the story.
+4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
+   the story.
 5. Send the owner the finished video file and its caption file in the chat (they want them there, not only as
    links) and the links.
 
@@ -138,14 +137,26 @@ ask the owner to allow `main`.
    folder>`: `git archive origin/renders <name>/find | tar -x -C <dir>`). It also checks the picks against the
    find `index.json` and lists the scenes without a picture. Then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
-   `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `stills/sheet.jpg`, `status.json`. Check the run succeeded and that
+   `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `caption.txt`
+   (the posting caption, see below), `stills/sheet.jpg`, `status.json`. Check the run succeeded and that
    `status.json` has your commit (an old video stays there when a render fails). Look at the stills and the
    subtitles, then give the owner the links
-   `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and the two
-   others), and say which scenes have no picture and why. GitHub refuses a file over 100 MB, so the video is
+   `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4` (and
+   `subtitles.srt`, `credits.txt`, `caption.txt`), and say which scenes have no picture and why. GitHub refuses a file over 100 MB, so the video is
    kept under about 88 MB: full quality up to about 1 min 50 s, a lower bitrate beyond (`news/render.py`). Old
    videos are deleted from `renders` every week (`renders-cleanup.yml`: issue closed for 2 days, or no activity
    for 14 days; `mau-boj` always stays), so tell the owner to download the video.
+
+### Posting caption (owner, 16/11/2026: every video comes with its caption)
+Each video has `captions/<name>.txt` beside the story (UTF-8, Japanese, ≤ 2000 characters; example `captions/2026-11-16-nobuko.txt`):
+   line 1 a hook title (≤ 80 characters, true to the script), then 2–4 short sentences on the video, a blank line,
+   one line of 5–8 hashtags (`#皇室 #昭和 #歴史 #shorts` as fitting), a blank line, and the credit line
+   `画像出典: <元動画 when source-video pictures are used>、<main sites> ほか（写真・音楽の全出典は credits.txt）`.
+   Only facts of the script. `python -m news.captions captions/<name>.txt` checks it (`python -m news.custom` too).
+The render publishes it as `renders/<name>/caption.txt` beside `video.mp4`. A push that changes only the caption
+(the story file unchanged) does not voice, search or render again: the workflow only adds `caption.txt` to the
+finished folder (`tools/publish.sh` with `PUBLISH_MODE=add`, which leaves `video.mp4` and the rest as they are).
+Write the caption before the closing comment and link it there next to the video, subtitles and `credits.txt`.
 
 Owner, 14/11/2026: pictures may come from anywhere on the web (`web:` searches), for the best pictures; the owner
 was told about the copyright risk and accepted it. Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting

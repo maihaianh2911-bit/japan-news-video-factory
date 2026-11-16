@@ -12,6 +12,7 @@ import sys
 
 from PIL import Image, ImageOps
 
+from .captions import caption_path, check as check_caption
 from .edits import cut_problems, move_problems
 from .sources import Release
 from .story import Beat
@@ -325,6 +326,13 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
+    caption = caption_path(sys.argv[1])
+    if caption.exists():
+        if problems := check_caption(caption):
+            sys.exit("error: " + "\n  - ".join([f"{len(problems)} caption problem(s):"] + problems))
+        print(f"{caption}: OK")
+    else:
+        print(f"note: no posting caption yet ({caption}); write it before the closing comment")
     print(f"{sys.argv[1]}: OK")
 
 
