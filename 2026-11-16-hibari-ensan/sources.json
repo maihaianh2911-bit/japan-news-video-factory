@@ -9,25 +9,17 @@
   },
   "photos": [
     {
-      "page": "https://www.chunichi.co.jp/article/1315303",
-      "title": "4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
-      "creator": "chunichi.co.jp",
+      "page": "https://www.kosho.or.jp/products/detail.php?product_id=456773693",
+      "title": "昭和32年 「別冊 近代映画 美空ひばり特集号 ひばりの巡業旅日記 ...",
+      "creator": "kosho.or.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-      "title": "Misora-Hibari-4.png",
-      "creator": "ja.wikipedia.org",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
-      "title": "20220405-OHT1I51121-L.jpg",
-      "creator": "hochi.news",
+      "page": "https://x.com/Retrohayate/status/1929411432988254560",
+      "title": "レトロ 颯 on X: \"3381.美空ひばり塩酸事件 1957年に発生した ...",
+      "creator": "x.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -57,9 +49,9 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://x.com/Retrohayate/status/1929411432988254560",
-      "title": "レトロ 颯 on X: \"3381.美空ひばり塩酸事件 1957年に発生した ...",
-      "creator": "x.com",
+      "page": "https://aucview.aucfan.com/yahoo/b161055785/",
+      "title": "アサヒグラフ 昭和32年1月27日 美空ひばり19歳塩酸事件 (アサヒ ...",
+      "creator": "aucview.aucfan.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -68,14 +60,6 @@
       "page": "https://fusensha.ocnk.net/product/3572",
       "title": "美空ひばりブロマイド一括 □ 昭和24年頃〜 - 風船舎",
       "creator": "fusensha.ocnk.net",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "https://aucview.aucfan.com/yahoo/b161055785/",
-      "title": "アサヒグラフ 昭和32年1月27日 美空ひばり19歳塩酸事件 (アサヒ ...",
-      "creator": "aucview.aucfan.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -137,9 +121,9 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://www.kosho.or.jp/products/detail.php?product_id=456773693",
-      "title": "昭和32年 「別冊 近代映画 美空ひばり特集号 ひばりの巡業旅日記 ...",
-      "creator": "kosho.or.jp",
+      "page": "https://aucview.aucfan.com/yahoo/b161055785/",
+      "title": "アサヒグラフ 昭和32年1月27日 美空ひばり19歳塩酸事件 (アサヒ ...",
+      "creator": "aucview.aucfan.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -166,16 +150,15 @@
         "日本一の人気歌手は、19歳のとき、ファンにえんさんをかけられた。"
       ],
       "cut": "",
-      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to.",
+      "why": "Câu mở: ngôi sao 19 tuổi cười trên bìa tạp chí năm 1957, rồi tít báo thật 「美空ひばりの顔に塩酸」.",
       "era": "1957年",
       "quotes": [
         0
       ],
-      "image_url": "https://www.chunichi.co.jp/article/1315303",
+      "image_url": "https://www.kosho.or.jp/products/detail.php?product_id=456773693",
       "image_urls": [
-        "https://www.chunichi.co.jp/article/1315303",
-        "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-        "https://hochi.news/articles/20220405-OHT1T51076.html"
+        "https://www.kosho.or.jp/products/detail.php?product_id=456773693",
+        "https://x.com/Retrohayate/status/1929411432988254560"
       ]
     },
     {
@@ -217,13 +200,13 @@
         "あつい！ひばりの叫び声が響きました。"
       ],
       "cut": "hard",
-      "why": "Cú sốc: cắt thẳng vào gương mặt Hibari 19 tuổi; rồi trang báo năm 1957 「美空ひばりの顔に塩酸」.",
+      "why": "Cắt thẳng vào gương mặt Hibari; rồi trang tạp chí アサヒグラフ ra ngay sau vụ việc.",
       "era": "1957年1月",
       "quotes": [],
       "image_url": "https://bunshun.jp/articles/-/86232",
       "image_urls": [
         "https://bunshun.jp/articles/-/86232",
-        "https://x.com/Retrohayate/status/1929411432988254560"
+        "https://aucview.aucfan.com/yahoo/b161055785/"
       ]
     },
     {
@@ -243,13 +226,12 @@
         "それは、ひばりへの、行き過ぎた想いだったと言われています。"
       ],
       "cut": "fade",
-      "why": "Fan thời đó: lia qua những tấm ảnh ngôi sao fan sưu tầm; bài báo 「暴発するあこがれ」; tạp chí hội fan của Hibari.",
+      "why": "Fan thời đó: những tấm ảnh ngôi sao fan sưu tầm; tạp chí hội fan của Hibari.",
       "era": "1957年1月",
       "quotes": [],
       "image_url": "https://fusensha.ocnk.net/product/3572",
       "image_urls": [
         "https://fusensha.ocnk.net/product/3572",
-        "https://aucview.aucfan.com/yahoo/b161055785/",
         "https://auctions.yahoo.co.jp/jp/auction/c1146629127"
       ]
     },
@@ -315,14 +297,14 @@
         "次回は、みそらひばりの、ただ一度の結婚の話です。"
       ],
       "cut": "fade",
-      "why": "Đĩa 港町十三番地; trang tạp chí in bài hát; khép lại bằng gương mặt cười của 'nữ hoàng'.",
+      "why": "Đĩa 港町十三番地; trang tạp chí in bài hát; khép lại bằng bìa アサヒグラフ năm 1957 với gương mặt cô.",
       "era": "1957年",
       "quotes": [],
       "image_url": "https://tu-field.jp/product/minatomachi-13-banchi/",
       "image_urls": [
         "https://tu-field.jp/product/minatomachi-13-banchi/",
         "https://www.kosho.or.jp/products/detail.php?product_id=456773693",
-        "https://www.kosho.or.jp/products/detail.php?product_id=456773693"
+        "https://aucview.aucfan.com/yahoo/b161055785/"
       ]
     }
   ]
