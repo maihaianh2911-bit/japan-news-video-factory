@@ -1991,9 +1991,57 @@
  },
  {
   "k": 22,
-  "query": "url:https://assets.st-note.com/production/uploads/images/56054712/rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg https://note.com/yoshizuka/n/nad5f7aebd355",
-  "results": [],
-  "error": "RuntimeError: could not load the picture https://assets.st-note.com/production/uploads/images/56054712/rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg"
+  "query": "web:昭和天皇 香淳皇后 1920年代",
+  "results": [
+   {
+    "title": "香淳皇后- 維基百科，自由嘅百科全書",
+    "page": "https://zh-yue.wikipedia.org/wiki/%E9%A6%99%E6%B7%B3%E7%9A%87%E5%90%8E",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/15/Empress_Kojun_1941-face.jpg?utm_source=zh-yue.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 448,
+    "height": 573,
+    "license": "",
+    "license_url": "",
+    "artist": "zh-yue.wikipedia.org",
+    "description": "香淳皇后- 維基百科，自由嘅百科全書",
+    "file": "22-1.jpg"
+   },
+   {
+    "title": "雅やかな十二単の世界〜香淳皇后: 雪姉ちゃんは目のふちが気になる",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2018/07/post-04eb.html",
+    "image": "http://kusagusa.cocolog-nifty.com/dairy/images/2018/07/12/k3.jpg",
+    "width": 400,
+    "height": 568,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "雅やかな十二単の世界〜香淳皇后: 雪姉ちゃんは目のふちが気になる",
+    "file": "22-2.jpg"
+   },
+   {
+    "title": "昭和天皇が愛した皇后。#歴史 #日本史 - YouTube",
+    "page": "https://www.youtube.com/shorts/hl7SyheymKw",
+    "image": "https://i.ytimg.com/vi/hl7SyheymKw/oardefault.jpg?sqp=-oaymwEYCJUDENAFSFqQAgHyq4qpAwcIARUAAIhC&rs=AOn4CLBsuF_K3vOPlK3I8Lhh8UKDKqodeA",
+    "width": 405,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "昭和天皇が愛した皇后。#歴史 #日本史 - YouTube",
+    "file": "22-3.jpg"
+   },
+   {
+    "title": "連載「「香淳皇后実録」を読み解く ～昭和天皇の后、97年の生涯 ...",
+    "page": "https://www.asahi.com/rensai/list.html?id=3146",
+    "image": "https://www.asahicom.jp/images23/fbox/edit5/202303/2025kojunkogojitsurokuoyomitoku_1200_800.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "asahi.com",
+    "description": "連載「「香淳皇后実録」を読み解く ～昭和天皇の后、97年の生涯 ...",
+    "file": "22-4.jpg"
+   }
+  ]
  },
  {
   "k": 23,
@@ -2015,21 +2063,201 @@
  },
  {
   "k": 24,
-  "query": "url:https://yamagatadantsu.co.jp/login/wp-content/uploads/2024/09/S__229212169_0.jpg https://yamagatadantsu.co.jp/column/2235/",
-  "results": [],
-  "error": "RuntimeError: could not load the picture https://yamagatadantsu.co.jp/login/wp-content/uploads/2024/09/S__229212169_0.jpg"
+  "query": "web:香淳皇后 若い頃 写真",
+  "results": [
+   {
+    "title": "上皇さま～誕生からご結婚まで～ 写真特集：時事ドットコム",
+    "page": "https://www.jiji.com/jc/d4?p=qej170&d=d4_twnt",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_twnt/qej170-01A193407A006.jpg",
+    "width": 452,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "上皇さま～誕生からご結婚まで～ 写真特集：時事ドットコム",
+    "file": "24-1.jpg"
+   },
+   {
+    "title": "写真](2ページ目)「国母」と慕われた香淳皇后 崩御から20年 ...",
+    "page": "https://bunshun.jp/articles/photo/38694?pn=2",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/c/4/750wm/img_c4b18d49d391e815502cd0913b0294c386786.jpg",
+    "width": 750,
+    "height": 421,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "写真](2ページ目)「国母」と慕われた香淳皇后 崩御から20年 ...",
+    "file": "24-2.jpg"
+   },
+   {
+    "title": "香淳皇后のお着物1: 雪姉ちゃんは目のふちが気になる",
+    "page": "http://kusagusa.cocolog-nifty.com/dairy/2019/06/post-8f0f25.html",
+    "image": "http://kusagusa.cocolog-nifty.com/photos/uncategorized/collagek1.jpg",
+    "width": 600,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "kusagusa.cocolog-nifty.com",
+    "description": "香淳皇后のお着物1: 雪姉ちゃんは目のふちが気になる",
+    "file": "24-3.jpg"
+   },
+   {
+    "title": "香淳皇后実録」が25年3月に完成へ 編さん開始から17年 [写真特集 ...",
+    "page": "https://mainichi.jp/graphs/20230919/mpj/00m/040/046000f/20230919mpj00m040042000p",
+    "image": "https://cdn.mainichi.jp/vol1/2023/09/19/20230919mpj00m040043000p/9.jpg?1",
+    "width": 538,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "香淳皇后実録」が25年3月に完成へ 編さん開始から17年 [写真特集 ...",
+    "file": "24-4.jpg"
+   },
+   {
+    "title": "昭和天皇記念館」で肖像集めた企画展開催 開館20年で ...",
+    "page": "https://www.sankei.com/article/20250125-TACLTZHGJRKQNNYSQDDZZO53DU/",
+    "image": "https://www.sankei.com/resizer/v2/2EYB55BBWZLKTOXK4NZLMNITQM.jpg?auth=d03f7f7f2ff6487f6911f2a520fe1a6e92c8600ec16db52a0b23824b78e0ac4d&quality=40&smart=true&width=1200",
+    "width": 1200,
+    "height": 1903,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "昭和天皇記念館」で肖像集めた企画展開催 開館20年で ...",
+    "file": "24-5.jpg"
+   }
+  ]
  },
  {
   "k": 25,
-  "query": "url:https://www.sankei.com/resizer/v2/3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156&quality=40&smart=true&width=1200 https://www.sankei.com/article/20251009-F3L2BXCQFBL2FOEOPISGQ3AJNM/",
-  "results": [],
-  "error": "RuntimeError: could not load the picture https://www.sankei.com/resizer/v2/3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156&quality=40&smart=true&width=1200"
+  "query": "web:昭和天皇 皇太子 洋装",
+  "results": [
+   {
+    "title": "皇太子裕仁親王の欧州訪問 - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E7%9A%87%E5%A4%AA%E5%AD%90%E8%A3%95%E4%BB%81%E8%A6%AA%E7%8E%8B%E3%81%AE%E6%AC%A7%E5%B7%9E%E8%A8%AA%E5%95%8F",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/79/Crown_Prince_Hirohito_in_Oxford_1921.jpg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 610,
+    "height": 452,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "皇太子裕仁親王の欧州訪問 - Wikipedia",
+    "file": "25-1.jpg"
+   },
+   {
+    "title": "昭和天皇とゴルフ",
+    "page": "https://www.tpi-j.co.jp/ceo_blog/diary/6917/",
+    "image": "https://www.tpi-j.co.jp/ceo_blog/wp-content/uploads/2022/01/PHOTO-2022-01-06-16-58-31-750x1024.jpg",
+    "width": 750,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "tpi-j.co.jp",
+    "description": "昭和天皇とゴルフ",
+    "file": "25-2.jpg"
+   },
+   {
+    "title": "だから上皇さまの｢昭和のプロポーズ大作戦｣は成功した…難航した ...",
+    "page": "https://president.jp/articles/-/93887",
+    "image": "https://president.jp/mwimgs/0/3/670/img_034e228a1f533e8f4d10cab5ddaf0673483574.jpg",
+    "width": 670,
+    "height": 449,
+    "license": "",
+    "license_url": "",
+    "artist": "president.jp",
+    "description": "だから上皇さまの｢昭和のプロポーズ大作戦｣は成功した…難航した ...",
+    "file": "25-3.jpg"
+   },
+   {
+    "title": "JOG(851) 昭和天皇と御召艦艦長・漢那憲和｜『国際派日本人養成 ...",
+    "page": "https://note.com/jog_jp/n/nc10aee76d8f1",
+    "image": "https://assets.st-note.com/production/uploads/images/147927226/rectangle_large_type_2_7857f8e3bed672ba857759b3356a8548.png?width=1200",
+    "width": 1200,
+    "height": 628,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "JOG(851) 昭和天皇と御召艦艦長・漢那憲和｜『国際派日本人養成 ...",
+    "file": "25-4.jpg"
+   },
+   {
+    "title": "天皇はなぜ外国を旅するのか 令和初の親善訪問を前に - 日本経済新聞",
+    "page": "https://www.nikkei.com/article/DGXZQOCD126YU0S3A610C2000000/",
+    "image": "https://article-image-ix.nikkei.com/https%3A%2F%2Fimgix-proxy.n8s.jp%2FDSXZQO3465119013062023000000-1.jpg?ixlib=js-3.8.0&w=638&h=865&auto=format%2Ccompress&fit=crop&bg=FFFFFF&s=0c889ec3196b9664322a5c0df2ab52c1",
+    "width": 638,
+    "height": 865,
+    "license": "",
+    "license_url": "",
+    "artist": "nikkei.com",
+    "description": "天皇はなぜ外国を旅するのか 令和初の親善訪問を前に - 日本経済新聞",
+    "file": "25-5.jpg"
+   },
+   {
+    "title": "昭和天皇実録」を読み解く）皇太子・摂政時代：2 むつまじい ...",
+    "page": "https://www.asahi.com/articles/DA3S11367926.html",
+    "image": "https://www.asahicom.jp/imgopt/img/66ce13c0bc/comm/AS20140925000395.jpg",
+    "width": 535,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "asahi.com",
+    "description": "昭和天皇実録」を読み解く）皇太子・摂政時代：2 むつまじい ...",
+    "file": "25-6.jpg"
+   },
+   {
+    "title": "昭憲皇太后の洋装写真、2座像を新たに確認 撮影者も初めて特定 ...",
+    "page": "https://www.tokyo-np.co.jp/article/94156",
+    "image": "https://static.tokyo-np.co.jp/image/article/size1/f/6/d/9/f6d99eb383bb82faf8b7acedf824a0cd_1.jpg",
+    "width": 462,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "tokyo-np.co.jp",
+    "description": "昭憲皇太后の洋装写真、2座像を新たに確認 撮影者も初めて特定 ...",
+    "file": "25-7.jpg"
+   },
+   {
+    "title": "沖縄海邦国体に出席のため沖縄を訪問した皇太子ご夫妻（当時 ...",
+    "page": "https://mainichi.jp/graphs/20240327/hpj/00m/010/001000g/20240312pol00m010001000p",
+    "image": "https://cdn.mainichi.jp/vol1/2024/03/12/20240312pol00m010001000p/9.jpg?2",
+    "width": 800,
+    "height": 604,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "沖縄海邦国体に出席のため沖縄を訪問した皇太子ご夫妻（当時 ...",
+    "file": "25-8.jpg"
+   }
+  ]
  },
  {
   "k": 26,
-  "query": "url:https://showa-g.org/img/00127_l.webp https://showa-g.org/photos/view/127",
-  "results": [],
-  "error": "RuntimeError: could not load the picture https://showa-g.org/img/00127_l.webp"
+  "query": "web:昭和天皇 香淳皇后 記念写真",
+  "results": [
+   {
+    "title": "昭和天皇 香淳皇后 御真影 額装品 記念写真 皇室 保管品｜Yahoo ...",
+    "page": "https://paypayfleamarket.yahoo.co.jp/item/z643665822",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0207/users/193e365f9e0026111d289b5d4c899142effdeeb2/i-img1200x1200-1783920686684sg6fs5.jpg",
+    "width": 1200,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "paypayfleamarket.yahoo.co.jp",
+    "description": "昭和天皇 香淳皇后 御真影 額装品 記念写真 皇室 保管品｜Yahoo ...",
+    "file": "26-1.jpg"
+   },
+   {
+    "title": "昭和天皇 香淳皇后 御真影 額装品 記念写真 皇室 保管品｜Yahoo ...",
+    "page": "https://paypayfleamarket.yahoo.co.jp/item/z643665822",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0207/users/193e365f9e0026111d289b5d4c899142effdeeb2/i-img1200x1200-1783920686684kbf1go.jpg",
+    "width": 1200,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "paypayfleamarket.yahoo.co.jp",
+    "description": "昭和天皇 香淳皇后 御真影 額装品 記念写真 皇室 保管品｜Yahoo ...",
+    "file": "26-2.jpg"
+   }
+  ]
  },
  {
   "k": 27,
@@ -2046,6 +2274,91 @@
     "artist": "sankei.com",
     "description": "",
     "file": "27-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 28,
+  "query": "file:stories/media/2026-11-16-showa-ichizu/couple-garden.jpg",
+  "results": [
+   {
+    "title": "couple-garden.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1455,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-ichizu/couple-garden.jpg",
+    "file": "28-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 29,
+  "query": "file:stories/media/2026-11-16-showa-ichizu/couple-baby.jpg",
+  "results": [
+   {
+    "title": "couple-baby.jpg",
+    "page": "",
+    "width": 935,
+    "height": 1140,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-ichizu/couple-baby.jpg",
+    "file": "29-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 30,
+  "query": "file:stories/media/2026-11-16-showa-ichizu/couple-elderly-hands.jpg",
+  "results": [
+   {
+    "title": "couple-elderly-hands.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 960,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-ichizu/couple-elderly-hands.jpg",
+    "file": "30-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 31,
+  "query": "file:stories/media/2026-11-16-showa-ichizu/nagako-hat.jpg",
+  "results": [
+   {
+    "title": "nagako-hat.jpg",
+    "page": "",
+    "width": 845,
+    "height": 635,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-ichizu/nagako-hat.jpg",
+    "file": "31-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 32,
+  "query": "file:stories/media/2026-11-16-showa-ichizu/hirohito-uniform.jpg",
+  "results": [
+   {
+    "title": "hirohito-uniform.jpg",
+    "page": "",
+    "width": 905,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-16-showa-ichizu/hirohito-uniform.jpg",
+    "file": "32-1.jpg"
    }
   ]
  }
