@@ -9,25 +9,17 @@
   },
   "photos": [
     {
-      "page": "https://www.chunichi.co.jp/article/1315303",
-      "title": "4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
-      "creator": "chunichi.co.jp",
+      "page": "https://x.com/kohji_musha/status/2020204433825812920",
+      "title": "長崎は今日も雨だった on X: \"東宝映画『ジャンケン娘』の 美空 ...",
+      "creator": "x.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-      "title": "Misora-Hibari-4.png",
-      "creator": "ja.wikipedia.org",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
-      "title": "20220405-OHT1I51121-L.jpg",
-      "creator": "hochi.news",
+      "page": "https://x.com/kohji_musha/status/2031434823232008370",
+      "title": "長崎は今日も雨だった on X: \"戦後、江利チエミさん・美空ひばり ...",
+      "creator": "x.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -161,17 +153,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://www.sankei.com/article/20241229-QPKULKITIFFEDOWPDGLSKRRFOI/",
-      "title": "2024年7月に亡くなった方々/「三人娘」園まりさんに「かしまし娘 ...",
-      "creator": "sankei.com",
+      "page": "https://www.jackandbetty.net/cinema/detail/1658/",
+      "title": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+      "creator": "jackandbetty.net",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://youtu.be/4ddrYR-HRrU?si=KViCmwMe-wnpaaMQ",
-      "title": "初代三人娘ー☆ジャンケン娘（美空ひばり、江利チエミ、雪村 ...",
-      "creator": "youtu.be",
+      "page": "https://www.jackandbetty.net/cinema/detail/1658/",
+      "title": "ひばり・チエミ・いづみ 三人よれば【月例ひばりチャンネル ...",
+      "creator": "jackandbetty.net",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -196,16 +188,15 @@
       "evidence": "",
       "say": [],
       "cut": "",
-      "why": "Mở đầu bằng 3 thời kỳ của bà (lúc bé, lúc trẻ đẹp, đêm 不死鳥) để người xem nhận ra ngay; câu hook in to.",
+      "why": "Câu mở: bìa tạp chí 東宝 năm 1955 có cả ba người; rồi ảnh màu ba người cười.",
       "era": "1937年",
       "quotes": [
         0
       ],
-      "image_url": "https://www.chunichi.co.jp/article/1315303",
+      "image_url": "https://x.com/kohji_musha/status/2020204433825812920",
       "image_urls": [
-        "https://www.chunichi.co.jp/article/1315303",
-        "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
-        "https://hochi.news/articles/20220405-OHT1T51076.html"
+        "https://x.com/kohji_musha/status/2020204433825812920",
+        "https://x.com/kohji_musha/status/2031434823232008370"
       ]
     },
     {
@@ -341,7 +332,7 @@
       "evidence": "",
       "say": [],
       "cut": "dip",
-      "why": "Chiemi những năm cuối; lễ tang năm ấy, đen trắng; Hibari trên sân khấu những năm 1980.",
+      "why": "Chiemi những năm cuối; Hibari đến viếng Chiemi năm 1982 (ảnh thật); Hibari trên sân khấu những năm 1980.",
       "era": "1982年",
       "quotes": [],
       "image_url": "https://www.amazon.co.uk/%E6%B1%9F%E5%88%A9%E3%83%81%E3%82%A8%E3%83%9F-%E6%98%AD%E5%92%8C%E6%AD%8C%E8%AC%A1%E3%82%92%E6%AD%8C%E3%81%86-BHST-231/dp/B07QFV77H4",
@@ -366,13 +357,13 @@
         "さんにんむすめの歌声は、今も昭和の思い出とともに生き続けています。"
       ],
       "cut": "fade",
-      "why": "Ba người đứng chung một micro; khép lại bằng ảnh màu ba người cười, lùi ra.",
+      "why": "Ba người trong phim 「三人よれば」 năm 1964; khép lại bằng poster phim có tên cả ba.",
       "era": "今",
       "quotes": [],
-      "image_url": "https://www.sankei.com/article/20241229-QPKULKITIFFEDOWPDGLSKRRFOI/",
+      "image_url": "https://www.jackandbetty.net/cinema/detail/1658/",
       "image_urls": [
-        "https://www.sankei.com/article/20241229-QPKULKITIFFEDOWPDGLSKRRFOI/",
-        "https://youtu.be/4ddrYR-HRrU?si=KViCmwMe-wnpaaMQ"
+        "https://www.jackandbetty.net/cinema/detail/1658/",
+        "https://www.jackandbetty.net/cinema/detail/1658/"
       ]
     }
   ]
