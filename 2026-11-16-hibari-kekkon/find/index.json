@@ -1,0 +1,2247 @@
+[
+ {
+  "k": 1,
+  "query": "url:https://static.chunichi.co.jp/image/article/size1/4/b/2/a/4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg https://www.chunichi.co.jp/article/1315303",
+  "results": [
+   {
+    "title": "4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
+    "page": "https://www.chunichi.co.jp/article/1315303",
+    "image": "https://static.chunichi.co.jp/image/article/size1/4/b/2/a/4b2af4da00c2eb26d66e3e14e34eb5eb_1.jpg",
+    "width": 788,
+    "height": 1220,
+    "license": "",
+    "license_url": "",
+    "artist": "chunichi.co.jp",
+    "description": "",
+    "file": "1-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 2,
+  "query": "url:https://upload.wikimedia.org/wikipedia/commons/9/97/Misora-Hibari-4.png https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+  "results": [
+   {
+    "title": "Misora-Hibari-4.png",
+    "page": "https://ja.wikipedia.org/wiki/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/97/Misora-Hibari-4.png",
+    "width": 550,
+    "height": 715,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "",
+    "file": "2-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 3,
+  "query": "url:https://hochi.news/images/2022/04/05/20220405-OHT1I51121-L.jpg https://hochi.news/articles/20220405-OHT1T51076.html",
+  "results": [
+   {
+    "title": "20220405-OHT1I51121-L.jpg",
+    "page": "https://hochi.news/articles/20220405-OHT1T51076.html",
+    "image": "https://hochi.news/images/2022/04/05/20220405-OHT1I51121-L.jpg",
+    "width": 1200,
+    "height": 812,
+    "license": "",
+    "license_url": "",
+    "artist": "hochi.news",
+    "description": "",
+    "file": "3-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 4,
+  "query": "web:小林旭 若い頃",
+  "results": [
+   {
+    "title": "プロフィール| 小林旭 | 日本コロムビアオフィシャルサイト",
+    "page": "https://columbia.jp/artist-info/akira/prof.html",
+    "image": "https://columbia.jp/artist-info/photo/akira01.jpg",
+    "width": 600,
+    "height": 692,
+    "license": "",
+    "license_url": "",
+    "artist": "columbia.jp",
+    "description": "プロフィール| 小林旭 | 日本コロムビアオフィシャルサイト",
+    "file": "4-1.jpg"
+   },
+   {
+    "title": "マイトガイ「小林旭」伝説～①小林旭と石原裕次郎 | 1970年 ...",
+    "page": "https://www.roman-blog.com/movie/%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%80%8C%E5%B0%8F%E6%9E%97%E6%97%AD%E3%80%8D%E4%BC%9D%E8%AA%AC%EF%BD%9E%E2%91%A0%E5%B0%8F%E6%9E%97%E6%97%AD%E3%81%A8%E7%9F%B3%E5%8E%9F%E8%A3%95%E6%AC%A1",
+    "image": "https://www.roman-blog.com/wp-content/uploads/2020/02/akirayujiro_kyojo-745x1024.jpeg",
+    "width": 745,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "roman-blog.com",
+    "description": "マイトガイ「小林旭」伝説～①小林旭と石原裕次郎 | 1970年 ...",
+    "file": "4-2.jpg"
+   },
+   {
+    "title": "雄大・浪漫・ナイアガラ。小林旭「熱き心に」 | よねともが ...",
+    "page": "https://ameblo.jp/tomotuba007/entry-12749029982.html",
+    "image": "https://stat.ameba.jp/user_images/20220619/02/tomotuba007/ff/e6/j/o0554055415134961196.jpg",
+    "width": 554,
+    "height": 554,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "雄大・浪漫・ナイアガラ。小林旭「熱き心に」 | よねともが ...",
+    "file": "4-3.jpg"
+   },
+   {
+    "title": "小林旭特集 | 無料ドラマ・映画 | BS無料放送ならBS12（トゥエルビ）",
+    "page": "https://www.twellv.co.jp/program/drama/kobayashiakira/",
+    "image": "https://d1luhpavo4dn74.cloudfront.net/wp-content/uploads/kobayashiakira-main.jpg",
+    "width": 750,
+    "height": 573,
+    "license": "",
+    "license_url": "",
+    "artist": "twellv.co.jp",
+    "description": "小林旭特集 | 無料ドラマ・映画 | BS無料放送ならBS12（トゥエルビ）",
+    "file": "4-4.jpg"
+   },
+   {
+    "title": "あのころ＞映画曲をデュエット 小林旭と浅丘ルリ子|47NEWS（よん ...",
+    "page": "https://www.47news.jp/5221402.html",
+    "image": "https://img.cf.47news.jp/public/photo/5bc35455888c2b0312b4a1d5ed227cd4/photo.jpg",
+    "width": 871,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "47news.jp",
+    "description": "あのころ＞映画曲をデュエット 小林旭と浅丘ルリ子|47NEWS（よん ...",
+    "file": "4-5.jpg"
+   },
+   {
+    "title": "小林旭 / 昔の名前で出ています / 夕子 (7インチ) | レコード ...",
+    "page": "https://recordlike.base.shop/items/105618493",
+    "image": "https://baseec-img-mng.akamaized.net/images/item/origin/f02f50644d78860a92a201c16d30e7f6.jpg?imformat=generic&q=90&im=Resize,width=1280,type=normal",
+    "width": 1280,
+    "height": 1280,
+    "license": "",
+    "license_url": "",
+    "artist": "recordlike.base.shop",
+    "description": "小林旭 / 昔の名前で出ています / 夕子 (7インチ) | レコード ...",
+    "file": "4-6.jpg"
+   },
+   {
+    "title": "アキラ1 | ディスコグラフィ | 小林旭 | 日本コロムビア ...",
+    "page": "https://columbia.jp/artist-info/akira/discography/COCP-40683.html",
+    "image": "https://columbia.jp/artist-info/jacket/COCP-40683.jpg",
+    "width": 400,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "columbia.jp",
+    "description": "アキラ1 | ディスコグラフィ | 小林旭 | 日本コロムビア ...",
+    "file": "4-7.jpg"
+   },
+   {
+    "title": "かつてのスーパースターも老いには…」5億円豪邸を売却する小林旭 ...",
+    "page": "https://nishispo.nishinippon.co.jp/article/1050053",
+    "image": "https://nishispo-static.nishinippon.co.jp/image/article/size1/0/4/b/5/04b510a98aa48d0b7bd63ac1c957526f_1.jpg",
+    "width": 1220,
+    "height": 899,
+    "license": "",
+    "license_url": "",
+    "artist": "nishispo.nishinippon.co.jp",
+    "description": "かつてのスーパースターも老いには…」5億円豪邸を売却する小林旭 ...",
+    "file": "4-8.jpg"
+   },
+   {
+    "title": "小林旭 泣いて昔が返るなら CW-1565 | レコード通販",
+    "page": "https://www.snowrecords.jp/?pid=162462763",
+    "image": "https://img.snowrecords.com/ep/12000/10831.jpg",
+    "width": 500,
+    "height": 501,
+    "license": "",
+    "license_url": "",
+    "artist": "snowrecords.jp",
+    "description": "小林旭 泣いて昔が返るなら CW-1565 | レコード通販",
+    "file": "4-9.jpg"
+   },
+   {
+    "title": "小林旭「昔の名前で出ています」（オフィシャルオーディオ ...",
+    "page": "https://www.youtube.com/watch?v=KeEPGmrOTLI",
+    "image": "https://i.ytimg.com/vi/KeEPGmrOTLI/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "小林旭「昔の名前で出ています」（オフィシャルオーディオ ...",
+    "file": "4-10.jpg"
+   }
+  ]
+ },
+ {
+  "k": 5,
+  "query": "web:渡り鳥シリーズ 小林旭",
+  "results": [
+   {
+    "title": "小林旭特集 | 無料ドラマ・映画 | BS無料放送ならBS12（トゥエルビ）",
+    "page": "https://www.twellv.co.jp/program/drama/kobayashiakira/",
+    "image": "https://d1luhpavo4dn74.cloudfront.net/wp-content/uploads/guitar-wataridori-01-n.jpg",
+    "width": 800,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "twellv.co.jp",
+    "description": "小林旭特集 | 無料ドラマ・映画 | BS無料放送ならBS12（トゥエルビ）",
+    "file": "5-1.jpg"
+   },
+   {
+    "title": "マイトガイ」の愛称で知られる大スター小林旭の主演作品をお届け ...",
+    "page": "https://www.twellv.co.jp/news/whatsnew/2025/116285/",
+    "image": "https://d1luhpavo4dn74.cloudfront.net/wp-content/uploads/kobayashiakira-KV.jpg",
+    "width": 750,
+    "height": 573,
+    "license": "",
+    "license_url": "",
+    "artist": "twellv.co.jp",
+    "description": "マイトガイ」の愛称で知られる大スター小林旭の主演作品をお届け ...",
+    "file": "5-2.jpg"
+   },
+   {
+    "title": "帰ってきた渡り鳥一家 of wataridori",
+    "page": "https://www.8107.net/akira/kaettekita.html",
+    "image": "https://www.8107.net/akira/_src/sc510/katsugiya.jpg",
+    "width": 441,
+    "height": 686,
+    "license": "",
+    "license_url": "",
+    "artist": "8107.net",
+    "description": "帰ってきた渡り鳥一家 of wataridori",
+    "file": "5-3.jpg"
+   },
+   {
+    "title": "画像・写真 “マイトガイ”小林旭の日活映画から厳選5作を連続放送 ...",
+    "page": "https://thetv.jp/news/detail/1295899/15369644/",
+    "image": "https://thetv.jp/i/nw/1295899/15369644.jpg?w=1284",
+    "width": 1284,
+    "height": 829,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "画像・写真 “マイトガイ”小林旭の日活映画から厳選5作を連続放送 ...",
+    "file": "5-4.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: 日活100周年邦画クラシック GREAT20 ギターを持っ ...",
+    "page": "https://www.amazon.co.jp/%E6%97%A5%E6%B4%BB100%E5%91%A8%E5%B9%B4%E9%82%A6%E7%94%BB%E3%82%AF%E3%83%A9%E3%82%B7%E3%83%83%E3%82%AF-GREAT20-%E3%82%AE%E3%82%BF%E3%83%BC%E3%82%92%E6%8C%81%E3%81%A3%E3%81%9F%E6%B8%A1%E3%82%8A%E9%B3%A5-%EF%BC%A8%EF%BC%A4%E3%83%AA%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC%E7%89%88-DVD/dp/B0057D243G",
+    "image": "https://m.media-amazon.com/images/I/71JkDG6QqKL._AC_UF894,1000_QL80_.jpg",
+    "width": 706,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: 日活100周年邦画クラシック GREAT20 ギターを持っ ...",
+    "file": "5-5.jpg"
+   },
+   {
+    "title": "小林旭「渡り鳥シリーズ」一挙3本上映 | つながる映画祭",
+    "page": "https://tsunagaru.localinfo.jp/posts/30374051/",
+    "image": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/1422559/1a12818ceb75d41f8a0270fd784e39d0_240af08e79c2f9cb89705f125dcc4d4d.jpg",
+    "width": 2175,
+    "height": 979,
+    "license": "",
+    "license_url": "",
+    "artist": "tsunagaru.localinfo.jp",
+    "description": "小林旭「渡り鳥シリーズ」一挙3本上映 | つながる映画祭",
+    "file": "5-6.jpg"
+   },
+   {
+    "title": "小林旭全曲集 ギターを持った渡り鳥: 商品カテゴリー | 小林旭 ...",
+    "page": "https://shop.columbia.jp/shop/g/gE9214/",
+    "image": "https://shop.columbia.jp/img/goods/L/E9214_87446b51f9804936990b897ed6bbf579.jpg",
+    "width": 540,
+    "height": 540,
+    "license": "",
+    "license_url": "",
+    "artist": "shop.columbia.jp",
+    "description": "小林旭全曲集 ギターを持った渡り鳥: 商品カテゴリー | 小林旭 ...",
+    "file": "5-7.jpg"
+   },
+   {
+    "title": "マイトガイ”小林旭の日活映画から厳選5作を連続放送、初回は ...",
+    "page": "https://thetv.jp/news/detail/1295899/p2/",
+    "image": "https://thetv.jp/i/nw/1295899/15369641.jpg?w=1284",
+    "width": 1284,
+    "height": 1284,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "マイトガイ”小林旭の日活映画から厳選5作を連続放送、初回は ...",
+    "file": "5-8.jpg"
+   },
+   {
+    "title": "エースのジョー”宍戸錠と”渡り鳥”小林旭にフォーカス！海外で ...",
+    "page": "https://cinefil.tokyo/_ct/16975545",
+    "image": "https://d1uzk9o9cg136f.cloudfront.net/f/16781437/rc/2016/07/06/d9036d2a9d7a5681c2f1c11c98899b96a1a0a665.jpg",
+    "width": 678,
+    "height": 960,
+    "license": "",
+    "license_url": "",
+    "artist": "cinefil.tokyo",
+    "description": "エースのジョー”宍戸錠と”渡り鳥”小林旭にフォーカス！海外で ...",
+    "file": "5-9.jpg"
+   },
+   {
+    "title": "ギターを持った渡り鳥 | 月曜スペシャル「銀幕の大女優～BS12人 ...",
+    "page": "https://www.twellv.co.jp/program/drama/getsuyou-sp/archive-getsuyou-sp/getsuyou-sp-027/",
+    "image": "https://d1luhpavo4dn74.cloudfront.net/wp-content/uploads/20190813130514/027-004.jpg",
+    "width": 720,
+    "height": 405,
+    "license": "",
+    "license_url": "",
+    "artist": "twellv.co.jp",
+    "description": "ギターを持った渡り鳥 | 月曜スペシャル「銀幕の大女優～BS12人 ...",
+    "file": "5-10.jpg"
+   },
+   {
+    "title": "ギターを持った渡り鳥 | 月曜スペシャル「銀幕の大女優～BS12人 ...",
+    "page": "https://www.twellv.co.jp/program/drama/getsuyou-sp/archive-getsuyou-sp/getsuyou-sp-027/",
+    "image": "https://d1luhpavo4dn74.cloudfront.net/wp-content/uploads/20190813130515/027-005.jpg",
+    "width": 720,
+    "height": 405,
+    "license": "",
+    "license_url": "",
+    "artist": "twellv.co.jp",
+    "description": "ギターを持った渡り鳥 | 月曜スペシャル「銀幕の大女優～BS12人 ...",
+    "file": "5-11.jpg"
+   },
+   {
+    "title": "マイトガイ”小林旭の日活映画から厳選5作を連続放送、初回は ...",
+    "page": "https://thetv.jp/news/detail/1295899/",
+    "image": "https://thetv.jp/i/nw/1295899/15369643.jpg?w=1284",
+    "width": 1100,
+    "height": 780,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "マイトガイ”小林旭の日活映画から厳選5作を連続放送、初回は ...",
+    "file": "5-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 6,
+  "query": "web:ギターを持った渡り鳥 小林旭",
+  "results": [
+   {
+    "title": "ギターを持った渡り鳥 : 作品情報・キャスト・あらすじ - 映画.com",
+    "page": "https://eiga.com/movie/40290/",
+    "image": "https://media.eiga.com/images/movie/40290/photo/e00244b712b3e203.jpg",
+    "width": 640,
+    "height": 460,
+    "license": "",
+    "license_url": "",
+    "artist": "eiga.com",
+    "description": "ギターを持った渡り鳥 : 作品情報・キャスト・あらすじ - 映画.com",
+    "file": "6-1.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: ギターを持った渡り鳥 : 小林旭, 浅丘ルリ子 ...",
+    "page": "https://www.amazon.co.jp/%E3%82%AE%E3%82%BF%E3%83%BC%E3%82%92%E6%8C%81%E3%81%A3%E3%81%9F%E6%B8%A1%E3%82%8A%E9%B3%A5-DVD-%E5%B0%8F%E6%9E%97%E6%97%AD/dp/B00006G90G",
+    "image": "https://m.media-amazon.com/images/I/51SRM55NQWL._AC_UF894,1000_QL80_.jpg",
+    "width": 894,
+    "height": 705,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: ギターを持った渡り鳥 : 小林旭, 浅丘ルリ子 ...",
+    "file": "6-2.jpg"
+   },
+   {
+    "title": "59【EP】小林旭 / ギターを持った渡り鳥 | PAY ID",
+    "page": "https://payid.jp/item/19133265",
+    "image": "https://baseec-img-mng.akamaized.net/images/item/origin/bc6573d73adee5b69333be9f94359a81.jpg?imformat=generic&q=80&im=Resize,width=1120,type=normal",
+    "width": 1120,
+    "height": 1117,
+    "license": "",
+    "license_url": "",
+    "artist": "payid.jp",
+    "description": "59【EP】小林旭 / ギターを持った渡り鳥 | PAY ID",
+    "file": "6-3.jpg"
+   },
+   {
+    "title": "ギターを持った渡り鳥 小林旭 - YouTube",
+    "page": "https://www.youtube.com/watch?v=lZsSLC9qy0s",
+    "image": "https://i.ytimg.com/vi/lZsSLC9qy0s/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "ギターを持った渡り鳥 小林旭 - YouTube",
+    "file": "6-4.jpg"
+   },
+   {
+    "title": "7.16~18『ギターを持った渡り鳥』 - 高田世界館【公式サイト】",
+    "page": "https://takadasekaikan.com/archives/2782",
+    "image": "https://takadasekaikan.com/wp-content/uploads/2016/07/83a8fadce3f455fbca8d0de2cc6b3835.jpg",
+    "width": 2400,
+    "height": 1133,
+    "license": "",
+    "license_url": "",
+    "artist": "takadasekaikan.com",
+    "description": "7.16~18『ギターを持った渡り鳥』 - 高田世界館【公式サイト】",
+    "file": "6-5.jpg"
+   },
+   {
+    "title": "ギターを持った渡り鳥-歌詞-小林 旭-KKBOX",
+    "page": "https://www.kkbox.com/jp/ja/song/XXTPFsWoN4kbqmsgFv",
+    "image": "https://i.kfs.io/album/jp/1065292,0v1/fit/500x500.jpg",
+    "width": 500,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "kkbox.com",
+    "description": "ギターを持った渡り鳥-歌詞-小林 旭-KKBOX",
+    "file": "6-6.jpg"
+   },
+   {
+    "title": "ギターを持った渡り鳥 | Hulu(フールー)",
+    "page": "https://www.hulu.jp/the-rambling-guitarist",
+    "image": "https://images.prod.hjholdings.tv/d3urerHm/uploads/cae48827-a998-4b2b-83fd-8c9c10af20d2.jpg?w=1600&h=600&p=t",
+    "width": 1600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "hulu.jp",
+    "description": "ギターを持った渡り鳥 | Hulu(フールー)",
+    "file": "6-7.jpg"
+   },
+   {
+    "title": "小林旭「ギターを持った渡り鳥」総浚え｜壷中天",
+    "page": "https://note.com/46000days/n/n4b63992cd92f",
+    "image": "https://assets.st-note.com/img/1737146697-Kx9gL5a4zNnkiUYqStfMubFG.jpg",
+    "width": 1000,
+    "height": 990,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "小林旭「ギターを持った渡り鳥」総浚え｜壷中天",
+    "file": "6-8.jpg"
+   },
+   {
+    "title": "芽瑠璃堂 ＞ 小林旭 『小林旭全曲集 ギターを持った渡り鳥 ...",
+    "page": "https://merurido.jp/item.php?ky=COCP40440",
+    "image": "https://merurido.jp/_images/front_image/500pix/COCP40440.jpg",
+    "width": 1120,
+    "height": 984,
+    "license": "",
+    "license_url": "",
+    "artist": "merurido.jp",
+    "description": "芽瑠璃堂 ＞ 小林旭 『小林旭全曲集 ギターを持った渡り鳥 ...",
+    "file": "6-9.jpg"
+   },
+   {
+    "title": "BS12で観る小林旭特集〜日本の西部劇「ギターを持った渡り鳥 ...",
+    "page": "https://note.com/hoodroad/n/na8ff38533600",
+    "image": "https://assets.st-note.com/img/1759791145-pCV2ldikYUuaNKBomWFw0EjG.jpg",
+    "width": 1280,
+    "height": 1920,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "BS12で観る小林旭特集〜日本の西部劇「ギターを持った渡り鳥 ...",
+    "file": "6-10.jpg"
+   },
+   {
+    "title": "小林旭'ギターを持った渡り鳥'映画ポスター /【Buyee】 Buyee ...",
+    "page": "https://buyee.jp/item/jdirectitems/shopping/art-roppongi-store_zs-15?lang=en",
+    "image": "https://cdnyshopping.buyee.jp/i/l/art-roppongi-store_zs-15_1",
+    "width": 600,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "buyee.jp",
+    "description": "小林旭'ギターを持った渡り鳥'映画ポスター /【Buyee】 Buyee ...",
+    "file": "6-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 7,
+  "query": "web:美空ひばり 小林旭 結婚式 1962",
+  "results": [
+   {
+    "title": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "page": "https://www.news-postseven.com/archives/20230503_1864554.html?DETAIL",
+    "image": "https://www.news-postseven.com/uploads/2023/04/26/hibari_akira-723x750.jpg",
+    "width": 723,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "news-postseven.com",
+    "description": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "file": "7-1.jpg"
+   },
+   {
+    "title": "週刊平凡 1962年11月15日号 小林旭 美空ひばり結婚記念特集号 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=568642924",
+    "image": "https://www.kosho.or.jp/upload/save_image/12010720/20250316101827039688_c269e901e33f21f000213c3e43794b3f.jpg",
+    "width": 600,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "週刊平凡 1962年11月15日号 小林旭 美空ひばり結婚記念特集号 ...",
+    "file": "7-2.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - BP1600サ 「旭とひばりは歌う 」 1962年12 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/h1077107628",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0312/users/cb6596e08d785f37ac8c455d33702030b7cca444/i-img900x1200-1672390421yrk0fi367932.jpg",
+    "width": 900,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - BP1600サ 「旭とひばりは歌う 」 1962年12 ...",
+    "file": "7-3.jpg"
+   },
+   {
+    "title": "週刊平凡1962年11月15日号小林旭 美空ひばり(平凡 ...",
+    "page": "https://aucview.aucfan.com/yahoo/g134919626/",
+    "image": "https://auctions.afimg.jp/g134919626/ya/image/g134919626.2.jpg",
+    "width": 600,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "週刊平凡1962年11月15日号小林旭 美空ひばり(平凡 ...",
+    "file": "7-4.jpg"
+   },
+   {
+    "title": "1962年、一大ニュースになってましたね！",
+    "page": "https://ganshoji.com/pages/88?detail=1&b_id=1276&r_id=9183",
+    "image": "https://ganshoji.com/files/libs/19883/202111092147522898.jpg",
+    "width": 720,
+    "height": 960,
+    "license": "",
+    "license_url": "",
+    "artist": "ganshoji.com",
+    "description": "1962年、一大ニュースになってましたね！",
+    "file": "7-5.jpg"
+   },
+   {
+    "title": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "page": "https://www.news-postseven.com/archives/20230503_1864554.html?DETAIL",
+    "image": "https://www.news-postseven.com/uploads/2023/04/26/morishinichi_ooharareiko-506x750.jpg",
+    "width": 506,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "news-postseven.com",
+    "description": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "file": "7-6.jpg"
+   },
+   {
+    "title": "別冊近代映画 1962年6月号 美空ひばり小林旭婚約記念特集号 ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=593815731",
+    "image": "https://www.kosho.or.jp/upload/save_image/12020010/20250930181935670947_cae34d2312ab1129a6424dd47c1baa6c.jpg",
+    "width": 478,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "別冊近代映画 1962年6月号 美空ひばり小林旭婚約記念特集号 ...",
+    "file": "7-7.jpg"
+   },
+   {
+    "title": "週刊平凡 1962年11月15日号 小林旭 美空ひばり 結婚記念特集号 ...",
+    "page": "https://jp.mercari.com/item/m65712880759",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m65712880759_1.jpg?1765737103",
+    "width": 810,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "週刊平凡 1962年11月15日号 小林旭 美空ひばり 結婚記念特集号 ...",
+    "file": "7-8.jpg"
+   },
+   {
+    "title": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "page": "https://jp.mercari.com/item/m13744284773",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m13744284773_2.jpg?1744240702",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "file": "7-9.jpg"
+   },
+   {
+    "title": "別冊近代映画 1962年6月号 美空ひばり 小林旭 婚約記念特集号 ...",
+    "page": "https://jp.mercari.com/item/m76229098421",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m76229098421_2.jpg?1765735114",
+    "width": 810,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "別冊近代映画 1962年6月号 美空ひばり 小林旭 婚約記念特集号 ...",
+    "file": "7-10.jpg"
+   },
+   {
+    "title": "テレ朝POST » 美空ひばりさんとわずか2年の結婚生活…小林旭が ...",
+    "page": "https://post.tv-asahi.co.jp/post-751655/",
+    "image": "https://post.tv-asahi.co.jp/wp-content/uploads/2026/05/tetsuko0513_3.jpg",
+    "width": 880,
+    "height": 584,
+    "license": "",
+    "license_url": "",
+    "artist": "post.tv-asahi.co.jp",
+    "description": "テレ朝POST » 美空ひばりさんとわずか2年の結婚生活…小林旭が ...",
+    "file": "7-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 8,
+  "query": "web:美空ひばり 小林旭 披露宴",
+  "results": [
+   {
+    "title": "杵まき on X: \"『東映の友』に載っていた小林旭さん、美空ひばり ...",
+    "page": "https://x.com/2mNh0/status/2009196933508944114",
+    "image": "https://pbs.twimg.com/media/G-IZ9Cna4AAOtnd?format=webp&name=large",
+    "width": 1430,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "杵まき on X: \"『東映の友』に載っていた小林旭さん、美空ひばり ...",
+    "file": "8-1.jpg"
+   },
+   {
+    "title": "美空ひばりと小林旭の結婚と別れ｜未入籍の真相と破局の全貌を追う",
+    "page": "https://www.bizilabe.elhuyar.eus/Kosei-Hayakawa-Kondo/7936116/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/6e4c67df41ba9ed9607c41b47a826cf61565a3dd/i-img1200x900-1560779729oplv2e88.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "bizilabe.elhuyar.eus",
+    "description": "美空ひばりと小林旭の結婚と別れ｜未入籍の真相と破局の全貌を追う",
+    "file": "8-2.jpg"
+   },
+   {
+    "title": "平凡（昭和34年11月号）】小林旭・浅丘ルリ子・美空ひばり ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=473033070",
+    "image": "https://www.kosho.or.jp/upload/save_image/7000240/20230604221643579859_c5e3497575bfaa96d07b71ccb3eeb764.jpg",
+    "width": 600,
+    "height": 457,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "平凡（昭和34年11月号）】小林旭・浅丘ルリ子・美空ひばり ...",
+    "file": "8-3.jpg"
+   },
+   {
+    "title": "小林旭＞今年88歳に 1962年に美空ひばりさんと挙式 結婚生活は ...",
+    "page": "https://news.yahoo.co.jp/articles/24eb0e0e920aaeedce56753196654b10fd5cf341",
+    "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260514-00000001-maikirei-000-1-view.jpg?pri=l&w=640&h=424&exp=10800",
+    "width": 640,
+    "height": 424,
+    "license": "",
+    "license_url": "",
+    "artist": "news.yahoo.co.jp",
+    "description": "小林旭＞今年88歳に 1962年に美空ひばりさんと挙式 結婚生活は ...",
+    "file": "8-4.jpg"
+   },
+   {
+    "title": "超希少 美空ひばりと小林旭の結婚式引き出物限定贈答品レコード ...",
+    "page": "https://aucview.aucfan.com/yahoo/n136812560/",
+    "image": "https://auctions.afimg.jp/n136812560/ya/image/n136812560.1.jpg",
+    "width": 600,
+    "height": 450,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "超希少 美空ひばりと小林旭の結婚式引き出物限定贈答品レコード ...",
+    "file": "8-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 9,
+  "query": "web:美空ひばり 小林旭 ツーショット",
+  "results": [
+   {
+    "title": "結婚記念レコード 歌う小林旭・美空ひばり 第1付録〉〈愛の ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=62715089",
+    "image": "https://www.kosho.or.jp/upload/save_image/26020250/02021937_56b086f7c7e51.jpg",
+    "width": 574,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "結婚記念レコード 歌う小林旭・美空ひばり 第1付録〉〈愛の ...",
+    "file": "9-1.jpg"
+   },
+   {
+    "title": "美空ひばり/小林旭 永遠に幸あれ カップル レコード2枚組 - メルカリ",
+    "page": "https://jp.mercari.com/item/m11026580806",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m11026580806_1.jpg?1716215419",
+    "width": 987,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "美空ひばり/小林旭 永遠に幸あれ カップル レコード2枚組 - メルカリ",
+    "file": "9-2.jpg"
+   },
+   {
+    "title": "EP 小林旭 美空ひばり 結婚記念レコード 俺は雑草/ロマンチック ...",
+    "page": "https://paypayfleamarket.yahoo.co.jp/item/f1092496292",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0405/users/2c730371c4a1174dbeaf2762cf7d7082c3641528/i-img1163x1200-1684483836kpijqp92780.jpg",
+    "width": 1163,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "paypayfleamarket.yahoo.co.jp",
+    "description": "EP 小林旭 美空ひばり 結婚記念レコード 俺は雑草/ロマンチック ...",
+    "file": "9-3.jpg"
+   },
+   {
+    "title": "お前一人のものにはできないんだよ」と…》小林旭が明かした美空 ...",
+    "page": "https://bunshun.jp/articles/-/63302",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/d/0/1200wm/img_d0b46dcf5c97f47e3d24de9c1852d010451551.jpg",
+    "width": 1200,
+    "height": 400,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "お前一人のものにはできないんだよ」と…》小林旭が明かした美空 ...",
+    "file": "9-4.jpg"
+   },
+   {
+    "title": "アンドリュ～星野 on X: \"近代映画の美空ひばり・小林旭の婚約 ...",
+    "page": "https://x.com/Susumu_SaKamori/status/2096264843007533339",
+    "image": "https://pbs.twimg.com/media/HRdtwUga8AAtnUR?format=webp&name=large",
+    "width": 1536,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "アンドリュ～星野 on X: \"近代映画の美空ひばり・小林旭の婚約 ...",
+    "file": "9-5.jpg"
+   }
+  ]
+ },
+ {
+  "k": 10,
+  "query": "web:美空ひばり 母 喜美枝",
+  "results": [
+   {
+    "title": "偉人『美空ひばりの母』 | Baby教室シオ",
+    "page": "https://babyschool-sio.localinfo.jp/posts/55529719/",
+    "image": "https://cdn.amebaowndme.com/madrid-prd/madrid-web/images/sites/977391/3c4fbaf9330c95b707cda82e411229a4_ecfbbb582cfd19c5d7bdee845f0f0531.jpg?width=564",
+    "width": 564,
+    "height": 493,
+    "license": "",
+    "license_url": "",
+    "artist": "babyschool-sio.localinfo.jp",
+    "description": "偉人『美空ひばりの母』 | Baby教室シオ",
+    "file": "10-1.jpg"
+   },
+   {
+    "title": "YouTube Music",
+    "page": "https://music.youtube.com/podcast/PaDU5wM_MCQ",
+    "image": "https://i.ytimg.com/vi/PaDU5wM_MCQ/hq720.jpg?sqp=-oaymwEKCNUGEN8DIABIWg&rs=AMzJL3m4seyuo1mB87cSkLChiRJBhVM7Rg",
+    "width": 853,
+    "height": 479,
+    "license": "",
+    "license_url": "",
+    "artist": "music.youtube.com",
+    "description": "YouTube Music",
+    "file": "10-2.jpg"
+   },
+   {
+    "title": "美空ひばりの画像・写真 | 昭和53年、京都の料理店「北斎」にて ...",
+    "page": "https://www.jprime.jp/list/tag/%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/photo/5",
+    "image": "https://jprime.ismcdn.jp/mwimgs/b/b/-/img_bb6c74b007ddf430c01f834be6446afe1207399.jpg",
+    "width": 1280,
+    "height": 854,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "美空ひばりの画像・写真 | 昭和53年、京都の料理店「北斎」にて ...",
+    "file": "10-3.jpg"
+   },
+   {
+    "title": "さとみ on X: \"今日7月29日は、ひばりさんの母・加藤喜美枝さん ...",
+    "page": "https://x.com/SATOMI328/status/1949847392724918387",
+    "image": "https://pbs.twimg.com/media/Gw8_3qWbYAEF_tk?format=webp&name=large",
+    "width": 1229,
+    "height": 1229,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "さとみ on X: \"今日7月29日は、ひばりさんの母・加藤喜美枝さん ...",
+    "file": "10-4.jpg"
+   },
+   {
+    "title": "付き人が語る昭和の歌姫・美空ひばりさん2（2019年6月13日掲載 ...",
+    "page": "https://news.ntv.co.jp/category/culture/451278",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/ef8e148994894296831daa408877d5be/ent_57986.jpg?w=1200",
+    "width": 800,
+    "height": 534,
+    "license": "",
+    "license_url": "",
+    "artist": "news.ntv.co.jp",
+    "description": "付き人が語る昭和の歌姫・美空ひばりさん2（2019年6月13日掲載 ...",
+    "file": "10-5.jpg"
+   },
+   {
+    "title": "美空ひばり誕生物語 おでことおでこがぶつかって | 無料見逃し ...",
+    "page": "https://cu.tbs.co.jp/program/26595",
+    "image": "https://asset.catalog.play.jp/tbs/tbs_free/26595/artwork/0/b3c6aa91cfde825fb4491a55af33a4b7f23007cd5f7a22e0fd0380c0b5232140.jpg",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "cu.tbs.co.jp",
+    "description": "美空ひばり誕生物語 おでことおでこがぶつかって | 無料見逃し ...",
+    "file": "10-6.jpg"
+   },
+   {
+    "title": "6ページ目）郷ひろみ、西城秀樹、野口五郎…新御三家のライバル ...",
+    "page": "https://fujinkoron.jp/articles/-/3601?page=6",
+    "image": "https://fujinkoronmw.ismcdn.jp/mwimgs/d/2/1280m/img_d29ca3e82494f0abd02ce5399dff3557128355.jpg",
+    "width": 1200,
+    "height": 960,
+    "license": "",
+    "license_url": "",
+    "artist": "fujinkoron.jp",
+    "description": "6ページ目）郷ひろみ、西城秀樹、野口五郎…新御三家のライバル ...",
+    "file": "10-7.jpg"
+   },
+   {
+    "title": "プリン人形 on X: \"美空ひばりの母(1966) 怖そう😱\" / X",
+    "page": "https://x.com/icjk2019/status/2082432681607053320",
+    "image": "https://pbs.twimg.com/media/HOZJeYpbsAAAqXX?format=webp&name=large",
+    "width": 1431,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "プリン人形 on X: \"美空ひばりの母(1966) 怖そう😱\" / X",
+    "file": "10-8.jpg"
+   },
+   {
+    "title": "驚きももの木20世紀SP 美空ひばりの母 加藤喜美枝物語_哔哩哔哩_ ...",
+    "page": "https://www.bilibili.com/video/BV1hY4y1s7w6/",
+    "image": "https://i2.hdslb.com/bfs/archive/47a75f39290d9fd3a7e13d77bfcc09bb85deb205.jpg@1200w_630h",
+    "width": 654,
+    "height": 480,
+    "license": "",
+    "license_url": "",
+    "artist": "bilibili.com",
+    "description": "驚きももの木20世紀SP 美空ひばりの母 加藤喜美枝物語_哔哩哔哩_ ...",
+    "file": "10-9.jpg"
+   },
+   {
+    "title": "プリン人形 on X: \"美空ひばりの母(1966) 怖そう😱\" / X",
+    "page": "https://x.com/icjk2019/status/2082432681607053320",
+    "image": "https://pbs.twimg.com/media/HOZJeYtawAAfbDq?format=webp&name=large",
+    "width": 1510,
+    "height": 2048,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "プリン人形 on X: \"美空ひばりの母(1966) 怖そう😱\" / X",
+    "file": "10-10.jpg"
+   },
+   {
+    "title": "写真・画像 | 3枚目 | 美空ひばりさん、11歳で撮影した ...",
+    "page": "https://entapark.jp/articles/20260923-OHT1T51449.html?mode=photo&photoid=3",
+    "image": "https://hochi.news/images/2026/09/23/20260923-OHT1I51624-L.jpg",
+    "width": 909,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "entapark.jp",
+    "description": "写真・画像 | 3枚目 | 美空ひばりさん、11歳で撮影した ...",
+    "file": "10-11.jpg"
+   }
+  ]
+ },
+ {
+  "k": 11,
+  "query": "web:美空ひばり 母娘 写真",
+  "results": [
+   {
+    "title": "美空ひばりの子役時代の出演映画「母を慕いて」で見る、彼女の大 ...",
+    "page": "https://www.skyperfectv.co.jp/article/detail/4576",
+    "image": "https://hominis.media/2024/07/images/haha3.jpg",
+    "width": 780,
+    "height": 564,
+    "license": "",
+    "license_url": "",
+    "artist": "skyperfectv.co.jp",
+    "description": "美空ひばりの子役時代の出演映画「母を慕いて」で見る、彼女の大 ...",
+    "file": "11-1.jpg"
+   },
+   {
+    "title": "写真】私には「美空ひばり」と「母」の2人がいた感覚でした ...",
+    "page": "https://gendai.media/articles/images/132377",
+    "image": "https://cdn.kds.ltd/gendai/kk35p4q12i0ed2kuivold8p9/_/f_auto,c_limit,w_640,h_440",
+    "width": 493,
+    "height": 440,
+    "license": "",
+    "license_url": "",
+    "artist": "gendai.media",
+    "description": "写真】私には「美空ひばり」と「母」の2人がいた感覚でした ...",
+    "file": "11-2.jpg"
+   },
+   {
+    "title": "そごう千葉店】美空ひばり〜知られざる歌姫のこころ〜 | 株式 ...",
+    "page": "https://prtimes.jp/main/html/rd/p/000000299.000031382.html",
+    "image": "https://prtimes.jp/i/31382/299/resize/d31382-299-218874-3.jpg",
+    "width": 650,
+    "height": 650,
+    "license": "",
+    "license_url": "",
+    "artist": "prtimes.jp",
+    "description": "そごう千葉店】美空ひばり〜知られざる歌姫のこころ〜 | 株式 ...",
+    "file": "11-3.jpg"
+   },
+   {
+    "title": "😭💖 美空ひばりが遺した最後の名曲…娘が母の写真を胸に抱き、涙 ...",
+    "page": "https://www.youtube.com/watch?v=UF7xplBtg0w",
+    "image": "https://i.ytimg.com/vi/UF7xplBtg0w/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "😭💖 美空ひばりが遺した最後の名曲…娘が母の写真を胸に抱き、涙 ...",
+    "file": "11-4.jpg"
+   },
+   {
+    "title": "😭🎙️ 美空ひばりの娘・17歳、涙の初舞台――💔 母の魂を受け継い ...",
+    "page": "https://www.youtube.com/watch?v=cWEHyEHbFeM",
+    "image": "https://i.ytimg.com/vi/cWEHyEHbFeM/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "😭🎙️ 美空ひばりの娘・17歳、涙の初舞台――💔 母の魂を受け継い ...",
+    "file": "11-5.jpg"
+   },
+   {
+    "title": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "page": "https://weekly-economist.mainichi.jp/articles/20220801/se1/00m/020/003000d",
+    "image": "https://cdn.mainichi.jp/vol1/2022/08/01/20220801se100m020009000q/8.jpg?1",
+    "width": 620,
+    "height": 428,
+    "license": "",
+    "license_url": "",
+    "artist": "weekly-economist.mainichi.jp",
+    "description": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "file": "11-6.jpg"
+   }
+  ]
+ },
+ {
+  "k": 12,
+  "query": "web:加藤喜美枝 ひばり",
+  "results": [
+   {
+    "title": "Amazon.co.jp: 花笠若衆 [DVD] : 美空ひばり, 佐伯清, 加藤 ...",
+    "page": "https://www.amazon.co.jp/%E8%8A%B1%E7%AC%A0%E8%8B%A5%E8%A1%86-DVD-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0%E3%82%8A/dp/B00061QW4Q",
+    "image": "https://m.media-amazon.com/images/I/212QBXN264L._AC_UF894,1000_QL80_.jpg",
+    "width": 700,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: 花笠若衆 [DVD] : 美空ひばり, 佐伯清, 加藤 ...",
+    "file": "12-1.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - p37945『美空ひばり』ブロマイド 加藤和枝 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/c743133601",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img750x1200-15617123744s2eed272.jpg",
+    "width": 750,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - p37945『美空ひばり』ブロマイド 加藤和枝 ...",
+    "file": "12-2.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - p37928『美空ひばり』ブロマイド 加藤和枝 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/j575322593",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img750x1200-1561712348uuk6fh8128.jpg",
+    "width": 750,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - p37928『美空ひばり』ブロマイド 加藤和枝 ...",
+    "file": "12-3.jpg"
+   },
+   {
+    "title": "p37963『美空ひばり』ブロマイド 加藤和枝 喜美枝 かとう哲也 ...",
+    "page": "https://www.fromjapan.co.jp/japan/cn/auction/yahoo/input/395500132/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img761x1200-15617124018fhcyl79.jpg",
+    "width": 761,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "fromjapan.co.jp",
+    "description": "p37963『美空ひばり』ブロマイド 加藤和枝 喜美枝 かとう哲也 ...",
+    "file": "12-4.jpg"
+   },
+   {
+    "title": "p37954 美空ひばり ブロマイド 加藤和枝 喜美枝 かとう哲也 加藤 ...",
+    "page": "https://history.aucfan.com/yahoo/x629677572/bidrank/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img756x1200-1561712387pltjj7259.jpg",
+    "width": 756,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "history.aucfan.com",
+    "description": "p37954 美空ひばり ブロマイド 加藤和枝 喜美枝 かとう哲也 加藤 ...",
+    "file": "12-5.jpg"
+   },
+   {
+    "title": "驚きももの木20世紀 -スペシャル・ひばりの母 加藤喜美枝物語 ...",
+    "page": "https://www.mmj-pro.co.jp/works/variety/odoroki19980925/",
+    "image": "https://www.mmj-pro.co.jp/wp/wp-content/uploads/2026/09/19-1600x900.png",
+    "width": 1600,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "mmj-pro.co.jp",
+    "description": "驚きももの木20世紀 -スペシャル・ひばりの母 加藤喜美枝物語 ...",
+    "file": "12-6.jpg"
+   },
+   {
+    "title": "p37946『美空ひばり』ブロマイド 加藤和枝 喜美枝 かとう哲也 ...",
+    "page": "https://aucview.aucfan.com/yahoo/b399706619/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img754x1200-1561712376emoyzj61.jpg",
+    "width": 754,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "p37946『美空ひばり』ブロマイド 加藤和枝 喜美枝 かとう哲也 ...",
+    "file": "12-7.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - p37953『美空ひばり』ブロマイド 加藤和枝 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/k394583951",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img763x1200-1561712386mt1bof10421.jpg",
+    "width": 763,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - p37953『美空ひばり』ブロマイド 加藤和枝 ...",
+    "file": "12-8.jpg"
+   },
+   {
+    "title": "3ページ目）山口百恵が19歳で壊した壁…美空ひばり「トリ以外なら ...",
+    "page": "https://friday.kodansha.co.jp/article/452320?page=3",
+    "image": "https://res.cloudinary.com/fridaydigital/image/private/c_scale,dpr_2,f_auto,t_article_image,w_350/wpmedia/2025/12/d42848d68b4e1409f637f400c278f223.jpg",
+    "width": 700,
+    "height": 515,
+    "license": "",
+    "license_url": "",
+    "artist": "friday.kodansha.co.jp",
+    "description": "3ページ目）山口百恵が19歳で壊した壁…美空ひばり「トリ以外なら ...",
+    "file": "12-9.jpg"
+   },
+   {
+    "title": "加藤喜美枝の値段と価格推移は？｜71件の売買データから加藤 ...",
+    "page": "https://aucfan.com/intro/q-~b2c3c6a3b4eec8febbde/",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0506/users/4f08770bcb3713197a75f5dfb63575ea362935f9/i-img745x1200-15617123649dev58215.jpg",
+    "width": 745,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "aucfan.com",
+    "description": "加藤喜美枝の値段と価格推移は？｜71件の売買データから加藤 ...",
+    "file": "12-10.jpg"
+   },
+   {
+    "title": "ハワイを訪れた日本人②美空ひばり ハワイの日系二世部隊との絆 ...",
+    "page": "https://note.com/susie_hawaii/n/nbb4b80660822",
+    "image": "https://assets.st-note.com/img/1771458081-IA4BFZgx09oT7DweOs3Nty1K.jpg",
+    "width": 1024,
+    "height": 727,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "ハワイを訪れた日本人②美空ひばり ハワイの日系二世部隊との絆 ...",
+    "file": "12-11.jpg"
+   },
+   {
+    "title": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "page": "https://weekly-economist.mainichi.jp/articles/20220801/se1/00m/020/003000d",
+    "image": "https://cdn.mainichi.jp/vol1/2022/08/01/20220801se100m020008000q/9.jpg?1",
+    "width": 558,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "weekly-economist.mainichi.jp",
+    "description": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "file": "12-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 13,
+  "query": "web:美空ひばり 入院 1964",
+  "results": [
+   {
+    "title": "Impossible Images:AI-powered platform offering a vast library of unique ...",
+    "page": "https://moge.ai/product/impossible-images",
+    "image": "https://image.moge.ai/screen/impossible-images.jpg",
+    "width": 1024,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "moge.ai",
+    "description": "Impossible Images:AI-powered platform offering a vast library of unique ...",
+    "file": "13-1.jpg"
+   },
+   {
+    "title": "Combine Images - ScreenPal",
+    "page": "https://screenpal.com/tool/combine-images",
+    "image": "https://d3but52g8hjy3q.cloudfront.net/blog/wp-content/uploads/2024/01/Image-editor_annotate_image.png",
+    "width": 1556,
+    "height": 1226,
+    "license": "",
+    "license_url": "",
+    "artist": "screenpal.com",
+    "description": "Combine Images - ScreenPal",
+    "file": "13-2.jpg"
+   },
+   {
+    "title": "Hidden Images :Features,Alternatives,FAQ, and More | Toolerific",
+    "page": "https://toolerific.ai/ai-tools/sites/hidden-images-vercel-app",
+    "image": "https://toolerific.ai/screenshots/hidden-images.vercel.app.jpg",
+    "width": 1360,
+    "height": 764,
+    "license": "",
+    "license_url": "",
+    "artist": "toolerific.ai",
+    "description": "Hidden Images :Features,Alternatives,FAQ, and More | Toolerific",
+    "file": "13-3.jpg"
+   },
+   {
+    "title": "Beautiful Nature Photos, Download The BEST Free Beautiful Nature Stock ...",
+    "page": "https://www.pexels.com/search/beautiful nature/",
+    "image": "https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1705,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Beautiful Nature Photos, Download The BEST Free Beautiful Nature Stock ...",
+    "file": "13-4.jpg"
+   },
+   {
+    "title": "Merge Images Online – The Fastest Way to Combine Photos in 2025 - BLOG ...",
+    "page": "https://blog.stackasian.com/merge-images-online/",
+    "image": "https://blog.stackasian.com/wp-content/uploads/2025/04/merge-images.webp",
+    "width": 1024,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "blog.stackasian.com",
+    "description": "Merge Images Online – The Fastest Way to Combine Photos in 2025 - BLOG ...",
+    "file": "13-5.jpg"
+   },
+   {
+    "title": "Nature Background Images Photos, Download The BEST Free Nature ...",
+    "page": "https://www.pexels.com/search/nature background images/",
+    "image": "https://images.pexels.com/photos/30994370/pexels-photo-30994370.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-30994370.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1705,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Nature Background Images Photos, Download The BEST Free Nature ...",
+    "file": "13-6.jpg"
+   },
+   {
+    "title": "High Resolution Birds Photos, Download The BEST Free High Resolution ...",
+    "page": "https://www.pexels.com/search/high resolution birds/",
+    "image": "https://images.pexels.com/photos/6348018/pexels-photo-6348018.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-222549-6348018.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "High Resolution Birds Photos, Download The BEST Free High Resolution ...",
+    "file": "13-7.jpg"
+   },
+   {
+    "title": "Landscape pictures · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/landscape/",
+    "image": "https://images.pexels.com/photos/247478/pexels-photo-247478.jpeg?cs=srgb&dl=clouds-cloudy-conifers-247478.jpg&fm=jpg",
+    "width": 2201,
+    "height": 1455,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Landscape pictures · Pexels · Free Stock Photos",
+    "file": "13-8.jpg"
+   },
+   {
+    "title": "Free Jpeg Images Photos, Download The BEST Free Free Jpeg Images Stock ...",
+    "page": "https://www.pexels.com/search/free jpeg images/",
+    "image": "https://images.pexels.com/photos/31256342/pexels-photo-31256342.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31256342.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1944,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Free Jpeg Images Photos, Download The BEST Free Free Jpeg Images Stock ...",
+    "file": "13-9.jpg"
+   },
+   {
+    "title": "Nature Wallpapers · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/nature%20wallpaper/",
+    "image": "https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=landscape-nature-sky-236047.jpg&fm=jpg",
+    "width": 2048,
+    "height": 1364,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Nature Wallpapers · Pexels · Free Stock Photos",
+    "file": "13-10.jpg"
+   },
+   {
+    "title": "1000+ Engaging Scenery Photos · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/scenery/",
+    "image": "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg",
+    "width": 2400,
+    "height": 1139,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "1000+ Engaging Scenery Photos · Pexels · Free Stock Photos",
+    "file": "13-11.jpg"
+   },
+   {
+    "title": "Nature Wallpapers · Pexels · Free Stock Photos",
+    "page": "https://www.pexels.com/search/nature%20wallpaper/",
+    "image": "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg?cs=srgb&dl=cascade-clouds-cool-wallpaper-210186.jpg&fm=jpg",
+    "width": 2200,
+    "height": 1331,
+    "license": "",
+    "license_url": "",
+    "artist": "pexels.com",
+    "description": "Nature Wallpapers · Pexels · Free Stock Photos",
+    "file": "13-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "web:美空ひばり 小林旭 1964",
+  "results": [
+   {
+    "title": "美空ひばり ・小林旭・結婚記念レコード・歌と対談・ダーリンと ...",
+    "page": "https://jp.mercari.com/item/m20188365075",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m20188365075_2.jpg?1759016837",
+    "width": 990,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "美空ひばり ・小林旭・結婚記念レコード・歌と対談・ダーリンと ...",
+    "file": "14-1.jpg"
+   },
+   {
+    "title": "書評 マイトガイ「小林旭」伝説④〜自伝 美空ひばりとの結婚 ...",
+    "page": "https://www.roman-blog.com/books/%E6%9B%B8%E8%A9%95-%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%80%8C%E5%B0%8F%E6%9E%97%E6%97%AD%E3%80%8D%E4%BC%9D%E8%AA%AC%E2%91%A3%E3%80%9C%E8%87%AA%E4%BC%9D-%E7%BE%8E%E7%A9%BA%E3%81%B2%E3%81%B0",
+    "image": "https://www.roman-blog.com/wp-content/uploads/2020/02/akirahibari.jpeg",
+    "width": 800,
+    "height": 539,
+    "license": "",
+    "license_url": "",
+    "artist": "roman-blog.com",
+    "description": "書評 マイトガイ「小林旭」伝説④〜自伝 美空ひばりとの結婚 ...",
+    "file": "14-2.jpg"
+   },
+   {
+    "title": "美空ひばりさんのご命日の放送日に、たまたまゲストの井上さんが ...",
+    "page": "https://ameblo.jp/karankoe612-15/entry-12465621625.html",
+    "image": "https://stat.ameba.jp/user_images/20190601/05/karankoe612-15/30/93/j/o0574060014419842584.jpg?cax=1280-720",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "美空ひばりさんのご命日の放送日に、たまたまゲストの井上さんが ...",
+    "file": "14-3.jpg"
+   },
+   {
+    "title": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "page": "https://jp.mercari.com/item/m18856078501",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m18856078501_1.jpg?1746867482",
+    "width": 1080,
+    "height": 717,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "file": "14-4.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 近代映画/1962年12月号/特集小林旭と美空 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/b1146056092",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0507/users/655201af8fa2b9823329fc48a418fbb5fb2996f9/i-img1200x1200-1721880875rgftfs169395.jpg",
+    "width": 1200,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 近代映画/1962年12月号/特集小林旭と美空 ...",
+    "file": "14-5.jpg"
+   },
+   {
+    "title": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "page": "https://jp.mercari.com/item/m13744284773",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m13744284773_1.jpg?1744240702",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "file": "14-6.jpg"
+   },
+   {
+    "title": "付録】小林旭・美空ひばり 婚約記念アルバム (平凡12月号付録 ...",
+    "page": "https://aucview.aucfan.com/yahoo/s1134751281/",
+    "image": "https://auctions.afimg.jp/s1134751281/ya/image/s1134751281.1.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "付録】小林旭・美空ひばり 婚約記念アルバム (平凡12月号付録 ...",
+    "file": "14-7.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "web:昭和 病院 病室 1960年代",
+  "results": [
+   {
+    "title": "写真で見る昭和医科大学の歴史｜昭和医科大学",
+    "page": "https://www.showa-u.ac.jp/about_us/history/photo.html",
+    "image": "https://www.showa-u.ac.jp/albums/79/abm00000511.jpg",
+    "width": 1140,
+    "height": 753,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-u.ac.jp",
+    "description": "写真で見る昭和医科大学の歴史｜昭和医科大学",
+    "file": "15-1.jpg"
+   },
+   {
+    "title": "病院のあゆみ - 病院の歴史：病院の沿革 - 日本赤十字社愛知医療 ...",
+    "page": "https://www.nagoya-1st.jrc.or.jp/about/history/story/",
+    "image": "https://www.nagoya-1st.jrc.or.jp/webcms/wp-content/uploads/2020/10/11.jpg",
+    "width": 620,
+    "height": 520,
+    "license": "",
+    "license_url": "",
+    "artist": "nagoya-1st.jrc.or.jp",
+    "description": "病院のあゆみ - 病院の歴史：病院の沿革 - 日本赤十字社愛知医療 ...",
+    "file": "15-2.jpg"
+   },
+   {
+    "title": "病棟のご案内 | 公立昭和病院",
+    "page": "https://www.kouritu-showa.jp/patient/ward/",
+    "image": "https://www.kouritu-showa.jp/system/wp-content/uploads/2018/09/showa-0130.jpg",
+    "width": 1280,
+    "height": 853,
+    "license": "",
+    "license_url": "",
+    "artist": "kouritu-showa.jp",
+    "description": "病棟のご案内 | 公立昭和病院",
+    "file": "15-3.jpg"
+   },
+   {
+    "title": "都市・東京の記憶 大病室（豊島病院）",
+    "page": "https://www.library.metro.tokyo.lg.jp/portals/0/tokyo/chapter2/medical15.html",
+    "image": "https://www.library.metro.tokyo.lg.jp/portals/0/tokyo/chapter2/image/medical15.jpg",
+    "width": 800,
+    "height": 617,
+    "license": "",
+    "license_url": "",
+    "artist": "library.metro.tokyo.lg.jp",
+    "description": "都市・東京の記憶 大病室（豊島病院）",
+    "file": "15-4.jpg"
+   },
+   {
+    "title": "2026年最新】医療法人社団愛生会 昭和病院の理学療法士求人(正 ...",
+    "page": "https://job-medley.com/pt/1450875/",
+    "image": "https://cdn.job-medley.com/customers/image_files/converted_588f7dcb-8984-499e-9484-866d624edbc6.jpg",
+    "width": 800,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "job-medley.com",
+    "description": "2026年最新】医療法人社団愛生会 昭和病院の理学療法士求人(正 ...",
+    "file": "15-5.jpg"
+   },
+   {
+    "title": "シリーズ 時代を語る：［宮下正弘］人間ドック先駆ける｜秋田魁 ...",
+    "page": "https://www.sakigake.jp/special/jidai/051/article_16.jsp",
+    "image": "https://www.sakigake.jp/special/jidai/051/img/p_16.jpg",
+    "width": 640,
+    "height": 446,
+    "license": "",
+    "license_url": "",
+    "artist": "sakigake.jp",
+    "description": "シリーズ 時代を語る：［宮下正弘］人間ドック先駆ける｜秋田魁 ...",
+    "file": "15-6.jpg"
+   },
+   {
+    "title": "次の世紀に求められる病院建築とは｜病院建築の基礎知識7",
+    "page": "https://marketing.ipros.jp/contents/basics/basic-hospital-architecture7/",
+    "image": "https://marketing.ipros.jp/contents/assets/img/2024/12/basic-hospital-architecture7-img_3.jpg",
+    "width": 650,
+    "height": 448,
+    "license": "",
+    "license_url": "",
+    "artist": "marketing.ipros.jp",
+    "description": "次の世紀に求められる病院建築とは｜病院建築の基礎知識7",
+    "file": "15-7.jpg"
+   },
+   {
+    "title": "第2章 確立期 法人設立に至るまで｜社会医療法人大雄会 100年の ...",
+    "page": "https://www.daiyukai.or.jp/department/chapter2/",
+    "image": "https://www.daiyukai.or.jp/app/wp-content/uploads/2025/06/d1845c76051fccc8593727ac87c336eb.png",
+    "width": 468,
+    "height": 614,
+    "license": "",
+    "license_url": "",
+    "artist": "daiyukai.or.jp",
+    "description": "第2章 確立期 法人設立に至るまで｜社会医療法人大雄会 100年の ...",
+    "file": "15-8.jpg"
+   },
+   {
+    "title": "お部屋のご案内｜昭和医科大学病院",
+    "page": "https://www.showa-u.ac.jp/SUH/patient/inpatient/room.html",
+    "image": "https://www.showa-u.ac.jp/SUH/albums/2562/abm00042063.jpg",
+    "width": 2400,
+    "height": 1600,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-u.ac.jp",
+    "description": "お部屋のご案内｜昭和医科大学病院",
+    "file": "15-9.jpg"
+   },
+   {
+    "title": "公立昭和病院",
+    "page": "https://www.kouritu-showa.jp/",
+    "image": "https://www.kouritu-showa.jp/system/wp-content/themes/foundation/assets/img/front-page/hero-sp05.jpg",
+    "width": 1280,
+    "height": 1536,
+    "license": "",
+    "license_url": "",
+    "artist": "kouritu-showa.jp",
+    "description": "公立昭和病院",
+    "file": "15-10.jpg"
+   },
+   {
+    "title": "お部屋のご案内｜昭和医科大学病院",
+    "page": "https://www.showa-u.ac.jp/SUH/patient/inpatient/room.html",
+    "image": "https://www.showa-u.ac.jp/SUH/albums/2562/abm00017197.jpg",
+    "width": 860,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-u.ac.jp",
+    "description": "お部屋のご案内｜昭和医科大学病院",
+    "file": "15-11.jpg"
+   },
+   {
+    "title": "レトロな病室の画像をダウンロード - ヴィンテージ, 病院, 1950 ...",
+    "page": "https://stockcake.com/ja/i/vintage-hospital-room_2839704_1509426",
+    "image": "https://images.stockcake.com/public/3/5/4/354ebb9f-87ef-4795-9d74-e3608453c3d3_large/vintage-hospital-room-stockcake.jpg",
+    "width": 512,
+    "height": 512,
+    "license": "",
+    "license_url": "",
+    "artist": "stockcake.com",
+    "description": "レトロな病室の画像をダウンロード - ヴィンテージ, 病院, 1950 ...",
+    "file": "15-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "web:美空ひばり 離婚会見 1964",
+  "results": [
+   {
+    "title": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "page": "https://www.news-postseven.com/archives/20230503_1864554.html?DETAIL",
+    "image": "https://media.news-postseven.com/uploads/2023/05/03/misora.jpg",
+    "width": 1200,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "news-postseven.com",
+    "description": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "file": "16-1.jpg"
+   },
+   {
+    "title": "YouTube Music",
+    "page": "https://music.youtube.com/podcast/l4ySok3Qeco",
+    "image": "https://i.ytimg.com/vi/l4ySok3Qeco/hq720.jpg?sqp=-oaymwEKCNUGEN8DIABIWg&rs=AMzJL3mqgjz8c3vFoR_nC-r-cK_bWn3wEQ",
+    "width": 853,
+    "height": 479,
+    "license": "",
+    "license_url": "",
+    "artist": "music.youtube.com",
+    "description": "YouTube Music",
+    "file": "16-2.jpg"
+   },
+   {
+    "title": "maxresdefault.jpg",
+    "page": "https://www.youtube.com/watch?v=o_Mw5iHiQVg",
+    "image": "https://i.ytimg.com/vi/o_Mw5iHiQVg/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "maxresdefault.jpg",
+    "file": "16-3.jpg"
+   },
+   {
+    "title": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "page": "https://weekly-economist.mainichi.jp/articles/20220801/se1/00m/020/003000d",
+    "image": "https://cdn.mainichi.jp/vol1/2022/08/01/20220801se100m020009000q/0c10.jpg?1",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "weekly-economist.mainichi.jp",
+    "description": "サンデー毎日：実弟に泣いた「昭和の歌姫」 「一卵性母娘」が ...",
+    "file": "16-4.jpg"
+   },
+   {
+    "title": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "page": "https://www.news-postseven.com/archives/20230503_1864554.html?DETAIL",
+    "image": "https://www.news-postseven.com/uploads/2023/04/26/kayamayuzo_matsumotomegumi-553x750.jpg",
+    "width": 553,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "news-postseven.com",
+    "description": "美空ひばり＆小林旭、貴花田＆宮沢りえ、小室圭さん＆眞子さん ...",
+    "file": "16-5.jpg"
+   },
+   {
+    "title": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "page": "https://jp.mercari.com/item/m18856078501",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m18856078501_5.jpg?1746867482",
+    "width": 1004,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "file": "16-6.jpg"
+   },
+   {
+    "title": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "page": "https://jp.mercari.com/item/m18856078501",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m18856078501_2.jpg?1746867482",
+    "width": 1080,
+    "height": 679,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "美空ひばり結婚・離婚記事 週刊明星1962年 & 週刊平凡1964年 ...",
+    "file": "16-7.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "web:小林旭 離婚 会見",
+  "results": [
+   {
+    "title": "Chrysanthemum Water 🌼 on X: \"@daitojimari 小林旭との離婚 ...",
+    "page": "https://x.com/ADAMAS_2/status/1237739421769674753",
+    "image": "https://pbs.twimg.com/media/ES1VZqMUwAAGRpn?format=webp&name=large",
+    "width": 545,
+    "height": 583,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "Chrysanthemum Water 🌼 on X: \"@daitojimari 小林旭との離婚 ...",
+    "file": "17-1.jpg"
+   },
+   {
+    "title": "美空ひばりさんとわずか2年の結婚生活…小林旭が明かす元妻として ...",
+    "page": "https://news.tv-asahi.co.jp/news_geinou/articles/900190584.html",
+    "image": "https://news.tv-asahi.co.jp/articles_img/900190584_1200.jpg",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "news.tv-asahi.co.jp",
+    "description": "美空ひばりさんとわずか2年の結婚生活…小林旭が明かす元妻として ...",
+    "file": "17-2.jpg"
+   },
+   {
+    "title": "小林旭と美空ひばりが離婚した理由に驚きを隠せない…！『泣き ...",
+    "page": "https://www.youtube.com/watch?v=tzupDjjomLw",
+    "image": "https://i.ytimg.com/vi/tzupDjjomLw/sddefault.jpg",
+    "width": 640,
+    "height": 480,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "小林旭と美空ひばりが離婚した理由に驚きを隠せない…！『泣き ...",
+    "file": "17-3.jpg"
+   },
+   {
+    "title": "美空ひばりから突然「あなた、恋人いるの？」と聞かれ…“最後の ...",
+    "page": "https://books.bunshun.jp/articles/-/9529",
+    "image": "https://books.bunshun.jp/mwimgs/4/e/-/img_4ef4c1be0b0d8a6a21453f4a647ea41c92666.jpg",
+    "width": 1280,
+    "height": 799,
+    "license": "",
+    "license_url": "",
+    "artist": "books.bunshun.jp",
+    "description": "美空ひばりから突然「あなた、恋人いるの？」と聞かれ…“最後の ...",
+    "file": "17-4.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "web:小林旭 回顧録 美空ひばりと俺",
+  "results": [
+   {
+    "title": "Amazon.co.jp: 小林旭回顧録 マイトガイは死なず (文春e-book ...",
+    "page": "https://www.amazon.co.jp/%E5%B0%8F%E6%9E%97%E6%97%AD%E5%9B%9E%E9%A1%A7%E9%8C%B2-%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%81%AF%E6%AD%BB%E3%81%AA%E3%81%9A-%E6%96%87%E6%98%A5e-book-%E5%B0%8F%E6%9E%97-%E6%97%AD-ebook/dp/B0DM4WDGFQ",
+    "image": "https://m.media-amazon.com/images/I/81+4+2BPieL._UF1000,1000_QL80_.jpg",
+    "width": 680,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: 小林旭回顧録 マイトガイは死なず (文春e-book ...",
+    "file": "18-1.jpg"
+   },
+   {
+    "title": "美空ひばりから突然「あなた、恋人いるの？」と聞かれ…“最後の ...",
+    "page": "https://books.bunshun.jp/articles/-/9529",
+    "image": "https://books.bunshun.jp/mwimgs/3/7/500wm/img_37697add301779b8e07b964554b224571248576.jpg",
+    "width": 500,
+    "height": 745,
+    "license": "",
+    "license_url": "",
+    "artist": "books.bunshun.jp",
+    "description": "美空ひばりから突然「あなた、恋人いるの？」と聞かれ…“最後の ...",
+    "file": "18-2.jpg"
+   },
+   {
+    "title": "Amazon.co.jp: 小林旭回顧録 マイトガイは死なず (文春e-book ...",
+    "page": "https://www.amazon.co.jp/%E5%B0%8F%E6%9E%97%E6%97%AD%E5%9B%9E%E9%A1%A7%E9%8C%B2-%E3%83%9E%E3%82%A4%E3%83%88%E3%82%AC%E3%82%A4%E3%81%AF%E6%AD%BB%E3%81%AA%E3%81%9A-%E6%96%87%E6%98%A5e-book-%E5%B0%8F%E6%9E%97-%E6%97%AD-ebook/dp/B0DM4WDGFQ",
+    "image": "https://m.media-amazon.com/images/I/81+4+2BPieL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
+    "width": 1910,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "amazon.co.jp",
+    "description": "Amazon.co.jp: 小林旭回顧録 マイトガイは死なず (文春e-book ...",
+    "file": "18-3.jpg"
+   },
+   {
+    "title": "小林旭 - Wikipedia",
+    "page": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%9E%97%E6%97%AD",
+    "image": "https://upload.wikimedia.org/wikipedia/ja/c/c9/Kobayashi_Akira_1958.jpg?utm_source=ja.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 480,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "ja.wikipedia.org",
+    "description": "小林旭 - Wikipedia",
+    "file": "18-4.jpg"
+   },
+   {
+    "title": "dショッピング |小林旭 「小林旭回顧録 マイトガイは死なず ...",
+    "page": "https://dshopping.docomo.ne.jp/products/0086489160",
+    "image": "https://cdn.tower.jp/64/o/03/6489160_in03.jpg",
+    "width": 1000,
+    "height": 1620,
+    "license": "",
+    "license_url": "",
+    "artist": "dshopping.docomo.ne.jp",
+    "description": "dショッピング |小林旭 「小林旭回顧録 マイトガイは死なず ...",
+    "file": "18-5.jpg"
+   },
+   {
+    "title": "秋元康 ロングインタビュー」と「小林旭回顧録 第五回」 | 河内 ...",
+    "page": "https://ameblo.jp/kikusuimaru0214/entry-12949682027.html",
+    "image": "https://stat.ameba.jp/user_images/20251211/08/kikusuimaru0214/47/a7/j/o0743108015728846183.jpg",
+    "width": 743,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "ameblo.jp",
+    "description": "秋元康 ロングインタビュー」と「小林旭回顧録 第五回」 | 河内 ...",
+    "file": "18-6.jpg"
+   },
+   {
+    "title": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "page": "https://jp.mercari.com/item/m13744284773",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m13744284773_5.jpg?1744240702",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "小林旭・美空ひばり 結婚記念レコード (イ36 ) - メルカリ",
+    "file": "18-7.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "web:美空ひばり 柔 レコード大賞",
+  "results": [
+   {
+    "title": "秘蔵映像満載の美空ひばりDVD10枚組ボックス - 音楽ナタリー",
+    "page": "https://natalie.mu/music/news/142061",
+    "image": "https://ogre.natalie.mu/media/news/music/2015/0326/1965_recotai02.jpg?impolicy=m&imwidth=750&imdensity=1",
+    "width": 513,
+    "height": 486,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "秘蔵映像満載の美空ひばりDVD10枚組ボックス - 音楽ナタリー",
+    "file": "19-1.jpg"
+   },
+   {
+    "title": "ナンガ(^O^)σ on X: \"柔 美空ひばり #日本レコード大賞\" / X",
+    "page": "https://x.com/NANGA2110/status/814753360708370433",
+    "image": "https://pbs.twimg.com/media/C06V3LJVEAAnOGV?format=webp&name=large",
+    "width": 1920,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "ナンガ(^O^)σ on X: \"柔 美空ひばり #日本レコード大賞\" / X",
+    "file": "19-2.jpg"
+   },
+   {
+    "title": "試聴済・ほぼ美盤EP】美空ひばり/ 柔 *日本レコード大賞受賞帯 ...",
+    "page": "https://jp.mercari.com/item/m15716401404",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m15716401404_1.jpg?1751198118",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "試聴済・ほぼ美盤EP】美空ひばり/ 柔 *日本レコード大賞受賞帯 ...",
+    "file": "19-3.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/f1126230223",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0502/users/ffa813c22f70022a790e6e0973224a9e1dbe2c7e/i-img480x640-1708760223ax7hpy33595.jpg",
+    "width": 480,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "file": "19-4.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/f1126230223",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0502/users/ffa813c22f70022a790e6e0973224a9e1dbe2c7e/i-img640x480-1708760210vscoci103960.jpg",
+    "width": 640,
+    "height": 480,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "file": "19-5.jpg"
+   },
+   {
+    "title": "ナンガ(^O^)σ na platformě X: „柔 美空ひばり #日本レコード ...",
+    "page": "https://x.com/NANGA2110/status/814753360708370433?lang=cs",
+    "image": "https://jf.x.com/images/media-preview/814753360708370433",
+    "width": 1067,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "ナンガ(^O^)σ na platformě X: „柔 美空ひばり #日本レコード ...",
+    "file": "19-6.jpg"
+   },
+   {
+    "title": "美空ひばり / 柔 [7inch - SAS-396]：JAPANESE：アナログ ...",
+    "page": "https://www.stereo-records.com/detail.php?itemCd=96143",
+    "image": "https://www.stereo-records.com/user/151/photo/sam/96143.webp",
+    "width": 640,
+    "height": 636,
+    "license": "",
+    "license_url": "",
+    "artist": "stereo-records.com",
+    "description": "美空ひばり / 柔 [7inch - SAS-396]：JAPANESE：アナログ ...",
+    "file": "19-7.jpg"
+   },
+   {
+    "title": "美空ひばり27回忌、TBSで2時間「熱唱全記録」特番 - 音楽ナタリー",
+    "page": "https://natalie.mu/music/news/149060",
+    "image": "https://ogre.natalie.mu/media/news/music/2015/0601/misorahibari_1965.jpg?impolicy=m&imwidth=750&imdensity=1",
+    "width": 750,
+    "height": 1020,
+    "license": "",
+    "license_url": "",
+    "artist": "natalie.mu",
+    "description": "美空ひばり27回忌、TBSで2時間「熱唱全記録」特番 - 音楽ナタリー",
+    "file": "19-8.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 切抜き/レコード大賞 美空ひばり 柔/新人 ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/t1108483009",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0410/users/60cb4bbc8c4f36b445a555f38b5a0c388713ab60/i-img900x1200-1696236223fyq2mc738953.jpg",
+    "width": 900,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 切抜き/レコード大賞 美空ひばり 柔/新人 ...",
+    "file": "19-9.jpg"
+   },
+   {
+    "title": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "page": "https://auctions.yahoo.co.jp/jp/auction/f1126230223",
+    "image": "https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0502/users/ffa813c22f70022a790e6e0973224a9e1dbe2c7e/i-img479x640-1708760225cakoml23.jpg",
+    "width": 479,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "auctions.yahoo.co.jp",
+    "description": "Yahoo!オークション - 1965 日本レコード大賞受賞 柔 美空ひばり ...",
+    "file": "19-10.jpg"
+   },
+   {
+    "title": "カラオケ】『柔』（美空ひばり）レコード大賞シリーズ MIDI ...",
+    "page": "https://www.youtube.com/watch?v=sgsIP2fjFtA",
+    "image": "https://i.ytimg.com/vi/sgsIP2fjFtA/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "カラオケ】『柔』（美空ひばり）レコード大賞シリーズ MIDI ...",
+    "file": "19-11.jpg"
+   },
+   {
+    "title": "試聴済・ほぼ美盤EP】美空ひばり/ 柔 *日本レコード大賞受賞帯 ...",
+    "page": "https://jp.mercari.com/item/m15716401404",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m15716401404_4.jpg?1751198118",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "試聴済・ほぼ美盤EP】美空ひばり/ 柔 *日本レコード大賞受賞帯 ...",
+    "file": "19-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "web:美空ひばり 柔 1965",
+  "results": [
+   {
+    "title": "柔（美空ひばり）1965年紅白歌合戦ver.】 - YouTube",
+    "page": "https://www.youtube.com/watch?v=iSow2o6Jt34",
+    "image": "https://i.ytimg.com/vi/iSow2o6Jt34/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "柔（美空ひばり）1965年紅白歌合戦ver.】 - YouTube",
+    "file": "20-1.jpg"
+   },
+   {
+    "title": "TVドラマ65「柔」 - YouTube",
+    "page": "https://www.youtube.com/watch?v=UK2XQ313_2I",
+    "image": "https://i.ytimg.com/vi/UK2XQ313_2I/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "TVドラマ65「柔」 - YouTube",
+    "file": "20-2.jpg"
+   },
+   {
+    "title": "64年【EP】美空ひばり / 柔 | 音盤窟レコード",
+    "page": "https://onbankutsu.thebase.in/items/11893658",
+    "image": "https://baseec-img-mng.akamaized.net/images/item/origin/bfd2530935028f41fa49318f8940d961.jpg?imformat=generic&q=90&im=Resize,width=1280,type=normal",
+    "width": 1280,
+    "height": 1202,
+    "license": "",
+    "license_url": "",
+    "artist": "onbankutsu.thebase.in",
+    "description": "64年【EP】美空ひばり / 柔 | 音盤窟レコード",
+    "file": "20-3.jpg"
+   },
+   {
+    "title": "美空ひばり - 柔 LIVE (中/日歌詞字幕) - YouTube",
+    "page": "https://www.youtube.com/watch?v=5iMXi8O9dkw",
+    "image": "https://i.ytimg.com/vi/5iMXi8O9dkw/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtube.com",
+    "description": "美空ひばり - 柔 LIVE (中/日歌詞字幕) - YouTube",
+    "file": "20-4.jpg"
+   },
+   {
+    "title": "柔」YAWARA 美空 ひばり - YouTube",
+    "page": "https://youtu.be/rdVb7jDQtRk?t=00m00s",
+    "image": "https://i.ytimg.com/vi/rdVb7jDQtRk/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720,
+    "license": "",
+    "license_url": "",
+    "artist": "youtu.be",
+    "description": "柔」YAWARA 美空 ひばり - YouTube",
+    "file": "20-5.jpg"
+   },
+   {
+    "title": "公演パンフレット］ 美空ひばり特別公演 梅田コマ・スタジアム ...",
+    "page": "https://www.kosho.or.jp/products/detail.php?product_id=514268541",
+    "image": "https://www.kosho.or.jp/upload/save_image/26040270/20240304150724476400_a7fad758d25e8837ca96a7e7e32a746d.jpg",
+    "width": 449,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "kosho.or.jp",
+    "description": "公演パンフレット］ 美空ひばり特別公演 梅田コマ・スタジアム ...",
+    "file": "20-6.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "web:美空ひばり 着物 ステージ 昭和40年",
+  "results": [
+   {
+    "title": "日本の伝統を繋ぐ、美空ひばりの和装ブランド「＃唄うキモノ ...",
+    "page": "https://kyodonewsprwire.jp/release/201907269105",
+    "image": "https://kyodonewsprwire.jp/prwfile/release/M105645/201907269105/_prw_PI1lg_qK44c0Eu.jpg",
+    "width": 570,
+    "height": 800,
+    "license": "",
+    "license_url": "",
+    "artist": "kyodonewsprwire.jp",
+    "description": "日本の伝統を繋ぐ、美空ひばりの和装ブランド「＃唄うキモノ ...",
+    "file": "21-1.jpg"
+   },
+   {
+    "title": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "page": "https://news.yahoo.co.jp/articles/806645b7f602aba3fd09b25b97042b3c0afa6342",
+    "image": "https://newsatcl-pctr.c.yimg.jp/t/amd-img/20260619-01403466-the_tv-000-2-view.jpg?pri=l&w=640&h=491&exp=10800",
+    "width": 640,
+    "height": 491,
+    "license": "",
+    "license_url": "",
+    "artist": "news.yahoo.co.jp",
+    "description": "円熟味を放つ80年代の貴重な3公演が今蘇る――昭和の歌姫・美空 ...",
+    "file": "21-2.jpg"
+   },
+   {
+    "title": "中国地方の子守唄 - song and lyrics by Hibari Misora | Spotify",
+    "page": "https://open.spotify.com/track/5AUFfQmSQx8B9vh0B1Pn4K",
+    "image": "https://i.scdn.co/image/ab67616d0000b27339ea8ba1958003696c4e6356",
+    "width": 640,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "open.spotify.com",
+    "description": "中国地方の子守唄 - song and lyrics by Hibari Misora | Spotify",
+    "file": "21-3.jpg"
+   },
+   {
+    "title": "Hibari Misora - Wikipedia",
+    "page": "https://en.wikipedia.org/wiki/Hibari_Misora",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Hibari_Misora_01.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original",
+    "width": 430,
+    "height": 640,
+    "license": "",
+    "license_url": "",
+    "artist": "en.wikipedia.org",
+    "description": "Hibari Misora - Wikipedia",
+    "file": "21-4.jpg"
+   },
+   {
+    "title": "美空ひばりさん、30年ぶりの新曲「あれから」がCD化 AIで歌声を ...",
+    "page": "https://www.huffingtonpost.jp/entry/misora-hibari-ai_jp_5dd21a07e4b0d2e79f8f5b96",
+    "image": "https://img.huffingtonpost.com/asset/5dd2363b1f00002607deeaba.jpeg?cache=2sk0A5SQg4&ops=scalefit_500_noupscale",
+    "width": 500,
+    "height": 708,
+    "license": "",
+    "license_url": "",
+    "artist": "huffingtonpost.jp",
+    "description": "美空ひばりさん、30年ぶりの新曲「あれから」がCD化 AIで歌声を ...",
+    "file": "21-5.jpg"
+   },
+   {
+    "title": "美空ひばりの名曲がハイレゾで甦る! ベスト・アルバム2作品を ...",
+    "page": "https://ototoy.jp/news/81774",
+    "image": "https://imgs.ototoy.jp/news/image.php/81774/0",
+    "width": 450,
+    "height": 454,
+    "license": "",
+    "license_url": "",
+    "artist": "ototoy.jp",
+    "description": "美空ひばりの名曲がハイレゾで甦る! ベスト・アルバム2作品を ...",
+    "file": "21-6.jpg"
+   },
+   {
+    "title": "美空ひばりさんが生前愛用していた着物が中心の呉服の新ブランド ...",
+    "page": "https://mag.japaaan.com/archives/102820",
+    "image": "https://mag.japaaan.com/wp-content/uploads/2019/08/1_original-900x683.png",
+    "width": 900,
+    "height": 683,
+    "license": "",
+    "license_url": "",
+    "artist": "mag.japaaan.com",
+    "description": "美空ひばりさんが生前愛用していた着物が中心の呉服の新ブランド ...",
+    "file": "21-7.jpg"
+   },
+   {
+    "title": "美空ひばり 生誕80周年記念に現存する『NHK紅白歌合戦』の映像 ...",
+    "page": "https://spice.eplus.jp/articles/97702",
+    "image": "https://spice.eplus.jp/images/OlLMcOiz91u9JXbauSUqkjcvQdqq5nXmt41KnAspHgxUDRaA5ZnfR4lHNHtRkQgt/",
+    "width": 1620,
+    "height": 1074,
+    "license": "",
+    "license_url": "",
+    "artist": "spice.eplus.jp",
+    "description": "美空ひばり 生誕80周年記念に現存する『NHK紅白歌合戦』の映像 ...",
+    "file": "21-8.jpg"
+   },
+   {
+    "title": "明治一代女 - song and lyrics by Hibari Misora | Spotify",
+    "page": "https://open.spotify.com/track/1VQ3aAyIb1pSe6CHB0T6zr",
+    "image": "https://i.scdn.co/image/ab67616d0000b27333ee220ab0592078c55f76af",
+    "width": 640,
+    "height": 545,
+    "license": "",
+    "license_url": "",
+    "artist": "open.spotify.com",
+    "description": "明治一代女 - song and lyrics by Hibari Misora | Spotify",
+    "file": "21-9.jpg"
+   },
+   {
+    "title": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 −",
+    "page": "https://ryukyushimpo.jp/prtimes/entry-4085814.html",
+    "image": "https://prcdn.freetls.fastly.net/release_image/158250/5/158250-5-479836f9c188e3c2170bc62129c63ba1-932x1757.jpg?width=536&quality=85%2C75&format=jpeg&auto=webp&fit=bounds&bg-color=fff",
+    "width": 536,
+    "height": 1010,
+    "license": "",
+    "license_url": "",
+    "artist": "ryukyushimpo.jp",
+    "description": "美空ひばり 戦後80年平和祈念コンサート − 沖縄 未来に紡ぐ歌 −",
+    "file": "21-10.jpg"
+   },
+   {
+    "title": "さざんかの宿 - song and lyrics by Hibari Misora | Spotify",
+    "page": "https://open.spotify.com/track/63JAy9qmx53GrMWZnepRAd",
+    "image": "https://i.scdn.co/image/ab67616d0000b2737d8981e40460e4c5ff34ad2b",
+    "width": 640,
+    "height": 545,
+    "license": "",
+    "license_url": "",
+    "artist": "open.spotify.com",
+    "description": "さざんかの宿 - song and lyrics by Hibari Misora | Spotify",
+    "file": "21-11.jpg"
+   },
+   {
+    "title": "さとみ (@SATOMI328) / X",
+    "page": "https://x.com/SATOMI328",
+    "image": "https://pbs.twimg.com/media/HTtuq4jbUAAHBbj?format=webp&name=large",
+    "width": 1000,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "さとみ (@SATOMI328) / X",
+    "file": "21-12.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "music:Gymnopédie Satie piano",
+  "results": [
+   {
+    "title": "File:Satie Gymnopedie No. 3 for piano solo 01.wav",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No._3_for_piano_solo_01.wav",
+    "size": 5357612,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Satie",
+    "description": "Satie Gymnopedie No. 3 for piano solo",
+    "file": "22-1.wav",
+    "seconds": 30.4
+   },
+   {
+    "title": "File:Erik Satie -Gymnopedie No.1 - Arr for alto saxophone and piano - David Hernando Vitores.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-Gymnopedie_No.1_-_Arr_for_alto_saxophone_and_piano_-_David_Hernando_Vitores.ogg",
+    "size": 9817830,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Erik Satie",
+    "description": "Gymnopedie No.1 - Arr for alto saxophone and piano.",
+    "file": "22-2.ogg",
+    "seconds": 220.0
+   },
+   {
+    "title": "File:Satie Gymnopedie No 3 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_3_performed_by_Michael_Laucke.flac",
+    "size": 6941233,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "22-3.flac",
+    "seconds": 123.1
+   },
+   {
+    "title": "File:Satie Gymnopedie No 2 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_2_performed_by_Michael_Laucke.flac",
+    "size": 8136884,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "22-4.flac",
+    "seconds": 147.2
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "music:Chopin Nocturne piano",
+  "results": [
+   {
+    "title": "File:Chopin, Nocturne op 32 no 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_op_32_no_1.ogg",
+    "size": 4852417,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Constantin Stephan, piano",
+    "description": "Nocturne op 32 no 1 by Frédéric Chopin performed by Constantin Stephan",
+    "file": "23-1.ogg",
+    "seconds": 283.0
+   },
+   {
+    "title": "File:Chopin, Nocturne in C-sharp minor, Op. Posth.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg",
+    "size": 5302273,
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "Frédéric Chopin",
+    "description": "Nocturne No. 20 in C-sharp minor, Op. posth.",
+    "file": "23-2.ogg",
+    "seconds": 252.5
+   },
+   {
+    "title": "File:Chopin Nocturne Op.27 No.1.oga",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin_Nocturne_Op.27_No.1.oga",
+    "size": 692632,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Frédéric Chopin",
+    "description": "nocturne op. 27 n° 1 Chopin, piano",
+    "file": "23-3.ogg",
+    "seconds": 49.3
+   }
+  ]
+ },
+ {
+  "k": 24,
+  "query": "music:Debussy Clair de lune piano",
+  "results": [
+   {
+    "title": "File:Moonlight - Clair de Lune (As the rememberance of Sir Debussy.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moonlight_-_Clair_de_Lune_(As_the_rememberance_of_Sir_Debussy.ogg",
+    "size": 2808758,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Jason M. C., Han",
+    "description": "Jason's versions played in Wikiversity: 1. Notation-reading and Notation-learning from the page 93-98 of the edition from 'Standard Grade Testing Course of Piano - Central Musical College Grading-Test Committe of China' (中央音乐学院标准考级教程编委会-海内外音乐考级), 2. and, as the respect of the impacts of UK's Trinity",
+    "file": "24-1.ogg",
+    "seconds": 251.1
+   },
+   {
+    "title": "File:Clair de Lune by Claude Debussy (1905, piano solo).opus",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_by_Claude_Debussy_(1905,_piano_solo).opus",
+    "size": 5214866,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy",
+    "description": "Clair de Lune (No. 3 from Suite Bergamasque) by Claude Debussy 1905 pub.",
+    "file": "24-2.ogg",
+    "seconds": 275.8
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track basses.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_basses.ogg",
+    "size": 3822746,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "bass backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "24-3.ogg",
+    "seconds": 236.2
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track violins.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_violins.ogg",
+    "size": 3822700,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "violins backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "24-4.ogg",
+    "seconds": 236.2
+   }
+  ]
+ }
+]
