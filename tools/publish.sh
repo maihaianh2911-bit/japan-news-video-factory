@@ -66,9 +66,11 @@ PY
   return $status
 }
 
-# A refusal that trying again cannot change (GitHub's file size limit, a rule on the branch).
+# A refusal that trying again cannot change (GitHub's file size limit, a rule on the branch). Only "remote: error"
+# lines count: a file between 50 and 100 MB gets "remote: warning: GH001 …" and is accepted, and a push that lost
+# the race against another job ("cannot lock ref", "fetch first") must be tried again.
 permanent() {
-  grep -qiE "GH001|exceeds GitHub's file size limit|pre-receive hook declined|protected branch" "$PUSH_LOG"
+  grep -qiE "remote: error:.*(GH001|exceeds GitHub's file size limit)|pre-receive hook declined|protected branch" "$PUSH_LOG"
 }
 
 cleanup() {
