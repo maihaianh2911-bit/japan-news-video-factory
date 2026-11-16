@@ -1,0 +1,117 @@
+{
+  "demo": false,
+  "duration_seconds": 39.32,
+  "release": {
+    "url": "https://www.boj.or.jp/mopo/mpmdeci/state_2025/k250124a.htm",
+    "published": "2025-01-24",
+    "publisher": "日本銀行",
+    "title": "日銀が政策金利を0.5%程度に引き上げ"
+  },
+  "photos": [
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:BanqueduJaponentreelaterale.png",
+      "title": "BanqueduJaponentreelaterale.png",
+      "creator": "HotaniKG",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Series_F_10000_yen_front.jpg",
+      "title": "Series F 10000 yen front.jpg",
+      "creator": "RegoParkRen",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%AC%E9%8A%80%E8%A1%8C_-_Panoramio_64433893.jpg",
+      "title": "日本銀行 - Panoramio 64433893.jpg",
+      "creator": "kanesue",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Tokyo_Governor%27s_Guest_House.jpg",
+      "title": "Tokyo Governor's Guest House.jpg",
+      "creator": "Harani0403",
+      "license": "CC BY-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Shopping_cart_in_supermarket_-_Tokyo_area_Japan_-_Nov_24_2018.jpeg",
+      "title": "Shopping cart in supermarket - Tokyo area Japan - Nov 24 2018.jpeg",
+      "creator": "Nesnad",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "scenes": [
+    {
+      "label": "金融政策",
+      "headline": "日銀が利上げ\n短期金利の目安",
+      "lines": [
+        "日本銀行が、短期金利を0.5パーセント程度に誘導する方針を公表しました。",
+        "これは、2025年1月24日の金融政策決定会合で決まったものです。"
+      ],
+      "visual": "photo",
+      "value": "0.5％",
+      "evidence": "",
+      "say": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:BanqueduJaponentreelaterale.png"
+    },
+    {
+      "label": "政策金利",
+      "headline": "金融機関どうしの\n翌日物の金利",
+      "lines": [
+        "対象は、無担保コールレートの翌日物です。",
+        "金融機関が担保なしで、翌営業日まで資金を借りる際の金利を指します。"
+      ],
+      "visual": "photo",
+      "value": "0.5％程度",
+      "evidence": "無担保コールレート(オーバーナイト物)",
+      "say": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Series_F_10000_yen_front.jpg"
+    },
+    {
+      "label": "決定会合",
+      "headline": "政策委員会の\n採決結果",
+      "lines": [
+        "この方針は、賛成8、反対1で決まりました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "賛成 8 / 反対 1",
+      "say": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:%E6%97%A5%E6%9C%AC%E9%8A%80%E8%A1%8C_-_Panoramio_64433893.jpg"
+    },
+    {
+      "label": "暮らしへの影響",
+      "headline": "住宅ローンの金利は\n契約ごとに確認",
+      "lines": [
+        "住宅ローンの適用金利は、金融機関や借り入れの契約によって異なります。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Tokyo_Governor%27s_Guest_House.jpg"
+    },
+    {
+      "label": "決定の背景",
+      "headline": "日銀が掲げる\n物価安定の目標",
+      "lines": [
+        "日銀は、2パーセントの物価安定目標を持続的に実現するため、金融緩和の度合いを調整すると説明しています。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Shopping_cart_in_supermarket_-_Tokyo_area_Japan_-_Nov_24_2018.jpeg"
+    }
+  ]
+}

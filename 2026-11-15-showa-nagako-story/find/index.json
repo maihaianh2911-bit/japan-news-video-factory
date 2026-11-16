@@ -1,0 +1,429 @@
+[
+ {
+  "k": 1,
+  "query": "url:https://assets.st-note.com/production/uploads/images/40431439/picture_pc_def33e9b603c87cbf336fc77d1753660.jpg https://note.com/yoshizuka/n/n1f6201ba3a04",
+  "results": [
+   {
+    "title": "picture_pc_def33e9b603c87cbf336fc77d1753660.jpg",
+    "page": "https://note.com/yoshizuka/n/n1f6201ba3a04",
+    "image": "https://assets.st-note.com/production/uploads/images/40431439/picture_pc_def33e9b603c87cbf336fc77d1753660.jpg",
+    "width": 783,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "",
+    "file": "1-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 2,
+  "query": "url:https://img.huffingtonpost.com/asset/66b35a38250000510004925b.jpeg?ops=scalefit_500_noupscale https://www.huffingtonpost.jp/entry/story_jp_66b30e66e4b0b3da47535955",
+  "results": [
+   {
+    "title": "66b35a38250000510004925b.jpeg?ops=scalefit_500_noupscale",
+    "page": "https://www.huffingtonpost.jp/entry/story_jp_66b30e66e4b0b3da47535955",
+    "image": "https://img.huffingtonpost.com/asset/66b35a38250000510004925b.jpeg?ops=scalefit_500_noupscale",
+    "width": 500,
+    "height": 677,
+    "license": "",
+    "license_url": "",
+    "artist": "huffingtonpost.jp",
+    "description": "",
+    "file": "2-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 3,
+  "query": "url:https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/T5VADXWKLZNMHH6BBY63WYYXNE.jpg https://www.sankei.com/article/20210523-6BLD4BUS6JOMJOWPRQ6QIWTJOI/",
+  "results": [
+   {
+    "title": "T5VADXWKLZNMHH6BBY63WYYXNE.jpg",
+    "page": "https://www.sankei.com/article/20210523-6BLD4BUS6JOMJOWPRQ6QIWTJOI/",
+    "image": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/T5VADXWKLZNMHH6BBY63WYYXNE.jpg",
+    "width": 1698,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "",
+    "file": "3-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 4,
+  "query": "url:https://assets.st-note.com/production/uploads/images/59611440/picture_pc_064728739c4fa1f63dca4101c6208f1f.jpeg https://note.com/yoshizuka/n/na368d4dc8a8d",
+  "results": [
+   {
+    "title": "picture_pc_064728739c4fa1f63dca4101c6208f1f.jpeg",
+    "page": "https://note.com/yoshizuka/n/na368d4dc8a8d",
+    "image": "https://assets.st-note.com/production/uploads/images/59611440/picture_pc_064728739c4fa1f63dca4101c6208f1f.jpeg",
+    "width": 924,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "",
+    "file": "4-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 5,
+  "query": "url:https://assets.st-note.com/production/uploads/images/56054712/rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg https://note.com/yoshizuka/n/nad5f7aebd355",
+  "results": [
+   {
+    "title": "rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg",
+    "page": "https://note.com/yoshizuka/n/nad5f7aebd355",
+    "image": "https://assets.st-note.com/production/uploads/images/56054712/rectangle_large_type_2_615b99bca5a89c62652badba4a1714f0.jpg",
+    "width": 1280,
+    "height": 668,
+    "license": "",
+    "license_url": "",
+    "artist": "note.com",
+    "description": "",
+    "file": "5-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 6,
+  "query": "url:https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/GZPUR7WDL5KNDBXHUYTUZONJ6E.jpg https://www.sankei.com/article/20210815-77MQXGHDDFKYXOX3B422BB5UNA/",
+  "results": [
+   {
+    "title": "GZPUR7WDL5KNDBXHUYTUZONJ6E.jpg",
+    "page": "https://www.sankei.com/article/20210815-77MQXGHDDFKYXOX3B422BB5UNA/",
+    "image": "https://cloudfront-ap-northeast-1.images.arcpublishing.com/sankei/GZPUR7WDL5KNDBXHUYTUZONJ6E.jpg",
+    "width": 1690,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "",
+    "file": "6-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 7,
+  "query": "url:https://pbs.twimg.com/media/FnWbmE_aEAkPm2m?format=webp&name=large https://x.com/Reki_Shock_/status/1618262550713442305",
+  "results": [
+   {
+    "title": "FnWbmE_aEAkPm2m?format=webp&name=large",
+    "page": "https://x.com/Reki_Shock_/status/1618262550713442305",
+    "image": "https://pbs.twimg.com/media/FnWbmE_aEAkPm2m?format=webp&name=large",
+    "width": 640,
+    "height": 946,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "",
+    "file": "7-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 8,
+  "query": "url:https://www.sankei.com/resizer/v2/BHJUKQL7PBO6FM7QAF63WWCX3Y.jpg?auth=d499bab4d90a83e013ab024725dc7d33554ce07d5883fe08742f0c31898897fc&quality=40&focal=2386%2C1864&width=1200 https://www.sankei.com/article/20260103-UFTGE3ETLJJVPEAN3LYDOS6ELU/",
+  "results": [
+   {
+    "title": "BHJUKQL7PBO6FM7QAF63WWCX3Y.jpg?auth=d499bab4d90a83e013ab024725dc7d33554ce07d5883fe08742f0c31898897fc",
+    "page": "https://www.sankei.com/article/20260103-UFTGE3ETLJJVPEAN3LYDOS6ELU/",
+    "image": "https://www.sankei.com/resizer/v2/BHJUKQL7PBO6FM7QAF63WWCX3Y.jpg?auth=d499bab4d90a83e013ab024725dc7d33554ce07d5883fe08742f0c31898897fc&quality=40&focal=2386%2C1864&width=1200",
+    "width": 1200,
+    "height": 1752,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "",
+    "file": "8-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 9,
+  "query": "url:https://auctions.afimg.jp/d1188394468/ya/image/d1188394468.1.jpg https://aucview.aucfan.com/yahoo/d1188394468/",
+  "results": [
+   {
+    "title": "d1188394468.1.jpg",
+    "page": "https://aucview.aucfan.com/yahoo/d1188394468/",
+    "image": "https://auctions.afimg.jp/d1188394468/ya/image/d1188394468.1.jpg",
+    "width": 1200,
+    "height": 787,
+    "license": "",
+    "license_url": "",
+    "artist": "aucview.aucfan.com",
+    "description": "",
+    "file": "9-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 10,
+  "query": "url:https://img.buzzfeed.com/buzzfeed-static/static/2019-04/28/21/asset/buzzfeed-prod-web-04/sub-buzz-31641-1556502274-1.jpg?downsize=900:*&output-format=auto&output-quality=auto https://www.buzzfeed.com/jp/keiyoshikawa/emperor-hirohito",
+  "results": [
+   {
+    "title": "sub-buzz-31641-1556502274-1.jpg?downsize=900:*&output-format=auto&output-quality=auto",
+    "page": "https://www.buzzfeed.com/jp/keiyoshikawa/emperor-hirohito",
+    "image": "https://img.buzzfeed.com/buzzfeed-static/static/2019-04/28/21/asset/buzzfeed-prod-web-04/sub-buzz-31641-1556502274-1.jpg?downsize=900:*&output-format=auto&output-quality=auto",
+    "width": 789,
+    "height": 1024,
+    "license": "",
+    "license_url": "",
+    "artist": "buzzfeed.com",
+    "description": "",
+    "file": "10-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 11,
+  "query": "url:https://cdn.mainichi.jp/vol1/2025/10/08/20251008k0000m040110000p/9.jpg?1 https://mainichi.jp/articles/20251008/k00/00m/040/086000c",
+  "results": [
+   {
+    "title": "9.jpg?1",
+    "page": "https://mainichi.jp/articles/20251008/k00/00m/040/086000c",
+    "image": "https://cdn.mainichi.jp/vol1/2025/10/08/20251008k0000m040110000p/9.jpg?1",
+    "width": 800,
+    "height": 549,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "",
+    "file": "11-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 12,
+  "query": "url:https://bunshun.ismcdn.jp/mwimgs/b/5/750h/img_b513f4024a0ed6695490dd58ce5074ae489912.jpg https://bunshun.jp/articles/photo_front/84250?utm_source=news.yahoo.co.jp&utm_medium=referral&utm_campaign=partnerLink&pn=2",
+  "results": [
+   {
+    "title": "img_b513f4024a0ed6695490dd58ce5074ae489912.jpg",
+    "page": "https://bunshun.jp/articles/photo_front/84250?utm_source=news.yahoo.co.jp&utm_medium=referral&utm_campaign=partnerLink&pn=2",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/b/5/750h/img_b513f4024a0ed6695490dd58ce5074ae489912.jpg",
+    "width": 975,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "",
+    "file": "12-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 13,
+  "query": "url:https://bunshun.jp/mwimgs/1/e/1200wm/img_1ebf66e3775b57ed0f52271c607230a0104682.jpg https://bunshun.jp/articles/-/38694?page=1",
+  "results": [
+   {
+    "title": "img_1ebf66e3775b57ed0f52271c607230a0104682.jpg",
+    "page": "https://bunshun.jp/articles/-/38694?page=1",
+    "image": "https://bunshun.jp/mwimgs/1/e/1200wm/img_1ebf66e3775b57ed0f52271c607230a0104682.jpg",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "",
+    "file": "13-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "url:https://www.sankei.com/resizer/v2/3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156&quality=40&smart=true&width=1200 https://www.sankei.com/article/20251009-F3L2BXCQFBL2FOEOPISGQ3AJNM/",
+  "results": [
+   {
+    "title": "3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156",
+    "page": "https://www.sankei.com/article/20251009-F3L2BXCQFBL2FOEOPISGQ3AJNM/",
+    "image": "https://www.sankei.com/resizer/v2/3RAUECEZKFJOPGOH5K3V6E2ESA.jpg?auth=8528f4e0d83608f6dcbf63a6e05f63bde2a6a6e57b448bb181612303a6cce156&quality=40&smart=true&width=1200",
+    "width": 1200,
+    "height": 1023,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "",
+    "file": "14-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "url:https://www.sankei.com/resizer/v2/LQVV5UO7R5NNRGU7BEZIETODUU.jpg?auth=d1b8e416a6fdce30a92b785633ad7044406a1daf0ce99cf5badf415b007d0395&quality=40&smart=true&width=1200 https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
+  "results": [
+   {
+    "title": "LQVV5UO7R5NNRGU7BEZIETODUU.jpg?auth=d1b8e416a6fdce30a92b785633ad7044406a1daf0ce99cf5badf415b007d0395",
+    "page": "https://www.sankei.com/article/20251013-RBKHZMHABNOBRPP52X7A7GBPNY/",
+    "image": "https://www.sankei.com/resizer/v2/LQVV5UO7R5NNRGU7BEZIETODUU.jpg?auth=d1b8e416a6fdce30a92b785633ad7044406a1daf0ce99cf5badf415b007d0395&quality=40&smart=true&width=1200",
+    "width": 1200,
+    "height": 893,
+    "license": "",
+    "license_url": "",
+    "artist": "sankei.com",
+    "description": "",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "url:https://showa-g.org/img/00127_l.webp https://showa-g.org/photos/view/127",
+  "results": [
+   {
+    "title": "00127_l.webp",
+    "page": "https://showa-g.org/photos/view/127",
+    "image": "https://showa-g.org/img/00127_l.webp",
+    "width": 700,
+    "height": 496,
+    "license": "",
+    "license_url": "",
+    "artist": "showa-g.org",
+    "description": "",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "music:Gymnopédie Satie piano",
+  "results": [
+   {
+    "title": "File:Satie Gymnopedie No. 3 for piano solo 01.wav",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No._3_for_piano_solo_01.wav",
+    "size": 5357612,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Satie",
+    "description": "Satie Gymnopedie No. 3 for piano solo",
+    "file": "17-1.wav",
+    "seconds": 30.4
+   },
+   {
+    "title": "File:Erik Satie -Gymnopedie No.1 - Arr for alto saxophone and piano - David Hernando Vitores.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-Gymnopedie_No.1_-_Arr_for_alto_saxophone_and_piano_-_David_Hernando_Vitores.ogg",
+    "size": 9817830,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Erik Satie",
+    "description": "Gymnopedie No.1 - Arr for alto saxophone and piano.",
+    "file": "17-2.ogg",
+    "seconds": 220.0
+   },
+   {
+    "title": "File:Satie Gymnopedie No 3 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_3_performed_by_Michael_Laucke.flac",
+    "size": 6941233,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "17-3.flac",
+    "seconds": 123.1
+   },
+   {
+    "title": "File:Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "size": 3696351,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Robin Alciatore",
+    "description": "Gymnopédies - la 1ére. lent et douloureux",
+    "file": "17-4.ogg",
+    "seconds": 183.6
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "music:Chopin Nocturne piano",
+  "results": [
+   {
+    "title": "File:Chopin, Nocturne op 32 no 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_op_32_no_1.ogg",
+    "size": 4852417,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Constantin Stephan, piano",
+    "description": "Nocturne op 32 no 1 by Frédéric Chopin performed by Constantin Stephan",
+    "file": "18-1.ogg",
+    "seconds": 283.0
+   },
+   {
+    "title": "File:Chopin, Nocturne in C-sharp minor, Op. Posth.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg",
+    "size": 5302273,
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "Frédéric Chopin",
+    "description": "Nocturne No. 20 in C-sharp minor, Op. posth.",
+    "file": "18-2.ogg",
+    "seconds": 252.5
+   },
+   {
+    "title": "File:Chopin Nocturne Op.27 No.1.oga",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin_Nocturne_Op.27_No.1.oga",
+    "size": 692632,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Frédéric Chopin",
+    "description": "nocturne op. 27 n° 1 Chopin, piano",
+    "file": "18-3.ogg",
+    "seconds": 49.3
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "music:Satie Gnossienne piano",
+  "results": [
+   {
+    "title": "File:Satie - Gnossienne 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_-_Gnossienne_1.ogg",
+    "size": 3578022,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Composer: Erik Satie Performer: La Pianista",
+    "description": "French composer Erik Satie created several works for the piano entitled Gnossienne. This is the first piece in a set of three published in 1893, and the first piece of what ultimately became seven works that shared the name Gnossienne. This rendition was performed by La Pianista.",
+    "file": "19-1.ogg",
+    "seconds": 218.0
+   },
+   {
+    "title": "File:Gnossienne 3 (Satie).ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gnossienne_3_(Satie).ogg",
+    "size": 2659757,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Composer: Erik Satie Performer: La Pianista",
+    "description": "French composer Erik Satie created several works for the piano entitled Gnossienne. This is the third piece in a set of three published in 1893, and the third piece of what ultimately became seven works that shared the name Gnossienne. This rendition was performed by the La Pianista.",
+    "file": "19-2.ogg",
+    "seconds": 162.7
+   },
+   {
+    "title": "File:Gnossienne 2 (Satie).ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gnossienne_2_(Satie).ogg",
+    "size": 1673037,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Composer: Erik Satie Performer: La Pianista",
+    "description": "French composer Erik Satie created several works for the piano entitled Gnossienne. This is the second piece in a set of three published in 1893, and the second piece of what ultimately became seven works that shared the name Gnossienne. This rendition was performed by the La Pianista.",
+    "file": "19-3.ogg",
+    "seconds": 101.6
+   },
+   {
+    "title": "File:Gnossienne 5 (Satie).ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Gnossienne_5_(Satie).ogg",
+    "size": 3012321,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Composer: Erik Satie Performer: La Pianista",
+    "description": "French composer Erik Satie created several works for the piano entitled Gnossienne. This is the second piece in a set of three composed before the three works explicitly titled Gnossienne, but not published until after the composer's death, and not originally titled Gnossienne or numbered as such, a",
+    "file": "19-4.ogg",
+    "seconds": 172.3
+   }
+  ]
+ }
+]
