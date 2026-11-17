@@ -1862,5 +1862,90 @@
     "seconds": 183.6
    }
   ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-aiko-mie/aiko-standing.jpg",
+  "results": [
+   {
+    "title": "aiko-standing.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 560,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-mie/aiko-standing.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-aiko-mie/aiko-arrives.jpg",
+  "results": [
+   {
+    "title": "aiko-arrives.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 664,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-mie/aiko-arrives.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-aiko-mie/aiko-bow.jpg",
+  "results": [
+   {
+    "title": "aiko-bow.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 600,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-mie/aiko-bow.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-aiko-mie/aiko-staff.jpg",
+  "results": [
+   {
+    "title": "aiko-staff.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 745,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-mie/aiko-staff.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-aiko-mie/shells.jpg",
+  "results": [
+   {
+    "title": "shells.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 850,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-mie/shells.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
  }
 ]
