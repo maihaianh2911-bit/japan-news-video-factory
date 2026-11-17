@@ -24,7 +24,15 @@
     "web:雅子さま 天皇陛下 寄り添う",
     "web:天皇ご一家 2024",
     "music:Debussy Clair de lune piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-17-masako-rikon/togu-gate.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/masako-hat.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/couple-laugh.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/masako-walk.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/couple-balcony.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/engagement-1993.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/couple-smile.jpg",
+    "file:stories/media/2026-11-17-masako-rikon/couple-2000s.jpg"
   ],
   "scenes": [
     {
@@ -37,7 +45,26 @@
           "say": "もし、あの夜、りこんしていたら。今のこうしつは、存在しなかったかもしれない。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai người cười rạng rỡ dưới câu hỏi mở đầu."
     },
     {
       "label": "療養",
@@ -52,7 +79,27 @@
           "text": "しかし2003年に体調を崩され、翌年には「適応障害」と発表。長い療養生活に入られた。",
           "say": "しかし2003年に体調を崩され、翌年には、てきおうしょうがいと発表。長い、りょうよう生活に入られた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Masako từ nhà ngoại giao thành Thái tử phi.",
+      "cut": "page"
     },
     {
       "label": "深夜の東宮御所",
@@ -68,7 +115,27 @@
           "say": "わたしと、りこんしてください。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Đêm khuya ở Đông cung; câu 'hãy ly hôn' hiện to.",
+      "cut": "dip"
     },
     {
       "label": "自己犠牲",
@@ -82,7 +149,27 @@
           "text": "それは、妻としての誇りが選んだ、あまりにも切ない自己犠牲だった。",
           "say": "それは、妻としての誇りが選んだ、あまりにも切ない、じこぎせいだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hy sinh của người vợ.",
+      "cut": "fade"
     },
     {
       "label": "一言",
@@ -101,7 +188,24 @@
           "say": "ぼくは、こうたいしである前に、きみの、おっとだ。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "20-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Câu 'anh là chồng em' hiện to.",
+      "cut": "hard"
     },
     {
       "label": "覚悟",
@@ -119,7 +223,24 @@
         {
           "text": "地位も、立場も、世間の声も。すべてを敵に回してでも妻を守る、覚悟の宣言だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-6",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Họp báo 2004: quyết bảo vệ vợ.",
+      "cut": "page"
     },
     {
       "label": "運命共同体",
@@ -134,7 +255,27 @@
           "text": "この夜、二人は運命共同体となった。",
           "say": "この夜、二人は、うんめいきょうどうたいとなった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai người thành một.",
+      "cut": "fade"
     },
     {
       "label": "絆",
@@ -150,7 +291,28 @@
           "say": "あなたは、この夫婦のきずなを、どう感じますか。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-3",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-4",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Năm 2019 thành Thiên hoàng và Hoàng hậu.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "13-2",
+    "start": 5.2
+  }
 }

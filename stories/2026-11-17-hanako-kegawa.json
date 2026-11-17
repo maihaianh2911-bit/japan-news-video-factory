@@ -25,7 +25,15 @@
     "web:雅子さま 犬 秋田",
     "web:雅子さま 愛子さま 動物",
     "music:Satie Gnossienne piano",
-    "music:Debussy Arabesque piano"
+    "music:Debussy Arabesque piano",
+    "file:stories/media/2026-11-17-hanako-kegawa/kimono-ladies.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/michiko-fur-young.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/fur-stole.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/michiko-mask.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/fur-rack.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/family-dogs.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/aiko-cats.jpg",
+    "file:stories/media/2026-11-17-hanako-kegawa/masako-dog.jpg"
   ],
   "scenes": [
     {
@@ -42,7 +50,26 @@
           "text": "そんな一言が、新年一般参賀の空気を変えたと言われています。",
           "say": "そんな一言が、新年いっぱんさんがの空気を変えたと言われています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Áo lông dưới câu mở đầu."
     },
     {
       "label": "一般参賀",
@@ -57,7 +84,35 @@
           "text": "その場で目を引いたのが、美智子さまの装いにあしらわれた、艶やかな毛皮だった。",
           "say": "その場で目を引いたのが、みちこさまの装いに、あしらわれた、つややかな毛皮だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Lễ chúc Tết và chiếc khăn lông.",
+      "cut": "page"
     },
     {
       "label": "半歩",
@@ -75,7 +130,32 @@
         {
           "text": "写真に残るのは笑顔。けれど、その距離は正直だった、という声もある。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Bà Hanako 'nửa bước'.",
+      "cut": "fade"
     },
     {
       "label": "動物愛護",
@@ -86,7 +166,27 @@
           "text": "華子さまは、日本動物愛護協会の総裁として、長く動物たちに心を寄せてこられた。",
           "say": "はなこさまは、日本どうぶつあいご協会の、そうさいとして、長く動物たちに心を寄せてこられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-6",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Hanako và những chú chó.",
+      "cut": "page"
     },
     {
       "label": "時代",
@@ -100,7 +200,27 @@
         {
           "text": "高級ブランドも次々と毛皮の使用をやめる時代。装いは、言葉より先に届くメッセージになる。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "20-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Nữ hoàng Elizabeth và áo lông.",
+      "cut": "page"
     },
     {
       "label": "天皇ご一家",
@@ -118,7 +238,35 @@
         {
           "text": "その歩みは、「命をむだにしない」という言葉とともに紹介されています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-3",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Gia đình Thiên hoàng với chó mèo được cứu.",
+      "cut": "fade"
     },
     {
       "label": "温度",
@@ -134,7 +282,36 @@
           "say": "はんぽの距離と、いっぽ寄る犬。あなたは、どちらに温度を感じますか。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "23-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "13-4",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-12",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Chú chó vẫy đuôi trước bà Masako.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "15-1",
+    "start": 1.0
+  }
 }

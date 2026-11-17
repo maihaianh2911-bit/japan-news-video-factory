@@ -24,7 +24,16 @@
     "web:紀子さま 若い頃",
     "web:秋篠宮家 ご一家",
     "music:Satie Gnossienne piano",
-    "music:Chopin Prelude piano"
+    "music:Chopin Prelude piano",
+    "file:stories/media/2026-11-17-kiko-aruki/kiko-garden.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/emperor-masako.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/aiko-white.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/aiko-white2.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/kiko-walk.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/tape-cut.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/tiaras.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/emperor-umbrella.jpg",
+    "file:stories/media/2026-11-17-kiko-aruki/aiko-white3.jpg"
   ],
   "scenes": [
     {
@@ -40,7 +49,26 @@
         {
           "text": "そんな声が上がったのは、ある参拝の日のことだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-6",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Bà Kiko dưới câu mở đầu."
     },
     {
       "label": "明治神宮",
@@ -59,7 +87,35 @@
           "text": "この日、皇族方は、それぞれ見事な立ち居振る舞いを見せられた。",
           "say": "この日、こうぞくがたは、それぞれ見事な、たちいふるまいを見せられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "1-6",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Đền Meiji và buổi viếng.",
+      "cut": "page"
     },
     {
       "label": "気品",
@@ -74,7 +130,35 @@
           "text": "愛子さまも純白の装いで、初めての参拝とは思えないほど、優雅だった。",
           "say": "あいこさまも、じゅんぱくの装いで、初めての参拝とは思えないほど、優雅だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-7",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "5-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Masako và công chúa Aiko áo trắng.",
+      "cut": "fade"
     },
     {
       "label": "歩み",
@@ -93,7 +177,32 @@
           "text": "「まるで機械のよう」。そんな声まで上がった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-10",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "fall"
+        },
+        {
+          "pick": "7-8",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Dáng đi của bà Kiko.",
+      "cut": "page"
     },
     {
       "label": "所作",
@@ -104,7 +213,35 @@
           "text": "さらに、テープカットや植樹の行事でも、所作の不自然さを指摘する声があった。",
           "say": "さらに、テープカットや、しょくじゅの行事でも、しょさの不自然さを指摘する声があった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-6",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "9-2",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Cắt băng và trồng cây.",
+      "cut": "fade"
     },
     {
       "label": "30年以上",
@@ -123,7 +260,35 @@
           "text": "皇族として30年以上。なぜ、こうした違和感の声は、いまだ消えないのか。",
           "say": "こうぞくとして、30年以上。なぜ、こうした違和感の声は、いまだ消えないのか。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-8",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "12-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Lễ cưới 1990 và gia đình Akishino.",
+      "cut": "dip"
     },
     {
       "label": "理由",
@@ -137,7 +302,30 @@
           "text": "あなたは、どう感じますか？",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "11-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kết: cả nhà Akishino, rồi bà Kiko thời trẻ.",
+      "cut": "page"
     }
-  ]
+  ],
+  "music": {
+    "pick": "13-2"
+  }
 }

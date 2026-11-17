@@ -24,7 +24,12 @@
     "web:斎宮跡 明和町",
     "web:伊勢神宮 内宮",
     "music:Schumann Kinderszenen piano",
-    "music:Satie Gymnopédie piano"
+    "music:Satie Gymnopédie piano",
+    "file:stories/media/2026-11-17-aiko-mie/aiko-standing.jpg",
+    "file:stories/media/2026-11-17-aiko-mie/aiko-arrives.jpg",
+    "file:stories/media/2026-11-17-aiko-mie/aiko-bow.jpg",
+    "file:stories/media/2026-11-17-aiko-mie/aiko-staff.jpg",
+    "file:stories/media/2026-11-17-aiko-mie/shells.jpg"
   ],
   "scenes": [
     {
@@ -37,7 +42,23 @@
           "say": "一人の少年の言葉に、あいこさまが返した、たった一言。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Công chúa cúi xuống bên các em nhỏ."
     },
     {
       "label": "三重へ",
@@ -52,7 +73,27 @@
           "text": "大学卒業と、日本赤十字社への就職を報告するため、伊勢神宮を参拝された。",
           "say": "大学卒業と、にほんせきじゅうじしゃへの就職を報告するため、いせじんぐうを参拝された。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-7",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "2-9",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Chuyến đi Mie và đền Ise 2024.",
+      "cut": "page"
     },
     {
       "label": "貝合わせ",
@@ -74,7 +115,35 @@
         {
           "text": "まるで友達のように寄り添うお姿に、会場は温かな空気に包まれていた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "4-5",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bảo tàng Saikū và trò chơi vỏ sò.",
+      "cut": "page"
     },
     {
       "label": "その最中",
@@ -92,7 +161,27 @@
         {
           "text": "スタッフも一瞬、凍りついたという。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Câu hỏi của cậu bé hiện to.",
+      "cut": "hard"
     },
     {
       "label": "過去",
@@ -107,7 +196,27 @@
           "text": "愛子さまは静かに目を伏せ、ふうっと息を整えられた。",
           "say": "あいこさまは、静かに目を伏せ、ふうっと息を整えられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-8",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Công chúa hồi tiểu học.",
+      "cut": "dip"
     },
     {
       "label": "そうだよ",
@@ -125,7 +234,24 @@
         {
           "text": "責めず、否定せず、ただその子の心に寄り添う。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-2",
+          "focus": [
+            0.6,
+            0.35
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Câu 'đúng vậy' hiện to.",
+      "cut": "fade"
     },
     {
       "label": "寄り添う",
@@ -144,7 +270,30 @@
           "text": "あなたは、この対応を、どう感じますか？",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-7",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kết bằng nụ cười của công chúa.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "13-1"
+  }
 }

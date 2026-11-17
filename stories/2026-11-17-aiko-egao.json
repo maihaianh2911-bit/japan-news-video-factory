@@ -24,7 +24,14 @@
     "web:愛子さま 2017 高等科 入学式",
     "web:愛子さま 笑顔 成年",
     "music:Schumann Träumerei piano",
-    "music:Satie Gymnopédie piano"
+    "music:Satie Gymnopédie piano",
+    "file:stories/media/2026-11-17-aiko-egao/family.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/aiko-thin.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/family-walk.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/michiko.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/hisako.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/aiko-purple.jpg",
+    "file:stories/media/2026-11-17-aiko-egao/aiko-smile.jpg"
   ],
   "scenes": [
     {
@@ -41,7 +48,23 @@
           "text": "2014年の家族写真。愛子さまの、屈託のない笑顔が印象的だった。",
           "say": "2014年の家族写真。あいこさまの、くったくのない笑顔が印象的だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-12",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Gương mặt tròn tươi cười của công chúa Aiko, rồi ảnh gia đình 2014."
     },
     {
       "label": "2016年秋",
@@ -56,7 +79,24 @@
           "text": "頬がこけるほど痩せたお姿に、日本中が息をのんだ。",
           "say": "ほおがこけるほど、やせたお姿に、日本中が息をのんだ。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Năm 2016 công chúa gầy sút.",
+      "cut": "dip"
     },
     {
       "label": "支え",
@@ -70,7 +110,27 @@
         {
           "text": "「食欲がない」「笑顔が消えた」。そんな日々が続いたという。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Cha mẹ luôn đi bên cạnh.",
+      "cut": "fade"
     },
     {
       "label": "冷たい言葉",
@@ -89,7 +149,27 @@
           "text": "「お弁当まで違うのね」。陰で、そう囁かれていたというのです。",
           "say": "お弁当まで違うのね。かげで、そう、ささやかれていたというのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "6-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Trường Gakushūin, nơi có những lời lạnh lùng.",
+      "cut": "page"
     },
     {
       "label": "別の言葉",
@@ -111,7 +191,27 @@
           "text": "真偽は定かではありません。けれど、その瞬間、雅子さまの瞳には涙がにじんだという。",
           "say": "しんぎは、さだかではありません。けれど、その瞬間、まさこさまの、ひとみには、涙がにじんだという。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Michiko; rồi gương mặt bà Masako.",
+      "cut": "hard"
     },
     {
       "label": "温かな支え",
@@ -126,7 +226,35 @@
           "text": "2017年春、愛子さまは学習院女子高等科へ進学。少しずつ、ふっくらとした笑顔を取り戻されていった。",
           "say": "2017年春、あいこさまは、がくしゅういんじょしこうとうかへ進学。少しずつ、ふっくらとした笑顔を取り戻されていった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-5",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Hisako, bà Nobuko; công chúa vào cấp 3 năm 2017.",
+      "cut": "page"
     },
     {
       "label": "優しさ",
@@ -144,7 +272,38 @@
         {
           "text": "あなたは、どう感じますか？"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "12-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nụ cười trở lại.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "13-1"
+  }
 }

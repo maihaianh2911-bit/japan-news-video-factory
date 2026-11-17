@@ -24,7 +24,16 @@
     "web:久子さま 笑顔 和装",
     "web:久子さま 承子さま 絢子さま",
     "music:Satie Gnossienne piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-1.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-2.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-3.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/takamado-ladies.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/hisako-wave.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/mikasa-family.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/hisako-smile.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/hisako-smile2.jpg",
+    "file:stories/media/2026-11-17-hisako-hikidemono/kiko-car.jpg"
   ],
   "scenes": [
     {
@@ -40,7 +49,26 @@
         {
           "text": "その仕返しは、完全に裏目に出たと言われています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "22-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Hisako cười dưới câu mở đầu."
     },
     {
       "label": "立皇嗣の礼",
@@ -55,7 +83,32 @@
           "text": "新型コロナの影響で、春から延期されての開催。秋篠宮家にとって、まさに一世一代の晴れ舞台だった。",
           "say": "新型コロナの影響で、春から延期されての開催。あきしののみやけにとって、まさに、いっせいちだいの晴れ舞台だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-4",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Lễ Rikkōshi 2020: ông bà Akishino trong lễ phục.",
+      "cut": "page"
     },
     {
       "label": "欠席",
@@ -74,7 +127,35 @@
           "text": "毎年秋に開かれる恒例行事のために、祝いを欠くのか。周囲はざわついたという。",
           "say": "毎年秋に開かれる、こうれい行事のために、祝いを欠くのか。周囲はざわついたという。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-6",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-8",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Bà Hisako đi xem triển lãm Shōsōin ở Nara.",
+      "cut": "page"
     },
     {
       "label": "不満",
@@ -88,7 +169,27 @@
         {
           "text": "そして事態は、一線を越えたと言われています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-9",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Kiko, người được cho là bất bình.",
+      "cut": "fade"
     },
     {
       "label": "空箱",
@@ -104,7 +205,27 @@
           "text": "宮中では、関係断絶を意味しかねない異例の行為。怒りや抗議が出ても、不思議ではなかった。",
           "say": "きゅうちゅうでは、関係断絶を意味しかねない、異例の行為。怒りや抗議が出ても、不思議ではなかった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Hộp quà rỗng: giật vào khi kể.",
+      "cut": "hard"
     },
     {
       "label": "お礼状",
@@ -124,7 +245,27 @@
           "say": "あきしののみやけの、ごじつじょうにふさわしい、ごはいりょに、ちゅうしんより、感謝申し上げます。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-11",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Hisako gửi trả kèm thư cảm ơn; câu thư hiện to.",
+      "cut": "fade"
     },
     {
       "label": "本当の強さ",
@@ -143,7 +284,27 @@
           "text": "本当の強さとは何か。あなたはどう思いますか？",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "19-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Bà Hisako và ba con gái; kết bằng bà vẫy tay.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "13-1"
+  }
 }
