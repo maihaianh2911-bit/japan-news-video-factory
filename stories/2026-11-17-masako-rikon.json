@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 25,
   "title": "離婚を申し出た雅子さまに、皇太子さまが返した答え",
   "date": "2026-11-17",
@@ -32,7 +32,8 @@
     "file:stories/media/2026-11-17-masako-rikon/couple-balcony.jpg",
     "file:stories/media/2026-11-17-masako-rikon/engagement-1993.jpg",
     "file:stories/media/2026-11-17-masako-rikon/couple-smile.jpg",
-    "file:stories/media/2026-11-17-masako-rikon/couple-2000s.jpg"
+    "file:stories/media/2026-11-17-masako-rikon/couple-2000s.jpg",
+    "web:皇太子さま 記者会見 2004年5月 欧州訪問前 => a Japanese crown prince speaking at a press conference"
   ],
   "scenes": [
     {
@@ -52,7 +53,7 @@
       ],
       "photo": [
         {
-          "pick": "17-1",
+          "pick": "21-1",
           "focus": [
             0.5,
             0.4
@@ -68,7 +69,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Câu trả lời của Thái tử hiện to ngay câu đầu, trên ảnh hai người cười."
+      "why": "Mở đầu bằng hai người cười bên nhau (ảnh chính, sáng rõ), rồi ngày cưới."
     },
     {
       "label": "皇太子妃に",
@@ -179,12 +180,15 @@
           "move": "push-in"
         },
         {
-          "pick": "20-1",
-          "fit": "contain",
+          "pick": "8-10",
+          "focus": [
+            0.52,
+            0.4
+          ],
           "move": "push-in"
         }
       ],
-      "why": "Hai người bên nhau; câu trả lời hiện to lần thứ hai như điệp khúc."
+      "why": "Khoảnh khắc lặng rồi câu trả lời: hai người bên nhau."
     },
     {
       "label": "記者会見",
@@ -208,8 +212,11 @@
       "photo": [
         {
           "pick": "8-3",
-          "fit": "contain",
-          "move": "push-in"
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-right"
         },
         {
           "pick": "8-6",
@@ -220,9 +227,9 @@
           "move": "pull-back"
         },
         {
-          "pick": "21-1",
+          "pick": "17-1",
           "focus": [
-            0.5,
+            0.3,
             0.4
           ],
           "move": "push-in"
@@ -234,7 +241,7 @@
       "label": "天皇と皇后",
       "era": "2019年",
       "headline": "天皇と皇后として\n並んで",
-      "cut": "dip",
+      "cut": "fade",
       "lines": [
         {
           "text": "そして2019年5月、二人は天皇と皇后として、国民の前に並んで立ちます。",
@@ -269,5 +276,11 @@
   "music": {
     "pick": "13-2",
     "start": 5.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
   }
 }
