@@ -1839,5 +1839,158 @@
     "seconds": 49.3
    }
   ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-1.jpg",
+  "results": [
+   {
+    "title": "rikkoushi-1.jpg",
+    "page": "",
+    "width": 960,
+    "height": 696,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/rikkoushi-1.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-2.jpg",
+  "results": [
+   {
+    "title": "rikkoushi-2.jpg",
+    "page": "",
+    "width": 936,
+    "height": 696,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/rikkoushi-2.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/rikkoushi-3.jpg",
+  "results": [
+   {
+    "title": "rikkoushi-3.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 672,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/rikkoushi-3.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/takamado-ladies.jpg",
+  "results": [
+   {
+    "title": "takamado-ladies.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 710,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/takamado-ladies.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/hisako-wave.jpg",
+  "results": [
+   {
+    "title": "hisako-wave.jpg",
+    "page": "",
+    "width": 1032,
+    "height": 1056,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/hisako-wave.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/mikasa-family.jpg",
+  "results": [
+   {
+    "title": "mikasa-family.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 792,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/mikasa-family.jpg",
+    "file": "20-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/hisako-smile.jpg",
+  "results": [
+   {
+    "title": "hisako-smile.jpg",
+    "page": "",
+    "width": 720,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/hisako-smile.jpg",
+    "file": "21-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/hisako-smile2.jpg",
+  "results": [
+   {
+    "title": "hisako-smile2.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 778,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/hisako-smile2.jpg",
+    "file": "22-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "file:stories/media/2026-11-17-hisako-hikidemono/kiko-car.jpg",
+  "results": [
+   {
+    "title": "kiko-car.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 712,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-hikidemono/kiko-car.jpg",
+    "file": "23-1.jpg"
+   }
+  ]
  }
 ]
