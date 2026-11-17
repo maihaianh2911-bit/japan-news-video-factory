@@ -1743,5 +1743,141 @@
     "seconds": 49.3
    }
   ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-masako-rikon/togu-gate.jpg",
+  "results": [
+   {
+    "title": "togu-gate.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 830,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/togu-gate.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-masako-rikon/masako-hat.jpg",
+  "results": [
+   {
+    "title": "masako-hat.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 990,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/masako-hat.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-masako-rikon/couple-laugh.jpg",
+  "results": [
+   {
+    "title": "couple-laugh.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 719,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/couple-laugh.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-masako-rikon/masako-walk.jpg",
+  "results": [
+   {
+    "title": "masako-walk.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1063,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/masako-walk.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-masako-rikon/couple-balcony.jpg",
+  "results": [
+   {
+    "title": "couple-balcony.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 956,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/couple-balcony.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "file:stories/media/2026-11-17-masako-rikon/engagement-1993.jpg",
+  "results": [
+   {
+    "title": "engagement-1993.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 695,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/engagement-1993.jpg",
+    "file": "20-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "file:stories/media/2026-11-17-masako-rikon/couple-smile.jpg",
+  "results": [
+   {
+    "title": "couple-smile.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 860,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/couple-smile.jpg",
+    "file": "21-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "file:stories/media/2026-11-17-masako-rikon/couple-2000s.jpg",
+  "results": [
+   {
+    "title": "couple-2000s.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 928,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-masako-rikon/couple-2000s.jpg",
+    "file": "22-1.jpg"
+   }
+  ]
  }
 ]
