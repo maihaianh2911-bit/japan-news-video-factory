@@ -19,11 +19,12 @@ from .story import Beat
 from .visuals import Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace"}
+              "music", "pace", "fx"}
 STYLES = ("news", "paper", "story")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
+FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
 PACE_KEYS = {"speed", "line_pause", "scene_pause"}
@@ -148,6 +149,8 @@ def check_photo(photo, where, searches):
             problems.append(f'{where}: "focus" must be [x, y] with numbers from 0 to 1, got {focus!r}')
     if "fit" in photo and photo["fit"] not in ("cover", "contain"):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
+    if "depth" in photo and not isinstance(photo["depth"], bool):
+        problems.append(f'{where}: "depth" must be true or false (false: a flat picture such as a document), got {photo["depth"]!r}')
     if "tone" in photo and photo["tone"] not in TONES:
         problems.append(f'{where}: "tone" must be one of {", ".join(TONES)}, got {photo["tone"]!r}')
     problems += move_problems(photo, where)
@@ -201,6 +204,12 @@ def validate(data, name=None):
             start = music.get("start", 0.0)
             if not isinstance(start, (int, float)) or isinstance(start, bool) or not 0 <= start <= 120:
                 problems.append(f'"music": "start" must be seconds from 0 to 120, got {start!r}')
+    fx = data.get("fx")
+    if fx is not None:
+        if not isinstance(fx, dict):
+            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
+        else:
+            problems += unknown(fx, FX_KEYS, "fx")
     pace = data.get("pace")
     if pace is not None:
         if not isinstance(pace, dict):
@@ -330,7 +339,7 @@ def load_story(path, pictures=None):
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
-                      float(pace.get("scene_pause", 0.0)))
+                      float(pace.get("scene_pause", 0.0)), data.get("fx"))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
@@ -355,7 +364,7 @@ def load_story(path, pictures=None):
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                           pick.get("fit", "cover"), pick.get("move", "")))
+                                           pick.get("fit", "cover"), pick.get("move", ""), pick.get("depth", True)))
     return release, beats, photos
 
 

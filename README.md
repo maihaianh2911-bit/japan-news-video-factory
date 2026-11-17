@@ -24,6 +24,10 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
+## Ghi chú 17/11/2026: hiệu ứng hình thử nghiệm (chỉ ở nhánh `claude/stoic-darwin-utl7qq`, chưa vào bản chính)
+
+Bản B của video Chiêu Hòa – Kuroyanagi (đã gửi chủ kênh trong chat ngày 17/11) dùng bốn thứ, bật bằng `"fx"` trong file kịch bản, mặc định tắt: máy quay có nhịp nhanh chậm (`motion`), ảnh có chiều sâu mức nhẹ (`depth`), tiêu đề và câu trích hiện từng dòng còn phụ đề đậm dần theo lời đọc (`text`), phông chữ Shippori Mincho B1 (`face`). Kịch bản không có `"fx"` dựng ra y như cũ (đã so 6 khung hình của `mau-boj`). **Chưa vào `main`** vì chủ kênh chưa nói có dùng cho kênh này không, và trên GitHub còn thiếu: tải phông chữ, cài thư viện cho chiều sâu, lấy thời điểm thật của từng chữ từ máy tạo giọng (hiện phụ đề đậm dần theo ước lượng số chữ).
+
 ## Luồng tự tìm tin (chạy tay)
 
 1. Đọc thông cáo từ [Ngân hàng Trung ương Nhật Bản](https://www.boj.or.jp/rss/whatsnew.xml) [Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản](https://www.meti.go.jp/press/index.html) và [Cục Thống kê Nhật Bản](https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html). Nếu thiếu tin đủ mới và có đủ dữ kiện, ghi lý do trong run summary.

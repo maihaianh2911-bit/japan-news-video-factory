@@ -31,6 +31,7 @@ class Photo:
     focus: tuple[float, float] = (0.5, 0.5)   # the point of the picture that stays in the frame
     fit: str = "cover"                        # "contain" shows the whole picture
     move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
+    depth: bool = True                        # False: a flat picture (a document, a collage): no parallax with "fx"
 
     def credit(self):
         record = {key: getattr(self, key)

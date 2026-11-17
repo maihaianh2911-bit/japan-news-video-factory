@@ -49,6 +49,7 @@ class Release:
     speed: float = 0.96          # speed of the voice
     line_pause: float = 0.0      # seconds of silence after each line (more around a quote)
     scene_pause: float = 0.0     # seconds of silence at the end of each scene
+    fx: object = None            # picture effects of a story (render.use_fx), or None
 
 
 def compact(value):
