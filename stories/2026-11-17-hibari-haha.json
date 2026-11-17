@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 17,
   "title": "美空ひばりと母・喜美枝",
   "date": "2026-11-17",
@@ -43,7 +43,28 @@
           "say": "みそらひばりのそばには、35年間、いつも母がいた。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-7",
+          "focus": [
+            0.48,
+            0.38
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "10-2",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "pan-right",
+          "tone": "sepia"
+        }
+      ],
+      "why": "Mở đầu bằng ảnh thật hai mẹ con: ôm má nhau, chuyến Hawaii 1950 mẹ đứng cạnh, và mẹ hôn má con."
     },
     {
       "label": "美空楽団",
@@ -62,7 +83,47 @@
           "text": "楽団の名前は「美空楽団」。娘の才能を信じた母が、自分のお金で作った楽団でした。",
           "say": "楽団の名前は、みそらがくだん。娘の才能を信じた母が、自分のお金で作った楽団でした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-8",
+          "focus": [
+            0.62,
+            0.22
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "5-8",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-left",
+          "tone": "sepia"
+        },
+        {
+          "pick": "4-4",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "pan-right",
+          "tone": "sepia"
+        },
+        {
+          "pick": "4-6",
+          "focus": [
+            0.5,
+            0.42
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        }
+      ],
+      "cut": "fade",
+      "why": "Chân dung bà Kimie (tạp chí 1966), khu chợ Isogo Yokohama sau chiến tranh, rồi cô bé Hibari hát cùng ban nhạc."
     },
     {
       "label": "マネージャー",
@@ -71,7 +132,38 @@
       "lines": [
         "娘がスターになると、母はマネージャーとなりました。",
         "すべての仕事にプロデューサーとして関わり、舞台にも撮影所にも、いつも付き添いました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-10",
+          "focus": [
+            0.42,
+            0.3
+          ],
+          "move": "rise",
+          "tone": "sepia"
+        },
+        {
+          "pick": "8-6",
+          "focus": [
+            0.48,
+            0.14
+          ],
+          "move": "close-up",
+          "tone": "sepia"
+        },
+        {
+          "pick": "1-12",
+          "focus": [
+            0.5,
+            0.22
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        }
+      ],
+      "cut": "fade",
+      "why": "Mẹ đi cùng con: Hawaii 1950, mẹ ngồi xem buổi tập, mẹ theo con sau cánh gà."
     },
     {
       "label": "一卵性母娘",
@@ -83,7 +175,36 @@
           "say": "かたときも離れない二人を、世間は、いちらんせいおやこと呼びました。"
         },
         "ひばりにとって母は、親であり、仕事の相棒であり、いちばんの味方でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-11",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "9-7",
+          "focus": [
+            0.59,
+            0.13
+          ],
+          "move": "close-up",
+          "tone": "sepia"
+        },
+        {
+          "pick": "1-3",
+          "focus": [
+            0.2,
+            0.35
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai mẹ con không rời nhau: mẹ ngồi cạnh khi con họp báo, con trêu mẹ, đi ăn cùng nhau ở Kyoto."
     },
     {
       "label": "別れ",
@@ -95,7 +216,27 @@
           "say": "しかし1981年7月、きみえは、のうしゅようのため、68歳でこの世を去ります。"
         },
         "ひばりは、44歳でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.42,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-9",
+          "focus": [
+            0.52,
+            0.33
+          ],
+          "move": "close-up"
+        }
+      ],
+      "cut": "dip",
+      "why": "Bà Kimie những năm cuối bên gia đình, ngôi mộ họ Katō, và Hibari năm 1981."
     },
     {
       "label": "親友",
@@ -107,7 +248,37 @@
           "say": "その翌年には、親友の、えりチエミも、45歳で亡くなります。"
         },
         "大切な人を、次々と失ったひばり。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-6",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "14-2",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "fall"
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.55,
+            0.5
+          ],
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "cut": "dip",
+      "why": "Chiemi lúc trẻ, ảnh thờ của Chiemi, và Hibari tiễn bạn ở đám tang năm 1982."
     },
     {
       "label": "歌い続けて",
@@ -122,7 +293,38 @@
           "text": "次回は、ひばりが紅白歌合戦から姿を消した年の話です。",
           "say": "次回は、ひばりが、こうはくうたがっせんから姿を消した年の話です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-3",
+          "focus": [
+            0.53,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hibari vẫn hát trên sân khấu những năm 1980, kết bằng buổi hát Phượng hoàng 1988."
     }
-  ]
+  ],
+  "music": {
+    "pick": "18-3"
+  }
 }
