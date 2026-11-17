@@ -1,0 +1,326 @@
+{
+  "demo": false,
+  "duration_seconds": 71.32,
+  "release": {
+    "url": "",
+    "published": "2026-11-17",
+    "publisher": "",
+    "title": "「あなたも昔、学校行ってなかったんでしょ？」愛子さまの答え"
+  },
+  "photos": [
+    {
+      "page": "",
+      "title": "aiko-bow.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.yomiuri.co.jp/koushitsu/20240327-OYT1T50087/",
+      "title": "愛子さま、斎宮歴史博物館をご見学…女流歌人・式子内親王の和歌 ...",
+      "creator": "yomiuri.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.chunichi.co.jp/article/874465",
+      "title": "愛子さま、伊勢神宮を参拝 初の単独訪問、学習院大卒業を報告 ...",
+      "creator": "chunichi.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.sankei.com/article/20240327-E3DLBMJZKJGXTC4TMNDBK7GAVY/",
+      "title": "愛子さまの伊勢神宮ご参拝 直前に太陽の光が差し込み「神々しい ...",
+      "creator": "sankei.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.asahi.com/gallery/photo/culture/isemairi/20210527/05.html",
+      "title": "斎王が暮らす宮殿があった斎宮跡。斎王は伊勢神宮に仕えた皇族の ...",
+      "creator": "asahi.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.chunichi.co.jp/article/875012",
+      "title": "愛子さま「美しい和歌が多いですね」明和町の斎宮歴史博物館視察 ...",
+      "creator": "chunichi.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.chunichi.co.jp/article/875012",
+      "title": "愛子さま「美しい和歌が多いですね」明和町の斎宮歴史博物館視察 ...",
+      "creator": "chunichi.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "shells.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "aiko-staff.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/109068/2",
+      "title": "愛子さまご卒業へ】学習院18年間の思い出 運動会での組体操に ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://bunshun.jp/articles/photo/42239?pn=8",
+      "title": "写真](8ページ目)「異様な親子」と非難されても…… 雅子さまが不 ...",
+      "creator": "bunshun.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "aiko-standing.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.asahi.com/articles/ASS3W1R1JS3WUTIL002M.html",
+      "title": "愛子さま「斎王は恋愛タブー？」 尋ねられた職員の答えは：朝日新聞",
+      "creator": "asahi.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://jisin.jp/koushitsu/2389186/",
+      "title": "品格がありますね」愛子さま 秋の園遊会で初の和装！桜色の振袖 ...",
+      "creator": "jisin.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://mainichi.jp/articles/20240122/k00/00m/040/116000c",
+      "title": "愛子さま、日本赤十字社に今春就職 学習院大を卒業後 宮内庁 ...",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Schumann - Kinderszenen 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Schumann_-_Kinderszenen_1.ogg",
+    "creator": "performed and recorded by Leonard Vertighel",
+    "license": "CC BY-SA 3.0"
+  },
+  "scenes": [
+    {
+      "label": "一言",
+      "headline": "少年の言葉に返した\nたった一言",
+      "lines": [
+        "一人の少年の言葉に、愛子さまが返した、たった一言。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "一人の少年の言葉に、あいこさまが返した、たった一言。"
+      ],
+      "cut": "",
+      "why": "Công chúa cúi xuống bên các em nhỏ.",
+      "era": "2024年",
+      "quotes": [
+        0
+      ],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://www.yomiuri.co.jp/koushitsu/20240327-OYT1T50087/"
+      ]
+    },
+    {
+      "label": "三重へ",
+      "headline": "初めての単独地方訪問\n三重県へ",
+      "lines": [
+        "2024年3月。愛子さまは、初めての単独での地方訪問として、三重県を訪れた。",
+        "大学卒業と、日本赤十字社への就職を報告するため、伊勢神宮を参拝された。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "2024年3月。あいこさまは、初めての、たんどくでの地方訪問として、みえけんを訪れた。",
+        "大学卒業と、にほんせきじゅうじしゃへの就職を報告するため、いせじんぐうを参拝された。"
+      ],
+      "cut": "page",
+      "why": "Chuyến đi Mie và đền Ise 2024.",
+      "era": "2024年3月",
+      "quotes": [],
+      "image_url": "https://www.chunichi.co.jp/article/874465",
+      "image_urls": [
+        "https://www.chunichi.co.jp/article/874465",
+        "https://www.sankei.com/article/20240327-E3DLBMJZKJGXTC4TMNDBK7GAVY/"
+      ]
+    },
+    {
+      "label": "貝合わせ",
+      "headline": "子どもたちに\n目線を合わせて",
+      "lines": [
+        "27日には、明和町の斎宮歴史博物館へ。",
+        "斎宮は、かつて伊勢神宮に仕えた皇女、斎王が暮らした場所。",
+        "平安時代の遊び、貝合わせを楽しむ子どもたちに、「こつは何かありますか」と、目線を合わせて話しかけられた。",
+        "まるで友達のように寄り添うお姿に、会場は温かな空気に包まれていた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "27日には、めいわちょうの、さいくう歴史博物館へ。",
+        "さいくうは、かつて、いせじんぐうに仕えた皇女、さいおうが暮らした場所。",
+        "へいあん時代の遊び、かいあわせを楽しむ子どもたちに、こつは何かありますかと、目線を合わせて話しかけられた。",
+        "まるで友達のように寄り添うお姿に、会場は温かな空気に包まれていた。"
+      ],
+      "cut": "page",
+      "why": "Bảo tàng Saikū và trò chơi vỏ sò.",
+      "era": "2024年3月27日",
+      "quotes": [],
+      "image_url": "https://www.asahi.com/gallery/photo/culture/isemairi/20210527/05.html",
+      "image_urls": [
+        "https://www.asahi.com/gallery/photo/culture/isemairi/20210527/05.html",
+        "https://www.chunichi.co.jp/article/875012",
+        "https://www.chunichi.co.jp/article/875012"
+      ]
+    },
+    {
+      "label": "その最中",
+      "headline": "一人の小学4年生が\n口にした言葉",
+      "lines": [
+        "しかしその最中、一人の小学4年生が、こう口にしたと伝えられています。",
+        "「あなたも昔、学校行ってなかったんでしょ？」",
+        "スタッフも一瞬、凍りついたという。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "しかしその最中、一人の小学4年生が、こう口にしたと伝えられています。",
+        "あなたも昔、学校、行ってなかったんでしょ。",
+        "スタッフも一瞬、凍りついたという。"
+      ],
+      "cut": "hard",
+      "why": "Câu hỏi của cậu bé hiện to.",
+      "era": "2024年3月27日",
+      "quotes": [
+        1
+      ],
+      "image_url": "",
+      "image_urls": [
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "過去",
+      "headline": "愛子さまにも\n学校に行けない時期が",
+      "lines": [
+        "実は愛子さまも、小学2年生の頃、学校に不安を感じ、登校できない時期があった。",
+        "愛子さまは静かに目を伏せ、ふうっと息を整えられた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "実は、あいこさまも、小学2年生の頃、学校に不安を感じ、登校できない時期があった。",
+        "あいこさまは、静かに目を伏せ、ふうっと息を整えられた。"
+      ],
+      "cut": "dip",
+      "why": "Công chúa hồi tiểu học.",
+      "era": "2010年",
+      "quotes": [],
+      "image_url": "https://j7p.jp/109068/2",
+      "image_urls": [
+        "https://j7p.jp/109068/2",
+        "https://bunshun.jp/articles/photo/42239?pn=8"
+      ]
+    },
+    {
+      "label": "そうだよ",
+      "headline": "微笑みながら\n「そうだよ」",
+      "lines": [
+        "そして顔を上げ、微笑みながら。",
+        "「そうだよ」",
+        "責めず、否定せず、ただその子の心に寄り添う。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "そして顔を上げ、ほほえみながら。",
+        "「そうだよ」",
+        "責めず、否定せず、ただその子の心に寄り添う。"
+      ],
+      "cut": "fade",
+      "why": "Câu 'đúng vậy' hiện to.",
+      "era": "2024年3月27日",
+      "quotes": [
+        1
+      ],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://www.asahi.com/articles/ASS3W1R1JS3WUTIL002M.html"
+      ]
+    },
+    {
+      "label": "寄り添う",
+      "headline": "少年の言葉に\n寄り添って",
+      "lines": [
+        "「僕も、行けてないんだよね」。少年がそう打ち明けると、",
+        "愛子さまは、その言葉を、そっと受け止められたという。",
+        "あなたは、この対応を、どう感じますか？"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "ぼくも、行けてないんだよね。少年がそう打ち明けると、",
+        "あいこさまは、その言葉を、そっと受け止められたという。",
+        "あなたは、この対応を、どう感じますか？"
+      ],
+      "cut": "dip",
+      "why": "Kết bằng nụ cười của công chúa.",
+      "era": "2024年3月27日",
+      "quotes": [
+        2
+      ],
+      "image_url": "https://jisin.jp/koushitsu/2389186/",
+      "image_urls": [
+        "https://jisin.jp/koushitsu/2389186/",
+        "https://mainichi.jp/articles/20240122/k00/00m/040/116000c"
+      ]
+    }
+  ]
+}
