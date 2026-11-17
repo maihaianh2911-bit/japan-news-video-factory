@@ -22,7 +22,15 @@
     "web:久子さま バードライフ",
     "web:久子さま 若い頃 ケンブリッジ",
     "music:Satie Gymnopédie piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-kimono.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/royals-walk.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/royals-line.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-blue.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-guests.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-greeting.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-bow.jpg",
+    "file:stories/media/2026-11-17-hisako-enyukai/hisako-smile.jpg"
   ],
   "scenes": [
     {
@@ -42,7 +50,26 @@
         {
           "text": "その笑みが、ふっと消えたように見えた、たった1秒。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-5",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "close-up"
+        }
+      ],
+      "why": "Bà Hisako áo kimono hồng dưới câu hỏi mở đầu; rồi cận mặt."
     },
     {
       "label": "春の園遊会",
@@ -57,7 +84,35 @@
           "text": "天皇皇后両陛下の長女・愛子さまが初めて出席され、各界の功労者など、約1400人が集まった。",
           "say": "天皇皇后両陛下の長女、あいこさまが初めて出席され、各界のこうろうしゃなど、やく1400人が集まった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tiệc vườn 2024: công chúa Aiko lần đầu, các vị hoàng tộc gặp khách.",
+      "cut": "page"
     },
     {
       "label": "1秒",
@@ -74,7 +129,24 @@
         {
           "text": "その1秒だけを切り取れば、冷たく見えるかもしれない。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "5-3",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Khoảnh khắc 1 giây: gương mặt bà, rồi cả hàng hoàng tộc.",
+      "cut": "fade"
     },
     {
       "label": "退出の場面",
@@ -92,7 +164,27 @@
           "text": "すると久子さまは足を止め、呼ばれた方のもとへ、自ら歩み寄られた。",
           "say": "すると、ひさこさまは足を止め、呼ばれた方のもとへ、自ら歩み寄られた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Lúc ra về, bà dừng lại chào khách.",
+      "cut": "page"
     },
     {
       "label": "一礼",
@@ -108,7 +200,24 @@
         {
           "text": "忙しさよりも、人を先にする姿だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "20-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Cúi chào thật thấp, rồi nụ cười với khách.",
+      "cut": "fade"
     },
     {
       "label": "久子さま",
@@ -127,7 +236,36 @@
           "text": "そして野鳥を守る国際団体、バードライフ・インターナショナルの名誉総裁として、国内外で活動を続けてこられた。",
           "say": "そして野鳥を守る国際団体、バードライフ・インターナショナルの、めいよそうさいとして、国内外で活動を続けてこられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-9",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        },
+        {
+          "pick": "8-10",
+          "focus": [
+            0.6,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-2",
+          "focus": [
+            0.7,
+            0.4
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Đời bà: Cambridge, bóng đá Nhật, bảo vệ chim hoang dã.",
+      "cut": "dip"
     },
     {
       "label": "品と覚悟",
@@ -148,7 +286,31 @@
         {
           "text": "あの1秒は、冷たさだったのか。それとも、気遣いの準備だったのか。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kết: chân dung bà, câu 'phẩm cách và quyết tâm' hiện to.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "11-4",
+    "start": 2.0
+  }
 }

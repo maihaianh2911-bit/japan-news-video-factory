@@ -22,7 +22,14 @@
     "web:雅子さま 療養中 2016 笑顔",
     "web:ベルギー 宮中晩餐会 2016",
     "music:Satie Gnossienne piano",
-    "music:Debussy Clair de lune piano"
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-17-belgium-concert/ladies-standing.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/concert-seats.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/handshake.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/royals-row.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/michiko-mathilde.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/kimono-western.jpg",
+    "file:stories/media/2026-11-17-belgium-concert/hisako-tsuguko.jpg"
   ],
   "scenes": [
     {
@@ -35,7 +42,23 @@
           "say": "ひとりにさせない。その思いが、皇室の場で、そっと形になった夜がある。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-7",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Bốn bà: hai người kimono, hai người âu phục, dưới câu mở đầu."
     },
     {
       "label": "日ベル友好150年",
@@ -58,7 +81,27 @@
           "text": "13日の夜には、国王夫妻主催の記念コンサートが開かれた。",
           "say": "13日の夜には、国王夫妻しゅさいの、記念コンサートが開かれた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-2",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Vua và hoàng hậu Bỉ đến Nhật năm 2016.",
+      "cut": "page"
     },
     {
       "label": "和装",
@@ -72,7 +115,27 @@
         {
           "text": "日本の伝統の装いで、最大の敬意を示されたのだ。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-4",
+          "focus": [
+            0.75,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.3,
+            0.3
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Hoàng hậu Michiko mặc kimono bên Hoàng hậu Mathilde.",
+      "cut": "page"
     },
     {
       "label": "雅子さま",
@@ -90,7 +153,27 @@
         {
           "text": "その視線の痛さは、誰もが一度は経験したことがあるだろう。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-8",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-2",
+          "focus": [
+            0.6,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Masako mặc âu phục trắng, đứng giữa mọi người.",
+      "cut": "fade"
     },
     {
       "label": "その瞬間",
@@ -105,7 +188,27 @@
           "text": "雅子さまが席に着かれた、その時だった。",
           "say": "まさこさまが、席に着かれた、その時だった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "1-11",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Khán phòng buổi hòa nhạc, khi bà Masako vào chỗ.",
+      "cut": "hard"
     },
     {
       "label": "揃った装い",
@@ -119,7 +222,24 @@
         {
           "text": "誰も、何も説明しない。けれど、並んだ姿が語っていた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Bà Hisako và con gái Tsuguko cũng mặc âu phục.",
+      "cut": "page"
     },
     {
       "label": "寄り添う",
@@ -133,7 +253,24 @@
           "text": "それは、雅子さまを一人にさせない、静かな心遣いのようにも見えた。",
           "say": "それは、まさこさまを一人にさせない、静かな、こころづかいのようにも見えた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Cả hàng hoàng tộc, cùng một tầm nhìn.",
+      "cut": "fade"
     },
     {
       "label": "静かな連帯",
@@ -148,7 +285,30 @@
         {
           "text": "この夜の装いに、あなたは何を感じますか？"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-6",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Masako mỉm cười; kết bằng cả khán phòng lùi ra.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "11-1"
+  }
 }

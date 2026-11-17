@@ -22,7 +22,12 @@
     "web:愛子さま 日本赤十字社 就職",
     "web:皇居 宮殿 午餐会",
     "music:Chopin Waltz piano",
-    "music:Satie Gymnopédie piano"
+    "music:Satie Gymnopédie piano",
+    "file:stories/media/2026-11-17-aiko-kenya/emperor-enters.jpg",
+    "file:stories/media/2026-11-17-aiko-kenya/ruto-couple.jpg",
+    "file:stories/media/2026-11-17-aiko-kenya/kiko.jpg",
+    "file:stories/media/2026-11-17-aiko-kenya/masako-lunch.jpg",
+    "file:stories/media/2026-11-17-aiko-kenya/aiko-table.jpg"
   ],
   "scenes": [
     {
@@ -35,7 +40,23 @@
           "say": "その日、きゅうでんの、ごさんかいに、思いがけない方が現れた。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-3",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Công chúa Aiko mỉm cười dưới câu mở đầu; Thiên hoàng bước vào phòng tiệc."
     },
     {
       "label": "ケニア大統領",
@@ -50,7 +71,32 @@
           "text": "2022年に就任したウィリアム・ルト大統領。4日間にわたる公式訪問の、最終日のことだった。",
           "say": "2022年に就任した、ウィリアム・ルト大統領。4日間にわたる、公式訪問の、最終日のことだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-10",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "14-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Vợ chồng Tổng thống Ruto ở Hoàng cung.",
+      "cut": "page"
     },
     {
       "label": "急な欠席",
@@ -65,7 +111,27 @@
           "text": "代わりに出席されたのは、天皇皇后両陛下の長女、愛子さまだった。",
           "say": "代わりに出席されたのは、天皇皇后両陛下の長女、あいこさまだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-8",
+          "focus": [
+            0.6,
+            0.3
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Bà Kiko vắng mặt; công chúa Aiko đến thay.",
+      "cut": "page"
     },
     {
       "label": "初めての場",
@@ -83,7 +149,27 @@
           "text": "このとき愛子さまは22歳。大学の卒業を目前に控えていた。",
           "say": "このとき、あいこさまは22歳。大学の卒業を、目前に控えていた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "4-5",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bàn tiệc lớn, lần đầu của công chúa.",
+      "cut": "fade"
     },
     {
       "label": "ジャンボ",
@@ -102,7 +188,27 @@
         {
           "text": "スワヒリ語で、「こんにちは」と挨拶された。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-9",
+          "focus": [
+            0.6,
+            0.35
+          ],
+          "move": "punch-in"
+        }
+      ],
+      "why": "Câu 'Jambo' hiện to; giật vào nụ cười của công chúa.",
+      "cut": "hard"
     },
     {
       "label": "英語で",
@@ -115,7 +221,27 @@
         {
           "text": "急な代役にもかかわらず、大統領夫妻と心を通わせられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-5",
+          "focus": [
+            0.8,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Nói chuyện bằng tiếng Anh bên bàn tiệc.",
+      "cut": "fade"
     },
     {
       "label": "母譲り",
@@ -134,7 +260,25 @@
           "text": "大統領夫妻も、深く感銘を受けたと伝えられている。",
           "say": "大統領夫妻も、深く、かんめいを受けたと伝えられている。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "16-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Masako thời làm ngoại giao, rồi ở bữa tiệc này.",
+      "cut": "dip"
     },
     {
       "label": "心の絆",
@@ -150,7 +294,31 @@
           "say": "それは、外交を超えた、心のきずなを生んだ。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-4",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Công chúa vào làm Hội Chữ thập đỏ; câu kết hiện to.",
+      "cut": "page"
     }
-  ]
+  ],
+  "music": {
+    "pick": "11-2",
+    "start": 1.0
+  }
 }

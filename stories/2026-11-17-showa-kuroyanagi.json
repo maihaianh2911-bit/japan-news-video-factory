@@ -21,7 +21,13 @@
     "web:昭和天皇 皇居 自然",
     "web:昭和天皇 招待客 声をかける",
     "music:Schumann Träumerei piano",
-    "music:Satie Gnossienne piano"
+    "music:Satie Gnossienne piano",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/press-conference.jpg",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/showa-laugh.jpg",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/garden-greeting.jpg",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/kuroyanagi.jpg",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/showa-smile.jpg",
+    "file:stories/media/2026-11-17-showa-kuroyanagi/garden-wide.jpg"
   ],
   "scenes": [
     {
@@ -38,7 +44,26 @@
           "text": "それは、春の園遊会でのひとこまだった。",
           "say": "それは、春の、えんゆうかいでの、ひとこまだった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "focus": [
+            0.35,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Thiên hoàng cười dưới câu mở đầu; rồi vẫy tay."
     },
     {
       "label": "園遊会",
@@ -56,7 +81,27 @@
         {
           "text": "その中に、ひときわ華やかな姿があった。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.3,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.4,
+            0.45
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Tiệc vườn: Thiên hoàng đi chào từng vị khách.",
+      "cut": "page"
     },
     {
       "label": "黒柳徹子さん",
@@ -79,7 +124,37 @@
           "text": "1984年からは、ユニセフ親善大使として、世界の子どもたちのために活動を続けている。",
           "say": "1984年からは、ユニセフしんぜんたいしとして、世界の子どもたちのために、活動を続けている。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "mono",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "mono",
+          "move": "rise"
+        },
+        {
+          "pick": "5-5",
+          "focus": [
+            0.6,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Kuroyanagi thời trẻ và trường quay 'Tetsuko no heya'.",
+      "cut": "page"
     },
     {
       "label": "笑顔",
@@ -93,7 +168,25 @@
         {
           "text": "周りの招待客からも、自然と笑みがこぼれた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "tone": "mono",
+          "move": "pan-left"
+        }
+      ],
+      "why": "Hai người trò chuyện vui vẻ ở tiệc vườn.",
+      "cut": "fade"
     },
     {
       "label": "あ、そう",
@@ -107,7 +200,24 @@
         {
           "text": "相手の話に、いつも穏やかに耳を傾けられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-8",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Thiên hoàng lắng nghe, câu cửa miệng 'A, sō'.",
+      "cut": "page"
     },
     {
       "label": "生物学者",
@@ -126,7 +236,32 @@
           "text": "海の小さな生き物、ヒドロ虫類の研究を、生涯続けられた。",
           "say": "海の小さな生き物、ヒドロちゅうるいの研究を、しょうがい続けられた。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-9",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "7-12",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Nhà sinh vật học: khu vườn Hoàng cung và các mẫu vật.",
+      "cut": "dip"
     },
     {
       "label": "温かさ",
@@ -141,7 +276,27 @@
         {
           "text": "この笑顔に、あなたは何を感じますか？"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-3",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Kết: nụ cười của Thiên hoàng, bên Hoàng hậu.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "10-1"
+  }
 }
