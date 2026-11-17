@@ -14,6 +14,16 @@ Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề
 
 **Cấu hình:** để GitHub gọi Claude sau mỗi bước, repo cần hai secret `CLAUDE_TASK_URL` và `CLAUDE_TASK_TOKEN` (cùng giá trị như ở `japan-video-factory`). Không có lượt chạy mỗi giờ: nếu Claude lỡ một lần gọi (ví dụ hết hạn mức), vào **Actions → Gọi Claude ngay → Run workflow**. Khi chưa gọi được Claude, máy ghi rõ điều đó trong phiếu kèm link nút bấm. Nhãn của phiếu được tạo bằng workflow **Tạo nhãn**.
 
+## Ghi chú 17/11/2026: tìm ảnh tốt hơn (đang ở nhánh thử, chưa vào bản chính)
+
+Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba việc. Phần này **mới nằm ở nhánh `claude/stoic-darwin-utl7qq`, chưa đưa vào `main`**, nên các video đang làm vẫn tìm ảnh như cũ cho tới khi chủ kênh đồng ý gộp.
+
+1. **Tìm theo tên người, tên nơi chốn** (`wiki:`): chỉ cần ghi tên một người, một nơi, một tòa nhà, máy lấy luôn các ảnh nói về chính người hay nơi đó trên Wikipedia và kho ảnh Wikimedia (tối đa 24 ảnh), có sẵn tên tác giả và giấy phép dùng tự do.
+2. **Tìm ảnh chụp quanh một địa điểm** (`geo:`): ghi tọa độ và bán kính, máy lấy các ảnh chụp ở quanh đó.
+3. **Nói rõ ảnh phải có gì**: Claude ghi thêm một câu tả bằng tiếng Anh sau từ khóa (ví dụ "một phụ nữ đang hát trên sân khấu lớn"); máy xem nhiều ảnh hơn, chấm điểm từng ảnh theo câu tả đó, giữ những ảnh đúng nhất và bỏ ảnh lạc đề. Nếu GitHub không cài được bộ chấm điểm thì máy tìm như cũ.
+
+Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
+
 ## Luồng tự tìm tin (chạy tay)
 
 1. Đọc thông cáo từ [Ngân hàng Trung ương Nhật Bản](https://www.boj.or.jp/rss/whatsnew.xml) [Bộ Kinh tế, Thương mại và Công nghiệp Nhật Bản](https://www.meti.go.jp/press/index.html) và [Cục Thống kê Nhật Bản](https://www.stat.go.jp/data/cpi/sokuhou/tsuki/index-z.html). Nếu thiếu tin đủ mới và có đủ dữ kiện, ghi lý do trong run summary.

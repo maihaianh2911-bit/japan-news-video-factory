@@ -2,8 +2,15 @@
 
 python -m news.find stories/<name>.json <out_dir>
 For every entry of "searches" not searched before:
-- "<words>": Wikimedia Commons, up to 8 pictures whose licence allows use in a video (public domain, CC0, CC BY,
-  CC BY-SA), without small files and repeated scans.
+- "wiki:<name or Wikidata item>": every picture about one thing (a person, a place, a building, an event), found
+  through its Wikidata item: the item's own pictures, the pictures of its Japanese and English Wikipedia articles,
+  the files of its Wikimedia Commons category (and sub-categories), the photos taken at its coordinates. Up to 24,
+  the most to the point first, all with a licence that allows use and their author. index.json says which item the
+  name was read as ("wikidata"): check it is the right one. "wiki:美空ひばり", "wiki:Q17".
+- "geo:<lat>,<lon> [<metres>]": Commons photos taken around a point, nearest first, whatever they are called
+  (default 500 m, 10 km at most), up to 12: "geo:35.6852,139.7528 400".
+- "<words>": Wikimedia Commons full-text search, up to 8 pictures whose licence allows use in a video (public
+  domain, CC0, CC BY, CC BY-SA), without small files and repeated scans.
 - "web:<words>": a free web image search (Bing, else Yahoo! JAPAN, else DuckDuckGo), up to 12 pictures from any site, without stock
   sites (watermarks). The licence is unknown: the owner chose to use such pictures (14/11/2026); the site is
   credited on screen and in credits.txt.
@@ -11,57 +18,119 @@ For every entry of "searches" not searched before:
 - "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
   video, owner 16/11/2026), credited as 元動画 (the source video).
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
-  12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence. Writes <out_dir>/<k>-<n>.jpg,
-index.json (file page, licence, author) and sheet_<k>.jpg, a numbered contact sheet to choose from.
+  12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence.
+
+A wish (17/11/2026): "<search> => <what the picture must show, in English>" on a wiki:, geo:, Commons or web:
+search, e.g. "web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress". The search then
+looks at more candidates than it keeps (Commons 50, web 30, wiki: 60), scores each against the wish with CLIP
+(open_clip ViT-B/32, MIT; weights from its GitHub release) and keeps the best, best first; pictures that do not show
+the wish (score under 0.18) or look unsuitable are left out, so a group can come back small or empty. The score is
+"match" in index.json and on the contact sheet (about 0.30 and more: it shows the thing; near 0.20: doubtful). The
+search words alone are never ranked (they are often Japanese; CLIP reads English). Without torch and open_clip
+installed, or with FIND_RANK=0, the wish is ignored ("ranked": false in index.json) and the search keeps the first
+pictures as a search without a wish does. A search without a wish keeps the order of its source.
+
+Writes <out_dir>/<k>-<n>.jpg, index.json (file page, licence, author; for a wish: "want", "ranked", "candidates"
+and each picture's "match"; for wiki: the item found) and sheet_<k>.jpg, a numbered contact sheet to choose from.
+Commons pictures are taken in the standard thumbnail sizes (up to 1920 px wide; other sizes and originals are
+rate-limited), pictures are downloaded a few at a time, and a Wikimedia site or a web search engine that keeps
+answering 429 (too many requests) is not asked again in the same run.
 A search with no usable picture has no sheet. A search that fails (network, Commons refusing) is recorded in
 index.json with "error" and no results, is tried again on the next run, and makes the exit status 3; the other
 searches still run and index.json is written after every search, so what was found can still be published.
 """
+from concurrent.futures import ThreadPoolExecutor
 from html import unescape
 from io import BytesIO
 import json
+import os
 from pathlib import Path
 import re
 import sys
+import threading
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode, urlsplit
-from urllib.request import Request, urlopen
+from urllib.parse import quote, urlencode, urlsplit
+from urllib.request import Request, urlopen, urlretrieve
 
 from lxml import html
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-from .custom import StoryError, read
+from .custom import GEO, StoryError, read, search_parts
 from .sources import fetch
 
-HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org"}
+COMMONS = "https://commons.wikimedia.org/w/api.php"
+WIKIDATA = "https://www.wikidata.org/w/api.php"
+LANGS = ("ja", "en")   # the Wikipedias wiki: reads, the channel's language first
+HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org", "www.wikidata.org",
+         *(f"{lang}.wikipedia.org" for lang in LANGS)}
 ALLOWED = re.compile(r"^(public domain|pd|cc0|cc[- ]by(-sa)?[- ]?\d|cc[- ]by(-sa)?$)", re.I)
 KEEP, WEB_KEEP, MIN_SIDE, LARGEST = 8, 12, 400, 2400
+KEEP_WIKI, KEEP_GEO = 24, 12           # pictures kept by wiki: and geo:
+DEEP, WEB_DEEP, WIKI_DEEP = 50, 30, 60 # candidates looked at when a wish ranks them (wiki: also without a wish)
+STANDARD = (960, 1280, 1920)           # widths Commons serves freely (https://w.wiki/GHai); 1920 is enough here
+SMALL = 330                            # the small version looked at for the ranking (a standard width too)
+MATCH_MIN, UNFIT_MIN = 0.18, 0.21      # CLIP: under MATCH_MIN the picture does not show the wish; see Clip.UNFIT
 MUSIC_KEEP, MUSIC_LIMIT = 4, 12_000_000
 AUDIO = {"application/ogg": "ogg", "audio/ogg": "ogg", "audio/mpeg": "mp3", "audio/webm": "webm",
          "audio/x-flac": "flac", "audio/flac": "flac", "audio/wav": "wav", "audio/x-wav": "wav"}
 BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 STOCK = re.compile(r"gettyimages|alamy|shutterstock|istockphoto|dreamstime|123rf|depositphotos|pixta|aflo|"
                    r"stock\.adobe|agefotostock|bridgemanimages|pinimg|pinterest", re.I)
+# page furniture of Wikipedia articles and maps that show no place: never a picture of the thing
+ICON = re.compile(r"(?i)(commons-logo|wik\w*[- ]logo|qsicon|oojs|red pog|loca\w+ map|\bicon\b|flag of|disambig|"
+                  r"padlock|question book|ambox|edit-ltr|symbol \w+ vote|speaker|nuvola|crystal clear|\.svg$)")
+
+GATE = threading.BoundedSemaphore(2)   # Wikimedia asks for few requests at a time, whatever runs in parallel here
+REFUSED = set()   # Wikimedia hosts and web search engines that kept answering 429 in this run: not asked again
 
 
-def get(url):
-    """Fetch from Commons, waiting and trying again on rate limits, server errors and network errors."""
-    for attempt in range(4):
+class Refused(RuntimeError):
+    """A Wikimedia site keeps answering 429 (too many requests): the search fails and is tried again next run."""
+
+
+def retry_after(error):
+    try:
+        return float(error.headers.get("Retry-After") or 0)
+    except (AttributeError, TypeError, ValueError):
+        return 0.0
+
+
+def get(url, tries=4, timeout=60, pause=10, limit=12_000_000):
+    """Fetch from a Wikimedia site, waiting and trying again on rate limits (as long as the site asks, when it
+    says), server errors and network errors. A site that still answers 429 after waiting, or asks for more than a
+    minute, is not asked again in this run (Refused): hammering it only makes the refusal last."""
+    host = urlsplit(url).hostname
+    for attempt in range(tries):
+        if host in REFUSED:
+            raise Refused(f"{host} answered 429 (too many requests) in this run and is not asked again")
+        wait = pause * (attempt + 1)
         try:
-            return fetch(url, HOSTS, limit=12_000_000, timeout=60)
+            with GATE:
+                return fetch(url, HOSTS, limit=limit, timeout=timeout)
         except HTTPError as error:
-            if error.code not in (429, 500, 502, 503, 504) or attempt == 3:
+            last = attempt == tries - 1
+            asked = retry_after(error) if error.code == 429 else 0
+            if error.code == 429 and tries > 1 and (last or asked > 60):
+                REFUSED.add(host)
+                print(f"  {host} answers 429 (too many requests): not asked again in this run", flush=True)
+                raise Refused(f"{host} answers 429 (too many requests)") from None
+            if error.code not in (429, 500, 502, 503, 504) or last:
                 raise
+            wait = max(wait, asked)
         except (URLError, TimeoutError, ConnectionError) as error:
-            if attempt == 3:
+            if attempt == tries - 1:
                 raise
             print(f"  network error, trying again: {error}")
-        time.sleep(10 * (attempt + 1))
+        time.sleep(wait)
 
 
-def web_get(url, referer=None, limit=12_000_000):
+def api(base=COMMONS, tries=4, timeout=60, **params):
+    return json.loads(get(base + "?" + urlencode({"format": "json", **params}), tries=tries, timeout=timeout))
+
+
+def web_get(url, referer=None, limit=12_000_000, timeout=30):
     """Fetch any public http(s) address the way a browser does (web searches and their pictures)."""
     parts = urlsplit(url)
     if parts.scheme not in ("http", "https") or not parts.hostname or parts.username or parts.password \
@@ -70,7 +139,7 @@ def web_get(url, referer=None, limit=12_000_000):
     headers = {"User-Agent": BROWSER, "Accept-Language": "ja,en;q=0.8"}
     if referer:
         headers["Referer"] = referer
-    with urlopen(Request(url, headers=headers), timeout=30) as response:
+    with urlopen(Request(url, headers=headers), timeout=timeout) as response:
         content = response.read(limit + 1)
     if len(content) > limit:
         raise ValueError(f"Response exceeds size limit: {url}")
@@ -143,10 +212,15 @@ def web_search(query, out=None):
     results = []
     DEBUG.clear()
     for engine in (bing, yahoo, duckduckgo):
+        if engine.__name__ in REFUSED:   # it answered 429 earlier in this run: asking again only prolongs it
+            continue
         try:
             results = list(engine(query))
         except (OSError, ValueError) as error:
             print(f"  {engine.__name__} failed: {type(error).__name__}: {error}", flush=True)
+            if isinstance(error, HTTPError) and error.code == 429:
+                REFUSED.add(engine.__name__)
+                print(f"  {engine.__name__} answers 429 (too many requests): not asked again in this run", flush=True)
         print(f"  {engine.__name__}: {len(results)} results", flush=True)
         if results:
             break
@@ -158,44 +232,193 @@ def web_search(query, out=None):
     return [result for result in results if not STOCK.search(result[0] + " " + result[1])]
 
 
-def web_find(candidates, k, out, seen, keep):
-    kept = []
-    for image, page, title in candidates:
-        if len(kept) == keep:
-            break
-        try:
-            with Image.open(BytesIO(web_get(image, referer=page))) as original:
-                original.draft("RGB", (LARGEST, LARGEST))
-                picture = original.convert("RGB")
-        except Exception as error:   # a dead link or an odd file: skip it
-            print(f"  skipped {image[:120]}: {type(error).__name__}: {error}")
-            continue
-        if min(picture.size) < MIN_SIDE:
-            continue
-        mark = fingerprint(picture)
-        if any(bin(mark ^ other).count("1") <= 10 for other in seen.values()):
-            continue
-        picture.thumbnail((LARGEST, LARGEST))
-        entry = {"title": title or image.rsplit("/", 1)[-1][:100], "page": page, "image": image,
-                 "width": picture.width, "height": picture.height, "license": "", "license_url": "",
-                 "artist": site(page), "description": title, "file": f"{k}-{len(kept) + 1}.jpg"}
-        seen[entry["file"]] = mark
-        picture.save(out / entry["file"], quality=90)
-        kept.append(entry)
-    return kept
-
-
 def plain(value):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", value or "")).strip()
 
 
-def search(query):
-    params = urlencode({
-        "action": "query", "format": "json", "generator": "search", "gsrsearch": query, "gsrnamespace": 6,
-        "gsrlimit": 30, "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 2000,
-    })
-    data = json.loads(get(f"https://commons.wikimedia.org/w/api.php?{params}"))
-    pages = sorted(data.get("query", {}).get("pages", {}).values(), key=lambda page: page.get("index", 0))
+def fingerprint(image):
+    grey = image.convert("L").resize((9, 8), Image.Resampling.LANCZOS)
+    pixels = list(grey.tobytes())
+    return sum(1 << i for i in range(64) if pixels[i // 8 * 9 + i % 8] > pixels[i // 8 * 9 + i % 8 + 1])
+
+
+def shot(picture, mark, small=False):
+    """A loaded picture as it will be kept: JPEG bytes, size, fingerprint (and a small copy for the ranking)."""
+    data = BytesIO()
+    picture.save(data, "JPEG", quality=90)
+    made = {"data": data.getvalue(), "size": picture.size, "mark": mark}
+    if small:
+        made["small"] = picture.copy()
+        made["small"].thumbnail((448, 448))
+    return made
+
+
+def upright(original):
+    """The picture turned the way its camera held it (a phone photo is often stored lying on its side, with a
+    note saying so; saving it again here would lose the note and leave it lying)."""
+    try:
+        return ImageOps.exif_transpose(original)
+    except Exception:   # an unreadable note: the picture as stored
+        return original
+
+
+def web_shot(entry, small=False):
+    """The picture of a web candidate, or None for a dead link, an odd file or a small picture."""
+    try:
+        with Image.open(BytesIO(web_get(entry["image"], referer=entry["page"], timeout=20))) as original:
+            original.draft("RGB", (LARGEST, LARGEST))
+            picture = upright(original).convert("RGB")
+    except Exception as error:   # a dead link or an odd file: skip it
+        print(f"  skipped {entry['image'][:120]}: {type(error).__name__}: {error}")
+        return None
+    if min(picture.size) < MIN_SIDE:
+        return None
+    mark = fingerprint(picture)
+    picture.thumbnail((LARGEST, LARGEST))
+    return shot(picture, mark, small)
+
+
+def commons_shot(entry):
+    """The picture of a Commons file in its standard size, or None when it cannot be had (short tries: an
+    address that does not answer costs about a minute at most, not five)."""
+    try:
+        with Image.open(BytesIO(get(entry["thumb"], tries=3, timeout=20, pause=5))) as original:
+            picture = original.convert("RGB")
+    except (OSError, ValueError) as error:
+        print(f"  skipped {entry['title']}: {error}")
+        return None
+    return shot(picture, fingerprint(picture))
+
+
+def commons_small(entry):
+    """The small version of a Commons file, for the ranking."""
+    try:
+        with Image.open(BytesIO(get(entry["preview"], tries=2, timeout=15, pause=5))) as original:
+            return original.convert("RGB")
+    except (OSError, ValueError):
+        return None
+
+
+def batches(entries, load, workers, size=6):
+    """(entry, load(entry)) in the order of the entries, loading a few at a time; nothing more is loaded once the
+    caller has enough."""
+    for start in range(0, len(entries), size):
+        chunk = entries[start:start + size]
+        with ThreadPoolExecutor(workers) as pool:
+            loaded = list(pool.map(load, chunk))
+        yield from zip(chunk, loaded)
+
+
+def keep(entries, load, k, out, seen, limit, workers=3):
+    """Save the first `limit` pictures of the entries, in their order, that load and were not kept before (by this
+    or an earlier search); returns their records for index.json."""
+    kept = []
+    for entry, made in batches(entries, load, workers):
+        if len(kept) == limit:
+            break
+        if made is None or any(bin(made["mark"] ^ other).count("1") <= 10 for other in seen.values()):
+            continue
+        record = {key: value for key, value in entry.items() if key not in ("thumb", "preview", "shot")}
+        if "image" in record:   # a web picture: the size of the file kept (Commons: the size of the original)
+            record["width"], record["height"] = made["size"]
+        record["file"] = f"{k}-{len(kept) + 1}.jpg"
+        seen[record["file"]] = made["mark"]
+        (out / record["file"]).write_bytes(made["data"])
+        kept.append(record)
+    return kept
+
+
+class Clip:
+    """Scores how well a picture fits a text (open_clip ViT-B/32, weights from its GitHub release, on the CPU).
+    Optional: without torch and open_clip, or with FIND_RANK=0, ready() is False and nothing is ranked."""
+    URL = ("https://github.com/mlfoundations/open_clip/releases/download/v0.2-weights/"
+           "vit_b_32-quickgelu-laion400m_e32-46683a32.pt")
+    # what a video for a general audience must not show by accident (a web search brings everything): pictures
+    # that look like one of these (UNFIT_MIN and more; ordinary pictures stay under 0.18) are left out when ranking
+    UNFIT = ("a nude person", "a woman in lingerie or underwear", "an erotic photo")
+    model = None
+    failed = False
+    unfit = None
+
+    @classmethod
+    def ready(cls):
+        if cls.model is None and not cls.failed:
+            try:
+                if os.environ.get("FIND_RANK", "1") == "0":
+                    raise RuntimeError("FIND_RANK=0")
+                import open_clip
+                import torch
+                path = Path(os.environ.get("CLIP_MODEL")
+                            or Path.home() / ".cache/find-images/vit_b_32-quickgelu-laion400m_e32.pt")
+                if not path.exists():
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    part = path.with_name(path.name + ".part")
+                    urlretrieve(cls.URL, part)
+                    part.replace(path)
+                model, _, cls.pre = open_clip.create_model_and_transforms("ViT-B-32-quickgelu", pretrained=str(path))
+                cls.tokens, cls.torch = open_clip.get_tokenizer("ViT-B-32-quickgelu"), torch
+                cls.model = model.eval()
+            except Exception as error:   # no torch, no weights, no memory: the search goes on without ranking
+                cls.failed = True
+                print(f"ranking off, wishes are ignored ({type(error).__name__}: {str(error)[:90]})", flush=True)
+        return cls.model is not None
+
+    @classmethod
+    def scores(cls, images, text):
+        """For every picture: how well it fits the text, and how much it looks like something not to show."""
+        torch = cls.torch
+        with torch.no_grad():
+            seen = torch.cat([cls.model.encode_image(torch.stack([cls.pre(image) for image in images[at:at + 32]]))
+                              for at in range(0, len(images), 32)])
+            seen /= seen.norm(dim=-1, keepdim=True)
+            wish = cls.model.encode_text(cls.tokens([text, "a photo of " + text]))
+            wish /= wish.norm(dim=-1, keepdim=True)
+            if cls.unfit is None:
+                cls.unfit = cls.model.encode_text(cls.tokens(list(cls.UNFIT)))
+                cls.unfit /= cls.unfit.norm(dim=-1, keepdim=True)
+            return (seen @ wish.T).max(dim=1).values.tolist(), (seen @ cls.unfit.T).max(dim=1).values.tolist()
+
+
+def ranked(entries, wish, small, workers=3):
+    """The entries that show the wish, best first: CLIP scores each one's small picture (small(entry) → image or
+    None) against the wish; the order of the source counts a little (0.004 a place: it decides between pictures
+    CLIP finds alike, as for a name it does not know). Sets "match". Entries under MATCH_MIN and pictures that look
+    unsuitable (Clip.UNFIT) are left out; entries whose small picture could not be loaded come last, unscored.
+    Returns (entries, number left out)."""
+    with ThreadPoolExecutor(workers) as pool:
+        images = list(pool.map(small, entries))
+    scored = [(place, entry, image) for place, (entry, image) in enumerate(zip(entries, images)) if image is not None]
+    if not scored:
+        return entries, 0
+    fit, unfit = Clip.scores([image for _, _, image in scored], wish)
+    good = []
+    for (place, entry, _), match, bad in zip(scored, fit, unfit):
+        entry["match"] = round(match, 3)
+        if match >= MATCH_MIN and bad < UNFIT_MIN:
+            good.append((-(match - 0.004 * place), place, entry))
+    unseen = [entry for entry, image in zip(entries, images) if image is None]
+    return [entry for _, _, entry in sorted(good, key=lambda item: item[:2])] + unseen, len(scored) - len(good)
+
+
+# the name of a Commons thumbnail: 330px-Name.jpg, and for a scan lossy-page1-330px-Name.tif.jpg
+THUMB = re.compile(r"/((?:lossy-|lossless-)?(?:page\d+-)?)\d+px-([^/]+)$")
+INFO = {"action": "query", "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": SMALL}
+
+
+def sized(info):
+    """The address of the picture to keep: the largest standard width up to 1920 px that the file has (Commons
+    serves these freely; other sizes and originals are rate-limited). A file under 960 px is taken whole."""
+    small = (info.get("thumburl") or "").split("?")[0]
+    widths = [width for width in STANDARD if width <= info.get("width", 0)]
+    if widths and THUMB.search(small):   # a real thumbnail: the same file in another standard width
+        return THUMB.sub(lambda match: f"/{match[1]}{widths[-1]}px-{match[2]}", small)
+    return info["url"].split("?")[0]
+
+
+def commons_entries(pages, source=None):
+    """The usable pictures among the file pages of a Commons answer asked with INFO, in the order given: JPEG or
+    PNG, a licence that allows use in a video, not small."""
+    entries = []
     for page in pages:
         info = (page.get("imageinfo") or [{}])[0]
         meta = info.get("extmetadata") or {}
@@ -204,17 +427,161 @@ def search(query):
             continue
         if min(info.get("width", 0), info.get("height", 0)) < MIN_SIDE:
             continue
-        yield {"title": page["title"], "page": info["descriptionurl"], "thumb": info.get("thumburl") or info["url"],
-               "width": info["width"], "height": info["height"], "license": licence,
-               "license_url": plain(meta.get("LicenseUrl", {}).get("value")),
-               "artist": plain(meta.get("Artist", {}).get("value"))[:120],
-               "description": plain(meta.get("ImageDescription", {}).get("value"))[:300]}
+        entry = {"title": page["title"], "page": info["descriptionurl"], "thumb": sized(info),
+                 "preview": (info.get("thumburl") or info["url"]).split("?")[0],
+                 "width": info["width"], "height": info["height"], "license": licence,
+                 "license_url": plain(meta.get("LicenseUrl", {}).get("value")),
+                 "artist": plain(meta.get("Artist", {}).get("value"))[:120],
+                 "description": plain(meta.get("ImageDescription", {}).get("value"))[:300]}
+        if source:
+            entry["source"] = source
+        entries.append(entry)
+    return entries
 
 
-def fingerprint(image):
-    grey = image.convert("L").resize((9, 8), Image.Resampling.LANCZOS)
-    pixels = list(grey.tobytes())
-    return sum(1 << i for i in range(64) if pixels[i // 8 * 9 + i % 8] > pixels[i // 8 * 9 + i % 8 + 1])
+def search(query, limit=30):
+    """Commons full-text search, best match first."""
+    data = api(generator="search", gsrsearch=query, gsrnamespace=6, gsrlimit=limit, **INFO)
+    pages = sorted(data.get("query", {}).get("pages", {}).values(), key=lambda page: page.get("index", 0))
+    return commons_entries(pages)
+
+
+def chunks(titles, most=50, length=3000):
+    """The titles in groups one request can carry: 50 at most, and a short enough address (Japanese file names
+    take nine characters a letter in an address)."""
+    chunk, size = [], 0
+    for title in titles:
+        cost = len(quote(title)) + 3
+        if chunk and (len(chunk) == most or size + cost > length):
+            yield chunk
+            chunk, size = [], 0
+        chunk.append(title)
+        size += cost
+    if chunk:
+        yield chunk
+
+
+def commons_files(titles, source, enough=WIKI_DEEP):
+    """The usable pictures among a list of Commons file titles, in that order, up to 50 titles a request, until
+    there are enough. A file that is not on Commons (kept on one Wikipedia only: not free) does not come back."""
+    entries = []
+    for chunk in chunks(titles):
+        if len(entries) >= enough:
+            break
+        place = {title.replace("_", " "): number for number, title in enumerate(chunk)}
+        pages = api(titles="|".join(chunk), **INFO).get("query", {}).get("pages", {}).values()
+        entries += commons_entries(sorted(pages, key=lambda page: place.get(page.get("title", ""), len(chunk))), source)
+    return entries
+
+
+def geo(words, limit=50):
+    """Commons photos taken around a point, nearest first: "<lat>,<lon> [<metres>]" (500 m when not given, 10 km
+    at most). Of a series of photos that differ in their numbers only (survey tiles, a photo walk), one is taken."""
+    match = GEO.match(words)
+    if not match:
+        raise ValueError(f'geo: expects "<lat>,<lon> [<metres>]", got {words!r}')
+    radius = min(10000, max(10, int(match[3] or 500)))
+    data = api(action="query", list="geosearch", gscoord=f"{match[1]}|{match[2]}", gsradius=radius, gsnamespace=6,
+               gslimit=limit * 2)
+    titles, series = [], set()
+    for place in data.get("query", {}).get("geosearch", []):
+        key = re.sub(r"\d+", "#", place["title"])
+        if key not in series:
+            series.add(key)
+            titles.append(place["title"])
+    return commons_files(titles, "commons/geo", limit)
+
+
+def wiki(name):
+    """Every picture about one thing, through its Wikidata item; returns (entries, the item found). Most to the
+    point first: the item's own pictures, the pictures of its Wikipedia articles (the lead picture first), the
+    files of its Commons category and sub-categories, then photos taken at its coordinates."""
+    item = name if re.fullmatch(r"Q\d+", name) else None
+    for lang in LANGS:   # the exact title of a Wikipedia article first: "信子" alone is many people, an article one
+        if item:
+            break
+        try:   # one short try: a Wikipedia that does not answer must not stop the search
+            pages = api(f"https://{lang}.wikipedia.org/w/api.php", tries=1, timeout=15, action="query", titles=name,
+                        prop="pageprops", redirects=1).get("query", {}).get("pages", {}).values()
+        except (OSError, ValueError, Refused) as error:
+            print(f"  wiki: {lang}.wikipedia.org did not answer ({str(error)[:80]})")
+            continue
+        for page in pages:
+            props = page.get("pageprops") or {}
+            if props.get("wikibase_item") and "disambiguation" not in props:
+                item = props["wikibase_item"]
+    for lang in LANGS:   # else the Wikidata item called so
+        if item:
+            break
+        hits = api(WIKIDATA, action="wbsearchentities", search=name, language=lang, uselang=lang, type="item",
+                   limit=3).get("search", [])
+        if hits:
+            item = hits[0]["id"]
+    if not item:
+        raise RuntimeError(f"wiki: no Wikidata item named {name!r} (try the title of its Wikipedia article, its "
+                           "Wikidata item Q…, or a web: search)")
+    entity = api(WIKIDATA, action="wbgetentities", ids=item, props="claims|sitelinks|labels|descriptions",
+                 languages="|".join(LANGS))["entities"][item]
+    claims, links = entity.get("claims") or {}, entity.get("sitelinks") or {}
+
+    def values(prop):
+        return [claim["mainsnak"]["datavalue"]["value"] for claim in claims.get(prop, [])
+                if claim.get("mainsnak", {}).get("datavalue")]
+
+    def first(texts):
+        return next((texts[lang]["value"] for lang in LANGS if lang in texts), "")
+
+    coord = next((value for value in values("P625") if isinstance(value, dict)), None)
+    about = {"id": item, "label": first(entity.get("labels") or {}),
+             "description": first(entity.get("descriptions") or {})}
+    if coord:
+        about["coord"] = [round(coord["latitude"], 5), round(coord["longitude"], 5)]
+    # the item's own pictures: image, image of grave, of the interior, aerial view, nighttime view
+    own = ["File:" + value for prop in ("P18", "P1442", "P5775", "P8592", "P3451") for value in values(prop)
+           if isinstance(value, str)]
+    article = []
+    for lang in LANGS:
+        if f"{lang}wiki" not in links:
+            continue
+        try:
+            pages = api(f"https://{lang}.wikipedia.org/w/api.php", tries=1, timeout=15, action="query",
+                        titles=links[f"{lang}wiki"]["title"], prop="images|pageimages", imlimit=500, piprop="name",
+                        redirects=1).get("query", {}).get("pages", {}).values()
+        except (OSError, ValueError, Refused) as error:
+            print(f"  wiki: {lang}.wikipedia.org did not answer ({str(error)[:80]})")
+            continue
+        for page in pages:   # the article's lead picture, then the others (the namespace is ファイル: in Japanese)
+            lead = ["File:" + page["pageimage"]] if page.get("pageimage") else []
+            article += lead + ["File:" + image["title"].split(":", 1)[1] for image in page.get("images", [])]
+    category = next(iter(values("P373")), "") or links.get("commonswiki", {}).get("title", "").partition("Category:")[2]
+
+    def members(of, kind, limit):
+        data = api(action="query", list="categorymembers", cmtitle="Category:" + of, cmtype=kind, cmlimit=limit)
+        return [member["title"] for member in data.get("query", {}).get("categorymembers", [])]
+
+    entries, seen = [], set()
+
+    def add(titles, source):
+        titles = [title for title in dict.fromkeys(title.replace("_", " ") for title in titles)
+                  if title not in seen and not ICON.search(title)]
+        seen.update(titles)
+        entries.extend(commons_files(titles, source, WIKI_DEEP - len(entries)))
+
+    add(own, "commons/wiki")
+    add(article, "commons/wiki")
+    if category and len(entries) < WIKI_DEEP:
+        add(members(category, "file", 100), "commons/category")
+        for sub in members(category, "subcat", 12) if len(entries) < WIKI_DEEP else []:
+            if len(entries) >= WIKI_DEEP:
+                break
+            add(members(sub.partition(":")[2], "file", 50), "commons/category")
+    if coord and len(entries) < WIKI_DEEP:   # the place itself, whatever the photos are called
+        try:
+            entries += [entry for entry in geo(f"{coord['latitude']},{coord['longitude']} 400", 20)
+                        if entry["title"] not in seen]
+        except (OSError, ValueError) as error:
+            print(f"  wiki: no photos around the place ({str(error)[:80]})")
+    return entries[:WIKI_DEEP], about
 
 
 def sheet(entries, out, path):
@@ -225,7 +592,8 @@ def sheet(entries, out, path):
             picture.thumbnail((360, 360))
             board.paste(picture, (index % 4 * 380 + (380 - picture.width) // 2, index // 4 * 400 + 10))
         where = entry["license"].replace("Public domain", "PD") or entry.get("artist", "")
-        label = f"#{index + 1}  {entry['width']}x{entry['height']}  {where}"
+        fit = f"~{entry['match']:.2f}  " if "match" in entry else ""   # how well it shows the wish (no "≈" in the font)
+        label = f"#{index + 1}  {fit}{entry['width']}x{entry['height']}  {where}"
         ImageDraw.Draw(board).text((index % 4 * 380 + 10, index // 4 * 400 + 374), label[:40], fill="#ffd25a", font=face)
     board.save(path, quality=85)
 
@@ -304,39 +672,53 @@ def file_find(path, k, out):
     return [entry]
 
 
+def web_entries(candidates):
+    return [{"title": title or image.rsplit("/", 1)[-1][:100], "page": page, "image": image, "width": 0, "height": 0,
+             "license": "", "license_url": "", "artist": site(page), "description": title}
+            for image, page, title in candidates]
+
+
 def find(query, k, out, seen):
-    if query.startswith("file:"):
-        return file_find(query[5:].strip(), k, out)
-    if query.startswith("music:"):
-        return music_find(query[6:].strip(), k, out)
-    if query.startswith("web:"):
-        return web_find(web_search(query[4:].strip(), out), k, out, seen, WEB_KEEP)
-    if query.startswith("url:"):
-        image, _, page = query[4:].strip().partition(" ")
-        kept = web_find([(image, page.strip() or image, "")], k, out, seen, 1)
+    """The pictures of one search, saved as <k>-<n>.jpg: (their records, more keys for the search's group in
+    index.json — the wish and whether it ranked, the Wikidata item of a wiki: search)."""
+    kind, words, wish = search_parts(query)
+    if kind == "file":
+        return file_find(words, k, out), {}
+    if kind == "music":
+        return music_find(words, k, out), {}
+    if kind == "url":
+        image, _, page = words.partition(" ")
+        kept = keep(web_entries([(image, page.strip() or image, "")]), web_shot, k, out, seen, 1)
         if not kept:
             raise RuntimeError(f"could not load the picture {image}")
-        return kept
-    kept = []
-    for result in search(query):
-        if len(kept) == KEEP:
-            break
-        try:
-            with Image.open(BytesIO(get(result.pop("thumb")))) as original:
-                picture = original.convert("RGB")
-        except (OSError, ValueError) as error:
-            print(f"  skipped {result['title']}: {error}")
-            continue
-        finally:
-            time.sleep(1)
-        mark = fingerprint(picture)
-        if any(bin(mark ^ other).count("1") <= 10 for other in seen.values()):
-            continue
-        result["file"] = f"{k}-{len(kept) + 1}.jpg"
-        seen[result["file"]] = mark
-        picture.save(out / result["file"], quality=90)
-        kept.append(result)
-    return kept
+        return kept, {}
+    rank = bool(wish) and Clip.ready()
+    notes = {"want": wish, "ranked": rank} if wish else {}
+    left_out = 0
+    if kind == "web":
+        entries, limit = web_entries(web_search(words, out)), WEB_KEEP
+        if rank:   # a web picture has no small version: the candidates are loaded, then scored
+            entries = entries[:WEB_DEEP]
+            for entry, made in batches(entries, lambda entry: web_shot(entry, small=True), 6):
+                entry["shot"] = made
+            entries = [entry for entry in entries if entry["shot"]]
+            notes["candidates"] = len(entries)
+            entries, left_out = ranked(entries, wish, lambda entry: entry["shot"].pop("small"))
+        kept = keep(entries, (lambda entry: entry["shot"]) if rank else web_shot, k, out, seen, limit, 6)
+    else:
+        if kind == "wiki":
+            (entries, notes["wikidata"]), limit = wiki(words), KEEP_WIKI
+        elif kind == "geo":
+            entries, limit = geo(words), KEEP_GEO
+        else:
+            entries, limit = search(words, DEEP if rank else 30), KEEP
+        if rank:
+            notes["candidates"] = len(entries)
+            entries, left_out = ranked(entries, wish, commons_small)
+        kept = keep(entries, commons_shot, k, out, seen, limit)
+    if rank:
+        notes["left_out"] = left_out
+    return kept, notes
 
 
 def clear(out, k, seen):
@@ -367,19 +749,25 @@ def main():
         clear(out, k, seen)
         group = {"k": k, "query": query, "results": []}
         try:
-            group["results"] = find(query, k, out, seen)
+            group["results"], notes = find(query, k, out, seen)
         except Exception as error:   # one failed search must not lose the others
             clear(out, k, seen)
             group["error"] = f"{type(error).__name__}: {error}"
             failed.append(k)
             print(f"{k}. {query}: FAILED ({group['error']})")
         else:
+            group.update(notes)
             if group["results"] and not query.startswith("music:"):
                 sheet(group["results"], out, out / f"sheet_{k}.jpg")
-            print(f"{k}. {query}: {len(group['results'])} pictures" + ("" if group["results"] else " (no sheet)"))
+            about = notes.get("wikidata")
+            print(f"{k}. {query}: {len(group['results'])} pictures" + ("" if group["results"] else " (no sheet)")
+                  + (f" = {about['id']} {about['label']}: {about['description']}" if about else "")
+                  + (f" (the best of {notes['candidates']} for the wish, {notes['left_out']} left out)"
+                     if notes.get("ranked") else " (wish ignored: ranking off)" if "ranked" in notes else ""))
         index.append(group)
         save_index(index, index_path)
-        time.sleep(2)
+        if not query.startswith("file:"):   # a picture of the repository asks nobody: no pause
+            time.sleep(2)
     save_index(index, index_path)
     empty = [group["k"] for group in index if not group["results"] and not group.get("error")]
     if empty:

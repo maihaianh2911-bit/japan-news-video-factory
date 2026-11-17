@@ -69,7 +69,8 @@ kèm caption cho mỗi video"):
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
-   for a story about the imperial family), `web:` searches (2–3 per scene, Japanese words), 2 pictures per scene.
+   for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
+   searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures per scene.
    Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
    burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
    `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
@@ -113,6 +114,30 @@ ask the owner to allow `main`.
      (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
      takes one picture (`file:stories/media/…` a picture kept in the repository); their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
+   - Two more kinds of search (17/11/2026, `news/find.py`; the owner found the videos short of fitting pictures):
+     - `wiki:<name or Wikidata item>`: every picture **about one thing** (a person, a place, a building, an
+       event), through its Wikidata item: the item's own pictures, the pictures of its Japanese and English
+       Wikipedia articles, its Commons category, photos taken at its coordinates. Up to 24, the most to the point
+       first, free licences with author and licence for `credits.txt`. `"wiki:美空ひばり"`, `"wiki:日本銀行"`; the name
+       is the title of its Wikipedia article (Japanese or English), or the item itself (`"wiki:Q17"`) when a name
+       fits several things. `index.json` says which item was found (`"wikidata"`: id, label, description, `coord`):
+       check it is the right one. **Write one `wiki:` search for every person and place of a story, before the
+       `web:` searches.**
+     - `geo:<lat>,<lon> <metres>`: Commons photos taken around a point, nearest first, whatever they are called
+       (up to 12; 500 m when no distance is given): `"geo:35.6852,139.7528 400"`. The coordinates of a `wiki:`
+       item are in `index.json`.
+   - A wish (17/11/2026): ` => <what the picture must show, in English>` at the end of a `wiki:`, `geo:`, Commons
+     or `web:` search, e.g. `"web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress"`,
+     `"Tokyo residential houses => rows of small houses in a Japanese neighbourhood"`. The machine then looks at
+     more pictures than it keeps (Commons 50, web 30, `wiki:` 60), scores each against the wish (CLIP) and keeps
+     the best, best first (8, web 12, `wiki:` 24); pictures that do not show the wish (score under 0.18) or look
+     unsuitable are left out, so a group can come back small or empty: then ask with other words. The score is
+     `match` in `index.json` and `~0.31` on the contact sheet (about 0.30 and more: it shows the thing; near 0.20:
+     doubtful). The wish is always English (CLIP does not read Japanese; `news.custom` refuses another script);
+     the search words before it stay Japanese for `web:`. Use a wish when a search brings many pictures of the
+     wrong moment or thing; a search without a wish keeps the order of its source, as before. When the ranking
+     could not be installed on GitHub, the wish is ignored (`"ranked": false` in `index.json`). The wish is part
+     of the search text: never add one to a search that was already run (append a new search instead).
    - Check before pushing: `python -m news.custom stories/<name>.json` lists every problem (unknown keys such as
      `photos`, `lines` not a list, bad `focus`/`fit`, missing fields) and the scenes without a picture.
 2. The push runs the workflow (find stage, ~2 min). First check that the run for your commit succeeded (the
@@ -160,12 +185,13 @@ Write the caption before the closing comment and link it there next to the video
 
 Owner, 14/11/2026: pictures may come from anywhere on the web (`web:` searches), for the best pictures; the owner
 was told about the copyright risk and accepted it. Owner, 12/11/2026: a video with only a few pictures is not acceptable. Give every scene its own fitting
-picture: write 2–3 searches per scene from the start and search again until each scene has one; a text card is
+picture: write a `wiki:` search for every person and place, 2–3 searches per scene from the start, and search again until each scene has one; a text card is
 the exception (pure figures), and the owner is told which scenes have none and why. Wikimedia refuses requests from Claude's cloud session (429), which is why
 the search runs on GitHub. The voice engine runs only on GitHub (Docker).
 
 ## Changing the pipeline
-`python3 -m compileall -q news`, `python -m news.custom` on every story, and a stills preview of
+`python3 -m compileall -q news`, `python -m news.custom` on every story, `python tools/find_test.py` (the picture
+search on made-up answers: no network, no torch), and a stills preview of
 `stories/mau-boj.json` (look at the sheet), and after a change to the frames or the encoder
 `python tools/encode_test.py stories/mau-boj.json <find folder> <out>` (3 seconds of real video in both frames,
 needs ffmpeg) and `python tools/edits_test.py stories/mau-boj.json <find folder> <out>` (every move and cut of

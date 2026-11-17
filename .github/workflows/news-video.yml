@@ -231,6 +231,8 @@ jobs:
               echo "WHY=file kịch bản stories/$STORY.json có lỗi (sai cú pháp hoặc thiếu mục)" >> "$GITHUB_ENV"
               echo "::error::stories/$STORY.json has problems (listed above): fix the story file and push again"; exit 1; }
             STAGE=$(python -c "import json,sys; print(json.load(open(sys.argv[1], encoding='utf-8')).get('stage', 'find'))" "stories/$STORY.json")
+            # a search with a wish ("… => what the picture must show") is ranked: only then is the ranking installed
+            if [[ "$STAGE" == "find" ]] && grep -q ' => ' "stories/$STORY.json"; then echo "rank=yes" >> "$GITHUB_OUTPUT"; fi
           fi
           if [[ "$MODE" == "caption" ]]; then
             [[ "$STORY" =~ ^[A-Za-z0-9._-]+$ ]] || { echo "::error::bad caption file name captions/$STORY.txt"; exit 1; }
@@ -260,6 +262,19 @@ jobs:
           python -m pip install -r requirements.txt
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg fonts-noto-cjk
+      - name: Mô hình chấm điểm ảnh
+        # the CLIP weights (600 MB) of the picture ranking, kept between runs
+        if: steps.plan.outputs.rank == 'yes'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/find-images
+          key: clip-vit-b-32-quickgelu-laion400m-e32
+      - name: Bộ chấm điểm ảnh (không bắt buộc)
+        # optional: without it the search works as before and ignores the wishes ("ranked": false in index.json)
+        if: steps.plan.outputs.rank == 'yes'
+        run: |
+          { python -m pip install -q torch torchvision --index-url https://download.pytorch.org/whl/cpu && python -m pip install -q open_clip_torch; } \
+            || echo "::warning::không cài được bộ chấm điểm ảnh: tìm ảnh chạy không xếp hạng"
       - name: Get the pictures already found for the story
         if: matrix.mode == 'story' || matrix.mode == 'check'
         env:
@@ -293,6 +308,8 @@ jobs:
           python -m compileall -q news
           for story in stories/*.json; do python -m news.custom "$story"; done
           for caption in captions/*.txt; do [[ -e "$caption" ]] && python -m news.captions "$caption"; done
+          # the picture search on made-up answers (no network, no torch): syntax, order, ranking, 429, index.json
+          python tools/find_test.py
           [[ -f pictures/index.json ]] || { echo "::error::renders/mau-boj/find is missing: the sample stills need its pictures"; exit 1; }
           python -m news.custom stories/mau-boj.json pictures
           python -m news --story stories/mau-boj.json --pictures pictures --stills dist/stills

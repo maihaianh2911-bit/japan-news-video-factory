@@ -60,6 +60,19 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   approval. Only write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
+- How to write the searches (17/11/2026; syntax in `CLAUDE.md` step 1), in this order:
+  1. **`wiki:<name>` for every person and place of the story** (also a building, an event): `"wiki:美空ひばり"`,
+     `"wiki:日本銀行"`. One search brings up to 24 pictures about that thing itself (its Wikipedia articles, its
+     Commons category, photos taken there), with free licences and authors. Never skip it. A name that fits several
+     things: the exact title of its Wikipedia article, or the Wikidata item (`"wiki:Q17"`).
+  2. `geo:<lat>,<lon> <metres>` for a place whose photos carry other names (a street, a park, the surroundings of
+     a building); the coordinates of a `wiki:` item are in `index.json`.
+  3. `web:<Japanese words>` for the moments of the story (a wedding, a concert, a funeral) and for living people,
+     of whom Commons has little: 2–3 per scene, as before.
+  4. A wish ` => <English description>` on a search that would bring many wrong pictures: the machine keeps only
+     the pictures that show it, best first (`"web:寛仁親王 若い頃 => a young man with a beard"`). Plain Commons words
+     bring off-topic pictures easily (`Tokyo residential houses` brought two pictures of politicians and
+     three covers of old maps among its 8): give such a search a wish, or use `wiki:`.
 - Two pictures per scene (owner, 14/11/2026): a new picture every 4–5 seconds (`"photo"` as a list, `CLAUDE.md`
   step 3).
 - Quality is not traded for usage: preview before rendering.
@@ -75,7 +88,11 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
 
 ## 2. `jnews-pick` → pictures, then `stage: "render"`
 1. Fetch `<name>/find/`; `status.json` must have your commit. Look at every `sheet_<k>.jpg` and open the pictures you
-   consider in full size. `index.json` has titles, authors and licences; a search with `"error"` failed: run the
+   consider in full size. For a `wiki:` search, first read `"wikidata"` in `index.json`: is it the right person or
+   place? If not, append the search again with the exact Wikipedia title or the item. A search with a wish shows
+   its score on the sheet (`~0.31`: it shows the thing; near `0.20`: doubtful; `"ranked": false`: the ranking was
+   not installed, the wish was ignored); an empty group means nothing showed the wish: append other words.
+   `index.json` has titles, authors and licences; a search with `"error"` failed: run the
    find again with the dispatch command of §4 (only the failed searches are tried again).
 2. A scene without a fitting picture → append searches (never change or reorder existing ones), keep
    `stage: "find"`, commit `[jnews #N] tìm thêm ảnh`, push, remove `jnews-busy`. You are called again at

@@ -45,6 +45,10 @@ class Music:
         return {"title": self.title, "page": self.page, "creator": self.creator, "license": self.license}
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
+SEARCH_KINDS = ("file", "music", "web", "url", "wiki", "geo")   # prefixes of a search; without one: Commons words
+WISH = "=>"                                                     # "<search> => <what the picture must show>"
+GEO = re.compile(r"^(-?\d+(?:\.\d+)?)\s*[,; ]\s*(-?\d+(?:\.\d+)?)(?:\s+(\d+)\s*m?)?$")
+NOT_LATIN = re.compile(r"[^\x00-\u024f\u2000-\u206f]")          # Japanese, Chinese, Cyrillic …: the ranking reads English
 
 
 class StoryError(ValueError):
@@ -66,6 +70,44 @@ def text_problem(value, where, *, required=True):
     if not isinstance(value, str) or (required and not value.strip()):
         return [f"{where} must be a non-empty string, got {value!r}"]
     return []
+
+
+def search_parts(search):
+    """(kind, words, wish) of a search: "wiki:美空ひばり => a singer on a stage" → ("wiki", "美空ひばり",
+    "a singer on a stage"). The kind is the prefix ("commons" without one); the wish is what the picture must show,
+    in English, and is empty when the search has none. url:, file: and music: are taken whole (no wish)."""
+    kind, words, wish = "commons", search, ""
+    for name in SEARCH_KINDS:
+        if search.startswith(name + ":"):
+            kind, words = name, search[len(name) + 1:]
+            break
+    if kind not in ("file", "music", "url"):
+        words, _, wish = words.partition(WISH)
+    return kind, words.strip(), wish.strip()
+
+
+def search_problems(search, where):
+    """The problems of the new search syntax (wiki:, geo:, the wish after "=>"); old searches have none."""
+    kind, words, wish = search_parts(search)
+    if kind in ("file", "music", "url"):
+        if f" {WISH} " in search:
+            return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, wiki: and geo:, not with {kind}:']
+        return []
+    problems = []
+    if WISH in search:
+        if not words:
+            problems.append(f'{where}: nothing to search before "{WISH}", got {search!r}')
+        if not wish:
+            problems.append(f'{where}: after "{WISH}" write what the picture must show, in English, got {search!r}')
+        elif NOT_LATIN.search(wish):
+            problems.append(f'{where}: the wish after "{WISH}" must be in English (the ranking reads English only; '
+                            f"the search words before it may be Japanese), got {wish!r}")
+    if kind == "wiki" and not words:
+        problems.append(f'{where}: "wiki:" needs a name or a Wikidata item, e.g. "wiki:美空ひばり" or "wiki:Q467982"')
+    if kind == "geo" and not GEO.match(words):
+        problems.append(f'{where}: "geo:" must be "geo:<lat>,<lon> <metres>", e.g. "geo:35.6852,139.7528 400", '
+                        f"got {search!r}")
+    return problems
 
 
 def picks_of(scene):
@@ -140,6 +182,8 @@ def validate(data, name=None):
     if not isinstance(searches, list) or not all(isinstance(s, str) and s.strip() for s in searches):
         problems.append(f'"searches" must be a list of non-empty strings, got {searches!r}')
         searches = []
+    for number, search in enumerate(searches, 1):
+        problems += search_problems(search, f"search {number}")
     music = data.get("music")
     if music is not None:
         if not isinstance(music, dict):
