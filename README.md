@@ -14,9 +14,9 @@ Kết quả nằm ở nhánh `renders`, thư mục `<tên>/`: video, phụ đề
 
 **Cấu hình:** để GitHub gọi Claude sau mỗi bước, repo cần hai secret `CLAUDE_TASK_URL` và `CLAUDE_TASK_TOKEN` (cùng giá trị như ở `japan-video-factory`). Không có lượt chạy mỗi giờ: nếu Claude lỡ một lần gọi (ví dụ hết hạn mức), vào **Actions → Gọi Claude ngay → Run workflow**. Khi chưa gọi được Claude, máy ghi rõ điều đó trong phiếu kèm link nút bấm. Nhãn của phiếu được tạo bằng workflow **Tạo nhãn**.
 
-## Ghi chú 17/11/2026: tìm ảnh tốt hơn (đang ở nhánh thử, chưa vào bản chính)
+## Ghi chú 17/11/2026: tìm ảnh tốt hơn (đã vào bản chính)
 
-Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba việc. Phần này **mới nằm ở nhánh `claude/stoic-darwin-utl7qq`, chưa đưa vào `main`**, nên các video đang làm vẫn tìm ảnh như cũ cho tới khi chủ kênh đồng ý gộp.
+Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba việc. Phần này **đã vào `main` ngày 17/11/2026** (chủ kênh: "đưa tất cả các phần đã cải thiện lên nhánh chính đi"). Khi đưa vào chưa chạy thử trên GitHub: video đầu tiên sau ngày này là lần chạy thật đầu tiên, nên xem kỹ nhật ký bước tìm ảnh.
 
 1. **Tìm theo tên người, tên nơi chốn** (`wiki:`): chỉ cần ghi tên một người, một nơi, một tòa nhà, máy lấy luôn các ảnh nói về chính người hay nơi đó trên Wikipedia và kho ảnh Wikimedia (tối đa 24 ảnh), có sẵn tên tác giả và giấy phép dùng tự do.
 2. **Tìm ảnh chụp quanh một địa điểm** (`geo:`): ghi tọa độ và bán kính, máy lấy các ảnh chụp ở quanh đó.
