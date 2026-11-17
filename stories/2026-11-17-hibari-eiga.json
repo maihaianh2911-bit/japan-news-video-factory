@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 19,
   "title": "映画スター 美空ひばり",
   "date": "2026-11-17",
@@ -41,7 +41,34 @@
           "say": "みそらひばりは、ひゃくろくじゅうごほんもの映画に出演した映画スターでもあった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-10",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "2-5",
+          "focus": [
+            0.45,
+            0.37
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-2",
+          "focus": [
+            0.55,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu bằng loạt áp phích phim có ひばり đóng chính (おてもやん, ひよどり草紙, 陽気な天使) để thấy bà là ngôi sao điện ảnh."
     },
     {
       "label": "悲しき口笛",
@@ -56,7 +83,36 @@
           "text": "シルクハットに燕尾服の少女が歌う姿に、観客は夢中になりました。",
           "say": "シルクハットに、えんびふくの少女が歌う姿に、観客は夢中になりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-3",
+          "focus": [
+            0.43,
+            0.3
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        },
+        {
+          "pick": "4-2",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "cut": "dip",
+      "why": "Lùi về năm 1949: áp phích, ảnh tĩnh ひばり đội mũ chóp và tờ rơi gốc của phim 悲しき口笛."
     },
     {
       "label": "東京キッド",
@@ -65,7 +121,45 @@
       "lines": [
         "翌年の「東京キッド」も大ヒット。",
         "子役スターから、ひばりは本格的な女優へと成長していきます。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-1",
+          "focus": [
+            0.3,
+            0.47
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-4",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "rise",
+          "tone": "sepia"
+        },
+        {
+          "pick": "5-11",
+          "focus": [
+            0.56,
+            0.4
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        },
+        {
+          "pick": "2-8",
+          "focus": [
+            0.25,
+            0.3
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "cut": "fade",
+      "why": "Áp phích và ảnh tĩnh 東京キッド, rồi ひばり tuổi thiếu nữ và áp phích các phim sau (リンゴ園の少女) cho ý lớn lên thành diễn viên."
     },
     {
       "label": "伊豆の踊子",
@@ -76,7 +170,38 @@
           "text": "1954年には、川端康成の名作「伊豆の踊子」で、旅芸人の踊子を演じました。",
           "say": "1954年には、かわばたやすなりの名作、いずのおどりこで、たびげいにんの踊子を演じました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-11",
+          "focus": [
+            0.76,
+            0.27
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "7-10",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "pan-right",
+          "tone": "sepia"
+        },
+        {
+          "pick": "7-6",
+          "focus": [
+            0.52,
+            0.33
+          ],
+          "move": "rise",
+          "tone": "sepia"
+        }
+      ],
+      "cut": "fade",
+      "why": "Ảnh tĩnh phim 伊豆の踊子 1954: ひばり với 石浜朗, trên cầu cùng đoàn hát rong, và trong vai cô vũ nữ đeo trống."
     },
     {
       "label": "東映",
@@ -88,7 +213,35 @@
           "say": "1958年、ひばりは時代劇の、とうえいと専属契約を結びます。"
         },
         "それから5年あまりで出演した映画は60本。そのうち39本が時代劇でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-5",
+          "focus": [
+            0.3,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-10",
+          "focus": [
+            0.3,
+            0.2
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.68,
+            0.22
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Áp phích phim cổ trang của Toei: おしどり駕篭 và 花笠若衆 (1958), 花笠道中 (1962)."
     },
     {
       "label": "主演作",
@@ -100,7 +253,35 @@
           "say": "ひばりのもりのいしまつなど、題名に、ひばりの名前が入った作品も作られました。"
         },
         "歌って、踊って、立ち回りもこなす。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-1",
+          "focus": [
+            0.52,
+            0.08
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-2",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "15-5",
+          "focus": [
+            0.68,
+            0.33
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "cut": "fade",
+      "why": "Phim có tên ひばり: ひばりの森の石松, ひばり姫初夢道中, và cảnh đánh kiếm trong ひばり捕物帖 折鶴駕篭."
     },
     {
       "label": "国民的スター",
@@ -110,7 +291,48 @@
         "映画の中のひばりは、いつも明るく、強いヒロインでした。",
         "スクリーンの中のその姿が、ひばりを「国民的スター」へと押し上げたのです。",
         "次回は、ひばりが命をかけた、東京ドームの一夜の話です。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-3",
+          "focus": [
+            0.74,
+            0.42
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "12-6",
+          "focus": [
+            0.33,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.49,
+            0.5
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "2-7",
+          "focus": [
+            0.48,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "ひばり tươi cười trong phim, cầm kiếm trên áp phích 緋ざくら小天狗, cùng 高倉健, kết bằng áp phích 花の不死鳥."
     }
-  ]
+  ],
+  "music": {
+    "pick": "16-4"
+  }
 }
