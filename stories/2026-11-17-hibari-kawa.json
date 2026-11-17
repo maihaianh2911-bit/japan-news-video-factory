@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 21,
   "title": "川の流れのように",
   "date": "2026-11-17",
@@ -44,7 +44,34 @@
           "say": "みそらひばりが、生前最後に出したシングルは、本人がどうしても、と選んだ歌だった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-6",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.33
+          ]
+        },
+        {
+          "pick": "1-8",
+          "move": "rise",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "2-4",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.4
+          ]
+        }
+      ],
+      "why": "Bìa đĩa đơn 「川の流れのように」 (1988–89) và ảnh bà hát bài này, đúng câu mở đầu."
     },
     {
       "label": "作詞作曲",
@@ -59,7 +86,35 @@
           "text": "当初、シングルにする予定だったのは、同じアルバムの別の曲「ハハハ」でした。",
           "say": "当初、シングルにする予定だったのは、同じアルバムの別の曲、ハハハでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-2",
+          "move": "pan-right",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        },
+        {
+          "pick": "4-4",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "4-8",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.58
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Hibari bên 秋元康 thời trẻ; đĩa album 不死鳥パートII; nhãn đĩa có bài 「ハハハ」 và 「川の流れのように」."
     },
     {
       "label": "決めさせて",
@@ -72,7 +127,35 @@
           "say": "おねがいだから、これだけは、わたしに決めさせて。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-4",
+          "move": "pan-left",
+          "focus": [
+            0.62,
+            0.35
+          ]
+        },
+        {
+          "pick": "6-1",
+          "move": "pan-right",
+          "focus": [
+            0.2,
+            0.3
+          ]
+        },
+        {
+          "pick": "6-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.32
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "ひばり trong phòng thu những năm cuối, bên ê-kíp; câu nói hiện lớn trên gương mặt bà."
     },
     {
       "label": "発売",
@@ -84,7 +167,31 @@
           "say": "1989年1月11日、かわのながれのようには、発売されます。"
         },
         "その翌月、ひばりは全国ツアーを始めました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-9",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "2-6",
+          "move": "hold"
+        },
+        {
+          "pick": "9-7",
+          "move": "pan-left",
+          "focus": [
+            0.65,
+            0.42
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Đĩa đơn 8cm và tờ lời bài hát năm 1989, rồi ひばり trên sân khấu."
     },
     {
       "label": "小倉",
@@ -98,7 +205,35 @@
         "体調の悪いひばりは、ヘリコプターで会場に入ったと伝えられています。",
         "全20曲を歌い終え、幕が下りた直後、ひばりは倒れたといいます。",
         "これが、ひばりの最後のステージになりました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-3",
+          "move": "reveal",
+          "focus": [
+            0.23,
+            0.4
+          ]
+        },
+        {
+          "pick": "9-6",
+          "move": "pan-right",
+          "focus": [
+            0.35,
+            0.38
+          ]
+        },
+        {
+          "pick": "8-2",
+          "move": "push-in",
+          "focus": [
+            0.35,
+            0.3
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Ảnh hội trường 九州厚生年金会館 trong đĩa live 小倉, ひばり hát, bìa đĩa 'Last On Stage'."
     },
     {
       "label": "別れ",
@@ -106,7 +241,32 @@
       "headline": "52歳の旅立ち",
       "lines": [
         "3月に再び入院。6月24日、ひばりは52歳でこの世を去ります。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-4",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.33
+          ]
+        },
+        {
+          "pick": "13-7",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "17-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Chân dung lúc bệnh, báo 毎日 ngày 24/6/1989 đưa tin bà mất, di ảnh ở lễ tang."
     },
     {
       "label": "今も",
@@ -118,7 +278,46 @@
           "say": "かわのながれのようには今、ひばりの最も売れたシングルになっています。"
         },
         "人生を川の流れにたとえたこの歌は、ひばりの生き方そのものでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.6
+          ]
+        },
+        {
+          "pick": "16-5",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.55
+          ]
+        },
+        {
+          "pick": "16-1",
+          "move": "push-in",
+          "focus": [
+            0.75,
+            0.4
+          ]
+        },
+        {
+          "pick": "17-11",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Album 「川の流れのように」, bia đá khắc bài hát ở 大豊町, và nụ cười của bà để kết."
     }
-  ]
+  ],
+  "music": {
+    "pick": "21-2"
+  }
 }
