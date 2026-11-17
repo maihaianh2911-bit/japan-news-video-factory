@@ -1879,5 +1879,106 @@
     "file": "22-1.jpg"
    }
   ]
+ },
+ {
+  "k": 23,
+  "query": "web:皇太子さま 記者会見 2004年5月 欧州訪問前 => a Japanese crown prince speaking at a press conference",
+  "results": [
+   {
+    "title": "欧州訪問前に記者会見し、質問に答えられる…：天皇陛下～私的な ...",
+    "page": "https://www.jiji.com/jc/d4?p=hzb675-03E200405C206&d=d4_twnt",
+    "image": "https://www.jiji.com/news/handmade/topic/d4_twnt/hzb675-03E200405C206.jpg",
+    "width": 415,
+    "height": 550,
+    "license": "",
+    "license_url": "",
+    "artist": "jiji.com",
+    "description": "欧州訪問前に記者会見し、質問に答えられる…：天皇陛下～私的な ...",
+    "match": 0.342,
+    "file": "23-1.jpg"
+   },
+   {
+    "title": "写真](5ページ目)秋篠宮ご一家“激動の30年” 「人格否定発言」へ ...",
+    "page": "https://bunshun.jp/articles/photo/46478?pn=5",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/8/5/750wm/img_857326f5189eccdd22285629c500d5a4168697.jpg",
+    "width": 600,
+    "height": 905,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "写真](5ページ目)秋篠宮ご一家“激動の30年” 「人格否定発言」へ ...",
+    "match": 0.338,
+    "file": "23-2.jpg"
+   },
+   {
+    "title": "写真](4ページ目)天皇陛下と雅子さま 「人格否定発言」の衝撃 ...",
+    "page": "https://bunshun.jp/articles/photo/38275?pn=4",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/8/b/750wm/img_8b102bd2e4d11f404ba4a7a94e9146f3358798.jpg",
+    "width": 750,
+    "height": 495,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "写真](4ページ目)天皇陛下と雅子さま 「人格否定発言」の衝撃 ...",
+    "match": 0.309,
+    "file": "23-3.jpg"
+   },
+   {
+    "title": "皇室：象徴天皇の役割「お気持ち踏まえ」 皇太子さま会見全文 ...",
+    "page": "https://mainichi.jp/articles/20170614/mog/00m/040/001000c",
+    "image": "https://cdn.mainichi.jp/vol1/2017/06/14/20170614k0000m040099000p/8.jpg?2",
+    "width": 421,
+    "height": 618,
+    "license": "",
+    "license_url": "",
+    "artist": "mainichi.jp",
+    "description": "皇室：象徴天皇の役割「お気持ち踏まえ」 皇太子さま会見全文 ...",
+    "match": 0.307,
+    "file": "23-4.jpg"
+   },
+   {
+    "title": "雅子さまを守るため「異例の告発」…天皇陛下「人格否定発言」の ...",
+    "page": "https://gendai.media/articles/-/163310?page=2",
+    "image": "https://cdn.kds.ltd/gendai/nn6hkzg4ugnmwam7fim2s8gl/_/f_auto",
+    "width": 1280,
+    "height": 855,
+    "license": "",
+    "license_url": "",
+    "artist": "gendai.media",
+    "description": "雅子さまを守るため「異例の告発」…天皇陛下「人格否定発言」の ...",
+    "match": 0.249,
+    "file": "23-5.jpg"
+   },
+   {
+    "title": "写真](4ページ目)天皇陛下と雅子さま 「人格否定発言」の衝撃 ...",
+    "page": "https://bunshun.jp/articles/photo/38275?pn=4",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/1/9/750wm/img_19651f4e8463a93bbf25caf8c0da3bf7228284.jpg",
+    "width": 750,
+    "height": 500,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "写真](4ページ目)天皇陛下と雅子さま 「人格否定発言」の衝撃 ...",
+    "match": 0.209,
+    "file": "23-6.jpg"
+   },
+   {
+    "title": "両陛下 被災者に心を寄せる原点の旅（下）（2021年3月29日掲載 ...",
+    "page": "https://news.ntv.co.jp/category/society/847252",
+    "image": "https://news.ntv.co.jp/gimage/n24/articles/7ac0963d7fff4248a607c3d6caa91f85/20210326-183843-2-0003.jpg?w=1200",
+    "width": 1200,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "news.ntv.co.jp",
+    "description": "両陛下 被災者に心を寄せる原点の旅（下）（2021年3月29日掲載 ...",
+    "match": 0.224,
+    "file": "23-7.jpg"
+   }
+  ],
+  "want": "a Japanese crown prince speaking at a press conference",
+  "ranked": true,
+  "candidates": 11,
+  "left_out": 0
  }
 ]
