@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 18,
   "title": "美空ひばり 紅白から消えた年",
   "date": "2026-11-17",
@@ -44,7 +44,36 @@
           "say": "10年連続で、こうはくのトリを務めた歌手が、ある年、こうはくから姿を消した。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-3",
+          "focus": [
+            0.54,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Câu mở: ba lần Hibari trên sân khấu Kōhaku — năm 1963, tay cầm cờ 優勝 của Kōhaku, rồi năm 1972; ảnh cuối lùi xa như cô biến mất."
     },
     {
       "label": "トリ",
@@ -59,7 +88,36 @@
           "text": "紅白歌合戦には17回出場し、1963年からは10年連続で紅組のトリを務めていました。",
           "say": "こうはくうたがっせんには17回出場し、1963年からは、10年連続で、あかぐみのトリを務めていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-5",
+          "focus": [
+            0.48,
+            0.5
+          ],
+          "move": "reveal"
+        },
+        {
+          "pick": "16-5",
+          "focus": [
+            0.6,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-3",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "tone": "sepia",
+          "move": "rise"
+        }
+      ],
+      "cut": "fade",
+      "why": "Lộ tên: từ gương mặt mở ra bìa tạp chí 「紅白歌合戦増大号」, rồi trang báo cô dẫn Kōhaku 1970 cùng phát thanh viên Miyata, và cái bắt tay với ông."
     },
     {
       "label": "弟",
@@ -75,7 +133,36 @@
           "text": "暴力団との関わりが問題になった弟は、この年、何度も逮捕されたと報じられています。",
           "say": "ぼうりょくだんとの関わりが問題になった弟は、この年、何度も逮捕されたと報じられています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "tone": "sepia",
+          "move": "pan-right"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.38
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "cut": "dip",
+      "why": "Bước ngoặt 1973: lia từ Hibari sang em trai Katō Tetsuya, tiến vào chân dung anh ấy, rồi lia qua đám phóng viên."
     },
     {
       "label": "締め出し",
@@ -88,7 +175,45 @@
         },
         "弟を出演させるなら、会場は貸せない、というのです。",
         "それでもひばりは、家族を守り続けました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-10",
+          "focus": [
+            0.35,
+            0.7
+          ],
+          "tone": "sepia",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-9",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "11-9",
+          "focus": [
+            0.45,
+            0.45
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-7",
+          "focus": [
+            0.6,
+            0.2
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Buổi diễn có tên TETSUYA KATO trên phông, Hibari ở hội trường thành phố Fukuoka 1972, một hội trường thành phố thời đó, rồi Hibari cầm micro bên mẹ."
     },
     {
       "label": "落選",
@@ -103,7 +228,27 @@
           "text": "発表は「辞退」。しかし、事実上の落選だったと言われています。",
           "say": "発表は、じたい。しかし、事実上の落選だったと言われています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.7,
+            0.15
+          ],
+          "move": "fall"
+        },
+        {
+          "pick": "13-2",
+          "focus": [
+            0.25,
+            0.4
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai trang báo năm 1973: đọc dọc tít 「美空ひばり落ちる」 xuống danh sách không có tên cô, rồi lia trang báo 「一番の難題'ひばり'」 về tấm ảnh của cô."
     },
     {
       "label": "大みそか",
@@ -115,7 +260,35 @@
           "say": "その後数年間、ひばりは、おおみそかを、別のテレビ局の特別番組で過ごしました。"
         },
         "NHKとの関係が戻ったのは、1977年のことでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-3",
+          "focus": [
+            0.5,
+            1.0
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.75,
+            0.25
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "rise"
+        }
+      ],
+      "cut": "dip",
+      "why": "Nhảy thời gian: màn hình tựa chương trình cuối năm của đài NET 1974, các đĩa ghi lại các chương trình ấy, rồi đi lên bìa NHK ビッグショー 1977."
     },
     {
       "label": "家族",
@@ -127,7 +300,39 @@
           "text": "次回は、映画スターとしての美空ひばりの話です。",
           "say": "次回は、映画スターとしての、みそらひばりの話です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-3",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "6-8",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-6",
+          "focus": [
+            0.55,
+            0.4
+          ],
+          "tone": "sepia",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Gia đình: lia qua Hibari, con trai và người đàn ông đi cùng, tiến vào hai mẹ con; kết bằng cảnh phim thời trẻ báo tập sau."
     }
-  ]
+  ],
+  "music": {
+    "pick": "20-2"
+  }
 }
