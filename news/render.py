@@ -688,10 +688,14 @@ class Scene:
             if style.layout == "story":
                 shade = story_shade(self.height)
                 frame.paste(shade, (0, self.top), shade)
-        amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
-        layer = faded(self.text, amount) if amount < 1 else self.text
-        frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
-        self.draw_parts(frame, age)
+        if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
+            self.quiet_until = moment
+        else:
+            age = moment - max(self.start, getattr(self, "quiet_until", self.start))
+            amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
+            layer = faded(self.text, amount) if amount < 1 else self.text
+            frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
+            self.draw_parts(frame, age)
         if photo:
             draw = ImageDraw.Draw(frame)
             credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
@@ -761,8 +765,9 @@ def transition(old, new, amount, cut=""):
         frame = Image.blend(old, new, ease(amount))
         area = page_area()
         dark = Image.new("RGB", (W, area[3] - area[1]), "#07090c" if not style.grain else "#1c140b")
-        scene = (Image.blend(old.crop(area), dark, ease(amount * 2)) if amount < 0.5
-                 else Image.blend(dark, new.crop(area), ease(amount * 2 - 1)))
+        depth = 0.55   # how dark the middle of the dip gets
+        scene = (Image.blend(old.crop(area), dark, depth * ease(amount * 2)) if amount < 0.5
+                 else Image.blend(new.crop(area), dark, depth * (1 - ease(amount * 2 - 1))))
         frame.paste(scene, area[:2])
         return frame
     if not style.grain:
@@ -923,42 +928,53 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
 QUOTE_IN = 0.35
 
 
+QUOTE_ON = False   # set by encode()/stills() while a quote is shown: the scene's own text waits meanwhile
+
+
+@lru_cache(maxsize=8)
+def quote_band(height):
+    """A dark band, clear at its top and dense from about two fifths down, laid on the foot of the picture."""
+    band = Image.new("RGBA", (W, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(band)
+    solid = int(height * 0.42)
+    for y in range(height):
+        alpha = 215 * min(1.0, y / solid) ** 1.4
+        draw.line((0, y, W, y), fill=(10, 7, 4, round(alpha)))
+    return band
+
+
 def draw_quote(image, line, age):
-    """A quote printed big over the picture while it is spoken: the picture darkens, the words stand in the
-    middle between two short red rules."""
+    """A quote printed big while it is spoken. The picture stays bright: the main picture is what keeps the
+    viewer (owner, 17/11/2026), so only the foot of the picture gets a soft dark band, the words stand on it
+    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice."""
     top, height = photo_box()
     amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
     if amount <= 0:
         return
-    dark = Image.new("RGBA", (W, height), (12, 8, 4, round(178 * amount)))
-    image.paste(dark, (0, top), dark)
     # break where the captions break (after a comma, between phrases), each piece on its own line if it fits
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
-    words, size = fit("\n".join(pieces), 900, 104, max(len(pieces), 2), smallest=56)
-    block = block_height(words, size, 26)
-    if FX.get("text"):   # the rules open from the middle, the rows come one after the other
-        y = top + (height - (block + 140)) // 2
-        half = round(60 * ease(age / 0.5))
-        draw = ImageDraw.Draw(image)
-        draw.rectangle((W // 2 - half, y, W // 2 + half, y + 5), fill="#c23a26")
-        draw.rectangle((W // 2 - half, y + block + 120, W // 2 + half, y + block + 125), fill="#c23a26")
-        for index, row in enumerate(words.splitlines()):
-            shown = ease((age - 0.08 - 0.22 * index) / 0.42)
-            if shown <= 0:
-                continue
-            strip = Image.new("RGBA", (W, size + 44), (0, 0, 0, 0))
-            ImageDraw.Draw(strip).text((W // 2, 10), row, font=font(size), fill=STORY_TEXT, anchor="mt")
-            strip = faded(strip, shown) if shown < 1 else strip
-            image.paste(strip, (0, y + 50 + index * (size + 26) + round(22 * (1 - shown))), strip)
-        return
-    layer = Image.new("RGBA", (W, block + 140), (0, 0, 0, 0))
-    draw = ImageDraw.Draw(layer)
-    draw.rectangle((W // 2 - 60, 0, W // 2 + 60, 5), fill=style.accent)
-    for index, row in enumerate(words.splitlines()):
-        draw.text((W // 2, 60 + index * (size + 26)), row, font=font(size), fill=STORY_TEXT, anchor="mt")
-    draw.rectangle((W // 2 - 60, block + 120, W // 2 + 60, block + 125), fill=style.accent)
-    layer = faded(layer, amount)
-    image.paste(layer, (0, top + (height - layer.height) // 2 + round(24 * (1 - amount))), layer)
+    words, size = fit("\n".join(pieces), 920, 92, max(len(pieces), 2), smallest=52)
+    rows = words.splitlines()
+    block = block_height(words, size, 22)
+    band_height = min(height, block + 330)
+    band = quote_band(band_height)
+    band = faded(band, amount) if amount < 1 else band
+    image.paste(band, (0, top + height - band_height), band)
+    y = top + height - 80 - block - 40          # the text block ends 80 px above the foot of the picture
+    draw = ImageDraw.Draw(image)
+    half = round(60 * (ease(age / 0.5) if FX.get("text") else amount))
+    rule = "#c23a26" if FX.get("text") else style.accent
+    draw.rectangle((W // 2 - half, y, W // 2 + half, y + 5), fill=rule)
+    draw.rectangle((W // 2 - half, y + block + 75, W // 2 + half, y + block + 80), fill=rule)
+    for index, row in enumerate(rows):
+        shown = ease((age - 0.08 - 0.22 * index) / 0.42) if FX.get("text") else amount
+        if shown <= 0:
+            continue
+        strip = Image.new("RGBA", (W, size + 44), (0, 0, 0, 0))
+        ImageDraw.Draw(strip).text((W // 2, 10), row, font=font(size), fill=STORY_TEXT, anchor="mt",
+                                   stroke_width=3, stroke_fill=(12, 8, 4))
+        strip = faded(strip, shown) if shown < 1 else strip
+        image.paste(strip, (0, y + 30 + index * (size + 22) + round(22 * (1 - shown))), strip)
 
 
 def quote_lines(beats, captions):
@@ -1060,10 +1076,14 @@ def music_args(music, duration):
 
 
 def encode(beats, release, photos, demo, intervals, captions, wav, out):
+    global QUOTE_ON
     scenes = scenes_for(beats, release, photos, demo, intervals)
     grain = Grain() if style.grain else None
     quotes = quote_lines(beats, captions)
+    QUOTE_ON = bool(quotes[0])
     cover = scenes[0].render(min(1.5, intervals[0][1] * 0.3))
+    QUOTE_ON = False
+    scenes[0].__dict__.pop("quiet_until", None)   # the cover must not hold back the first scene's text
     if quotes[0]:
         draw_quote(cover, quotes[0][0], 1.0)
     else:
@@ -1087,9 +1107,11 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     moment = frame_index / FPS
                     while cue + 1 < len(captions) and moment >= captions[cue].end:
                         cue += 1
-                    frame = frame_at(scenes, number, moment)
                     # in the silence between two lines the last caption (or quote) stays until the next one starts
                     shown = cue - 1 if cue and moment < captions[cue].start else cue
+                    QUOTE_ON = bool(quotes[shown])
+                    frame = frame_at(scenes, number, moment)
+                    QUOTE_ON = False
                     if quotes[shown]:
                         draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
                     else:
@@ -1108,13 +1130,16 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
 
 def stills(beats, release, photos, out):
     """One frame per picture, without the voice, to check pictures and text before rendering."""
+    global QUOTE_ON
     grain = Grain() if style.grain else None
     tiles = []
     for index, beat in enumerate(beats):
         scene = Scene(index, beat, release, photos.get(index), False, 0.0, 10.0)   # a 10-second scene
         count = max(1, len(scene.photos))
         for number in range(count):
+            QUOTE_ON = 0 in beat.quotes and number == 0
             frame = scene.render(10 * (number + 0.5) / count)
+            QUOTE_ON = False
             if 0 in beat.quotes and number == 0:
                 draw_quote(frame, beat.lines[0], 1.0)
             else:

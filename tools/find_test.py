@@ -67,7 +67,8 @@ def syntax():
         assert validate(data, path.stem) == [], path
         for search in data.get("searches", []):
             kind, words, wish = search_parts(search)
-            assert kind not in ("wiki", "geo") and not wish, (path, search)
+            if kind in ("wiki", "geo") or wish:   # the kinds of search added on 17/11/2026: new stories use them
+                continue
             assert words == (search if kind == "commons" else search[len(kind) + 1:]).strip(), (path, search)
 
 
