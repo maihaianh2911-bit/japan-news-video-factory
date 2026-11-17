@@ -1778,5 +1778,158 @@
     "seconds": 106.7
    }
   ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/kiko-garden.jpg",
+  "results": [
+   {
+    "title": "kiko-garden.jpg",
+    "page": "",
+    "width": 912,
+    "height": 637,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/kiko-garden.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/emperor-masako.jpg",
+  "results": [
+   {
+    "title": "emperor-masako.jpg",
+    "page": "",
+    "width": 720,
+    "height": 528,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/emperor-masako.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/aiko-white.jpg",
+  "results": [
+   {
+    "title": "aiko-white.jpg",
+    "page": "",
+    "width": 408,
+    "height": 528,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/aiko-white.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/aiko-white2.jpg",
+  "results": [
+   {
+    "title": "aiko-white2.jpg",
+    "page": "",
+    "width": 600,
+    "height": 565,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/aiko-white2.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/kiko-walk.jpg",
+  "results": [
+   {
+    "title": "kiko-walk.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 826,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/kiko-walk.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/tape-cut.jpg",
+  "results": [
+   {
+    "title": "tape-cut.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1198,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/tape-cut.jpg",
+    "file": "20-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/tiaras.jpg",
+  "results": [
+   {
+    "title": "tiaras.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/tiaras.jpg",
+    "file": "21-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/emperor-umbrella.jpg",
+  "results": [
+   {
+    "title": "emperor-umbrella.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 840,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/emperor-umbrella.jpg",
+    "file": "22-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "file:stories/media/2026-11-17-kiko-aruki/aiko-white3.jpg",
+  "results": [
+   {
+    "title": "aiko-white3.jpg",
+    "page": "",
+    "width": 1008,
+    "height": 864,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-kiko-aruki/aiko-white3.jpg",
+    "file": "23-1.jpg"
+   }
+  ]
  }
 ]
