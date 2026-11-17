@@ -1208,5 +1208,107 @@
     "seconds": 172.3
    }
   ]
+ },
+ {
+  "k": 12,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/press-conference.jpg",
+  "results": [
+   {
+    "title": "press-conference.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/press-conference.jpg",
+    "file": "12-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 13,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/showa-laugh.jpg",
+  "results": [
+   {
+    "title": "showa-laugh.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 624,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/showa-laugh.jpg",
+    "file": "13-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/garden-greeting.jpg",
+  "results": [
+   {
+    "title": "garden-greeting.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 855,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/garden-greeting.jpg",
+    "file": "14-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/kuroyanagi.jpg",
+  "results": [
+   {
+    "title": "kuroyanagi.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 675,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/kuroyanagi.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/showa-smile.jpg",
+  "results": [
+   {
+    "title": "showa-smile.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 855,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/showa-smile.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-showa-kuroyanagi/garden-wide.jpg",
+  "results": [
+   {
+    "title": "garden-wide.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 855,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-showa-kuroyanagi/garden-wide.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
  }
 ]
