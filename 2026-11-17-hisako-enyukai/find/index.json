@@ -1347,5 +1347,141 @@
     "seconds": 49.3
    }
   ]
+ },
+ {
+  "k": 13,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-kimono.jpg",
+  "results": [
+   {
+    "title": "hisako-kimono.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1000,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-kimono.jpg",
+    "file": "13-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/royals-walk.jpg",
+  "results": [
+   {
+    "title": "royals-walk.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1272,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/royals-walk.jpg",
+    "file": "14-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/royals-line.jpg",
+  "results": [
+   {
+    "title": "royals-line.jpg",
+    "page": "",
+    "width": 1008,
+    "height": 576,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/royals-line.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-blue.jpg",
+  "results": [
+   {
+    "title": "hisako-blue.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 648,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-blue.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-guests.jpg",
+  "results": [
+   {
+    "title": "hisako-guests.jpg",
+    "page": "",
+    "width": 1008,
+    "height": 648,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-guests.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-greeting.jpg",
+  "results": [
+   {
+    "title": "hisako-greeting.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 672,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-greeting.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-bow.jpg",
+  "results": [
+   {
+    "title": "hisako-bow.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 912,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-bow.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "file:stories/media/2026-11-17-hisako-enyukai/hisako-smile.jpg",
+  "results": [
+   {
+    "title": "hisako-smile.jpg",
+    "page": "",
+    "width": 840,
+    "height": 696,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hisako-enyukai/hisako-smile.jpg",
+    "file": "20-1.jpg"
+   }
+  ]
  }
 ]
