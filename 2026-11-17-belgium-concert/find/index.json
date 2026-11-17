@@ -1430,5 +1430,124 @@
     "seconds": 236.2
    }
   ]
+ },
+ {
+  "k": 13,
+  "query": "file:stories/media/2026-11-17-belgium-concert/ladies-standing.jpg",
+  "results": [
+   {
+    "title": "ladies-standing.jpg",
+    "page": "",
+    "width": 1008,
+    "height": 696,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/ladies-standing.jpg",
+    "file": "13-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "file:stories/media/2026-11-17-belgium-concert/concert-seats.jpg",
+  "results": [
+   {
+    "title": "concert-seats.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 888,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/concert-seats.jpg",
+    "file": "14-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-belgium-concert/handshake.jpg",
+  "results": [
+   {
+    "title": "handshake.jpg",
+    "page": "",
+    "width": 936,
+    "height": 816,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/handshake.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-belgium-concert/royals-row.jpg",
+  "results": [
+   {
+    "title": "royals-row.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 744,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/royals-row.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-belgium-concert/michiko-mathilde.jpg",
+  "results": [
+   {
+    "title": "michiko-mathilde.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1392,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/michiko-mathilde.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-belgium-concert/kimono-western.jpg",
+  "results": [
+   {
+    "title": "kimono-western.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 744,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/kimono-western.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-belgium-concert/hisako-tsuguko.jpg",
+  "results": [
+   {
+    "title": "hisako-tsuguko.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 840,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-belgium-concert/hisako-tsuguko.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
  }
 ]
