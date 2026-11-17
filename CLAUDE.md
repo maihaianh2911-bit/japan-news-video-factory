@@ -67,6 +67,20 @@ kèm caption cho mỗi video"):
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
    characters a second at speed 1.0 plus the pauses (iron rule 2: over 60 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
+   How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
+   - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
+     remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
+     この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
+     優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story, and end on a line that
+     comes back to the opening (not a question to the viewer).
+   - **One flowing narration**: sentences linked by connectives (けれど, そんなある深夜, その言葉が本物だったことを…),
+     the warm narrator's です/ます, no chopped fragments such as 「1993年。ハーバード、東大。」.
+   - A story the sources do not confirm is framed **once** (e.g. 「長く語り継がれてきた話です」, 「…と口にしたといいます」
+     at the key line), not on every line.
+   - Under 60 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
+     treaty years). Do not end every video with 「あなたはどう感じますか？」.
+   - A source video too thin for a story (a few captions, no events): tell the owner before making it.
+   Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
