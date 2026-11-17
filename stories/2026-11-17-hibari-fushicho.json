@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 20,
   "title": "不死鳥コンサートの夜",
   "date": "2026-11-17",
@@ -9,6 +9,9 @@
     "speed": 1.05,
     "line_pause": 0.15,
     "scene_pause": 0.2
+  },
+  "music": {
+    "pick": "16-1"
   },
   "searches": [
     "web:美空ひばり 不死鳥 衣装",
@@ -40,7 +43,34 @@
           "say": "救急車が待機する中、みそらひばりは、さんじゅうきゅうきょくを歌い切った。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-12",
+          "focus": [
+            0.53,
+            0.33
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-1",
+          "focus": [
+            0.53,
+            0.38
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "1-10",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu bằng ảnh ひばり mặc bộ lông phượng hoàng hát tại 東京ドーム đêm 11/4/1988."
     },
     {
       "label": "入院",
@@ -53,7 +83,36 @@
           "say": "病名は、両足の、だいたいこっとうえしと、慢性肝炎。"
         },
         "歩くことさえ難しい体でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-2",
+          "focus": [
+            0.55,
+            0.4
+          ],
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-10",
+          "focus": [
+            0.52,
+            0.33
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "fall"
+        }
+      ],
+      "cut": "dip",
+      "why": "Lùi về 1987: ひばり trong phòng bệnh, lúc đang chữa bệnh, rồi ngày ra viện phải chống gậy."
     },
     {
       "label": "東京ドーム",
@@ -62,7 +121,35 @@
       "lines": [
         "それでもひばりは、もう一度ステージに立つと決めます。",
         "舞台は、完成したばかりの東京ドーム。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.27,
+            0.6
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "6-8",
+          "focus": [
+            0.3,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Họp báo sau khi ra viện (quyết định trở lại), rồi 東京ドーム vừa xây xong năm 1988."
     },
     {
       "label": "4月11日",
@@ -81,7 +168,35 @@
           "text": "ひばりは、羽根を広げた不死鳥のような衣装で、ファンの前に現れました。",
           "say": "ひばりは、羽根を広げた、ふしちょうのような衣装で、ファンの前に現れました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-10",
+          "focus": [
+            0.48,
+            0.33
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "1-4",
+          "focus": [
+            0.38,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "1-6",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "reveal"
+        }
+      ],
+      "cut": "fade",
+      "why": "Đêm 不死鳥コンサート: ひばり xuất hiện trong bộ lông phượng hoàng (森英恵 thiết kế), dang tay như cánh chim."
     },
     {
       "label": "救急車",
@@ -90,7 +205,35 @@
       "lines": [
         "もしもの時のために、救急車が待機していたといいます。",
         "痛みをこらえながら、ひばりは一曲、また一曲と歌い続けます。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-9",
+          "focus": [
+            0.58,
+            0.3
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "4-4",
+          "focus": [
+            0.53,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-5",
+          "focus": [
+            0.53,
+            0.33
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Trên sân khấu Dome trước khán giả, ひばり cố nén đau hát hết bài này đến bài khác."
     },
     {
       "label": "39曲",
@@ -107,7 +250,40 @@
         },
         "しかし、病が治ったわけではありませんでした。",
         "次回は、ひばりが最後に選んだ歌の話です。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "4-5",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-2",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "11-3",
+          "focus": [
+            0.48,
+            0.3
+          ],
+          "move": "fall"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hát trọn 39 bài, dang tay chào, cười rạng rỡ; cuối cùng bước một mình trên lối đi dài (花道) — bệnh vẫn chưa khỏi."
     }
   ]
 }
