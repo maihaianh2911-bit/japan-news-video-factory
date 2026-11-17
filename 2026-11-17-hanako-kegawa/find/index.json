@@ -1763,5 +1763,141 @@
     "seconds": 270.0
    }
   ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/kimono-ladies.jpg",
+  "results": [
+   {
+    "title": "kimono-ladies.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1127,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/kimono-ladies.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/michiko-fur-young.jpg",
+  "results": [
+   {
+    "title": "michiko-fur-young.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 816,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/michiko-fur-young.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 18,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/fur-stole.jpg",
+  "results": [
+   {
+    "title": "fur-stole.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 980,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/fur-stole.jpg",
+    "file": "18-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 19,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/michiko-mask.jpg",
+  "results": [
+   {
+    "title": "michiko-mask.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1053,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/michiko-mask.jpg",
+    "file": "19-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 20,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/fur-rack.jpg",
+  "results": [
+   {
+    "title": "fur-rack.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 690,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/fur-rack.jpg",
+    "file": "20-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 21,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/family-dogs.jpg",
+  "results": [
+   {
+    "title": "family-dogs.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 765,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/family-dogs.jpg",
+    "file": "21-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 22,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/aiko-cats.jpg",
+  "results": [
+   {
+    "title": "aiko-cats.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 713,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/aiko-cats.jpg",
+    "file": "22-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 23,
+  "query": "file:stories/media/2026-11-17-hanako-kegawa/masako-dog.jpg",
+  "results": [
+   {
+    "title": "masako-dog.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 1027,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-hanako-kegawa/masako-dog.jpg",
+    "file": "23-1.jpg"
+   }
+  ]
  }
 ]
