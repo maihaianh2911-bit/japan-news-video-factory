@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 15,
   "title": "母・雅子さまと同じ優しさ 愛子さまの「ジャンボ」",
   "date": "2026-11-17",
@@ -244,23 +244,23 @@
       ],
       "photo": [
         {
-          "pick": "1-6",
+          "pick": "19-6",
           "focus": [
-            0.64,
-            0.45
+            0.5,
+            0.3
           ],
           "move": "push-in"
         },
         {
-          "pick": "9-12",
+          "pick": "19-2",
           "focus": [
             0.5,
-            0.35
+            0.4
           ],
           "move": "pull-back"
         }
       ],
-      "why": "Kết: hai mẹ con cùng bàn tiệc, rồi chân dung công chúa Aiko."
+      "why": "Kết: hai mẹ con cười bên nhau — sự dịu dàng của mẹ truyền sang con."
     }
   ],
   "music": {
