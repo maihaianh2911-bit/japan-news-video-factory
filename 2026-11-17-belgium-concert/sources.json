@@ -1,0 +1,349 @@
+{
+  "demo": false,
+  "duration_seconds": 71.84,
+  "release": {
+    "url": "",
+    "published": "2026-11-17",
+    "publisher": "",
+    "title": "ベルギー国王夫妻のコンサート 「一人にさせない」装い"
+  },
+  "photos": [
+    {
+      "page": "",
+      "title": "kimono-western.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://mainichi.jp/articles/20161014/k00/00m/040/125000c",
+      "title": "両陛下：ベルギー国王らと演奏会鑑賞 | 毎日新聞",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=22&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://mainichi.jp/articles/20161011/k00/00e/040/085000c",
+      "title": "両陛下と皇太子ご夫妻：ベルギー国王夫妻を歓迎 | 毎日新聞",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=19&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "michiko-mathilde.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=18&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=17&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "concert-seats.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=22&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-tsuguko.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "ladies-standing.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "royals-row.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "handshake.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/116212?IMAGE=26&PAGE=1-88",
+      "title": "画像】《適応障害の発表から20年》療養生活中の皇后雅子さまを ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://j7p.jp/102086?IMAGE=20&PAGE=1-38",
+      "title": "画像】【皇室とベルギー王室の絆】天皇皇后両陛下は結婚式参列 ...",
+      "creator": "j7p.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Satie - Gnossienne 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_-_Gnossienne_1.ogg",
+    "creator": "Composer: Erik Satie Performer: La Pianista",
+    "license": "Public domain"
+  },
+  "scenes": [
+    {
+      "label": "ある夜",
+      "headline": "「一人にさせない」が\n形になった夜",
+      "lines": [
+        "「一人にさせない」。その思いが、皇室の場で、そっと形になった夜がある。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "ひとりにさせない。その思いが、皇室の場で、そっと形になった夜がある。"
+      ],
+      "cut": "",
+      "why": "Bốn bà: hai người kimono, hai người âu phục, dưới câu mở đầu.",
+      "era": "2016年",
+      "quotes": [
+        0
+      ],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://mainichi.jp/articles/20161014/k00/00m/040/125000c"
+      ]
+    },
+    {
+      "label": "日ベル友好150年",
+      "headline": "ベルギー国王夫妻\n国賓として来日",
+      "lines": [
+        "2016年10月、日本とベルギーの友好150年の節目に、",
+        "ベルギーのフィリップ国王とマチルド王妃が、国賓として来日。",
+        "両国の交流は、1866年の修好通商条約に始まる。",
+        "13日の夜には、国王夫妻主催の記念コンサートが開かれた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "2016年10月、日本とベルギーの、ゆうこう150年の節目に、",
+        "ベルギーの、フィリップ国王と、マチルド王妃が、こくひんとして来日。",
+        "両国の交流は、1866年の、しゅうこうつうしょうじょうやくに始まる。",
+        "13日の夜には、国王夫妻しゅさいの、記念コンサートが開かれた。"
+      ],
+      "cut": "page",
+      "why": "Vua và hoàng hậu Bỉ đến Nhật năm 2016.",
+      "era": "2016年10月",
+      "quotes": [],
+      "image_url": "https://j7p.jp/102086?IMAGE=22&PAGE=1-38",
+      "image_urls": [
+        "https://j7p.jp/102086?IMAGE=22&PAGE=1-38",
+        "https://mainichi.jp/articles/20161011/k00/00e/040/085000c"
+      ]
+    },
+    {
+      "label": "和装",
+      "headline": "皇后美智子さまは\n和装で",
+      "lines": [
+        "当時の皇后・美智子さまは、和装で臨まれた。",
+        "日本の伝統の装いで、最大の敬意を示されたのだ。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "当時のこうごう、みちこさまは、わそうで臨まれた。",
+        "日本の伝統の装いで、最大の敬意を示されたのだ。"
+      ],
+      "cut": "page",
+      "why": "Hoàng hậu Michiko mặc kimono bên Hoàng hậu Mathilde.",
+      "era": "2016年10月13日",
+      "quotes": [],
+      "image_url": "https://j7p.jp/102086?IMAGE=19&PAGE=1-38",
+      "image_urls": [
+        "https://j7p.jp/102086?IMAGE=19&PAGE=1-38",
+        ""
+      ]
+    },
+    {
+      "label": "雅子さま",
+      "headline": "療養中の雅子さまは\n洋装で",
+      "lines": [
+        "一方、長く療養を続けていた皇太子妃・雅子さまは、洋装でご出席。",
+        "周りが和装の中で、たった一人だけ違う装いになる。",
+        "その視線の痛さは、誰もが一度は経験したことがあるだろう。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "一方、長く、りょうようを続けていた、こうたいしひ、まさこさまは、ようそうで、ご出席。",
+        "周りが、わそうの中で、たった一人だけ違う装いになる。",
+        "その視線の痛さは、誰もが一度は経験したことがあるだろう。"
+      ],
+      "cut": "fade",
+      "why": "Bà Masako mặc âu phục trắng, đứng giữa mọi người.",
+      "era": "2016年10月13日",
+      "quotes": [],
+      "image_url": "https://j7p.jp/102086?IMAGE=18&PAGE=1-38",
+      "image_urls": [
+        "https://j7p.jp/102086?IMAGE=18&PAGE=1-38",
+        "https://j7p.jp/102086?IMAGE=17&PAGE=1-38"
+      ]
+    },
+    {
+      "label": "その瞬間",
+      "headline": "雅子さまが\n席に着かれた時",
+      "lines": [
+        "会場の灯り、絹擦れの音、静かな拍手。",
+        "雅子さまが席に着かれた、その時だった。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "会場の灯り、きぬずれの音、静かな拍手。",
+        "まさこさまが、席に着かれた、その時だった。"
+      ],
+      "cut": "hard",
+      "why": "Khán phòng buổi hòa nhạc, khi bà Masako vào chỗ.",
+      "era": "2016年10月13日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://j7p.jp/102086?IMAGE=22&PAGE=1-38"
+      ]
+    },
+    {
+      "label": "揃った装い",
+      "headline": "久子さま、承子さまも\n洋装で",
+      "lines": [
+        "高円宮妃久子さまと、長女の承子さまも、洋装で姿を見せていたのだ。",
+        "誰も、何も説明しない。けれど、並んだ姿が語っていた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "たかまどのみやひ、ひさこさまと、長女の、つぐこさまも、ようそうで姿を見せていたのだ。",
+        "誰も、何も説明しない。けれど、並んだ姿が語っていた。"
+      ],
+      "cut": "page",
+      "why": "Bà Hisako và con gái Tsuguko cũng mặc âu phục.",
+      "era": "2016年10月13日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "寄り添う",
+      "headline": "派手にかばうのではなく\n同じ目線で",
+      "lines": [
+        "派手にかばうのではなく、同じ目線で、寄り添う。",
+        "それは、雅子さまを一人にさせない、静かな心遣いのようにも見えた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "派手にかばうのではなく、同じ目線で、寄り添う。",
+        "それは、まさこさまを一人にさせない、静かな、こころづかいのようにも見えた。"
+      ],
+      "cut": "fade",
+      "why": "Cả hàng hoàng tộc, cùng một tầm nhìn.",
+      "era": "2016年10月13日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "静かな連帯",
+      "headline": "守られたのは\n体面ではなく心",
+      "lines": [
+        "守られたのは、体面ではなく、心。",
+        "この夜の装いに、あなたは何を感じますか？"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "守られたのは、たいめんではなく、こころ。",
+        "この夜の装いに、あなたは何を感じますか？"
+      ],
+      "cut": "dip",
+      "why": "Bà Masako mỉm cười; kết bằng cả khán phòng lùi ra.",
+      "era": "2016年10月13日",
+      "quotes": [
+        0
+      ],
+      "image_url": "https://j7p.jp/116212?IMAGE=26&PAGE=1-88",
+      "image_urls": [
+        "https://j7p.jp/116212?IMAGE=26&PAGE=1-88",
+        "https://j7p.jp/102086?IMAGE=20&PAGE=1-38"
+      ]
+    }
+  ]
+}
