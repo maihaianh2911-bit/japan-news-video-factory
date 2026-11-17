@@ -1,11 +1,11 @@
 {
   "demo": false,
-  "duration_seconds": 76.26,
+  "duration_seconds": 71.05,
   "release": {
     "url": "",
     "published": "2026-11-17",
     "publisher": "",
-    "title": "ケニア大統領の午餐会 愛子さまの「ジャンボ」"
+    "title": "母・雅子さまと同じ優しさ 愛子さまの「ジャンボ」"
   },
   "photos": [
     {
@@ -18,7 +18,7 @@
     },
     {
       "page": "",
-      "title": "emperor-enters.jpg",
+      "title": "masako-lunch.jpg",
       "creator": "元動画",
       "license": "",
       "license_url": "",
@@ -28,14 +28,6 @@
       "page": "https://www.asahi.com/articles/photo/AS20240209002959.html",
       "title": "愛子さま、宮中の昼食会に初出席 両陛下、ケニア大統領夫妻と ...",
       "creator": "asahi.com",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "https://j7p.jp/108495",
-      "title": "愛子さまのスワヒリ語も》皇后雅子さま、ケニア大統領夫妻との ...",
-      "creator": "j7p.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -73,14 +65,6 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://jisin.jp/koushitsu/2294704/",
-      "title": "愛子さま “食事会デビュー”に称賛の嵐！政府からも期待される ...",
-      "creator": "jisin.jp",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
       "page": "",
       "title": "aiko-table.jpg",
       "creator": "元動画",
@@ -105,14 +89,6 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://mainichi.jp/articles/20240209/k00/00m/040/230000c",
-      "title": "愛子さま、海外賓客との食事会に初出席 ケニア大統領の隣に座り ...",
-      "creator": "mainichi.jp",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
       "page": "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
       "title": "皇后雅子さま輝く笑顔の記録】独身時代から還暦を迎えられたご ...",
       "creator": "fujingaho.jp",
@@ -121,17 +97,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "",
-      "title": "masako-lunch.jpg",
-      "creator": "元動画",
+      "page": "https://mainichi.jp/articles/20240122/k00/00m/040/116000c",
+      "title": "愛子さま、日本赤十字社に今春就職 学習院大を卒業後 宮内庁 ...",
+      "creator": "mainichi.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://mainichi.jp/articles/20240122/k00/00m/040/116000c",
-      "title": "愛子さま、日本赤十字社に今春就職 学習院大を卒業後 宮内庁 ...",
-      "creator": "mainichi.jp",
+      "page": "",
+      "title": "emperor-enters.jpg",
+      "creator": "元動画",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -154,19 +130,21 @@
   },
   "scenes": [
     {
-      "label": "想定外",
-      "headline": "宮殿の午餐会に\n思いがけない方が",
+      "label": "母と娘",
+      "headline": "母・雅子さまと\n同じ優しさ",
       "lines": [
-        "その日、宮殿の午餐会に、思いがけない方が現れた。"
+        "愛子さまは、母である皇后雅子さまと同じように、とても優しい方です。",
+        "それがよく伝わるのが、2024年、急な代役で臨まれた、ある午餐会での出来事です。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
       "say": [
-        "その日、きゅうでんの、ごさんかいに、思いがけない方が現れた。"
+        "あいこさまは、母である、こうごう、まさこさまと同じように、とても優しい方です。",
+        "それがよく伝わるのが、2024年、急な代役で臨まれた、ある、ごさんかいでの出来事です。"
       ],
       "cut": "",
-      "why": "Công chúa Aiko mỉm cười dưới câu mở đầu; Thiên hoàng bước vào phòng tiệc.",
+      "why": "Mở đầu bằng mẹ và con: công chúa Aiko, rồi bà Masako ở cùng bữa tiệc.",
       "era": "2024年",
       "quotes": [
         0
@@ -178,98 +156,72 @@
       ]
     },
     {
-      "label": "ケニア大統領",
-      "headline": "ケニア大統領夫妻を\n迎えた午餐会",
+      "label": "急な欠席",
+      "headline": "紀子さまが欠席\n代わりに愛子さま",
       "lines": [
-        "2024年2月9日。ケニアのルト大統領夫妻を迎え、皇居・宮殿で午餐会が開かれた。",
-        "2022年に就任したウィリアム・ルト大統領。4日間にわたる公式訪問の、最終日のことだった。"
+        "2024年2月9日、天皇皇后両陛下は、ケニアのルト大統領夫妻を皇居・宮殿に迎えられました。",
+        "ところが午餐会を前に、出席予定だった紀子さまが体調不良で欠席されることになり、代わりに席に着かれたのが、当時22歳の愛子さまでした。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
       "say": [
-        "2024年2月9日。ケニアの、ルト大統領夫妻を迎え、こうきょ、きゅうでんで、ごさんかいが開かれた。",
-        "2022年に就任した、ウィリアム・ルト大統領。4日間にわたる、公式訪問の、最終日のことだった。"
+        "2024年2月9日、てんのうこうごう、りょうへいかは、ケニアの、ルト大統領夫妻を、こうきょ、きゅうでんに迎えられました。",
+        "ところが、ごさんかいを前に、出席予定だった、きこさまが、体調不良で欠席されることになり、代わりに席に着かれたのが、当時22歳の、あいこさまでした。"
       ],
       "cut": "page",
-      "why": "Vợ chồng Tổng thống Ruto ở Hoàng cung.",
+      "why": "Đón Tổng thống; bà Kiko vắng mặt.",
       "era": "2024年2月9日",
       "quotes": [],
       "image_url": "https://www.asahi.com/articles/photo/AS20240209002959.html",
       "image_urls": [
         "https://www.asahi.com/articles/photo/AS20240209002959.html",
-        "https://j7p.jp/108495",
-        ""
-      ]
-    },
-    {
-      "label": "急な欠席",
-      "headline": "紀子さまが急きょ欠席\n代わりに愛子さま",
-      "lines": [
-        "出席の予定だった秋篠宮妃紀子さまは、体調不良のため、急きょ欠席。",
-        "代わりに出席されたのは、天皇皇后両陛下の長女、愛子さまだった。"
-      ],
-      "visual": "photo",
-      "value": "",
-      "evidence": "",
-      "say": [
-        "出席の予定だった、あきしののみやひ、きこさまは、体調不良のため、急きょ欠席。",
-        "代わりに出席されたのは、天皇皇后両陛下の長女、あいこさまだった。"
-      ],
-      "cut": "page",
-      "why": "Bà Kiko vắng mặt; công chúa Aiko đến thay.",
-      "era": "2024年2月9日",
-      "quotes": [],
-      "image_url": "",
-      "image_urls": [
         "",
-        "https://www.sankei.com/article/20240216-DYMKDHD6N5MUJAN2EV35E2CYJM/"
+        ""
       ]
     },
     {
       "label": "初めての場",
       "headline": "外国の賓客を迎える\n初めての午餐会",
       "lines": [
-        "外国の賓客を招いた宮殿の午餐会は、愛子さまにとって、これが初めて。",
-        "着席された直後は、少し緊張されたご様子だったという。",
-        "このとき愛子さまは22歳。大学の卒業を目前に控えていた。"
+        "大学の卒業式を翌月に控え、外国の賓客を迎える宮殿の午餐会は、これが初めてのことです。",
+        "準備の時間はほとんどなく、席に着かれた直後は、少し緊張したご様子だったといいます。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
       "say": [
-        "外国の、ひんきゃくを招いた、きゅうでんの、ごさんかいは、あいこさまにとって、これが初めて。",
-        "着席された直後は、少し緊張されたご様子だったという。",
-        "このとき、あいこさまは22歳。大学の卒業を、目前に控えていた。"
+        "大学の卒業式を翌月に控え、外国の、ひんきゃくを迎える、きゅうでんの、ごさんかいは、これが初めてのことです。",
+        "準備の時間はほとんどなく、席に着かれた直後は、少し緊張したごようすだったといいます。"
       ],
       "cut": "fade",
       "why": "Bàn tiệc lớn, lần đầu của công chúa.",
       "era": "2024年2月9日",
       "quotes": [],
-      "image_url": "https://mainichi.jp/articles/20240209/k00/00m/040/230000c",
+      "image_url": "https://www.sankei.com/article/20240216-DYMKDHD6N5MUJAN2EV35E2CYJM/",
       "image_urls": [
-        "https://mainichi.jp/articles/20240209/k00/00m/040/230000c",
-        "https://jisin.jp/koushitsu/2294704/"
+        "https://www.sankei.com/article/20240216-DYMKDHD6N5MUJAN2EV35E2CYJM/",
+        "https://mainichi.jp/articles/20240209/k00/00m/040/230000c"
       ]
     },
     {
-      "label": "ジャンボ",
+      "label": "第一声",
       "headline": "スワヒリ語で\n「こんにちは」",
       "lines": [
-        "しかし愛子さまは、静かに微笑み、",
-        "「Jambo（ジャンボ）」",
-        "スワヒリ語で、「こんにちは」と挨拶された。"
+        "けれど大統領夫妻と向き合ったその時、愛子さまは静かに微笑んで、",
+        "「ジャンボ」",
+        "スワヒリ語で「こんにちは」という意味です。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
       "say": [
-        "しかし、あいこさまは、静かにほほえみ、",
+        "けれど、大統領夫妻と向き合ったその時、あいこさまは、静かにほほえんで、",
         "ジャンボ。",
-        "スワヒリ語で、「こんにちは」と挨拶された。"
+        "スワヒリ語で「こんにちは」という意味です。"
       ],
       "cut": "hard",
-      "why": "Câu 'Jambo' hiện to; giật vào nụ cười của công chúa.",
+      "why": "Khoảnh khắc 'Jambo': giật vào nụ cười.",
       "era": "2024年2月9日",
       "quotes": [
         1
@@ -281,75 +233,51 @@
       ]
     },
     {
-      "label": "英語で",
-      "headline": "続く会話は英語で\n心を通わせた",
+      "label": "母の姿",
+      "headline": "外交官だった\n母・雅子さまに重なる姿",
       "lines": [
-        "続く会話は、英語で。",
-        "急な代役にもかかわらず、大統領夫妻と心を通わせられた。"
+        "会場の空気がふっとやわらぎ、そこから先の会話は英語で続きました。",
+        "相手の国の言葉で、まず心を開く。それは、外交官として世界と向き合ってきた雅子さまが、大切にしてきた姿でもあります。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
-      "say": [],
+      "say": [
+        "会場の空気がふっとやわらぎ、そこから先の会話は英語で続きました。",
+        "相手の国の言葉で、まず心を開く。それは、外交官として世界と向き合ってきた、まさこさまが、大切にしてきた姿でもあります。"
+      ],
       "cut": "fade",
-      "why": "Nói chuyện bằng tiếng Anh bên bàn tiệc.",
+      "why": "Nói chuyện bằng tiếng Anh; bà Masako thời ngoại giao.",
       "era": "2024年2月9日",
       "quotes": [],
       "image_url": "https://jisin.jp/koushitsu/2450123/",
       "image_urls": [
         "https://jisin.jp/koushitsu/2450123/",
-        "https://mainichi.jp/articles/20240209/k00/00m/040/230000c"
+        "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/"
       ]
     },
     {
-      "label": "母譲り",
-      "headline": "外交官だった\n母・雅子さま譲り",
+      "label": "最初の一言",
+      "headline": "母から娘へ\n受け継がれた優しさ",
       "lines": [
-        "外交官として世界を舞台に働いた、母・雅子さま譲りの語学力。",
-        "雅子さまは、ハーバード大学を卒業し、外務省で働かれた経歴を持つ。",
-        "大統領夫妻も、深く感銘を受けたと伝えられている。"
+        "急な代役から始まった、初めての午餐会。",
+        "相手を思う、その優しさは、母・雅子さまから、確かに受け継がれていました。"
       ],
       "visual": "photo",
       "value": "",
       "evidence": "",
       "say": [
-        "外交官として、世界を舞台に働いた、母、まさこさま譲りの語学力。",
-        "まさこさまは、ハーバード大学を卒業し、がいむしょうで働かれた経歴を持つ。",
-        "大統領夫妻も、深く、かんめいを受けたと伝えられている。"
+        "急な代役から始まった、初めての、ごさんかい。",
+        "相手を思う、その優しさは、母、まさこさまから、確かに受け継がれていました。"
       ],
       "cut": "dip",
-      "why": "Bà Masako thời làm ngoại giao, rồi ở bữa tiệc này.",
-      "era": "2024年2月9日",
-      "quotes": [],
-      "image_url": "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
-      "image_urls": [
-        "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
-        ""
-      ]
-    },
-    {
-      "label": "心の絆",
-      "headline": "外交を超えた\n「心の絆」",
-      "lines": [
-        "この年の春、愛子さまは大学を卒業し、日本赤十字社に就職される。",
-        "それは、外交を超えた「心の絆」を生んだ。"
-      ],
-      "visual": "photo",
-      "value": "",
-      "evidence": "",
-      "say": [
-        "この年の春、あいこさまは大学を卒業し、日本赤十字社に就職される。",
-        "それは、外交を超えた、心のきずなを生んだ。"
-      ],
-      "cut": "page",
-      "why": "Công chúa vào làm Hội Chữ thập đỏ; câu kết hiện to.",
+      "why": "Kết quay về ý mở đầu: sự dịu dàng của mẹ truyền sang con.",
       "era": "2024年",
-      "quotes": [
-        1
-      ],
+      "quotes": [],
       "image_url": "https://mainichi.jp/articles/20240122/k00/00m/040/116000c",
       "image_urls": [
         "https://mainichi.jp/articles/20240122/k00/00m/040/116000c",
+        "",
         "https://www.sankei.com/article/20240401-PJENO5CFVNM63GUKABLWATXJGU/"
       ]
     }
