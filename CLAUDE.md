@@ -109,6 +109,28 @@ ask the owner to allow `main`.
      Satie piano`; index.json gives title, `seconds` and licence; the piece loops, fades in and out, about 17 dB
      under the voice, credited on screen and in credits.txt); `"pace": {"speed": 0.92, "line_pause": 0.35,
      "scene_pause": 0.5}` (slower voice, silence after each line, more around a quote and at the end of a scene).
+   - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
+     switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
+     made before are not changed (a story without `fx` renders exactly as before). What each one does:
+     - `motion`: the camera has a rhythm, quick at first and then settling, instead of one even speed;
+     - `depth`: a picture that fills the frame gets a light depth (things near the camera move a little more
+       than things far away; a depth map by Depth Anything V2 Small, about a second a picture). A **flat picture
+       (a document, a newspaper page, a collage, a chart, a screenshot) gets `"depth": false`** in its picture
+       entry (`{"pick": "3-2", "depth": false}`): on it the depth map is wrong and the picture would bend. A
+       picture with `"fit": "contain"` never gets it;
+     - `text`: the tag, the headline and a quote come in piece by piece, and the caption is there from the start,
+       paler, and darkens from left to right as the voice reads it — at the real moment of each character (the
+       lengths of the sounds VOICEVOX gives: exact at every pause and for kana, kanji share the sounds of their
+       phrase), and each caption starts when the voice reaches it;
+     - `face`: the large text (headline, quote, year, captions) is set in Shippori Mincho B1 ExtraBold (SIL Open
+       Font License; the workflow fetches it into `fonts/`, not kept in the repository).
+     `motion` and `depth` act on pictures that carry a `move` (step 3), so give every picture one. On GitHub the
+     render of a story with `fx` installs what the effects need (`.github/workflows/news-video.yml`, step "Hiệu
+     ứng hình"); if that fails the video is still made, with flat pictures or the usual typeface, and the run log
+     says `warning: depth effect off` or `warning: display font … not found`: say so in the closing comment. To
+     preview with the effects here: `pip install numpy opencv-python-headless onnxruntime`, the typeface in
+     `fonts/ShipporiMinchoB1-ExtraBold.ttf` (or `NEWS_DISPLAY_FONT=<file>`); the depth model is downloaded on
+     first use (99 MB, or `DEPTH_MODEL=<file>`).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
      (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
@@ -195,7 +217,10 @@ search on made-up answers: no network, no torch), and a stills preview of
 `stories/mau-boj.json` (look at the sheet), and after a change to the frames or the encoder
 `python tools/encode_test.py stories/mau-boj.json <find folder> <out>` (3 seconds of real video in both frames,
 needs ffmpeg) and `python tools/edits_test.py stories/mau-boj.json <find folder> <out>` (every move and cut of
-the catalogue: look at `moves.jpg` and `cuts.jpg`). `stories/mau-boj.json` has no `move`/`cut` on purpose: its
+the catalogue: look at `moves.jpg` and `cuts.jpg`) and `python tools/fx_test.py stories/mau-boj.json <find folder>
+<out>` (the picture effects: the caption timing on a made-up voice answer, stills with the effects on, which must
+differ from the plain ones; needs the libraries, the model and the typeface named under `fx` above; look at
+`<out>/fx/sheet.jpg`). `stories/mau-boj.json` has no `move`/`cut` and no `fx` on purpose: its
 stills must stay the same, which proves that old stories render as before. A push of code to `main` runs the same check on GitHub, offline (no voice, no live sources; the
 stills are in the run's Artifacts), also when the same push carries a story. The live demo (`--demo`, boj.or.jp + VOICEVOX)
 runs only from Run workflow → `demo`. `tools/publish.sh` replaces a folder of `renders` as a whole and writes

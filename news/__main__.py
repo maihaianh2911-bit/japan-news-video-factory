@@ -98,6 +98,7 @@ def main():
     with tempfile.TemporaryDirectory(prefix="news-") as scratch:
         wav = Path(scratch) / "voice.wav"
         intervals, captions = narration(beats, wav, speed=release.speed, line_pause=release.line_pause,
+                                        exact=bool((getattr(release, "fx", None) or {}).get("text")),
                                         scene_pause=release.scene_pause)
         duration = intervals[-1][1]
         if duration > 90 and not args.story:

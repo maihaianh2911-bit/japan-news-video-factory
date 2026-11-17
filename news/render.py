@@ -842,9 +842,23 @@ def caption_art(caption, key):
     return layers, edges, weights, height
 
 
-def draw_spoken_caption(image, caption, age, span):
+def read_share(marks, moment):
+    """How much of a caption's text the voice has read at `moment` (a share of the caption's time), from its
+    marks (voice.Caption.marks: (share of the text, share of the time), in the order of the text)."""
+    before = marks[0]
+    if moment <= before[1]:
+        return before[0]
+    for mark in marks[1:]:
+        if moment < mark[1]:
+            return before[0] + (mark[0] - before[0]) * (moment - before[1]) / (mark[1] - before[1])
+        before = mark
+    return before[0]
+
+
+def draw_spoken_caption(image, caption, age, span, marks=()):
     """The caption of "fx": text: all of it is there from the start (paler), and it darkens to full ink from left
-    to right as the voice reads it, at about the pace of the reading."""
+    to right as the voice reads it: with `marks` at the real moment of every character (a touch ahead of the
+    voice), else at about the pace of the reading (an estimate by character)."""
     (pale, full), edges, weights, height = caption_art(caption, (style.caption_text, DISPLAY_FONT))
     centre = caption_centre()
     amount = ease(age / CAPTION_IN) if age < CAPTION_IN else 1.0
@@ -854,7 +868,11 @@ def draw_spoken_caption(image, caption, age, span):
         ImageDraw.Draw(box).rounded_rectangle((69, 0, 1011, height), radius=19, fill=style.caption_box)
         box = faded(box, amount) if amount < 1 else box
         image.paste(box, (0, top), box)
-    done = sum(map(sum, weights)) * clamp((age + 0.1) / max(0.3, span - 0.12), 0.0, 1.0)
+    if marks:   # one unit a character: the marks count characters
+        weights = [[1.0] * len(row) for row in weights]
+        done = sum(map(len, weights)) * read_share(marks, (age + 0.06) / span)
+    else:
+        done = sum(map(sum, weights)) * clamp((age + 0.1) / max(0.3, span - 0.12), 0.0, 1.0)
     spoken = Image.new("L", pale.size, 0)
     for line_index, (row_edges, row_weights) in enumerate(zip(edges, weights)):
         band = (83 * line_index, 83 * (line_index + 1) + (30 if line_index == len(edges) - 1 else 0))
@@ -879,10 +897,11 @@ def draw_spoken_caption(image, caption, age, span):
     image.paste(full, (0, top), ink.point(lambda level: round(level * amount)) if amount < 1 else ink)
 
 
-def draw_captions(image, caption, age=1.0, span=None):
-    """`span`: how long the caption is spoken; with "fx": text it then darkens as it is read."""
+def draw_captions(image, caption, age=1.0, span=None, marks=()):
+    """`span`: how long the caption is spoken; with "fx": text it then darkens as it is read (`marks`: when the
+    voice reaches which part of it, see voice.Caption)."""
     if span and FX.get("text"):
-        return draw_spoken_caption(image, caption, age, span)
+        return draw_spoken_caption(image, caption, age, span, marks)
     face = font(CAPTION_SIZE)
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
@@ -1075,7 +1094,8 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                         draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
                     else:
                         draw_captions(frame, captions[shown].text, moment - captions[shown].start,
-                                      captions[shown].end - captions[shown].start)
+                                      captions[shown].end - captions[shown].start,
+                                      getattr(captions[shown], "marks", ()))
                     if grain:
                         frame = grain.apply(frame, frame_index)
                     process.stdin.write(frame.tobytes())

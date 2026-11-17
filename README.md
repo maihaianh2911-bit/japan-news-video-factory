@@ -24,9 +24,14 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
-## Ghi chú 17/11/2026: hiệu ứng hình thử nghiệm (chỉ ở nhánh `claude/stoic-darwin-utl7qq`, chưa vào bản chính)
+## Ghi chú 17/11/2026: hiệu ứng hình (chủ kênh đã đồng ý bật cho kênh này)
 
-Bản B của video Chiêu Hòa – Kuroyanagi (đã gửi chủ kênh trong chat ngày 17/11) dùng bốn thứ, bật bằng `"fx"` trong file kịch bản, mặc định tắt: máy quay có nhịp nhanh chậm (`motion`), ảnh có chiều sâu mức nhẹ (`depth`), tiêu đề và câu trích hiện từng dòng còn phụ đề đậm dần theo lời đọc (`text`), phông chữ Shippori Mincho B1 (`face`). Kịch bản không có `"fx"` dựng ra y như cũ (đã so 6 khung hình của `mau-boj`). **Chưa vào `main`** vì chủ kênh chưa nói có dùng cho kênh này không, và trên GitHub còn thiếu: tải phông chữ, cài thư viện cho chiều sâu, lấy thời điểm thật của từng chữ từ máy tạo giọng (hiện phụ đề đậm dần theo ước lượng số chữ).
+Từ 17/11/2026, mọi video **mới** của kênh dùng bốn hiệu ứng của bản B (video Chiêu Hòa – Kuroyanagi đã gửi trong chat): máy quay có nhịp nhanh chậm, ảnh có chiều sâu mức nhẹ, tiêu đề và câu trích hiện từng dòng còn phụ đề đậm dần theo đúng lời đọc, và phông chữ Shippori Mincho B1 (phông miễn phí, giấy phép SIL OFL). Claude bật bằng dòng `"fx"` trong file kịch bản. Video cũ không đổi gì; muốn làm lại một video cũ với hiệu ứng thì nói trong phiếu.
+
+- Phụ đề giờ đậm dần theo thời điểm thật của từng chữ do máy tạo giọng báo lại, không còn ước lượng theo số chữ.
+- Ảnh phẳng (tài liệu, trang báo, ảnh ghép, biểu đồ) không dùng chiều sâu, để khỏi bị méo.
+- Nếu GitHub không cài được thư viện hay không tải được phông chữ thì video vẫn được dựng, chỉ thiếu hiệu ứng đó (ảnh phẳng như cũ, hoặc phông chữ thường); Claude sẽ nói rõ trong phiếu.
+- Mỗi lần sửa mã, GitHub tự dựng thử ảnh mẫu có bật hiệu ứng để chắc là thư viện, mô hình chiều sâu và phông chữ chạy được trên đó. Phần này chưa chạy thử trên GitHub lần nào; lần đẩy mã đầu tiên sẽ cho biết.
 
 ## Luồng tự tìm tin (chạy tay)
 

@@ -75,12 +75,19 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
      three covers of old maps among its 8): give such a search a wish, or use `wiki:`.
 - Two pictures per scene (owner, 14/11/2026): a new picture every 4–5 seconds (`"photo"` as a list, `CLAUDE.md`
   step 3).
+- Picture effects on (owner, 17/11/2026): every **new** story carries
+  `"fx": {"motion": true, "depth": true, "text": true, "face": true}` (camera rhythm, light depth in the pictures,
+  text that comes in with the voice and a caption that darkens as it is read, the display typeface; what each does:
+  `CLAUDE.md` step 1). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
+  `"depth": false` in its picture entry. Stories made before 17/11 are not changed: add `fx` to an old story only
+  when the owner asks for that video to be made again with the effects.
 - Quality is not traded for usage: preview before rendering.
 
 ## 1. `jnews-plan` → `stories/<name>.json`
 Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and the owner's comments.
 - `<name>`: `<YYYY-MM-DD>-<short-ascii-name>` (ASCII letters, digits, `.`, `_`, `-`).
-- Fields as in `CLAUDE.md` step 1, plus `"issue": N` and `stage: "find"`. `title`: the issue title in Japanese
+- Fields as in `CLAUDE.md` step 1, plus `"issue": N`, `stage: "find"` and the `fx` line of the standing
+  decisions above (all four on). `title`: the issue title in Japanese
   (not shown). `date`: "Ngày của tin", else the day the issue was opened. `source`: "Nguồn tin" (the publisher
   name is shown as 出典; a link goes to `source_url`), left out when empty.
 - Check: `pip install -q -r requirements.txt` if needed, then `python -m news.custom stories/<name>.json`.
@@ -101,7 +108,9 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
    `sheet.jpg`: a cut face, a wrong subject, a caption over a face, a blurred picture → fix and preview again.
 4. Choose the edit of every picture and scene from the table below ("Bảng cách edit") and write `move`, `cut` and
    `why` in the story; preview again: the preview prints the list of edits and its warnings (a picture too narrow
-   to pan, too small for a close-up).
+   to pan, too small for a close-up). With `fx`, every picture needs a `move` (the camera rhythm and the depth act
+   on named moves only), and every flat picture (document, newspaper page, collage, chart, screenshot) gets
+   `"depth": false`: look at each picture you pick and decide.
 5. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
    script) and check it with `python -m news.captions captions/<name>.txt`; it is published with the video.
 6. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you
@@ -152,7 +161,10 @@ stories/mau-boj.json <find folder of mau-boj> <out>` (`moves.jpg`, `cuts.jpg`, `
 ## 3. `jnews-check` → done
 Fetch `<name>/` (its `status.json` must have your commit). Look at `stills/sheet.jpg` and read `subtitles.srt`
 against the script. Push a corrected story only for a real fault (a cut face, the wrong subject, a misread word:
-write it `{"text": …, "say": "kana"}`). Otherwise remove `jnews-check`, add `jnews-done` and comment (🤖, short,
+write it `{"text": …, "say": "kana"}`; with `fx`, a picture bent by the depth effect: give it `"depth": false`).
+With `fx`, the headlines of the stills are in the display typeface (a mincho with strong contrast); if they are in
+the usual one, or the run log of the render says `warning: depth effect off`, an effect could not be installed:
+the video is good to deliver, say in the closing comment which effect is missing. Otherwise remove `jnews-check`, add `jnews-done` and comment (🤖, short,
 Vietnamese): the video link `https://github.com/maihaianh2911-bit/japan-news-video-factory/blob/renders/<name>/video.mp4`,
 its length, links to `subtitles.srt`, `credits.txt` (to paste into the video description) and `caption.txt` (the
 posting caption; if it is missing, write `captions/<name>.txt` and push it alone: only the caption is published, the
