@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 25,
   "title": "離婚を申し出た雅子さまに、皇太子さまが返した答え",
   "date": "2026-11-17",
@@ -180,12 +180,12 @@
           "move": "push-in"
         },
         {
-          "pick": "8-10",
+          "pick": "22-1",
           "focus": [
-            0.52,
-            0.4
+            0.42,
+            0.35
           ],
-          "move": "push-in"
+          "move": "pull-back"
         }
       ],
       "why": "Khoảnh khắc lặng rồi câu trả lời: hai người bên nhau."
@@ -219,23 +219,23 @@
           "move": "pan-right"
         },
         {
+          "pick": "23-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
           "pick": "8-6",
           "focus": [
             0.5,
             0.35
           ],
           "move": "pull-back"
-        },
-        {
-          "pick": "17-1",
-          "focus": [
-            0.3,
-            0.4
-          ],
-          "move": "push-in"
         }
       ],
-      "why": "Năm 2004: câu nói thành hành động."
+      "why": "Hai người cười; buổi họp báo của Thái tử; rồi gia đình ba người."
     },
     {
       "label": "天皇と皇后",
@@ -262,10 +262,10 @@
           "move": "push-in"
         },
         {
-          "pick": "22-1",
+          "pick": "11-7",
           "focus": [
             0.5,
-            0.4
+            0.3
           ],
           "move": "pull-back"
         }
