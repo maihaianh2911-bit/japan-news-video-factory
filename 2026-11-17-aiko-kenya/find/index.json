@@ -1323,5 +1323,90 @@
     "seconds": 183.6
    }
   ]
+ },
+ {
+  "k": 13,
+  "query": "file:stories/media/2026-11-17-aiko-kenya/emperor-enters.jpg",
+  "results": [
+   {
+    "title": "emperor-enters.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 700,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-kenya/emperor-enters.jpg",
+    "file": "13-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 14,
+  "query": "file:stories/media/2026-11-17-aiko-kenya/ruto-couple.jpg",
+  "results": [
+   {
+    "title": "ruto-couple.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 660,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-kenya/ruto-couple.jpg",
+    "file": "14-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 15,
+  "query": "file:stories/media/2026-11-17-aiko-kenya/kiko.jpg",
+  "results": [
+   {
+    "title": "kiko.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 770,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-kenya/kiko.jpg",
+    "file": "15-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-17-aiko-kenya/masako-lunch.jpg",
+  "results": [
+   {
+    "title": "masako-lunch.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 590,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-kenya/masako-lunch.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 17,
+  "query": "file:stories/media/2026-11-17-aiko-kenya/aiko-table.jpg",
+  "results": [
+   {
+    "title": "aiko-table.jpg",
+    "page": "",
+    "width": 1080,
+    "height": 840,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-17-aiko-kenya/aiko-table.jpg",
+    "file": "17-1.jpg"
+   }
+  ]
  }
 ]
