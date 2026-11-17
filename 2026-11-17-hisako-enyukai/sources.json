@@ -1,0 +1,333 @@
+{
+  "demo": false,
+  "duration_seconds": 83.15,
+  "release": {
+    "url": "",
+    "published": "2026-11-17",
+    "publisher": "",
+    "title": "春の園遊会 久子さまの「1秒」"
+  },
+  "photos": [
+    {
+      "page": "",
+      "title": "hisako-kimono.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://dot.asahi.com/articles/-/239103?page=1",
+      "title": "秋の園遊会】さすがの久子さま！「お話の途中に失礼！承子さん ...",
+      "creator": "dot.asahi.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://mainichi.jp/graphs/20240423/mpj/00m/040/105000f/20240423mpj00m040102000p",
+      "title": "春の園遊会 愛子さまが初出席 [写真特集2/9] | 毎日新聞",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.kunaicho.go.jp/watch/activity/imperial-family-activity-01/info/garden-party-haru20240423.html",
+      "title": "赤坂御苑での春の園遊会 – 宮内庁",
+      "creator": "kunaicho.go.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "royals-walk.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-blue.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://storyweb.jp/fashion/404394/",
+      "title": "雅子さまと愛子さま】華やか「春の園遊会」ファッションに見えた ...",
+      "creator": "storyweb.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-guests.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-greeting.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-bow.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-smile.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/interviews/a35974666/norihito-shinnohi-hisako-part2/",
+      "title": "高円宮妃久子殿下ロングインタビュー 視線の先にあるもの【後編】",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.reuters.com/jp/article/life/sports/-idUSKBN1JI060/",
+      "title": "LYNXMPEE5L04K.JPG?auth= ...",
+      "creator": "reuters.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.yomiuri.co.jp/koushitsu/20230424-OYT1T50222/",
+      "title": "バードライフ名誉総裁20年、高円宮妃久子さまに聞く＜上＞野鳥 ...",
+      "creator": "yomiuri.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/interviews/a35719354/norihito-shinnohi-hisako/",
+      "title": "高円宮妃久子殿下ロングインタビュー 視線の先にあるもの",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "hisako-kimono.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "creator": "Robin Alciatore",
+    "license": "Public domain"
+  },
+  "scenes": [
+    {
+      "label": "園遊会",
+      "headline": "あの「1秒」は\n冷たさだったのか",
+      "lines": [
+        "あれ…今の、少し素っ気なく見えませんでしたか？",
+        "いつも穏やかな、高円宮妃久子さま。",
+        "その笑みが、ふっと消えたように見えた、たった1秒。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "あれ、今の、少しそっけなく見えませんでしたか。",
+        "いつも穏やかな、たかまどのみやひ、ひさこさま。",
+        "その笑みが、ふっと消えたように見えた、たった1秒。"
+      ],
+      "cut": "",
+      "why": "Bà Hisako áo kimono hồng dưới câu hỏi mở đầu; rồi cận mặt.",
+      "era": "2024年",
+      "quotes": [
+        0
+      ],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://dot.asahi.com/articles/-/239103?page=1"
+      ]
+    },
+    {
+      "label": "春の園遊会",
+      "headline": "愛子さま初出席の\n春の園遊会",
+      "lines": [
+        "2024年4月23日、赤坂御苑で開かれた、春の園遊会。",
+        "天皇皇后両陛下の長女・愛子さまが初めて出席され、各界の功労者など、約1400人が集まった。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "2024年4月23日、あかさかぎょえんで開かれた、春のえんゆうかい。",
+        "天皇皇后両陛下の長女、あいこさまが初めて出席され、各界のこうろうしゃなど、やく1400人が集まった。"
+      ],
+      "cut": "page",
+      "why": "Tiệc vườn 2024: công chúa Aiko lần đầu, các vị hoàng tộc gặp khách.",
+      "era": "2024年4月23日",
+      "quotes": [],
+      "image_url": "https://mainichi.jp/graphs/20240423/mpj/00m/040/105000f/20240423mpj00m040102000p",
+      "image_urls": [
+        "https://mainichi.jp/graphs/20240423/mpj/00m/040/105000f/20240423mpj00m040102000p",
+        "https://www.kunaicho.go.jp/watch/activity/imperial-family-activity-01/info/garden-party-haru20240423.html",
+        ""
+      ]
+    },
+    {
+      "label": "1秒",
+      "headline": "表情が硬く見えた\nほんの一瞬",
+      "lines": [
+        "女性皇族方が並ばれる中、",
+        "久子さまの表情が、一瞬だけ、きゅっと硬く見えた場面があった。",
+        "その1秒だけを切り取れば、冷たく見えるかもしれない。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "女性皇族方が並ばれる中、",
+        "ひさこさまの表情が、一瞬だけ、きゅっと硬く見えた場面があった。",
+        "その1秒だけを切り取れば、冷たく見えるかもしれない。"
+      ],
+      "cut": "fade",
+      "why": "Khoảnh khắc 1 giây: gương mặt bà, rồi cả hàng hoàng tộc.",
+      "era": "2024年4月23日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://storyweb.jp/fashion/404394/"
+      ]
+    },
+    {
+      "label": "退出の場面",
+      "headline": "本当に胸を打つのは\n退出の場面",
+      "lines": [
+        "けれど本当に胸を打つのは、その後の、退出の場面だ。",
+        "帰ろうとされた久子さまを、招待客が何度も呼び止める。",
+        "すると久子さまは足を止め、呼ばれた方のもとへ、自ら歩み寄られた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "けれど本当に胸を打つのは、その後の、退出の場面だ。",
+        "帰ろうとされた、ひさこさまを、しょうたいきゃくが何度も呼び止める。",
+        "すると、ひさこさまは足を止め、呼ばれた方のもとへ、自ら歩み寄られた。"
+      ],
+      "cut": "page",
+      "why": "Lúc ra về, bà dừng lại chào khách.",
+      "era": "2024年4月23日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "一礼",
+      "headline": "目を見て\n丁寧に一礼",
+      "lines": [
+        "目を見て、丁寧に一礼。",
+        "短い言葉でも、相手の名前ごと心に置くように、向き合われる。",
+        "忙しさよりも、人を先にする姿だった。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [],
+      "cut": "fade",
+      "why": "Cúi chào thật thấp, rồi nụ cười với khách.",
+      "era": "2024年4月23日",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "久子さま",
+      "headline": "国内外で\n活動を続ける久子さま",
+      "lines": [
+        "久子さまは1953年生まれ。イギリスのケンブリッジ大学で学ばれた。",
+        "夫・高円宮さまを亡くされた後も、日本サッカー協会の名誉総裁、",
+        "そして野鳥を守る国際団体、バードライフ・インターナショナルの名誉総裁として、国内外で活動を続けてこられた。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "ひさこさまは、1953年生まれ。イギリスのケンブリッジ大学で学ばれた。",
+        "夫、たかまどのみやさまを亡くされた後も、日本サッカー協会の、めいよそうさい、",
+        "そして野鳥を守る国際団体、バードライフ・インターナショナルの、めいよそうさいとして、国内外で活動を続けてこられた。"
+      ],
+      "cut": "dip",
+      "why": "Đời bà: Cambridge, bóng đá Nhật, bảo vệ chim hoang dã.",
+      "era": "昭和〜令和",
+      "quotes": [],
+      "image_url": "https://www.fujingaho.jp/culture/interviews/a35974666/norihito-shinnohi-hisako-part2/",
+      "image_urls": [
+        "https://www.fujingaho.jp/culture/interviews/a35974666/norihito-shinnohi-hisako-part2/",
+        "https://www.reuters.com/jp/article/life/sports/-idUSKBN1JI060/",
+        "https://www.yomiuri.co.jp/koushitsu/20230424-OYT1T50222/"
+      ]
+    },
+    {
+      "label": "品と覚悟",
+      "headline": "それは\n品と覚悟",
+      "lines": [
+        "帰りたい時ほど、誰かの一言が、いちばん心に刺さる。",
+        "そこで背を向けず、もう一度だけ、笑って応える。",
+        "それは体力ではなく、品と覚悟。",
+        "あの1秒は、冷たさだったのか。それとも、気遣いの準備だったのか。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "帰りたい時ほど、誰かの一言が、いちばん心に刺さる。",
+        "そこで背を向けず、もう一度だけ、笑って応える。",
+        "それは体力ではなく、ひんと、かくご。",
+        "あの1秒は、冷たさだったのか。それとも、気遣いの準備だったのか。"
+      ],
+      "cut": "dip",
+      "why": "Kết: chân dung bà, câu 'phẩm cách và quyết tâm' hiện to.",
+      "era": "2024年4月23日",
+      "quotes": [
+        2
+      ],
+      "image_url": "https://www.fujingaho.jp/culture/interviews/a35719354/norihito-shinnohi-hisako/",
+      "image_urls": [
+        "https://www.fujingaho.jp/culture/interviews/a35719354/norihito-shinnohi-hisako/",
+        ""
+      ]
+    }
+  ]
+}
