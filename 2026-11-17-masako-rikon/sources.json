@@ -10,7 +10,7 @@
   "photos": [
     {
       "page": "",
-      "title": "couple-laugh.jpg",
+      "title": "couple-smile.jpg",
       "creator": "元動画",
       "license": "",
       "license_url": "",
@@ -74,7 +74,7 @@
     },
     {
       "page": "",
-      "title": "engagement-1993.jpg",
+      "title": "couple-2000s.jpg",
       "creator": "元動画",
       "license": "",
       "license_url": "",
@@ -89,17 +89,17 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://kaigo-postseven.com/89958",
-      "title": "皇室追っかけおばちゃん「皇后雅子さまとの28年」秘蔵写真で ...",
-      "creator": "kaigo-postseven.com",
+      "page": "https://bunshun.jp/articles/photo/46478?pn=5",
+      "title": "写真](5ページ目)秋篠宮ご一家“激動の30年” 「人格否定発言」へ ...",
+      "creator": "bunshun.jp",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "",
-      "title": "couple-smile.jpg",
-      "creator": "元動画",
+      "page": "https://kaigo-postseven.com/89958",
+      "title": "皇室追っかけおばちゃん「皇后雅子さまとの28年」秘蔵写真で ...",
+      "creator": "kaigo-postseven.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -113,9 +113,9 @@
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "",
-      "title": "couple-2000s.jpg",
-      "creator": "元動画",
+      "page": "https://www.news-postseven.com/archives/20250811_2057590.html/9",
+      "title": "愛子さま、雅子さまのご静養にすべて同行する“熱情” そばに ...",
+      "creator": "news-postseven.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -144,7 +144,7 @@
         "この話は、二人の愛のあかしとして、長く語り継がれてきました。"
       ],
       "cut": "",
-      "why": "Câu trả lời của Thái tử hiện to ngay câu đầu, trên ảnh hai người cười.",
+      "why": "Mở đầu bằng hai người cười bên nhau (ảnh chính, sáng rõ), rồi ngày cưới.",
       "era": "平成",
       "quotes": [
         0
@@ -223,7 +223,7 @@
         "ぼくは、こうたいしである前に、きみの、おっとだ。"
       ],
       "cut": "hard",
-      "why": "Hai người bên nhau; câu trả lời hiện to lần thứ hai như điệp khúc.",
+      "why": "Khoảnh khắc lặng rồi câu trả lời: hai người bên nhau.",
       "era": "2004年",
       "quotes": [
         1
@@ -251,14 +251,14 @@
         "こうしつの内側に向けた、異例の発言には、批判も集まりましたが、その言葉が取り消されることはありませんでした。"
       ],
       "cut": "page",
-      "why": "Năm 2004: câu nói thành hành động.",
+      "why": "Hai người cười; buổi họp báo của Thái tử; rồi gia đình ba người.",
       "era": "2004年5月",
       "quotes": [],
       "image_url": "https://jisin.jp/koushitsu/2366320/",
       "image_urls": [
         "https://jisin.jp/koushitsu/2366320/",
-        "https://kaigo-postseven.com/89958",
-        ""
+        "https://bunshun.jp/articles/photo/46478?pn=5",
+        "https://kaigo-postseven.com/89958"
       ]
     },
     {
@@ -275,14 +275,14 @@
         "そして2019年5月、二人は、てんのうと、こうごうとして、国民の前に並んで立ちます。",
         "穏やかにほほえむ、まさこさまの隣にいたのは、あの夜、その手を握った人でした。"
       ],
-      "cut": "dip",
+      "cut": "fade",
       "why": "Kết: Thiên hoàng và Hoàng hậu năm 2019.",
       "era": "2019年",
       "quotes": [],
       "image_url": "https://mainichi.jp/articles/20191110/k00/00m/040/082000c",
       "image_urls": [
         "https://mainichi.jp/articles/20191110/k00/00m/040/082000c",
-        ""
+        "https://www.news-postseven.com/archives/20250811_2057590.html/9"
       ]
     }
   ]
