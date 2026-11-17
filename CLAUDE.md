@@ -80,6 +80,9 @@ kèm caption cho mỗi video"):
    - Under 60 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
      treaty years). Do not end every video with 「あなたはどう感じますか？」.
    - A source video too thin for a story (a few captions, no events): tell the owner before making it.
+   - Owner, 17/11/2026: the love story (`masako-rikon`: a request for divorce, his answer, the proof, the two
+     side by side in 2019) was the only video with views. When a source story has a love, couple or
+     mother-and-child side, lead with it in the first line and build the story on it (true facts only).
    Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
