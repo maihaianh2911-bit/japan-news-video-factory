@@ -141,6 +141,18 @@ ask the owner to allow `main`.
        phrase), and each caption starts when the voice reaches it;
      - `face`: the large text (headline, quote, year, captions) is set in Shippori Mincho B1 ExtraBold (SIL Open
        Font License; the workflow fetches it into `fonts/`, not kept in the repository).
+     - `frame` (trial of 17/11/2026, **not yet switched on by the owner: add `"frame": true` to the line only
+       when the owner asks**): the people of each picture stay in the frame. The frame is tall and most press
+       pictures are wide, so filling the frame shows about half of a wide picture; before, 136 of 307 chosen
+       pictures cut a face at some moment. The machine finds the faces of each chosen picture (`news/framing.py`,
+       the YuNet detector of OpenCV kept in `news/models/`, MIT licence) and, for the people the chosen camera
+       looks at: aims the camera at the point between them instead of the `focus`, keeps the zoom from cutting
+       into a face, shortens a pan so that they stay in (a pan with no room left becomes a push-in), cuts off the
+       plain white or black bars at the sides of a picture, and shows a picture whose people stand wider than the
+       frame whole, cut down to the part with them. A crowd, a view, a blurred face in the background and a
+       picture with `"fit": "contain"` are left as chosen. The preview prints one `framing:` line for each
+       picture it changed (also at the end of `edits.md`), and `warning: … nên đổi ảnh khác` for a picture too
+       wide to show its people: then pick another picture (a taller one, or one where the people stand closer).
      `motion` and `depth` act on pictures that carry a `move` (step 3), so give every picture one. On GitHub the
      render of a story with `fx` installs what the effects need (`.github/workflows/news-video.yml`, step "Hiệu
      ứng hình"); if that fails the video is still made, with flat pictures or the usual typeface, and the run log
@@ -237,7 +249,8 @@ needs ffmpeg) and `python tools/edits_test.py stories/mau-boj.json <find folder>
 the catalogue: look at `moves.jpg` and `cuts.jpg`) and `python tools/fx_test.py stories/mau-boj.json <find folder>
 <out>` (the picture effects: the caption timing on a made-up voice answer, stills with the effects on, which must
 differ from the plain ones; needs the libraries, the model and the typeface named under `fx` above; look at
-`<out>/fx/sheet.jpg`). `stories/mau-boj.json` has no `move`/`cut` and no `fx` on purpose: its
+`<out>/fx/sheet.jpg`). After a change to the camera or to `news/framing.py`: `python tools/frame_test.py` (the framing
+rules on faces given by hand: no network, no real picture). `stories/mau-boj.json` has no `move`/`cut` and no `fx` on purpose: its
 stills must stay the same, which proves that old stories render as before. A push of code to `main` runs the same check on GitHub, offline (no voice, no live sources; the
 stills are in the run's Artifacts), also when the same push carries a story. The live demo (`--demo`, boj.or.jp + VOICEVOX)
 runs only from Run workflow → `demo`. `tools/publish.sh` replaces a folder of `renders` as a whole and writes

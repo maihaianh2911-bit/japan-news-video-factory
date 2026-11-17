@@ -32,6 +32,9 @@ class Photo:
     fit: str = "cover"                        # "contain" shows the whole picture
     move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
     depth: bool = True                        # False: a flat picture (a document, a collage): no parallax with "fx"
+    aim: tuple | None = None                  # "fx": frame — the point between the people, the camera centres on it
+    cap: float = 0.0                          # "fx": frame — the closest zoom that still holds every face (0: none)
+    keep: tuple | None = None                 # "fx": frame — the part with the people (left, top, right, bottom, 0–1)
 
     def credit(self):
         record = {key: getattr(self, key)

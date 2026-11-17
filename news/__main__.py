@@ -69,6 +69,10 @@ def main():
             raise SystemExit(f"error: {error}") from None
         use_style(release.style)
         use_fx(release.fx)
+        if (release.fx or {}).get("frame") and scene_photos:   # the people of each picture stay in the frame
+            from .framing import frame_story
+            from .render import photo_box
+            scene_photos = frame_story(scene_photos, photo_box()[1])
         if args.stills:
             args.stills.mkdir(parents=True, exist_ok=True)
             stills(beats, release, scene_photos, args.stills)

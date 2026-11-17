@@ -24,7 +24,7 @@ STYLES = ("news", "paper", "story")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
-FX_KEYS = {"motion", "depth", "text", "face"}
+FX_KEYS = {"motion", "depth", "text", "face", "frame"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
 PACE_KEYS = {"speed", "line_pause", "scene_pause"}
@@ -207,7 +207,7 @@ def validate(data, name=None):
     fx = data.get("fx")
     if fx is not None:
         if not isinstance(fx, dict):
-            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
+            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true, "frame": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
     pace = data.get("pace")

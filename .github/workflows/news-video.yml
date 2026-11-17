@@ -358,6 +358,8 @@ jobs:
           # sample with the effects on. They must render and differ from the plain stills, which proves that the
           # libraries, the depth model and the display typeface work here; the stills go to the Artifacts (fx/).
           python tools/fx_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/fx-test"
+          # "fx": frame — the people of a picture stay in the frame (the rules, on faces given by hand)
+          python tools/frame_test.py
           mkdir -p dist/stills/fx && cp "$RUNNER_TEMP/fx-test/fx/"*.jpg dist/stills/fx/
           echo "Kiểm tra mã: OK (ảnh tĩnh của stories/mau-boj.json trong Artifacts; dựng thử 3 giây video)." >> "$GITHUB_STEP_SUMMARY"
       - name: Upload the check stills

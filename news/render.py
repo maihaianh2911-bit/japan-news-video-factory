@@ -11,6 +11,7 @@ import budoux
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
+from .framing import NOTES as FRAMING_NOTES
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
@@ -75,6 +76,8 @@ def use_style(name):
 #   "text":   the tag, the headline and a quote come in piece by piece; the caption darkens as it is spoken
 #   "face":   a display typeface for the large text (headline, quote, year, captions): a font file, or true for
 #             $NEWS_DISPLAY_FONT / fonts/ShipporiMinchoB1-ExtraBold.ttf (SIL Open Font License)
+#   "frame":  the people of each picture stay in the frame: the camera is aimed at their faces, a picture whose
+#             people stand wider than the frame is shown whole (news/framing.py; applied when the story is loaded)
 FX = {}
 DISPLAY_FONT = ""
 
@@ -372,7 +375,7 @@ def with_depth(photo, name, p):
     if key not in PARALLAX:
         try:   # needs numpy, onnxruntime, opencv and the model: without them the picture simply stays flat
             from .depth import Parallax
-            PARALLAX[key] = Parallax(photo.image, photo.focus)
+            PARALLAX[key] = Parallax(photo.image, getattr(photo, "aim", None) or photo.focus)
         except Exception as error:
             if not PARALLAX.get("warned"):
                 print(f"warning: depth effect off ({type(error).__name__}: {str(error)[:120]})")
@@ -392,46 +395,94 @@ def with_depth(photo, name, p):
     return scene.at(push=PUSH * p * (0.5 if name in ("hold", "close-up") else 1))
 
 
+def spot(photo, size, height, zoom):
+    """Where the window lies in the room left at `zoom`, as view() takes it (x, y from 0 to 1). A picture whose
+    people were found ("fx": frame, news/framing.py) carries `aim`, the point between them: the window is then
+    centred on that point as far as the picture reaches, at every zoom, so that the camera closes in on them."""
+    aim = getattr(photo, "aim", None)
+    if not aim:
+        return photo.focus
+    iw, ih = size
+    scale = max(W / iw, height / ih) * zoom
+    cw, ch = min(iw, W / scale), min(ih, height / scale)
+    x = clamp((aim[0] * iw - cw / 2) / (iw - cw), 0, 1) if iw - cw > 0.5 else 0.5
+    y = clamp((aim[1] * ih - ch / 2) / (ih - ch), 0, 1) if ih - ch > 0.5 else 0.5
+    return x, y
+
+
+def camera(photo, size, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
+    """Zoom and place (as view() takes them) of the window of a picture of `size` at time t of the move `name`.
+    `cap` of the picture ("fx": frame): the closest the camera may come before it cuts into a face."""
+    t = clamp(t, 0.0, 1.25)
+    p = paced(t)   # the steady moves follow the rhythm of the camera; reveal and punch-in have their own
+    cap = getattr(photo, "cap", 0.0) or 9.0
+
+    def at(zoom):
+        zoom = max(1.0, min(zoom, cap))
+        return (zoom, *spot(photo, size, height, zoom))
+    # at least 16 % closer or wider, so that even a 2-second picture is seen to move; 30 % at most
+    gain = min(clamp(0.05 * seconds, 0.16, 0.30), max(0.0, cap - 1.02))
+    if name == "push-in":
+        return at(1.0 + gain * p)
+    if name == "pull-back":
+        return at(max(1.0, 1.02 + gain * (1 - p)))
+    if name == "close-up":   # tight around the focus point, creeping closer
+        creep = clamp(0.015 * seconds, 0.04, 0.12)
+        return at(min(CLOSE_UP, max(1.0, cap - creep)) + creep * p)
+    if name == "reveal":
+        start, done = 1.0 + clamp(0.16 * seconds, 0.45, 0.8), 1 - (1 - min(1, t)) ** 2
+        start = max(1.16, min(start, cap))
+        return at(start - (start - 1.0) * done)
+    if name == "punch-in":
+        quick, now = min(0.35, seconds * 0.25), max(0.0, t * seconds - delay)
+        hit = min(0.26, max(0.0, cap - 1.0))
+        if now < quick:
+            return at(1.0 + hit * (1 - (1 - now / quick) ** 2))
+        return at(1.0 + hit + 0.012 * (now - quick))
+    fill = max(W / size[0], height / size[1])
+    if name in ("pan-right", "pan-left", "rise", "fall"):
+        side = 0 if name in ("pan-right", "pan-left") else 1   # the side of the picture the camera travels along
+        across = (W, height)[side]
+        place = list(spot(photo, size, height, pan_plan(size[side], across, fill, 0.5, seconds)[0]))
+        zoom, first, last, _ = pan_plan(size[side], across, fill, place[side], seconds)
+        keep = getattr(photo, "keep", None)
+        if keep:   # the way is shortened so that the people stay in the frame from its start to its end
+            shown = across / (fill * zoom)
+            room = size[side] - shown
+            low, high = (keep[side + 2] * size[side] - shown) / room, keep[side] * size[side] / room
+            if low > high:
+                low = high = (low + high) / 2
+            first, last = clamp(first, low, high), clamp(last, low, high)
+            if (last - first) * room * fill * zoom < 60:   # too short a way to be seen as a pan: a push-in instead
+                return camera(photo, size, t, "push-in", seconds, height, delay)
+        if name in ("pan-left", "rise"):
+            first, last = last, first
+        place[side] = first + (last - first) * p
+        return (zoom, *place)
+    return at(1.0)   # hold
+
+
+def window(size, height, zoom, x, y):
+    """The part of a picture of `size` that view() shows: left, top, right, bottom in its pixels."""
+    iw, ih = size
+    scale = max(W / iw, height / ih) * zoom
+    cw, ch = min(iw, W / scale), min(ih, height / scale)
+    left, top = max(0.0, (iw - cw) * clamp(x, 0, 1)), max(0.0, (ih - ch) * clamp(y, 0, 1))
+    return left, top, left + cw, top + ch
+
+
 def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
     """The picture at time t (0 at its start, 1 at its end, a little more while it fades out) for a move of the
     catalogue; `seconds` is how long the picture stays. `delay`: seconds a punch-in waits (until the scene has
     arrived), so that its hit is seen."""
     t = clamp(t, 0.0, 1.25)
-    p = paced(t)   # the steady moves follow the rhythm of the camera; reveal and punch-in have their own
-    (fx, fy) = photo.focus
     if photo.fit == "contain":   # the whole picture: it grows, shrinks or stays
+        p = paced(t)
         small = 1 - clamp(0.035 * seconds, 0.10, 0.18)
         size = {"push-in": small + (1 - small) * min(1, p), "pull-back": 1 - (1 - small) * min(1, p)}.get(name, 1.0)
         return whole_photo(photo.image, (size - 0.86) / 0.14, height)
-    image = with_depth(photo, name, t if name in ("reveal", "punch-in") else p)
-    # at least 16 % closer or wider, so that even a 2-second picture is seen to move; 30 % at most
-    gain = clamp(0.05 * seconds, 0.16, 0.30)
-    if name == "push-in":
-        return view(image, height, 1.0 + gain * p, fx, fy)
-    if name == "pull-back":
-        return view(image, height, max(1.0, 1.02 + gain * (1 - p)), fx, fy)
-    if name == "close-up":   # tight around the focus point, creeping closer
-        return view(image, height, CLOSE_UP + clamp(0.015 * seconds, 0.04, 0.12) * p, fx, fy)
-    if name == "reveal":
-        start, done = 1.0 + clamp(0.16 * seconds, 0.45, 0.8), 1 - (1 - min(1, t)) ** 2
-        return view(image, height, start - (start - 1.0) * done, fx, fy)
-    if name == "punch-in":
-        quick, now = min(0.35, seconds * 0.25), max(0.0, t * seconds - delay)
-        if now < quick:
-            return view(image, height, 1.0 + 0.26 * (1 - (1 - now / quick) ** 2), fx, fy)
-        return view(image, height, 1.26 + 0.012 * (now - quick), fx, fy)
-    fill = max(W / image.width, height / image.height)
-    if name in ("pan-right", "pan-left"):
-        zoom, first, last, _ = pan_plan(image.width, W, fill, fx, seconds)
-        if name == "pan-left":
-            first, last = last, first
-        return view(image, height, zoom, first + (last - first) * p, fy)
-    if name in ("rise", "fall"):
-        zoom, first, last, _ = pan_plan(image.height, height, fill, fy, seconds)
-        if name == "rise":
-            first, last = last, first
-        return view(image, height, zoom, fx, first + (last - first) * p)
-    return view(image, height, 1.0, fx, fy)   # hold
+    image = with_depth(photo, name, t if name in ("reveal", "punch-in") else paced(t))
+    return view(image, height, *camera(photo, image.size, t, name, seconds, height, delay))
 
 
 def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
@@ -1160,7 +1211,9 @@ def stills(beats, release, photos, out):
     (out / "edits.md").write_text(
         "# Cách edit từng cảnh\n\n" + "\n".join(f"- {line}" for line in lines)
         + f"\n\nCác kiểu chuyển động của ảnh: {', '.join(MOVES)}.\nCác kiểu vào cảnh: {', '.join(CUTS)}.\n"
-        "Muốn đổi: bình luận, ví dụ \"cảnh 5 đổi sang kiểu pull-back\".\n", encoding="utf-8")
+        "Muốn đổi: bình luận, ví dụ \"cảnh 5 đổi sang kiểu pull-back\".\n"
+        + ("\nKhung hình (máy tự căn theo mặt người để không ai bị cắt):\n\n"
+           + "\n".join(f"- {note}" for note in FRAMING_NOTES) + "\n" if FRAMING_NOTES else ""), encoding="utf-8")
     print("Edits (also in edits.md):")
     for line in lines:
         print(f"  {line}")
