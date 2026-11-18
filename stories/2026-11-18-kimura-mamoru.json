@@ -1,0 +1,148 @@
+{
+  "stage": "find",
+  "issue": 31,
+  "title": "日本中から嫌われた妻を守り続けた木村拓哉",
+  "date": "2026-11-18",
+  "style": "story",
+  "kicker": "スターの物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "file:stories/media/2026-11-18-kimura-mamoru/hook.jpg",
+    "wiki:木村拓哉",
+    "wiki:工藤静香",
+    "web:木村拓哉 工藤静香 夫婦 => a Japanese celebrity couple, a man and a woman smiling together",
+    "web:木村拓哉 結婚会見 2000 => a young Japanese man with long hair surrounded by reporters and microphones",
+    "web:木村拓哉 工藤静香 結婚 スポーツ新聞 2000 => a Japanese sports newspaper front page",
+    "web:工藤静香 2000年 => a Japanese woman singer around the year 2000",
+    "web:工藤静香 ディナーショー => a Japanese woman singing on stage in a hotel dinner show",
+    "web:工藤静香 結婚 ファン 反発 2000 新聞 => a Japanese tabloid newspaper page",
+    "web:工藤静香 2000年代 => portrait of a Japanese woman in her thirties",
+    "web:木村拓哉 2000年代 真剣 => a serious Japanese man in his thirties",
+    "web:週刊誌 表紙 工藤静香 => a Japanese weekly magazine cover",
+    "web:工藤静香 娘 幼少期 後ろ姿 => a mother walking with two small girls seen from behind",
+    "web:木村拓哉 2000年代 ドラマ => a Japanese actor in a TV drama in the 2000s",
+    "web:Koki, ELLE japon 2018 表紙 デビュー => a teenage Japanese girl on a fashion magazine cover",
+    "web:木村拓哉 インスタ 工藤静香 誕生日 => a smiling couple photo posted on social media",
+    "web:Cocomi Koki, 姉妹 => two young Japanese sisters",
+    "web:木村拓哉 工藤静香 2ショット 近影 => a middle-aged Japanese couple together",
+    "web:木村拓哉 工藤静香 手つなぎ => a man and a woman holding hands",
+    "web:木村拓哉 工藤静香 家族 => a Japanese family of four smiling",
+    "web:木村拓哉 2025 => portrait of a Japanese actor in his fifties",
+    "music:Schumann Träumerei piano",
+    "music:Debussy Clair de lune piano",
+    "music:Gymnopédie Satie piano"
+  ],
+  "scenes": [
+    {
+      "label": "嫌われた妻",
+      "era": "2000年〜",
+      "headline": "木村拓哉と\n工藤静香",
+      "lines": [
+        {
+          "text": "木村拓哉さんとの結婚で、工藤静香さんは、日本中から嫌われる女性になりました。",
+          "say": "きむらたくやさんとの結婚で、くどうしずかさんは、日本中から嫌われる女性になりました。",
+          "quote": true
+        },
+        {
+          "text": "幸いなことに、木村さんは26年間、ずっと彼女を守り続けてきたのです。",
+          "say": "幸いなことに、きむらさんは26年間、ずっと彼女を守り続けてきたのです。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "発表",
+      "era": "2000年11月",
+      "headline": "自ら記者の前に",
+      "lines": [
+        {
+          "text": "2000年11月、工藤さんの妊娠が報じられたその日、木村さんは300人を超える報道陣の前に自ら立ち、結婚を発表しました。",
+          "say": "2000年11月、くどうさんの妊娠が報じられたその日、きむらさんは、300人を超える報道陣の前に自ら立ち、結婚を発表しました。"
+        },
+        "隠し続けるのは、嘘をつき続けるのと同じだと考えたからでした。"
+      ]
+    },
+    {
+      "label": "非難",
+      "era": "2000年",
+      "headline": "ファンの怒り",
+      "lines": [
+        {
+          "text": "けれど、ファンの怒りは一斉に工藤さんへ向かいます。",
+          "say": "けれど、ファンの怒りは一斉に、くどうさんへ向かいます。"
+        },
+        "トップアイドルを奪った女性として非難を一身に浴び、彼女のディナーショーの会場には、爆破予告や殺害予告まで届いたといいます。"
+      ]
+    },
+    {
+      "label": "風当たり",
+      "era": "2000年代",
+      "headline": "止まない批判",
+      "lines": [
+        {
+          "text": "結婚してからも、工藤さんへの風当たりが弱まることはありませんでした。",
+          "say": "結婚してからも、くどうさんへの、風当たりが弱まることはありませんでした。"
+        },
+        {
+          "text": "「嫌いな女性」のアンケートでは、たびたび上位に名前が挙がります。",
+          "say": "嫌いな女性のアンケートでは、たびたび上位に名前が挙がります。"
+        },
+        {
+          "text": "けれど木村さんは、妻への批判に言い返すことはしませんでした。",
+          "say": "けれど、きむらさんは、妻への批判に言い返すことはしませんでした。"
+        }
+      ]
+    },
+    {
+      "label": "守る",
+      "era": "2001〜2018年",
+      "headline": "17年間、守り抜く",
+      "lines": [
+        "その代わりに、家族のことを、ほとんど語らなくなったのです。",
+        "二人の娘が生まれても、長女の誕生から17年間、娘たちの顔がメディアに出ることはありませんでした。",
+        "妻と娘たちを、世間の目から守り抜いたのです。"
+      ]
+    },
+    {
+      "label": "誕生日",
+      "era": "2018年〜",
+      "headline": "妻の誕生日に",
+      "lines": [
+        {
+          "text": "やがて娘たちが芸能界に羽ばたくと、木村さんは少しずつ、家族の姿を見せるようになります。",
+          "say": "やがて娘たちが芸能界に羽ばたくと、きむらさんは少しずつ、家族の姿を見せるようになります。"
+        },
+        {
+          "text": "妻の誕生日には、自らのSNSで、二人で写った写真を公開しました。",
+          "say": "妻の誕生日には、自らのエスエヌエスで、二人で写った写真を公開しました。"
+        },
+        {
+          "text": "ファンから厳しい声が上がっても、木村さんはその後も、妻の誕生日を祝い続けています。",
+          "say": "ファンから厳しい声が上がっても、きむらさんはその後も、妻の誕生日を祝い続けています。"
+        }
+      ]
+    },
+    {
+      "label": "今も",
+      "era": "今",
+      "headline": "今も隣に",
+      "lines": [
+        "日本中から嫌われても、夫だけは、彼女の手を離しませんでした。",
+        {
+          "text": "結婚から26年。工藤静香さんの隣には、今も木村拓哉さんがいます。",
+          "say": "結婚から26年。くどうしずかさんの隣には、今もきむらたくやさんがいます。"
+        }
+      ]
+    }
+  ]
+}
