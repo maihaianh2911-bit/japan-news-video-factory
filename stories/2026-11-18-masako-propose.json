@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 29,
   "title": "6年越しのプロポーズ 「僕が一生全力でお守りしますから」",
   "date": "2026-11-18",
@@ -31,7 +31,26 @@
           "text": "外交官として生きると決めていた雅子さまの心を動かした、プロポーズの言葉です。",
           "say": "がいこうかんとして生きると決めていた、まさこさまの心を動かした、プロポーズの言葉です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-10",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu bằng hai người ngày đính hôn (ảnh chính), rồi cô Masako thời còn độc thân."
     },
     {
       "label": "出会い",
@@ -47,7 +66,26 @@
           "text": "皇太子さまは、外務省への入省が決まっていた小和田雅子さんに、心を惹かれます。",
           "say": "こうたいしさまは、がいむしょうへの入省が決まっていた、おわだまさこさんに、心をひかれます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-12",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Thái tử tuổi 25, rồi cô Owada Masako lúc trẻ."
     },
     {
       "label": "離れた日々",
@@ -63,7 +101,26 @@
           "text": "雅子さまがイギリスへ留学されても、皇太子さまの想いは変わりませんでした。",
           "say": "まさこさまが、イギリスへ留学されても、こうたいしさまの想いは、変わりませんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "7-4",
+          "focus": [
+            0.45,
+            0.1
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Nhà ngoại giao trẻ đi làm, rồi bà Masako trên phố Oxford thời du học."
     },
     {
       "label": "鴨場で",
@@ -79,7 +136,26 @@
           "text": "けれど、すぐに返事はなく、雅子さまは深く迷われていました。",
           "say": "けれど、すぐに返事はなく、まさこさまは、深く迷われていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "6-9",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Khu săn vịt nơi Thái tử cầu hôn, rồi bà Masako giữa vòng báo chí."
     },
     {
       "label": "あの言葉",
@@ -100,7 +176,26 @@
           "say": "まさこさんのことは、ぼくがいっしょう、ぜんりょくで、おまもりしますから。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-6",
+          "focus": [
+            0.27,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-3",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Thái tử, rồi hai người bên nhau khi câu nói hiện lên."
     },
     {
       "label": "お受けします",
@@ -116,7 +211,27 @@
           "text": "翌年の婚約会見で、雅子さまが心を打たれた言葉として明かしたのが、この言葉だったのです。",
           "say": "翌年の、こんやくかいけんで、まさこさまが、心を打たれた言葉として明かしたのが、この言葉だったのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "10-8",
+          "focus": [
+            0.95,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Trang báo đưa tin vui, rồi bà Masako trong buổi họp báo đính hôn."
     },
     {
       "label": "約束",
@@ -132,7 +247,34 @@
           "text": "一生、全力でお守りしますというその約束は、30年以上たった今も、守られ続けています。",
           "say": "いっしょう、ぜんりょくで、おまもりします、というその約束は、30年以上たった今も、守られ続けています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-5",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-4",
+          "focus": [
+            0.52,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-12",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ngày cưới 1993, hai người vẫn bên nhau hôm nay, rồi Thiên hoàng và Hoàng hậu."
     }
   ],
   "searches": [
@@ -152,5 +294,9 @@
     "web:雅子さま 皇太子さま 1990年代 笑顔",
     "music:Debussy Clair de lune piano",
     "music:Chopin Nocturne piano"
-  ]
+  ],
+  "music": {
+    "pick": "15-2",
+    "start": 5.2
+  }
 }
