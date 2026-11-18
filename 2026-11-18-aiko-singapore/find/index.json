@@ -4331,5 +4331,328 @@
   "ranked": true,
   "candidates": 27,
   "left_out": 1
+ },
+ {
+  "k": 47,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-xe-vay.mp4",
+  "results": [
+   {
+    "title": "n-xe-vay.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-xe-vay.mp4",
+    "file": "47-1.jpg",
+    "clip": "47-1.mp4",
+    "seconds": 2.5
+   }
+  ]
+ },
+ {
+  "k": 48,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-lan-1.mp4",
+  "results": [
+   {
+    "title": "n-lan-1.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-lan-1.mp4",
+    "file": "48-1.jpg",
+    "clip": "48-1.mp4",
+    "seconds": 5.3
+   }
+  ]
+ },
+ {
+  "k": 49,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-lan-2.mp4",
+  "results": [
+   {
+    "title": "n-lan-2.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-lan-2.mp4",
+    "file": "49-1.jpg",
+    "clip": "49-1.mp4",
+    "seconds": 7.8
+   }
+  ]
+ },
+ {
+  "k": 50,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-expo-1.mp4",
+  "results": [
+   {
+    "title": "n-expo-1.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-expo-1.mp4",
+    "file": "50-1.jpg",
+    "clip": "50-1.mp4",
+    "seconds": 6.5
+   }
+  ]
+ },
+ {
+  "k": 51,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-haneda-quan-chuc.mp4",
+  "results": [
+   {
+    "title": "n-haneda-quan-chuc.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-haneda-quan-chuc.mp4",
+    "file": "51-1.jpg",
+    "clip": "51-1.mp4",
+    "seconds": 10.4
+   }
+  ]
+ },
+ {
+  "k": 52,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-co-ve.mp4",
+  "results": [
+   {
+    "title": "n-co-ve.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-co-ve.mp4",
+    "file": "52-1.jpg",
+    "clip": "52-1.mp4",
+    "seconds": 4.6
+   }
+  ]
+ },
+ {
+  "k": 53,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-co-bay.mp4",
+  "results": [
+   {
+    "title": "n-co-bay.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-co-bay.mp4",
+    "file": "53-1.jpg",
+    "clip": "53-1.mp4",
+    "seconds": 9.7
+   }
+  ]
+ },
+ {
+  "k": 54,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-bien-sg.mp4",
+  "results": [
+   {
+    "title": "n-bien-sg.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-bien-sg.mp4",
+    "file": "54-1.jpg",
+    "clip": "54-1.mp4",
+    "seconds": 8.9
+   }
+  ]
+ },
+ {
+  "k": 55,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-quay.mp4",
+  "results": [
+   {
+    "title": "n-quay.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-quay.mp4",
+    "file": "55-1.jpg",
+    "clip": "55-1.mp4",
+    "seconds": 2.8
+   }
+  ]
+ },
+ {
+  "k": 56,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-xuong-xe-cuoi.mp4",
+  "results": [
+   {
+    "title": "n-xuong-xe-cuoi.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-xuong-xe-cuoi.mp4",
+    "file": "56-1.jpg",
+    "clip": "56-1.mp4",
+    "seconds": 7.5
+   }
+  ]
+ },
+ {
+  "k": 57,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-cam-tu-cau.mp4",
+  "results": [
+   {
+    "title": "n-cam-tu-cau.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-cam-tu-cau.mp4",
+    "file": "57-1.jpg",
+    "clip": "57-1.mp4",
+    "seconds": 5.3
+   }
+  ]
+ },
+ {
+  "k": 58,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-sg-cuoi-3.mp4",
+  "results": [
+   {
+    "title": "n-sg-cuoi-3.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-sg-cuoi-3.mp4",
+    "file": "58-1.jpg",
+    "clip": "58-1.mp4",
+    "seconds": 9.4
+   }
+  ]
+ },
+ {
+  "k": 59,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-lan-3.mp4",
+  "results": [
+   {
+    "title": "n-lan-3.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-lan-3.mp4",
+    "file": "59-1.jpg",
+    "clip": "59-1.mp4",
+    "seconds": 10.3
+   }
+  ]
+ },
+ {
+  "k": 60,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-sg-chao.mp4",
+  "results": [
+   {
+    "title": "n-sg-chao.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-sg-chao.mp4",
+    "file": "60-1.jpg",
+    "clip": "60-1.mp4",
+    "seconds": 12.6
+   }
+  ]
+ },
+ {
+  "k": 61,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-lan-4.mp4",
+  "results": [
+   {
+    "title": "n-lan-4.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-lan-4.mp4",
+    "file": "61-1.jpg",
+    "clip": "61-1.mp4",
+    "seconds": 4.7
+   }
+  ]
+ },
+ {
+  "k": 62,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-expo-2.mp4",
+  "results": [
+   {
+    "title": "n-expo-2.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-expo-2.mp4",
+    "file": "62-1.jpg",
+    "clip": "62-1.mp4",
+    "seconds": 4.0
+   }
+  ]
+ },
+ {
+  "k": 63,
+  "query": "file:stories/media/2026-11-18-aiko-singapore/n-khach-san.mp4",
+  "results": [
+   {
+    "title": "n-khach-san.mp4",
+    "page": "",
+    "width": 854,
+    "height": 380,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "clip from the source video: stories/media/2026-11-18-aiko-singapore/n-khach-san.mp4",
+    "file": "63-1.jpg",
+    "clip": "63-1.mp4",
+    "seconds": 8.2
+   }
+  ]
  }
 ]
