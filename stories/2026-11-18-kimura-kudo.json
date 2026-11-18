@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 30,
   "title": "木村拓哉と工藤静香の結婚",
   "date": "2026-11-18",
@@ -63,31 +63,38 @@
       ],
       "photo": [
         {
-          "pick": "2-2",
+          "pick": "28-1",
+          "fit": "contain",
+          "depth": false,
+          "move": "push-in"
+        },
+        {
+          "pick": "29-2",
           "focus": [
-            0.55,
-            0.35
+            0.5,
+            0.3
           ],
           "move": "push-in"
         },
         {
-          "pick": "2-10",
+          "pick": "30-5",
           "focus": [
-            0.55,
-            0.3
+            0.42,
+            0.45
           ],
-          "move": "pan-right"
+          "depth": false,
+          "move": "pull-back"
         },
         {
           "pick": "1-1",
           "focus": [
-            0.6,
+            0.5,
             0.35
           ],
           "move": "pull-back"
         }
       ],
-      "why": "Câu mở: Kimura và Kudo bên nhau thời mới yêu (khoảng năm 2000), hai người sánh bước, rồi cả gia đình hôm nay — lựa chọn đã đúng."
+      "why": "Mở đầu bằng chân dung thời trẻ dễ nhận ra của hai người (ảnh chủ kênh gửi), rồi từng người lúc trẻ, khép câu mở bằng ảnh cả nhà bốn người hôm nay."
     },
     {
       "label": "2000年",
@@ -107,7 +114,8 @@
             0.45,
             0.4
           ],
-          "move": "push-in"
+          "move": "push-in",
+          "depth": false
         },
         {
           "pick": "7-1",
@@ -115,7 +123,8 @@
             0.7,
             0.3
           ],
-          "move": "punch-in"
+          "move": "punch-in",
+          "depth": false
         },
         {
           "pick": "3-10",
@@ -211,7 +220,8 @@
             0.1,
             0.55
           ],
-          "move": "punch-in"
+          "move": "punch-in",
+          "depth": false
         }
       ],
       "why": "Bà Mary Kitagawa, Kudo bị theo dõi khi ra phố cùng Kimura, rồi giật vào lịch dinner show năm 2000 của Kudo — nơi nhận lời đe dọa.",
@@ -235,7 +245,8 @@
             0.2,
             0.5
           ],
-          "move": "push-in"
+          "move": "push-in",
+          "depth": false
         },
         {
           "pick": "12-2",
@@ -243,7 +254,8 @@
             0.85,
             0.6
           ],
-          "move": "pan-left"
+          "move": "pan-left",
+          "depth": false
         },
         {
           "pick": "12-3",
@@ -377,7 +389,8 @@
             0.62,
             0.45
           ],
-          "move": "rise"
+          "move": "rise",
+          "depth": false
         },
         {
           "pick": "2-6",
