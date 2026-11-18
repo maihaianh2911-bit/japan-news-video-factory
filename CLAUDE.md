@@ -94,6 +94,15 @@ kèm caption cho mỗi video"):
    Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
    burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
    `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
+   **Moving clips** (owner, 18/11/2026: "dùng nhiều đoạn video có công chúa trông rất đẹp"): a short clip of the
+   source video (3–8 s, inside one shot, the burnt-in captions cropped away, no sound) is kept as
+   `stories/media/<story>/<name>.mp4` and asked for the same way, `file:stories/media/<story>/<name>.mp4`; the find
+   stage copies it as `<k>-1.mp4` beside a still of its middle (`<k>-1.jpg`, for the sheet and the review). Picked
+   like a picture (`{"pick": "<k>-1", "focus": […], "move": "hold"}`, optional `"start": <seconds into the clip>`),
+   it plays in the picture box and the move runs over it (a light one: `hold`, `push-in`); never the depth effect.
+   A clip shorter than its time on screen holds its last frame (the render warns): cut clips a little longer than
+   needed (`news/clips.py`). Keep each clip small (`-crf 20`, at most 1080 px high): they live in the repository.
+   Footage of the TV channels is easily recognised by YouTube/TikTok: the owner knows (18/11/2026).
    Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
