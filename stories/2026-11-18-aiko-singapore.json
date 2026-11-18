@@ -1,0 +1,197 @@
+{
+  "stage": "find",
+  "issue": 32,
+  "title": "母の名のランから、自分の名のランへ 愛子さまシンガポールへ",
+  "date": "2026-11-17",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:愛子内親王",
+    "wiki:雅子",
+    "wiki:バンダ・ミス・ジョアキム",
+    "wiki:シンガポール植物園",
+    "wiki:ターマン・シャンムガラトナム",
+    "wiki:シンガポールの国旗",
+    "wiki:チャンギ国際空港",
+    "web:愛子さま シンガポール 出発 皇居 2026",
+    "web:愛子さま 羽田空港 ラベンダー スーツ シンガポール",
+    "web:愛子さま ブローチ 真珠 シンガポール 出発",
+    "web:愛子さま 一礼 羽田 記者 シンガポール",
+    "web:愛子さま シンガポール 到着 ホテル 花束",
+    "web:愛子さま シンガポール 紫陽花 花束",
+    "web:愛子さま 大阪・関西万博 シンガポール館 => a young Japanese woman visiting an exhibition pavilion",
+    "web:シンガポール館 万博 雅子さま ラン 白い",
+    "web:愛子さま シンガポール 大使 ホテル 出迎え",
+    "web:Vanda Miss Joaquim orchid => pale purple orchid flowers",
+    "web:シンガポール植物園 国立ラン園 VIPオーキッド => orchid garden with many orchids",
+    "web:pink hydrangea bouquet => a bouquet of pink hydrangea flowers",
+    "web:日本 シンガポール 国交樹立60周年 => flags of Japan and Singapore",
+    "web:愛子さま 笑顔 シンガポール 2026",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-zoom-cuoi.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-dung-cuoi.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/xe-trong-cua-so.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/tram-cai-ao.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-chao-tien.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-cuoi-cui-chao.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-cui-vay.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-vay-nguoi-dan.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-cui-2-lan.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/doan-xe-changi.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/doan-xe.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/xe-co-nhat.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/sg-xuong-xe.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/sg-nhan-hoa.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/sg-cuoi-1.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/sg-khong-phien-dich.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/sg-cuoi-2.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-vay-2.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/haneda-vay-cuoi.mp4",
+    "music:Debussy Arabesque piano",
+    "wiki:2025年日本国際博覧会",
+    "wiki:東京国際空港",
+    "wiki:皇居",
+    "web:愛子さま 民間機 搭乗 羽田 シンガポール",
+    "web:羽田空港 シンガポール航空 => a passenger jet airliner at an airport gate"
+  ],
+  "scenes": [
+    {
+      "label": "母から娘へ",
+      "era": "2026年11月17日",
+      "headline": "母の名のランから\n自分の名のランへ",
+      "lines": [
+        {
+          "text": "母・雅子さまの名を持つ白いランを見つめていた愛子さまが、今度は、ご自身の名前のランに出会う旅へ向かわれます。",
+          "say": "はは、まさこさまの名を持つ白いランを見つめていた、あいこさまが、今度は、ご自身の名前のランに出会う旅へ向かわれます。",
+          "quote": true
+        },
+        "その朝、愛子さまが選ばれたのは、シンガポールの国花と同じ、淡い紫色の装いでした。"
+      ]
+    },
+    {
+      "label": "出発",
+      "era": "2026年11月17日",
+      "headline": "皇居を出発",
+      "lines": [
+        "2026年11月17日、愛子さまは、沿道の人々ににこやかに手を振りながら、皇居を出発されました。"
+      ]
+    },
+    {
+      "label": "60周年",
+      "era": "2026年11月17日",
+      "headline": "国交樹立60周年\n2度目の外国公式訪問",
+      "lines": [
+        "日本とシンガポールの国交樹立60周年の節目に、大統領から招かれての、2度目の外国公式訪問です。"
+      ]
+    },
+    {
+      "label": "国花の色",
+      "era": "2026年11月17日",
+      "headline": "淡いラベンダーの装い",
+      "lines": [
+        {
+          "text": "シンガポールの国花、バンダ・ミス・ジョアキムも淡い紫色のランで、異なる文化が共に生きる国の心を表す花とされています。",
+          "say": "シンガポールの国花、バンダ・ミス・ジョアキムも、淡い紫色のランで、異なる文化が共に生きる国の心を表す花とされています。"
+        }
+      ]
+    },
+    {
+      "label": "ブローチ",
+      "era": "2026年11月17日",
+      "headline": "三日月のような\n真珠のブローチ",
+      "lines": [
+        "胸元の真珠のブローチも、シンガポールの国旗に描かれた三日月を思わせる弧を描いていました。"
+      ]
+    },
+    {
+      "label": "羽田空港",
+      "era": "2026年11月17日",
+      "headline": "記者たちにも一礼",
+      "lines": [
+        "羽田空港で、見送りの方々へのご挨拶を終えると、愛子さまは、取材の記者たちのほうへ戻って、一礼されました。"
+      ]
+    },
+    {
+      "label": "旅立ち",
+      "era": "2026年11月17日",
+      "headline": "「ありがとうございます」",
+      "lines": [
+        "「お気をつけていってらっしゃいませ」と声がかかると、「ありがとうございます」と笑顔で返し、人々に手を振ってから、機内へ向かわれたのです。"
+      ]
+    },
+    {
+      "label": "機内で",
+      "era": "2026年11月17日",
+      "headline": "資料を熱心に",
+      "lines": [
+        "機内でも愛子さまは資料を熱心に読み込まれ、マーカーを引く「キュッキュッ」という音が聞こえていたといいます。"
+      ]
+    },
+    {
+      "label": "到着",
+      "era": "2026年11月17日",
+      "headline": "日の丸を掲げた車で",
+      "lines": [
+        "7時間あまりのフライトを終えた愛子さまは、日の丸を掲げた車で、ホテルへ向かわれました。"
+      ]
+    },
+    {
+      "label": "花束",
+      "era": "2026年11月17日",
+      "headline": "紫陽花とランの花束",
+      "lines": [
+        {
+          "text": "そして、長旅の疲れも見せず、弾けるような笑顔で、ピンクの紫陽花とランの花束を受け取られます。",
+          "say": "そして、長旅の疲れも見せず、はじけるような笑顔で、ピンクのあじさいとランの花束を受け取られます。"
+        },
+        {
+          "text": "紫陽花の花言葉は、「強い愛情」、そして「一家団欒」です。",
+          "say": "あじさいの花言葉は、「強い愛情」、そして「いっかだんらん」です。"
+        }
+      ]
+    },
+    {
+      "label": "再会",
+      "era": "2026年11月17日",
+      "headline": "万博で案内した\n大使との再会",
+      "lines": [
+        {
+          "text": "出迎えには、昨年の大阪・関西万博のシンガポール館で愛子さまを案内した、駐日シンガポール大使の姿もありました。",
+          "say": "出迎えには、昨年の、おおさか・かんさいばんぱくのシンガポール館で、あいこさまを案内した、ちゅうにちシンガポール大使の姿もありました。"
+        },
+        {
+          "text": "あのとき愛子さまがご覧になったのが、母・雅子さまの名を冠した、白いランでした。",
+          "say": "あのとき、あいこさまがご覧になったのが、はは、まさこさまの名をかんした、白いランでした。"
+        }
+      ]
+    },
+    {
+      "label": "通訳なしで",
+      "era": "2026年11月17日",
+      "headline": "笑顔で言葉を交わす",
+      "lines": [
+        "ホテルの奥へ進まれるとき、そばに通訳の姿はありませんでした。",
+        "それでも愛子さまは、案内の女性の目を見て、笑顔で言葉を交わされていたのです。"
+      ]
+    },
+    {
+      "label": "ランの命名式",
+      "era": "2026年11月",
+      "headline": "愛子さまの名を持つランへ",
+      "lines": [
+        "5日間の日程の中には、シンガポール植物園での、愛子さまのお名前にちなんだランの命名式も予定されています。",
+        "母の名のランを見つめたあの日から、今度は、愛子さまご自身の名前が、シンガポールの花として咲こうとしています。"
+      ]
+    }
+  ]
+}
