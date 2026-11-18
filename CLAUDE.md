@@ -98,7 +98,8 @@ kèm caption cho mỗi video"):
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
 5. Send the owner the finished video file and its caption file in the chat (they want them there, not only as
-   links) and the links.
+   links) and the links. Send only the finished videos: no previews, stills or progress pictures (owner,
+   18/11/2026: "gửi video cuối cùng đã xong thôi, không cần gửi nhiều").
 
 The workflow only runs for files on `main`: story files and their picks are pushed to `main` (the owner asked
 for this way of working on 12/11/2026). If the session may only push to its own branch, say so in one line and
