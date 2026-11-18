@@ -558,9 +558,9 @@ def story_shade(height):
     light one at the top (the tag)."""
     shade = Image.new("RGBA", (W, height), (0, 0, 0, 0))
     draw = ImageDraw.Draw(shade)
-    start = int(height * 0.52)
+    start = int(height * 0.62)   # only the lowest part: the people in the picture stay bright (owner, 18/11/2026)
     for y in range(start, height):
-        draw.line((0, y, W, y), fill=(14, 9, 4, round(225 * ((y - start) / (height - start)) ** 1.6)))
+        draw.line((0, y, W, y), fill=(14, 9, 4, round(215 * ((y - start) / (height - start)) ** 1.6)))
     for y in range(0, 150):
         draw.line((0, y, W, y), fill=(14, 9, 4, round(90 * (1 - y / 150) ** 2)))
     return shade
@@ -685,14 +685,16 @@ class Scene:
         if self.photos:
             picture, photo = self.picture(moment)
             frame.paste(picture, (0, self.top))
-            if style.layout == "story":
-                shade = story_shade(self.height)
-                frame.paste(shade, (0, self.top), shade)
-        if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
+        if QUOTE_ON:   # a quote is spoken: the picture stays whole and bright, the headline comes in after it
             self.quiet_until = moment
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
             amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
+            if photo and style.layout == "story":   # the shade under the headline (after a quote, with it)
+                shade = story_shade(self.height)
+                if hasattr(self, "quiet_until") and amount < 1:
+                    shade = faded(shade, amount)
+                frame.paste(shade, (0, self.top), shade)
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
@@ -943,10 +945,43 @@ def quote_band(height):
     return band
 
 
+def page_quote(image, line, age):
+    """"story": the quote printed big in ink on the paper under the picture, between two short red rules, while
+    the picture above stays whole and bright: the main person is what keeps the viewer in the first seconds
+    (owner, 17 and 18/11/2026: "đừng làm màn hình tối ... sẽ không nhìn thấy được nhân vật chính")."""
+    amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
+    if amount <= 0:
+        return
+    room, spacing = 212, 12   # the paper between the picture's foot (1430) and the credits (1752), less the rules
+    for size in range(66, 39, -2):
+        words, got = fit(line, 970, size, 4, smallest=size)
+        if len(words.splitlines()) <= 4 and block_height(words, size, spacing) <= room:
+            break
+    rows = words.splitlines()
+    block = block_height(words, size, spacing)
+    y = (STORY_TOP + STORY_HEIGHT + 1752) // 2 - block // 2
+    draw = ImageDraw.Draw(image)
+    half = round(60 * (ease(age / 0.5) if FX.get("text") else amount))
+    rule = "#c23a26" if FX.get("text") else style.accent
+    draw.rectangle((W // 2 - half, y - 30, W // 2 + half, y - 25), fill=rule)
+    draw.rectangle((W // 2 - half, y + block + 25, W // 2 + half, y + block + 30), fill=rule)
+    for index, row in enumerate(rows):
+        shown = ease((age - 0.08 - 0.22 * index) / 0.42) if FX.get("text") else amount
+        if shown <= 0:
+            continue
+        strip = Image.new("RGBA", (W, size + 30), (0, 0, 0, 0))
+        ImageDraw.Draw(strip).text((W // 2, 8), row, font=font(size), fill=style.caption_text, anchor="mt")
+        strip = faded(strip, shown) if shown < 1 else strip
+        image.paste(strip, (0, y - 8 + index * (size + spacing) + round(16 * (1 - shown))), strip)
+
+
 def draw_quote(image, line, age):
     """A quote printed big while it is spoken. The picture stays bright: the main picture is what keeps the
-    viewer (owner, 17/11/2026), so only the foot of the picture gets a soft dark band, the words stand on it
-    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice."""
+    viewer (owner, 17/11/2026). On the "story" page the words stand on the paper under the picture
+    (page_quote); in the other frames only the foot of the picture gets a soft dark band, the words stand on it
+    between two short red rules. The scene's headline waits meanwhile (QUOTE_ON), so nothing is drawn twice."""
+    if style.layout == "story":
+        return page_quote(image, line, age)
     top, height = photo_box()
     amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
     if amount <= 0:
