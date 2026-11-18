@@ -3265,5 +3265,608 @@
     "seconds": 89.9
    }
   ]
+ },
+ {
+  "k": 28,
+  "query": "file:stories/media/2026-11-18-kimura-kudo/hook.jpg",
+  "results": [
+   {
+    "title": "hook.jpg",
+    "page": "",
+    "width": 700,
+    "height": 438,
+    "license": "",
+    "license_url": "",
+    "artist": "元動画",
+    "description": "from the source video: stories/media/2026-11-18-kimura-kudo/hook.jpg",
+    "file": "28-1.jpg"
+   }
+  ]
+ },
+ {
+  "k": 29,
+  "query": "web:木村拓哉 若い頃 1990年代 => portrait photo of a handsome young Japanese man with long brown hair",
+  "results": [
+   {
+    "title": "木村拓哉&山口智子の共演で社会現象を巻き起こした大人の恋愛 ...",
+    "page": "https://www.skyperfectv.co.jp/article/detail/6280",
+    "image": "https://hominis.media/2026/01/images/longvacation.jpg",
+    "width": 1200,
+    "height": 900,
+    "license": "",
+    "license_url": "",
+    "artist": "skyperfectv.co.jp",
+    "description": "木村拓哉&山口智子の共演で社会現象を巻き起こした大人の恋愛 ...",
+    "match": 0.342,
+    "file": "29-1.jpg"
+   },
+   {
+    "title": "昔のキムタクはなぜ神格化されるのか？全盛期の伝説と色褪せない魅力",
+    "page": "https://www.bizilabe.elhuyar.eus/Kazuhiro-Arakawa-Inoue/4524614/",
+    "image": "https://jprime.ismcdn.jp/mwimgs/a/3/1200mw/img_a3b4489f8366342109062e71ef788be71072992.jpg",
+    "width": 1200,
+    "height": 1856,
+    "license": "",
+    "license_url": "",
+    "artist": "bizilabe.elhuyar.eus",
+    "description": "昔のキムタクはなぜ神格化されるのか？全盛期の伝説と色褪せない魅力",
+    "match": 0.326,
+    "file": "29-2.jpg"
+   },
+   {
+    "title": "お前はつまらないヤツ」木村拓哉が書いた手紙【キムタクへ】が ...",
+    "page": "https://www.jprime.jp/articles/-/21822?display=b",
+    "image": "https://jprime.ismcdn.jp/mwimgs/1/6/-/img_167a95e61b313614faca17245723ddeb344153.jpg",
+    "width": 1280,
+    "height": 854,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "お前はつまらないヤツ」木村拓哉が書いた手紙【キムタクへ】が ...",
+    "match": 0.283,
+    "file": "29-3.jpg"
+   },
+   {
+    "title": "今の気分にぴったりの1992年の木村拓哉と、3年後に流行るかも ...",
+    "page": "https://www.yamadakoji.com/entry/90s-kimura-takuya",
+    "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/y/yamada0221/20220920/20220920104046.jpg",
+    "width": 1020,
+    "height": 1200,
+    "license": "",
+    "license_url": "",
+    "artist": "yamadakoji.com",
+    "description": "今の気分にぴったりの1992年の木村拓哉と、3年後に流行るかも ...",
+    "match": 0.222,
+    "file": "29-4.jpg"
+   },
+   {
+    "title": "今の気分にぴったりの1992年の木村拓哉と、3年後に流行るかも ...",
+    "page": "https://www.yamadakoji.com/entry/90s-kimura-takuya",
+    "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/y/yamada0221/20220920/20220920131206.jpg",
+    "width": 1200,
+    "height": 892,
+    "license": "",
+    "license_url": "",
+    "artist": "yamadakoji.com",
+    "description": "今の気分にぴったりの1992年の木村拓哉と、3年後に流行るかも ...",
+    "match": 0.185,
+    "file": "29-5.jpg"
+   }
+  ],
+  "want": "portrait photo of a handsome young Japanese man with long brown hair",
+  "ranked": true,
+  "candidates": 20,
+  "left_out": 10
+ },
+ {
+  "k": 30,
+  "query": "web:工藤静香 若い頃 1980年代 => portrait photo of a beautiful young Japanese woman with long hair",
+  "results": [
+   {
+    "title": "工藤静香 [Shizuka Kudo] - 黄砂に吹かれて (Single) - Reviews ...",
+    "page": "https://www.albumoftheyear.org/album/409275--shizuka-kudo-.php",
+    "image": "https://cdn.albumoftheyear.org/album/409275-.jpg",
+    "width": 730,
+    "height": 730,
+    "license": "",
+    "license_url": "",
+    "artist": "albumoftheyear.org",
+    "description": "工藤静香 [Shizuka Kudo] - 黄砂に吹かれて (Single) - Reviews ...",
+    "match": 0.245,
+    "file": "30-1.jpg"
+   },
+   {
+    "title": "工藤静香、17歳のアイドル時代から最新のヘアスタイルをカリスマ ...",
+    "page": "https://www.jprime.jp/articles/-/27778?page=2",
+    "image": "https://jprime.ismcdn.jp/mwimgs/7/5/400mw/img_7549e9fad5ab972bf5c8c32f24693877822974.jpg",
+    "width": 400,
+    "height": 618,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "工藤静香、17歳のアイドル時代から最新のヘアスタイルをカリスマ ...",
+    "match": 0.216,
+    "file": "30-2.jpg"
+   },
+   {
+    "title": "工藤静香、17歳のアイドル時代から最新のヘアスタイルをカリスマ ...",
+    "page": "https://www.jprime.jp/articles/-/27778?page=2",
+    "image": "https://jprime.ismcdn.jp/mwimgs/7/e/620mw/img_7e53ceece73ebc685e7eb4483ebb728f885476.jpg",
+    "width": 620,
+    "height": 413,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "工藤静香、17歳のアイドル時代から最新のヘアスタイルをカリスマ ...",
+    "match": 0.209,
+    "file": "30-3.jpg"
+   },
+   {
+    "title": "工藤静香の20代が美人すぎる…若い頃の写真で「誰かわかる ...",
+    "page": "https://www.lemon8-app.com/@dycg6fot9mok/7580669545502605835?region=jp",
+    "image": "https://www.lemon8-app.com/seo/image?item_id=7580669545502605835&index=0&sign=6ba1b417c7176bd09b4f623fc121e9f1",
+    "width": 1126,
+    "height": 1500,
+    "license": "",
+    "license_url": "",
+    "artist": "lemon8-app.com",
+    "description": "工藤静香の20代が美人すぎる…若い頃の写真で「誰かわかる ...",
+    "match": 0.207,
+    "file": "30-4.jpg"
+   },
+   {
+    "title": "特選】おニャン子メンバーで唯一本格的なアーチストだった工藤 ...",
+    "page": "https://twilight-tasogare.hatenablog.com/entry/2025/04/24/070000",
+    "image": "https://cdn.image.st-hatena.com/image/scale/8708db57495335ab4b8aa2839308d6bd965253bd/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Ft%2Ftwilight_tasogare%2F20181211%2F20181211235729.jpg",
+    "width": 1300,
+    "height": 1300,
+    "license": "",
+    "license_url": "",
+    "artist": "twilight-tasogare.hatenablog.com",
+    "description": "特選】おニャン子メンバーで唯一本格的なアーチストだった工藤 ...",
+    "match": 0.212,
+    "file": "30-5.jpg"
+   },
+   {
+    "title": "工藤静香の全盛期が眩しい｜おニャン子時代の昔の写真（1986年 ...",
+    "page": "https://www.lemon8-app.com/@kiwi_12242/7587073388997280268?region=jp",
+    "image": "https://www.lemon8-app.com/seo/image?item_id=7587073388997280268&index=0&sign=ef2db2433a863c2c704a7b21a42f5b4b",
+    "width": 1800,
+    "height": 2400,
+    "license": "",
+    "license_url": "",
+    "artist": "lemon8-app.com",
+    "description": "工藤静香の全盛期が眩しい｜おニャン子時代の昔の写真（1986年 ...",
+    "match": 0.181,
+    "file": "30-6.jpg"
+   }
+  ],
+  "want": "portrait photo of a beautiful young Japanese woman with long hair",
+  "ranked": true,
+  "candidates": 20,
+  "left_out": 2
+ },
+ {
+  "k": 31,
+  "query": "web:木村拓哉 工藤静香 若い頃 => portraits of a young Japanese man and a young Japanese woman side by side",
+  "results": [
+   {
+    "title": "木村拓哉さん、工藤静香さんとの貴重なツーショット写真を公開 ...",
+    "page": "https://www.huffingtonpost.jp/entry/story_jp_5e9512a8c5b63e2705caf1dd",
+    "image": "https://img.huffingtonpost.com/asset/5e9517e43000000f051540cc.jpeg?cache=PK5lR2IaWp&ops=1200_630",
+    "width": 1200,
+    "height": 630,
+    "license": "",
+    "license_url": "",
+    "artist": "huffingtonpost.jp",
+    "description": "木村拓哉さん、工藤静香さんとの貴重なツーショット写真を公開 ...",
+    "match": 0.284,
+    "file": "31-1.jpg"
+   },
+   {
+    "title": "拓哉さん応援アカウント on X: \"木村拓哉さんと工藤静香さん ...",
+    "page": "https://x.com/intent/like?tweet_id=2114994642186035327&utm_source=yjrealtime&utm_medium=search",
+    "image": "https://pbs.twimg.com/media/HVn35VqbMAAmvNk?format=webp&name=large",
+    "width": 1170,
+    "height": 731,
+    "license": "",
+    "license_url": "",
+    "artist": "x.com",
+    "description": "拓哉さん応援アカウント on X: \"木村拓哉さんと工藤静香さん ...",
+    "match": 0.256,
+    "file": "31-2.jpg"
+   },
+   {
+    "title": "木村拓哉＆工藤静香の一般人長女が今も報じられ続ける“最大の ...",
+    "page": "https://www.jprime.jp/articles/-/16262?display=b",
+    "image": "https://jprime.ismcdn.jp/mwimgs/2/d/-/img_2de138311008e26c5e418240c671b50b915276.jpg",
+    "width": 1280,
+    "height": 853,
+    "license": "",
+    "license_url": "",
+    "artist": "jprime.jp",
+    "description": "木村拓哉＆工藤静香の一般人長女が今も報じられ続ける“最大の ...",
+    "match": 0.217,
+    "file": "31-3.jpg"
+   },
+   {
+    "title": "工藤静香と木村拓哉の年齢差は何歳？結婚26年目の真実と家族の現在地",
+    "page": "https://talenthunt.pratidintime.com/profile/kudoushizukakimuratakuyanenrei-31534/",
+    "image": "https://talenthunt.pratidintime.com/assets/images/profile/kudoushizukakimuratakuyanenrei-31534.webp",
+    "width": 900,
+    "height": 1392,
+    "license": "",
+    "license_url": "",
+    "artist": "talenthunt.pratidintime.com",
+    "description": "工藤静香と木村拓哉の年齢差は何歳？結婚26年目の真実と家族の現在地",
+    "match": 0.217,
+    "file": "31-4.jpg"
+   },
+   {
+    "title": "AIで再現？若い頃の木村拓哉×工藤静香が「懐かしすぎ ...",
+    "page": "https://www.lemon8-app.com/experience/%E3%81%8D%E3%82%80%E3%81%9F%E3%81%8F%E5%B7%A5%E8%97%A4%E9%9D%99%E9%A6%99?region=jp",
+    "image": "https://www.lemon8-app.com/seo/image?item_id=7501188491511104005&index=0&sign=236cc1cac250a72d3c1e986269da5f1e",
+    "width": 558,
+    "height": 418,
+    "license": "",
+    "license_url": "",
+    "artist": "lemon8-app.com",
+    "description": "AIで再現？若い頃の木村拓哉×工藤静香が「懐かしすぎ ...",
+    "match": 0.208,
+    "file": "31-5.jpg"
+   },
+   {
+    "title": "なぜ工藤静香だった？木村拓哉との馴れ初め：片思い・交際期間 ...",
+    "page": "https://www.selfrealization.site/why-shizuka-kudo-how-she-met-takuya-kimura/",
+    "image": "https://www.selfrealization.site/wp-content/uploads/2025/04/Photo-of-Takuya-Kimura-F-04.jpg",
+    "width": 569,
+    "height": 760,
+    "license": "",
+    "license_url": "",
+    "artist": "selfrealization.site",
+    "description": "なぜ工藤静香だった？木村拓哉との馴れ初め：片思い・交際期間 ...",
+    "match": 0.212,
+    "file": "31-6.jpg"
+   },
+   {
+    "title": "キムタクがジャニーズ退所の噂！？ 業界関係者が語る工藤静香の ...",
+    "page": "https://news.infoseek.co.jp/article/knuckles_14991/",
+    "image": "https://media.image.infoseek.co.jp/isnews/photos/knuckles/knuckles_14991_0.jpg",
+    "width": 1280,
+    "height": 1280,
+    "license": "",
+    "license_url": "",
+    "artist": "news.infoseek.co.jp",
+    "description": "キムタクがジャニーズ退所の噂！？ 業界関係者が語る工藤静香の ...",
+    "match": 0.217,
+    "file": "31-7.jpg"
+   }
+  ],
+  "want": "portraits of a young Japanese man and a young Japanese woman side by side",
+  "ranked": true,
+  "candidates": 21,
+  "left_out": 6
+ },
+ {
+  "k": 32,
+  "query": "wiki:木村拓哉",
+  "results": [
+   {
+    "title": "File:Taakuya Kimura 2008 39.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Taakuya_Kimura_2008_39.jpg",
+    "width": 973,
+    "height": 1414,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Leah Shang",
+    "description": "SMAP 2008 Super Modern Artistic Performance Tour",
+    "source": "commons/wiki",
+    "file": "32-1.jpg"
+   },
+   {
+    "title": "File:Alta at Shinjuku.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:Alta_at_Shinjuku.JPG",
+    "width": 3366,
+    "height": 4105,
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "Kakidai",
+    "description": "新宿アルタ 2012",
+    "source": "commons/wiki",
+    "file": "32-2.jpg"
+   },
+   {
+    "title": "File:Takuya Kimura's costume in Hero.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Takuya_Kimura%27s_costume_in_Hero.jpg",
+    "width": 2000,
+    "height": 3008,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Punksid from Taipei, Taiwan",
+    "description": "Takuya Kimura's costume in Hero",
+    "source": "commons/wiki",
+    "file": "32-3.jpg"
+   },
+   {
+    "title": "File:Takuya Kimura January 2023.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Takuya_Kimura_January_2023.jpg",
+    "width": 600,
+    "height": 848,
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "artist": "厚生労働省",
+    "description": "木村拓哉（2023年）",
+    "source": "commons/wiki",
+    "file": "32-4.jpg"
+   },
+   {
+    "title": "File:Kyojyo 2 logo.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Kyojyo_2_logo.png",
+    "width": 2000,
+    "height": 1000,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": ".",
+    "description": "Logo.",
+    "source": "commons/category",
+    "file": "32-5.jpg"
+   },
+   {
+    "title": "File:Osaka Auto Messe 2023 (24) - YACCHAE! TREASURE BOX.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Osaka_Auto_Messe_2023_(24)_-_YACCHAE!_TREASURE_BOX.jpg",
+    "width": 2560,
+    "height": 1920,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Tokumeigakarinoaoshima",
+    "description": "大阪オートメッセ2023においてやっちゃえ! TREASURE BOXを撮影。",
+    "source": "commons/category",
+    "file": "32-6.jpg"
+   },
+   {
+    "title": "File:Osaka Auto Messe 2023 (25) - YACCHAE! TREASURE BOX.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Osaka_Auto_Messe_2023_(25)_-_YACCHAE!_TREASURE_BOX.jpg",
+    "width": 2560,
+    "height": 1920,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Tokumeigakarinoaoshima",
+    "description": "大阪オートメッセ2023においてやっちゃえ! TREASURE BOXを撮影。",
+    "source": "commons/category",
+    "file": "32-7.jpg"
+   },
+   {
+    "title": "File:2026 World Baseball Classic Pool C Game9 東京ドーム 2026年3月9日の東京 202603092214 IMG 6054.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:2026_World_Baseball_Classic_Pool_C_Game9_%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0_2026%E5%B9%B43%E6%9C%889%E6%97%A5%E3%81%AE%E6%9D%B1%E4%BA%AC_202603092214_IMG_6054.jpg",
+    "width": 4032,
+    "height": 3024,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "ウィ貴公子",
+    "description": "2026 World Baseball Classic 2026 World Baseball Classic Pool C Game5：Australia vs Korea at Tokyo Dome （March 9, 2026, PM10:14） This photo was taken with iPhone 12 Pro",
+    "source": "commons/category",
+    "file": "32-8.jpg"
+   },
+   {
+    "title": "File:A little distant view of Shinjuku Studio Alta (200790858).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_little_distant_view_of_Shinjuku_Studio_Alta_(200790858).jpg",
+    "width": 1024,
+    "height": 768,
+    "license": "CC BY-SA 2.1 jp",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en",
+    "artist": "art_directter",
+    "description": "s2014_0330_0721_DSC09394新宿",
+    "source": "commons/category",
+    "file": "32-9.jpg"
+   },
+   {
+    "title": "File:A little distant view of Shinjuku Studio Alta in February 2014.jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:A_little_distant_view_of_Shinjuku_Studio_Alta_in_February_2014.jpg",
+    "width": 2560,
+    "height": 1920,
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Jim Shine",
+    "description": "2014.2.16 新宿駅 SHINJUKU, TOKYO",
+    "source": "commons/category",
+    "file": "32-10.jpg"
+   },
+   {
+    "title": "File:HK Mongkok night 亞皆老街 Argyle Street sky Gatsby shop signs visitors.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:HK_Mongkok_night_%E4%BA%9E%E7%9A%86%E8%80%81%E8%A1%97_Argyle_Street_sky_Gatsby_shop_signs_visitors.JPG",
+    "width": 2448,
+    "height": 3264,
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "artist": "Hulapewue",
+    "description": "zh:旺角2010年6月 亞皆老街 Mandom產品Gatsby戶外廣告",
+    "source": "commons/category",
+    "file": "32-11.jpg"
+   },
+   {
+    "title": "File:Lascar The busiest intersection of the world (Shibuya special ward) (1299696042).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Lascar_The_busiest_intersection_of_the_world_(Shibuya_special_ward)_(1299696042).jpg",
+    "width": 800,
+    "height": 600,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Jorge Láscar",
+    "description": "Shibuya is famous for its scramble crossing called Center Gai, which is reportedly the world's busiest. It is located in front of Shibuya Station and uses a four-way stop to allow pedestrians to inundate the entire intersection. Three large TV screens mounted on nearby buildings overlook the crossin",
+    "source": "commons/category",
+    "file": "32-12.jpg"
+   },
+   {
+    "title": "File:MR. BRAIN 木村拓哉が、脳になる。 (3557174577).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:MR._BRAIN_%E6%9C%A8%E6%9D%91%E6%8B%93%E5%93%89%E3%81%8C%E3%80%81%E8%84%B3%E3%81%AB%E3%81%AA%E3%82%8B%E3%80%82_(3557174577).jpg",
+    "width": 2500,
+    "height": 1667,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Geoff Stearns",
+    "description": "Shibuya crossing MR.BRAIN",
+    "source": "commons/category",
+    "file": "32-13.jpg"
+   },
+   {
+    "title": "File:Panoramic View of the City of Tokyo 2012 (7805133142).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Panoramic_View_of_the_City_of_Tokyo_2012_(7805133142).jpg",
+    "width": 4928,
+    "height": 3264,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Yoshikazu TAKADA",
+    "description": "from observation rooms on the Tokyo Municipal Government Building",
+    "source": "commons/category",
+    "file": "32-14.jpg"
+   },
+   {
+    "title": "File:Pond Reflection (8074187380).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Pond_Reflection_(8074187380).jpg",
+    "width": 4512,
+    "height": 3000,
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "mrhayata",
+    "description": "Pond Reflection",
+    "source": "commons/category",
+    "file": "32-15.jpg"
+   },
+   {
+    "title": "File:Shibuya District at Night 2015 (17810219251).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shibuya_District_at_Night_2015_(17810219251).jpg",
+    "width": 3872,
+    "height": 2581,
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "IQRemix",
+    "description": "Shibuya District at Night",
+    "source": "commons/category",
+    "file": "32-16.jpg"
+   },
+   {
+    "title": "File:Shinjuku morning - 新宿の朝 2016 (24936948992).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shinjuku_morning_-_%E6%96%B0%E5%AE%BF%E3%81%AE%E6%9C%9D_2016_(24936948992).jpg",
+    "width": 2592,
+    "height": 1936,
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Makoto Shimokoshi",
+    "description": "Shinjuku morning | 新宿の朝",
+    "source": "commons/category",
+    "file": "32-17.jpg"
+   },
+   {
+    "title": "File:Shinjuku night 2013 (8725277453).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shinjuku_night_2013_(8725277453).jpg",
+    "width": 1920,
+    "height": 1285,
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "artist": "Koichi Oda",
+    "description": "w/ Nikon 1V1 +11-27.5mm",
+    "source": "commons/category",
+    "file": "32-18.jpg"
+   },
+   {
+    "title": "File:Shinjuku Station East Gate 2015 (25659645702).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Shinjuku_Station_East_Gate_2015_(25659645702).jpg",
+    "width": 4896,
+    "height": 3672,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Dick Thomas Johnson",
+    "description": "新宿駅東口",
+    "source": "commons/category",
+    "file": "32-19.jpg"
+   },
+   {
+    "title": "File:Studio Alta Shinjuku 2014 Mar (200771066).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Studio_Alta_Shinjuku_2014_Mar_(200771066).jpg",
+    "width": 768,
+    "height": 1024,
+    "license": "CC BY-SA 2.1 jp",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en",
+    "artist": "art_directter",
+    "description": "Studio Alta in Shinjuku, Tokyo, Japan",
+    "source": "commons/category",
+    "file": "32-20.jpg"
+   },
+   {
+    "title": "File:STUDIO ALTA.JPG",
+    "page": "https://commons.wikimedia.org/wiki/File:STUDIO_ALTA.JPG",
+    "width": 1650,
+    "height": 2382,
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "artist": "Tokumeigakarinoaoshima",
+    "description": "スタジオアルタを撮影。",
+    "source": "commons/category",
+    "file": "32-21.jpg"
+   },
+   {
+    "title": "File:TEPCOひかり 2005 (7360159198).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:TEPCO%E3%81%B2%E3%81%8B%E3%82%8A_2005_(7360159198).jpg",
+    "width": 2592,
+    "height": 1944,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "yortlabs",
+    "description": "IMG_0344",
+    "source": "commons/category",
+    "file": "32-22.jpg"
+   },
+   {
+    "title": "File:Tokyo night 2010 (4358537307).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tokyo_night_2010_(4358537307).jpg",
+    "width": 3072,
+    "height": 2304,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "AKX_",
+    "description": "人志松本の○○な話",
+    "source": "commons/category",
+    "file": "32-23.jpg"
+   },
+   {
+    "title": "File:Tokyo2010 銀だこ (5023574473).jpg",
+    "page": "https://commons.wikimedia.org/wiki/File:Tokyo2010_%E9%8A%80%E3%81%A0%E3%81%93_(5023574473).jpg",
+    "width": 5616,
+    "height": 3744,
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "artist": "Laurent Neyssensas",
+    "description": "Tokyo2010_MG_6253-1",
+    "source": "commons/category",
+    "file": "32-24.jpg"
+   }
+  ],
+  "wikidata": {
+   "id": "Q362254",
+   "label": "木村拓哉",
+   "description": "日本の歌手、俳優 (1972-)"
+  }
+ },
+ {
+  "k": 33,
+  "query": "wiki:工藤静香",
+  "results": [
+   {
+    "title": "File:Shizuka Kudo in July 2023.png",
+    "page": "https://commons.wikimedia.org/wiki/File:Shizuka_Kudo_in_July_2023.png",
+    "width": 631,
+    "height": 823,
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "三立娛樂星聞",
+    "description": "\"Kimura's Wife\" Shizuka Kudo is here! Taiwan has been incredibly approachable for 30 years | SET Entertainment News",
+    "source": "commons/wiki",
+    "file": "33-1.jpg"
+   }
+  ],
+  "wikidata": {
+   "id": "Q1202567",
+   "label": "工藤静香",
+   "description": "日本の女性歌手 (1970-)"
+  }
  }
 ]
