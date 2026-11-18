@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 32,
   "title": "母の名のランから、自分の名のランへ 愛子さまシンガポールへ",
   "date": "2026-11-17",
@@ -62,7 +62,24 @@
     "wiki:東京国際空港",
     "wiki:皇居",
     "web:愛子さま 民間機 搭乗 羽田 シンガポール",
-    "web:羽田空港 シンガポール航空 => a passenger jet airliner at an airport gate"
+    "web:羽田空港 シンガポール航空 => a passenger jet airliner at an airport gate",
+    "file:stories/media/2026-11-18-aiko-singapore/n-xe-vay.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-lan-1.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-lan-2.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-expo-1.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-haneda-quan-chuc.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-co-ve.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-co-bay.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-bien-sg.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-quay.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-xuong-xe-cuoi.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-cam-tu-cau.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-sg-cuoi-3.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-lan-3.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-sg-chao.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-lan-4.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-expo-2.mp4",
+    "file:stories/media/2026-11-18-aiko-singapore/n-khach-san.mp4"
   ],
   "scenes": [
     {
@@ -93,10 +110,27 @@
             0.4
           ],
           "move": "hold",
-          "start": 1.5
+          "start": 3.5
+        },
+        {
+          "pick": "51-1",
+          "focus": [
+            1.0,
+            0.4
+          ],
+          "move": "hold",
+          "start": 3.0
+        },
+        {
+          "pick": "40-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "hold"
         }
       ],
-      "why": "Mở bằng ảnh công chúa cười trong bộ đồ tím nhạt ở Haneda (chữ lớn nằm dưới, mặt ở trên), rồi đoạn phim máy quay tiến dần vào nụ cười."
+      "why": "Ảnh công chúa cười trong bộ đồ tím nhạt (chữ lớn nằm dưới), rồi ba đoạn phim cười ở Haneda nối nhau."
     },
     {
       "label": "出発",
@@ -121,9 +155,17 @@
             0.4
           ],
           "move": "push-in"
+        },
+        {
+          "pick": "24-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "hold"
         }
       ],
-      "why": "Hoàng cung, rồi công chúa vẫy tay qua cửa xe.",
+      "why": "Hoàng cung, ảnh công chúa vẫy tay qua cửa xe, rồi đoạn phim vẫy tay.",
       "cut": "fade"
     },
     {
@@ -135,25 +177,33 @@
       ],
       "photo": [
         {
-          "pick": "20-1",
+          "pick": "53-1",
           "focus": [
-            0.5,
+            0.6,
             0.5
           ],
           "move": "hold",
-          "fit": "contain",
-          "depth": false
+          "start": 0.5
         },
         {
-          "pick": "5-7",
+          "pick": "5-2",
           "focus": [
             0.5,
             0.3
           ],
           "move": "push-in"
+        },
+        {
+          "pick": "54-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold",
+          "start": 1.0
         }
       ],
-      "why": "Biểu trưng 60 năm Nhật – Singapore, rồi Tổng thống Tharman, người mời.",
+      "why": "Cờ Singapore bay, Tổng thống Tharman, bờ biển Singapore.",
       "cut": "page"
     },
     {
@@ -168,12 +218,22 @@
       ],
       "photo": [
         {
-          "pick": "17-1",
+          "pick": "48-1",
           "focus": [
             0.45,
-            0.45
+            0.5
           ],
-          "move": "push-in"
+          "move": "hold",
+          "start": 0.3
+        },
+        {
+          "pick": "49-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold",
+          "start": 1.0
         },
         {
           "pick": "17-3",
@@ -184,7 +244,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Hoa lan Vanda Miss Joaquim, quốc hoa Singapore.",
+      "why": "Hai đoạn phim hoa lan tím nhạt, rồi ảnh cận hoa lan Vanda Miss Joaquim.",
       "cut": "fade"
     },
     {
@@ -198,22 +258,23 @@
         {
           "pick": "25-1",
           "focus": [
-            0.58,
+            0.6,
             0.5
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 0.5
         },
         {
-          "pick": "6-5",
+          "pick": "52-1",
           "focus": [
-            0.0,
+            0.15,
             0.3
           ],
-          "move": "push-in",
-          "depth": false
+          "move": "hold",
+          "start": 0.5
         }
       ],
-      "why": "Cận chiếc trâm ngọc trai, rồi trăng khuyết trên quốc kỳ Singapore.",
+      "why": "Cận chiếc trâm ngọc trai, rồi trăng khuyết trên quốc kỳ.",
       "cut": "fade"
     },
     {
@@ -227,7 +288,16 @@
         {
           "pick": "26-1",
           "focus": [
-            0.45,
+            0.5,
+            0.4
+          ],
+          "move": "hold",
+          "start": 1.0
+        },
+        {
+          "pick": "27-1",
+          "focus": [
+            0.55,
             0.4
           ],
           "move": "hold"
@@ -235,13 +305,14 @@
         {
           "pick": "27-1",
           "focus": [
-            0.53,
+            0.55,
             0.4
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 3.2
         }
       ],
-      "why": "Ở Haneda: chào người tiễn, rồi cúi chào phóng viên và cười.",
+      "why": "Chào người tiễn, cúi chào phóng viên, ngẩng lên cười.",
       "cut": "page"
     },
     {
@@ -266,10 +337,20 @@
             0.5,
             0.4
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 0.5
+        },
+        {
+          "pick": "39-1",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "hold",
+          "start": 0.5
         }
       ],
-      "why": "Cúi chào, cười, vẫy tay với mọi người trước khi lên máy bay.",
+      "why": "Cúi chào, cười, vẫy tay với mọi người.",
       "cut": "fade"
     },
     {
@@ -287,7 +368,15 @@
             0.4
           ],
           "move": "hold",
-          "start": 1.0
+          "start": 3.5
+        },
+        {
+          "pick": "55-1",
+          "focus": [
+            0.85,
+            0.4
+          ],
+          "move": "hold"
         },
         {
           "pick": "43-1",
@@ -298,7 +387,7 @@
           "move": "pan-right"
         }
       ],
-      "why": "Cái chào cuối, rồi sân bay Haneda với máy bay.",
+      "why": "Cái chào cuối, nụ cười ở quầy, sân bay Haneda.",
       "cut": "fade"
     },
     {
@@ -310,12 +399,13 @@
       ],
       "photo": [
         {
-          "pick": "7-2",
+          "pick": "31-1",
           "focus": [
-            0.3,
-            0.4
+            0.35,
+            0.5
           ],
-          "move": "pan-right"
+          "move": "hold",
+          "start": 0.5
         },
         {
           "pick": "32-1",
@@ -323,18 +413,19 @@
             0.4,
             0.5
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 2.0
         },
         {
           "pick": "33-1",
           "focus": [
-            0.42,
+            0.45,
             0.6
           ],
           "move": "hold"
         }
       ],
-      "why": "Bảy tiếng sau: sân bay Changi, đoàn xe có cảnh sát dẫn đường, xe cắm cờ Nhật.",
+      "why": "Đoàn xe ở Changi, xe có cảnh sát dẫn đường, xe cắm cờ Nhật.",
       "cut": "dip"
     },
     {
@@ -353,6 +444,15 @@
       ],
       "photo": [
         {
+          "pick": "56-1",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "hold",
+          "start": 2.0
+        },
+        {
           "pick": "35-1",
           "focus": [
             0.75,
@@ -361,23 +461,24 @@
           "move": "hold"
         },
         {
-          "pick": "9-4",
+          "pick": "36-1",
           "focus": [
             0.6,
             0.4
           ],
-          "move": "push-in"
+          "move": "hold"
         },
         {
-          "pick": "19-1",
+          "pick": "57-1",
           "focus": [
             0.5,
-            0.4
+            0.5
           ],
-          "move": "push-in"
+          "move": "hold",
+          "start": 0.5
         }
       ],
-      "why": "Nhận bó hoa và cười rạng rỡ, rồi bó cẩm tú cầu hồng khi nói ý nghĩa của hoa.",
+      "why": "Xuống xe, nhận hoa, cười rạng rỡ, rồi hoa cẩm tú cầu hồng.",
       "cut": "fade"
     },
     {
@@ -404,6 +505,15 @@
           "move": "push-in"
         },
         {
+          "pick": "50-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "hold",
+          "start": 0.5
+        },
+        {
           "pick": "14-7",
           "focus": [
             0.55,
@@ -412,7 +522,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Quay lại năm ngoái: công chúa ở gian Singapore của Expo.",
+      "why": "Quay lại Expo năm ngoái: công chúa được dẫn thăm gian Singapore (ảnh, đoạn phim, ảnh toàn cảnh).",
       "cut": "dip"
     },
     {
@@ -433,12 +543,24 @@
           "move": "push-in"
         },
         {
+          "pick": "63-1",
+          "focus": [
+            0.0,
+            0.4
+          ],
+          "move": "hold"
+        },
+        {
           "pick": "37-1",
-          "fit": "contain",
-          "move": "push-in"
+          "focus": [
+            0.0,
+            0.4
+          ],
+          "move": "hold",
+          "start": 1.0
         }
       ],
-      "why": "Về lại khách sạn: đi cùng người phụ nữ dẫn đường, rồi cười nói không cần phiên dịch.",
+      "why": "Đi cùng người phụ nữ dẫn đường, rồi hai đoạn cười nói không cần phiên dịch.",
       "cut": "dip"
     },
     {
@@ -459,15 +581,34 @@
           "move": "pan-right"
         },
         {
-          "pick": "23-1",
+          "pick": "61-1",
           "focus": [
-            0.55,
+            0.5,
+            0.5
+          ],
+          "move": "hold",
+          "start": 0.3
+        },
+        {
+          "pick": "58-1",
+          "focus": [
+            0.45,
             0.4
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 6.3
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "hold",
+          "start": 3.0
         }
       ],
-      "why": "Vườn lan quốc gia Singapore, nơi sẽ đặt tên lan, rồi kết bằng nụ cười của công chúa.",
+      "why": "Vườn lan quốc gia, hoa lan, nụ cười ở Singapore, kết bằng nụ cười ở Haneda.",
       "cut": "page"
     }
   ],
