@@ -74,7 +74,10 @@ kèm caption cho mỗi video"):
      優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story, and end on a line that
      comes back to the opening (not a question to the viewer).
    - **One flowing narration**: sentences linked by connectives (けれど, そんなある深夜, その言葉が本物だったことを…),
-     the warm narrator's です/ます, no chopped fragments such as 「1993年。ハーバード、東大。」.
+     the warm narrator's です/ます, no chopped fragments such as 「1993年。ハーバード、東大。」 or 「1993年6月、二人は結婚。」.
+     **Show the owner a script the same way: one continuous text** (the Japanese in one piece, then its Vietnamese
+     meaning in one piece), never cut into numbered scenes or bullet points (owner, 18/11/2026: "Kịch bản phải
+     liền mạch, nói bao nhiêu lần rồi, đừng bao giờ chia đoạn ra như thế"). The scenes exist only for the pictures.
    - A story the sources do not confirm is framed **once** (e.g. 「長く語り継がれてきた話です」, 「…と口にしたといいます」
      at the key line), not on every line.
    - Under 60 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
