@@ -1,0 +1,28 @@
+# Temporary test (18/11/2026): can GitHub's machine find and download short news videos (yt-dlp)?
+# Runs only on Claude's working branch; removed after the test.
+name: video-probe
+on:
+  push:
+    branches: [ccr-c2228975-po4f1o]
+    paths: ['.github/workflows/video-probe.yml']
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - run: pip install -q -U yt-dlp && sudo apt-get install -y -qq ffmpeg >/dev/null
+      - name: Search
+        run: |
+          for q in "愛子さま シンガポール 羽田" "愛子さま シンガポール 到着" "愛子さま シンガポール 花束" "Princess Aiko Singapore"; do
+            echo "=== $q"
+            yt-dlp "ytsearch12:$q" --flat-playlist --print "%(id)s | %(duration)s s | %(channel)s | %(title)s" 2>&1 | head -14 || true
+          done
+      - name: Download test
+        run: |
+          id=$(yt-dlp "ytsearch1:愛子さま シンガポール 羽田" --flat-playlist --print "%(id)s" 2>/dev/null | head -1)
+          echo "first: $id"
+          yt-dlp -f "bv*[height<=1080][ext=mp4]/bv*[height<=1080]" --download-sections "*0-15" -o "t1.%(ext)s" "https://www.youtube.com/watch?v=$id" 2>&1 | tail -6 || true
+          ls -la t1.* 2>/dev/null && ffprobe -v error -show_entries stream=width,height -of csv t1.* || echo "download failed"
+          echo "--- with another player"
+          yt-dlp --extractor-args "youtube:player_client=tv,web_safari" -f "bv*[height<=1080]" --download-sections "*0-15" -o "t2.%(ext)s" "https://www.youtube.com/watch?v=$id" 2>&1 | tail -6 || true
+          ls -la t2.* 2>/dev/null || echo "download 2 failed"

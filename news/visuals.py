@@ -32,6 +32,8 @@ class Photo:
     fit: str = "cover"                        # "contain" shows the whole picture
     move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
     depth: bool = True                        # False: a flat picture (a document, a collage): no parallax with "fx"
+    clip: object = None                       # a news.clips.Clip: a moving picture (image is its first frame)
+    tone: str = "color"                       # the tone given to each frame of a clip ("sepia", "mono")
 
     def credit(self):
         record = {key: getattr(self, key)

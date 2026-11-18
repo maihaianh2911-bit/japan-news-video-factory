@@ -1,5 +1,5 @@
 """Render vertical news video with timed Japanese captions and stable motion."""
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from functools import lru_cache
 import math
 import os
@@ -10,6 +10,7 @@ import subprocess
 import budoux
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
+from .clips import WARN as CLIP_WARN, close_all as close_clips
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
 from .story import VOICE_CREDIT, japanese_date
 
@@ -299,8 +300,12 @@ BACKDROPS = {}
 
 def whole_photo(image, position, height):
     """Show the whole picture (portraits, charts, documents) over a blurred copy of itself; it grows slowly."""
-    BACKDROPS[id(image)] = image
-    frame = backdrop(id(image), height).copy()
+    if image.info.get("clip"):   # a frame of a clip: its own backdrop each time (the id of a frame is reused)
+        soft = crop_photo(image, height).resize((W // 8, height // 8)).filter(ImageFilter.GaussianBlur(6))
+        frame = Image.eval(soft.resize((W, height), Image.Resampling.BICUBIC), lambda level: level * 0.45)
+    else:
+        BACKDROPS[id(image)] = image
+        frame = backdrop(id(image), height).copy()
     scale = min(W / image.width, height / image.height) * (0.86 + 0.14 * position)
     size = (round(image.width * scale), round(image.height * scale))
     frame.paste(image.resize(size, Image.Resampling.BICUBIC), ((W - size[0]) // 2, (height - size[1]) // 2))
@@ -450,6 +455,17 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
     if closest and W / (fill * closest) < 500:
         return f"{name}: the picture is small ({image.width}x{image.height}), it will look soft that close"
     return None
+
+
+def clip_frame(photo, seconds):
+    """The frame of a clip `seconds` after it starts, in the tone of its picture entry."""
+    frame = photo.clip.at(seconds)
+    if photo.tone != "color":
+        from .custom import toned
+        frame = toned(frame, photo.tone)
+    frame = frame.copy()
+    frame.info["clip"] = True
+    return frame
 
 
 STORY_TEXT = "#f8efd9"
@@ -674,6 +690,8 @@ class Scene:
     def shot(self, number, local, length):
         """Picture `number` at its time `local`: the move chosen for it, else the four old moves in turn."""
         photo = self.photos[number]
+        if photo.clip:   # a moving picture: its frame at this moment, then the move over it
+            photo = replace(photo, image=clip_frame(photo, local * length), depth=False)
         if photo.move:
             return named_photo(photo, local, photo.move, length, self.height, delay=0.0 if number else self.arrival)
         return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)], self.height)
@@ -1124,6 +1142,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     frame_index += 1
         finally:
             process.stdin.close()
+            close_clips()
         if process.wait():
             raise RuntimeError("FFmpeg failed")
 
@@ -1133,6 +1152,7 @@ def stills(beats, release, photos, out):
     global QUOTE_ON
     grain = Grain() if style.grain else None
     tiles = []
+    CLIP_WARN[0] = False   # a still's scene lasts a made-up 10 seconds: no warning about the length of a clip
     for index, beat in enumerate(beats):
         scene = Scene(index, beat, release, photos.get(index), False, 0.0, 10.0)   # a 10-second scene
         count = max(1, len(scene.photos))
@@ -1154,6 +1174,8 @@ def stills(beats, release, photos, out):
     sheet = Image.new("RGB", (columns * 415 + 10, rows * 730 + 10), "#000000")
     for index, tile in enumerate(tiles):
         sheet.paste(tile, (10 + index % columns * 415, 10 + index // columns * 730))
+    close_clips()
+    CLIP_WARN[0] = True
     sheet.save(out / "sheet.jpg", quality=85)
     # The list of edits, scene by scene: the owner answers with "cảnh 5 đổi sang kiểu …" (names: news/edits.py).
     lines = edit_list(beats, photos, "paper" if style.grain else "news")

@@ -13,6 +13,7 @@ import sys
 from PIL import Image, ImageOps
 
 from .captions import caption_path, check as check_caption
+from .clips import Clip
 from .edits import cut_problems, move_problems
 from .sources import Release
 from .story import Beat
@@ -23,7 +24,7 @@ STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "sce
 STYLES = ("news", "paper", "story")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start"}
 FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
@@ -151,6 +152,10 @@ def check_photo(photo, where, searches):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
     if "depth" in photo and not isinstance(photo["depth"], bool):
         problems.append(f'{where}: "depth" must be true or false (false: a flat picture such as a document), got {photo["depth"]!r}')
+    if "start" in photo and (not isinstance(photo["start"], (int, float)) or isinstance(photo["start"], bool)
+                             or photo["start"] < 0):
+        problems.append(f'{where}: "start" (seconds into a clip where it begins to play) must be a number from 0, '
+                        f'got {photo["start"]!r}')
     if "tone" in photo and photo["tone"] not in TONES:
         problems.append(f'{where}: "tone" must be one of {", ".join(TONES)}, got {photo["tone"]!r}')
     problems += move_problems(photo, where)
@@ -274,7 +279,8 @@ def found_pictures(data, pictures):
     searches = data.get("searches", [])
     problems = []
     for number, scene in enumerate(data["scenes"], 1):
-        for pick in (item["pick"] for item in picks_of(scene)):
+        for item in picks_of(scene):
+            pick = item["pick"]
             k, n = map(int, PICK.match(pick).groups())
             group = groups.get(k)
             if group is None:
@@ -288,6 +294,11 @@ def found_pictures(data, pictures):
             elif n > len(group["results"]):
                 problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
                                 f"pictures found by search {k}")
+            elif "start" in item and not group["results"][n - 1].get("clip"):
+                problems.append(f'scene {number}: picture {pick} has "start", but it is a still picture, not a clip')
+            elif group["results"][n - 1].get("clip") and item.get("start", 0) >= group["results"][n - 1]["seconds"]:
+                problems.append(f'scene {number}: picture {pick}: "start" {item["start"]} is past the end of the '
+                                f'clip ({group["results"][n - 1]["seconds"]} s)')
     if isinstance(data.get("music"), dict):
         k, n = map(int, PICK.match(data["music"]["pick"]).groups())
         group = groups.get(k)
@@ -359,12 +370,17 @@ def load_story(path, pictures=None):
             photos[index] = []
             for pick in picks:
                 entry = found[pick["pick"]]
-                with Image.open(Path(pictures) / entry["file"]) as original:
-                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), pick.get("tone", "color"))
+                clip = Clip(Path(pictures) / entry["clip"], pick.get("start", 0.0)) if entry.get("clip") else None
+                if clip:   # the still is the clip's first frame shown, so that a still preview matches the video
+                    image = toned(clip.at(0.0).copy(), pick.get("tone", "color"))
+                else:
+                    with Image.open(Path(pictures) / entry["file"]) as original:
+                        image = toned(ImageOps.exif_transpose(original).convert("RGB"), pick.get("tone", "color"))
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                           pick.get("fit", "cover"), pick.get("move", ""), pick.get("depth", True)))
+                                           pick.get("fit", "cover"), pick.get("move", ""),
+                                           pick.get("depth", True) and not clip, clip, pick.get("tone", "color")))
     return release, beats, photos
 
 

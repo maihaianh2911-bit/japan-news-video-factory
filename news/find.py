@@ -16,7 +16,8 @@ For every entry of "searches" not searched before:
   credited on screen and in credits.txt.
 - "url:<picture address> [<page address>]": that one picture.
 - "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
-  video, owner 16/11/2026), credited as 元動画 (the source video).
+  video, owner 16/11/2026), credited as 元動画 (the source video). "file:stories/media/<story>/<name>.mp4" is a moving
+  picture, a clip of the source video (news/clips.py): copied as <k>-1.mp4 beside a still of its middle, <k>-1.jpg.
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
   12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence.
 
@@ -46,6 +47,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import sys
 import threading
 import time
@@ -655,6 +657,7 @@ def music_find(query, k, out):
 
 
 REPO = Path(__file__).resolve().parent.parent
+CLIP_SUFFIXES = (".mp4", ".mov", ".m4v", ".webm")
 
 
 def file_find(path, k, out):
@@ -662,6 +665,14 @@ def file_find(path, k, out):
     source = (REPO / path).resolve()
     if not str(source).startswith(str((REPO / "stories" / "media").resolve()) + "/") or not source.is_file():
         raise ValueError(f"file: must name a picture under stories/media/, got {path!r}")
+    if source.suffix.lower() in CLIP_SUFFIXES:   # a moving picture (news/clips.py): the clip and a still of it
+        from .clips import probe, still
+        width, height, seconds = probe(source)
+        shutil.copyfile(source, out / f"{k}-1{source.suffix.lower()}")
+        still(source, seconds / 2, out / f"{k}-1.jpg")
+        return [{"title": source.name, "page": "", "width": width, "height": height, "license": "",
+                 "license_url": "", "artist": "元動画", "description": f"clip from the source video: {path}",
+                 "file": f"{k}-1.jpg", "clip": f"{k}-1{source.suffix.lower()}", "seconds": round(seconds, 2)}]
     with Image.open(source) as original:
         picture = original.convert("RGB")
     picture.thumbnail((LARGEST, LARGEST))
