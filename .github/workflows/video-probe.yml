@@ -11,7 +11,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - run: |
-          pip install -q -U "yt-dlp[default]" && command -v ffmpeg
+          pip install -q -U "yt-dlp[default]"
+          command -v ffmpeg || (timeout 240 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg >/dev/null) || true
           curl -fsSL https://deno.land/install.sh | sh -s -- -y >/dev/null 2>&1 || true
           echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
       - name: YouTube with other players
