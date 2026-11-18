@@ -264,14 +264,9 @@ jobs:
         if: matrix.mode != 'caption'
         run: |
           python -m pip install -r requirements.txt
-          # a slow package mirror once held this step for over 15 minutes: give up on a try after a few minutes
-          for try in 1 2 3; do
-            timeout 240 sudo apt-get update -qq -o Acquire::Retries=3 -o Acquire::http::Timeout=30 \
-              && timeout 420 sudo apt-get install -y -qq -o Acquire::Retries=3 -o Acquire::http::Timeout=30 ffmpeg fonts-noto-cjk \
-              && break
-            echo "::warning::apt try $try failed or timed out, trying again"; sleep 10
-          done
-          command -v ffmpeg >/dev/null
+          # ffmpeg and the Noto CJK fonts: one short apt try, else the same from GitHub (on 18/11/2026 the package
+          # mirror held this step for 21 minutes, three apt tries, and the runs of the new channels failed)
+          bash tools/install_deps.sh
       - name: Mô hình chấm điểm ảnh
         # the CLIP weights (600 MB) of the picture ranking, kept between runs
         if: steps.plan.outputs.rank == 'yes'
