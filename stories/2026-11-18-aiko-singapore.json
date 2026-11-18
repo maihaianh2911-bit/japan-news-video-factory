@@ -155,17 +155,9 @@
             0.4
           ],
           "move": "push-in"
-        },
-        {
-          "pick": "24-1",
-          "focus": [
-            0.5,
-            0.4
-          ],
-          "move": "hold"
         }
       ],
-      "why": "Hoàng cung, ảnh công chúa vẫy tay qua cửa xe, rồi đoạn phim vẫy tay.",
+      "why": "Hoàng cung, rồi ảnh công chúa vẫy tay qua cửa xe (đoạn phim trong xe quá mờ nên bỏ).",
       "cut": "fade"
     },
     {
@@ -548,7 +540,8 @@
             0.0,
             0.4
           ],
-          "move": "hold"
+          "move": "hold",
+          "start": 1.5
         },
         {
           "pick": "37-1",
@@ -590,13 +583,12 @@
           "start": 0.3
         },
         {
-          "pick": "58-1",
+          "pick": "38-1",
           "focus": [
-            0.45,
+            0.62,
             0.4
           ],
-          "move": "hold",
-          "start": 6.3
+          "move": "hold"
         },
         {
           "pick": "23-1",
