@@ -11,7 +11,7 @@
 - Cảnh 9 · 日の丸を掲げた車で · ảnh 1: hold · ảnh 2: hold · ảnh 3: hold · vào cảnh: dip · vì: Đoàn xe ở Changi, xe có cảnh sát dẫn đường, xe cắm cờ Nhật.
 - Cảnh 10 · 紫陽花とランの花束 · ảnh 1: hold · ảnh 2: hold · ảnh 3: hold · ảnh 4: hold · vào cảnh: fade · vì: Xuống xe, nhận hoa, cười rạng rỡ, rồi hoa cẩm tú cầu hồng.
 - Cảnh 11 · 万博で案内した 大使との再会 · ảnh 1: push-in · ảnh 2: hold · ảnh 3: pull-back · vào cảnh: dip · vì: Quay lại Expo năm ngoái: công chúa được dẫn thăm gian Singapore (ảnh, đoạn phim, ảnh toàn cảnh).
-- Cảnh 12 · 笑顔で言葉を交わす · ảnh 1: push-in · ảnh 2: hold · ảnh 3: hold · vào cảnh: dip · vì: Đi cùng người phụ nữ dẫn đường, rồi hai đoạn cười nói không cần phiên dịch.
+- Cảnh 12 · 笑顔で言葉を交わす · ảnh 1: push-in · ảnh 2: hold · vào cảnh: dip · vì: Đi cùng người phụ nữ dẫn đường, rồi đoạn phim công chúa cười nói không cần phiên dịch.
 - Cảnh 13 · 愛子さまの名を持つランへ · ảnh 1: pan-right · ảnh 2: hold · ảnh 3: hold · ảnh 4: hold · vào cảnh: page · vì: Vườn lan quốc gia, hoa lan, nụ cười ở Singapore, kết bằng nụ cười ở Haneda.
 
 Các kiểu chuyển động của ảnh: push-in, pull-back, pan-right, pan-left, rise, fall, close-up, reveal, punch-in, hold.

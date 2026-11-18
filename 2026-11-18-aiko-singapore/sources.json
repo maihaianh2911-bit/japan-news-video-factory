@@ -282,14 +282,6 @@
     },
     {
       "page": "",
-      "title": "n-khach-san.mp4",
-      "creator": "元動画",
-      "license": "",
-      "license_url": "",
-      "edits": "Cropped and animated for the vertical frame"
-    },
-    {
-      "page": "",
       "title": "sg-khong-phien-dich.mp4",
       "creator": "元動画",
       "license": "",
@@ -596,13 +588,12 @@
       "evidence": "",
       "say": [],
       "cut": "dip",
-      "why": "Đi cùng người phụ nữ dẫn đường, rồi hai đoạn cười nói không cần phiên dịch.",
+      "why": "Đi cùng người phụ nữ dẫn đường, rồi đoạn phim công chúa cười nói không cần phiên dịch.",
       "era": "2026年11月17日",
       "quotes": [],
       "image_url": "https://mainichi.jp/graphs/20261117/mpj/00m/040/170000f/20261117mpj00m040161000p",
       "image_urls": [
         "https://mainichi.jp/graphs/20261117/mpj/00m/040/170000f/20261117mpj00m040161000p",
-        "",
         ""
       ]
     },
