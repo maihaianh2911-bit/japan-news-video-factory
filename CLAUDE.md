@@ -122,8 +122,10 @@ ask the owner to allow `main`.
    - `"style": "story"` (trial of 15/11/2026, the owner compares it with `paper`): the old-newspaper page for a
      story told in pictures: the picture fills most of the page, the scene's `era` (`"1921年"`, `"昭和初期"`)
      stands at the top instead of the date, the headline lies on the foot of the picture, the captions are printed
-     on the page. Also usable in any frame: a line `{"text": …, "quote": true}` is printed big over the darkened
-     picture while it is spoken (instead of the caption); a picture `"tone": "sepia"` / `"mono"` / `"color"`
+     on the page. Also usable in any frame: a line `{"text": …, "quote": true}` is printed big on the foot of the
+     picture, over a soft dark band, while it is spoken (instead of the caption); the faces above stay bright
+     (owner, 17/11/2026, and again on 18/11/2026 against printing it on the paper under the picture: "kiểu này thì
+     hợp lí hơn" about `masako-rikon`). Never darken the whole picture; a picture `"tone": "sepia"` / `"mono"` / `"color"`
      (sepia for the old years, colour as the story reaches today); `"music": {"pick": "<k>-<n>", "volume": 1}`
      from a search `music:<words>` (recordings on Wikimedia Commons with a free licence, e.g. `music:Gymnopédie
      Satie piano`; index.json gives title, `seconds` and licence; the piece loops, fades in and out, about 17 dB
