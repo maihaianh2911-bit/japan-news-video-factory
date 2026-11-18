@@ -111,9 +111,22 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
    to pan, too small for a close-up). With `fx`, every picture needs a `move` (the camera rhythm and the depth act
    on named moves only), and every flat picture (document, newspaper page, collage, chart, screenshot) gets
    `"depth": false`: look at each picture you pick and decide.
-5. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
+5. **Picture review (owner, 18/11/2026: "đọc lại hình ảnh đã chọn xem đã phù hợp với nội dung cần thể hiện
+   chưa, chưa thì chọn lại, duyệt lại, khi nào ổn mới lấy").** After the last preview run
+   `python tools/review_picks.py stories/<name>.json <find folder> <stills folder>` and read every row of
+   `review-<n>.jpg` (the frame as seen, the whole picture, the words spoken while it is on screen, its source
+   title and page). A row passes only when all hold:
+   - it shows what those words say at that moment: the person named (check the source title: a picture found
+     under one person can be someone else, e.g. a daughter), the place, the event, the era (no 2020s photo on a
+     1920s line, no other event's photo on "that day");
+   - the main person is whole and seen: face not cut by the crop, not under the headline or the quote;
+   - it is clean and sharp enough: no burnt-in news captions, logos or watermarks, not a small picture blown up;
+   - it is not a near-duplicate of another pick (the same moment from another site).
+   Any row that fails: pick another picture (or append searches, step 2), preview, run the review again. Render
+   only when every row passes, and write in the closing comment "Đã duyệt ảnh: N/N ảnh khớp lời đọc".
+6. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
    script) and check it with `python -m news.captions captions/<name>.txt`; it is published with the video.
-6. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you
+7. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you
    are called at `jnews-check`.)
 
 ## Bảng cách edit (the catalogue of edits)

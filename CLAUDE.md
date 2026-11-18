@@ -204,7 +204,11 @@ ask the owner to allow `main`.
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
    (needs `sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
    folder>`: `git archive origin/renders <name>/find | tar -x -C <dir>`). It also checks the picks against the
-   find `index.json` and lists the scenes without a picture. Then set `stage: "render"` and push.
+   find `index.json` and lists the scenes without a picture. Then **review the pictures** (owner, 18/11/2026):
+   `python tools/review_picks.py stories/<name>.json <find folder> <stills folder>` puts every pick beside the
+   words spoken while it is on screen and its source title; check each row as `AGENT_JNEWS.md` §2 step 5 says
+   (right person, place, event and era for those words; face whole and seen; clean and sharp; no near-duplicate),
+   re-pick and review again until every row passes. Only then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
    `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `caption.txt`
    (the posting caption, see below), `stills/sheet.jpg`, `status.json`. Check the run succeeded and that
