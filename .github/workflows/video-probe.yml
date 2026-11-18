@@ -8,21 +8,46 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - run: pip install -q -U yt-dlp && sudo apt-get install -y -qq ffmpeg >/dev/null
-      - name: Search
+      - run: pip install -q -U yt-dlp && (command -v ffmpeg || (timeout 240 sudo apt-get update -qq && timeout 300 sudo apt-get install -y -qq ffmpeg >/dev/null)); command -v ffmpeg; yt-dlp --version
+      - name: Other sites (pages found by a Bing video search)
+        shell: python
         run: |
-          for q in "愛子さま シンガポール 羽田" "愛子さま シンガポール 到着" "愛子さま シンガポール 花束" "Princess Aiko Singapore"; do
+          import re, subprocess, urllib.parse, urllib.request, html
+          seen = []
+          for q in ["愛子さま シンガポール 羽田 出発", "愛子さま シンガポール 到着 ホテル", "愛子さま シンガポール 花束", "Princess Aiko Singapore arrives"]:
+              url = "https://www.bing.com/videos/search?" + urllib.parse.urlencode({"q": q, "qft": "+filterui:videoage-lt10080"})
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36", "Accept-Language": "ja,en;q=0.8"})
+              try:
+                  page = html.unescape(urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "replace"))
+              except Exception as e:
+                  print("bing failed", q, e); continue
+              links = re.findall(r'"(?:murl|pgurl|purl)":"(https?://[^"]+)"', page) + re.findall(r'href="(https?://(?!www\.bing|go\.microsoft)[^"]+)"', page)
+              print("===", q, len(links), "links")
+              for link in links:
+                  if link not in seen and "bing.com" not in link and "microsoft" not in link:
+                      seen.append(link)
+          for link in seen[:40]:
+              print("-", link)
+          tried = 0
+          for link in seen:
+              if "youtube.com" in link or "youtu.be" in link or tried >= 12:
+                  continue
+              tried += 1
+              r = subprocess.run(["yt-dlp", "--simulate", "--no-warnings", "--print", "%(extractor)s | %(duration)s s | %(height)sp | %(title)s", link],
+                                 capture_output=True, text=True, timeout=90)
+              print("TRY", link, "->", (r.stdout.strip() or r.stderr.strip().splitlines()[-1:] or ["?"])[0][:200])
+      - name: YouTube
+        run: |
+          for q in "愛子さま シンガポール 羽田" "愛子さま シンガポール 到着"; do
             echo "=== $q"
-            yt-dlp "ytsearch12:$q" --flat-playlist --print "%(id)s | %(duration)s s | %(channel)s | %(title)s" 2>&1 | head -14 || true
+            yt-dlp "ytsearch8:$q" --flat-playlist --print "%(id)s | %(duration)s s | %(channel)s | %(title)s" 2>&1 | head -10 || true
           done
-      - name: Download test
-        run: |
           id=$(yt-dlp "ytsearch1:愛子さま シンガポール 羽田" --flat-playlist --print "%(id)s" 2>/dev/null | head -1)
-          echo "first: $id"
-          yt-dlp -f "bv*[height<=1080][ext=mp4]/bv*[height<=1080]" --download-sections "*0-15" -o "t1.%(ext)s" "https://www.youtube.com/watch?v=$id" 2>&1 | tail -6 || true
-          ls -la t1.* 2>/dev/null && ffprobe -v error -show_entries stream=width,height -of csv t1.* || echo "download failed"
-          echo "--- with another player"
-          yt-dlp --extractor-args "youtube:player_client=tv,web_safari" -f "bv*[height<=1080]" --download-sections "*0-15" -o "t2.%(ext)s" "https://www.youtube.com/watch?v=$id" 2>&1 | tail -6 || true
-          ls -la t2.* 2>/dev/null || echo "download 2 failed"
+          yt-dlp -f "bv*[height<=1080]" --download-sections "*0-15" -o "t1.%(ext)s" "https://www.youtube.com/watch?v=$id" 2>&1 | tail -4 || true
+          ls -la t1.* 2>/dev/null || echo "youtube download failed"
+      - name: X (Twitter) and TikTok
+        run: |
+          yt-dlp --simulate --print "%(extractor)s | %(duration)s | %(title)s" "https://x.com/kunaicho_jp/media" 2>&1 | tail -3 || true
+          yt-dlp --simulate --flat-playlist --print "%(url)s" "https://www.tiktok.com/tag/愛子さま" 2>&1 | tail -3 || true
