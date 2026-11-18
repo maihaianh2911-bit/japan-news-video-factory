@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 30,
   "title": "木村拓哉と工藤静香の結婚",
   "date": "2026-11-18",
@@ -37,7 +37,13 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano",
-    "music:Schumann Träumerei piano"
+    "music:Schumann Träumerei piano",
+    "file:stories/media/2026-11-18-kimura-kudo/hook.jpg",
+    "web:木村拓哉 若い頃 1990年代 => portrait photo of a handsome young Japanese man with long brown hair",
+    "web:工藤静香 若い頃 1980年代 => portrait photo of a beautiful young Japanese woman with long hair",
+    "web:木村拓哉 工藤静香 若い頃 => portraits of a young Japanese man and a young Japanese woman side by side",
+    "wiki:木村拓哉",
+    "wiki:工藤静香"
   ],
   "scenes": [
     {
@@ -388,5 +394,11 @@
   ],
   "music": {
     "pick": "27-1"
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
   }
 }
