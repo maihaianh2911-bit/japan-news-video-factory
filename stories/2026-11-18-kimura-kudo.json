@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 30,
   "title": "木村拓哉と工藤静香の結婚",
   "date": "2026-11-18",
@@ -54,7 +54,34 @@
           "text": "そして、その選択は正しかったのです。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-2",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-10",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.6,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Câu mở: Kimura và Kudo bên nhau thời mới yêu (khoảng năm 2000), hai người sánh bước, rồi cả gia đình hôm nay — lựa chọn đã đúng."
     },
     {
       "label": "2000年",
@@ -66,7 +93,35 @@
           "say": "2000年11月、人気絶頂の、スマップ、きむらたくやさん、28歳。恋人の、くどうしずかさんの妊娠が報じられます。"
         },
         "当時、ジャニーズの現役トップアイドルが結婚した例は、ほとんどありませんでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-5",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.7,
+            0.3
+          ],
+          "move": "punch-in"
+        },
+        {
+          "pick": "3-10",
+          "focus": [
+            0.75,
+            0.0
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Kimura 28 tuổi trên tấm lót tour SMAP 2000, trang báo giật tít Kudo mang thai, rồi lia qua 5 thần tượng SMAP.",
+      "cut": "fade"
     },
     {
       "label": "発表",
@@ -81,7 +136,37 @@
           "text": "会見には、300人を超える取材陣が詰めかけました。",
           "say": "会見には、300人を超える、しゅざいじんが詰めかけました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-3",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-12",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in",
+          "tone": "mono",
+          "fit": "contain"
+        }
+      ],
+      "why": "Họp báo tháng 11/2000: cận mặt Kimura tự nói, lùi ra thấy rừng micro phóng viên, rồi ảnh đen trắng cả hai trước báo chí.",
+      "cut": "fade"
     },
     {
       "label": "反発",
@@ -96,7 +181,35 @@
           "text": "彼女のイベント会場には、爆破予告や殺害予告まで届いたといいます。",
           "say": "彼女のイベント会場には、ばくはよこくや、さつがいよこくまで届いたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-7",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-11",
+          "focus": [
+            0.7,
+            0.35
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.1,
+            0.55
+          ],
+          "move": "punch-in"
+        }
+      ],
+      "why": "Bà Mary Kitagawa, Kudo bị theo dõi khi ra phố cùng Kimura, rồi giật vào lịch dinner show năm 2000 của Kudo — nơi nhận lời đe dọa.",
+      "cut": "fade"
     },
     {
       "label": "HERO",
@@ -108,7 +221,35 @@
           "text": "翌月、木村さん主演のドラマ「HERO」がスタート。平均視聴率は34.3%、月9ドラマの歴代最高を記録します。",
           "say": "翌月、きむらさん主演のドラマ、ヒーローがスタート。平均視聴率は、さんじゅうよんてんさんパーセント、げつくドラマの歴代最高を記録します。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-3",
+          "focus": [
+            0.2,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-2",
+          "focus": [
+            0.85,
+            0.6
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "12-3",
+          "focus": [
+            0.47,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Báo 6/12/2000 đưa tin hai người đăng ký kết hôn kèm bản fax viết tay, rồi ảnh quảng bá và cảnh phim 「HERO」 2001.",
+      "cut": "fade"
     },
     {
       "label": "メリー",
@@ -123,7 +264,35 @@
           "text": "はじめは結婚に反対していたメリーさんも、やがて工藤さんを家族同然に迎え入れました。",
           "say": "はじめは結婚に反対していたメリーさんも、やがて、くどうさんを、家族同然に迎え入れました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-5",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-8",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "15-8",
+          "focus": [
+            0.5,
+            0.15
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Kudo đầu những năm 2000, bà Mary hiền hậu, rồi Kudo tươi cười — từ đối đầu thành người nhà.",
+      "cut": "fade"
     },
     {
       "label": "娘たち",
@@ -134,7 +303,35 @@
           "text": "2003年には次女も誕生。今、長女のCocomiさんはフルート奏者として、次女のKoki,さんはモデルとして活躍しています。",
           "say": "2003年には次女も誕生。今、長女の、ここみさんは、フルート奏者として、次女の、こうきさんは、モデルとして活躍しています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-12",
+          "focus": [
+            0.5,
+            0.55
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "19-5",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Kudo với hai con gái nhỏ, Cocomi cầm sáo flute, Koki trên sàn diễn Chanel.",
+      "cut": "fade"
     },
     {
       "label": "今",
@@ -149,7 +346,47 @@
           "text": "仕事も、愛も手に入れた木村拓哉さん。本当に、おめでとうございます。",
           "say": "仕事も、愛も手に入れた、きむらたくやさん。本当に、おめでとうございます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "1-3",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.62,
+            0.45
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "2-6",
+          "focus": [
+            0.0,
+            0.55
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hôm nay: story Instagram Kimura chúc mừng sinh nhật vợ, ảnh hai vợ chồng tựa vai, Kimura trên bìa tạp chí 2025, kết bằng hai người cười bên nhau.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "27-1"
+  }
 }
