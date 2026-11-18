@@ -9,17 +9,25 @@
   },
   "photos": [
     {
-      "page": "https://www.jprime.jp/articles/-/36832?display=b",
-      "title": "木村拓哉&工藤静香夫妻、愛犬散歩の“おそろい投稿”に「2ショット ...",
-      "creator": "jprime.jp",
+      "page": "",
+      "title": "hook.jpg",
+      "creator": "元動画",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
     },
     {
-      "page": "https://friday.kodansha.co.jp/article/161222/photo/57ae7c37",
-      "title": "フォトギャラリー11枚目 木村拓哉＆工藤静香 ステキすぎる夫婦の ...",
-      "creator": "friday.kodansha.co.jp",
+      "page": "https://www.bizilabe.elhuyar.eus/Kazuhiro-Arakawa-Inoue/4524614/",
+      "title": "昔のキムタクはなぜ神格化されるのか？全盛期の伝説と色褪せない魅力",
+      "creator": "bizilabe.elhuyar.eus",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://twilight-tasogare.hatenablog.com/entry/2025/04/24/070000",
+      "title": "特選】おニャン子メンバーで唯一本格的なアーチストだった工藤 ...",
+      "creator": "twilight-tasogare.hatenablog.com",
       "license": "",
       "license_url": "",
       "edits": "Cropped and animated for the vertical frame"
@@ -232,16 +240,17 @@
         "そして、その選択は正しかったのです。"
       ],
       "cut": "",
-      "why": "Câu mở: Kimura và Kudo bên nhau thời mới yêu (khoảng năm 2000), hai người sánh bước, rồi cả gia đình hôm nay — lựa chọn đã đúng.",
+      "why": "Mở đầu bằng chân dung thời trẻ dễ nhận ra của hai người (ảnh chủ kênh gửi), rồi từng người lúc trẻ, khép câu mở bằng ảnh cả nhà bốn người hôm nay.",
       "era": "2000年〜",
       "quotes": [
         0,
         1
       ],
-      "image_url": "https://www.jprime.jp/articles/-/36832?display=b",
+      "image_url": "",
       "image_urls": [
-        "https://www.jprime.jp/articles/-/36832?display=b",
-        "https://friday.kodansha.co.jp/article/161222/photo/57ae7c37",
+        "",
+        "https://www.bizilabe.elhuyar.eus/Kazuhiro-Arakawa-Inoue/4524614/",
+        "https://twilight-tasogare.hatenablog.com/entry/2025/04/24/070000",
         "https://nishispo.nishinippon.co.jp/article/992280"
       ]
     },
