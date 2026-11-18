@@ -535,25 +535,16 @@
           "move": "push-in"
         },
         {
-          "pick": "63-1",
-          "focus": [
-            0.0,
-            0.4
-          ],
-          "move": "hold",
-          "start": 1.5
-        },
-        {
           "pick": "37-1",
           "focus": [
             0.0,
             0.4
           ],
           "move": "hold",
-          "start": 1.0
+          "start": 0.3
         }
       ],
-      "why": "Đi cùng người phụ nữ dẫn đường, rồi hai đoạn cười nói không cần phiên dịch.",
+      "why": "Đi cùng người phụ nữ dẫn đường, rồi đoạn phim công chúa cười nói không cần phiên dịch.",
       "cut": "dip"
     },
     {
