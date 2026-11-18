@@ -6,6 +6,7 @@
 > would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
 > issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
 > owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
+> (3) **Vertical, 80–160 seconds** (owner, 18/11/2026: all channels): write the script for that length.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
 result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星, captions timed to the
