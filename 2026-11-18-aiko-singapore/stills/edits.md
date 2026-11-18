@@ -1,7 +1,7 @@
 # Cách edit từng cảnh
 
 - Cảnh 1 · 母の名のランから 自分の名のランへ · ảnh 1: push-in · ảnh 2: hold · ảnh 3: hold · ảnh 4: hold · vì: Ảnh công chúa cười trong bộ đồ tím nhạt (chữ lớn nằm dưới), rồi ba đoạn phim cười ở Haneda nối nhau.
-- Cảnh 2 · 皇居を出発 · ảnh 1: pan-right · ảnh 2: push-in · ảnh 3: hold · vào cảnh: fade · vì: Hoàng cung, ảnh công chúa vẫy tay qua cửa xe, rồi đoạn phim vẫy tay.
+- Cảnh 2 · 皇居を出発 · ảnh 1: pan-right · ảnh 2: push-in · vào cảnh: fade · vì: Hoàng cung, rồi ảnh công chúa vẫy tay qua cửa xe (đoạn phim trong xe quá mờ nên bỏ).
 - Cảnh 3 · 国交樹立60周年 2度目の外国公式訪問 · ảnh 1: hold · ảnh 2: push-in · ảnh 3: hold · vào cảnh: page · vì: Cờ Singapore bay, Tổng thống Tharman, bờ biển Singapore.
 - Cảnh 4 · 国花は 淡い紫色のラン · ảnh 1: hold · ảnh 2: hold · ảnh 3: pull-back · vào cảnh: fade · vì: Hai đoạn phim hoa lan tím nhạt, rồi ảnh cận hoa lan Vanda Miss Joaquim.
 - Cảnh 5 · 三日月のような 真珠のブローチ · ảnh 1: hold · ảnh 2: hold · vào cảnh: fade · vì: Cận chiếc trâm ngọc trai, rồi trăng khuyết trên quốc kỳ.
