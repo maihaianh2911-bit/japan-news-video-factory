@@ -9,8 +9,8 @@
    line of this channel's earlier videos); after the voice step, read the real length of the speech (the machine
    comment gives it). If the video would be under 60 seconds, **write the script longer** (more true facts and
    detail on the same subject, in the owner's tone, nothing invented) until it passes 60 seconds, tell the owner on
-   the issue what was added, and only then go on. This is the one exception to "never change the owner's script".
-   Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
+   the issue what was added, and only then go on (a script may be changed for this as for any improvement, see the
+   rule changes of 19/11/2026). Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
    or the issue title or notes say `thử`, `mẫu`, `test` or `demo`.
 3. **Every video is vertical (1080×1920), longer than 61 seconds and at most 160 seconds** (owner, 18/11/2026:
    "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
@@ -18,12 +18,36 @@
    61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
    Trial or sample videos are the exception, as in rule 2.
 
+## The owner's rule changes of 19/11/2026 — they win over any older sentence in this file or in `AGENT_JNEWS.md`
+The owner read the list of the hard rules and said of six of them "mấy cái này ko hợp lí", then chose what replaces
+each (the same in every repo of the owner's Japanese channels):
+1. **A script the owner sends may be improved** (owner: "Sửa cả kịch bản tao gửi"): Claude may cut, add and rewrite
+   it so that it is better and more gripping (the writing rules of "When the owner sends an original video" apply
+   to it too), keeping the owner's story and main idea. It is no longer translated sentence by sentence and left
+   as it is. Say in the chat or on the issue what was changed.
+2. **Rumours and unconfirmed details may be told on every channel** (owner: "Dùng tin đồn ở mọi kênh"): framed as
+   told at the key line (「…と噂されています」, 「…といいます」, 「週刊誌によると」), and the posting caption says so in a ※
+   note (which part is a rumour, what is known).
+3. **The telling may be dramatised** (owner: "Thêm thắt cho kịch tính"): feelings, a narrator's lead-in, suspense,
+   the order of the telling. The one line that stays: an event or a quote of a real person is never made up and
+   told as a fact.
+4. **The ending is free** (owner: "Tự do, miễn hay"): whatever ends this story best — a line that stays, a last
+   surprising detail, a return to the opening, a question to the viewer, a lead to the next video. No fixed form,
+   and not the same one on every video.
+5. **The voice and the music of a video the owner sends may be used**, as its pictures and footage are (owner:
+   "Được dùng cả nhạc và giọng"). The owner was told the risk: music under copyright is recognised by YouTube
+   (a muted video, lost revenue, a strike), and the more of the source a video carries, the more it counts as
+   reused content. The engine cannot put a sound of the source into a video yet (its music comes from a `music:`
+   search, its voice from VOICEVOX): like moving footage, that needs new code and a trial the owner approves.
+6. **Pictures a scene** (owner: "nếu nội dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"): a
+   scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
+   (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
+
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
-picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (exceptions: iron rule 2 below, a script too short for 60 seconds; and the words of a
-source video, which are rewritten, see "When the owner sends an original video"), quality is not
-traded for usage).
+picture, quality is not traded for usage; a script the owner sends was translated faithfully and never cut or
+rewritten until 19/11/2026: it may now be improved, rule change 1 above).
 
 This repo makes vertical Japanese news shorts (1080×1920): news frame, VOICEVOX voice 青山龍星, captions timed to
 the voice. The daily schedule is off (owner, 12/11/2026). Since 13/11/2026 it works like the owner's other channels:
@@ -67,8 +91,9 @@ kèm caption cho mỗi video"):
 2. Rewrite it in Japanese, lightly: the same story and facts in the same order of scenes, but our own sentences,
    more gripping. Open with one hook line printed big (`"quote": true`, e.g. 「夫の葬儀にさえ、参列を許されなかった
    妃がいる。」), keep the rhythm tight, end with a line that stays. You may cut repetition and add a few true,
-   well-known details on the same subject (dates, ages, what became of a person); never invent, never change a
-   fact or a quote of the source. Keep the quotes of the people as they are. Read it fast like the source:
+   well-known details on the same subject (dates, ages, what became of a person); never make up an event or a
+   quote of a real person and tell it as a fact (the telling may be dramatised, a rumour told as one: rule
+   changes 2 and 3 above). Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
    characters a second at speed 1.0 plus the pauses (iron rule 3: over 61 s, at most 160 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
@@ -76,9 +101,9 @@ kèm caption cho mỗi video"):
    - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
      remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
      この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
-     優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story, and end on a line that
-     comes back to the opening (not a question to the viewer) by a new fact or turn, never by saying the opening
-     again.
+     優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story. The ending is free (owner,
+     19/11/2026: "Tự do, miễn hay"; before: back to the opening, never a question): the line that ends this story
+     best, by a new fact or turn, never by saying the opening again.
    - **Every sentence says something new** (owner, 19/11/2026: "mỗi câu đều phải có ý nghĩa, không lặp đi lặp lại").
      No sentence repeats an idea already said: the body does not tell the hook again, the end does not sum up the
      hook, no filler such as 「だからこそ…わかったのでしょう」 or a line that only restates feelings. Before showing a
@@ -101,8 +126,9 @@ kèm caption cho mỗi video"):
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
-   searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures per scene.
-   **The pictures and the footage of a video the owner sends may be used** (owner, 16/11/2026: "lấy cái nào
+   searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
+   6 seconds of words (1 is enough under that, rule change 6).
+   **The pictures and the footage of a video the owner sends may be used, its voice and music too** (owner, 16/11/2026: "lấy cái nào
    đẹp"; 19/11/2026, for every repo: "nếu repo nào đc dựng bằng cách remix video hoặc tao có gửi video, có thể
    sử dụng hình ảnh/video trong video tao gửi"). The owner's video is a picture source like the searches:
    `python tools/video_frames.py <video> <story>` lays out one frame of every shot on a numbered sheet (look at
@@ -111,7 +137,8 @@ kèm caption cho mỗi video"):
    logo or watermark over the picture is cropped clean (`--crop` also cuts an inset picture out of its blurred
    background) or left. Prefer a web copy of the same picture when it is larger. Moving footage (a clip inside a
    scene) is allowed by the owner too, but the frames of this engine show still pictures only: a clip needs new
-   frame code and a trial the owner approves first; until then take stills. Never the source's voice or music.
+   frame code and a trial the owner approves first; until then take stills. The source's voice and music are
+   allowed since 19/11/2026 as well (rule change 5: the risk was told, and the engine cannot do it yet).
    Names the voice may misread get a `say` in kana.
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
@@ -130,8 +157,8 @@ ask the owner to allow `main`.
      none), `stage: "find"`, `issue` (the issue number: the workflow then moves its labels, comments and calls
      Claude after each step).
    - `scenes`: one idea each. `label` (short tag), `headline` (≤ 2 lines, `\n` between; longer ones get a smaller
-     font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — every sentence of the
-     owner's script, nothing added), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
+     font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — the
+     owner's script as improved, rule change 1), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
      Where they appear: on a picture scene, headline, then value, then evidence under each other below the picture
      (evidence only if it fits above the captions — the preview prints a warning when it does not); on a text card
      (no picture), headline, value, then evidence. A card shows nothing else: no title, so give a text card an
@@ -251,8 +278,8 @@ ask the owner to allow `main`.
    "<one short Vietnamese sentence>"` in the scene, from the table "Bảng cách edit" in `AGENT_JNEWS.md` (moves:
    `push-in`, `pull-back`, `pan-right`, `pan-left`, `rise`, `fall`, `close-up`, `reveal`, `punch-in`, `hold`;
    cuts: `fade`, `page`, `hard`, `dip`). Without them the old automatic choice stays. The preview prints the list
-   of edits and writes it to `edits.md`. Owner, 14/11/2026: give each scene 2 pictures (a new picture every
-   4–5 seconds); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
+   of edits and writes it to `edits.md`. Owner, 19/11/2026: a scene over 6 seconds of words gets 2 pictures, under
+   that 1 is enough (14/11/2026: a new picture every 4–5 seconds; two a scene until 19/11); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
    slides in, captions fade in, scenes change with a cross-fade (`news`) or a page turn plus film grain (`paper`). Preview before rendering:
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
    (needs `sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
@@ -278,7 +305,10 @@ Each video has `captions/<name>.txt` beside the story (UTF-8, Japanese, ≤ 2000
    line 1 a hook title (≤ 80 characters, true to the script), then 2–4 short sentences on the video, a blank line,
    one line of 5–8 hashtags (`#皇室 #昭和 #歴史 #shorts` as fitting), a blank line, and the credit line
    `画像出典: <元動画 when source-video pictures are used>、<main sites> ほか（写真・音楽の全出典は credits.txt）`.
-   Only facts of the script. `python -m news.captions captions/<name>.txt` checks it (`python -m news.custom` too).
+   Only facts of the script. **A video that tells a rumour gets a correction note** (owner, 19/11/2026): 1–3 lines
+   starting with ※, between the sentences and the hashtags, saying which part is a rumour and what is known, e.g.
+   `※〇〇という話は、一部で噂として伝えられているもので、事実とは確認されていません。`
+   `python -m news.captions captions/<name>.txt` checks it (`python -m news.custom` too).
 The render publishes it as `renders/<name>/caption.txt` beside `video.mp4`. A push that changes only the caption
 (the story file unchanged) does not voice, search or render again: the workflow only adds `caption.txt` to the
 finished folder (`tools/publish.sh` with `PUBLISH_MODE=add`, which leaves `video.mp4` and the rest as they are).

@@ -24,6 +24,17 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
+## Ghi chú 19/11/2026: chủ kênh đổi 6 luật
+
+Chủ kênh đọc danh sách luật cứng và thấy mấy luật "ko hợp lí", rồi chọn lại như sau (áp dụng cho mọi kênh tiếng Nhật):
+
+1. **Kịch bản chủ kênh gửi:** Claude được cắt, thêm, viết lại cho hay và cuốn hơn, giữ ý chính (trước: dịch sát, không sửa).
+2. **Tin đồn:** kênh nào cũng được kể tin đồn và chi tiết chưa xác nhận, có câu kiểu "nghe nói" trong lời đọc và ghi chú đính chính (※) ở caption.
+3. **Thêm thắt cho kịch tính:** được thêm cảm xúc, lời dẫn, cách kể. Điều duy nhất còn cấm: dựng ra sự kiện hay câu nói của người thật rồi kể như thật.
+4. **Câu kết:** tự do, miễn hay (trước: phải quay về câu mở đầu, không được hỏi người xem).
+5. **Giọng và nhạc của video chủ kênh gửi:** được dùng. Rủi ro đã nói: nhạc có bản quyền dễ bị YouTube nhận ra (tắt tiếng, mất tiền quảng cáo, gậy), và dùng càng nhiều của video gốc thì càng dễ bị coi là "nội dung dùng lại". Máy dựng hiện chưa chèn được tiếng của video gốc: phải làm thêm và có bản thử cho chủ kênh duyệt.
+6. **Số ảnh mỗi cảnh:** cảnh dài hơn 6 giây thì phải có 2 ảnh, dưới 6 giây thì 1 ảnh cũng được (trước: cảnh nào cũng 2 ảnh).
+
 ## Ghi chú 19/11/2026: tìm ảnh rộng hơn, và bớt báo đỏ giả
 
 Chủ kênh hỏi "có cách nào để tìm hình ảnh mở rộng ra ko" và chọn làm cả ba hướng; thêm ý "video tao gửi thì được dùng hình ảnh/video trong đó".

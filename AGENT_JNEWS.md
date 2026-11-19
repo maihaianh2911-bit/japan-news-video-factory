@@ -57,9 +57,11 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
 - Real pictures only, never AI pictures. You look at every picture yourself.
 - Pictures may come from anywhere on the web (owner, 14/11/2026, risk accepted): `web:` searches (`CLAUDE.md` step
   1) next to Commons ones. Skip pictures with a watermark, a logo or text burnt in, or a small blurred copy.
-- The script is the owner's and is approved: translate it faithfully into Japanese (a Japanese script: the owner's
-  words exactly), sentence by sentence. Do not cut, add, reorder or correct anything, and do not ask for another
-  approval. Only write proper names the canonical way.
+- The script is the owner's: put it into Japanese and **improve it** (owner, 19/11/2026: "Sửa cả kịch bản tao gửi";
+  before: translated faithfully, nothing cut or added). You may cut, add, reorder and rewrite so that it is better
+  and more gripping, keeping the owner's story and main idea; rumours may be told as rumours and the telling
+  dramatised, but no event or quote of a real person is made up and told as a fact (`CLAUDE.md`, the rule changes
+  of 19/11/2026). Say on the issue what you changed. Write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
 - How to write the searches (17/11/2026; syntax in `CLAUDE.md` step 1), in this order:
@@ -80,8 +82,9 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
      the pictures that show it, best first (`"web:寛仁親王 若い頃 => a young man with a beard"`). Plain Commons words
      bring off-topic pictures easily (`Tokyo residential houses` brought two pictures of politicians and
      three covers of old maps among its 8): give such a search a wish, or use `wiki:`.
-- Two pictures per scene (owner, 14/11/2026): a new picture every 4–5 seconds (`"photo"` as a list, `CLAUDE.md`
-  step 3).
+- Two pictures for a scene whose words last over 6 seconds, one is enough under that (owner, 19/11/2026: "nếu nội
+  dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"; two a scene before): `"photo"` as a list,
+  `CLAUDE.md` step 3.
 - Picture effects on (owner, 17/11/2026): every **new** story carries
   `"fx": {"motion": true, "depth": true, "text": true, "face": true}` (camera rhythm, light depth in the pictures,
   text that comes in with the voice and a caption that darkens as it is read, the display typeface; what each does:
