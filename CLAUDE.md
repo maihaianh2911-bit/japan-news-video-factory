@@ -77,7 +77,13 @@ kèm caption cho mỗi video"):
      remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
      この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
      優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story, and end on a line that
-     comes back to the opening (not a question to the viewer).
+     comes back to the opening (not a question to the viewer) by a new fact or turn, never by saying the opening
+     again.
+   - **Every sentence says something new** (owner, 19/11/2026: "mỗi câu đều phải có ý nghĩa, không lặp đi lặp lại").
+     No sentence repeats an idea already said: the body does not tell the hook again, the end does not sum up the
+     hook, no filler such as 「だからこそ…わかったのでしょう」 or a line that only restates feelings. Before showing a
+     script, read it sentence by sentence and cut or replace every sentence that adds no new fact or turn; if the
+     script then falls under 61 s, add new true facts of the same story, never repetition.
    - **One flowing narration**: sentences linked by connectives (けれど, そんなある深夜, その言葉が本物だったことを…),
      the warm narrator's です/ます, no chopped fragments such as 「1993年。ハーバード、東大。」 or 「1993年6月、二人は結婚。」.
      **Show the owner a script the same way: one continuous text** (the Japanese in one piece, then its Vietnamese
