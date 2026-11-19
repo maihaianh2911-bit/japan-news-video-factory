@@ -35,9 +35,16 @@ and each picture's "match"; for wiki: the item found) and sheet_<k>.jpg, a numbe
 Commons pictures are taken in the standard thumbnail sizes (up to 1920 px wide; other sizes and originals are
 rate-limited), pictures are downloaded a few at a time, and a Wikimedia site or a web search engine that keeps
 answering 429 (too many requests) is not asked again in the same run.
-A search with no usable picture has no sheet. A search that fails (network, Commons refusing) is recorded in
-index.json with "error" and no results, is tried again on the next run, and makes the exit status 3; the other
-searches still run and index.json is written after every search, so what was found can still be published.
+A search with no usable picture has no sheet. A search that fails because its source did not answer (network,
+Commons refusing, no web search engine answering) is recorded in index.json with "error" and no results, is tried
+again on the next run, and makes the exit status 3; the other searches still run and index.json is written after
+every search, so what was found can still be published.
+A search that cannot work as it is written (19/11/2026) is not a failure: a wiki: name that names nothing, a url:
+picture the site refuses, that is too small, is not a picture, or did not load in two tries. Running it again would
+change nothing, and the list of searches is only ever appended to, so such a search used to fail every run of its
+story. It is recorded with "unusable" (the reason) and no results, never tried again, and the exit status stays 0:
+append another search instead. A url: picture that another search already found is kept all the same (it was asked
+for by name, often as the larger copy), with "same_as" naming the pick it repeats.
 """
 from concurrent.futures import ThreadPoolExecutor
 from html import unescape
@@ -88,6 +95,17 @@ REFUSED = set()   # Wikimedia hosts and web search engines that kept answering 4
 
 class Refused(RuntimeError):
     """A Wikimedia site keeps answering 429 (too many requests): the search fails and is tried again next run."""
+
+
+class Unusable(RuntimeError):
+    """The search cannot give a picture as it is written, and running it again changes nothing (a wiki: name that
+    names nothing, a url: picture that is refused, too small or not a picture): recorded in index.json with
+    "unusable", not tried again, and not a failure of the run. The remedy is another search, appended."""
+
+
+class TooSmall(Unusable):
+    """A web picture under MIN_SIDE: common among the candidates of a web: search, where it is passed over
+    without a word."""
 
 
 def retry_after(error):
@@ -262,20 +280,60 @@ def upright(original):
         return original
 
 
-def web_shot(entry, small=False):
-    """The picture of a web candidate, or None for a dead link, an odd file or a small picture."""
+def web_load(entry, small=False):
+    """The picture of a web candidate as it will be kept. Raises Unusable when the address can never give one (the
+    site refuses it or has no such file, the file is not a picture, or it is too small), and the error itself when
+    the site only did not answer (a timeout, a server error), which another try may change."""
     try:
-        with Image.open(BytesIO(web_get(entry["image"], referer=entry["page"], timeout=20))) as original:
+        data = web_get(entry["image"], referer=entry["page"], timeout=20)
+    except HTTPError as error:
+        if 400 <= error.code < 500 and error.code not in (408, 425, 429):   # refused or gone, not "try later"
+            raise Unusable(f"HTTPError: HTTP Error {error.code}: {error.reason}") from None
+        raise
+    except ValueError as error:   # not a public http(s) address, or a file over the size limit
+        raise Unusable(f"ValueError: {error}") from None
+    try:
+        with Image.open(BytesIO(data)) as original:
             original.draft("RGB", (LARGEST, LARGEST))
             picture = upright(original).convert("RGB")
-    except Exception as error:   # a dead link or an odd file: skip it
-        print(f"  skipped {entry['image'][:120]}: {type(error).__name__}: {error}")
-        return None
+    except Exception as error:   # the address answered, with something that is not a readable picture
+        raise Unusable(f"{type(error).__name__}: {error}") from None
     if min(picture.size) < MIN_SIDE:
-        return None
+        raise TooSmall(f"the picture is only {picture.width} x {picture.height} px (the smaller side must be "
+                       f"{MIN_SIDE} or more)")
     mark = fingerprint(picture)
     picture.thumbnail((LARGEST, LARGEST))
     return shot(picture, mark, small)
+
+
+def web_shot(entry, small=False):
+    """The picture of a web candidate, or None for a dead link, an odd file or a small picture."""
+    try:
+        return web_load(entry, small)
+    except TooSmall:
+        return None
+    except Unusable as error:   # a dead link or an odd file: skip it
+        print(f"  skipped {entry['image'][:120]}: {error}")
+    except Exception as error:
+        print(f"  skipped {entry['image'][:120]}: {type(error).__name__}: {error}")
+    return None
+
+
+def url_shot(entry):
+    """The one picture of a url: search, or Unusable with the reason. An address that does not answer is tried
+    twice and then given up for good too: one address that keeps failing would fail every run of its story, and
+    the same url: can always be appended again as a new search."""
+    for attempt in (1, 2):
+        try:
+            return web_load(entry)
+        except Unusable:
+            raise
+        except Exception as error:
+            last = f"{type(error).__name__}: {error}"
+            if attempt == 1:
+                print(f"  url: {last}; trying once more")
+                time.sleep(5)
+    raise Unusable(f"the picture did not load in two tries ({last})")
 
 
 def commons_shot(entry):
@@ -309,14 +367,19 @@ def batches(entries, load, workers, size=6):
         yield from zip(chunk, loaded)
 
 
-def keep(entries, load, k, out, seen, limit, workers=3):
+def twin(mark, seen):
+    """The file name of a picture kept before that is the same picture (nearly the same fingerprint), or None."""
+    return next((name for name, other in seen.items() if bin(mark ^ other).count("1") <= 10), None)
+
+
+def keep(entries, load, k, out, seen, limit, workers=3, repeats=False):
     """Save the first `limit` pictures of the entries, in their order, that load and were not kept before (by this
-    or an earlier search); returns their records for index.json."""
+    or an earlier search; `repeats` keeps those too); returns their records for index.json."""
     kept = []
     for entry, made in batches(entries, load, workers):
         if len(kept) == limit:
             break
-        if made is None or any(bin(made["mark"] ^ other).count("1") <= 10 for other in seen.values()):
+        if made is None or (not repeats and twin(made["mark"], seen)):
             continue
         record = {key: value for key, value in entry.items() if key not in ("thumb", "preview", "shot")}
         if "image" in record:   # a web picture: the size of the file kept (Commons: the size of the original)
@@ -497,6 +560,7 @@ def wiki(name):
     point first: the item's own pictures, the pictures of its Wikipedia articles (the lead picture first), the
     files of its Commons category and sub-categories, then photos taken at its coordinates."""
     item = name if re.fullmatch(r"Q\d+", name) else None
+    silent = []   # the Wikipedias that did not answer: without them "no such name" is not certain
     for lang in LANGS:   # the exact title of a Wikipedia article first: "信子" alone is many people, an article one
         if item:
             break
@@ -505,6 +569,7 @@ def wiki(name):
                         prop="pageprops", redirects=1).get("query", {}).get("pages", {}).values()
         except (OSError, ValueError, Refused) as error:
             print(f"  wiki: {lang}.wikipedia.org did not answer ({str(error)[:80]})")
+            silent.append(f"{lang}.wikipedia.org")
             continue
         for page in pages:
             props = page.get("pageprops") or {}
@@ -518,8 +583,11 @@ def wiki(name):
         if hits:
             item = hits[0]["id"]
     if not item:
-        raise RuntimeError(f"wiki: no Wikidata item named {name!r} (try the title of its Wikipedia article, its "
-                           "Wikidata item Q…, or a web: search)")
+        reason = (f"wiki: no Wikidata item named {name!r} (try the title of its Wikipedia article, its "
+                  "Wikidata item Q…, or a web: search)")
+        if silent:   # an article of that title may exist where nobody answered: a failure, tried again next run
+            raise RuntimeError(f"{reason}; {' and '.join(silent)} did not answer")
+        raise Unusable(reason)
     entity = api(WIKIDATA, action="wbgetentities", ids=item, props="claims|sitelinks|labels|descriptions",
                  languages="|".join(LANGS))["entities"][item]
     claims, links = entity.get("claims") or {}, entity.get("sitelinks") or {}
@@ -688,10 +756,14 @@ def find(query, k, out, seen):
         return music_find(words, k, out), {}
     if kind == "url":
         image, _, page = words.partition(" ")
-        kept = keep(web_entries([(image, page.strip() or image, "")]), web_shot, k, out, seen, 1)
-        if not kept:
-            raise RuntimeError(f"could not load the picture {image}")
-        return kept, {}
+        entry = web_entries([(image, page.strip() or image, "")])[0]
+        try:
+            made = url_shot(entry)
+        except Unusable as error:
+            raise Unusable(f"url: could not use the picture {image}: {error}") from None
+        same = twin(made["mark"], seen)   # found by another search too: kept all the same, it was asked for by name
+        return (keep([entry], lambda entry: made, k, out, seen, 1, repeats=True),
+                {"same_as": Path(same).stem} if same else {})
     rank = bool(wish) and Clip.ready()
     notes = {"want": wish, "ranked": rank} if wish else {}
     left_out = 0
@@ -750,6 +822,10 @@ def main():
         group = {"k": k, "query": query, "results": []}
         try:
             group["results"], notes = find(query, k, out, seen)
+        except Unusable as error:   # the search as written can never work: noted, not tried again, no failure
+            clear(out, k, seen)
+            group["unusable"] = str(error)
+            print(f"{k}. {query}: UNUSABLE ({error})")
         except Exception as error:   # one failed search must not lose the others
             clear(out, k, seen)
             group["error"] = f"{type(error).__name__}: {error}"
@@ -762,6 +838,7 @@ def main():
             about = notes.get("wikidata")
             print(f"{k}. {query}: {len(group['results'])} pictures" + ("" if group["results"] else " (no sheet)")
                   + (f" = {about['id']} {about['label']}: {about['description']}" if about else "")
+                  + (f" (the same picture as {notes['same_as']})" if notes.get("same_as") else "")
                   + (f" (the best of {notes['candidates']} for the wish, {notes['left_out']} left out)"
                      if notes.get("ranked") else " (wish ignored: ranking off)" if "ranked" in notes else ""))
         index.append(group)
@@ -769,9 +846,14 @@ def main():
         if not query.startswith("file:"):   # a picture of the repository asks nobody: no pause
             time.sleep(2)
     save_index(index, index_path)
-    empty = [group["k"] for group in index if not group["results"] and not group.get("error")]
+    unusable = [group["k"] for group in index if group.get("unusable")]
+    empty = [group["k"] for group in index
+             if not group["results"] and not group.get("error") and not group.get("unusable")]
     if empty:
         print(f"Searches with no picture (no sheet): {', '.join(map(str, empty))}")
+    if unusable:
+        print("Searches that cannot work as written (not tried again; append another search): "
+              f"{', '.join(map(str, unusable))}")
     if failed:
         print(f"Searches that failed (tried again next run): {', '.join(map(str, failed))}")
         sys.exit(3)

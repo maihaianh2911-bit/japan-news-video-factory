@@ -285,6 +285,9 @@ def found_pictures(data, pictures):
                                 "appended; put the old search back or pick again after a new find")
             elif group.get("error") and not group["results"]:
                 problems.append(f"scene {number}: picture {pick}: search {k} failed ({group['error']})")
+            elif group.get("unusable"):
+                problems.append(f"scene {number}: picture {pick}: search {k} cannot be used as written "
+                                f"({group['unusable']}); append another search")
             elif n > len(group["results"]):
                 problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
                                 f"pictures found by search {k}")
