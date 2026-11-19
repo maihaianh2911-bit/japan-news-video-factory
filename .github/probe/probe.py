@@ -10,10 +10,10 @@ from news import find as F   # noqa: E402
 
 
 def main():
-    print("\n===== jps: on this runner (pictures first, ColBase from its page) =====", flush=True)
+    print("\n===== jps: on this runner (pictures first, no book covers) =====", flush=True)
     with tempfile.TemporaryDirectory() as scratch:
         out = Path(scratch)
-        for words in ("富士山 浮世絵", "西太后", "明治天皇", "黒船来航", "埴輪"):
+        for words in ("富士山 浮世絵", "西太后", "明治天皇", "関東大震災", "土偶", "紫禁城"):
             start = time.time()
             try:
                 found = F.japan_search(words)
@@ -29,9 +29,11 @@ def main():
             F.clear(out, 1, {})
             time.sleep(2)
         try:
-            page = "https://colbase.nich.go.jp/collection_items/kyuhaku/J486"
-            pictures = F.page_pictures(page)
-            print(f"ColBase page: {len(pictures)} pictures named; first: {[p[0][:110] for p in pictures[:3]]}")
+            import re
+            raw = F.web_get("https://colbase.nich.go.jp/collection_items/kyuhaku/J486", limit=8_000_000)
+            text = raw.decode("utf-8", "replace")
+            print(f"ColBase page: {len(raw)} bytes; picture-like addresses in it: "
+                  f"{sorted(set(re.findall(r'[^\\s\"<>]*(?:media|image|iiif)[^\\s\"<>]*', text)))[:12]}")
         except Exception as error:
             print(f"ColBase page: {type(error).__name__}: {str(error)[:200]}")
 

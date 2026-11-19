@@ -87,8 +87,6 @@ DEEP, WEB_DEEP, WIKI_DEEP = 50, 45, 60 # candidates looked at when a wish ranks 
 YAHOO_PAGES = 3                        # result pages of 20 asked of Yahoo! JAPAN for one web: search
 PAGE_KEEP, PAGE_DEEP = 20, 60          # pictures kept from one article (page:), and looked at on it
 JPS_KEEP, JPS_DEEP, JPS_ASK = 12, 40, 100   # Japan Search (jps:): kept, looked at, records asked for at a time
-# holders whose picture addresses in Japan Search are out of date: the picture is read from the record's own page
-JPS_FROM_PAGE = {"colbase.nich.go.jp"}
 STANDARD = (960, 1280, 1920)           # widths Commons serves freely (https://w.wiki/GHai); 1920 is enough here
 SMALL = 330                            # the small version looked at for the ranking (a standard width too)
 MATCH_MIN, UNFIT_MIN = 0.18, 0.21      # CLIP: under MATCH_MIN the picture does not show the wish; see Clip.UNFIT
@@ -349,21 +347,12 @@ def web_load(entry, small=False):
     try:
         picture = web_picture(entry["image"], entry["page"])
     except Exception as error:
-        picture = None
-        ways = [entry["mirror"]] if entry.get("mirror") else []
-        if entry.get("from_page"):   # the catalogue's address is out of date: what the record's own page shows
-            try:
-                ways += [address for address, _, _ in page_pictures(entry["page"])[:3]]
-            except Exception:
-                pass
-        for address in ways:
-            try:
-                picture = web_picture(address, entry["page"])
-                break
-            except Exception:
-                continue
-        if picture is None:
-            raise error from None   # the picture's own address says why
+        if not entry.get("mirror"):
+            raise
+        try:
+            picture = web_picture(entry["mirror"])
+        except Exception:
+            raise error from None   # the picture's own site says why
     if min(picture.size) < MIN_SIDE:
         raise TooSmall(f"the picture is only {picture.width} x {picture.height} px (the smaller side must be "
                        f"{MIN_SIDE} or more)")
@@ -448,7 +437,7 @@ def keep(entries, load, k, out, seen, limit, workers=3, repeats=False):
         if made is None or (not repeats and twin(made["mark"], seen)):
             continue
         record = {key: value for key, value in entry.items()
-                  if key not in ("thumb", "preview", "shot", "mirror", "hint", "from_page")}
+                  if key not in ("thumb", "preview", "shot", "mirror", "hint")}
         if "image" in record:   # a web picture: the size of the file kept (Commons: the size of the original)
             record["width"], record["height"] = made["size"]
         record["file"] = f"{k}-{len(kept) + 1}.jpg"
@@ -820,8 +809,6 @@ def web_entries(candidates):
         if isinstance(known.get("width"), int) and isinstance(known.get("height"), int):
             entry["hint"] = (known["width"], known["height"])
         entry.update({key: known[key] for key in ("license", "artist") if known.get(key)})   # an archive says
-        if known.get("from_page"):
-            entry["from_page"] = True
         entries.append(entry)
     return entries
 
@@ -852,7 +839,10 @@ def japan_search(words):
     museums (the National Diet Library, ColBase of the national museums, the Tokyo museums, university
     collections…), old prints, paintings, photographs, objects. Returns web candidates for the records that carry
     a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), in the order of the catalogue; each
-    is credited to the site that holds it, with its licence."""
+    is credited to the site that holds it, with its licence. A book or a paper is left out: its picture is the scan
+    of its cover or first page (most of what a person's name brings from the National Diet Library). Tried on
+    GitHub on 19/11/2026: the pictures of ColBase (404, the catalogue's addresses are out of date and its pages are
+    built by script) and of museumcollection.tokyo (403) cannot be had; those records are passed over."""
     found, seen = [], set()
     for start in (0, JPS_ASK):
         data = json.loads(web_get(JAPAN_SEARCH + "?" + urlencode({"keyword": words, "size": JPS_ASK, "from": start}),
@@ -871,19 +861,19 @@ def japan_search(words):
             if not licence or not (full or small):
                 continue
             image = full[0] if full else larger(small[0])
-            if image in seen:
+            picture = common.get("contentsType") == "image"
+            if image in seen or (not picture and not full and image != small[0]):   # the page scan of a book
                 continue
             seen.add(image)
             page = common.get("linkUrl") or f"https://jpsearch.go.jp/item/{record.get('id', '')}"
             more = {"mirror": small[0] if small and small[0] != image else None, "license": licence,
-                    "artist": site(page) or "jpsearch.go.jp", "from_page": site(page) in JPS_FROM_PAGE,
-                    "picture": common.get("contentsType") == "image"}
+                    "artist": site(page) or "jpsearch.go.jp", "picture": picture}
             found.append((image, page, plain(common.get("title") or ""), more))
         if len(found) >= JPS_DEEP * 2 or len(records) < JPS_ASK or start + JPS_ASK >= (data.get("hit") or 0):
             break
         time.sleep(1)
-    # records catalogued as pictures (paintings, prints, photographs, objects) before books and papers, whose
-    # picture is a cover or a first page; the order of the catalogue within each
+    # records catalogued as pictures (paintings, prints, photographs, objects) before the others; the order of
+    # the catalogue within each
     found.sort(key=lambda candidate: not candidate[3]["picture"])
     return found[:JPS_DEEP]
 
