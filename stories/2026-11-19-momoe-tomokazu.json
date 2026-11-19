@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 35,
   "title": "山口百恵と三浦友和 結婚46周年",
   "date": "2026-11-19",
@@ -64,7 +64,36 @@
           "text": "二人のラブストーリーを、一緒に振り返ってみましょう。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-11",
+          "focus": [
+            0.42,
+            0.2
+          ],
+          "move": "rise",
+          "tone": "sepia"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.3,
+            0.4
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "4-12",
+          "focus": [
+            0.48,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu bằng ảnh cưới năm 1980 (lời chúc 46 năm), rồi hai người cười bên nhau thời trẻ (ảnh đính hôn, ảnh quảng cáo ở biển)."
     },
     {
       "label": "出会い",
@@ -79,7 +108,36 @@
           "text": "その後、映画「伊豆の踊子」で恋人同士を演じた二人は、「ゴールデンコンビ」と呼ばれるようになります。",
           "say": "その後、映画、いずのおどりこで恋人同士を演じた二人は、ゴールデンコンビと呼ばれるようになります。"
         }
-      ]
+      ],
+      "cut": "fade",
+      "photo": [
+        {
+          "pick": "5-1",
+          "focus": [
+            0.42,
+            0.38
+          ],
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.52,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Quảng cáo chocolate Glico của hai người, cảnh phim 伊豆の踊子, rồi một cảnh phim khác của 'cặp đôi vàng'."
     },
     {
       "label": "恋人宣言",
@@ -95,7 +153,35 @@
           "say": "わたしが好きな人は、みうらともかずさんです。",
           "quote": true
         }
-      ]
+      ],
+      "cut": "dip",
+      "photo": [
+        {
+          "pick": "11-4",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "11-2",
+          "focus": [
+            0.8,
+            0.55
+          ],
+          "move": "pull-back",
+          "depth": false
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.78,
+            0.3
+          ],
+          "move": "push-in",
+          "depth": false
+        }
+      ],
+      "why": "Nhảy tới tháng 10/1979: tờ rơi buổi recital (có ngày 20/10 ở Osaka), bìa đĩa và ảnh cô hát trong buổi đó."
     },
     {
       "label": "婚約",
@@ -107,7 +193,32 @@
           "text": "人気絶頂の21歳で、百恵さんは引退を宣言します。",
           "say": "人気絶頂の21歳で、ももえさんは引退を宣言します。"
         }
-      ]
+      ],
+      "cut": "fade",
+      "photo": [
+        {
+          "pick": "14-4",
+          "focus": [
+            0.85,
+            0.4
+          ],
+          "move": "pan-right",
+          "tone": "sepia"
+        },
+        {
+          "pick": "12-2",
+          "move": "push-in",
+          "fit": "contain",
+          "tone": "sepia"
+        },
+        {
+          "pick": "13-1",
+          "move": "hold",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Buổi họp báo đính hôn 7/3/1980, hai người cười trước micro, rồi trang báo ngày 8/3 đưa tin giải nghệ."
     },
     {
       "label": "武道館",
@@ -119,7 +230,35 @@
           "text": "最後の歌「さよならの向う側」を歌い終えると、百恵さんは白いマイクをステージにそっと置き、静かに去っていきました。",
           "say": "最後の歌、さよならのむこうがわを歌い終えると、ももえさんは、白いマイクをステージにそっと置き、静かに去っていきました。"
         }
-      ]
+      ],
+      "cut": "fade",
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "reveal"
+        },
+        {
+          "pick": "16-1",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.65,
+            0.55
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nhà Budokan, cô mặc váy trắng hát bài cuối, rồi khoảnh khắc cúi xuống đặt micro trắng."
     },
     {
       "label": "結婚",
@@ -131,7 +270,35 @@
           "text": "それから百恵さんは一度も表舞台に戻ることなく、家庭を守り続けてきました。",
           "say": "それから、ももえさんは一度も、おもてぶたいに戻ることなく、家庭を守り続けてきました。"
         }
-      ]
+      ],
+      "cut": "fade",
+      "photo": [
+        {
+          "pick": "12-10",
+          "focus": [
+            0.52,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "12-9",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "27-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cô dâu chú rể trước cửa nhà thờ ở Akasaka, cận mặt hai người, rồi hai vợ chồng bế con đầu lòng."
     },
     {
       "label": "家族",
@@ -142,7 +309,36 @@
           "text": "長男の祐太朗さんは歌手に、次男の貴大さんは俳優になり、百恵さんは夫や息子たちのために、たくさんのキルトを縫ってきました。",
           "say": "長男の、ゆうたろうさんは歌手に、次男の、たかひろさんは俳優になり、ももえさんは、夫や息子たちのために、たくさんのキルトを縫ってきました。"
         }
-      ]
+      ],
+      "cut": "fade",
+      "photo": [
+        {
+          "pick": "23-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "24-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back",
+          "depth": false
+        }
+      ],
+      "why": "Con trai cả Yutaro đang hát, con trai thứ Takahiro, rồi tấm chăn quilt trong sách của bà."
     },
     {
       "label": "今も",
@@ -151,7 +347,38 @@
       "lines": [
         "芸能界きってのおしどり夫婦として知られる二人。",
         "白いマイクを置いて選んだ愛は、今も変わらずに続いています。"
-      ]
+      ],
+      "cut": "dip",
+      "photo": [
+        {
+          "pick": "12-8",
+          "focus": [
+            0.42,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "25-2",
+          "focus": [
+            0.42,
+            0.33
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai vợ chồng đi cùng nhau những năm gần đây, ông Tomokazu năm 2025, kết bằng hai người cười chung một ô."
     }
-  ]
+  ],
+  "music": {
+    "pick": "28-1"
+  }
 }
