@@ -101,8 +101,12 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
    place? If not, append the search again with the exact Wikipedia title or the item. A search with a wish shows
    its score on the sheet (`~0.31`: it shows the thing; near `0.20`: doubtful; `"ranked": false`: the ranking was
    not installed, the wish was ignored); an empty group means nothing showed the wish: append other words.
-   `index.json` has titles, authors and licences; a search with `"error"` failed: run the
-   find again with the dispatch command of §4 (only the failed searches are tried again).
+   `index.json` has titles, authors and licences; a search with `"error"` failed because its source did not
+   answer: run the find again with the dispatch command of §4 (only the failed searches are tried again). A
+   search with `"unusable"` cannot work as written (a `wiki:` name that names nothing, a `url:` picture the site
+   refuses or that is too small): the run is green and it is never tried again, so do **not** run the find again
+   for it. Read its reason and append another search if the scene still needs that picture (`CLAUDE.md`, "Story
+   format", step 2).
 2. A scene without a fitting picture → append searches (never change or reorder existing ones), keep
    `stage: "find"`, commit `[jnews #N] tìm thêm ảnh`, push, remove `jnews-busy`. You are called again at
    `jnews-pick`.

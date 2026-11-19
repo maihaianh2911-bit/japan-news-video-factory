@@ -1,7 +1,7 @@
 """Offline checks of the picture search (news/find.py): no network, no torch. The Wikimedia answers, the web
 pictures and the CLIP scores are stand-ins, so only the logic is checked: the search syntax (wiki:, geo:, the wish
-after "=>"), standard picture sizes, the order kept, the ranking, what happens on 429, and a whole run with its
-index.json. Usage: python tools/find_test.py"""
+after "=>"), standard picture sizes, the order kept, the ranking, what happens on 429, the searches that cannot
+work as written (unusable: no failure), and a whole run with its index.json. Usage: python tools/find_test.py"""
 from io import BytesIO
 import json
 from pathlib import Path
@@ -16,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from PIL import Image   # noqa: E402
 
 from news import find as F   # noqa: E402
-from news.custom import search_parts, search_problems, validate   # noqa: E402
+from news.custom import StoryError, found_pictures, search_parts, search_problems, validate   # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -277,11 +277,70 @@ def wikidata(out):
         F.fetch = real
 
 
+def unusable(out):
+    """A search that cannot work as written raises Unusable with the reason (no failure of the run): a wiki: name
+    that names nothing, a url: picture the site refuses, that is not a picture, is too small or does not load in
+    two tries. A name is not "nothing" while a Wikipedia did not answer, and a url: picture found before is kept."""
+    silent = []
+
+    def fetch(url, hosts, **options):
+        host = urlsplit(url).hostname
+        if host in silent:
+            raise OSError("Tunnel connection failed: 403 Forbidden")
+        if host.endswith("wikipedia.org"):
+            return b'{"query": {"pages": {"-1": {"title": "x", "missing": ""}}}}'
+        return b'{"search": []}'
+    answers = {"https://a.example/gone.jpg": HTTPError("https://a.example/gone.jpg", 404, "Not Found", {}, None),
+               "https://a.example/page.jpg": b"<html>not a picture</html>",
+               "https://a.example/small.jpg": jpeg(31, (300, 300)),
+               "https://a.example/busy.jpg": HTTPError("https://a.example/busy.jpg", 503, "Busy", {}, None),
+               "https://a.example/first.jpg": jpeg(32), "https://a.example/again.jpg": jpeg(32)}
+    asked, slept = [], []
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        if isinstance(answers[url], Exception):
+            raise answers[url]
+        return answers[url]
+
+    def refused(query):
+        try:
+            F.find(query, 5, out, seen)
+        except F.Unusable as error:
+            return str(error)
+        except RuntimeError as error:
+            return f"FAILED {error}"
+        raise AssertionError(f"{query} must not give a picture")
+    real = F.fetch, F.web_get, F.time.sleep
+    seen = {}
+    try:
+        F.fetch, F.web_get, F.time.sleep = fetch, web_get, slept.append
+        assert refused("wiki:名無しの邸").startswith("wiki: no Wikidata item named '名無しの邸'")
+        silent.append("ja.wikipedia.org")   # an article of that title may exist there: a failure, tried again
+        assert refused("wiki:名無しの邸").startswith("FAILED wiki: no Wikidata item named")
+        assert "404" in refused("url:https://a.example/gone.jpg https://a.example/")
+        assert "UnidentifiedImageError" in refused("url:https://a.example/page.jpg")
+        assert "300 x 300" in refused("url:https://a.example/small.jpg")
+        assert asked == [f"https://a.example/{name}.jpg" for name in ("gone", "page", "small")] and not slept
+        assert "did not load in two tries" in refused("url:https://a.example/busy.jpg")
+        assert asked.count("https://a.example/busy.jpg") == 2 and slept == [5]
+        kept, notes = F.find("url:https://a.example/first.jpg", 6, out, seen)
+        assert [entry["file"] for entry in kept] == ["6-1.jpg"] and notes == {}
+        kept, notes = F.find("url:https://a.example/again.jpg", 7, out, seen)   # asked for by name: kept
+        assert [entry["file"] for entry in kept] == ["7-1.jpg"] and notes == {"same_as": "6-1"}
+        assert F.web_shot({"image": "https://a.example/small.jpg", "page": ""}) is None   # web: passes these over
+        assert F.web_shot({"image": "https://a.example/gone.jpg", "page": ""}) is None
+    finally:
+        F.fetch, F.web_get, F.time.sleep = real
+
+
 def whole_run(folder):
     """A run over a story: searches done before are left alone, a failed one is recorded with "error" and makes
-    the exit status 3, the others are kept, and a picture of the repository costs no pause."""
+    the exit status 3, the others are kept, and a picture of the repository costs no pause. A search that cannot
+    work as written is recorded with "unusable", is not run again and does not change the exit status."""
     media = sorted((REPO / "stories" / "media").glob("*/*.jpg"))[0].relative_to(REPO)
-    story = {"title": "t", "date": "2026-11-17", "searches": [f"file:{media}", "web:broken", "web:fine => a house"],
+    story = {"title": "t", "date": "2026-11-17", "searches": [f"file:{media}", "web:broken", "web:fine => a house",
+                                                              "url:https://a.example/gone.jpg"],
              "scenes": [{"headline": "h", "lines": ["l"]}]}
     path = folder / "run-test.json"
     path.write_text(json.dumps(story, ensure_ascii=False), encoding="utf-8")
@@ -293,8 +352,15 @@ def whole_run(folder):
         if words == "broken":
             raise RuntimeError("no web image search answered")
         return [(f"https://a.example/{n}.jpg", "https://a.example/page", "") for n in range(3)]
+    gone = []
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        if url.endswith("gone.jpg"):
+            gone.append(url)
+            raise HTTPError(url, 404, "Not Found", {}, None)
+        return jpeg(int(url[-5]))
     try:
-        F.web_search, F.web_get = web_search, lambda url, referer=None, limit=0, timeout=0: jpeg(int(url[-5]))
+        F.web_search, F.web_get = web_search, web_get
         F.Clip, F.time.sleep = type("NoClip", (), {"ready": staticmethod(lambda: False)}), slept.append
         sys.argv = ["find", str(path), str(out)]
         try:
@@ -303,15 +369,23 @@ def whole_run(folder):
         except SystemExit as stop:
             assert stop.code == 3
         index = json.loads((out / "index.json").read_text(encoding="utf-8"))
-        assert [(group["k"], len(group["results"]), "error" in group) for group in index] == [(1, 1, False), (2, 0, True), (3, 3, False)]
+        assert [(group["k"], len(group["results"]), "error" in group) for group in index] == [(1, 1, False), (2, 0, True), (3, 3, False), (4, 0, False)]
+        assert "404" in index[3]["unusable"] and "unusable" not in index[1]
         assert list(index[0]) == ["k", "query", "results"] and index[2]["want"] == "a house" and index[2]["ranked"] is False
         assert (out / "sheet_1.jpg").exists() and (out / "sheet_3.jpg").exists() and not (out / "sheet_2.jpg").exists()
-        assert slept == [2, 2], slept   # none after the file: search
+        assert slept == [2, 2, 2], slept   # none after the file: search
         F.web_search = lambda words, out=None: [("https://a.example/9.jpg", "https://a.example/page", "")]
         before = (out / "3-1.jpg").stat().st_mtime_ns
-        F.main()   # only the failed search runs again
-        index = json.loads((out / "index.json").read_text(encoding="utf-8"))
-        assert [len(group["results"]) for group in index] == [1, 1, 3] and (out / "3-1.jpg").stat().st_mtime_ns == before
+        F.main()   # only the failed search runs again; the unusable one alone leaves the exit status 0
+        index = sorted(json.loads((out / "index.json").read_text(encoding="utf-8")), key=lambda group: group["k"])
+        assert [len(group["results"]) for group in index] == [1, 1, 3, 0] and (out / "3-1.jpg").stat().st_mtime_ns == before
+        assert len(gone) == 1 and "unusable" in index[3]   # asked once, in the first run only
+        story["scenes"][0]["photo"] = "4-1"   # a pick from it says why, not "not among the 0 pictures"
+        try:
+            found_pictures(story, out)
+            raise AssertionError("a pick from an unusable search must be refused")
+        except StoryError as error:
+            assert "search 4 cannot be used as written" in str(error) and "404" in str(error), error
     finally:
         F.web_search, F.web_get, F.Clip, F.time.sleep, sys.argv = real
 
@@ -325,6 +399,7 @@ def main():
         took = order(scratch)
         ranking(scratch)
         wikidata(scratch)
+        unusable(scratch)
         whole_run(scratch)
     print(f"picture search checks OK (18 web pictures of 0.15 s each loaded in {took:.2f} s)")
 

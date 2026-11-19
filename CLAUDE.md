@@ -202,9 +202,18 @@ ask the owner to allow `main`.
    session's GitHub tools `actions_list` / `actions_get`); then `git fetch --depth 1 origin +refs/heads/renders:refs/remotes/origin/renders` and check that
    `<name>/find/status.json` has your commit (`commit`) before trusting the folder. Look at
    `<name>/find/sheet_<k>.jpg` yourself. A search with no usable picture has no `sheet_<k>.jpg` (0 results in
-   `index.json`); a search that failed has `"error"` in `index.json`, the run is red and `status.json` says
-   `"outcome": "partial"` — run it again (re-run the job, or Run workflow → `story` + the name) and only the
-   failed searches are tried again. If a scene has no fitting picture, append searches and push again.
+   `index.json`). Two things can go wrong with a search, and they are not handled the same (19/11/2026):
+   - **Its source did not answer** (network, Wikimedia refusing, no web search engine answering): `"error"` in
+     `index.json`, the run is red and `status.json` says `"outcome": "partial"` — run it again (re-run the job, or
+     Run workflow → `story` + the name) and only the failed searches are tried again.
+   - **It cannot work as written**: a `wiki:` name that names nothing, a `url:` picture the site refuses (403,
+     404), that is too small (under 400 px), is not a picture, or did not load in two tries. It has `"unusable"`
+     (the reason) in `index.json`, is **never tried again**, and the run stays **green** (the issue comment and
+     the run's summary name it): running the find again changes nothing. Append another search instead: the exact
+     title of the Wikipedia article or the item `Q…`, a `web:` search, another address of the picture.
+   A `url:` picture that another search already found is kept all the same (`"same_as": "<k>-<n>"` names the pick
+   it repeats): use one of the two, never both in a video. If a scene has no fitting picture, append searches
+   and push again.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
    the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts), or a list of 1–4 of these:
    the scene shows them one after the other. How a picture moves and how a scene arrives is your choice, by the
