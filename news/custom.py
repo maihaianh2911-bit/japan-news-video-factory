@@ -46,7 +46,7 @@ class Music:
         return {"title": self.title, "page": self.page, "creator": self.creator, "license": self.license}
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
-SEARCH_KINDS = ("file", "music", "web", "url", "wiki", "geo")   # prefixes of a search; without one: Commons words
+SEARCH_KINDS = ("file", "music", "web", "url", "page", "wiki", "geo")   # prefixes of a search; without one: Commons words
 WISH = "=>"                                                     # "<search> => <what the picture must show>"
 GEO = re.compile(r"^(-?\d+(?:\.\d+)?)\s*[,; ]\s*(-?\d+(?:\.\d+)?)(?:\s+(\d+)\s*m?)?$")
 NOT_LATIN = re.compile(r"[^\x00-\u024f\u2000-\u206f]")          # Japanese, Chinese, Cyrillic …: the ranking reads English
@@ -105,6 +105,9 @@ def search_problems(search, where):
                             f"the search words before it may be Japanese), got {wish!r}")
     if kind == "wiki" and not words:
         problems.append(f'{where}: "wiki:" needs a name or a Wikidata item, e.g. "wiki:美空ひばり" or "wiki:Q467982"')
+    if kind == "page" and not re.fullmatch(r"https?://\S+", words):
+        problems.append(f'{where}: "page:" needs the address of one article, e.g. "page:https://www.example.jp/'
+                        f'articles/123", got {search!r}')
     if kind == "geo" and not GEO.match(words):
         problems.append(f'{where}: "geo:" must be "geo:<lat>,<lon> <metres>", e.g. "geo:35.6852,139.7528 400", '
                         f"got {search!r}")

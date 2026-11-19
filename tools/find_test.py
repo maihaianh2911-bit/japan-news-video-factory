@@ -118,14 +118,14 @@ def refusals():
             assert len(asked) == 1 and not F.REFUSED
 
         def busy(query):
-            asked.append("bing " + query)
-            raise HTTPError("https://www.bing.com/", 429, "Too Many Requests", {}, None)
+            asked.append("yahoo " + query)
+            raise HTTPError("https://search.yahoo.co.jp/", 429, "Too Many Requests", {}, None)
             yield
-        busy.__name__ = "bing"
-        F.bing, F.yahoo = busy, lambda query: iter([("https://a.example/1.jpg", "https://a.example/", "one")])
+        busy.__name__ = "yahoo"   # the engine asked first
+        F.yahoo, F.bing = busy, lambda query: iter([("https://a.example/1.jpg", "https://a.example/", "one")])
         asked.clear()
-        assert F.web_search("first") == F.web_search("second") and asked == ["bing first"], asked
-        F.yahoo = F.duckduckgo = lambda query: iter(())
+        assert F.web_search("first") == F.web_search("second") and asked == ["yahoo first"], asked
+        F.bing = F.duckduckgo = lambda query: iter(())
         try:
             F.web_search("third")
             raise AssertionError("a web search nobody answers must fail")
@@ -137,9 +137,9 @@ def refusals():
 
 
 def order(out):
-    """Web pictures are loaded a few at a time, and the ones kept are the same as one by one: the first 12 that
+    """Web pictures are loaded a few at a time, and the ones kept are the same as one by one: the first 20 that
     load, are large enough and were not kept before, in the order of the search engine."""
-    pictures = {f"https://a.example/{n}.jpg": jpeg(n) for n in range(20)}
+    pictures = {f"https://a.example/{n}.jpg": jpeg(n) for n in range(30)}
     pictures["https://a.example/3.jpg"] = b"not a picture"
     pictures["https://a.example/5.jpg"] = jpeg(5, (300, 300))    # too small
     pictures["https://a.example/7.jpg"] = pictures["https://a.example/2.jpg"]   # the same picture again
@@ -160,13 +160,91 @@ def order(out):
         took = time.monotonic() - start
     finally:
         F.web_get, F.web_search = real
-    assert [entry["image"].rsplit("/", 1)[1] for entry in kept] == [f"{n}.jpg" for n in (0, 1, 2, 4, 6, 8, 9, 10, 11, 12, 13, 14)]
-    assert [entry["file"] for entry in kept] == [f"4-{n}.jpg" for n in range(1, 13)] and notes == {}
+    assert F.WEB_KEEP == 20
+    assert [entry["image"].rsplit("/", 1)[1] for entry in kept] == [f"{n}.jpg" for n in (0, 1, 2, 4, 6, *range(8, 23))]
+    assert [entry["file"] for entry in kept] == [f"4-{n}.jpg" for n in range(1, 21)] and notes == {}
     assert list(kept[1]) == ["title", "page", "image", "width", "height", "license", "license_url", "artist",
                              "description", "file"] and kept[1]["artist"] == "a.example", kept[1]
     assert (kept[0]["width"], kept[0]["height"]) == (500, 800) == Image.open(out / "4-1.jpg").size   # stood up
-    assert took < 0.15 * 18 * 0.6, f"18 pictures of 0.15 s took {took:.2f} s: not loaded side by side"
+    assert took < 0.15 * 24 * 0.6, f"24 pictures of 0.15 s took {took:.2f} s: not loaded side by side"
     return took
+
+
+def wider(out):
+    """The wider web search (19/11/2026): Yahoo! JAPAN is asked for three pages and gives each address once, with
+    the size of the picture and the address of its own copy; a later page that cannot be read costs nothing; a
+    picture its own site refuses is taken from that copy; one the engine says is small is not even loaded; and
+    neither note is recorded in index.json."""
+    asked = []
+
+    def result(n, width=1200, height=800):
+        return {"title": f"t{n}", "refererUrl": f"https://site.example/page{n}",
+                "original": {"url": f"https://site.example/{n}.jpg", "width": width, "height": height},
+                "main": {"url": f"https://copy.example/{n}", "width": width, "height": height, "isNotFound": False},
+                "thumbnail": {"url": f"https://copy.example/small{n}", "width": 168, "height": 112}}
+
+    def results_page(numbers):
+        algos = [result(n) for n in numbers]   # the page data holds the results twice, as the real one does
+        data = {"props": {"initialProps": {"pageProps": {"algos": algos}}, "initialState": {"algos": algos}}}
+        return (b'<html><script id="__NEXT_DATA__" type="application/json">' + json.dumps(data).encode()
+                + b"</script></html>")
+    pages = {None: results_page(range(20)), "21": results_page(range(20, 40)), "41": results_page(range(35, 50))}
+
+    def search_page(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        start = parse_qs(urlsplit(url).query).get("b", [None])[0]
+        if isinstance(pages[start], Exception):
+            raise pages[start]
+        return pages[start]
+    real = F.web_get, F.time.sleep
+    try:
+        F.web_get, F.time.sleep = search_page, lambda seconds: None
+        found = list(F.yahoo("犬"))
+        assert len(asked) == 3 and [urlsplit(url).query.count("b=") for url in asked] == [0, 1, 1], asked
+        assert [result[0] for result in found] == [f"https://site.example/{n}.jpg" for n in range(50)]
+        assert found[3][1:] == ("https://site.example/page3", "t3",
+                                {"mirror": "https://copy.example/3", "width": 1200, "height": 800})
+        pages["21"] = HTTPError("https://search.yahoo.co.jp/", 429, "Too Many Requests", {}, None)
+        assert len(list(F.yahoo("犬"))) == 20   # the first page is enough to go on with
+        pages[None] = pages["21"]
+        try:
+            list(F.yahoo("犬"))
+            raise AssertionError("a first page that cannot be read is the engine failing")
+        except HTTPError:
+            pass
+
+        files = {"https://copy.example/1": jpeg(41), "https://site.example/2.jpg": jpeg(42),
+                 "https://copy.example/2": jpeg(43)}
+        asked.clear()
+
+        def picture(url, referer=None, limit=0, timeout=0):
+            asked.append(url)
+            if url not in files:
+                raise HTTPError(url, 403, "Forbidden", {}, None)
+            return files[url]
+        F.web_get = picture
+        entries = F.web_entries([("https://site.example/1.jpg", "https://site.example/p", "one",
+                                  {"mirror": "https://copy.example/1", "width": 900, "height": 700}),
+                                 ("https://site.example/2.jpg", "https://site.example/p", "two",
+                                  {"mirror": "https://copy.example/2", "width": 900, "height": 700}),
+                                 ("https://site.example/3.jpg", "https://site.example/p", "small",
+                                  {"mirror": "https://copy.example/3", "width": 900, "height": 300}),
+                                 ("https://site.example/4.jpg", "https://site.example/p", "gone", {"mirror": None})])
+        assert entries[0]["mirror"] == "https://copy.example/1" and entries[0]["hint"] == (900, 700)
+        assert "mirror" not in entries[3] and "hint" not in entries[3]
+        kept = F.keep(entries, F.web_shot, 8, out, {}, 20)
+        assert [entry["title"] for entry in kept] == ["one", "two"], kept   # refused by its site: from the copy
+        assert asked.count("https://copy.example/1") == 1 and "https://copy.example/2" not in asked   # own site first
+        assert not any("/3" in url for url in asked), asked            # said to be small: not loaded
+        assert all("mirror" not in entry and "hint" not in entry for entry in kept)
+        assert kept[0]["image"] == "https://site.example/1.jpg" and kept[0]["artist"] == "site.example"
+        try:
+            F.web_load(entries[3])
+            raise AssertionError("a refused picture without a copy cannot be used")
+        except F.Unusable as error:
+            assert "403" in str(error)
+    finally:
+        F.web_get, F.time.sleep = real
 
 
 class FakeClip:
@@ -397,11 +475,12 @@ def main():
     with tempfile.TemporaryDirectory(prefix="find-test-") as scratch:
         scratch = Path(scratch)
         took = order(scratch)
+        wider(scratch)
         ranking(scratch)
         wikidata(scratch)
         unusable(scratch)
         whole_run(scratch)
-    print(f"picture search checks OK (18 web pictures of 0.15 s each loaded in {took:.2f} s)")
+    print(f"picture search checks OK (24 web pictures of 0.15 s each loaded in {took:.2f} s)")
 
 
 if __name__ == "__main__":
