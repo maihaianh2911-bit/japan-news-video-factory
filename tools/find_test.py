@@ -414,10 +414,10 @@ def archive(out):
     """jps: asks Japan Search and keeps the records with a picture and rights that allow use, in the order of the
     catalogue, each credited to the site that holds it with its licence; the small preview of a IIIF scan is asked
     in a large size, and the preview itself is the way back when the large one is not given."""
-    def record(number, rights, contents=None, thumb=None, link="https://museum.example/works/%d"):
+    def record(number, rights, contents=None, thumb=None, link="https://museum.example/works/%d", kind="image"):
         return {"id": f"db-{number}", "common": {"title": f"作品{number}", "contentsRightsType": rights,
                                                   "contentsUrl": contents, "thumbnailUrl": thumb,
-                                                  "linkUrl": link % number if link else None}}
+                                                  "contentsType": kind, "linkUrl": link % number if link else None}}
     scan = "https://dl.example/api/iiif/7/R1/full/%s/0/default.jpg"
     records = [record(1, "pdm", ["https://museum.example/1-L.jpg"], ["https://museum.example/1-L.jpg"]),
                record(2, "incr", ["https://museum.example/2-L.jpg"]),              # in copyright: left out
@@ -425,10 +425,17 @@ def archive(out):
                record(4, "pdm"),                                                    # no picture
                record(5, "cc0", ["https://museum.example/5.pdf"], "https://museum.example/5-thumb.jpg", None),
                record(6, "ccbysa", ["https://museum.example/1-L.jpg"]),             # the same picture again
-               record(7, None, ["https://museum.example/7-L.jpg"])]                # rights not said: left out
+               record(7, None, ["https://museum.example/7-L.jpg"]),                # rights not said: left out
+               record(8, "pdm", None, ["https://dl.example/book-8.jpg"], kind="text"),     # a book: after the pictures
+               record(9, "ccby", ["https://colbase.nich.go.jp/media/old/9.LL.jpg"], None,
+                      "https://colbase.nich.go.jp/collection_items/tnm/%d")]      # an address out of date
+    records.insert(0, records.pop(7))   # the catalogue lists the book first
     asked = []
     files = {"https://museum.example/1-L.jpg": jpeg(61), scan % "256,": jpeg(62, (700, 500)),
-             "https://museum.example/5-thumb.jpg": jpeg(63)}
+             "https://museum.example/5-thumb.jpg": jpeg(63), "https://dl.example/book-8.jpg": jpeg(64),
+             "https://colbase.nich.go.jp/collection_items/tnm/9":
+                 b'<html><head><meta property="og:image" content="/media/new/9.jpg"></head></html>',
+             "https://colbase.nich.go.jp/media/new/9.jpg": jpeg(65)}
 
     def web_get(url, referer=None, limit=0, timeout=0):
         asked.append(url)
@@ -445,16 +452,20 @@ def archive(out):
         assert F.larger(scan % "256,") == scan % "1600," and F.larger(scan % "!200,200") == scan % "1600,"
         assert F.larger("https://museum.example/1-L.jpg") == "https://museum.example/1-L.jpg"
         found = F.japan_search("黒船来航")
-        assert [candidate[0] for candidate in found] == ["https://museum.example/1-L.jpg", scan % "1600,",
-                                                         "https://museum.example/5-thumb.jpg"], found
-        assert found[1][3] == {"mirror": scan % "256,", "license": "CC BY", "artist": "museum.example"}
+        assert [candidate[0] for candidate in found] == [
+            "https://museum.example/1-L.jpg", scan % "1600,", "https://museum.example/5-thumb.jpg",
+            "https://colbase.nich.go.jp/media/old/9.LL.jpg", "https://dl.example/book-8.jpg"], found   # the book last
+        assert found[1][3] == {"mirror": scan % "256,", "license": "CC BY", "artist": "museum.example",
+                               "from_page": False, "picture": True}
         assert found[2][1] == "https://jpsearch.go.jp/item/db-5" and found[2][3]["artist"] == "jpsearch.go.jp"
-        assert len([url for url in asked if url.startswith(F.JAPAN_SEARCH)]) == 1   # 7 records of 7: one page
+        assert len([url for url in asked if url.startswith(F.JAPAN_SEARCH)]) == 1   # 9 records of 9: one page
         kept, notes = F.find("jps:黒船来航", 3, out, {})
         assert [(entry["title"], entry["license"], entry["artist"]) for entry in kept] == [
             ("作品1", "Public domain", "museum.example"), ("作品3", "CC BY", "museum.example"),
-            ("作品5", "CC0", "jpsearch.go.jp")] and notes == {}, kept
+            ("作品5", "CC0", "jpsearch.go.jp"), ("作品9", "CC BY", "colbase.nich.go.jp"),
+            ("作品8", "Public domain", "museum.example")] and notes == {}, kept
         assert (kept[1]["width"], kept[1]["height"]) == (700, 500) and asked.count(scan % "1600,") == 1
+        assert "https://colbase.nich.go.jp/media/new/9.jpg" in asked and "from_page" not in kept[3]   # read from its page
     finally:
         F.web_get = real
     assert search_parts("jps:黒船来航 => a black steam ship") == ("jps", "黒船来航", "a black steam ship")

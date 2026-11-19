@@ -24,6 +24,18 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
+## Ghi chú 19/11/2026: tìm ảnh rộng hơn, và bớt báo đỏ giả
+
+Chủ kênh hỏi "có cách nào để tìm hình ảnh mở rộng ra ko" và chọn làm cả ba hướng; thêm ý "video tao gửi thì được dùng hình ảnh/video trong đó".
+
+1. **Tìm web rộng hơn** (`web:`): mỗi lần tìm máy xem khoảng 55 ảnh (trước là 20) và giữ 20 ảnh (trước là 12). Ảnh nào trang gốc không cho tải thì máy lấy bản sao cùng cỡ mà Yahoo! JAPAN đang giữ; nguồn ghi vẫn là trang gốc.
+2. **Lấy ảnh trong một bài báo** (`page:` + link bài): máy lấy các ảnh lớn của đúng bài đó, tối đa 20 ảnh. Thử trên 8 trang báo: mỗi bài được từ 2 đến 20 ảnh.
+3. **Kho lưu trữ Nhật** (`jps:`): Japan Search, nơi gộp thư viện quốc hội, các bảo tàng quốc gia (ColBase), bảo tàng Tokyo… Chỉ lấy ảnh được phép dùng (hết bản quyền hoặc giấy phép tự do), có ghi nơi giữ và giấy phép. Hợp với chuyện xưa (tranh, ảnh cũ, hiện vật); ít ảnh người đang sống.
+4. **Hình từ video chủ kênh gửi**: `tools/video_frames.py` bày mỗi cảnh của video thành một ô trên một tấm ảnh để Claude chọn, rồi cất hình đã chọn vào repo (ghi nguồn 元動画), cắt bỏ được phần chữ hay nền mờ. Đoạn video chuyển động thì chủ kênh cũng cho dùng, nhưng khung hình hiện chỉ hiện ảnh tĩnh: muốn chèn đoạn video phải làm thêm và có bản thử cho chủ kênh duyệt.
+5. **Bớt báo đỏ giả**: nguồn ảnh không bao giờ lấy được (tên không có trong Wikidata, ảnh mà trang web từ chối) chỉ còn là một dòng ghi chú; máy không báo lỗi và không thử lại. Nguồn tạm thời không trả lời thì vẫn báo đỏ để chạy lại.
+
+Không thêm Thư viện Quốc hội Mỹ: chạy thử trên GitHub mất 35 giây cho một lần hỏi và bị từ chối ngay lần hỏi thứ hai; các bộ ảnh hết bản quyền nổi tiếng của họ đã có trong Wikimedia Commons, nơi máy vẫn tìm.
+
 ## Ghi chú 17/11/2026: hiệu ứng hình (chủ kênh đã đồng ý bật cho kênh này)
 
 Từ 17/11/2026, mọi video **mới** của kênh dùng bốn hiệu ứng của bản B (video Chiêu Hòa – Kuroyanagi đã gửi trong chat): máy quay có nhịp nhanh chậm, ảnh có chiều sâu mức nhẹ, tiêu đề và câu trích hiện từng dòng còn phụ đề đậm dần theo đúng lời đọc, và phông chữ Shippori Mincho B1 (phông miễn phí, giấy phép SIL OFL). Claude bật bằng dòng `"fx"` trong file kịch bản. Video cũ không đổi gì; muốn làm lại một video cũ với hiệu ứng thì nói trong phiếu.

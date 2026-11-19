@@ -93,7 +93,7 @@ def search_problems(search, where):
     kind, words, wish = search_parts(search)
     if kind in ("file", "music", "url"):
         if f" {WISH} " in search:
-            return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, wiki: and geo:, not with {kind}:']
+            return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, page:, jps:, wiki: and geo:, not with {kind}:']
         return []
     problems = []
     if WISH in search:
