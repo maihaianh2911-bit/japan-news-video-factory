@@ -497,6 +497,8 @@ def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
     if not found:
         return []
     main = faces.main_faces(found)
+    if not main:   # a crowd
+        return []
     windows = frame_windows(photo, seconds, height)
     zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout == "story" else 0.0
 

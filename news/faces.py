@@ -13,6 +13,7 @@ from pathlib import Path
 MODEL = Path(__file__).with_name("face_yunet.onnx")
 SURE, SMALL, MAIN = 0.75, 0.035, 0.25   # score kept; a face under 3.5 % of the picture's longer side is a passer-by;
 #                                         a face counts beside the largest when it has a quarter of its area
+CROWD = 5   # more faces of that size than this is a crowd (an audience, a march): its edges always cut someone
 STATE = {}
 
 
@@ -56,8 +57,10 @@ def area(box):
 
 
 def main_faces(boxes):
-    """The faces that matter: the largest and the ones not much smaller (not the passers-by behind)."""
-    return [box for box in boxes if area(box) >= MAIN * area(boxes[0])] if boxes else []
+    """The faces that matter: the largest and the ones not much smaller (not the passers-by behind). None in a
+    crowd: the rule is about the people of the story, and the frame of a crowd always cuts someone at its edge."""
+    main = [box for box in boxes if area(box) >= MAIN * area(boxes[0])] if boxes else []
+    return main if len(main) <= CROWD else []
 
 
 def centre(boxes):

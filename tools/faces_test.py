@@ -73,6 +73,8 @@ def main():
     assert faces.centre([(0.1, 0.2, 0.3, 0.4), (0.5, 0.2, 0.7, 0.6)]) == [0.4, 0.4]
     assert faces.main_faces([(0, 0, 0.4, 0.4), (0.5, 0.5, 0.75, 0.75), (0.9, 0.9, 0.95, 0.95)]) == [
         (0, 0, 0.4, 0.4), (0.5, 0.5, 0.75, 0.75)]
+    crowd = [(n / 10, 0.4, n / 10 + 0.08, 0.5) for n in range(8)]   # an audience: nobody of the story to keep
+    assert faces.main_faces(crowd) == [] and len(faces.main_faces(crowd[:5])) == 5
     found = faces.find(Image.new("RGB", (640, 480), "#808080"))
     if found is None:
         print(f"picture rules check OK (the detector itself not tried: {faces.why_off()})")
