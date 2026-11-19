@@ -1,5 +1,6 @@
 {
-  "stage": "find",
+  "stage": "render",
+  "issue": 33,
   "title": "「女子一人守れぬ者に国は守れるか」 昭和天皇と香淳皇后",
   "date": "2026-11-19",
   "style": "story",
@@ -68,15 +69,15 @@
           "move": "push-in"
         },
         {
-          "pick": "2-15",
+          "pick": "1-13",
           "focus": [
             0.5,
-            0.3
+            0.25
           ],
           "move": "push-in"
         }
       ],
-      "why": "Mở đầu bằng hai người năm 1924 (ảnh chính), rồi công nữ Nagako lúc trẻ."
+      "why": "Mở đầu bằng hai người (ảnh chính), rồi Thái tử trẻ."
     },
     {
       "label": "政治の圧力",
@@ -171,7 +172,7 @@
           "move": "rise"
         }
       ],
-      "why": "Động đất 1923, rồi Thái tử phi trong ngày cưới 1924."
+      "why": "Thái tử phi trong ngày cưới 1924."
     },
     {
       "label": "さらなる嵐",
