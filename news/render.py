@@ -344,8 +344,8 @@ def pan_plan(size, across, along, centre, seconds):
     """Zoom, start and end (0 to 1 of the room) and length in pixels of a pan along one side of the picture.
     `size` is that side of the picture and `across` the same side of the frame; `along` is the scale that fills
     the frame. About 70 pixels a second around the focus point, kept inside the picture."""
-    travel = clamp(70 * seconds, 120, 520)
-    zoom = clamp((across + travel) / (size * along), 1.08, 1.35)
+    travel = clamp(120 * seconds, 200, 760)   # owner, 19/11/2026: a picture must be seen to move all the time
+    zoom = clamp((across + travel) / (size * along), 1.10, 1.50)
     room = size * along * zoom - across
     half = min(travel, room) / room / 2
     middle = clamp(centre, half, 1 - half)
@@ -356,7 +356,9 @@ def paced(t):
     """The rhythm of the camera ("fx": motion): it starts quicker and settles, but never stops. 0 to 1, as t."""
     if not FX.get("motion"):
         return t
-    return 0.5 * t + 0.5 * (1 - (1 - min(t, 1.0)) ** 2.4)
+    # a light rhythm only: the camera keeps moving to the end (the end speed is three quarters of the start);
+    # the stronger settling of 17/11 looked like a still picture in its second half (owner, 19/11/2026)
+    return 0.85 * t + 0.15 * (1 - (1 - min(t, 1.0)) ** 2)
 
 
 PARALLAX = {}
@@ -404,14 +406,15 @@ def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
         size = {"push-in": small + (1 - small) * min(1, p), "pull-back": 1 - (1 - small) * min(1, p)}.get(name, 1.0)
         return whole_photo(photo.image, (size - 0.86) / 0.14, height)
     image = with_depth(photo, name, t if name in ("reveal", "punch-in") else p)
-    # at least 16 % closer or wider, so that even a 2-second picture is seen to move; 30 % at most
-    gain = clamp(0.05 * seconds, 0.16, 0.30)
+    # at least 25 % closer or wider, so that even a 2-second picture is seen to move; 45 % at most
+    # (owner, 19/11/2026: "nhiều ảnh trông như không chuyển động gì")
+    gain = clamp(0.08 * seconds, 0.25, 0.45)
     if name == "push-in":
         return view(image, height, 1.0 + gain * p, fx, fy)
     if name == "pull-back":
         return view(image, height, max(1.0, 1.02 + gain * (1 - p)), fx, fy)
-    if name == "close-up":   # tight around the focus point, creeping closer
-        return view(image, height, CLOSE_UP + clamp(0.015 * seconds, 0.04, 0.12) * p, fx, fy)
+    if name == "close-up":   # tight around the focus point, still moving closer
+        return view(image, height, CLOSE_UP + clamp(0.05 * seconds, 0.15, 0.35) * p, fx, fy)
     if name == "reveal":
         start, done = 1.0 + clamp(0.16 * seconds, 0.45, 0.8), 1 - (1 - min(1, t)) ** 2
         return view(image, height, start - (start - 1.0) * done, fx, fy)
@@ -431,7 +434,7 @@ def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
         if name == "rise":
             first, last = last, first
         return view(image, height, zoom, fx, first + (last - first) * p)
-    return view(image, height, 1.0, fx, fy)   # hold
+    return view(image, height, 1.0 + clamp(0.03 * seconds, 0.08, 0.15) * p, fx, fy)   # hold: a slow drift, never frozen
 
 
 def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
@@ -446,7 +449,7 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
         return f"{name}: the picture is not tall enough to move along (try pan-left, pan-right or push-in)"
     if name == "close-up" and tuple(photo.focus) == (0.5, 0.5):
         return "close-up: no \"focus\" given, it closes in on the middle of the picture (put focus on the detail)"
-    closest = {"close-up": CLOSE_UP + 0.1, "reveal": 1.8, "punch-in": 1.3}.get(name)
+    closest = {"close-up": CLOSE_UP + 0.25, "reveal": 1.8, "punch-in": 1.3}.get(name)
     if closest and W / (fill * closest) < 500:
         return f"{name}: the picture is small ({image.width}x{image.height}), it will look soft that close"
     return None

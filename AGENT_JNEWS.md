@@ -150,17 +150,18 @@ owner: why these edits; never drawn in the video).
 
 | `move` | What it looks like | When (the meaning of the line) |
 | --- | --- | --- |
-| `push-in` | slowly closer to the focus point (16–30 % closer, by the time on screen) | a person, a feeling, a decision; the line is about who is in the picture |
+| `push-in` | closer to the focus point (25–45 % closer, by the time on screen; it keeps moving to the end) | a person, a feeling, a decision; the line is about who is in the picture |
 | `pull-back` | slowly wider (as much as `push-in`) | a place or a situation; the last picture of a story (ending) |
 | `pan-right` / `pan-left` | travels across a wide picture | an action or a journey, a row of people, a street; towards where they look or move. Needs a wide picture |
 | `rise` | travels up a tall picture | a building, a standing person, growth, hope, rising numbers. Needs a tall picture |
 | `fall` | travels down a tall picture | decline, loss, mourning, falling numbers; reading down a page. Needs a tall picture |
-| `close-up` | very close on the focus point (1.8 times), almost still | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Always give `focus` (the preview warns without it); needs a large picture. On a portrait whose face already fills the picture it cuts the forehead: use `push-in` there |
+| `close-up` | very close on the focus point (1.8 times), still moving closer | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Always give `focus` (the preview warns without it); needs a large picture. On a portrait whose face already fills the picture it cuts the forehead: use `push-in` there |
 | `reveal` | starts very close, quickly opens to the whole picture | a comparison or a surprise of context ("but in fact…"), the first picture of a new place |
 | `punch-in` | jumps closer in a third of a second, then holds. The picture arrives by a hard cut (no fade from the picture before), and on the first picture of a scene the jump waits until the scene has arrived | a shock: a death, an accident, a scandal, a hard number. At most once or twice in a video |
-| `hold` | still | a document, a chart, a map, a number to read; with `"fit": "contain"` the whole picture is shown |
+| `hold` | a slow drift (8–15 % closer): never a frozen picture (owner, 19/11/2026) | a document, a chart, a map, a number to read; with `"fit": "contain"` the whole picture is shown |
 
 With `"fit": "contain"` only `push-in`, `pull-back` and `hold` exist (the whole picture grows, shrinks or stays).
+Owner, 19/11/2026: every picture must be seen to move for its whole time on screen; a picture that looks still is a fault.
 
 | `cut` | What it looks like | When |
 | --- | --- | --- |

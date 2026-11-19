@@ -146,7 +146,9 @@ ask the owner to allow `main`.
    - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
      switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
      made before are not changed (a story without `fx` renders exactly as before). What each one does:
-     - `motion`: the camera has a rhythm, quick at first and then settling, instead of one even speed;
+     - `motion`: the camera has a light rhythm, a little quicker at first, and keeps moving to the end of the
+       picture (owner, 19/11/2026: "nhiều ảnh trông như không chuyển động gì": the moves are now 25–45 % for
+       `push-in`/`pull-back`, `close-up` keeps closing in, `hold` drifts; no picture may look still);
      - `depth`: a picture that fills the frame gets a light depth (things near the camera move a little more
        than things far away; a depth map by Depth Anything V2 Small, about a second a picture). A **flat picture
        (a document, a newspaper page, a collage, a chart, a screenshot) gets `"depth": false`** in its picture
