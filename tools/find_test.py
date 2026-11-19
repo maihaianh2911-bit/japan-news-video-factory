@@ -355,6 +355,112 @@ def wikidata(out):
         F.fetch = real
 
 
+def article(out):
+    """page: takes the pictures one article shows: the page's own picture first, then the pictures in the order of
+    the page, each in its largest version, without the page's header and footer and its furniture; small ones fall
+    out when loaded, and a page the site refuses cannot be used."""
+    page = """<html><head><title>記事の題</title>
+      <meta property="og:image" content="https://cdn.example/lead.jpg">
+      <meta name="twitter:image" content="https://cdn.example/lead.jpg"></head><body>
+      <header><img src="/img/header-photo.jpg"></header>
+      <nav><img src="/img/menu-photo.jpg"></nav>
+      <article>
+        <img src="/img/site-logo.png"><img src="/img/share_btn_x.jpg"><img src="data:image/gif;base64,R0lGOD">
+        <a href="/full/one.jpg"><img src="/thumb/one.jpg" alt="一枚目"></a>
+        <img src="/img/blank.gif" data-src="//cdn.example/two.jpg" alt="二枚目">
+        <picture><source srcset="/w/three-320.jpg 320w, /w/three-1280.jpg 1280w"><img src="/w/three-320.jpg"></picture>
+        <img srcset="four-1x.jpg 1x, four-2x.jpg 2x" src="four-1x.jpg">
+        <img src="/img/tiny.jpg">
+      </article>
+      <aside><img src="/img/related-photo.jpg"></aside><footer><img src="/img/footer-photo.jpg"></footer>
+    </body></html>""".encode()
+    address = "https://news.example/articles/123"
+    files = {address: page, "https://news.example/img/tiny.jpg": jpeg(57, (200, 200))}
+    asked = []
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        if url.endswith("/refused"):
+            raise HTTPError(url, 403, "Forbidden", {}, None)
+        return files.get(url) or jpeg(50 + len(asked))
+    real = F.web_get
+    try:
+        F.web_get = web_get
+        assert F.largest("a.jpg 320w, b.jpg 1280w, c.jpg 640w") == "b.jpg" and F.largest("only.jpg") == "only.jpg"
+        found = F.page_pictures(address)
+        assert [picture for picture, _, _ in found] == [
+            "https://cdn.example/lead.jpg", "https://news.example/full/one.jpg", "https://news.example/thumb/one.jpg",
+            "https://cdn.example/two.jpg", "https://news.example/w/three-1280.jpg", "https://news.example/w/three-320.jpg",
+            "https://news.example/articles/four-2x.jpg", "https://news.example/img/tiny.jpg"], found
+        assert found[1][1:] == (address, "一枚目") and found[0][2] == "記事の題"   # no charset declared: UTF-8
+        files[address] = page.decode().replace("<head>", '<head><meta charset="Shift_JIS">').encode("cp932")
+        assert F.page_pictures(address)[1][2] == "一枚目"
+        files[address] = page
+        kept, notes = F.find(f"page:{address}", 9, out, {})
+        assert len(kept) == 7 and notes == {} and kept[0]["page"] == address and kept[0]["artist"] == "news.example"
+        assert kept[0]["image"] == "https://cdn.example/lead.jpg" and kept[1]["title"] == "一枚目"
+        try:
+            F.find("page:https://news.example/refused", 9, out, {})
+            raise AssertionError("a page the site refuses cannot be used")
+        except F.Unusable as error:
+            assert "403" in str(error)
+    finally:
+        F.web_get = real
+    assert search_parts(f"page:{address} => a singer") == ("page", address, "a singer")
+    assert not search_problems(f"page:{address}", "searches[1]") and search_problems("page:記事の題", "searches[1]")
+
+
+def archive(out):
+    """jps: asks Japan Search and keeps the records with a picture and rights that allow use, in the order of the
+    catalogue, each credited to the site that holds it with its licence; the small preview of a IIIF scan is asked
+    in a large size, and the preview itself is the way back when the large one is not given."""
+    def record(number, rights, contents=None, thumb=None, link="https://museum.example/works/%d"):
+        return {"id": f"db-{number}", "common": {"title": f"作品{number}", "contentsRightsType": rights,
+                                                  "contentsUrl": contents, "thumbnailUrl": thumb,
+                                                  "linkUrl": link % number if link else None}}
+    scan = "https://dl.example/api/iiif/7/R1/full/%s/0/default.jpg"
+    records = [record(1, "pdm", ["https://museum.example/1-L.jpg"], ["https://museum.example/1-L.jpg"]),
+               record(2, "incr", ["https://museum.example/2-L.jpg"]),              # in copyright: left out
+               record(3, "ccby", None, [scan % "256,"]),                           # a preview of a large scan
+               record(4, "pdm"),                                                    # no picture
+               record(5, "cc0", ["https://museum.example/5.pdf"], "https://museum.example/5-thumb.jpg", None),
+               record(6, "ccbysa", ["https://museum.example/1-L.jpg"]),             # the same picture again
+               record(7, None, ["https://museum.example/7-L.jpg"])]                # rights not said: left out
+    asked = []
+    files = {"https://museum.example/1-L.jpg": jpeg(61), scan % "256,": jpeg(62, (700, 500)),
+             "https://museum.example/5-thumb.jpg": jpeg(63)}
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        if url.startswith(F.JAPAN_SEARCH):
+            query = parse_qs(urlsplit(url).query)
+            assert query["keyword"] == ["黒船来航"] and query["size"] == [str(F.JPS_ASK)], query
+            return json.dumps({"hit": len(records), "list": records if query["from"] == ["0"] else []}).encode()
+        if url not in files:
+            raise HTTPError(url, 501, "Not Implemented", {}, None)   # this archive gives no larger size
+        return files[url]
+    real = F.web_get
+    try:
+        F.web_get = web_get
+        assert F.larger(scan % "256,") == scan % "1600," and F.larger(scan % "!200,200") == scan % "1600,"
+        assert F.larger("https://museum.example/1-L.jpg") == "https://museum.example/1-L.jpg"
+        found = F.japan_search("黒船来航")
+        assert [candidate[0] for candidate in found] == ["https://museum.example/1-L.jpg", scan % "1600,",
+                                                         "https://museum.example/5-thumb.jpg"], found
+        assert found[1][3] == {"mirror": scan % "256,", "license": "CC BY", "artist": "museum.example"}
+        assert found[2][1] == "https://jpsearch.go.jp/item/db-5" and found[2][3]["artist"] == "jpsearch.go.jp"
+        assert len([url for url in asked if url.startswith(F.JAPAN_SEARCH)]) == 1   # 7 records of 7: one page
+        kept, notes = F.find("jps:黒船来航", 3, out, {})
+        assert [(entry["title"], entry["license"], entry["artist"]) for entry in kept] == [
+            ("作品1", "Public domain", "museum.example"), ("作品3", "CC BY", "museum.example"),
+            ("作品5", "CC0", "jpsearch.go.jp")] and notes == {}, kept
+        assert (kept[1]["width"], kept[1]["height"]) == (700, 500) and asked.count(scan % "1600,") == 1
+    finally:
+        F.web_get = real
+    assert search_parts("jps:黒船来航 => a black steam ship") == ("jps", "黒船来航", "a black steam ship")
+    assert not search_problems("jps:黒船来航", "searches[1]") and search_problems("jps:", "searches[1]")
+
+
 def unusable(out):
     """A search that cannot work as written raises Unusable with the reason (no failure of the run): a wiki: name
     that names nothing, a url: picture the site refuses, that is not a picture, is too small or does not load in
@@ -478,6 +584,8 @@ def main():
         wider(scratch)
         ranking(scratch)
         wikidata(scratch)
+        article(scratch)
+        archive(scratch)
         unusable(scratch)
         whole_run(scratch)
     print(f"picture search checks OK (24 web pictures of 0.15 s each loaded in {took:.2f} s)")

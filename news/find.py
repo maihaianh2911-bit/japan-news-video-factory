@@ -68,6 +68,9 @@ from .custom import GEO, StoryError, read, search_parts
 from .sources import fetch
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
+JAPAN_SEARCH = "https://jpsearch.go.jp/api/item/search/jps-cross"
+# the rights Japan Search gives a record that allow use in a video, as the Commons licences kept (ALLOWED)
+JPS_RIGHTS = {"pdm": "Public domain", "cc0": "CC0", "ccby": "CC BY", "ccbysa": "CC BY-SA"}
 WIKIDATA = "https://www.wikidata.org/w/api.php"
 LANGS = ("ja", "en")   # the Wikipedias wiki: reads, the channel's language first
 HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org", "www.wikidata.org",
@@ -78,6 +81,7 @@ KEEP_WIKI, KEEP_GEO = 24, 12           # pictures kept by wiki: and geo:
 DEEP, WEB_DEEP, WIKI_DEEP = 50, 45, 60 # candidates looked at when a wish ranks them (wiki: also without a wish)
 YAHOO_PAGES = 3                        # result pages of 20 asked of Yahoo! JAPAN for one web: search
 PAGE_KEEP, PAGE_DEEP = 20, 60          # pictures kept from one article (page:), and looked at on it
+JPS_KEEP, JPS_DEEP, JPS_ASK = 12, 40, 100   # Japan Search (jps:): kept, looked at, records asked for at a time
 STANDARD = (960, 1280, 1920)           # widths Commons serves freely (https://w.wiki/GHai); 1920 is enough here
 SMALL = 330                            # the small version looked at for the ranking (a standard width too)
 MATCH_MIN, UNFIT_MIN = 0.18, 0.21      # CLIP: under MATCH_MIN the picture does not show the wish; see Clip.UNFIT
@@ -799,6 +803,7 @@ def web_entries(candidates):
             entry["mirror"] = known["mirror"]
         if isinstance(known.get("width"), int) and isinstance(known.get("height"), int):
             entry["hint"] = (known["width"], known["height"])
+        entry.update({key: known[key] for key in ("license", "artist") if known.get(key)})   # an archive says
         entries.append(entry)
     return entries
 
@@ -817,6 +822,61 @@ def largest(srcset):
     return best
 
 
+def larger(address, width=1600):
+    """A IIIF picture address asked in a larger size ("…/full/256,/0/default.jpg" → "…/full/1600,/0/default.jpg":
+    the archives give Japan Search a small preview of a large scan); any other address as it is."""
+    return re.sub(r"/(full|square)/(?:!?\d*,\d*|max|full|pct:[\d.]+)/(\d+)/(default|color|native)\.(jpe?g|png)$",
+                  rf"/\1/{width},/\2/\3.\4", address)
+
+
+def japan_search(words):
+    """Japan Search (jpsearch.go.jp, jps:, 19/11/2026): the shared catalogue of Japan's archives, libraries and
+    museums (the National Diet Library, ColBase of the national museums, the Tokyo museums, university
+    collections…), old prints, paintings, photographs, objects. Returns web candidates for the records that carry
+    a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), in the order of the catalogue; each
+    is credited to the site that holds it, with its licence."""
+    found, seen = [], set()
+    for start in (0, JPS_ASK):
+        data = json.loads(web_get(JAPAN_SEARCH + "?" + urlencode({"keyword": words, "size": JPS_ASK, "from": start}),
+                                  timeout=40))
+        records = data.get("list") or []
+        for record in records:
+            common = record.get("common") or {}
+            licence = JPS_RIGHTS.get(common.get("contentsRightsType"))
+
+            def addresses(key):
+                value = common.get(key) or []
+                return [item for item in ([value] if isinstance(value, str) else value) if isinstance(item, str)]
+            full = [item for item in addresses("contentsUrl")
+                    if re.search(r"(?i)\.(jpe?g|png|webp)$", urlsplit(item).path)]
+            small = addresses("thumbnailUrl")
+            if not licence or not (full or small):
+                continue
+            image = full[0] if full else larger(small[0])
+            if image in seen:
+                continue
+            seen.add(image)
+            page = common.get("linkUrl") or f"https://jpsearch.go.jp/item/{record.get('id', '')}"
+            more = {"mirror": small[0] if small and small[0] != image else None, "license": licence,
+                    "artist": site(page) or "jpsearch.go.jp"}
+            found.append((image, page, plain(common.get("title") or ""), more))
+        if len(found) >= JPS_DEEP or len(records) < JPS_ASK or start + JPS_ASK >= (data.get("hit") or 0):
+            break
+        time.sleep(1)
+    return found[:JPS_DEEP]
+
+
+def page_text(raw):
+    """The text of a page: in the charset it declares, else UTF-8, else the older Japanese ones."""
+    declared = re.search(rb"""(?i)charset=["']?\s*([\w-]+)""", raw[:4000])
+    for name in ([declared[1].decode("ascii", "replace")] if declared else []) + ["utf-8", "cp932", "euc_jp"]:
+        try:
+            return raw.decode(name)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return raw.decode("utf-8", "replace")
+
+
 def page_pictures(address):
     """The pictures an article shows (page:, 19/11/2026), as web candidates (picture address, page address,
     title): the picture the page names as its own first (og:image), then the pictures in the order of the page,
@@ -832,7 +892,7 @@ def page_pictures(address):
     except ValueError as error:
         raise Unusable(f"page: {error}") from None
     try:
-        tree = html.fromstring(raw)
+        tree = html.fromstring(re.sub(r"^\s*<\?xml[^>]*\?>", "", page_text(raw)))
     except Exception as error:
         raise Unusable(f"page: {address} is not a page a program can read ({type(error).__name__})") from None
     title = plain(tree.findtext(".//title") or "")
@@ -883,11 +943,13 @@ def find(query, k, out, seen):
     rank = bool(wish) and Clip.ready()
     notes = {"want": wish, "ranked": rank} if wish else {}
     left_out = 0
-    if kind in ("web", "page"):
+    if kind in ("web", "page", "jps"):
         if kind == "web":
             entries, limit = web_entries(web_search(words, out)), WEB_KEEP
-        else:
+        elif kind == "page":
             entries, limit = web_entries(page_pictures(words)), PAGE_KEEP
+        else:
+            entries, limit = web_entries(japan_search(words)), JPS_KEEP
         if rank:   # a web picture has no small version: the candidates are loaded, then scored
             entries = entries[:WEB_DEEP]
             for entry, made in batches(entries, lambda entry: web_shot(entry, small=True), 6):
