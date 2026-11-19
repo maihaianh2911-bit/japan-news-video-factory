@@ -12,9 +12,11 @@
    the issue what was added, and only then go on. This is the one exception to "never change the owner's script".
    Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
    or the issue title or notes say `thử`, `mẫu`, `test` or `demo`.
-3. **Every video is vertical (1080×1920) and 80–160 seconds long** (owner, 18/11/2026: "tất cả các kênh đều làm
-   dạng dọc, 80-160s thôi"). Write the script for that length: under 80 s add true scenes and details of the same
-   story (never padding), over 160 s cut repetition. Trial or sample videos are the exception, as in rule 2.
+3. **Every video is vertical (1080×1920), longer than 61 seconds and at most 160 seconds** (owner, 18/11/2026:
+   "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
+   trên 61s"). Do not lengthen a script only to reach 80 s: a script the owner cut stays cut as long as it passes
+   61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
+   Trial or sample videos are the exception, as in rule 2.
 
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
@@ -68,7 +70,7 @@ kèm caption cho mỗi video"):
    well-known details on the same subject (dates, ages, what became of a person); never invent, never change a
    fact or a quote of the source. Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
-   characters a second at speed 1.0 plus the pauses (iron rule 3: 80–160 s). Tell the owner in the chat what you
+   characters a second at speed 1.0 plus the pauses (iron rule 3: over 61 s, at most 160 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
    - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
