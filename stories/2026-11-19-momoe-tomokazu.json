@@ -1,0 +1,157 @@
+{
+  "stage": "find",
+  "issue": 35,
+  "title": "山口百恵と三浦友和 結婚46周年",
+  "date": "2026-11-19",
+  "style": "story",
+  "kicker": "昭和のスター",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:山口百恵",
+    "wiki:三浦友和",
+    "web:山口百恵 三浦友和 若い頃 => a young Japanese couple from the 1970s smiling together",
+    "web:山口百恵 三浦友和 2ショット 1970年代 => a young Japanese man and woman together, 1970s photo",
+    "web:山口百恵 三浦友和 グリコ CM 1974 => a teenage girl and a young man in a 1970s chocolate advertisement",
+    "web:伊豆の踊子 1974 山口百恵 三浦友和 => a still from a 1970s Japanese film, a young dancer girl and a student",
+    "web:伊豆の踊子 1974 ポスター 山口百恵 => a 1970s Japanese film poster",
+    "web:山口百恵 三浦友和 ゴールデンコンビ 映画 => a young Japanese couple in a 1970s film",
+    "web:山口百恵 1979 コンサート ステージ => a young Japanese woman singing on a concert stage in the 1970s",
+    "web:山口百恵 恋人宣言 1979 => a young Japanese woman singer speaking on stage",
+    "web:山口百恵 リサイタル 1979 => a Japanese female singer performing, late 1970s",
+    "web:山口百恵 三浦友和 婚約会見 1980 => a young Japanese couple at a press conference with microphones",
+    "web:山口百恵 引退 発表 1980 新聞 => a Japanese newspaper front page from 1980",
+    "web:山口百恵 婚約 1980 => a young Japanese woman smiling at a press conference",
+    "wiki:日本武道館",
+    "web:山口百恵 武道館 ファイナルコンサート 1980 => a woman in a white dress singing on a big stage",
+    "web:山口百恵 白いマイク ステージ => a white microphone left on the floor of a stage",
+    "web:山口百恵 さよならの向う側 武道館 => a Japanese woman singer bowing on stage",
+    "web:山口百恵 三浦友和 結婚式 1980 => a Japanese bride in a white wedding dress with the groom",
+    "web:山口百恵 三浦友和 結婚式 霊南坂教会 => a wedding couple at a church in 1980",
+    "web:霊南坂教会 => a church building in Tokyo",
+    "web:三浦百恵 キルト 時間の花束 => a colourful handmade patchwork quilt",
+    "web:三浦祐太朗 歌手 => a Japanese male singer with a microphone",
+    "web:三浦貴大 俳優 => portrait of a Japanese actor",
+    "web:三浦友和 山口百恵 夫婦 近影 => an older Japanese couple walking together",
+    "web:三浦友和 近影 => portrait of an older Japanese actor",
+    "web:山口百恵 三浦友和 夫婦 => a Japanese husband and wife together",
+    "music:Schumann Träumerei piano",
+    "music:Debussy Clair de lune piano",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano"
+  ],
+  "scenes": [
+    {
+      "label": "46周年",
+      "era": "1980年〜",
+      "headline": "山口百恵と\n三浦友和",
+      "lines": [
+        {
+          "text": "山口百恵さん、三浦友和さん、結婚46周年おめでとうございます。",
+          "say": "やまぐちももえさん、みうらともかずさん、結婚よんじゅうろくしゅうねん、おめでとうございます。",
+          "quote": true
+        },
+        {
+          "text": "二人のラブストーリーを、一緒に振り返ってみましょう。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "出会い",
+      "era": "1974年",
+      "headline": "CMでの出会い",
+      "lines": [
+        {
+          "text": "山口百恵さんと三浦友和さんが出会ったのは1974年、チョコレートのCMでの共演でした。",
+          "say": "やまぐちももえさんと、みうらともかずさんが出会ったのは1974年、チョコレートのCMでの共演でした。"
+        },
+        {
+          "text": "その後、映画「伊豆の踊子」で恋人同士を演じた二人は、「ゴールデンコンビ」と呼ばれるようになります。",
+          "say": "その後、映画、いずのおどりこで恋人同士を演じた二人は、ゴールデンコンビと呼ばれるようになります。"
+        }
+      ]
+    },
+    {
+      "label": "恋人宣言",
+      "era": "1979年10月",
+      "headline": "ステージでの告白",
+      "lines": [
+        {
+          "text": "1979年10月、百恵さんはコンサートの舞台で、ファンにこう打ち明けました。",
+          "say": "1979年10月、ももえさんは、コンサートの舞台で、ファンにこう打ち明けました。"
+        },
+        {
+          "text": "「私が好きな人は、三浦友和さんです」",
+          "say": "わたしが好きな人は、みうらともかずさんです。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "婚約",
+      "era": "1980年3月",
+      "headline": "婚約と引退宣言",
+      "lines": [
+        "翌年3月、二人は婚約を発表。",
+        {
+          "text": "人気絶頂の21歳で、百恵さんは引退を宣言します。",
+          "say": "人気絶頂の21歳で、ももえさんは引退を宣言します。"
+        }
+      ]
+    },
+    {
+      "label": "武道館",
+      "era": "1980年10月5日",
+      "headline": "白いマイク",
+      "lines": [
+        "1980年10月5日、日本武道館。",
+        {
+          "text": "最後の歌「さよならの向う側」を歌い終えると、百恵さんは白いマイクをステージにそっと置き、静かに去っていきました。",
+          "say": "最後の歌、さよならのむこうがわを歌い終えると、ももえさんは、白いマイクをステージにそっと置き、静かに去っていきました。"
+        }
+      ]
+    },
+    {
+      "label": "結婚",
+      "era": "1980年11月19日",
+      "headline": "教会での結婚式",
+      "lines": [
+        "その翌月の11月19日、二人は東京の教会で結婚式を挙げます。",
+        {
+          "text": "それから百恵さんは一度も表舞台に戻ることなく、家庭を守り続けてきました。",
+          "say": "それから、ももえさんは一度も、おもてぶたいに戻ることなく、家庭を守り続けてきました。"
+        }
+      ]
+    },
+    {
+      "label": "家族",
+      "era": "1980年代〜",
+      "headline": "家族のために",
+      "lines": [
+        {
+          "text": "長男の祐太朗さんは歌手に、次男の貴大さんは俳優になり、百恵さんは夫や息子たちのために、たくさんのキルトを縫ってきました。",
+          "say": "長男の、ゆうたろうさんは歌手に、次男の、たかひろさんは俳優になり、ももえさんは、夫や息子たちのために、たくさんのキルトを縫ってきました。"
+        }
+      ]
+    },
+    {
+      "label": "今も",
+      "era": "今",
+      "headline": "変わらない愛",
+      "lines": [
+        "芸能界きってのおしどり夫婦として知られる二人。",
+        "白いマイクを置いて選んだ愛は、今も変わらずに続いています。"
+      ]
+    }
+  ]
+}
