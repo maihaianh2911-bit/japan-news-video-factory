@@ -191,10 +191,16 @@ ask the owner to allow `main`.
        pictures of the same event. Credited to the site, licence unknown, as `web:`. A page the site refuses is
        `"unusable"`. Tried on eight press sites on GitHub: between 2 and 20 pictures a page.
      - `jps:<Japanese words>`: **Japan Search** (jpsearch.go.jp), the shared catalogue of Japan's archives,
-       libraries and museums (the National Diet Library, ColBase of the national museums, the Tokyo museums,
-       university collections): old prints, paintings, photographs, objects. Only records with a picture and
-       rights that allow use (public domain, CC0, CC BY, CC BY-SA), up to 12, credited to the holding site with
-       the licence. `"jps:黒船来航"`, `"jps:土偶"`. For history before about 1950; it has little on living people.
+       libraries and museums (the National Diet Library, city libraries and archives, university collections, the
+       cultural-heritage sites): old prints, paintings, photographs, objects, the records catalogued as pictures
+       first. Only records with a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), up to
+       12, credited to the holding site with the licence. `"jps:関東大震災"`, `"jps:土偶"`, `"jps:紫禁城"`. **Search a
+       thing, a place or an event, not a person**: a name brings mostly books about that person, whose cover scans
+       are left out. For history before about 1950. **A modest source**: tried on GitHub (19/11/2026), of six
+       searches two brought 12 pictures (`関東大震災`, `土偶`), two brought 1–2 (`富士山 浮世絵`, `紫禁城`) and two
+       names of people none (`西太后`, `明治天皇`). The pictures of ColBase (the national museums) and of the Tokyo
+       museums cannot be loaded at present (their addresses in the catalogue answer 404 and 403; the ColBase
+       pages are built by script), so those records are passed over. Use it beside `wiki:` and `web:`, not instead.
      A wish ` => …` works on `page:` and `jps:` as on `web:`.
    - Two more kinds of search (17/11/2026, `news/find.py`; the owner found the videos short of fitting pictures):
      - `wiki:<name or Wikidata item>`: every picture **about one thing** (a person, a place, a building, an

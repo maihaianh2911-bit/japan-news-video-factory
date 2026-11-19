@@ -72,18 +72,21 @@ def shots(video, every):
         for path in sorted(Path(scratch).glob("*.jpg")):
             with Image.open(path) as small:
                 marks.append(fingerprint(small))
+    # a cut is a jump from one frame to the next; a picture that zooms or pans changes little by little and stays
+    # one shot (compared with the first frame of the shot instead, a slow zoom was cut in two)
     groups, start = [], 0
     for index in range(1, len(marks) + 1):
-        if index == len(marks) or not close(marks[index], marks[start]):
-            groups.append((start, index))   # frames start … index - 1 show one picture
+        if index == len(marks) or not close(marks[index], marks[index - 1]):
+            groups.append((start, index))   # frames start … index - 1 show one shot
             start = index
     kept, moments = [], []
     for first, after in groups:
-        if (after - first) * every < 1 and len(groups) > 1:   # a flash or a cut in progress
+        if (after - first) * every < 1 and len(groups) > 1:   # a flash, or a cut or a fade in progress
             continue
-        if any(close(marks[first], mark) for mark in kept):
+        middle = first + (after - first) // 2
+        if any(close(marks[middle], mark) for mark in kept):   # a shot seen before
             continue
-        kept.append(marks[first])
+        kept.append(marks[middle])
         moments.append((first + (after - first) / 2) * every)
     return moments
 
