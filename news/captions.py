@@ -6,6 +6,9 @@ Format (owner, 16/11/2026), UTF-8, Japanese, at most 2000 characters:
     line 1        a hook title, at most 80 characters, true to the script
     lines 2-5     2 to 4 short sentences on the video (one block, no blank line inside)
     blank line
+    (optional)    a note of 1 to 3 lines, each starting with ※, then a blank line: the correction of a video that tells
+                  a rumour (owner, 19/11/2026: rumours may be told on every channel, corrected in the caption), e.g.
+                  ※動画内の〇〇の話は噂として伝えられているもので、事実とは確認されていません。
     one line      5 to 8 hashtags, e.g. #皇室 #昭和 #歴史 #shorts
     blank line
     last line     the credit line, starting with 画像出典 (e.g. 画像出典: … ／ 詳しくは credits.txt; say 元動画 when
@@ -17,6 +20,7 @@ import sys
 
 LIMIT, TITLE_LIMIT = 2000, 80
 HASHTAG = re.compile(r"^#[^\s#]+$")
+NOTE = "※"
 
 
 def caption_path(story_path):
@@ -31,9 +35,14 @@ def problems(text):
     if len(text) > LIMIT:
         found.append(f"the caption has {len(text)} characters, at most {LIMIT}")
     blocks = [block.strip("\n") for block in re.split(r"\n[ \t　]*\n", text.strip("\n"))]
+    if len(blocks) == 4 and blocks[1].lstrip().startswith(NOTE):
+        note = blocks.pop(1).split("\n")
+        if len(note) > 3 or not all(line.strip().startswith(NOTE) for line in note):
+            found.append(f"the note after the sentences is 1 to 3 lines, each starting with {NOTE}, got {note!r}")
     if len(blocks) != 3:
         return found + [f"the caption must be 3 blocks separated by one blank line (title and sentences / hashtags / "
-                        f"credit line), found {len(blocks)}"]
+                        f"credit line; a note of lines starting with {NOTE} may come between the sentences and the "
+                        f"hashtags), found {len(blocks)}"]
     head, tags, credit = blocks
     lines = head.split("\n")
     title, sentences = lines[0].strip(), [line for line in lines[1:] if line.strip()]
