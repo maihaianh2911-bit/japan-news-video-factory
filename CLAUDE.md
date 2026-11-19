@@ -43,6 +43,41 @@ each (the same in every repo of the owner's Japanese channels):
    scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
    (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
 
+## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
+Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
+is: frame it again, pick another, or search again.
+
+**The first picture (the hook, about the first 5 seconds)**
+1. It is the best picture of the whole video: sharp, bright, not blurred, not grainy.
+2. It shows the face of the main person clearly, or a place or a thing the Japanese audience recognises at once.
+3. It matches the hook line: the right person, the story being told.
+4. It is a photograph: not a newspaper page, a document, a collage with text or a picture with a logo.
+5. The face is in the upper half of the frame, clear of the hook line printed on the foot of the picture.
+
+**Faces (every scene)**
+6. The whole face, forehead to chin, stays inside the frame for as long as the picture is shown, while it zooms or
+   pans too.
+7. The text on the picture (the headline of the scene, a quote, the captions) does not lie over a face.
+8. In a picture of several people, the one being spoken of is the clearest; if not, frame that person or change
+   the picture.
+9. A scene about one person does not use a picture in which that person's face is very small.
+
+**Every picture**
+10. When no picture passes, search again (`web:`, `page:`, the owner's video); if there is still none, tell the
+    owner which scene lacks one. A poor picture is never taken just to be done.
+
+The owner turned down two more that were proposed, so they are **not** rules: "a picture is used only once in a
+video, and two near-identical pictures are not put side by side", and "the last picture must be a fine one too".
+A picture may be used again where it fits.
+
+**What the machine watches** (the preview `python -m news --story … --stills …` prints a `warning:` for each; settle
+every one before the render): the first picture under 900 px on one side, or shown whole / marked flat (rules 1 and
+4); a face cut by the frame or leaving it during the move, with the `"focus"` that keeps it when there is one
+(rule 6); a face under the headline or the hook line, or in the lower half of the first picture (rules 5 and 7).
+The faces are found by `news/faces.py` (YuNet of OpenCV Zoo, the model is `news/face_yunet.onnx`); it needs
+`pip install opencv-python-headless numpy`, and without it the preview says `note: faces not checked`: then look
+at every face yourself. The machine does not see rules 2, 3, 8 and 9: those are for your eyes, at the review.
+
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
@@ -269,7 +304,7 @@ ask the owner to allow `main`.
      the run's summary name it): running the find again changes nothing. Append another search instead: the exact
      title of the Wikipedia article or the item `Q…`, a `web:` search, another address of the picture.
    A `url:` picture that another search already found is kept all the same (`"same_as": "<k>-<n>"` names the pick
-   it repeats): use one of the two, never both in a video. If a scene has no fitting picture, append searches
+   it repeats): they are the same picture. If a scene has no fitting picture, append searches
    and push again.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
    the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts), or a list of 1–4 of these:
@@ -287,7 +322,8 @@ ask the owner to allow `main`.
    find `index.json` and lists the scenes without a picture. Then **review the pictures** (owner, 18/11/2026):
    `python tools/review_picks.py stories/<name>.json <find folder> <stills folder>` puts every pick beside the
    words spoken while it is on screen and its source title; check each row as `AGENT_JNEWS.md` §2 step 5 says
-   (right person, place, event and era for those words; face whole and seen; clean and sharp; no near-duplicate),
+   (right person, place, event and era for those words; the picture rules of the edit above: the first picture,
+   faces whole and seen; clean and sharp),
    re-pick and review again until every row passes. Only then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
    `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `caption.txt`

@@ -357,6 +357,8 @@ jobs:
           cp "$RUNNER_TEMP/edits-test/moves.jpg" "$RUNNER_TEMP/edits-test/cuts.jpg" dist/stills/
           # pictures out of the video the owner sent (tools/video_frames.py), on a made-up video
           python tools/frames_test.py
+          # the picture rules of the edit the machine watches (faces kept in the frame, the first picture)
+          python tools/faces_test.py
           # the picture effects ("fx") on this runner: the caption timing on a made-up voice answer, and stills of the
           # sample with the effects on. They must render and differ from the plain stills, which proves that the
           # libraries, the depth model and the display typeface work here; the stills go to the Artifacts (fx/).

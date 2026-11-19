@@ -24,6 +24,18 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
+## Ghi chú 19/11/2026: luật ảnh của phần edit (chủ kênh duyệt)
+
+**Ảnh mở đầu (5 giây đầu):** (1) là ảnh đẹp nhất của cả video: nét, sáng, không mờ, không vỡ hạt; (2) thấy rõ mặt nhân vật chính, hoặc một nơi hay một vật người Nhật nhìn là nhận ra ngay; (3) khớp với câu mở đầu; (4) là ảnh chụp, không phải trang báo, tài liệu, ảnh ghép chữ hay ảnh có logo; (5) mặt nằm ở nửa trên của khung, không bị dòng chữ mở đầu che.
+
+**Mặt người (mọi cảnh):** (6) cả khuôn mặt, từ trán tới cằm, nằm trọn trong khung suốt thời gian ảnh hiện, kể cả lúc zoom hay lia; (7) chữ trên hình không đè lên mặt; (8) ảnh nhiều người thì người đang được nhắc tới phải rõ nhất; (9) cảnh nói về một người thì không dùng ảnh mà mặt người đó quá nhỏ.
+
+**Mọi ảnh:** (10) không tìm được ảnh đạt thì tìm thêm; vẫn không có thì báo chủ kênh cảnh nào thiếu, không lấy ảnh kém cho xong.
+
+Chủ kênh không nhận hai ý "một ảnh chỉ dùng một lần" và "ảnh cuối cũng phải đẹp", nên đó không phải luật.
+
+Máy tự xem giúp ba việc khi xem trước: ảnh mở đầu quá nhỏ hoặc là ảnh tài liệu; mặt bị khung cắt hay trôi ra ngoài lúc ảnh chuyển động (kèm gợi ý cách canh khung nếu canh được); mặt nằm dưới dòng chữ. Những ý còn lại Claude phải tự nhìn.
+
 ## Ghi chú 19/11/2026: chủ kênh đổi 6 luật
 
 Chủ kênh đọc danh sách luật cứng và thấy mấy luật "ko hợp lí", rồi chọn lại như sau (áp dụng cho mọi kênh tiếng Nhật):

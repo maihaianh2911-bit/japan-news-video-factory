@@ -1,5 +1,5 @@
 """Render vertical news video with timed Japanese captions and stable motion."""
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from functools import lru_cache
 import math
 import os
@@ -10,6 +10,7 @@ import subprocess
 import budoux
 from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
+from . import faces
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
 from .story import VOICE_CREDIT, japanese_date
 
@@ -453,6 +454,95 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
     if closest and W / (fill * closest) < 500:
         return f"{name}: the picture is small ({image.width}x{image.height}), it will look soft that close"
     return None
+
+
+# The rules of the edit about pictures (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt").
+# In the "story" frame the headline is printed on the foot of the picture and the hook line higher still: a face
+# whose middle lies in that part is under the text. The first picture is the best one of the video.
+HEADLINE_ZONE, HOOK_ZONE, HOOK_SIDE = 0.22, 0.34, 900
+
+
+def frame_windows(photo, seconds=5.0, height=PHOTO_HEIGHT):
+    """The part of the picture the frame shows at the start and at the end of its move: two windows (left, top,
+    right, bottom) in 0–1 of the picture. Asked of the code that makes the video itself: a picture whose grey rises
+    from one side to the other is sent through the same move, and its edges in the frame say where they came from."""
+    size = photo.image.size
+    down = Image.linear_gradient("L").resize(size, Image.Resampling.BILINEAR)
+    across = Image.linear_gradient("L").transpose(Image.Transpose.TRANSPOSE).resize(size, Image.Resampling.BILINEAR)
+    windows = []
+    for moment in (0.0, 1.0):
+        def shown(probe):
+            if photo.move:
+                return named_photo(replace(photo, image=probe, depth=False), moment, photo.move, seconds, height)
+            return view(probe, height, 1.0 + 0.2 * moment, *photo.focus)   # the automatic moves: up to a fifth closer
+        sideways, upright = shown(across), shown(down)
+        windows.append((sideways.getpixel((0, height // 2)) / 255, upright.getpixel((W // 2, 0)) / 255,
+                        sideways.getpixel((W - 1, height // 2)) / 255, upright.getpixel((W // 2, height - 1)) / 255))
+    return windows
+
+
+def inside(box, window, slack=0.006):
+    return (box[0] >= window[0] - slack and box[1] >= window[1] - slack
+            and box[2] <= window[2] + slack and box[3] <= window[3] + slack)
+
+
+def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
+    """Which of the owner's picture rules this picture breaks as it is framed (CLAUDE.md, "The picture rules of the
+    edit"): the whole face stays inside the frame from the start of its move to the end, the text printed on the
+    picture does not lie over it, and on the first picture (`hook`) the face is in the upper half. The faces are
+    found by news/faces.py. Nothing is said when the faces cannot be looked for or the picture has none."""
+    if photo.fit == "contain":
+        return []
+    found = faces.find(photo.image)
+    if not found:
+        return []
+    main = faces.main_faces(found)
+    windows = frame_windows(photo, seconds, height)
+    zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout == "story" else 0.0
+
+    def place(box, window):   # how far down the frame the middle of the face is (0 top, 1 bottom)
+        return ((box[1] + box[3]) / 2 - window[1]) / max(0.001, window[3] - window[1])
+    cut = any(not inside(box, window) for box in main for window in windows)
+    kept = [box for box in main if all(inside(box, window) for window in windows)]
+    under = bool(zone) and any(place(box, window) > 1 - zone for box in kept for window in windows)
+    low = hook and any(place(box, windows[0]) > 0.5 for box in kept)
+    advice = 'another move, the whole picture ("fit": "contain") or another picture'
+    if cut and photo.move not in ("pan-right", "pan-left", "rise", "fall"):
+        # the focus that puts the faces in the middle of the frame at its closest, if the frame can hold them then
+        tight = min(windows, key=lambda window: window[2] - window[0])
+        wide, tall = tight[2] - tight[0], tight[3] - tight[1]
+        left, top = min(box[0] for box in main), min(box[1] for box in main)
+        right, bottom = max(box[2] for box in main), max(box[3] for box in main)
+        if right - left < wide - 0.02 and bottom - top < tall - 0.02:
+            centred = (round(clamp(((left + right) / 2 - wide / 2) / max(0.001, 1 - wide), 0, 1), 2),
+                       round(clamp(((top + bottom) / 2 - tall / 2) / max(0.001, 1 - tall), 0, 1), 2))
+            again = frame_windows(replace(photo, focus=centred), seconds, height)
+            if all(inside(box, window) for box in main for window in again):
+                advice = f'try "focus": {list(centred)}; or {advice}'
+    said = []
+    if cut:
+        said.append("a face is cut by the frame or leaves it during the move (the whole face stays in the frame): "
+                    + advice)
+    if under:
+        said.append("a face lies under the " + ("hook line" if hook else "headline") + " printed on the foot of the "
+                    "picture: a picture or a framing with the face higher")
+    elif low:
+        said.append("the hook: the face is in the lower half of the first picture (it belongs in the upper half, "
+                    "clear of the hook line): a picture or a framing with the face higher")
+    return said
+
+
+def hook_warnings(photo):
+    """The first picture of a video (the hook, about its first 5 seconds) is its best one: large and sharp, a
+    photograph and not a page, a document or a collage (owner, 19/11/2026)."""
+    said = []
+    if min(photo.image.size) < HOOK_SIDE:
+        said.append(f"the hook: the first picture is small ({photo.image.width}x{photo.image.height}, under "
+                    f"{HOOK_SIDE} px on one side), it will look soft: open on the best picture of the video")
+    if photo.fit == "contain" or not photo.depth:
+        said.append("the hook: the first picture is shown whole or marked flat (a document, a page, a collage): "
+                    "open on a photograph of the person, the place or the thing")
+    return said
 
 
 STORY_TEXT = "#f8efd9"
@@ -1167,10 +1257,17 @@ def stills(beats, release, photos, out):
     print("Edits (also in edits.md):")
     for line in lines:
         print(f"  {line}")
+    first = min(photos) if photos else None
     for index in sorted(photos):
         for number, photo in enumerate(photos[index], 1):
-            if warning := move_warning(photo, height=photo_box()[1]):
-                print(f"warning: scene {index + 1}, picture {number}: {warning}")
+            hook = index == first and number == 1
+            for warning in [move_warning(photo, height=photo_box()[1]), *(hook_warnings(photo) if hook else []),
+                            *face_warnings(photo, hook, height=photo_box()[1])]:
+                if warning:
+                    print(f"warning: scene {index + 1}, picture {number}: {warning}")
+    if photos and faces.find(Image.new("RGB", (64, 64))) is None:
+        print(f"note: faces not checked ({faces.why_off()}): pip install opencv-python-headless numpy, then look "
+              "at every face yourself all the same")
 
 
 def srt_time(seconds):

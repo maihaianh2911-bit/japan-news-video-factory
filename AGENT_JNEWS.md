@@ -135,7 +135,13 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
      1920s line, no other event's photo on "that day");
    - the main person is whole and seen: face not cut by the crop, not under the headline or the quote;
    - it is clean and sharp enough: no burnt-in news captions, logos or watermarks, not a small picture blown up;
-   - it is not a near-duplicate of another pick (the same moment from another site).
+   - it passes **the picture rules of the edit** (`CLAUDE.md`, owner 19/11/2026): the first picture is the best of
+     the video (rules 1–5), the whole face stays in the frame during the whole move and no text lies over it
+     (6–7), the person spoken of is the clearest of a group and not a very small face (8–9). The preview's
+     `warning:` lines about faces and the first picture are settled first (the `"focus"` it gives, another move,
+     `"fit": "contain"`, another picture); what it cannot see (2, 3, 8, 9) you check here.
+   (A picture may be used again in the video: "no near-duplicate" is not a rule, the owner turned it down on
+   19/11/2026.)
    Any row that fails: pick another picture (or append searches, step 2), preview, run the review again. Render
    only when every row passes, and write in the closing comment "Đã duyệt ảnh: N/N ảnh khớp lời đọc".
 6. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
