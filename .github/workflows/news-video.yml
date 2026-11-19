@@ -355,6 +355,8 @@ jobs:
           # every move and cut of the catalogue (news/edits.py), 1 second each; the two sheets go to the Artifacts
           python tools/edits_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/edits-test" 1
           cp "$RUNNER_TEMP/edits-test/moves.jpg" "$RUNNER_TEMP/edits-test/cuts.jpg" dist/stills/
+          # pictures out of the video the owner sent (tools/video_frames.py), on a made-up video
+          python tools/frames_test.py
           # the picture effects ("fx") on this runner: the caption timing on a made-up voice answer, and stills of the
           # sample with the effects on. They must render and differ from the plain stills, which proves that the
           # libraries, the depth model and the display typeface work here; the stills go to the Artifacts (fx/).

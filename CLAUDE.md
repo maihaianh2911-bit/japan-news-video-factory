@@ -102,10 +102,17 @@ kèm caption cho mỗi video"):
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
    searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures per scene.
-   Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
-   burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
-   `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
-   Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
+   **The pictures and the footage of a video the owner sends may be used** (owner, 16/11/2026: "lấy cái nào
+   đẹp"; 19/11/2026, for every repo: "nếu repo nào đc dựng bằng cách remix video hoặc tao có gửi video, có thể
+   sử dụng hình ảnh/video trong video tao gửi"). The owner's video is a picture source like the searches:
+   `python tools/video_frames.py <video> <story>` lays out one frame of every shot on a numbered sheet (look at
+   it), `… --keep 3,7 [--crop x,y,w,h]` saves the chosen ones as `stories/media/<story>/v-<m>m<ss>s.jpg` and
+   prints the `file:` searches to append (credited 元動画). Pick clean moments: a frame with the source's caption,
+   logo or watermark over the picture is cropped clean (`--crop` also cuts an inset picture out of its blurred
+   background) or left. Prefer a web copy of the same picture when it is larger. Moving footage (a clip inside a
+   scene) is allowed by the owner too, but the frames of this engine show still pictures only: a clip needs new
+   frame code and a trial the owner approves first; until then take stills. Never the source's voice or music.
+   Names the voice may misread get a `say` in kana.
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
 5. Send the owner the finished video file and its caption file in the chat (they want them there, not only as
@@ -169,9 +176,32 @@ ask the owner to allow `main`.
      first use (99 MB, or `DEPTH_MODEL=<file>`).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
-     (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
+     (Yahoo! JAPAN, else Bing, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
      takes one picture (`file:stories/media/…` a picture kept in the repository); their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
+   - **Wider search (owner, 19/11/2026: "có cách nào để tìm hình ảnh mở rộng ra ko" → all three):**
+     - `web:` looks further: three result pages of Yahoo! JAPAN (about 55 candidates, 20 before), **20 pictures
+       kept** (12 before; with a wish, the best 20 of 45). A picture its own site will not give (hotlink refused, a
+       page instead of a picture) is taken from the search engine's own full-size copy, still credited to its
+       site; a picture the engine says is under 400 px is not even loaded.
+     - `page:<address of one article>`: **the pictures that article shows** (up to 20): the page's own picture
+       first, then the pictures in the order of the page, each in its largest version, without the page's header,
+       footer, menus, side columns and furniture. `"page:https://www.jprime.jp/articles/-/30126"`. For a press
+       article or a photo page found by a `web:` search (the `page` of a result in `index.json`) that has more
+       pictures of the same event. Credited to the site, licence unknown, as `web:`. A page the site refuses is
+       `"unusable"`. Tried on eight press sites on GitHub: between 2 and 20 pictures a page.
+     - `jps:<Japanese words>`: **Japan Search** (jpsearch.go.jp), the shared catalogue of Japan's archives,
+       libraries and museums (the National Diet Library, city libraries and archives, university collections, the
+       cultural-heritage sites): old prints, paintings, photographs, objects, the records catalogued as pictures
+       first. Only records with a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), up to
+       12, credited to the holding site with the licence. `"jps:関東大震災"`, `"jps:土偶"`, `"jps:紫禁城"`. **Search a
+       thing, a place or an event, not a person**: a name brings mostly books about that person, whose cover scans
+       are left out. For history before about 1950. **A modest source**: tried on GitHub (19/11/2026), of six
+       searches two brought 12 pictures (`関東大震災`, `土偶`), two brought 1–2 (`富士山 浮世絵`, `紫禁城`) and two
+       names of people none (`西太后`, `明治天皇`). The pictures of ColBase (the national museums) and of the Tokyo
+       museums cannot be loaded at present (their addresses in the catalogue answer 404 and 403; the ColBase
+       pages are built by script), so those records are passed over. Use it beside `wiki:` and `web:`, not instead.
+     A wish ` => …` works on `page:` and `jps:` as on `web:`.
    - Two more kinds of search (17/11/2026, `news/find.py`; the owner found the videos short of fitting pictures):
      - `wiki:<name or Wikidata item>`: every picture **about one thing** (a person, a place, a building, an
        event), through its Wikidata item: the item's own pictures, the pictures of its Japanese and English
@@ -187,8 +217,8 @@ ask the owner to allow `main`.
    - A wish (17/11/2026): ` => <what the picture must show, in English>` at the end of a `wiki:`, `geo:`, Commons
      or `web:` search, e.g. `"web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress"`,
      `"Tokyo residential houses => rows of small houses in a Japanese neighbourhood"`. The machine then looks at
-     more pictures than it keeps (Commons 50, web 30, `wiki:` 60), scores each against the wish (CLIP) and keeps
-     the best, best first (8, web 12, `wiki:` 24); pictures that do not show the wish (score under 0.18) or look
+     more pictures than it keeps (Commons 50, web 45, `wiki:` 60), scores each against the wish (CLIP) and keeps
+     the best, best first (8, web 20, `wiki:` 24); pictures that do not show the wish (score under 0.18) or look
      unsuitable are left out, so a group can come back small or empty: then ask with other words. The score is
      `match` in `index.json` and `~0.31` on the contact sheet (about 0.30 and more: it shows the thing; near 0.20:
      doubtful). The wish is always English (CLIP does not read Japanese; `news.custom` refuses another script);

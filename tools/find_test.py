@@ -118,14 +118,14 @@ def refusals():
             assert len(asked) == 1 and not F.REFUSED
 
         def busy(query):
-            asked.append("bing " + query)
-            raise HTTPError("https://www.bing.com/", 429, "Too Many Requests", {}, None)
+            asked.append("yahoo " + query)
+            raise HTTPError("https://search.yahoo.co.jp/", 429, "Too Many Requests", {}, None)
             yield
-        busy.__name__ = "bing"
-        F.bing, F.yahoo = busy, lambda query: iter([("https://a.example/1.jpg", "https://a.example/", "one")])
+        busy.__name__ = "yahoo"   # the engine asked first
+        F.yahoo, F.bing = busy, lambda query: iter([("https://a.example/1.jpg", "https://a.example/", "one")])
         asked.clear()
-        assert F.web_search("first") == F.web_search("second") and asked == ["bing first"], asked
-        F.yahoo = F.duckduckgo = lambda query: iter(())
+        assert F.web_search("first") == F.web_search("second") and asked == ["yahoo first"], asked
+        F.bing = F.duckduckgo = lambda query: iter(())
         try:
             F.web_search("third")
             raise AssertionError("a web search nobody answers must fail")
@@ -137,9 +137,9 @@ def refusals():
 
 
 def order(out):
-    """Web pictures are loaded a few at a time, and the ones kept are the same as one by one: the first 12 that
+    """Web pictures are loaded a few at a time, and the ones kept are the same as one by one: the first 20 that
     load, are large enough and were not kept before, in the order of the search engine."""
-    pictures = {f"https://a.example/{n}.jpg": jpeg(n) for n in range(20)}
+    pictures = {f"https://a.example/{n}.jpg": jpeg(n) for n in range(30)}
     pictures["https://a.example/3.jpg"] = b"not a picture"
     pictures["https://a.example/5.jpg"] = jpeg(5, (300, 300))    # too small
     pictures["https://a.example/7.jpg"] = pictures["https://a.example/2.jpg"]   # the same picture again
@@ -160,13 +160,91 @@ def order(out):
         took = time.monotonic() - start
     finally:
         F.web_get, F.web_search = real
-    assert [entry["image"].rsplit("/", 1)[1] for entry in kept] == [f"{n}.jpg" for n in (0, 1, 2, 4, 6, 8, 9, 10, 11, 12, 13, 14)]
-    assert [entry["file"] for entry in kept] == [f"4-{n}.jpg" for n in range(1, 13)] and notes == {}
+    assert F.WEB_KEEP == 20
+    assert [entry["image"].rsplit("/", 1)[1] for entry in kept] == [f"{n}.jpg" for n in (0, 1, 2, 4, 6, *range(8, 23))]
+    assert [entry["file"] for entry in kept] == [f"4-{n}.jpg" for n in range(1, 21)] and notes == {}
     assert list(kept[1]) == ["title", "page", "image", "width", "height", "license", "license_url", "artist",
                              "description", "file"] and kept[1]["artist"] == "a.example", kept[1]
     assert (kept[0]["width"], kept[0]["height"]) == (500, 800) == Image.open(out / "4-1.jpg").size   # stood up
-    assert took < 0.15 * 18 * 0.6, f"18 pictures of 0.15 s took {took:.2f} s: not loaded side by side"
+    assert took < 0.15 * 24 * 0.6, f"24 pictures of 0.15 s took {took:.2f} s: not loaded side by side"
     return took
+
+
+def wider(out):
+    """The wider web search (19/11/2026): Yahoo! JAPAN is asked for three pages and gives each address once, with
+    the size of the picture and the address of its own copy; a later page that cannot be read costs nothing; a
+    picture its own site refuses is taken from that copy; one the engine says is small is not even loaded; and
+    neither note is recorded in index.json."""
+    asked = []
+
+    def result(n, width=1200, height=800):
+        return {"title": f"t{n}", "refererUrl": f"https://site.example/page{n}",
+                "original": {"url": f"https://site.example/{n}.jpg", "width": width, "height": height},
+                "main": {"url": f"https://copy.example/{n}", "width": width, "height": height, "isNotFound": False},
+                "thumbnail": {"url": f"https://copy.example/small{n}", "width": 168, "height": 112}}
+
+    def results_page(numbers):
+        algos = [result(n) for n in numbers]   # the page data holds the results twice, as the real one does
+        data = {"props": {"initialProps": {"pageProps": {"algos": algos}}, "initialState": {"algos": algos}}}
+        return (b'<html><script id="__NEXT_DATA__" type="application/json">' + json.dumps(data).encode()
+                + b"</script></html>")
+    pages = {None: results_page(range(20)), "21": results_page(range(20, 40)), "41": results_page(range(35, 50))}
+
+    def search_page(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        start = parse_qs(urlsplit(url).query).get("b", [None])[0]
+        if isinstance(pages[start], Exception):
+            raise pages[start]
+        return pages[start]
+    real = F.web_get, F.time.sleep
+    try:
+        F.web_get, F.time.sleep = search_page, lambda seconds: None
+        found = list(F.yahoo("犬"))
+        assert len(asked) == 3 and [urlsplit(url).query.count("b=") for url in asked] == [0, 1, 1], asked
+        assert [result[0] for result in found] == [f"https://site.example/{n}.jpg" for n in range(50)]
+        assert found[3][1:] == ("https://site.example/page3", "t3",
+                                {"mirror": "https://copy.example/3", "width": 1200, "height": 800})
+        pages["21"] = HTTPError("https://search.yahoo.co.jp/", 429, "Too Many Requests", {}, None)
+        assert len(list(F.yahoo("犬"))) == 20   # the first page is enough to go on with
+        pages[None] = pages["21"]
+        try:
+            list(F.yahoo("犬"))
+            raise AssertionError("a first page that cannot be read is the engine failing")
+        except HTTPError:
+            pass
+
+        files = {"https://copy.example/1": jpeg(41), "https://site.example/2.jpg": jpeg(42),
+                 "https://copy.example/2": jpeg(43)}
+        asked.clear()
+
+        def picture(url, referer=None, limit=0, timeout=0):
+            asked.append(url)
+            if url not in files:
+                raise HTTPError(url, 403, "Forbidden", {}, None)
+            return files[url]
+        F.web_get = picture
+        entries = F.web_entries([("https://site.example/1.jpg", "https://site.example/p", "one",
+                                  {"mirror": "https://copy.example/1", "width": 900, "height": 700}),
+                                 ("https://site.example/2.jpg", "https://site.example/p", "two",
+                                  {"mirror": "https://copy.example/2", "width": 900, "height": 700}),
+                                 ("https://site.example/3.jpg", "https://site.example/p", "small",
+                                  {"mirror": "https://copy.example/3", "width": 900, "height": 300}),
+                                 ("https://site.example/4.jpg", "https://site.example/p", "gone", {"mirror": None})])
+        assert entries[0]["mirror"] == "https://copy.example/1" and entries[0]["hint"] == (900, 700)
+        assert "mirror" not in entries[3] and "hint" not in entries[3]
+        kept = F.keep(entries, F.web_shot, 8, out, {}, 20)
+        assert [entry["title"] for entry in kept] == ["one", "two"], kept   # refused by its site: from the copy
+        assert asked.count("https://copy.example/1") == 1 and "https://copy.example/2" not in asked   # own site first
+        assert not any("/3" in url for url in asked), asked            # said to be small: not loaded
+        assert all("mirror" not in entry and "hint" not in entry for entry in kept)
+        assert kept[0]["image"] == "https://site.example/1.jpg" and kept[0]["artist"] == "site.example"
+        try:
+            F.web_load(entries[3])
+            raise AssertionError("a refused picture without a copy cannot be used")
+        except F.Unusable as error:
+            assert "403" in str(error)
+    finally:
+        F.web_get, F.time.sleep = real
 
 
 class FakeClip:
@@ -275,6 +353,117 @@ def wikidata(out):
         assert "gsradius=800" in "".join(asked) and "gscoord=35.1%7C139.5" in "".join(asked)
     finally:
         F.fetch = real
+
+
+def article(out):
+    """page: takes the pictures one article shows: the page's own picture first, then the pictures in the order of
+    the page, each in its largest version, without the page's header and footer and its furniture; small ones fall
+    out when loaded, and a page the site refuses cannot be used."""
+    page = """<html><head><title>記事の題</title>
+      <meta property="og:image" content="https://cdn.example/lead.jpg">
+      <meta name="twitter:image" content="https://cdn.example/lead.jpg"></head><body>
+      <header><img src="/img/header-photo.jpg"></header>
+      <nav><img src="/img/menu-photo.jpg"></nav>
+      <article>
+        <img src="/img/site-logo.png"><img src="/img/share_btn_x.jpg"><img src="data:image/gif;base64,R0lGOD">
+        <a href="/full/one.jpg"><img src="/thumb/one.jpg" alt="一枚目"></a>
+        <img src="/img/blank.gif" data-src="//cdn.example/two.jpg" alt="二枚目">
+        <picture><source srcset="/w/three-320.jpg 320w, /w/three-1280.jpg 1280w"><img src="/w/three-320.jpg"></picture>
+        <img srcset="four-1x.jpg 1x, four-2x.jpg 2x" src="four-1x.jpg">
+        <img src="/img/tiny.jpg">
+      </article>
+      <aside><img src="/img/related-photo.jpg"></aside><footer><img src="/img/footer-photo.jpg"></footer>
+    </body></html>""".encode()
+    address = "https://news.example/articles/123"
+    files = {address: page, "https://news.example/img/tiny.jpg": jpeg(57, (200, 200))}
+    asked = []
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        if url.endswith("/refused"):
+            raise HTTPError(url, 403, "Forbidden", {}, None)
+        return files.get(url) or jpeg(50 + len(asked))
+    real = F.web_get
+    try:
+        F.web_get = web_get
+        assert F.largest("a.jpg 320w, b.jpg 1280w, c.jpg 640w") == "b.jpg" and F.largest("only.jpg") == "only.jpg"
+        found = F.page_pictures(address)
+        assert [picture for picture, _, _ in found] == [
+            "https://cdn.example/lead.jpg", "https://news.example/full/one.jpg", "https://news.example/thumb/one.jpg",
+            "https://cdn.example/two.jpg", "https://news.example/w/three-1280.jpg", "https://news.example/w/three-320.jpg",
+            "https://news.example/articles/four-2x.jpg", "https://news.example/img/tiny.jpg"], found
+        assert found[1][1:] == (address, "一枚目") and found[0][2] == "記事の題"   # no charset declared: UTF-8
+        files[address] = page.decode().replace("<head>", '<head><meta charset="Shift_JIS">').encode("cp932")
+        assert F.page_pictures(address)[1][2] == "一枚目"
+        files[address] = page
+        kept, notes = F.find(f"page:{address}", 9, out, {})
+        assert len(kept) == 7 and notes == {} and kept[0]["page"] == address and kept[0]["artist"] == "news.example"
+        assert kept[0]["image"] == "https://cdn.example/lead.jpg" and kept[1]["title"] == "一枚目"
+        try:
+            F.find("page:https://news.example/refused", 9, out, {})
+            raise AssertionError("a page the site refuses cannot be used")
+        except F.Unusable as error:
+            assert "403" in str(error)
+    finally:
+        F.web_get = real
+    assert search_parts(f"page:{address} => a singer") == ("page", address, "a singer")
+    assert not search_problems(f"page:{address}", "searches[1]") and search_problems("page:記事の題", "searches[1]")
+
+
+def archive(out):
+    """jps: asks Japan Search and keeps the records with a picture and rights that allow use, in the order of the
+    catalogue, the records catalogued as pictures first, each credited to the site that holds it with its licence;
+    the small preview of a IIIF scan is asked in a large size, and the preview itself is the way back when the
+    large one is not given; the page scan of a book (its cover) is left out."""
+    def record(number, rights, contents=None, thumb=None, link="https://museum.example/works/%d", kind="image"):
+        return {"id": f"db-{number}", "common": {"title": f"作品{number}", "contentsRightsType": rights,
+                                                  "contentsUrl": contents, "thumbnailUrl": thumb,
+                                                  "contentsType": kind, "linkUrl": link % number if link else None}}
+    scan = "https://dl.example/api/iiif/7/R1/full/%s/0/default.jpg"
+    records = [record(1, "pdm", ["https://museum.example/1-L.jpg"], ["https://museum.example/1-L.jpg"]),
+               record(2, "incr", ["https://museum.example/2-L.jpg"]),              # in copyright: left out
+               record(3, "ccby", None, [scan % "256,"]),                           # a preview of a large scan
+               record(4, "pdm"),                                                    # no picture
+               record(5, "cc0", ["https://museum.example/5.pdf"], "https://museum.example/5-thumb.jpg", None),
+               record(6, "ccbysa", ["https://museum.example/1-L.jpg"]),             # the same picture again
+               record(7, None, ["https://museum.example/7-L.jpg"]),                # rights not said: left out
+               record(8, "pdm", None, ["https://dl.example/paper-8.jpg"], kind="text"),    # not a picture: after them
+               record(9, "pdm", None, [scan.replace("/7/", "/9/") % "256,"], kind="text")]   # a book's cover: left out
+    records.insert(0, records.pop(7))   # the catalogue lists the paper first
+    asked = []
+    files = {"https://museum.example/1-L.jpg": jpeg(61), scan % "256,": jpeg(62, (700, 500)),
+             "https://museum.example/5-thumb.jpg": jpeg(63), "https://dl.example/paper-8.jpg": jpeg(64)}
+
+    def web_get(url, referer=None, limit=0, timeout=0):
+        asked.append(url)
+        if url.startswith(F.JAPAN_SEARCH):
+            query = parse_qs(urlsplit(url).query)
+            assert query["keyword"] == ["黒船来航"] and query["size"] == [str(F.JPS_ASK)], query
+            return json.dumps({"hit": len(records), "list": records if query["from"] == ["0"] else []}).encode()
+        if url not in files:
+            raise HTTPError(url, 501, "Not Implemented", {}, None)   # this archive gives no larger size
+        return files[url]
+    real = F.web_get
+    try:
+        F.web_get = web_get
+        assert F.larger(scan % "256,") == scan % "1600," and F.larger(scan % "!200,200") == scan % "1600,"
+        assert F.larger("https://museum.example/1-L.jpg") == "https://museum.example/1-L.jpg"
+        found = F.japan_search("黒船来航")
+        assert [candidate[0] for candidate in found] == [
+            "https://museum.example/1-L.jpg", scan % "1600,", "https://museum.example/5-thumb.jpg",
+            "https://dl.example/paper-8.jpg"], found   # the paper last, the book's cover not at all
+        assert found[1][3] == {"mirror": scan % "256,", "license": "CC BY", "artist": "museum.example", "picture": True}
+        assert found[2][1] == "https://jpsearch.go.jp/item/db-5" and found[2][3]["artist"] == "jpsearch.go.jp"
+        assert len([url for url in asked if url.startswith(F.JAPAN_SEARCH)]) == 1   # 9 records of 9: one page
+        kept, notes = F.find("jps:黒船来航", 3, out, {})
+        assert [(entry["title"], entry["license"], entry["artist"]) for entry in kept] == [
+            ("作品1", "Public domain", "museum.example"), ("作品3", "CC BY", "museum.example"),
+            ("作品5", "CC0", "jpsearch.go.jp"), ("作品8", "Public domain", "museum.example")] and notes == {}, kept
+        assert (kept[1]["width"], kept[1]["height"]) == (700, 500) and asked.count(scan % "1600,") == 1
+    finally:
+        F.web_get = real
+    assert search_parts("jps:黒船来航 => a black steam ship") == ("jps", "黒船来航", "a black steam ship")
+    assert not search_problems("jps:黒船来航", "searches[1]") and search_problems("jps:", "searches[1]")
 
 
 def unusable(out):
@@ -397,11 +586,14 @@ def main():
     with tempfile.TemporaryDirectory(prefix="find-test-") as scratch:
         scratch = Path(scratch)
         took = order(scratch)
+        wider(scratch)
         ranking(scratch)
         wikidata(scratch)
+        article(scratch)
+        archive(scratch)
         unusable(scratch)
         whole_run(scratch)
-    print(f"picture search checks OK (18 web pictures of 0.15 s each loaded in {took:.2f} s)")
+    print(f"picture search checks OK (24 web pictures of 0.15 s each loaded in {took:.2f} s)")
 
 
 if __name__ == "__main__":

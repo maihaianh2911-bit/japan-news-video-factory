@@ -11,18 +11,23 @@ For every entry of "searches" not searched before:
   (default 500 m, 10 km at most), up to 12: "geo:35.6852,139.7528 400".
 - "<words>": Wikimedia Commons full-text search, up to 8 pictures whose licence allows use in a video (public
   domain, CC0, CC BY, CC BY-SA), without small files and repeated scans.
-- "web:<words>": a free web image search (Bing, else Yahoo! JAPAN, else DuckDuckGo), up to 12 pictures from any site, without stock
-  sites (watermarks). The licence is unknown: the owner chose to use such pictures (14/11/2026); the site is
-  credited on screen and in credits.txt.
+- "web:<words>": a free web image search (Yahoo! JAPAN, three pages of results; else Bing, else DuckDuckGo), up to
+  20 pictures from any site, without stock sites (watermarks). The licence is unknown: the owner chose to use such
+  pictures (14/11/2026); the site is credited on screen and in credits.txt. A picture its own site does not give
+  is taken from the search engine's own copy of it.
+- "page:<address of one article>": the pictures that article shows, up to 20, largest version of each, without
+  the furniture of the page (19/11/2026). Credited to the site, as web:.
+- "jps:<words>": Japan Search (jpsearch.go.jp), the shared catalogue of Japan's archives, libraries and museums:
+  up to 12 pictures of records whose rights allow use, credited to the holding site with the licence (19/11/2026).
 - "url:<picture address> [<page address>]": that one picture.
 - "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
   video, owner 16/11/2026), credited as 元動画 (the source video).
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
   12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence.
 
-A wish (17/11/2026): "<search> => <what the picture must show, in English>" on a wiki:, geo:, Commons or web:
-search, e.g. "web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress". The search then
-looks at more candidates than it keeps (Commons 50, web 30, wiki: 60), scores each against the wish with CLIP
+A wish (17/11/2026): "<search> => <what the picture must show, in English>" on a wiki:, geo:, Commons, web:,
+page: or jps: search, e.g. "web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress". The search then
+looks at more candidates than it keeps (Commons 50, web 45, wiki: 60), scores each against the wish with CLIP
 (open_clip ViT-B/32, MIT; weights from its GitHub release) and keeps the best, best first; pictures that do not show
 the wish (score under 0.18) or look unsuitable are left out, so a group can come back small or empty. The score is
 "match" in index.json and on the contact sheet (about 0.30 and more: it shows the thing; near 0.20: doubtful). The
@@ -57,7 +62,7 @@ import sys
 import threading
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlencode, urlsplit
+from urllib.parse import quote, urlencode, urljoin, urlsplit
 from urllib.request import Request, urlopen, urlretrieve
 
 from lxml import html
@@ -68,14 +73,20 @@ from .custom import GEO, StoryError, read, search_parts
 from .sources import fetch
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
+JAPAN_SEARCH = "https://jpsearch.go.jp/api/item/search/jps-cross"
+# the rights Japan Search gives a record that allow use in a video, as the Commons licences kept (ALLOWED)
+JPS_RIGHTS = {"pdm": "Public domain", "cc0": "CC0", "ccby": "CC BY", "ccbysa": "CC BY-SA"}
 WIKIDATA = "https://www.wikidata.org/w/api.php"
 LANGS = ("ja", "en")   # the Wikipedias wiki: reads, the channel's language first
 HOSTS = {"commons.wikimedia.org", "upload.wikimedia.org", "thumb.wikimedia.org", "www.wikidata.org",
          *(f"{lang}.wikipedia.org" for lang in LANGS)}
 ALLOWED = re.compile(r"^(public domain|pd|cc0|cc[- ]by(-sa)?[- ]?\d|cc[- ]by(-sa)?$)", re.I)
-KEEP, WEB_KEEP, MIN_SIDE, LARGEST = 8, 12, 400, 2400
+KEEP, WEB_KEEP, MIN_SIDE, LARGEST = 8, 20, 400, 2400
 KEEP_WIKI, KEEP_GEO = 24, 12           # pictures kept by wiki: and geo:
-DEEP, WEB_DEEP, WIKI_DEEP = 50, 30, 60 # candidates looked at when a wish ranks them (wiki: also without a wish)
+DEEP, WEB_DEEP, WIKI_DEEP = 50, 45, 60 # candidates looked at when a wish ranks them (wiki: also without a wish)
+YAHOO_PAGES = 3                        # result pages of 20 asked of Yahoo! JAPAN for one web: search
+PAGE_KEEP, PAGE_DEEP = 20, 60          # pictures kept from one article (page:), and looked at on it
+JPS_KEEP, JPS_DEEP, JPS_ASK = 12, 40, 100   # Japan Search (jps:): kept, looked at, records asked for at a time
 STANDARD = (960, 1280, 1920)           # widths Commons serves freely (https://w.wiki/GHai); 1920 is enough here
 SMALL = 330                            # the small version looked at for the ranking (a standard width too)
 MATCH_MIN, UNFIT_MIN = 0.18, 0.21      # CLIP: under MATCH_MIN the picture does not show the wish; see Clip.UNFIT
@@ -88,6 +99,10 @@ STOCK = re.compile(r"gettyimages|alamy|shutterstock|istockphoto|dreamstime|123rf
 # page furniture of Wikipedia articles and maps that show no place: never a picture of the thing
 ICON = re.compile(r"(?i)(commons-logo|wik\w*[- ]logo|qsicon|oojs|red pog|loca\w+ map|\bicon\b|flag of|disambig|"
                   r"padlock|question book|ambox|edit-ltr|symbol \w+ vote|speaker|nuvola|crystal clear|\.svg$)")
+
+# page furniture of any site, by the name of the file: never a picture of the article (page:)
+FURNITURE = re.compile(r"(?i)(logo|icon|sprite|banner|bnr|button|btn[_-]|avatar|spacer|blank|loading|placeholder|"
+                       r"no[_-]?image|pixel|share|sns[_-]|twitter|facebook|hatena|line[_-]|\.svg$|\.gif$)")
 
 GATE = threading.BoundedSemaphore(2)   # Wikimedia asks for few requests at a time, whatever runs in parallel here
 REFUSED = set()   # Wikimedia hosts and web search engines that kept answering 429 in this run: not asked again
@@ -188,18 +203,20 @@ def bing(query):
 
 
 def yahoo(query):
-    page = web_get("https://search.yahoo.co.jp/image/search?" + urlencode({"p": query, "ei": "UTF-8"}))
-    DEBUG["yahoo"] = page
-    match = re.search(rb'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', page, re.S)
-    if not match:
-        return
+    """Yahoo! JAPAN image search: the first YAHOO_PAGES pages of 20 (19/11/2026; one page before). Each result
+    comes with what Yahoo knows of it: the size of the picture, and the address of Yahoo's own full-size copy,
+    used when the picture's own site refuses to give it (see web_load)."""
+    seen = set()
 
     def walk(node):
         if isinstance(node, dict):
             original = node.get("original")
             if isinstance(original, dict) and isinstance(original.get("url"), str):
+                copy = node.get("main") if isinstance(node.get("main"), dict) else {}
+                more = {"mirror": copy.get("url") if not copy.get("isNotFound") else None,
+                        "width": original.get("width"), "height": original.get("height")}
                 yield (original["url"], node.get("refererUrl") or node.get("url") or original["url"],
-                       plain(node.get("title") or ""))
+                       plain(node.get("title") or ""), more)
                 return
             for value in node.values():
                 yield from walk(value)
@@ -207,7 +224,25 @@ def yahoo(query):
             for value in node:
                 yield from walk(value)
 
-    yield from walk(json.loads(match[1]))
+    for number in range(YAHOO_PAGES):
+        params = {"p": query, "ei": "UTF-8", **({"b": number * 20 + 1} if number else {})}
+        try:
+            page = web_get("https://search.yahoo.co.jp/image/search?" + urlencode(params))
+        except (OSError, ValueError) as error:
+            if not number:
+                raise
+            print(f"  yahoo: page {number + 1} not read ({type(error).__name__}: {error})", flush=True)
+            return   # the first page is enough to go on with
+        if not number:
+            DEBUG["yahoo"] = page
+        match = re.search(rb'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', page, re.S)
+        fresh = [result for result in walk(json.loads(match[1]))
+                 if result[0] not in seen and not seen.add(result[0])] if match else []
+        yield from fresh   # the page data holds every result twice: each address once
+        if not fresh:
+            return
+        if number + 1 < YAHOO_PAGES:
+            time.sleep(1)
 
 
 def duckduckgo(query):
@@ -226,10 +261,11 @@ def duckduckgo(query):
 
 
 def web_search(query, out=None):
-    """Candidates (picture address, page address, title) of a web image search, stock sites left out."""
+    """Candidates (picture address, page address, title[, what the engine knows: "mirror", "width", "height"]) of
+    a web image search, from the first engine that gives any, stock sites left out."""
     results = []
     DEBUG.clear()
-    for engine in (bing, yahoo, duckduckgo):
+    for engine in (yahoo, bing, duckduckgo):   # Yahoo! JAPAN first: Bing and DuckDuckGo give a program nothing
         if engine.__name__ in REFUSED:   # it answered 429 earlier in this run: asking again only prolongs it
             continue
         try:
@@ -280,12 +316,12 @@ def upright(original):
         return original
 
 
-def web_load(entry, small=False):
-    """The picture of a web candidate as it will be kept. Raises Unusable when the address can never give one (the
-    site refuses it or has no such file, the file is not a picture, or it is too small), and the error itself when
-    the site only did not answer (a timeout, a server error), which another try may change."""
+def web_picture(address, referer=None):
+    """The picture at a web address. Raises Unusable when the address can never give one (the site refuses it or
+    has no such file, the file is not a picture), and the error itself when the site only did not answer (a
+    timeout, a server error), which another try may change."""
     try:
-        data = web_get(entry["image"], referer=entry["page"], timeout=20)
+        data = web_get(address, referer=referer, timeout=20)
     except HTTPError as error:
         if 400 <= error.code < 500 and error.code not in (408, 425, 429):   # refused or gone, not "try later"
             raise Unusable(f"HTTPError: HTTP Error {error.code}: {error.reason}") from None
@@ -295,9 +331,28 @@ def web_load(entry, small=False):
     try:
         with Image.open(BytesIO(data)) as original:
             original.draft("RGB", (LARGEST, LARGEST))
-            picture = upright(original).convert("RGB")
+            return upright(original).convert("RGB")
     except Exception as error:   # the address answered, with something that is not a readable picture
         raise Unusable(f"{type(error).__name__}: {error}") from None
+
+
+def web_load(entry, small=False):
+    """The picture of a web candidate as it will be kept; raises as web_picture does, and TooSmall for a picture
+    under MIN_SIDE (not even loaded when the search engine already gave its size). A picture its own site does not
+    give (hotlink refused, a page instead of a picture, no answer) is taken from the search engine's copy of it
+    when there is one ("mirror", 19/11/2026): the same picture in the same size, still credited to its site."""
+    hint = entry.get("hint")
+    if hint and 0 < min(hint) < MIN_SIDE:
+        raise TooSmall(f"the picture is only {hint[0]} x {hint[1]} px (the smaller side must be {MIN_SIDE} or more)")
+    try:
+        picture = web_picture(entry["image"], entry["page"])
+    except Exception as error:
+        if not entry.get("mirror"):
+            raise
+        try:
+            picture = web_picture(entry["mirror"])
+        except Exception:
+            raise error from None   # the picture's own site says why
     if min(picture.size) < MIN_SIDE:
         raise TooSmall(f"the picture is only {picture.width} x {picture.height} px (the smaller side must be "
                        f"{MIN_SIDE} or more)")
@@ -381,7 +436,8 @@ def keep(entries, load, k, out, seen, limit, workers=3, repeats=False):
             break
         if made is None or (not repeats and twin(made["mark"], seen)):
             continue
-        record = {key: value for key, value in entry.items() if key not in ("thumb", "preview", "shot")}
+        record = {key: value for key, value in entry.items()
+                  if key not in ("thumb", "preview", "shot", "mirror", "hint")}
         if "image" in record:   # a web picture: the size of the file kept (Commons: the size of the original)
             record["width"], record["height"] = made["size"]
         record["file"] = f"{k}-{len(kept) + 1}.jpg"
@@ -741,9 +797,141 @@ def file_find(path, k, out):
 
 
 def web_entries(candidates):
-    return [{"title": title or image.rsplit("/", 1)[-1][:100], "page": page, "image": image, "width": 0, "height": 0,
-             "license": "", "license_url": "", "artist": site(page), "description": title}
-            for image, page, title in candidates]
+    """The candidates of a web search as entries. What the engine knows of a picture rides along and is not
+    recorded: "mirror" (the engine's own copy of it) and "hint" (the size the engine gives)."""
+    entries = []
+    for image, page, title, *more in candidates:
+        entry = {"title": title or image.rsplit("/", 1)[-1][:100], "page": page, "image": image, "width": 0,
+                 "height": 0, "license": "", "license_url": "", "artist": site(page), "description": title}
+        known = more[0] if more else {}
+        if known.get("mirror"):
+            entry["mirror"] = known["mirror"]
+        if isinstance(known.get("width"), int) and isinstance(known.get("height"), int):
+            entry["hint"] = (known["width"], known["height"])
+        entry.update({key: known[key] for key in ("license", "artist") if known.get(key)})   # an archive says
+        entries.append(entry)
+    return entries
+
+
+def largest(srcset):
+    """The largest picture of a srcset ("a.jpg 320w, b.jpg 1280w" → "b.jpg"); the last one when none says."""
+    best, size = "", -1.0
+    for part in re.split(r",\s+", srcset.strip()):
+        address, _, mark = part.strip().partition(" ")
+        try:
+            width = float(mark.strip()[:-1] or 0)
+        except ValueError:
+            width = 0.0
+        if address and width >= size:
+            best, size = address, width
+    return best
+
+
+def larger(address, width=1600):
+    """A IIIF picture address asked in a larger size ("…/full/256,/0/default.jpg" → "…/full/1600,/0/default.jpg":
+    the archives give Japan Search a small preview of a large scan); any other address as it is."""
+    return re.sub(r"/(full|square)/(?:!?\d*,\d*|max|full|pct:[\d.]+)/(\d+)/(default|color|native)\.(jpe?g|png)$",
+                  rf"/\1/{width},/\2/\3.\4", address)
+
+
+def japan_search(words):
+    """Japan Search (jpsearch.go.jp, jps:, 19/11/2026): the shared catalogue of Japan's archives, libraries and
+    museums (the National Diet Library, ColBase of the national museums, the Tokyo museums, university
+    collections…), old prints, paintings, photographs, objects. Returns web candidates for the records that carry
+    a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), in the order of the catalogue; each
+    is credited to the site that holds it, with its licence. A book or a paper is left out: its picture is the scan
+    of its cover or first page (most of what a person's name brings from the National Diet Library). Tried on
+    GitHub on 19/11/2026: the pictures of ColBase (404, the catalogue's addresses are out of date and its pages are
+    built by script) and of museumcollection.tokyo (403) cannot be had; those records are passed over."""
+    found, seen = [], set()
+    for start in (0, JPS_ASK):
+        data = json.loads(web_get(JAPAN_SEARCH + "?" + urlencode({"keyword": words, "size": JPS_ASK, "from": start}),
+                                  timeout=40))
+        records = data.get("list") or []
+        for record in records:
+            common = record.get("common") or {}
+            licence = JPS_RIGHTS.get(common.get("contentsRightsType"))
+
+            def addresses(key):
+                value = common.get(key) or []
+                return [item for item in ([value] if isinstance(value, str) else value) if isinstance(item, str)]
+            full = [item for item in addresses("contentsUrl")
+                    if re.search(r"(?i)\.(jpe?g|png|webp)$", urlsplit(item).path)]
+            small = addresses("thumbnailUrl")
+            if not licence or not (full or small):
+                continue
+            image = full[0] if full else larger(small[0])
+            picture = common.get("contentsType") == "image"
+            if image in seen or (not picture and not full and image != small[0]):   # the page scan of a book
+                continue
+            seen.add(image)
+            page = common.get("linkUrl") or f"https://jpsearch.go.jp/item/{record.get('id', '')}"
+            more = {"mirror": small[0] if small and small[0] != image else None, "license": licence,
+                    "artist": site(page) or "jpsearch.go.jp", "picture": picture}
+            found.append((image, page, plain(common.get("title") or ""), more))
+        if len(found) >= JPS_DEEP * 2 or len(records) < JPS_ASK or start + JPS_ASK >= (data.get("hit") or 0):
+            break
+        time.sleep(1)
+    # records catalogued as pictures (paintings, prints, photographs, objects) before the others; the order of
+    # the catalogue within each
+    found.sort(key=lambda candidate: not candidate[3]["picture"])
+    return found[:JPS_DEEP]
+
+
+def page_text(raw):
+    """The text of a page: in the charset it declares, else UTF-8, else the older Japanese ones."""
+    declared = re.search(rb"""(?i)charset=["']?\s*([\w-]+)""", raw[:4000])
+    for name in ([declared[1].decode("ascii", "replace")] if declared else []) + ["utf-8", "cp932", "euc_jp"]:
+        try:
+            return raw.decode(name)
+        except (LookupError, UnicodeDecodeError):
+            continue
+    return raw.decode("utf-8", "replace")
+
+
+def page_pictures(address):
+    """The pictures an article shows (page:, 19/11/2026), as web candidates (picture address, page address,
+    title): the picture the page names as its own first (og:image), then the pictures in the order of the page,
+    each in its largest version (a link to the full picture around it, srcset, the attributes of lazy loading).
+    The pictures of the page's header, footer, menus and side columns are left out, and page furniture by the name
+    of its file; small pictures fall out when loaded. A page the site refuses cannot be used (Unusable)."""
+    try:
+        raw = web_get(address, limit=8_000_000)
+    except HTTPError as error:
+        if 400 <= error.code < 500 and error.code not in (408, 425, 429):
+            raise Unusable(f"page: the site answers {error.code} ({error.reason}) for {address}") from None
+        raise
+    except ValueError as error:
+        raise Unusable(f"page: {error}") from None
+    try:
+        tree = html.fromstring(re.sub(r"^\s*<\?xml[^>]*\?>", "", page_text(raw)))
+    except Exception as error:
+        raise Unusable(f"page: {address} is not a page a program can read ({type(error).__name__})") from None
+    title = plain(tree.findtext(".//title") or "")
+    found, seen = [], set()
+
+    def add(link, text=""):
+        link = urljoin(address, (link or "").strip())
+        if link.startswith("http") and link not in seen and not FURNITURE.search(urlsplit(link).path):
+            seen.add(link)
+            found.append((link, address, plain(text) or title))
+    for own in tree.xpath('//meta[@property="og:image" or @property="og:image:secure_url" or @name="twitter:image" '
+                          'or @name="twitter:image:src"]/@content'):
+        add(own)
+    for node in tree.iter("img", "source"):
+        parent = node.getparent()
+        if node.tag == "source" and (parent is None or parent.tag != "picture"):
+            continue
+        if next(node.iterancestors("header", "footer", "nav", "aside"), None) is not None:
+            continue
+        text = node.get("alt") or ""
+        around = next(node.iterancestors("a"), None)
+        if around is not None and re.search(r"(?i)\.(jpe?g|png|webp)(\?|$)", around.get("href") or ""):
+            add(around.get("href"), text)   # the picture links to its full version
+        add(largest(node.get("srcset") or node.get("data-srcset") or "") or node.get("data-src")
+            or node.get("data-original") or node.get("data-lazy-src") or (node.get("src") if node.tag == "img" else ""),
+            text)
+    return found[:PAGE_DEEP]
 
 
 def find(query, k, out, seen):
@@ -767,8 +955,13 @@ def find(query, k, out, seen):
     rank = bool(wish) and Clip.ready()
     notes = {"want": wish, "ranked": rank} if wish else {}
     left_out = 0
-    if kind == "web":
-        entries, limit = web_entries(web_search(words, out)), WEB_KEEP
+    if kind in ("web", "page", "jps"):
+        if kind == "web":
+            entries, limit = web_entries(web_search(words, out)), WEB_KEEP
+        elif kind == "page":
+            entries, limit = web_entries(page_pictures(words)), PAGE_KEEP
+        else:
+            entries, limit = web_entries(japan_search(words)), JPS_KEEP
         if rank:   # a web picture has no small version: the candidates are loaded, then scored
             entries = entries[:WEB_DEEP]
             for entry, made in batches(entries, lambda entry: web_shot(entry, small=True), 6):

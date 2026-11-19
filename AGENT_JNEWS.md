@@ -70,7 +70,12 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   2. `geo:<lat>,<lon> <metres>` for a place whose photos carry other names (a street, a park, the surroundings of
      a building); the coordinates of a `wiki:` item are in `index.json`.
   3. `web:<Japanese words>` for the moments of the story (a wedding, a concert, a funeral) and for living people,
-     of whom Commons has little: 2–3 per scene, as before.
+     of whom Commons has little: 2–3 per scene, as before. Each now brings up to 20 pictures from about 55
+     candidates (19/11/2026). When a result comes from an article with more pictures of the same event, append
+     `page:<that article's address>` (the `page` of the result in `index.json`): it brings the pictures of that
+     one article. For old Japan (prints, paintings, old photographs, objects) add `jps:<Japanese words>`: Japan
+     Search, free licences only. And when the owner sent a video for the story, its shots are pictures too:
+     `python tools/video_frames.py <video> <story>` (`CLAUDE.md`, "When the owner sends an original video").
   4. A wish ` => <English description>` on a search that would bring many wrong pictures: the machine keeps only
      the pictures that show it, best first (`"web:寛仁親王 若い頃 => a young man with a beard"`). Plain Commons words
      bring off-topic pictures easily (`Tokyo residential houses` brought two pictures of politicians and
