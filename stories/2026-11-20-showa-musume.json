@@ -1,0 +1,156 @@
+{
+  "stage": "find",
+  "issue": 39,
+  "title": "昭和天皇 5人の娘たちの壮絶な人生",
+  "date": "2026-11-20",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "5人の皇女",
+      "era": "昭和",
+      "headline": "5人の娘たちの\n壮絶な人生",
+      "lines": [
+        {
+          "text": "昭和天皇の娘として生まれた5人の皇女は、それぞれに壮絶な人生を歩みました。",
+          "say": "しょうわてんのうの娘として生まれた、5人の、こうじょは、それぞれに、そうぜつな人生を歩みました。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "長女・成子さま",
+      "era": "1943〜1961年",
+      "headline": "長女・成子さま",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "長女・成子さまは、嫁ぎ先が戦争で家を失うと、内職に励み、特売品を買って家計を切り詰めました。",
+          "say": "長女、しげこさまは、とつぎさきが、戦争で家を失うと、ないしょくに励み、とくばいひんを買って、家計を切り詰めました。"
+        },
+        {
+          "text": "そして5人の幼い子どもを残し、がんのため、35歳でこの世を去ります。",
+          "say": "そして5人の幼い子どもを残し、がんのため、35歳で、この世を去ります。"
+        }
+      ]
+    },
+    {
+      "label": "次女・祐子さま",
+      "era": "1927〜1928年",
+      "headline": "次女・祐子さま",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "次女・祐子さまは、敗血症のため、わずか生後半年で亡くなりました。",
+          "say": "次女、さちこさまは、はいけつしょうのため、わずか生後半年で亡くなりました。"
+        }
+      ]
+    },
+    {
+      "label": "三女・和子さま",
+      "era": "1966年",
+      "headline": "三女・和子さま",
+      "cut": "dip",
+      "lines": [
+        {
+          "text": "三女・和子さまの夫は、行きつけのバーのママと、スキャンダラスな死を遂げます。",
+          "say": "三女、かずこさまの夫は、行きつけのバーのママと、スキャンダラスな死を遂げます。"
+        },
+        {
+          "text": "それからの和子さまは、公の場を避けてひっそりと暮らし、59歳で亡くなりました。",
+          "say": "それからの、かずこさまは、おおやけの場を避けて、ひっそりと暮らし、59歳で亡くなりました。"
+        }
+      ]
+    },
+    {
+      "label": "四女・厚子さま",
+      "era": "昭和",
+      "headline": "四女・厚子さま",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "四女・厚子さまは、子どもには恵まれませんでした。",
+          "say": "四女、あつこさまは、子どもには恵まれませんでした。"
+        },
+        {
+          "text": "それでも「子どもたちの喜ぶ姿が見たい」という夫の夢、動物園の運営を、妻として支え続けたのです。",
+          "say": "それでも、子どもたちの喜ぶ姿が見たい、という夫の夢、動物園の運営を、妻として、支え続けたのです。"
+        }
+      ]
+    },
+    {
+      "label": "五女・貴子さま",
+      "era": "昭和",
+      "headline": "五女・貴子さま",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "五女・貴子さまは、2度も誘拐未遂事件に巻き込まれました。",
+          "say": "五女、たかこさまは、2度も、ゆうかいみすい事件に、巻き込まれました。"
+        },
+        {
+          "text": "息子がカナダ人女性と結婚すると、「昭和天皇の孫が国際結婚」と話題になります。",
+          "say": "息子が、カナダ人女性と結婚すると、しょうわてんのうの孫が、こくさいけっこん、と話題になります。"
+        }
+      ]
+    },
+    {
+      "label": "毅然と",
+      "era": "昭和〜平成",
+      "headline": "毅然と\n生き抜いた娘たち",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "皇室を離れ、一般の人として嫁いだ4人の娘たち。",
+          "say": "こうしつを離れ、一般の人として嫁いだ、4人の娘たち。"
+        },
+        {
+          "text": "厳しい現実に直面しながらも、それぞれの人生を、毅然と生き抜いたのです。",
+          "say": "厳しい現実に直面しながらも、それぞれの人生を、きぜんと生き抜いたのです。"
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "file:stories/media/2026-11-20-showa-musume/v-0m04s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m07s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m14s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m17s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m23s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m27s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m34s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m36s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m38s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m41s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m44s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m46s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m49s.jpg",
+    "file:stories/media/2026-11-20-showa-musume/v-0m55s.jpg",
+    "wiki:香淳皇后",
+    "wiki:昭和天皇",
+    "wiki:東久邇成子",
+    "wiki:鷹司和子",
+    "wiki:池田厚子",
+    "wiki:島津貴子",
+    "wiki:池田動物園",
+    "web:昭和天皇 皇女 5人 写真 => a Japanese empress with her young daughters in kimono",
+    "web:東久邇成子 子どもたち",
+    "web:鷹司和子 鷹司平通 結婚",
+    "web:池田厚子 池田動物園",
+    "web:島津貴子 若い頃 => a young Japanese princess smiling in the 1950s",
+    "web:昭和天皇 香淳皇后 娘たち 晩年",
+    "music:Satie Gymnopédie piano",
+    "music:Chopin Nocturne piano"
+  ]
+}
