@@ -4046,5 +4046,111 @@
     "seconds": 236.2
    }
   ]
+ },
+ {
+  "k": 25,
+  "query": "page:https://bunshun.jp/articles/photo/82090",
+  "results": []
+ },
+ {
+  "k": 26,
+  "query": "web:夏目雅子 伊集院静 婚約会見 1984 => a young Japanese couple at a press conference",
+  "results": [
+   {
+    "title": "作家・伊集院静氏 73歳、肝内胆管がん 夏目雅子さんと死別後に ...",
+    "page": "https://origin.daily.co.jp/gossip/2023/11/25/0017063875.shtml?ph=5",
+    "image": "https://i.daily.jp/gossip/2023/11/25/Images/f_17063877.jpg",
+    "width": 960,
+    "height": 631,
+    "license": "",
+    "license_url": "",
+    "artist": "origin.daily.co.jp",
+    "description": "作家・伊集院静氏 73歳、肝内胆管がん 夏目雅子さんと死別後に ...",
+    "match": 0.29,
+    "file": "26-1.jpg"
+   },
+   {
+    "title": "□ふたりの雅子〈夏目雅子〉の真実！小達スエ 誕生から伊集院静 ...",
+    "page": "https://jp.mercari.com/item/m20351618254",
+    "image": "https://static.mercdn.net/item/detail/orig/photos/m20351618254_18.jpg?1775124941",
+    "width": 1080,
+    "height": 1080,
+    "license": "",
+    "license_url": "",
+    "artist": "jp.mercari.com",
+    "description": "□ふたりの雅子〈夏目雅子〉の真実！小達スエ 誕生から伊集院静 ...",
+    "match": 0.233,
+    "file": "26-2.jpg"
+   }
+  ],
+  "want": "a young Japanese couple at a press conference",
+  "ranked": true,
+  "candidates": 34,
+  "left_out": 16
+ },
+ {
+  "k": 27,
+  "query": "web:夏目雅子 伊集院静 ツーショット 写真 => a young Japanese woman and a man together, 1980s photo",
+  "results": [
+   {
+    "title": "伝説の女優・夏目雅子の生涯に、実兄の証言や貴重映像で迫る ...",
+    "page": "https://thetv.jp/news/detail/213193/",
+    "image": "https://thetv.jp/i/nw/213193/1314139.jpg?w=1284",
+    "width": 615,
+    "height": 488,
+    "license": "",
+    "license_url": "",
+    "artist": "thetv.jp",
+    "description": "伝説の女優・夏目雅子の生涯に、実兄の証言や貴重映像で迫る ...",
+    "match": 0.278,
+    "file": "27-1.jpg"
+   }
+  ],
+  "want": "a young Japanese woman and a man together, 1980s photo",
+  "ranked": true,
+  "candidates": 32,
+  "left_out": 15
+ },
+ {
+  "k": 28,
+  "query": "page:https://bunshun.jp/articles/-/82089",
+  "results": [
+   {
+    "title": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》 | 文春オンライン",
+    "page": "https://bunshun.jp/articles/-/82089",
+    "image": "https://bunshun.jp/mwimgs/f/3/1200wm/img_f30665d7833afce08ed826b0d7a63bb0499459.jpg",
+    "width": 1200,
+    "height": 750,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》 | 文春オンライン",
+    "file": "28-1.jpg"
+   },
+   {
+    "title": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》",
+    "page": "https://bunshun.jp/articles/-/82089",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/e/7/1500wm/img_e7a590ca97cbba402501c19b8e067309248659.jpg",
+    "width": 1500,
+    "height": 499,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》",
+    "file": "28-2.jpg"
+   },
+   {
+    "title": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》 | 文春オンライン",
+    "page": "https://bunshun.jp/articles/-/82089",
+    "image": "https://bunshun.ismcdn.jp/mwimgs/b/e/1500wm/img_be22a27c567340697ebbb4bdfcb838401908560.jpg",
+    "width": 1500,
+    "height": 1955,
+    "license": "",
+    "license_url": "",
+    "artist": "bunshun.jp",
+    "description": "小麦色の肌で撮った“セミヌード広告”に家族が激怒…伝説の女優・夏目雅子（享年27）の“ブレイク秘話”《のちの夫がキャスティングを…》 | 文春オンライン",
+    "file": "28-3.jpg"
+   }
+  ]
  }
 ]
