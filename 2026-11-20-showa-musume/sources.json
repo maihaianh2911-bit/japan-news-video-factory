@@ -1,0 +1,317 @@
+{
+  "demo": false,
+  "duration_seconds": 67.01,
+  "release": {
+    "url": "",
+    "published": "2026-11-20",
+    "publisher": "",
+    "title": "昭和天皇 5人の娘たちの壮絶な人生"
+  },
+  "photos": [
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Empress_Kojun_and_Princesses.jpg",
+      "title": "Empress Kojun and Princesses.jpg",
+      "creator": "Wikimedia Commons",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Emperor_Showa%27s_daughters.jpg",
+      "title": "Emperor Showa's daughters.jpg",
+      "creator": "Wikimedia Commons",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Higashikuni-no-miya_Wedding_1943.jpg",
+      "title": "Higashikuni-no-miya Wedding 1943.jpg",
+      "creator": "Unknown authorUnknown author",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Higashikuni_Morihiro_and_Shigeko.jpg",
+      "title": "Higashikuni Morihiro and Shigeko.jpg",
+      "creator": "日本與論調査研究所",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m14s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m17s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m23s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Empress_K%C5%8Djun_Takatsukasa_Toshimichi_and_Kazuko.jpg",
+      "title": "Empress Kōjun Takatsukasa Toshimichi and Kazuko.jpg",
+      "creator": "日本與論調査研究所",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Takamasa_Ikeda_and_Atsuko_1952_Scan10010.JPG",
+      "title": "Takamasa Ikeda and Atsuko 1952 Scan10010.JPG",
+      "creator": "古川秀二（朝日新聞東京本社） / Shuji Furukawa (Asahi Shinbun)",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m38s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m41s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m44s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m46s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m49s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "",
+      "title": "v-0m55s.jpg",
+      "creator": "元動画",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Emperor_Showa_%26_Empress_Kojun_1956-11.jpg",
+      "title": "Emperor Showa & Empress Kojun 1956-11.jpg",
+      "creator": "宮内庁",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "creator": "Robin Alciatore",
+    "license": "Public domain"
+  },
+  "scenes": [
+    {
+      "label": "5人の皇女",
+      "headline": "5人の娘たちの\n壮絶な人生",
+      "lines": [
+        "昭和天皇の娘として生まれた5人の皇女は、それぞれに壮絶な人生を歩みました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "しょうわてんのうの娘として生まれた、5人の、こうじょは、それぞれに、そうぜつな人生を歩みました。"
+      ],
+      "cut": "",
+      "why": "Hoàng hậu Kojun với các công chúa (ảnh chính), rồi ba chị em.",
+      "era": "昭和",
+      "quotes": [
+        0
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Empress_Kojun_and_Princesses.jpg",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Empress_Kojun_and_Princesses.jpg",
+        "https://commons.wikimedia.org/wiki/File:Emperor_Showa%27s_daughters.jpg"
+      ]
+    },
+    {
+      "label": "長女・成子さま",
+      "headline": "長女・成子さま",
+      "lines": [
+        "長女・成子さまは、嫁ぎ先が戦争で家を失うと、内職に励み、特売品を買って家計を切り詰めました。",
+        "そして5人の幼い子どもを残し、がんのため、35歳でこの世を去ります。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "長女、しげこさまは、とつぎさきが、戦争で家を失うと、ないしょくに励み、とくばいひんを買って、家計を切り詰めました。",
+        "そして5人の幼い子どもを残し、がんのため、35歳で、この世を去ります。"
+      ],
+      "cut": "page",
+      "why": "Đám cưới năm 1943, hai vợ chồng, rồi nụ cười của bà Shigeko.",
+      "era": "1943〜1961年",
+      "quotes": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Higashikuni-no-miya_Wedding_1943.jpg",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Higashikuni-no-miya_Wedding_1943.jpg",
+        "https://commons.wikimedia.org/wiki/File:Higashikuni_Morihiro_and_Shigeko.jpg",
+        ""
+      ]
+    },
+    {
+      "label": "次女・祐子さま",
+      "headline": "次女・祐子さま",
+      "lines": [
+        "次女・祐子さまは、敗血症のため、わずか生後半年で亡くなりました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "次女、さちこさまは、はいけつしょうのため、わずか生後半年で亡くなりました。"
+      ],
+      "cut": "fade",
+      "why": "Công chúa Sachiko lúc còn bé.",
+      "era": "1927〜1928年",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        ""
+      ]
+    },
+    {
+      "label": "三女・和子さま",
+      "headline": "三女・和子さま",
+      "lines": [
+        "三女・和子さまの夫は、行きつけのバーのママと、スキャンダラスな死を遂げます。",
+        "それからの和子さまは、公の場を避けてひっそりと暮らし、59歳で亡くなりました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "三女、かずこさまの夫は、行きつけのバーのママと、スキャンダラスな死を遂げます。",
+        "それからの、かずこさまは、おおやけの場を避けて、ひっそりと暮らし、59歳で亡くなりました。"
+      ],
+      "cut": "dip",
+      "why": "Bà Kazuko bên chồng, rồi bà với mẹ.",
+      "era": "1966年",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://commons.wikimedia.org/wiki/File:Empress_K%C5%8Djun_Takatsukasa_Toshimichi_and_Kazuko.jpg"
+      ]
+    },
+    {
+      "label": "四女・厚子さま",
+      "headline": "四女・厚子さま",
+      "lines": [
+        "四女・厚子さまは、子どもには恵まれませんでした。",
+        "それでも「子どもたちの喜ぶ姿が見たい」という夫の夢、動物園の運営を、妻として支え続けたのです。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "四女、あつこさまは、子どもには恵まれませんでした。",
+        "それでも、子どもたちの喜ぶ姿が見たい、という夫の夢、動物園の運営を、妻として、支え続けたのです。"
+      ],
+      "cut": "fade",
+      "why": "Vợ chồng bà Atsuko, chăm bò ở vườn thú, rồi vườn thú Ikeda.",
+      "era": "昭和",
+      "quotes": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Takamasa_Ikeda_and_Atsuko_1952_Scan10010.JPG",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Takamasa_Ikeda_and_Atsuko_1952_Scan10010.JPG",
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "五女・貴子さま",
+      "headline": "五女・貴子さま",
+      "lines": [
+        "五女・貴子さまは、2度も誘拐未遂事件に巻き込まれました。",
+        "息子がカナダ人女性と結婚すると、「昭和天皇の孫が国際結婚」と話題になります。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "五女、たかこさまは、2度も、ゆうかいみすい事件に、巻き込まれました。",
+        "息子が、カナダ人女性と結婚すると、しょうわてんのうの孫が、こくさいけっこん、と話題になります。"
+      ],
+      "cut": "fade",
+      "why": "Đám cưới bà Takako, họp báo, rồi con trai và vợ người Canada.",
+      "era": "昭和",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "label": "毅然と",
+      "headline": "毅然と\n生き抜いた娘たち",
+      "lines": [
+        "皇室を離れ、一般の人として嫁いだ4人の娘たち。",
+        "厳しい現実に直面しながらも、それぞれの人生を、毅然と生き抜いたのです。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "こうしつを離れ、一般の人として嫁いだ、4人の娘たち。",
+        "厳しい現実に直面しながらも、それぞれの人生を、きぜんと生き抜いたのです。"
+      ],
+      "cut": "fade",
+      "why": "Cả gia đình, rồi kết bằng Thiên hoàng và Hoàng hậu.",
+      "era": "昭和〜平成",
+      "quotes": [],
+      "image_url": "",
+      "image_urls": [
+        "",
+        "https://commons.wikimedia.org/wiki/File:Emperor_Showa_%26_Empress_Kojun_1956-11.jpg"
+      ]
+    }
+  ]
+}
