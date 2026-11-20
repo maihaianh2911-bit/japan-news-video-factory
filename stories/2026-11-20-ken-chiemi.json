@@ -1,0 +1,141 @@
+{
+  "stage": "find",
+  "issue": 36,
+  "title": "高倉健と江利チエミ",
+  "date": "2026-11-20",
+  "style": "story",
+  "kicker": "昭和のスター",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:高倉健",
+    "wiki:江利チエミ",
+    "web:高倉健 江利チエミ 夫婦 => a young Japanese couple from the 1960s, an actor and a singer",
+    "web:高倉健 江利チエミ 2ショット => a Japanese man and woman smiling together, black and white photo",
+    "web:高倉健 江利チエミ 結婚式 1959 => a Japanese bride and groom wedding photo 1950s",
+    "web:江利チエミ テネシーワルツ 若い頃 => a young Japanese woman singer in the 1950s",
+    "web:高倉健 若い頃 東映 => a young Japanese film actor in the 1950s",
+    "web:江利チエミ 1960年代 => a Japanese woman singer in the 1960s",
+    "web:高倉健 江利チエミ 自宅 火事 1970 => a burnt house after a fire, Japanese newspaper photo",
+    "web:高倉健 1960年代 => a Japanese film actor in the 1960s",
+    "web:江利チエミ 異父姉 借金 新聞 => a Japanese newspaper article page from the 1970s",
+    "web:江利チエミ 1970年代 => portrait of a Japanese woman singer in the 1970s",
+    "web:高倉健 江利チエミ 離婚 1971 => a Japanese newspaper about a celebrity divorce",
+    "web:江利チエミ 離婚会見 => a Japanese woman speaking at a press conference",
+    "web:高倉健 1970年代 => a Japanese actor in the 1970s, serious face",
+    "web:江利チエミ 晩年 => a Japanese woman singer in her forties",
+    "web:江利チエミ 1980年代 ステージ => a Japanese woman singing on stage in the 1980s",
+    "web:江利チエミ 葬儀 1982 => a Japanese funeral altar with a portrait and flowers",
+    "web:高倉健 1980年代 => portrait of a Japanese actor in his fifties",
+    "web:高倉健 本名 小田剛一 => portrait of a Japanese actor",
+    "web:白い花 供花 => white funeral flowers",
+    "web:高倉健 晩年 => an elderly Japanese actor with grey hair",
+    "web:江利チエミ 墓 法徳寺 => a Japanese grave at a temple",
+    "web:高倉健 江利チエミ 笑顔 => a smiling Japanese couple, old photo",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano",
+    "music:Schumann Träumerei piano"
+  ],
+  "scenes": [
+    {
+      "label": "一途",
+      "era": "1959年〜",
+      "headline": "高倉健と\n江利チエミ",
+      "lines": [
+        {
+          "text": "高倉健さんは、江利チエミさんと別れたあと、生涯ほかの誰とも結婚しませんでした。",
+          "say": "たかくらけんさんは、えりチエミさんと別れたあと、生涯ほかの誰とも結婚しませんでした。",
+          "quote": true
+        },
+        {
+          "text": "そして彼女の死後も、命日が近づくと、人知れず墓に手を合わせていたと伝えられています。",
+          "say": "そして彼女の死後も、命日が近づくと、ひとしれず墓に手を合わせていたと伝えられています。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "結婚",
+      "era": "1959年",
+      "headline": "スター同士の結婚",
+      "lines": [
+        "二人が結婚したのは1959年、人気歌手と映画スターの結婚でした。"
+      ]
+    },
+    {
+      "label": "不運",
+      "era": "1960年代",
+      "headline": "続く不運",
+      "lines": [
+        "けれど、幸せは長く続きません。",
+        "授かった子どもは病のためにあきらめることになり、1970年には家が火事で焼けてしまいます。"
+      ]
+    },
+    {
+      "label": "借金",
+      "era": "1970年",
+      "headline": "異父姉の裏切り",
+      "lines": [
+        {
+          "text": "さらにチエミさんの異父姉が、実印を使って預金を使い込み、家まで抵当に入れて、数億円ともいわれる借金を作っていたのです。",
+          "say": "さらに、チエミさんの、いふしが、じついんを使って預金を使い込み、家まで抵当に入れて、すうおくえんとも言われる借金を作っていたのです。"
+        }
+      ]
+    },
+    {
+      "label": "離婚",
+      "era": "1971年",
+      "headline": "自ら離婚を",
+      "lines": [
+        "夫にまで、この借金を背負わせたくない。",
+        "1971年、チエミさんは自ら離婚を申し出ます。"
+      ]
+    },
+    {
+      "label": "別れ",
+      "era": "1982年",
+      "headline": "45歳の別れ",
+      "lines": [
+        "その後は再婚せず、一人で借金を返し終えたチエミさん。",
+        "1982年2月、45歳の若さでこの世を去りました。"
+      ]
+    },
+    {
+      "label": "花",
+      "era": "1982年",
+      "headline": "本名で届いた花",
+      "lines": [
+        {
+          "text": "葬儀に健さんの姿はありませんでした。",
+          "say": "葬儀に、けんさんの姿はありませんでした。"
+        },
+        {
+          "text": "けれどその日、健さんの本名「小田剛一」の名で、花が届けられていたといいます。",
+          "say": "けれどその日、けんさんの本名、おだごういちの名で、花が届けられていたといいます。"
+        }
+      ]
+    },
+    {
+      "label": "今も",
+      "era": "2014年",
+      "headline": "歩いて行ける場所",
+      "lines": [
+        {
+          "text": "2014年、健さんは83歳で亡くなります。",
+          "say": "2014年、けんさんは83歳で亡くなります。"
+        },
+        "チエミさんが眠る寺は、健さんの家から歩いて行ける場所にありました。"
+      ]
+    }
+  ]
+}
