@@ -933,7 +933,8 @@ class Scene:
             self.draw_parts(frame, age)
         if photo:
             draw = ImageDraw.Draw(frame)
-            credit = ("映像  " if photo.footage else "写真  ") + photo.creator + (f" / {photo.license}" if photo.license else "")
+            creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
+            credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
             if style.layout in ON_PICTURE:
                 credit, credit_size = fit(credit, 560, 24, 1, bold=False, smallest=16)
                 text(draw, 60, 1774, credit, credit_size, style.muted, bold=False)

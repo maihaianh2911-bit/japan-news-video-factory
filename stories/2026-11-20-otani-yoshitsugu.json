@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "一杯の茶の恩 大谷吉継と石田三成",
   "date": "2026-11-20",
   "style": "history",
@@ -81,7 +81,33 @@
           "text": "関ヶ原で散った彼の最期は、戦国でいちばん美しい友情の物語として、今も語り継がれています。",
           "say": "せきがはらでちった彼のさいごは、せんごくでいちばん美しいゆうじょうの物語として、今もかたりつがれています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.12
+          ],
+          "depth": false
+        },
+        {
+          "pick": "1-1",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "3-12",
+          "move": "pan-right",
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng chân dung trùm khăn trắng, tiến chậm vào mặt cho câu mở"
     },
     {
       "label": "茶会",
@@ -100,7 +126,33 @@
           "text": "居並ぶ武将たちは、誰も口をつけようとしません。",
           "say": "いならぶぶしょうたちは、だれも口をつけようとしません。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-11",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "17-1",
+          "move": "hold",
+          "focus": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "pick": "26-13",
+          "move": "pan-right",
+          "depth": false
+        }
+      ],
+      "why": "Tiến vào khăn trắng rồi chén trà, lia qua hàng võ tướng ngồi",
+      "cut": "fade"
     },
     {
       "label": "恩",
@@ -111,7 +163,28 @@
           "text": "そのとき、茶碗を取って一息に飲み干したのが、石田三成だったと伝えられています。",
           "say": "そのとき、ちゃわんを取って、ひといきに飲みほしたのが、いしだみつなりだったと伝えられています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-3",
+          "move": "hold",
+          "focus": [
+            0.6,
+            0.4
+          ]
+        },
+        {
+          "pick": "10-4",
+          "move": "reveal",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Cắt thẳng, giật vào chén trà rồi lộ ra Mitsunari",
+      "cut": "hard"
     },
     {
       "label": "決意",
@@ -130,7 +203,39 @@
           "text": "けれど友の決意が変わらないと知ると、負けを承知で、その隣に立つと決めたのです。",
           "say": "けれど、とものけついが変わらないと知ると、まけをしょうちで、そのとなりに立つと決めたのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "10-13",
+          "move": "hold",
+          "focus": [
+            0.35,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "34-1",
+          "start": 0.0,
+          "seconds": 4.5,
+          "tone": "sepia",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Tối dần sang nhiều năm sau; kết bằng đoạn phim võ sĩ mặc giáp",
+      "cut": "dip"
     },
     {
       "label": "決戦",
@@ -145,7 +250,24 @@
           "text": "目はほとんど見えず、馬にも乗れない吉継は、輿の上から兵を指揮しました。",
           "say": "目はほとんど見えず、うまにも乗れないよしつぐは、こしの上から、へいをしきしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-13",
+          "move": "pull-back"
+        },
+        {
+          "pick": "9-3",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Lùi ra toàn cảnh chiến trường rồi tiến vào chiếc kiệu",
+      "cut": "fade"
     },
     {
       "label": "裏切り",
@@ -160,7 +282,35 @@
           "text": "吉継はこの裏切りさえ読んでいて、わずかな兵で何度も押し返しました。",
           "say": "よしつぐは、このうらぎりさえ読んでいて、わずかなへいで、何度も押し返しました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-11",
+          "move": "punch-in",
+          "focus": [
+            0.5,
+            0.12
+          ],
+          "depth": false
+        },
+        {
+          "pick": "36-2",
+          "start": 5.4,
+          "seconds": 2.6,
+          "tone": "sepia",
+          "focus": [
+            0.38,
+            0.5
+          ]
+        },
+        {
+          "pick": "3-1",
+          "move": "pan-left",
+          "depth": false
+        }
+      ],
+      "why": "Lóe sáng cho cú phản bội; đoạn phim kỵ binh lao tới",
+      "cut": "flash"
     },
     {
       "label": "最期",
@@ -179,11 +329,34 @@
           "text": "関ヶ原で自害した大名は、彼ただ一人です。",
           "say": "せきがはらでじがいしただいみょうは、彼ただひとりです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-8",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "26-12",
+          "move": "push-in",
+          "focus": [
+            0.3,
+            0.45
+          ],
+          "depth": false
+        },
+        {
+          "pick": "3-3",
+          "move": "pan-left",
+          "depth": false
+        }
+      ],
+      "why": "Lia qua cảnh hỗn chiến, dừng ở bức tranh tự sát",
+      "cut": "fade"
     },
     {
       "label": "その後",
-      "era": "現在",
+      "era": "その後",
       "headline": "敵が建てた墓",
       "lines": [
         {
@@ -194,7 +367,36 @@
           "text": "いま関ヶ原に立つ吉継の墓は、あの日、敵として戦った藤堂家が建てたものです。",
           "say": "いま、せきがはらに立つよしつぐのはかは、あの日、てきとして戦ったとうどうけが建てたものです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "13-13",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-2",
+          "move": "push-in",
+          "focus": [
+            0.55,
+            0.45
+          ]
+        }
+      ],
+      "why": "Tối dần về hiện tại, tiến chậm vào ngôi mộ",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "42-3",
+    "volume": 1
+  }
 }
