@@ -20,7 +20,7 @@ from .visuals import Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx"}
-STYLES = ("news", "paper", "story")
+STYLES = ("news", "paper", "story", "history")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
@@ -47,7 +47,7 @@ class Music:
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
 # prefixes of a search; without one: Commons words
-SEARCH_KINDS = ("file", "music", "web", "url", "page", "jps", "wiki", "geo")
+SEARCH_KINDS = ("file", "music", "video", "web", "url", "page", "jps", "wiki", "geo")
 WISH = "=>"                                                     # "<search> => <what the picture must show>"
 GEO = re.compile(r"^(-?\d+(?:\.\d+)?)\s*[,; ]\s*(-?\d+(?:\.\d+)?)(?:\s+(\d+)\s*m?)?$")
 NOT_LATIN = re.compile(r"[^\x00-\u024f\u2000-\u206f]")          # Japanese, Chinese, Cyrillic …: the ranking reads English
@@ -83,7 +83,7 @@ def search_parts(search):
         if search.startswith(name + ":"):
             kind, words = name, search[len(name) + 1:]
             break
-    if kind not in ("file", "music", "url"):
+    if kind not in ("file", "music", "video", "url"):
         words, _, wish = words.partition(WISH)
     return kind, words.strip(), wish.strip()
 
@@ -91,7 +91,7 @@ def search_parts(search):
 def search_problems(search, where):
     """The problems of the new search syntax (wiki:, geo:, the wish after "=>"); old searches have none."""
     kind, words, wish = search_parts(search)
-    if kind in ("file", "music", "url"):
+    if kind in ("file", "music", "video", "url"):
         if f" {WISH} " in search:
             return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, page:, jps:, wiki: and geo:, not with {kind}:']
         return []
