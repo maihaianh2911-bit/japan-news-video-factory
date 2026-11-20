@@ -6,6 +6,8 @@
 > would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
 > issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
 > owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
+> (3) **Vertical, over 61 seconds and at most 160** (owner, 18/11/2026: all channels; 19/11/2026: "không cần ép 80s,
+> chỉ cần trên 61s"): never lengthen a script only to reach 80 seconds.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
 result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星, captions timed to the
@@ -55,9 +57,11 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
 - Real pictures only, never AI pictures. You look at every picture yourself.
 - Pictures may come from anywhere on the web (owner, 14/11/2026, risk accepted): `web:` searches (`CLAUDE.md` step
   1) next to Commons ones. Skip pictures with a watermark, a logo or text burnt in, or a small blurred copy.
-- The script is the owner's and is approved: translate it faithfully into Japanese (a Japanese script: the owner's
-  words exactly), sentence by sentence. Do not cut, add, reorder or correct anything, and do not ask for another
-  approval. Only write proper names the canonical way.
+- The script is the owner's: put it into Japanese and **improve it** (owner, 19/11/2026: "Sửa cả kịch bản tao gửi";
+  before: translated faithfully, nothing cut or added). You may cut, add, reorder and rewrite so that it is better
+  and more gripping, keeping the owner's story and main idea; rumours may be told as rumours and the telling
+  dramatised, but no event or quote of a real person is made up and told as a fact (`CLAUDE.md`, the rule changes
+  of 19/11/2026). Say on the issue what you changed. Write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
 - How to write the searches (17/11/2026; syntax in `CLAUDE.md` step 1), in this order:
@@ -68,13 +72,19 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   2. `geo:<lat>,<lon> <metres>` for a place whose photos carry other names (a street, a park, the surroundings of
      a building); the coordinates of a `wiki:` item are in `index.json`.
   3. `web:<Japanese words>` for the moments of the story (a wedding, a concert, a funeral) and for living people,
-     of whom Commons has little: 2–3 per scene, as before.
+     of whom Commons has little: 2–3 per scene, as before. Each now brings up to 20 pictures from about 55
+     candidates (19/11/2026). When a result comes from an article with more pictures of the same event, append
+     `page:<that article's address>` (the `page` of the result in `index.json`): it brings the pictures of that
+     one article. For old Japan (prints, paintings, old photographs, objects) add `jps:<Japanese words>`: Japan
+     Search, free licences only. And when the owner sent a video for the story, its shots are pictures too:
+     `python tools/video_frames.py <video> <story>` (`CLAUDE.md`, "When the owner sends an original video").
   4. A wish ` => <English description>` on a search that would bring many wrong pictures: the machine keeps only
      the pictures that show it, best first (`"web:寛仁親王 若い頃 => a young man with a beard"`). Plain Commons words
      bring off-topic pictures easily (`Tokyo residential houses` brought two pictures of politicians and
      three covers of old maps among its 8): give such a search a wish, or use `wiki:`.
-- Two pictures per scene (owner, 14/11/2026): a new picture every 4–5 seconds (`"photo"` as a list, `CLAUDE.md`
-  step 3).
+- Two pictures for a scene whose words last over 6 seconds, one is enough under that (owner, 19/11/2026: "nếu nội
+  dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"; two a scene before): `"photo"` as a list,
+  `CLAUDE.md` step 3.
 - Picture effects on (owner, 17/11/2026): every **new** story carries
   `"fx": {"motion": true, "depth": true, "text": true, "face": true}` (camera rhythm, light depth in the pictures,
   text that comes in with the voice and a caption that darkens as it is read, the display typeface; what each does:
@@ -99,8 +109,12 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
    place? If not, append the search again with the exact Wikipedia title or the item. A search with a wish shows
    its score on the sheet (`~0.31`: it shows the thing; near `0.20`: doubtful; `"ranked": false`: the ranking was
    not installed, the wish was ignored); an empty group means nothing showed the wish: append other words.
-   `index.json` has titles, authors and licences; a search with `"error"` failed: run the
-   find again with the dispatch command of §4 (only the failed searches are tried again).
+   `index.json` has titles, authors and licences; a search with `"error"` failed because its source did not
+   answer: run the find again with the dispatch command of §4 (only the failed searches are tried again). A
+   search with `"unusable"` cannot work as written (a `wiki:` name that names nothing, a `url:` picture the site
+   refuses or that is too small): the run is green and it is never tried again, so do **not** run the find again
+   for it. Read its reason and append another search if the scene still needs that picture (`CLAUDE.md`, "Story
+   format", step 2).
 2. A scene without a fitting picture → append searches (never change or reorder existing ones), keep
    `stage: "find"`, commit `[jnews #N] tìm thêm ảnh`, push, remove `jnews-busy`. You are called again at
    `jnews-pick`.
@@ -121,7 +135,13 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
      1920s line, no other event's photo on "that day");
    - the main person is whole and seen: face not cut by the crop, not under the headline or the quote;
    - it is clean and sharp enough: no burnt-in news captions, logos or watermarks, not a small picture blown up;
-   - it is not a near-duplicate of another pick (the same moment from another site).
+   - it passes **the picture rules of the edit** (`CLAUDE.md`, owner 19/11/2026): the first picture is the best of
+     the video (rules 1–5), the whole face stays in the frame during the whole move and no text lies over it
+     (6–7), the person spoken of is the clearest of a group and not a very small face (8–9). The preview's
+     `warning:` lines about faces and the first picture are settled first (the `"focus"` it gives, another move,
+     `"fit": "contain"`, another picture); what it cannot see (2, 3, 8, 9) you check here.
+   (A picture may be used again in the video: "no near-duplicate" is not a rule, the owner turned it down on
+   19/11/2026.)
    Any row that fails: pick another picture (or append searches, step 2), preview, run the review again. Render
    only when every row passes, and write in the closing comment "Đã duyệt ảnh: N/N ảnh khớp lời đọc".
 6. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
@@ -148,17 +168,18 @@ owner: why these edits; never drawn in the video).
 
 | `move` | What it looks like | When (the meaning of the line) |
 | --- | --- | --- |
-| `push-in` | slowly closer to the focus point (16–30 % closer, by the time on screen) | a person, a feeling, a decision; the line is about who is in the picture |
+| `push-in` | closer to the focus point (25–45 % closer, by the time on screen; it keeps moving to the end) | a person, a feeling, a decision; the line is about who is in the picture |
 | `pull-back` | slowly wider (as much as `push-in`) | a place or a situation; the last picture of a story (ending) |
 | `pan-right` / `pan-left` | travels across a wide picture | an action or a journey, a row of people, a street; towards where they look or move. Needs a wide picture |
 | `rise` | travels up a tall picture | a building, a standing person, growth, hope, rising numbers. Needs a tall picture |
 | `fall` | travels down a tall picture | decline, loss, mourning, falling numbers; reading down a page. Needs a tall picture |
-| `close-up` | very close on the focus point (1.8 times), almost still | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Always give `focus` (the preview warns without it); needs a large picture. On a portrait whose face already fills the picture it cuts the forehead: use `push-in` there |
+| `close-up` | very close on the focus point (1.8 times), still moving closer | a detail the line names (hands, an object, one face in a group); a quiet or intimate line. Always give `focus` (the preview warns without it); needs a large picture. On a portrait whose face already fills the picture it cuts the forehead: use `push-in` there |
 | `reveal` | starts very close, quickly opens to the whole picture | a comparison or a surprise of context ("but in fact…"), the first picture of a new place |
 | `punch-in` | jumps closer in a third of a second, then holds. The picture arrives by a hard cut (no fade from the picture before), and on the first picture of a scene the jump waits until the scene has arrived | a shock: a death, an accident, a scandal, a hard number. At most once or twice in a video |
-| `hold` | still | a document, a chart, a map, a number to read; with `"fit": "contain"` the whole picture is shown |
+| `hold` | a slow drift (8–15 % closer): never a frozen picture (owner, 19/11/2026) | a document, a chart, a map, a number to read; with `"fit": "contain"` the whole picture is shown |
 
 With `"fit": "contain"` only `push-in`, `pull-back` and `hold` exist (the whole picture grows, shrinks or stays).
+Owner, 19/11/2026: every picture must be seen to move for its whole time on screen; a picture that looks still is a fault.
 
 | `cut` | What it looks like | When |
 | --- | --- | --- |

@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 31,
   "title": "日本中から嫌われた妻を守り続けた木村拓哉",
   "date": "2026-11-18",
@@ -74,7 +74,37 @@
           "say": "幸いなことに、きむらさんは26年間、ずっと彼女を守り続けてきたのです。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "26-1",
+          "focus": [
+            0.42,
+            0.45
+          ],
+          "depth": false,
+          "move": "pull-back"
+        },
+        {
+          "pick": "25-1",
+          "focus": [
+            0.5,
+            0.7
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-7",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: hai người thời trẻ cạnh nhau, Kudo trên bìa đĩa khi nói cô bị ghét, Kimura tóc dài khi nói anh bảo vệ cô, rồi hai vợ chồng hôm nay."
     },
     {
       "label": "発表",
@@ -86,7 +116,36 @@
           "say": "2000年11月、くどうさんの妊娠が報じられたその日、きむらさんは、300人を超える報道陣の前に自ら立ち、結婚を発表しました。"
         },
         "隠し続けるのは、嘘をつき続けるのと同じだと考えたからでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-10",
+          "focus": [
+            0.3,
+            0.5
+          ],
+          "depth": false,
+          "move": "pan-right"
+        },
+        {
+          "pick": "5-4",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "dip",
+      "why": "Lùi về tháng 11/2000: Kimura trước micro phóng viên, trang nhất báo thể thao về đám cưới, rồi gương mặt anh."
     },
     {
       "label": "非難",
@@ -98,7 +157,38 @@
           "say": "けれど、ファンの怒りは一斉に、くどうさんへ向かいます。"
         },
         "トップアイドルを奪った女性として非難を一身に浴び、彼女のディナーショーの会場には、爆破予告や殺害予告まで届いたといいます。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-2",
+          "focus": [
+            0.2,
+            0.25
+          ],
+          "depth": false,
+          "move": "push-in"
+        },
+        {
+          "pick": "6-10",
+          "focus": [
+            0.1,
+            0.3
+          ],
+          "depth": false,
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-3",
+          "focus": [
+            0.0,
+            0.8
+          ],
+          "depth": false,
+          "move": "close-up"
+        }
+      ],
+      "cut": "fade",
+      "why": "Báo lá cải nhắm vào Kudo, ảnh Kudo rời nhà năm 2000, rồi cận lịch các khách sạn tổ chức dinner show của cô."
     },
     {
       "label": "風当たり",
@@ -117,7 +207,36 @@
           "text": "けれど木村さんは、妻への批判に言い返すことはしませんでした。",
           "say": "けれど、きむらさんは、妻への批判に言い返すことはしませんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-8",
+          "focus": [
+            0.6,
+            0.2
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "4-6",
+          "focus": [
+            1.0,
+            0.5
+          ],
+          "depth": false,
+          "move": "fall"
+        },
+        {
+          "pick": "11-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Hai người bị chụp lén trên phố những năm 2000, gương mặt Kudo trầm xuống, rồi Kimura im lặng nghiêm nghị."
     },
     {
       "label": "守る",
@@ -127,7 +246,37 @@
         "その代わりに、家族のことを、ほとんど語らなくなったのです。",
         "二人の娘が生まれても、長女の誕生から17年間、娘たちの顔がメディアに出ることはありませんでした。",
         "妻と娘たちを、世間の目から守り抜いたのです。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-4",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "36-1",
+          "focus": [
+            0.5,
+            0.62
+          ],
+          "depth": false,
+          "move": "push-in"
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.05
+          ],
+          "depth": false,
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Kimura chỉ nói về công việc (phim HERO 2001), Kudo với hai con gái nhỏ, rồi bìa ELLE 2018 khi Koki ra mắt."
     },
     {
       "label": "誕生日",
@@ -146,7 +295,37 @@
           "text": "ファンから厳しい声が上がっても、木村さんはその後も、妻の誕生日を祝い続けています。",
           "say": "ファンから厳しい声が上がっても、きむらさんはその後も、妻の誕生日を祝い続けています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "37-1",
+          "focus": [
+            0.5,
+            0.0
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "38-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "18-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "34-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "page",
+      "why": "Hai con gái vào showbiz (Koki trên sàn diễn, Cocomi với cây sáo), bài đăng sinh nhật vợ của Kimura năm 2020 và về sau."
     },
     {
       "label": "今も",
@@ -158,7 +337,38 @@
           "text": "結婚から26年。工藤静香さんの隣には、今も木村拓哉さんがいます。",
           "say": "結婚から26年。くどうしずかさんの隣には、今もきむらたくやさんがいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-10",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            1.0,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.0,
+            0.45
+          ],
+          "move": "fall"
+        }
+      ],
+      "cut": "dip",
+      "why": "Kết: hai vợ chồng đi dạo cùng nhau hôm nay, cả nhà bốn người, rồi máy hạ dần xuống Kudo tựa đầu bên Kimura."
     }
-  ]
+  ],
+  "music": {
+    "pick": "22-1"
+  }
 }

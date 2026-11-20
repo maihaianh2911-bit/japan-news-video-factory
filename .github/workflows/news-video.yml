@@ -264,14 +264,9 @@ jobs:
         if: matrix.mode != 'caption'
         run: |
           python -m pip install -r requirements.txt
-          # a slow package mirror once held this step for over 15 minutes: give up on a try after a few minutes
-          for try in 1 2 3; do
-            timeout 240 sudo apt-get update -qq -o Acquire::Retries=3 -o Acquire::http::Timeout=30 \
-              && timeout 420 sudo apt-get install -y -qq -o Acquire::Retries=3 -o Acquire::http::Timeout=30 ffmpeg fonts-noto-cjk \
-              && break
-            echo "::warning::apt try $try failed or timed out, trying again"; sleep 10
-          done
-          command -v ffmpeg >/dev/null
+          # ffmpeg and the Noto CJK fonts: one short apt try, else the same from GitHub (on 18/11/2026 the package
+          # mirror held this step for 21 minutes, three apt tries, and the runs of the new channels failed)
+          bash tools/install_deps.sh
       - name: Mô hình chấm điểm ảnh
         # the CLIP weights (600 MB) of the picture ranking, kept between runs
         if: steps.plan.outputs.rank == 'yes'
@@ -360,6 +355,10 @@ jobs:
           # every move and cut of the catalogue (news/edits.py), 1 second each; the two sheets go to the Artifacts
           python tools/edits_test.py stories/mau-boj.json pictures "$RUNNER_TEMP/edits-test" 1
           cp "$RUNNER_TEMP/edits-test/moves.jpg" "$RUNNER_TEMP/edits-test/cuts.jpg" dist/stills/
+          # pictures out of the video the owner sent (tools/video_frames.py), on a made-up video
+          python tools/frames_test.py
+          # the picture rules of the edit the machine watches (faces kept in the frame, the first picture)
+          python tools/faces_test.py
           # the picture effects ("fx") on this runner: the caption timing on a made-up voice answer, and stills of the
           # sample with the effects on. They must render and differ from the plain stills, which proves that the
           # libraries, the depth model and the display typeface work here; the stills go to the Artifacts (fx/).
@@ -386,8 +385,11 @@ jobs:
         env:
           STORY: ${{ matrix.story }}
         run: |
-          # Exit 3 = some searches failed: what was found is still published (status.json: "partial"),
-          # then the run is marked failed. Any other error publishes nothing.
+          # Exit 3 = a source did not answer for some searches: what was found is still published (status.json:
+          # "partial"), then the run is marked failed and those searches are tried again on the next run. Any other
+          # error publishes nothing. A search that cannot work as written ("unusable" in index.json: a wiki: name
+          # that names nothing, a url: picture the site refuses) is not a failure: the run stays green, the issue
+          # comment names it, and Claude appends another search.
           set +e
           python -m news.find "stories/$STORY.json" pictures
           status=$?
@@ -396,7 +398,16 @@ jobs:
           OUTCOME=ok; [[ $status == 3 ]] && OUTCOME=partial
           OUTCOME=$OUTCOME tools/publish.sh "$STORY/find" pictures find
           echo "Đã tìm ảnh cho \`$STORY\` ($OUTCOME): nhánh renders, thư mục \`$STORY/find\`." >> "$GITHUB_STEP_SUMMARY"
-          if [[ $status == 3 ]]; then echo "::error::Some searches failed; see \"error\" in $STORY/find/index.json"; exit 1; fi
+          UNUSABLE=$(python -c "import json; print(', '.join(str(q['k']) for q in json.load(open('pictures/index.json', encoding='utf-8')) if q.get('unusable')))" 2>/dev/null || true)
+          if [[ -n "$UNUSABLE" ]]; then
+            echo "UNUSABLE=$UNUSABLE" >> "$GITHUB_ENV"
+            echo "::warning::Searches that cannot work as written (not tried again): $UNUSABLE; see \"unusable\" in $STORY/find/index.json"
+            echo "Nguồn ảnh không dùng được (không thử lại, cần tìm nguồn khác): số $UNUSABLE." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ $status == 3 ]]; then
+            echo "WHY=một số nguồn ảnh chưa trả lời (lỗi tạm thời), chạy lại là máy chỉ tìm lại các nguồn đó" >> "$GITHUB_ENV"
+            echo "::error::Some searches failed; see \"error\" in $STORY/find/index.json"; exit 1
+          fi
       - name: 'Phiếu: ảnh đã tìm xong'
         if: steps.find.outcome == 'success' && env.ISSUE != ''
         env:
@@ -405,7 +416,8 @@ jobs:
           gh issue edit "$ISSUE" --add-label jnews-pick || true
           gh issue edit "$ISSUE" --remove-label jnews-find || true
           COUNT=$(python -c "import json; print(sum(len(q.get('results', [])) for q in json.load(open('pictures/index.json', encoding='utf-8'))))" 2>/dev/null || echo "?")
-          gh issue comment "$ISSUE" --body "🤖 Ảnh đã tìm xong ($COUNT ảnh). Claude sẽ chọn ảnh cho từng cảnh." || true
+          NOTE=""; [[ -n "${UNUSABLE:-}" ]] && NOTE=" Có nguồn ảnh không dùng được (số $UNUSABLE, lý do ghi trong index.json): máy không thử lại, Claude sẽ tìm nguồn khác nếu cảnh đó thiếu ảnh."
+          gh issue comment "$ISSUE" --body "🤖 Ảnh đã tìm xong ($COUNT ảnh). Claude sẽ chọn ảnh cho từng cảnh.$NOTE" || true
           bash tools/wake_claude.sh "Phiếu tin Nhật số $ISSUE: ảnh đã tìm xong, chờ chọn ảnh." "$ISSUE" || true
       - name: 'Phiếu: đang dựng video'
         if: steps.plan.outputs.stage == 'render' && env.ISSUE != ''

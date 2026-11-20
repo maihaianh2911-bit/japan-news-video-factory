@@ -47,7 +47,8 @@ class Music:
         return {"title": self.title, "page": self.page, "creator": self.creator, "license": self.license}
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
-SEARCH_KINDS = ("file", "music", "web", "url", "wiki", "geo")   # prefixes of a search; without one: Commons words
+# prefixes of a search; without one: Commons words
+SEARCH_KINDS = ("file", "music", "web", "url", "page", "jps", "wiki", "geo")
 WISH = "=>"                                                     # "<search> => <what the picture must show>"
 GEO = re.compile(r"^(-?\d+(?:\.\d+)?)\s*[,; ]\s*(-?\d+(?:\.\d+)?)(?:\s+(\d+)\s*m?)?$")
 NOT_LATIN = re.compile(r"[^\x00-\u024f\u2000-\u206f]")          # Japanese, Chinese, Cyrillic …: the ranking reads English
@@ -93,7 +94,7 @@ def search_problems(search, where):
     kind, words, wish = search_parts(search)
     if kind in ("file", "music", "url"):
         if f" {WISH} " in search:
-            return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, wiki: and geo:, not with {kind}:']
+            return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, page:, jps:, wiki: and geo:, not with {kind}:']
         return []
     problems = []
     if WISH in search:
@@ -106,6 +107,11 @@ def search_problems(search, where):
                             f"the search words before it may be Japanese), got {wish!r}")
     if kind == "wiki" and not words:
         problems.append(f'{where}: "wiki:" needs a name or a Wikidata item, e.g. "wiki:美空ひばり" or "wiki:Q467982"')
+    if kind == "jps" and not words:
+        problems.append(f'{where}: "jps:" needs words to look for in Japan Search, e.g. "jps:黒船来航"')
+    if kind == "page" and not re.fullmatch(r"https?://\S+", words):
+        problems.append(f'{where}: "page:" needs the address of one article, e.g. "page:https://www.example.jp/'
+                        f'articles/123", got {search!r}')
     if kind == "geo" and not GEO.match(words):
         problems.append(f'{where}: "geo:" must be "geo:<lat>,<lon> <metres>", e.g. "geo:35.6852,139.7528 400", '
                         f"got {search!r}")
@@ -291,6 +297,9 @@ def found_pictures(data, pictures):
                                 "appended; put the old search back or pick again after a new find")
             elif group.get("error") and not group["results"]:
                 problems.append(f"scene {number}: picture {pick}: search {k} failed ({group['error']})")
+            elif group.get("unusable"):
+                problems.append(f"scene {number}: picture {pick}: search {k} cannot be used as written "
+                                f"({group['unusable']}); append another search")
             elif n > len(group["results"]):
                 problems.append(f"scene {number}: picture {pick} is not among the {len(group['results'])} "
                                 f"pictures found by search {k}")

@@ -24,6 +24,41 @@ Vì video hay thiếu ảnh hợp, phần tìm ảnh được làm thêm ba vi�
 
 Ngoài ra máy tải vài ảnh cùng lúc nên nhanh hơn, không chờ lâu ở trang web chết, và khi Wikimedia báo "quá nhiều yêu cầu" thì dừng hỏi tiếp trong lượt đó (lượt sau tìm lại phần còn thiếu). Kịch bản cũ không đổi gì. Chưa chạy thử trên GitHub.
 
+## Ghi chú 19/11/2026: luật ảnh của phần edit (chủ kênh duyệt)
+
+**Ảnh mở đầu (5 giây đầu):** (1) là ảnh đẹp nhất của cả video: nét, sáng, không mờ, không vỡ hạt; (2) thấy rõ mặt nhân vật chính, hoặc một nơi hay một vật người Nhật nhìn là nhận ra ngay; (3) khớp với câu mở đầu; (4) là ảnh chụp, không phải trang báo, tài liệu, ảnh ghép chữ hay ảnh có logo; (5) mặt nằm ở nửa trên của khung, không bị dòng chữ mở đầu che.
+
+**Mặt người (mọi cảnh):** (6) cả khuôn mặt, từ trán tới cằm, nằm trọn trong khung suốt thời gian ảnh hiện, kể cả lúc zoom hay lia; (7) chữ trên hình không đè lên mặt; (8) ảnh nhiều người thì người đang được nhắc tới phải rõ nhất; (9) cảnh nói về một người thì không dùng ảnh mà mặt người đó quá nhỏ.
+
+**Mọi ảnh:** (10) không tìm được ảnh đạt thì tìm thêm; vẫn không có thì báo chủ kênh cảnh nào thiếu, không lấy ảnh kém cho xong.
+
+Chủ kênh không nhận hai ý "một ảnh chỉ dùng một lần" và "ảnh cuối cũng phải đẹp", nên đó không phải luật.
+
+Máy tự xem giúp ba việc khi xem trước: ảnh mở đầu quá nhỏ hoặc là ảnh tài liệu; mặt bị khung cắt hay trôi ra ngoài lúc ảnh chuyển động (kèm gợi ý cách canh khung nếu canh được); mặt nằm dưới dòng chữ. Những ý còn lại Claude phải tự nhìn.
+
+## Ghi chú 19/11/2026: chủ kênh đổi 6 luật
+
+Chủ kênh đọc danh sách luật cứng và thấy mấy luật "ko hợp lí", rồi chọn lại như sau (áp dụng cho mọi kênh tiếng Nhật):
+
+1. **Kịch bản chủ kênh gửi:** Claude được cắt, thêm, viết lại cho hay và cuốn hơn, giữ ý chính (trước: dịch sát, không sửa).
+2. **Tin đồn:** kênh nào cũng được kể tin đồn và chi tiết chưa xác nhận, có câu kiểu "nghe nói" trong lời đọc và ghi chú đính chính (※) ở caption.
+3. **Thêm thắt cho kịch tính:** được thêm cảm xúc, lời dẫn, cách kể. Điều duy nhất còn cấm: dựng ra sự kiện hay câu nói của người thật rồi kể như thật.
+4. **Câu kết:** tự do, miễn hay (trước: phải quay về câu mở đầu, không được hỏi người xem).
+5. **Giọng và nhạc của video chủ kênh gửi:** được dùng. Rủi ro đã nói: nhạc có bản quyền dễ bị YouTube nhận ra (tắt tiếng, mất tiền quảng cáo, gậy), và dùng càng nhiều của video gốc thì càng dễ bị coi là "nội dung dùng lại". Máy dựng hiện chưa chèn được tiếng của video gốc: phải làm thêm và có bản thử cho chủ kênh duyệt.
+6. **Số ảnh mỗi cảnh:** cảnh dài hơn 6 giây thì phải có 2 ảnh, dưới 6 giây thì 1 ảnh cũng được (trước: cảnh nào cũng 2 ảnh).
+
+## Ghi chú 19/11/2026: tìm ảnh rộng hơn, và bớt báo đỏ giả
+
+Chủ kênh hỏi "có cách nào để tìm hình ảnh mở rộng ra ko" và chọn làm cả ba hướng; thêm ý "video tao gửi thì được dùng hình ảnh/video trong đó".
+
+1. **Tìm web rộng hơn** (`web:`): mỗi lần tìm máy xem khoảng 55 ảnh (trước là 20) và giữ 20 ảnh (trước là 12). Ảnh nào trang gốc không cho tải thì máy lấy bản sao cùng cỡ mà Yahoo! JAPAN đang giữ; nguồn ghi vẫn là trang gốc.
+2. **Lấy ảnh trong một bài báo** (`page:` + link bài): máy lấy các ảnh lớn của đúng bài đó, tối đa 20 ảnh. Thử trên 8 trang báo: mỗi bài được từ 2 đến 20 ảnh.
+3. **Kho lưu trữ Nhật** (`jps:`): Japan Search, nơi gộp thư viện quốc hội, thư viện và kho lưu trữ các thành phố, các trường đại học… Chỉ lấy ảnh được phép dùng (hết bản quyền hoặc giấy phép tự do), có ghi nơi giữ và giấy phép. Hợp với chuyện xưa (tranh, ảnh cũ, hiện vật); nên tìm theo sự việc, địa danh, đồ vật chứ không theo tên người. Nguồn này khiêm tốn: chạy thử 6 lần tìm trên GitHub thì 2 lần được 12 ảnh (động đất Kantō, tượng đất 土偶), 2 lần được 1–2 ảnh, 2 lần tìm theo tên người không được ảnh nào. Ảnh của các bảo tàng quốc gia (ColBase) và bảo tàng Tokyo hiện chưa tải được (link trong danh mục của họ bị hỏng hoặc bị chặn).
+4. **Hình từ video chủ kênh gửi**: `tools/video_frames.py` bày mỗi cảnh của video thành một ô trên một tấm ảnh để Claude chọn, rồi cất hình đã chọn vào repo (ghi nguồn 元動画), cắt bỏ được phần chữ hay nền mờ. Đoạn video chuyển động thì chủ kênh cũng cho dùng, nhưng khung hình hiện chỉ hiện ảnh tĩnh: muốn chèn đoạn video phải làm thêm và có bản thử cho chủ kênh duyệt.
+5. **Bớt báo đỏ giả**: nguồn ảnh không bao giờ lấy được (tên không có trong Wikidata, ảnh mà trang web từ chối) chỉ còn là một dòng ghi chú; máy không báo lỗi và không thử lại. Nguồn tạm thời không trả lời thì vẫn báo đỏ để chạy lại.
+
+Không thêm Thư viện Quốc hội Mỹ: chạy thử trên GitHub mất 35 giây cho một lần hỏi và bị từ chối ngay lần hỏi thứ hai; các bộ ảnh hết bản quyền nổi tiếng của họ đã có trong Wikimedia Commons, nơi máy vẫn tìm.
+
 ## Ghi chú 17/11/2026: hiệu ứng hình (chủ kênh đã đồng ý bật cho kênh này)
 
 Từ 17/11/2026, mọi video **mới** của kênh dùng bốn hiệu ứng của bản B (video Chiêu Hòa – Kuroyanagi đã gửi trong chat): máy quay có nhịp nhanh chậm, ảnh có chiều sâu mức nhẹ, tiêu đề và câu trích hiện từng dòng còn phụ đề đậm dần theo đúng lời đọc, và phông chữ Shippori Mincho B1 (phông miễn phí, giấy phép SIL OFL). Claude bật bằng dòng `"fx"` trong file kịch bản. Video cũ không đổi gì; muốn làm lại một video cũ với hiệu ứng thì nói trong phiếu.

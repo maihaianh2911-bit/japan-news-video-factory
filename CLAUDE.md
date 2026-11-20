@@ -9,16 +9,80 @@
    line of this channel's earlier videos); after the voice step, read the real length of the speech (the machine
    comment gives it). If the video would be under 60 seconds, **write the script longer** (more true facts and
    detail on the same subject, in the owner's tone, nothing invented) until it passes 60 seconds, tell the owner on
-   the issue what was added, and only then go on. This is the one exception to "never change the owner's script".
-   Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
+   the issue what was added, and only then go on (a script may be changed for this as for any improvement, see the
+   rule changes of 19/11/2026). Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
    or the issue title or notes say `thử`, `mẫu`, `test` or `demo`.
+3. **Every video is vertical (1080×1920), longer than 61 seconds and at most 160 seconds** (owner, 18/11/2026:
+   "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
+   trên 61s"). Do not lengthen a script only to reach 80 s: a script the owner cut stays cut as long as it passes
+   61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
+   Trial or sample videos are the exception, as in rule 2.
+
+## The owner's rule changes of 19/11/2026 — they win over any older sentence in this file or in `AGENT_JNEWS.md`
+The owner read the list of the hard rules and said of six of them "mấy cái này ko hợp lí", then chose what replaces
+each (the same in every repo of the owner's Japanese channels):
+1. **A script the owner sends may be improved** (owner: "Sửa cả kịch bản tao gửi"): Claude may cut, add and rewrite
+   it so that it is better and more gripping (the writing rules of "When the owner sends an original video" apply
+   to it too), keeping the owner's story and main idea. It is no longer translated sentence by sentence and left
+   as it is. Say in the chat or on the issue what was changed.
+2. **Rumours and unconfirmed details may be told on every channel** (owner: "Dùng tin đồn ở mọi kênh"): framed as
+   told at the key line (「…と噂されています」, 「…といいます」, 「週刊誌によると」), and the posting caption says so in a ※
+   note (which part is a rumour, what is known).
+3. **The telling may be dramatised** (owner: "Thêm thắt cho kịch tính"): feelings, a narrator's lead-in, suspense,
+   the order of the telling. The one line that stays: an event or a quote of a real person is never made up and
+   told as a fact.
+4. **The ending is free** (owner: "Tự do, miễn hay"): whatever ends this story best — a line that stays, a last
+   surprising detail, a return to the opening, a question to the viewer, a lead to the next video. No fixed form,
+   and not the same one on every video.
+5. **The voice and the music of a video the owner sends may be used**, as its pictures and footage are (owner:
+   "Được dùng cả nhạc và giọng"). The owner was told the risk: music under copyright is recognised by YouTube
+   (a muted video, lost revenue, a strike), and the more of the source a video carries, the more it counts as
+   reused content. The engine cannot put a sound of the source into a video yet (its music comes from a `music:`
+   search, its voice from VOICEVOX): like moving footage, that needs new code and a trial the owner approves.
+6. **Pictures a scene** (owner: "nếu nội dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"): a
+   scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
+   (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
+
+## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
+Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
+is: frame it again, pick another, or search again.
+
+**The first picture (the hook, about the first 5 seconds)**
+1. It is the best picture of the whole video: sharp, bright, not blurred, not grainy.
+2. It shows the face of the main person clearly, or a place or a thing the Japanese audience recognises at once.
+3. It matches the hook line: the right person, the story being told.
+4. It is a photograph: not a newspaper page, a document, a collage with text or a picture with a logo.
+5. The face is in the upper half of the frame, clear of the hook line printed on the foot of the picture.
+
+**Faces (every scene)**
+6. The whole face, forehead to chin, stays inside the frame for as long as the picture is shown, while it zooms or
+   pans too.
+7. The text on the picture (the headline of the scene, a quote, the captions) does not lie over a face.
+8. In a picture of several people, the one being spoken of is the clearest; if not, frame that person or change
+   the picture.
+9. A scene about one person does not use a picture in which that person's face is very small.
+
+**Every picture**
+10. When no picture passes, search again (`web:`, `page:`, the owner's video); if there is still none, tell the
+    owner which scene lacks one. A poor picture is never taken just to be done.
+
+The owner turned down two more that were proposed, so they are **not** rules: "a picture is used only once in a
+video, and two near-identical pictures are not put side by side", and "the last picture must be a fine one too".
+A picture may be used again where it fits.
+
+**What the machine watches** (the preview `python -m news --story … --stills …` prints a `warning:` for each; settle
+every one before the render): the first picture under 900 px on one side, or shown whole / marked flat (rules 1 and
+4); a face cut by the frame or leaving it during the move, with the `"focus"` that keeps it when there is one
+(rule 6); a face under the headline or the hook line, or in the lower half of the first picture (rules 5 and 7).
+The faces are found by `news/faces.py` (YuNet of OpenCV Zoo, the model is `news/face_yunet.onnx`); it needs
+`pip install opencv-python-headless numpy`, and without it the preview says `note: faces not checked`: then look
+at every face yourself. The machine does not see rules 2, 3, 8 and 9: those are for your eyes, at the review.
 
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
-picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (exceptions: iron rule 2 below, a script too short for 60 seconds; and the words of a
-source video, which are rewritten, see "When the owner sends an original video"), quality is not
-traded for usage).
+picture, quality is not traded for usage; a script the owner sends was translated faithfully and never cut or
+rewritten until 19/11/2026: it may now be improved, rule change 1 above).
 
 This repo makes vertical Japanese news shorts (1080×1920): news frame, VOICEVOX voice 青山龍星, captions timed to
 the voice. The daily schedule is off (owner, 12/11/2026). Since 13/11/2026 it works like the owner's other channels:
@@ -62,17 +126,32 @@ kèm caption cho mỗi video"):
 2. Rewrite it in Japanese, lightly: the same story and facts in the same order of scenes, but our own sentences,
    more gripping. Open with one hook line printed big (`"quote": true`, e.g. 「夫の葬儀にさえ、参列を許されなかった
    妃がいる。」), keep the rhythm tight, end with a line that stays. You may cut repetition and add a few true,
-   well-known details on the same subject (dates, ages, what became of a person); never invent, never change a
-   fact or a quote of the source. Keep the quotes of the people as they are. Read it fast like the source:
+   well-known details on the same subject (dates, ages, what became of a person); never make up an event or a
+   quote of a real person and tell it as a fact (the telling may be dramatised, a rumour told as one: rule
+   changes 2 and 3 above). Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
-   characters a second at speed 1.0 plus the pauses (iron rule 2: over 60 s). Tell the owner in the chat what you
+   characters a second at speed 1.0 plus the pauses (iron rule 3: over 61 s, at most 160 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
    - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
      remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
      この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
-     優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story, and end on a line that
-     comes back to the opening (not a question to the viewer).
+     優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story. The ending is free (owner,
+     19/11/2026: "Tự do, miễn hay"; before: back to the opening, never a question): the line that ends this story
+     best, by a new fact or turn, never by saying the opening again.
+   - **A story, never an encyclopedia** (owner, 20/11/2026: "đừng viết như wikipedia… kịch bản mà không cuốn thì
+     đừng viết còn hơn"). Tell it like a storyteller: a person, a moment, what they felt, what happened next, the
+     turn. Every sentence pulls the viewer to the next one (tension, a question left open, a surprise). A date or a
+     place only where it carries the drama (an age, a birthday, "25 years later"), a few in a whole script, never
+     one per sentence; no report wording (「…でのことです」「医師の診断は…」「…と発表しました」「…と語られました」 as a
+     list of events). Before showing a script, read it as a viewer scrolling past: if a sentence sounds like an
+     encyclopedia entry, rewrite it; if the story itself is not gripping, say so and propose another story
+     instead of sending a dull script.
+   - **Every sentence says something new** (owner, 19/11/2026: "mỗi câu đều phải có ý nghĩa, không lặp đi lặp lại").
+     No sentence repeats an idea already said: the body does not tell the hook again, the end does not sum up the
+     hook, no filler such as 「だからこそ…わかったのでしょう」 or a line that only restates feelings. Before showing a
+     script, read it sentence by sentence and cut or replace every sentence that adds no new fact or turn; if the
+     script then falls under 61 s, add new true facts of the same story, never repetition.
    - **One flowing narration**: sentences linked by connectives (けれど, そんなある深夜, その言葉が本物だったことを…),
      the warm narrator's です/ます, no chopped fragments such as 「1993年。ハーバード、東大。」 or 「1993年6月、二人は結婚。」.
      **Show the owner a script the same way: one continuous text** (the Japanese in one piece, then its Vietnamese
@@ -90,20 +169,33 @@ kèm caption cho mỗi video"):
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
-   searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures per scene.
-   Pictures of the source video may be used too (owner, 16/11/2026: "lấy cái nào đẹp"): pick clean moments (no
-   burnt-in caption over the picture), cut out the inset picture without the blurred background, save it as
-   `stories/media/<story>/<name>.jpg` and add a search `file:stories/media/<story>/<name>.jpg` (credited 元動画).
-   **Moving clips** (owner, 18/11/2026: "dùng nhiều đoạn video có công chúa trông rất đẹp"): a short clip of the
-   source video (3–8 s, inside one shot, the burnt-in captions cropped away, no sound) is kept as
-   `stories/media/<story>/<name>.mp4` and asked for the same way, `file:stories/media/<story>/<name>.mp4`; the find
-   stage copies it as `<k>-1.mp4` beside a still of its middle (`<k>-1.jpg`, for the sheet and the review). Picked
-   like a picture (`{"pick": "<k>-1", "focus": […], "move": "hold"}`, optional `"start": <seconds into the clip>`),
-   it plays in the picture box and the move runs over it (a light one: `hold`, `push-in`); never the depth effect.
-   A clip shorter than its time on screen holds its last frame (the render warns): cut clips a little longer than
-   needed (`news/clips.py`). Keep each clip small (`-crf 20`, at most 1080 px high): they live in the repository.
-   Footage of the TV channels is easily recognised by YouTube/TikTok: the owner knows (18/11/2026).
-   Prefer a web copy of the same picture when it is larger. Names the voice may misread get a `say` in kana.
+   searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
+   6 seconds of words (1 is enough under that, rule change 6).
+   **The pictures and the footage of a video the owner sends may be used, its voice and music too** (owner, 16/11/2026: "lấy cái nào
+   đẹp"; 19/11/2026, for every repo: "nếu repo nào đc dựng bằng cách remix video hoặc tao có gửi video, có thể
+   sử dụng hình ảnh/video trong video tao gửi"). The owner's video is a picture source like the searches:
+   `python tools/video_frames.py <video> <story>` lays out one frame of every shot on a numbered sheet (look at
+   it), `… --keep 3,7 [--crop x,y,w,h]` saves the chosen ones as `stories/media/<story>/v-<m>m<ss>s.jpg` and
+   prints the `file:` searches to append (credited 元動画). Pick clean moments: a frame with the source's caption,
+   logo or watermark over the picture is cropped clean (`--crop` also cuts an inset picture out of its blurred
+   background) or left. Prefer a web copy of the same picture when it is larger. **Moving clips** (owner, 18/11/2026: "dùng nhiều đoạn video
+   có công chúa trông rất đẹp"; the trial `2026-11-18-aiko-singapore` was delivered and the owner asked for more and
+   shorter clips, "nên sử dụng nhiều đoạn video ngắn hơn"): a short clip of the source video (inside one shot, the
+   burnt-in captions cropped away, no sound) is kept as `stories/media/<story>/<name>.mp4` and asked for the same
+   way, `file:stories/media/<story>/<name>.mp4`; the find stage copies it as `<k>-1.mp4` beside a still of its middle
+   (`<k>-1.jpg`, for the sheet and the review). Picked like a picture (`{"pick": "<k>-1", "focus": […], "move":
+   "hold"}`, optional `"start": <seconds into the clip>`, so one shot can give several moments), it plays in the
+   picture box and the move runs over it; never the depth effect, and never `"fit": "contain"` (a small band on a
+   dark page: the owner called it a broken picture). A clip shorter than its time on screen holds its last frame (the
+   render warns): cut clips a little longer than needed (`news/clips.py`). 2–3 seconds a piece, up to 4 pieces a
+   scene; check every piece in the rendered video (a still of the middle hides a first second of someone's back).
+   Keep each clip small (`-crf 20`, at most 1080 px high): they live in the repository. Footage of the TV channels is
+   easily recognised by YouTube/TikTok: the owner knows (18/11/2026).
+   Owner, 20/11/2026 (`2026-11-20-aiko-heiwa`): "viết kịch bản trc, chốt kịch bản mới làm video" (show the script,
+   wait for the owner's yes, then make the video) and "chỉ dùng đoạn video nhỏ cắt từ video tao gửi nhé, k cần tìm
+   ảnh ngoài" (that video: only clips of the source, no searches). The source's voice and music are
+   allowed since 19/11/2026 as well (rule change 5: the risk was told, and the engine cannot do it yet).
+   Names the voice may misread get a `say` in kana.
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
 5. Send the owner the finished video file and its caption file in the chat (they want them there, not only as
@@ -121,8 +213,8 @@ ask the owner to allow `main`.
      none), `stage: "find"`, `issue` (the issue number: the workflow then moves its labels, comments and calls
      Claude after each step).
    - `scenes`: one idea each. `label` (short tag), `headline` (≤ 2 lines, `\n` between; longer ones get a smaller
-     font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — every sentence of the
-     owner's script, nothing added), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
+     font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — the
+     owner's script as improved, rule change 1), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
      Where they appear: on a picture scene, headline, then value, then evidence under each other below the picture
      (evidence only if it fits above the captions — the preview prints a warning when it does not); on a text card
      (no picture), headline, value, then evidence. A card shows nothing else: no title, so give a text card an
@@ -144,7 +236,9 @@ ask the owner to allow `main`.
    - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
      switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
      made before are not changed (a story without `fx` renders exactly as before). What each one does:
-     - `motion`: the camera has a rhythm, quick at first and then settling, instead of one even speed;
+     - `motion`: the camera has a light rhythm, a little quicker at first, and keeps moving to the end of the
+       picture (owner, 19/11/2026: "nhiều ảnh trông như không chuyển động gì": the moves are now 25–45 % for
+       `push-in`/`pull-back`, `close-up` keeps closing in, `hold` drifts; no picture may look still);
      - `depth`: a picture that fills the frame gets a light depth (things near the camera move a little more
        than things far away; a depth map by Depth Anything V2 Small, about a second a picture). A **flat picture
        (a document, a newspaper page, a collage, a chart, a screenshot) gets `"depth": false`** in its picture
@@ -165,9 +259,32 @@ ask the owner to allow `main`.
      first use (99 MB, or `DEPTH_MODEL=<file>`).
    - `searches`: Wikimedia Commons searches, numbered from 1 in order (English works best; `incategory:"…"` for a
      person, building or place). A search `web:<words>` is a free web image search
-     (Bing, else Yahoo! JAPAN, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
+     (Yahoo! JAPAN, else Bing, else DuckDuckGo; Japanese words work; stock sites with watermarks are left out) and `url:<picture> [<page>]`
      takes one picture (`file:stories/media/…` a picture kept in the repository); their licence is unknown and the site is credited. Only append to the list later: the picks use the numbers, and a pick whose search
      text changed is refused.
+   - **Wider search (owner, 19/11/2026: "có cách nào để tìm hình ảnh mở rộng ra ko" → all three):**
+     - `web:` looks further: three result pages of Yahoo! JAPAN (about 55 candidates, 20 before), **20 pictures
+       kept** (12 before; with a wish, the best 20 of 45). A picture its own site will not give (hotlink refused, a
+       page instead of a picture) is taken from the search engine's own full-size copy, still credited to its
+       site; a picture the engine says is under 400 px is not even loaded.
+     - `page:<address of one article>`: **the pictures that article shows** (up to 20): the page's own picture
+       first, then the pictures in the order of the page, each in its largest version, without the page's header,
+       footer, menus, side columns and furniture. `"page:https://www.jprime.jp/articles/-/30126"`. For a press
+       article or a photo page found by a `web:` search (the `page` of a result in `index.json`) that has more
+       pictures of the same event. Credited to the site, licence unknown, as `web:`. A page the site refuses is
+       `"unusable"`. Tried on eight press sites on GitHub: between 2 and 20 pictures a page.
+     - `jps:<Japanese words>`: **Japan Search** (jpsearch.go.jp), the shared catalogue of Japan's archives,
+       libraries and museums (the National Diet Library, city libraries and archives, university collections, the
+       cultural-heritage sites): old prints, paintings, photographs, objects, the records catalogued as pictures
+       first. Only records with a picture and rights that allow use (public domain, CC0, CC BY, CC BY-SA), up to
+       12, credited to the holding site with the licence. `"jps:関東大震災"`, `"jps:土偶"`, `"jps:紫禁城"`. **Search a
+       thing, a place or an event, not a person**: a name brings mostly books about that person, whose cover scans
+       are left out. For history before about 1950. **A modest source**: tried on GitHub (19/11/2026), of six
+       searches two brought 12 pictures (`関東大震災`, `土偶`), two brought 1–2 (`富士山 浮世絵`, `紫禁城`) and two
+       names of people none (`西太后`, `明治天皇`). The pictures of ColBase (the national museums) and of the Tokyo
+       museums cannot be loaded at present (their addresses in the catalogue answer 404 and 403; the ColBase
+       pages are built by script), so those records are passed over. Use it beside `wiki:` and `web:`, not instead.
+     A wish ` => …` works on `page:` and `jps:` as on `web:`.
    - Two more kinds of search (17/11/2026, `news/find.py`; the owner found the videos short of fitting pictures):
      - `wiki:<name or Wikidata item>`: every picture **about one thing** (a person, a place, a building, an
        event), through its Wikidata item: the item's own pictures, the pictures of its Japanese and English
@@ -183,8 +300,8 @@ ask the owner to allow `main`.
    - A wish (17/11/2026): ` => <what the picture must show, in English>` at the end of a `wiki:`, `geo:`, Commons
      or `web:` search, e.g. `"web:美空ひばり 東京ドーム 1988 => a woman singing on a large stage in a feathered dress"`,
      `"Tokyo residential houses => rows of small houses in a Japanese neighbourhood"`. The machine then looks at
-     more pictures than it keeps (Commons 50, web 30, `wiki:` 60), scores each against the wish (CLIP) and keeps
-     the best, best first (8, web 12, `wiki:` 24); pictures that do not show the wish (score under 0.18) or look
+     more pictures than it keeps (Commons 50, web 45, `wiki:` 60), scores each against the wish (CLIP) and keeps
+     the best, best first (8, web 20, `wiki:` 24); pictures that do not show the wish (score under 0.18) or look
      unsuitable are left out, so a group can come back small or empty: then ask with other words. The score is
      `match` in `index.json` and `~0.31` on the contact sheet (about 0.30 and more: it shows the thing; near 0.20:
      doubtful). The wish is always English (CLIP does not read Japanese; `news.custom` refuses another script);
@@ -198,9 +315,18 @@ ask the owner to allow `main`.
    session's GitHub tools `actions_list` / `actions_get`); then `git fetch --depth 1 origin +refs/heads/renders:refs/remotes/origin/renders` and check that
    `<name>/find/status.json` has your commit (`commit`) before trusting the folder. Look at
    `<name>/find/sheet_<k>.jpg` yourself. A search with no usable picture has no `sheet_<k>.jpg` (0 results in
-   `index.json`); a search that failed has `"error"` in `index.json`, the run is red and `status.json` says
-   `"outcome": "partial"` — run it again (re-run the job, or Run workflow → `story` + the name) and only the
-   failed searches are tried again. If a scene has no fitting picture, append searches and push again.
+   `index.json`). Two things can go wrong with a search, and they are not handled the same (19/11/2026):
+   - **Its source did not answer** (network, Wikimedia refusing, no web search engine answering): `"error"` in
+     `index.json`, the run is red and `status.json` says `"outcome": "partial"` — run it again (re-run the job, or
+     Run workflow → `story` + the name) and only the failed searches are tried again.
+   - **It cannot work as written**: a `wiki:` name that names nothing, a `url:` picture the site refuses (403,
+     404), that is too small (under 400 px), is not a picture, or did not load in two tries. It has `"unusable"`
+     (the reason) in `index.json`, is **never tried again**, and the run stays **green** (the issue comment and
+     the run's summary name it): running the find again changes nothing. Append another search instead: the exact
+     title of the Wikipedia article or the item `Q…`, a `web:` search, another address of the picture.
+   A `url:` picture that another search already found is kept all the same (`"same_as": "<k>-<n>"` names the pick
+   it repeats): they are the same picture. If a scene has no fitting picture, append searches
+   and push again.
 3. Put the picks in the scenes: `"photo": "<k>-<n>"`, or `{"pick": "<k>-<n>", "focus": [x, y]}` (the point kept in
    the frame, 0–1) or `{"pick": …, "fit": "contain"}` (whole picture: portraits, charts), or a list of 1–4 of these:
    the scene shows them one after the other. How a picture moves and how a scene arrives is your choice, by the
@@ -208,8 +334,8 @@ ask the owner to allow `main`.
    "<one short Vietnamese sentence>"` in the scene, from the table "Bảng cách edit" in `AGENT_JNEWS.md` (moves:
    `push-in`, `pull-back`, `pan-right`, `pan-left`, `rise`, `fall`, `close-up`, `reveal`, `punch-in`, `hold`;
    cuts: `fade`, `page`, `hard`, `dip`). Without them the old automatic choice stays. The preview prints the list
-   of edits and writes it to `edits.md`. Owner, 14/11/2026: give each scene 2 pictures (a new picture every
-   4–5 seconds); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
+   of edits and writes it to `edits.md`. Owner, 19/11/2026: a scene over 6 seconds of words gets 2 pictures, under
+   that 1 is enough (14/11/2026: a new picture every 4–5 seconds; two a scene until 19/11); the video moves: pictures zoom or pan (a different way each), fade into each other, the scene text
    slides in, captions fade in, scenes change with a cross-fade (`news`) or a page turn plus film grain (`paper`). Preview before rendering:
    `python -m news --story stories/<name>.json --pictures <find folder> --stills <out>` and look at `sheet.jpg`
    (needs `sudo apt-get update -qq && sudo apt-get install -y fonts-noto-cjk` and `pip install -r requirements.txt` for budoux; `<find
@@ -217,7 +343,8 @@ ask the owner to allow `main`.
    find `index.json` and lists the scenes without a picture. Then **review the pictures** (owner, 18/11/2026):
    `python tools/review_picks.py stories/<name>.json <find folder> <stills folder>` puts every pick beside the
    words spoken while it is on screen and its source title; check each row as `AGENT_JNEWS.md` §2 step 5 says
-   (right person, place, event and era for those words; face whole and seen; clean and sharp; no near-duplicate),
+   (right person, place, event and era for those words; the picture rules of the edit above: the first picture,
+   faces whole and seen; clean and sharp),
    re-pick and review again until every row passes. Only then set `stage: "render"` and push.
 4. The render (~3–6 min) replaces `renders/<name>/` (keeping `find/`): `video.mp4`, `subtitles.srt`,
    `sources.json` and `credits.txt` (picture credits; `credits.txt` is for the video description), `caption.txt`
@@ -235,7 +362,10 @@ Each video has `captions/<name>.txt` beside the story (UTF-8, Japanese, ≤ 2000
    line 1 a hook title (≤ 80 characters, true to the script), then 2–4 short sentences on the video, a blank line,
    one line of 5–8 hashtags (`#皇室 #昭和 #歴史 #shorts` as fitting), a blank line, and the credit line
    `画像出典: <元動画 when source-video pictures are used>、<main sites> ほか（写真・音楽の全出典は credits.txt）`.
-   Only facts of the script. `python -m news.captions captions/<name>.txt` checks it (`python -m news.custom` too).
+   Only facts of the script. **A video that tells a rumour gets a correction note** (owner, 19/11/2026): 1–3 lines
+   starting with ※, between the sentences and the hashtags, saying which part is a rumour and what is known, e.g.
+   `※〇〇という話は、一部で噂として伝えられているもので、事実とは確認されていません。`
+   `python -m news.captions captions/<name>.txt` checks it (`python -m news.custom` too).
 The render publishes it as `renders/<name>/caption.txt` beside `video.mp4`. A push that changes only the caption
 (the story file unchanged) does not voice, search or render again: the workflow only adds `caption.txt` to the
 finished folder (`tools/publish.sh` with `PUBLISH_MODE=add`, which leaves `video.mp4` and the rest as they are).

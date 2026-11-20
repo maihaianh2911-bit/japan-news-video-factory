@@ -1,0 +1,303 @@
+{
+  "stage": "render",
+  "issue": 38,
+  "title": "皇族の身分を捨て赤十字職員と結婚 甯子内親王",
+  "date": "2026-11-20",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "赤十字職員と結婚",
+      "era": "1966年",
+      "headline": "皇族の身分を捨てて",
+      "lines": [
+        {
+          "text": "三笠宮家の長女で、大正天皇の孫娘・甯子内親王は、皇族の身分を捨てて、ひとりの赤十字職員と結婚しました。",
+          "say": "みかさのみやけの長女で、たいしょうてんのうの孫娘、やすこないしんのうは、こうぞくの身分を捨てて、ひとりの、せきじゅうじ職員と結婚しました。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-11",
+          "focus": [
+            0.6,
+            0.22
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.52,
+            0.0
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Ảnh cưới năm 1966 của hai người (ảnh chính), rồi chân dung công chúa."
+    },
+    {
+      "label": "愛された少女",
+      "era": "昭和",
+      "headline": "誰からも\n愛された甯子さま",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "容姿端麗、文武両道、明るく素直で、誰からも愛された甯子さま。",
+          "say": "ようしたんれい、ぶんぶりょうどう、明るく素直で、誰からも愛された、やすこさま。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Gia đình nhà Mikasa."
+    },
+    {
+      "label": "おばばさま",
+      "era": "昭和",
+      "headline": "祖母・貞明皇后",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "一番可愛がったのは、祖母にあたる大正天皇の妃、貞明皇后でした。",
+          "say": "一番かわいがったのは、祖母にあたる、たいしょうてんのうの、きさき、ていめいこうごうでした。"
+        },
+        {
+          "text": "「おばばさま」と慕う孫に、「ばばが、ありったけのイタズラを教えてあげましょう」。",
+          "say": "おばばさま、と慕う孫に、ばばが、ありったけの、いたずらを、教えてあげましょう。"
+        },
+        {
+          "text": "二人は羽根つきやおままごとで、よく一緒に遊んだそうです。",
+          "say": "二人は、はねつきや、おままごとで、よく一緒に遊んだそうです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "21-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right",
+          "depth": false
+        }
+      ],
+      "why": "Hoàng thái hậu Teimei, rồi tranh trẻ em chơi cầu lông vũ."
+    },
+    {
+      "label": "母の教え",
+      "era": "昭和",
+      "headline": "母・百合子さまの\n厳しい教え",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "一方、母の百合子さまは厳しく、「宮家であっても窮乏生活に耐えられるように」「どんな所に嫁いでも大丈夫なように」と、質実剛健に育てました。",
+          "say": "いっぽう、母の、ゆりこさまは厳しく、みやけであっても、きゅうぼう生活に耐えられるように、どんな所に嫁いでも、大丈夫なように、と、しつじつごうけんに育てました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Ngày cưới của ông bà Mikasa, rồi bà Yuriko."
+    },
+    {
+      "label": "結婚",
+      "era": "1966年",
+      "headline": "近衛忠煇さんと\n結婚",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "大学在学中、甯子さまは、細川元首相の弟で日本赤十字社職員の近衛忠煇さんと結婚し、民間人となります。",
+          "say": "大学在学中、やすこさまは、ほそかわ元首相の弟で、日本せきじゅうじしゃ職員の、このえただてるさんと結婚し、みんかんじんとなります。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.61,
+            0.0
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Lễ cưới, rồi hai vợ chồng trẻ."
+    },
+    {
+      "label": "飾らない姿",
+      "era": "1960年代",
+      "headline": "電車で通学した\n内親王",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "忠煇さんが惹かれたのは、内親王なのに電車で通学し、買い物も自分でする、飾らない姿だったといいます。",
+          "say": "ただてるさんが、ひかれたのは、ないしんのうなのに、電車で通学し、買い物も自分でする、飾らない姿だったといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "22-11",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Tàu điện thời ấy, rồi nụ cười giản dị của bà."
+    },
+    {
+      "label": "ジュネーブへ",
+      "era": "1970年代",
+      "headline": "夫と\nスイス・ジュネーブへ",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "長男を産んだ後は、夫の転勤でスイスのジュネーブへ。",
+          "say": "長男を産んだ後は、夫の転勤で、スイスの、ジュネーブへ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "24-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Trụ sở Chữ thập đỏ ở Geneva."
+    },
+    {
+      "label": "赤十字の道",
+      "era": "現在",
+      "headline": "赤十字とともに",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "帰国後は日本赤十字社の副総裁を務め、容姿端麗で優等生だった甯子さまは、今も多くの活動の中心で活躍しています。",
+          "say": "帰国後は、日本せきじゅうじしゃの副総裁を務め、ようしたんれいで、優等生だった、やすこさまは、今も多くの活動の中心で、活躍しています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.6,
+            0.5
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Trụ sở Chữ thập đỏ Nhật Bản, rồi chân dung bà."
+    }
+  ],
+  "searches": [
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m07s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m01s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m04s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m13s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m26s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m35s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m51s.jpg",
+    "file:stories/media/2026-11-20-yasuko-sekijuji/v-0m56s.jpg",
+    "wiki:近衛甯子",
+    "wiki:近衛忠煇",
+    "wiki:貞明皇后",
+    "wiki:三笠宮崇仁親王",
+    "wiki:三笠宮妃百合子",
+    "wiki:日本赤十字社",
+    "wiki:ジュネーブ",
+    "web:甯子内親王 若い頃 => a young Japanese princess smiling in the 1960s",
+    "web:甯子内親王 近衛忠煇 結婚 1966",
+    "web:近衛甯子 日本赤十字社 => an elderly Japanese woman at a Red Cross event",
+    "web:三笠宮家 家族 写真 昭和",
+    "web:貞明皇后 晩年",
+    "web:羽根つき 昭和 少女 => girls playing hanetsuki battledore in kimono",
+    "web:学習院 女子 昭和30年代 通学 電車",
+    "web:近衛忠煇 若い頃 赤十字",
+    "web:ジュネーブ 赤十字 本部 => the Red Cross headquarters building in Geneva",
+    "web:近衛甯子さん 近年",
+    "music:Satie Gymnopédie piano",
+    "music:Chopin Nocturne piano"
+  ],
+  "music": {
+    "pick": "26-4",
+    "start": 1.0
+  }
+}

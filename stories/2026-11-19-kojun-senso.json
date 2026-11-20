@@ -1,0 +1,338 @@
+{
+  "stage": "render",
+  "issue": 34,
+  "title": "41万袋のビスケット 戦時下の香淳皇后",
+  "date": "2026-11-19",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.1,
+    "line_pause": 0.15,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "41万袋のビスケット",
+      "era": "1944年",
+      "headline": "41万袋の\nビスケット",
+      "lines": [
+        {
+          "text": "1944年、東京が空襲を受け、人々が疎開を強いられる中、香淳皇后は、親元を離れた子どもたちに、41万袋のビスケットを贈りました。",
+          "say": "1944年、東京が、くうしゅうを受け、人々が、そかいを強いられる中、こうじゅんこうごうは、おやもとを離れた子どもたちに、41万袋のビスケットを贈りました。",
+          "quote": true
+        },
+        {
+          "text": "その中には、同じく疎開していた我が子、皇太子・明仁親王の分もあったのです。",
+          "say": "その中には、同じく、そかいしていた、わがこ、こうたいし、あきひとしんのうの分も、あったのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-12",
+          "focus": [
+            0.5,
+            0.36
+          ],
+          "move": "close-up"
+        },
+        {
+          "pick": "8-2",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-13",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Hoàng hậu năm 1941 (ảnh chính, cận mặt), chiếc bánh quy thật, rồi hai mẹ con."
+    },
+    {
+      "label": "防空壕の暮らし",
+      "era": "1944〜1945年",
+      "headline": "皇居の地下で\n夫と共に",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "一方、皇后自身は東京に残り、夫・昭和天皇と共に、皇居の地下の防空壕で暮らしていました。",
+          "say": "いっぽう、こうごう自身は、東京に残り、夫、しょうわてんのうと共に、こうきょの地下の、ぼうくうごうで暮らしていました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-7",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Hành lang và căn phòng của hầm trú ẩn trong Hoàng cung."
+    },
+    {
+      "label": "戦時の務め",
+      "era": "1941〜1945年",
+      "headline": "390回を超える\n面会",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "戦争中、皇后は、軍の幹部と390回以上も面会しました。",
+          "say": "戦争中、こうごうは、軍の幹部と、390回以上も面会しました。"
+        },
+        {
+          "text": "傷ついた兵士のための包帯も、自らの手で巻きました。",
+          "say": "傷ついた兵士のための包帯も、自らの手で巻きました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "8-6",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-6",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hoàng hậu giữa các tướng lĩnh thời chiến."
+    },
+    {
+      "label": "炎の夜",
+      "era": "1945年5月25日",
+      "headline": "宮殿が\n焼け落ちた夜",
+      "cut": "dip",
+      "lines": [
+        {
+          "text": "1945年5月25日の夜、空襲の炎が皇居を襲い、宮殿は焼け落ちましたが、防空壕にいた二人は無事でした。",
+          "say": "1945年5月25日の夜、くうしゅうの炎が、こうきょを襲い、きゅうでんは焼け落ちましたが、ぼうくうごうにいた二人は、無事でした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in",
+          "depth": false
+        }
+      ],
+      "why": "Cung điện Minh Trị, rồi biển lửa."
+    },
+    {
+      "label": "御前会議",
+      "era": "1945年8月14日",
+      "headline": "戦争を終わらせる\n決断",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "8月14日、戦争を終わらせると決めた御前会議は、二人が暮らす防空壕とつながる地下室で開かれました。",
+          "say": "8月14日、戦争を終わらせると決めた、ごぜんかいぎは、二人が暮らす、ぼうくうごうとつながる地下室で開かれました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "10-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-left"
+        }
+      ],
+      "why": "Tranh cuộc họp ngự tiền cuối cùng, rồi căn phòng ngầm hôm nay."
+    },
+    {
+      "label": "玉音放送",
+      "era": "1945年8月15日",
+      "headline": "夫の声を\n最後まで",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "翌日の正午、皇后は自らラジオのスイッチを入れ、夫が敗戦を告げる声を、最後まで静かに聞きました。",
+          "say": "翌日の正午、こうごうは、自らラジオのスイッチを入れ、夫が敗戦を告げる声を、最後まで静かに聞きました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "5-7",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-8",
+          "focus": [
+            0.72,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Người dân nghe phát thanh, rồi Thiên hoàng thời chiến."
+    },
+    {
+      "label": "心痛む",
+      "era": "1945年",
+      "headline": "親を失った\n子どもたちへ",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "戦争で親を失った子どもたちを思うと、心が痛む、と皇后は語っています。",
+          "say": "戦争で親を失った子どもたちを思うと、心が痛む、と、こうごうは語っています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-12",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-12",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Trẻ mồ côi sau chiến tranh."
+    },
+    {
+      "label": "帰京",
+      "era": "1945年11月",
+      "headline": "息子の帰京",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "11月、息子の明仁親王は、ようやく疎開先から東京へ戻りました。",
+          "say": "11月、息子の、あきひとしんのうは、ようやく、そかいさきから東京へ戻りました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Thái tử Akihito trở về Tokyo."
+    },
+    {
+      "label": "1961年まで",
+      "era": "1945〜1961年",
+      "headline": "防空壕で\n暮らし続けた夫婦",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "そして夫婦は、1961年まで、その防空壕で暮らし続けたのです。",
+          "say": "そして夫婦は、1961年まで、その、ぼうくうごうで暮らし続けたのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-19",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-15",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai vợ chồng sau chiến tranh, rồi Hoàng hậu những năm 1950."
+    }
+  ],
+  "searches": [
+    "wiki:香淳皇后",
+    "wiki:明仁",
+    "wiki:学童疎開",
+    "wiki:明治宮殿",
+    "wiki:玉音放送",
+    "wiki:戦災孤児",
+    "web:学童疎開 子どもたち 1944 => Japanese schoolchildren evacuated to the countryside during the war",
+    "web:皇后 ビスケット 疎開学童 御賜",
+    "web:明仁親王 疎開 日光 1945",
+    "web:御文庫 皇居 昭和天皇 防空壕",
+    "web:香淳皇后 戦時中 包帯 => a Japanese empress with nurses rolling bandages",
+    "web:香淳皇后 1940年代 => a Japanese empress in the 1940s",
+    "web:明治宮殿 焼失 1945",
+    "web:東京 空襲 1945 炎 => a Japanese city burning at night during an air raid",
+    "web:最後の御前会議 白川一郎",
+    "web:玉音放送 聞く 国民 1945 => Japanese people bowing while listening to a radio broadcast",
+    "web:戦災孤児 1945 上野",
+    "web:明仁親王 1945 帰京 皇太子",
+    "web:御文庫附属室 地下 会議室",
+    "web:昭和天皇 香淳皇后 戦後 1950年代 => an emperor and empress together in the 1950s",
+    "music:Satie Gymnopédie piano",
+    "music:Chopin Nocturne piano"
+  ],
+  "music": {
+    "pick": "21-4",
+    "start": 1.0
+  }
+}
