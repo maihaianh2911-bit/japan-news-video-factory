@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 36,
   "title": "高倉健と江利チエミ",
   "date": "2026-11-20",
@@ -62,6 +62,36 @@
           "say": "そして彼女の死後も、命日が近づくと、ひとしれず墓に手を合わせていたと伝えられています。",
           "quote": true
         }
+      ],
+      "why": "Mở đầu bằng ba ảnh thật của hai vợ chồng thời mới cưới: cùng quét sân nhà (1960), bên xe hơi, rồi Chiemi hôn má Ken.",
+      "photo": [
+        {
+          "pick": "2-9",
+          "focus": [
+            0.5,
+            0.15
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        }
       ]
     },
     {
@@ -70,6 +100,37 @@
       "headline": "スター同士の結婚",
       "lines": [
         "二人が結婚したのは1959年、人気歌手と映画スターの結婚でした。"
+      ],
+      "cut": "fade",
+      "why": "Ảnh cưới năm 1959, Chiemi hát trước micro thời trẻ, rồi Ken thời mới đóng phim.",
+      "photo": [
+        {
+          "pick": "3-3",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "2-2",
+          "focus": [
+            0.4,
+            0.12
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        },
+        {
+          "pick": "20-1",
+          "focus": [
+            0.33,
+            0.69
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        }
       ]
     },
     {
@@ -79,6 +140,36 @@
       "lines": [
         "けれど、幸せは長く続きません。",
         "授かった子どもは病のためにあきらめることになり、1970年には家が火事で焼けてしまいます。"
+      ],
+      "cut": "fade",
+      "why": "Hai vợ chồng ở biển Hawaii (lúc còn hạnh phúc), rồi Chiemi trầm ngâm thập niên 60 và gương mặt nghiêm của Ken; không có ảnh thật về vụ cháy nhà năm 1970.",
+      "photo": [
+        {
+          "pick": "3-16",
+          "focus": [
+            0.55,
+            0.15
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        },
+        {
+          "pick": "12-12",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-10",
+          "focus": [
+            0.5,
+            1.0
+          ],
+          "move": "pull-back",
+          "tone": "sepia"
+        }
       ]
     },
     {
@@ -90,6 +181,28 @@
           "text": "さらにチエミさんの異父姉が、実印を使って預金を使い込み、家まで抵当に入れて、数億円ともいわれる借金を作っていたのです。",
           "say": "さらに、チエミさんの、いふしが、じついんを使って預金を使い込み、家まで抵当に入れて、すうおくえんとも言われる借金を作っていたのです。"
         }
+      ],
+      "cut": "fade",
+      "why": "Cận gương mặt nghiêm của Chiemi, rồi Ken lo lắng (1966); không có ảnh thật về người chị hay khoản nợ.",
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "close-up",
+          "depth": false
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in",
+          "tone": "sepia"
+        }
       ]
     },
     {
@@ -99,6 +212,31 @@
       "lines": [
         "夫にまで、この借金を背負わせたくない。",
         "1971年、チエミさんは自ら離婚を申し出ます。"
+      ],
+      "cut": "fade",
+      "why": "Ken nhìn Chiemi đang quay đi, trang tuần san 週刊女性 năm 1971 đưa tin ly hôn, rồi gương mặt Ken thập niên 70.",
+      "photo": [
+        {
+          "pick": "3-11",
+          "fit": "contain",
+          "move": "push-in",
+          "tone": "sepia"
+        },
+        {
+          "pick": "13-2",
+          "focus": [
+            0.0,
+            0.0
+          ],
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "7-16",
+          "fit": "contain",
+          "move": "pull-back",
+          "tone": "sepia"
+        }
       ]
     },
     {
@@ -108,6 +246,28 @@
       "lines": [
         "その後は再婚せず、一人で借金を返し終えたチエミさん。",
         "1982年2月、45歳の若さでこの世を去りました。"
+      ],
+      "cut": "dip",
+      "why": "Nhảy tới những năm cuối: Chiemi chống cằm trầm tư, rồi tấm ảnh chân dung để tưởng nhớ cô.",
+      "photo": [
+        {
+          "pick": "14-2",
+          "focus": [
+            0.27,
+            0.46
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "16-6",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back",
+          "tone": "sepia",
+          "depth": false
+        }
       ]
     },
     {
@@ -123,6 +283,34 @@
           "text": "けれどその日、健さんの本名「小田剛一」の名で、花が届けられていたといいます。",
           "say": "けれどその日、けんさんの本名、おだごういちの名で、花が届けられていたといいます。"
         }
+      ],
+      "cut": "fade",
+      "why": "Ken năm 1980 đứng một mình, lẵng hoa trắng viếng (ảnh minh hoạ), rồi gương mặt Ken.",
+      "photo": [
+        {
+          "pick": "19-2",
+          "focus": [
+            0.4,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "21-10",
+          "focus": [
+            0.5,
+            0.0
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "15-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
       ]
     },
     {
@@ -135,7 +323,36 @@
           "say": "2014年、けんさんは83歳で亡くなります。"
         },
         "チエミさんが眠る寺は、健さんの家から歩いて行ける場所にありました。"
+      ],
+      "cut": "dip",
+      "why": "Ken những năm cuối đời, mộ nhà Kubo (Chiemi) ở chùa Hōtoku-ji có hoa tươi, kết bằng ảnh hai người ngày cưới.",
+      "photo": [
+        {
+          "pick": "22-9",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-3",
+          "focus": [
+            0.5,
+            0.0
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "pull-back",
+          "tone": "sepia"
+        }
       ]
     }
-  ]
+  ],
+  "music": {
+    "pick": "26-2"
+  }
 }
