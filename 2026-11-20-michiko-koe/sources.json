@@ -1,0 +1,243 @@
+{
+  "demo": false,
+  "duration_seconds": 79.86,
+  "release": {
+    "url": "",
+    "published": "2026-11-20",
+    "publisher": "",
+    "title": "声を失った皇后と、夫の感謝 美智子さま"
+  },
+  "photos": [
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Shoda_Michiko1958.jpg",
+      "title": "Shoda Michiko1958.jpg",
+      "creator": "毎日新聞社",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/royal-family/a43153227/archive-yorisoi-no-ipponmichi-goseikon-no-hi-no-dekigoto-230323/",
+      "title": "上皇・上皇后両陛下｜ご成婚の日の出来事（シリーズ2）",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.nikkei.com/article/DGKKZO32104960S8A620C1CR8000/",
+      "title": "元年～10年(10) バッシング報道の波紋 理想の公務、確立の契機に ...",
+      "creator": "nikkei.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Empress_Michiko_199011_1.jpg",
+      "title": "Empress Michiko 199011 1.jpg",
+      "creator": "Ministry of Foreign Affairs of Japan",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://commons.wikimedia.org/wiki/File:Emperor_Akihito_and_empress_Michiko_of_japan.jpg",
+      "title": "Emperor Akihito and empress Michiko of japan.jpg",
+      "creator": "Nathanael T. Miller",
+      "license": "Public domain",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/royal-family/a62970123/michikosama-memorial-album-241211/",
+      "title": "上皇后美智子さまのメモリアルアルバム｜ご婚約後の若き日のお姿 ...",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/royal-family/a62970123/michikosama-memorial-album-241211/",
+      "title": "上皇后美智子さまのメモリアルアルバム｜ご婚約後の若き日のお姿 ...",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.nippon.com/ja/articles/-/2747",
+      "title": "シリーズ・2回のお代替わりを見つめて（5）天皇誕生日：最後の ...",
+      "creator": "nippon.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.bbc.com/japanese/46669964",
+      "title": "天皇陛下、在位最後の誕生日会見 思いのこもった声で - BBCニュース",
+      "creator": "bbc.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://jisin.jp/koushitsu/2508230/",
+      "title": "美智子さま 治療入院もあった上皇さまと手を繋がれて…軽井沢で ...",
+      "creator": "jisin.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Clair de Lune by Claude Debussy (1905, piano solo).opus",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_by_Claude_Debussy_(1905,_piano_solo).opus",
+    "creator": "Claude Debussy",
+    "license": "Public domain"
+  },
+  "scenes": [
+    {
+      "label": "民間から皇室へ",
+      "headline": "民間から初めて\n皇室へ",
+      "lines": [
+        "皇后美智子さまは、民間から初めて皇室に入った女性です。",
+        "1959年、皇太子・明仁親王、のちの天皇陛下と結婚しましたが、二人の結婚は、いつも大きな重圧と、報道の厳しい批判にさらされてきました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "こうごう、みちこさまは、みんかんから初めて、こうしつに入った女性です。",
+        "1959年、こうたいし、あきひとしんのう、のちの、てんのうへいかと結婚しましたが、二人の結婚は、いつも大きな、じゅうあつと、報道の厳しい批判に、さらされてきました。"
+      ],
+      "cut": "",
+      "why": "Cô Shoda Michiko (ảnh chính), xe ngựa diễu hành ngày cưới 1959, rồi trang báo về những lời công kích.",
+      "era": "1959年",
+      "quotes": [
+        0
+      ],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Shoda_Michiko1958.jpg",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Shoda_Michiko1958.jpg",
+        "https://www.fujingaho.jp/culture/royal-family/a43153227/archive-yorisoi-no-ipponmichi-goseikon-no-hi-no-dekigoto-230323/",
+        "https://www.nikkei.com/article/DGKKZO32104960S8A620C1CR8000/"
+      ]
+    },
+    {
+      "label": "声を失う",
+      "headline": "声を失った\n皇后",
+      "lines": [
+        "1993年、その重圧は、ついに皇后から一時、声を奪ってしまいます。",
+        "59歳の誕生日に突然倒れ、意識は戻ったのに、どれだけ話そうとしても、言葉が出てこなかったのです。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "1993年、その、じゅうあつは、ついに、こうごうから、いちじ、声を奪ってしまいます。",
+        "59歳の誕生日に、突然倒れ、意識は戻ったのに、どれだけ話そうとしても、言葉が出てこなかったのです。"
+      ],
+      "cut": "dip",
+      "why": "Hoàng hậu những năm đầu thời Heisei.",
+      "era": "1993年",
+      "quotes": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Empress_Michiko_199011_1.jpg",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Empress_Michiko_199011_1.jpg"
+      ]
+    },
+    {
+      "label": "夫の思い",
+      "headline": "皇后を案じる\n天皇陛下",
+      "lines": [
+        "天皇陛下は、そんな皇后を、心から大切に思っていました。",
+        "その年の暮れの記者会見で、陛下は皇后の体をとても案じていると語り、少しずつ回復していることを喜ばれました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "てんのうへいかは、そんな、こうごうを、心から大切に思っていました。",
+        "その年の暮れの記者会見で、へいかは、こうごうの体を、とても案じていると語り、少しずつ回復していることを、喜ばれました。"
+      ],
+      "cut": "fade",
+      "why": "Thiên hoàng luôn ở bên Hoàng hậu.",
+      "era": "1993年",
+      "quotes": [],
+      "image_url": "https://commons.wikimedia.org/wiki/File:Emperor_Akihito_and_empress_Michiko_of_japan.jpg",
+      "image_urls": [
+        "https://commons.wikimedia.org/wiki/File:Emperor_Akihito_and_empress_Michiko_of_japan.jpg",
+        "https://www.fujingaho.jp/culture/royal-family/a62970123/michikosama-memorial-album-241211/"
+      ]
+    },
+    {
+      "label": "戻った声",
+      "headline": "戻ってきた声",
+      "lines": [
+        "年が明けるころ、皇后の声は、少しずつ戻っていきました。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "年が明けるころ、こうごうの声は、少しずつ戻っていきました。"
+      ],
+      "cut": "fade",
+      "why": "Hoàng hậu những năm 1990 mỉm cười trở lại.",
+      "era": "1994年",
+      "quotes": [],
+      "image_url": "https://www.fujingaho.jp/culture/royal-family/a62970123/michikosama-memorial-album-241211/",
+      "image_urls": [
+        "https://www.fujingaho.jp/culture/royal-family/a62970123/michikosama-memorial-album-241211/"
+      ]
+    },
+    {
+      "label": "最後の会見",
+      "headline": "退位を前にした\n最後の会見",
+      "lines": [
+        "それから25年後、退位を前にした最後の誕生日の会見で、陛下は声を詰まらせながら、こう語りました。",
+        "「自らも国民の一人であった皇后が、私の人生の旅に加わり、60年という長い年月、皇室と国民の双方への献身を、真心を持って果たしてきたことを、心から労いたく思います」"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "それから25年後、たいいを前にした、最後の誕生日の会見で、へいかは、声を詰まらせながら、こう語りました。",
+        "みずからも、こくみんの一人であった、こうごうが、わたしの人生の旅に加わり、60年という長い年月、こうしつと、こくみんの、そうほうへの、けんしんを、まごころを持って、果たしてきたことを、心から、ねぎらいたく思います。"
+      ],
+      "cut": "fade",
+      "why": "Buổi họp báo sinh nhật cuối cùng năm 2018.",
+      "era": "2018年",
+      "quotes": [
+        1
+      ],
+      "image_url": "https://www.nippon.com/ja/articles/-/2747",
+      "image_urls": [
+        "https://www.nippon.com/ja/articles/-/2747",
+        "https://www.bbc.com/japanese/46669964"
+      ]
+    },
+    {
+      "label": "感謝の言葉",
+      "headline": "声を失った妻へ\n夫の感謝",
+      "lines": [
+        "かつて声を失った妻に、夫が涙をこらえて贈った、感謝の言葉でした。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "かつて声を失った妻に、夫が、なみだをこらえて贈った、感謝の言葉でした。"
+      ],
+      "cut": "fade",
+      "why": "Kết bằng hai người nắm tay nhau.",
+      "era": "2018年",
+      "quotes": [],
+      "image_url": "https://jisin.jp/koushitsu/2508230/",
+      "image_urls": [
+        "https://jisin.jp/koushitsu/2508230/"
+      ]
+    }
+  ]
+}
