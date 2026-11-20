@@ -139,6 +139,14 @@ kèm caption cho mỗi video"):
      優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story. The ending is free (owner,
      19/11/2026: "Tự do, miễn hay"; before: back to the opening, never a question): the line that ends this story
      best, by a new fact or turn, never by saying the opening again.
+   - **A story, never an encyclopedia** (owner, 20/11/2026: "đừng viết như wikipedia… kịch bản mà không cuốn thì
+     đừng viết còn hơn"). Tell it like a storyteller: a person, a moment, what they felt, what happened next, the
+     turn. Every sentence pulls the viewer to the next one (tension, a question left open, a surprise). A date or a
+     place only where it carries the drama (an age, a birthday, "25 years later"), a few in a whole script, never
+     one per sentence; no report wording (「…でのことです」「医師の診断は…」「…と発表しました」「…と語られました」 as a
+     list of events). Before showing a script, read it as a viewer scrolling past: if a sentence sounds like an
+     encyclopedia entry, rewrite it; if the story itself is not gripping, say so and propose another story
+     instead of sending a dull script.
    - **Every sentence says something new** (owner, 19/11/2026: "mỗi câu đều phải có ý nghĩa, không lặp đi lặp lại").
      No sentence repeats an idea already said: the body does not tell the hook again, the end does not sum up the
      hook, no filler such as 「だからこそ…わかったのでしょう」 or a line that only restates feelings. Before showing a
