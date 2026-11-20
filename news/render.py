@@ -557,7 +557,7 @@ def hook_warnings(photo):
     if min(photo.image.size) < HOOK_SIDE:
         said.append(f"the hook: the first picture is small ({photo.image.width}x{photo.image.height}, under "
                     f"{HOOK_SIDE} px on one side), it will look soft: open on the best picture of the video")
-    if photo.fit == "contain" or not photo.depth:
+    if photo.fit == "contain" or (not photo.depth and not photo.clip):   # a clip never gets the depth effect
         said.append("the hook: the first picture is shown whole or marked flat (a document, a page, a collage): "
                     "open on a photograph of the person, the place or the thing")
     return said

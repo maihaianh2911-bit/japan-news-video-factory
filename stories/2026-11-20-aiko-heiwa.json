@@ -1,0 +1,445 @@
+{
+  "stage": "find",
+  "issue": 40,
+  "title": "祖父から孫へ 愛子さまが受け継いだ平和への言葉",
+  "date": "2026-11-18",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "file:stories/media/2026-11-20-aiko-heiwa/den-istana.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/zoom-cuoi.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/canh-xe.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/hoi-kien-1.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/hoi-kien-2.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/ban-tiec.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/ban-tiec-cuoi.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/tt-phat-bieu.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/tt-phat-bieu-2.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/len-buc.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/cui-chao-buc.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/phat-bieu-1.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/phat-bieu-2.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/phat-bieu-3.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/phat-bieu-4.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/phat-bieu-5.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/jokou-a.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/jokou-b.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/kanpai-1.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/kanpai-2.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/ngoi-noi.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/noi-tt.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/bao-tang-den.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/dam-dong.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/vay-1.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/vay-2.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/vay-3.mp4",
+    "file:stories/media/2026-11-20-aiko-heiwa/cuoi-bt.mp4",
+    "music:Schumann Träumerei piano"
+  ],
+  "scenes": [
+    {
+      "label": "祖父から孫へ",
+      "era": "2026年11月18日",
+      "headline": "祖父から孫へ\n平和への言葉",
+      "lines": [
+        {
+          "text": "20年前、祖父の上皇さまがシンガポールで語られた平和への言葉を、孫の愛子さまが、同じ国で受け継がれました。",
+          "say": "20年前、そふの、じょうこうさまが、シンガポールで語られた平和への言葉を、まごの、あいこさまが、同じ国で受け継がれました。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "hold",
+          "start": 0.5
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "hold",
+          "start": 2.0
+        }
+      ],
+      "why": "Mở bằng cận mặt công chúa phát biểu và mỉm cười, rồi Thượng hoàng phát biểu năm 2006, rồi lại công chúa."
+    },
+    {
+      "label": "大統領官邸",
+      "era": "2026年11月18日",
+      "headline": "通訳なしで\n始まった会話",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "2026年11月18日、公式訪問2日目。大統領官邸で出迎えたターマン大統領に、愛子さまは英語で感謝を伝えられ、通訳を介さない会話が始まりました。",
+          "say": "2026年11月18日、公式訪問2日目。だいとうりょうかんていで出迎えたターマン大統領に、あいこさまは英語で感謝を伝えられ、通訳を介さない会話が始まりました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.0,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.0,
+            0.3
+          ],
+          "move": "hold",
+          "start": 0.5
+        }
+      ],
+      "why": "Đến Phủ Tổng thống, máy quay tiến vào nụ cười, rồi trò chuyện với Tổng thống bên xe."
+    },
+    {
+      "label": "懇談",
+      "era": "2026年11月18日",
+      "headline": "原稿を持たずに",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "懇談でも原稿は持たず、大統領の目を見て、英語で言葉を交わされたのです。",
+          "say": "こんだんでも原稿は持たず、大統領の目を見て、英語で言葉を交わされたのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Hai đoạn hội kiến: công chúa vừa nói vừa cười, không cầm giấy."
+    },
+    {
+      "label": "昼食会",
+      "era": "2026年11月18日",
+      "headline": "大統領が覚えていた\n「世界平和」",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "昼食会で、大統領は、昨年の万博で愛子さまが記された「世界平和」という言葉を覚えていて、世界中の人の心に響く願いだと紹介されました。",
+          "say": "昼食会で、大統領は、昨年の万博で、あいこさまが、しるされた「世界平和」という言葉を覚えていて、世界中の人の心に響く願いだと紹介されました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "focus": [
+            0.3,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "9-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Bàn tiệc, Tổng thống phát biểu, công chúa mỉm cười lắng nghe."
+    },
+    {
+      "label": "スピーチ",
+      "era": "2026年11月18日",
+      "headline": "4つの言葉で\n「こんにちは」",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "続いてスピーチに立った愛子さまは、シンガポールの4つの公用語で「こんにちは」と語りかけ、そして、こう述べられます。",
+          "say": "続いてスピーチに立った、あいこさまは、シンガポールの4つの公用語で「こんにちは」と語りかけ、そして、こう述べられます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold",
+          "start": 3.0
+        }
+      ],
+      "why": "Công chúa đứng dậy lên bục, cúi chào, bắt đầu phát biểu."
+    },
+    {
+      "label": "平和への言葉",
+      "era": "2026年11月18日",
+      "headline": "忘れてはならない",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "「先の大戦において、貴国で多くの尊い命が失われ、様々な苦難を受けた人々がおられたことを忘れてはなりません」。",
+          "say": "「さきのたいせんにおいて、きこくで多くの尊い命が失われ、様々な苦難を受けた人々がおられたことを忘れてはなりません」。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold",
+          "start": 5.0
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold",
+          "start": 14.0
+        }
+      ],
+      "why": "Lời công chúa về chiến tranh in chữ lớn, trên các đoạn cận mặt lúc phát biểu."
+    },
+    {
+      "label": "20年前",
+      "era": "2026年11月18日",
+      "headline": "20年前の\n上皇さまの言葉",
+      "cut": "dip",
+      "lines": [
+        {
+          "text": "それは20年前、上皇さまがこの国で語られたお言葉と、重なるものでした。",
+          "say": "それは20年前、じょうこうさまがこの国で語られたお言葉と、重なるものでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold",
+          "start": 1.0
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Thượng hoàng phát biểu năm 2006, rồi công chúa hôm nay: hai lời nói nối nhau."
+    },
+    {
+      "label": "乾杯",
+      "era": "2026年11月18日",
+      "headline": "「To your health」",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "乾杯は英語で「To your health」。席に着くとすぐ、隣の大統領に話しかけられる姿には、母・雅子さまの外交の姿も重なります。",
+          "say": "乾杯は英語で「トゥー・ユア・ヘルス」。席に着くとすぐ、隣の大統領に話しかけられる姿には、はは、まさこさまの外交の姿も重なります。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "20-1",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "21-1",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.12,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Nâng ly, uống, cười, rồi ngồi xuống quay sang trò chuyện ngay với Tổng thống."
+    },
+    {
+      "label": "博物館",
+      "era": "2026年11月18日",
+      "headline": "青いワンピースで",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "午後には青いワンピースに着替えてプラナカン博物館へ向かい、集まった人々に、笑顔で手を振って応えられました。",
+          "say": "午後には青いワンピースに着替えてプラナカン博物館へ向かい、集まった人々に、笑顔で手を振って応えられました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "24-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "26-1",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "25-1",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Đám đông chờ bên ngoài bảo tàng, rồi công chúa vẫy tay cười."
+    },
+    {
+      "label": "次の時代へ",
+      "era": "2026年11月18日",
+      "headline": "次の時代へ",
+      "cut": "dip",
+      "lines": [
+        {
+          "text": "祖父から受け継いだ平和への言葉を、愛子さまは、ご自分の声で、次の時代へとつながれたのです。",
+          "say": "そふから受け継いだ平和への言葉を、あいこさまは、ご自分の声で、次の時代へとつながれたのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "focus": [
+            0.6,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "27-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Kết bằng hai nụ cười trong bộ váy xanh."
+    }
+  ],
+  "music": {
+    "pick": "29-1"
+  }
+}
