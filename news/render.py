@@ -61,6 +61,14 @@ STYLES = {
                    photo_tag_text="#2a1d10", value="#f1c96b", card="#f7eed6", card_ink="#2a1d10",
                    card_muted="#6f5d40", rule="#9c8a68", caption_box="", caption_text="#2a1d10", grain=True,
                    layout="story"),
+    # "history": the frame of the history channel (trial of 20/11/2026): a dark ink page, the picture or the clip
+    # fills the upper three quarters and melts into the page at its foot, the kicker stands in a vermilion seal,
+    # the headline lies on the melting foot and the captions are printed in ivory on the dark page.
+    "history": Style(family="Serif", background="#100d0a", text="#f4ead2", muted="#857b68", accent="#b3261e",
+                     tag="#b3261e", tag_text="#f4ead2", photo_bed="#100d0a", photo_tag="#100d0a",
+                     photo_tag_text="#f4ead2", value="#d9b96a", card="#1b1612", card_ink="#f4ead2",
+                     card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#f4ead2", grain=False,
+                     layout="ink"),
 }
 style = STYLES["news"]
 
@@ -255,20 +263,29 @@ def paper_grain(color):
 # --- motion: pictures that move, text that comes in, transitions between scenes, film grain (paper) ---
 PHOTO_TOP, PHOTO_HEIGHT = 338, 700
 STORY_TOP, STORY_HEIGHT = 172, 1258     # "story": the picture from under the masthead to above the captions
+INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of the frame, melting into the page
+INK_GOLD = "#d9b96a"
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT)}
+ON_PICTURE = ("story", "ink")           # frames whose headline and quote are printed on the picture
+
+
+def box_height(name):
+    """Height of the picture in the frame of the style `name` (for what is cut to fit it: a clip)."""
+    return BOXES.get(STYLES[name].layout, (PHOTO_TOP, PHOTO_HEIGHT))[1]
 
 
 def photo_box():
     """Top and height of the picture in the current frame."""
-    return (STORY_TOP, STORY_HEIGHT) if style.layout == "story" else (PHOTO_TOP, PHOTO_HEIGHT)
+    return BOXES.get(style.layout, (PHOTO_TOP, PHOTO_HEIGHT))
 
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
-    return (0, 0, W, 1752) if style.layout == "story" else (0, 245, W, 1700)
+    return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return 1590 if style.layout == "story" else 1598
+    return {"story": 1590, "ink": 1614}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
 
@@ -500,7 +517,7 @@ def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
     if not main:   # a crowd
         return []
     windows = frame_windows(photo, seconds, height)
-    zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout == "story" else 0.0
+    zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout in ON_PICTURE else 0.0
 
     def place(box, window):   # how far down the frame the middle of the face is (0 top, 1 bottom)
         return ((box[1] + box[3]) / 2 - window[1]) / max(0.001, window[3] - window[1])
@@ -661,11 +678,125 @@ def story_shade(height):
     return shade
 
 
+def upright_text(draw, x, y, value, size, fill, step=None):
+    """Japanese written downwards: one character under the other, centred on x, from y. Returns the y below."""
+    step = step or round(size * 1.22)
+    for index, char in enumerate(value):
+        draw.text((x, y + index * step + size // 2), char, font=font(size), fill=fill, anchor="mm")
+    return y + len(value) * step
+
+
+@lru_cache(maxsize=2)
+def ink_shade(height):
+    """Over the picture of the "history" page: its foot melts into the dark page (the headline lies there) and its
+    top is a little darker (the seal and the year)."""
+    shade = Image.new("RGBA", (W, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shade)
+    for y in range(0, 280):
+        draw.line((0, y, W, y), fill=(8, 6, 4, round(150 * (1 - y / 280) ** 2)))
+    return shade
+
+
+@lru_cache(maxsize=2)
+def ink_mask(height):
+    """How much of the picture is seen, line by line: all of it down to three fifths, then it melts into the page."""
+    mask = Image.new("L", (W, height), 255)
+    draw = ImageDraw.Draw(mask)
+    start, gone = int(height * 0.60), height - 30
+    for y in range(start, height):
+        draw.line((0, y, W, y), fill=round(255 * (1 - ease((y - start) / (gone - start)) ** 0.9)))
+    return mask
+
+
+def ink_layout(beat, release, has_photo, demo):
+    """The "history" page. Returns the page, the layer of the scene's text and its pieces: the seal and the year are
+    "fixed" (drawn over the picture, never moving), the rest comes in piece by piece with "fx": text."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = paper_grain(style.background).copy()
+    draw = ImageDraw.Draw(image)
+    draw.line((60, 1752, W - 60, 1752), fill=style.rule, width=2)
+    if release.publisher:
+        text(draw, 60, 1812, f"出典  {release.publisher}", 24, style.muted, bold=False)
+    text(draw, W - 60, 1774, VOICE_CREDIT, 24, style.muted, bold=False, anchor="rt")
+    if release.music:
+        music, music_size = fit(f"音楽  {release.music.title.rsplit('.', 1)[0]}", 600, 22, 1, bold=False, smallest=16)
+        text(draw, W - 60, 1812, music, music_size, style.muted, bold=False, anchor="rt")
+
+    def seal(d):   # the kicker in a vermilion seal, written downwards
+        kicker = release.kicker or "歴史の物語"
+        d.rounded_rectangle((52, 62, 118, 62 + len(kicker) * 40 + 30), radius=7, fill=style.accent)
+        d.rounded_rectangle((57, 67, 113, 62 + len(kicker) * 40 + 25), radius=4, outline="#e8b9a6", width=1)
+        upright_text(d, 85, 80, kicker, 32, style.text, 40)
+
+    def year(d):
+        era, size = fit(beat.era, 620, 60, 1, smallest=40)
+        d.text((W - 54, 74 + 3), era, font=font(size), fill=(6, 4, 2, 200), anchor="rt", stroke_width=1, stroke_fill=(6, 4, 2, 200))
+        d.text((W - 56, 74), era, font=font(size), fill=INK_GOLD, anchor="rt")
+        width = round(font(size).getlength(era))
+        d.rectangle((W - 56 - width, 74 + size + 22, W - 56, 74 + size + 24), fill=INK_GOLD)
+
+    parts.append(piece("fixed", seal))
+    if beat.era:
+        parts.append(piece("fixed", year))
+    if demo:
+        parts.append(piece("fixed", lambda d: text(d, W // 2, 76, "動作確認", 28, GOLD, anchor="mt")))
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if not has_photo:   # a text card in the place of the picture
+        draw.rounded_rectangle((70, 300, 1010, 1340), radius=18, fill=style.card, outline=style.rule, width=2)
+        draw.rectangle((119, 372, 215, 378), fill=style.accent)
+        headline, size = fit(beat.headline, 840, 68, 3, smallest=40)
+        y = text(draw, 119, 430, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 840, 120, 1, smallest=56)
+            y = text(draw, 119, y + 70, value, value_size, style.value)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 40, 5, bold=False, smallest=26)
+            text(draw, 119, y + 60, evidence, evidence_size, style.card_ink, bold=False)
+        return image, layer, [part for part in parts if part]
+    bottom = INK_TOP + INK_HEIGHT - 44
+    blocks = []
+    if beat.value:
+        value, value_size = fit(beat.value, 960, 84, 1, smallest=56)
+        blocks.append((value, value_size, style.value, True, 18))
+    headline, size = fit(beat.headline, 960, 80 if len(beat.headline) < 20 else 60, 3, smallest=46)
+    blocks.append((headline, size, style.text, True, 18))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, style.text, False, 12))
+    heights = [block_height(value, size, spacing) for value, size, _, _, spacing in blocks]
+    y = bottom - sum(heights) - 22 * (len(blocks) - 1)
+
+    def rule(d, y=y):
+        d.rectangle((60, y - 36, 150, y - 31), fill="#c23a26")
+
+    def tag(d, y=y):   # the scene's label beside the rule, in gold
+        d.text((168, y - 34), beat.label, font=font(30), fill=INK_GOLD, anchor="lm")
+
+    if animated:
+        parts += [piece("rule", rule), piece("tag", tag)]
+    else:
+        rule(draw), tag(draw)
+    order = 0
+    for (value, size, colour, bold, spacing), height in zip(blocks, heights):
+        if animated:
+            for row, line in enumerate(value.splitlines()):
+                parts.append(piece("row", lambda d, line=line, at=y + row * (size + spacing), size=size, colour=colour,
+                                   bold=bold: d.text((60, at), line, font=font(size, bold), fill=colour), order))
+                order += 1
+        else:
+            text(draw, 60, y, value, size, colour, bold=bold, spacing=spacing)
+        y += height + 22
+    return image, layer, [part for part in parts if part]
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
     if style.layout == "story":
         return story_layout(beat, release, has_photo, demo)
+    if style.layout == "ink":
+        return ink_layout(beat, release, has_photo, demo)
     return (*plain_layout(beat, release, has_photo, demo), [])
 
 
@@ -769,6 +900,9 @@ class Scene:
     def shot(self, number, local, length):
         """Picture `number` at its time `local`: the move chosen for it, else the four old moves in turn."""
         photo = self.photos[number]
+        if photo.footage:   # a clip plays at its own speed (slowed when it is shorter than its place), closing in a little
+            frame = photo.footage.at(local * length, length + PHOTO_FADE)
+            return view(frame, self.height, 1.0 + 0.05 * clamp(local, 0.0, 1.25), 0.5, 0.5)
         if photo.move:
             return named_photo(photo, local, photo.move, length, self.height, delay=0.0 if number else self.arrival)
         return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)], self.height)
@@ -779,10 +913,16 @@ class Scene:
         photo = None
         if self.photos:
             picture, photo = self.picture(moment)
-            frame.paste(picture, (0, self.top))
-            if style.layout == "story":
-                shade = story_shade(self.height)
+            if style.layout == "ink":
+                frame.paste(picture, (0, self.top), ink_mask(self.height))
+            else:
+                frame.paste(picture, (0, self.top))
+            if style.layout in ON_PICTURE:
+                shade = ink_shade(self.height) if style.layout == "ink" else story_shade(self.height)
                 frame.paste(shade, (0, self.top), shade)
+        for kind, part, at, _ in self.parts:   # what never moves: the seal and the year of the "history" page
+            if kind == "fixed":
+                frame.paste(part, at, part)
         if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
         else:
@@ -793,8 +933,8 @@ class Scene:
             self.draw_parts(frame, age)
         if photo:
             draw = ImageDraw.Draw(frame)
-            credit = f"写真  {photo.creator}" + (f" / {photo.license}" if photo.license else "")
-            if style.layout == "story":
+            credit = ("映像  " if photo.footage else "写真  ") + photo.creator + (f" / {photo.license}" if photo.license else "")
+            if style.layout in ON_PICTURE:
                 credit, credit_size = fit(credit, 560, 24, 1, bold=False, smallest=16)
                 text(draw, 60, 1774, credit, credit_size, style.muted, bold=False)
             else:
@@ -809,6 +949,8 @@ class Scene:
         drawn, then each row of the headline rises into its place from behind its own lower edge."""
         start = 0.1 + 0.6 * self.arrival   # most of it is seen after the scene has arrived
         for kind, picture, (x, y), order in self.parts:
+            if kind == "fixed":
+                continue
             if kind in ("tag", "rule"):
                 amount = ease((age - start - (0.0 if kind == "tag" else 0.12)) / (0.3 if kind == "tag" else 0.4))
                 width = round(picture.width * amount)
@@ -836,7 +978,7 @@ def page_shadow(height=1460):
     return shadow
 
 
-CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0}
+CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45}
 
 
 @lru_cache(maxsize=1)
@@ -854,6 +996,11 @@ def transition(old, new, amount, cut=""):
     cut = cut or ("page" if style.grain else "fade")
     if cut == "fade":
         return Image.blend(old, new, amount)
+    if cut == "flash":   # a burst of pale light on the cut, then the new scene comes out of it (a blow, a betrayal)
+        light = Image.new("RGB", (W, H), "#f6efe0")
+        if amount < 0.25:
+            return Image.blend(old, light, 0.85 * amount / 0.25)
+        return Image.blend(light, new, 0.15 + 0.85 * ease((amount - 0.25) / 0.75))
     if cut == "dip":
         # Only the scene (picture and its text) goes dark; the header and the foot change quietly and the caption,
         # drawn afterwards, stays readable.
@@ -1038,6 +1185,20 @@ def quote_band(height):
     return band
 
 
+@lru_cache(maxsize=8)
+def ink_quote_band(height):
+    """The band of a quote on the "history" page: it darkens the picture behind the words and is gone at the foot,
+    where the picture has already melted into the page."""
+    band = quote_band(height).copy()
+    fall = Image.new("L", (W, height), 255)
+    draw = ImageDraw.Draw(fall)
+    start = int(height * 0.45)
+    for y in range(start, height):
+        draw.line((0, y, W, y), fill=round(255 * (1 - ease((y - start) / (height - start - 30)))))
+    band.putalpha(ImageChops.multiply(band.getchannel("A"), fall))
+    return band
+
+
 def draw_quote(image, line, age):
     """A quote printed big while it is spoken. The picture stays bright: the main picture is what keeps the
     viewer (owner, 17/11/2026), so only the foot of the picture gets a soft dark band, the words stand on it
@@ -1053,6 +1214,8 @@ def draw_quote(image, line, age):
     block = block_height(words, size, 22)
     band_height = min(height, block + 330)
     band = quote_band(band_height)
+    if style.layout == "ink":
+        band = ink_quote_band(band_height)
     band = faded(band, amount) if amount < 1 else band
     image.paste(band, (0, top + height - band_height), band)
     y = top + height - 80 - block - 40          # the text block ends 80 px above the foot of the picture
@@ -1134,7 +1297,7 @@ def frame_at(scenes, number, moment):
     if number and moment - scenes[number].start < length:
         old = scenes[number - 1].render(moment)
         amount = (moment - scenes[number].start) / length
-        frame = transition(old, frame, amount if cut == "dip" else ease(amount), cut)
+        frame = transition(old, frame, amount if cut in ("dip", "flash") else ease(amount), cut)
     return frame
 
 
@@ -1215,6 +1378,10 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                                       getattr(captions[shown], "marks", ()))
                     if grain:
                         frame = grain.apply(frame, frame_index)
+                    if style.layout == "ink":   # the video comes out of the dark and goes back into it
+                        edge = min(moment / 0.5, (duration - moment) / 0.8)
+                        if edge < 1:
+                            frame = Image.blend(Image.new("RGB", (W, H), "#000000"), frame, ease(max(0.0, edge)))
                     process.stdin.write(frame.tobytes())
                     frame_index += 1
         finally:

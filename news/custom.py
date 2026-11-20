@@ -16,14 +16,14 @@ from .captions import caption_path, check as check_caption
 from .edits import cut_problems, move_problems
 from .sources import Release
 from .story import Beat
-from .visuals import Photo
+from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx"}
 STYLES = ("news", "paper", "story", "history")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
 FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
@@ -159,6 +159,10 @@ def check_photo(photo, where, searches):
         problems.append(f'{where}: "depth" must be true or false (false: a flat picture such as a document), got {photo["depth"]!r}')
     if "tone" in photo and photo["tone"] not in TONES:
         problems.append(f'{where}: "tone" must be one of {", ".join(TONES)}, got {photo["tone"]!r}')
+    for key, most in (("start", 600), ("seconds", 20)):   # of a clip (a video: search)
+        if key in photo and (not isinstance(photo[key], (int, float)) or isinstance(photo[key], bool)
+                             or not 0 <= photo[key] <= most or (key == "seconds" and photo[key] < 1)):
+            problems.append(f'{where}: "{key}" must be a number of seconds (of a clip), got {photo[key]!r}')
     problems += move_problems(photo, where)
     return problems
 
@@ -368,8 +372,21 @@ def load_story(path, pictures=None):
             photos[index] = []
             for pick in picks:
                 entry = found[pick["pick"]]
+                tone = pick.get("tone", "color")
+                if entry["file"].endswith(".mp4"):   # a clip: cut to the picture box of the frame, around its focus
+                    from .render import W, box_height
+                    footage = Footage(Path(pictures) / entry["file"], float(pick.get("start", 0.0)),
+                                      float(pick.get("seconds", 6.0)) + 0.6, W, box_height(release.style),
+                                      tuple(pick.get("focus", (0.5, 0.5))),
+                                      None if tone == "color" else lambda picture, tone=tone: toned(picture, tone))
+                    photos[index].append(Photo(footage.frame(len(footage.files) // 2), entry["page"],
+                                               entry["title"].removeprefix("File:"),
+                                               entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
+                                               entry.get("license_url", ""), (0.5, 0.5), "cover", "hold", False,
+                                               footage))
+                    continue
                 with Image.open(Path(pictures) / entry["file"]) as original:
-                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), pick.get("tone", "color"))
+                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), tone)
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
