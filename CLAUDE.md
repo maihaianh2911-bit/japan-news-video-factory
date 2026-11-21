@@ -118,6 +118,11 @@ videos by their frame and by the name in the seal:
 - **Music** (owner, 21/11/2026: "nhạc nền rít quá, cho nhẹ thôi"): a gentle piano piece at `"volume": 0.7`
   (`music:Gymnopédie Satie piano`, `music:Chopin Nocturne piano`, `music:Debussy Clair de lune piano`); no
   shakuhachi or other shrill solo instrument.
+- **Nothing is built before the owner approves the script** (owner, 21/11/2026, angry that the picture search
+  of `shingen-furinkazan` was started right after a rewrite was shown: "đã chốt kịch bản đâu mà dựng"). When the
+  script is rewritten or its length changed, show it in the chat and wait for a clear yes (「ok」「dựng đi」「chốt」);
+  no issue, no story file, no push and no search before that. An instruction about the script ("cuốn hơn",
+  "61s thôi") is a request for a new draft, not a go-ahead.
 - Before a render, check every pick against the title and page of its source in `index.json`, not only by eye: on
   the first videos a portrait found by `wiki:` was another man of the same battle, a print was another scene, and a
   web portrait came from the page of the shogun before (`tools/review_picks.py` prints the source beside each).
