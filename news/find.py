@@ -849,8 +849,9 @@ def video_find(words, k, out):
             with GATE:
                 seconds, width, height = video_cut(entry.pop("url"), out / name, agent)
         except (OSError, ValueError, KeyError, IndexError, subprocess.SubprocessError) as error:
-            detail = getattr(error, "stderr", b"") or b""
-            print(f"  skipped {entry['title']}: {type(error).__name__} {detail.decode('utf-8', 'replace')[-200:]}")
+            detail = getattr(error, "stderr", "") or ""
+            detail = detail.decode("utf-8", "replace") if isinstance(detail, bytes) else str(detail)
+            print(f"  skipped {entry['title']}: {type(error).__name__} {detail[-200:]}")
             (out / name).unlink(missing_ok=True)
             continue
         finally:

@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "一杯の茶の恩 大谷吉継と石田三成",
   "date": "2026-11-20",
   "style": "history",
@@ -399,8 +399,8 @@
     }
   ],
   "music": {
-    "pick": "42-3",
-    "volume": 1
+    "pick": "46-4",
+    "volume": 0.7
   },
   "voice": 1.7
 }
