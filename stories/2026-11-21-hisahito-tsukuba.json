@@ -1,0 +1,279 @@
+{
+  "stage": "render",
+  "issue": 42,
+  "title": "悠仁さまの筑波大附属高校進学と愛子さまの選択",
+  "date": "2026-11-21",
+  "style": "story",
+  "kicker": "皇室の話題",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "特別ルート",
+      "era": "2022年",
+      "headline": "超難関高校へ\n特別ルートで進学",
+      "lines": [
+        {
+          "text": "悠仁さまは、超難関高校へ特別ルートで進学したことで、",
+          "say": "ひさひとさまは、ちょうなんかん高校へ、とくべつルートで進学したことで、",
+          "quote": true
+        },
+        {
+          "text": "国民から「あまりにも露骨な優遇だろ」と総ツッコミを食らってしまったのだった。",
+          "say": "こくみんから、あまりにも、ろこつな、ゆうぐうだろ、と、そうツッコミを食らってしまったのだった。"
+        },
+        {
+          "text": "本来、歴代の皇族が通うのは伝統ある学習院と決まっている。",
+          "say": "ほんらい、れきだいの、こうぞくが通うのは、伝統ある、がくしゅういんと決まっている。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Hoàng tử Hisahito, ảnh sáng rõ nhất (ảnh chính), rồi cổng trường Gakushuin."
+    },
+    {
+      "label": "提携校進学制度",
+      "era": "2022年",
+      "headline": "提携校進学制度で\n筑波大附属高校へ",
+      "cut": "page",
+      "lines": [
+        {
+          "text": "それでも悠仁さまはその道を選ばず、「提携校進学制度」という期間限定のルールを使って、日本屈指の進学校である筑波大学附属高校へ進まれたものだった。",
+          "say": "それでも、ひさひとさまは、その道を選ばず、ていけいこう進学制度という、期間限定のルールを使って、日本くっしの進学校である、つくばだいがくふぞく高校へ、進まれたものだった。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "8-4",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Trường Tsukuba, rồi Hoàng tử ngày nhập học."
+    },
+    {
+      "label": "疑いの声",
+      "era": "2022年",
+      "headline": "将来の天皇のための\n制度？",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "しかもこの制度、なぜか悠仁さまの進学時期とドンピシャで重なる数年間だけ導入されたものだったため、世間からは「いや、将来の天皇のために作られた制度だろ」と疑いの声が一気に噴出したのだそう。",
+          "say": "しかも、この制度、なぜか、ひさひとさまの進学時期と、ドンピシャで重なる数年間だけ、導入されたものだったため、世間からは、いや、将来の、てんのうのために作られた制度だろ、と、疑いの声が、一気に、ふんしゅつしたのだそう。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-9",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "8-7",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Báo chí xôn xao, rồi Hoàng tử đến trường."
+    },
+    {
+      "label": "作文の記載漏れ",
+      "era": "2022年",
+      "headline": "作文の\n参考文献記載漏れ",
+      "cut": "hard",
+      "lines": [
+        {
+          "text": "さらにタイミングが悪いことに、入学直前にはコンクール入賞作の作文で参考文献の記載漏れが発覚。",
+          "say": "さらにタイミングが悪いことに、入学直前には、コンクール入賞作の作文で、参考文献の、きさいもれが、はっかく。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "fall",
+          "depth": false
+        }
+      ],
+      "why": "Trang bài văn đoạt giải."
+    },
+    {
+      "label": "強い反発",
+      "era": "2022年",
+      "headline": "宮内庁の\n説明の少なさ",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "ご本人も重いプレッシャーの中にいたはずだが、周囲の大人たちが先回りしてレールを敷きすぎたこと、そして宮内庁の説明の少なさが、かえって強い反発を招いてしまったと言われている。",
+          "say": "ごほんにんも、重いプレッシャーの中にいたはずだが、周囲の大人たちが、先回りしてレールを敷きすぎたこと、そして、くないちょうの説明の少なさが、かえって強い反発を、招いてしまったと言われている。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "8-2",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hoàng tử giữa các bạn học, rồi trụ sở Cung nội sảnh."
+    },
+    {
+      "label": "愛子さまの選択",
+      "era": "2020〜2024年",
+      "headline": "愛子さまの選択",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "一方で、人々の心を掴んだのは愛子さまのご選択だった。",
+          "say": "いっぽうで、人々の心をつかんだのは、あいこさまの、ごせんたくだった。"
+        },
+        {
+          "text": "特別なルートに頼らず伝統の学習院大学で古典を学び、卒業後は一職員として地道に働かれるその自然体なお姿に、日本中から温かい称賛が集まったそう。",
+          "say": "とくべつなルートに頼らず、伝統の、がくしゅういん大学で古典を学び、卒業後は、いち職員として、じみちに働かれる、その自然体なお姿に、日本中から、温かい称賛が集まったそう。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "15-3",
+          "focus": [
+            0.5,
+            0.15
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Công chúa Aiko tốt nghiệp, đi làm ở Chữ thập đỏ, rồi nụ cười của cô."
+    },
+    {
+      "label": "信頼の差",
+      "era": "現在",
+      "headline": "特別さと\n飾らない姿",
+      "cut": "fade",
+      "lines": [
+        {
+          "text": "同じ皇族でありながら、特別さを強調するほど離れていく世間の心と、飾らない姿に集まる信頼の差が、くっきりと浮かび上がった出来事だった。",
+          "say": "同じ、こうぞくでありながら、とくべつさを強調するほど、離れていく世間の心と、飾らない姿に集まる信頼の差が、くっきりと浮かび上がった、できごとだった。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "13-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cả gia đình Hoàng gia, rồi Hoàng tử Hisahito."
+    }
+  ],
+  "searches": [
+    "wiki:悠仁親王",
+    "wiki:愛子内親王",
+    "wiki:筑波大学附属高等学校",
+    "wiki:学習院",
+    "wiki:学習院大学",
+    "wiki:宮内庁",
+    "wiki:日本赤十字社",
+    "web:悠仁さま 筑波大附属高校 入学式 2022 => a Japanese teenage prince in a school uniform at an entrance ceremony",
+    "web:悠仁さま 高校 制服 => a Japanese teenage boy in a dark school uniform smiling",
+    "web:筑波大学附属高等学校 校舎",
+    "web:提携校進学制度 お茶の水女子大学附属中学校",
+    "web:悠仁さま 作文 小笠原 コンクール",
+    "web:悠仁さま 16歳 誕生日 => a Japanese teenage prince portrait",
+    "web:宮内庁 庁舎 皇居",
+    "web:愛子さま 学習院大学 卒業 2024 => a young Japanese princess in a graduation hakama",
+    "web:愛子さま 日本赤十字社 勤務 => a young Japanese woman working at the Red Cross",
+    "web:愛子さま 笑顔 2025 => a smiling young Japanese princess",
+    "web:悠仁さま 成年式 2025 => a Japanese prince in traditional court dress at a coming of age ceremony",
+    "web:愛子さま 悠仁さま 二人 => a young Japanese princess and prince together",
+    "music:Satie Gymnopédie piano",
+    "music:Debussy Clair de lune piano"
+  ],
+  "music": {
+    "pick": "20-4",
+    "start": 1.0
+  }
+}

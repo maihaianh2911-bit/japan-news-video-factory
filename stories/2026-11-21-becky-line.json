@@ -1,0 +1,237 @@
+{
+  "stage": "render",
+  "issue": 45,
+  "title": "ベッキー LINE流出で転落",
+  "date": "2026-11-21",
+  "style": "story",
+  "kicker": "スターの物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:ベッキー",
+    "web:ベッキー 笑顔 2015 => portrait of a smiling young Japanese female TV personality",
+    "web:ベッキー CM 2015 => a smiling Japanese woman in a TV commercial",
+    "wiki:川谷絵音",
+    "web:川谷絵音 ゲスの極み乙女 2016 => a young Japanese male musician",
+    "web:ベッキー 川谷絵音 文春 2016 => a Japanese weekly magazine page",
+    "web:ベッキー 謝罪会見 2016 => a Japanese woman bowing deeply at a press conference with cameras",
+    "web:ベッキー 会見 涙 2016年1月6日 => a tearful Japanese woman at a press conference",
+    "web:ベッキー 会見 報道陣 => many photographers at a Japanese press conference",
+    "web:ベッキー LINE 文春 友達で押し通す予定 => a smartphone screen with Japanese chat messages",
+    "web:週刊文春 ベッキー 2016年1月21日 => a Japanese weekly magazine cover",
+    "web:ベッキー LINE 流出 => Japanese chat messages on a phone screen",
+    "web:ベッキー 休業 2016 スポーツ紙 => a Japanese sports newspaper front page",
+    "web:ベッキー CM 降板 2016 => a Japanese woman in an advertisement",
+    "web:ベッキー 2016 => a Japanese female TV personality looking down, serious",
+    "music:Erik Satie Gnossienne piano",
+    "music:Chopin Prelude E minor piano",
+    "music:Gymnopédie Satie piano"
+  ],
+  "scenes": [
+    {
+      "label": "CM女王",
+      "era": "2016年",
+      "headline": "ベッキー\n転落の真相",
+      "lines": [
+        {
+          "text": "好感度トップの「CM女王」だったベッキーが涙の謝罪会見をしたあと、裏で送っていたLINEが流出したせいで、一夜にして芸能界の頂点から転落してしまったのだった。",
+          "say": "好感度トップの、シーエム女王だったベッキーが、涙の謝罪会見をしたあと、裏で送っていたラインが流出したせいで、一夜にして芸能界の頂点から転落してしまったのだった。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-10",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-5",
+          "focus": [
+            0.6,
+            0.5
+          ],
+          "move": "fall",
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng Becky tươi cười rạng rỡ thời đỉnh cao (ảnh lớn, nét), rồi Becky mắt đỏ hoe ở họp báo xin lỗi 6/1/2016 (cả khung), rồi trang báo in tin nhắn LINE bị lộ."
+    },
+    {
+      "label": "不倫報道",
+      "era": "2016年1月",
+      "headline": "不倫報道",
+      "lines": [
+        {
+          "text": "2016年、CM10社とレギュラー10本を抱えていた当時31歳の彼女に、既婚ミュージシャン、「ゲスの極み乙女。」の川谷絵音との不倫報道が直撃。",
+          "say": "2016年、シーエム10社と、レギュラー10本を抱えていた、当時31歳の彼女に、既婚ミュージシャン、げすのきわみおとめの、かわたにえのんとの不倫報道が直撃。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-1",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "5-4",
+          "focus": [
+            0.52,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "fade",
+      "why": "Cả khung hình quảng cáo thuốc Bufferin Luna i có Becky (thời 'nữ hoàng CM'), bìa Shukan Bunshun số 14/1 với trang tin 'ベッキー31歳 禁断愛', rồi Kawatani Enon ở buổi họp báo Kohaku lần 66 (12/2015) đúng lúc đọc tên anh."
+    },
+    {
+      "label": "会見",
+      "era": "2016年1月6日",
+      "headline": "涙の会見",
+      "lines": [
+        {
+          "text": "すぐさま緊急会見を開き、70人もの報道陣を前に、質問は一切受け付けないまま、涙ながらに「友人関係であることは間違いありません」と釈明したことで、世間は一度は彼女を許しかけていたのだ。",
+          "say": "すぐさま緊急会見を開き、70人もの報道陣を前に、質問は一切受け付けないまま、涙ながらに、ゆうじんかんけいであることは間違いありません、と釈明したことで、世間は一度は彼女を許しかけていたのだ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-3",
+          "focus": [
+            0.4,
+            0.42
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.48,
+            0.4
+          ],
+          "move": "hold"
+        }
+      ],
+      "cut": "fade",
+      "why": "Họp báo khẩn 6/1/2016: cả căn phòng, Becky cúi gập người trước dàn micro, nhắm mắt mím môi, rồi vừa khóc vừa nói 'chỉ là bạn bè'."
+    },
+    {
+      "label": "LINE",
+      "era": "2016年1月21日",
+      "headline": "流出したLINE",
+      "lines": [
+        {
+          "text": "しかし2週間後、週刊誌が会見前夜のLINEを丸ごと暴露する。",
+          "say": "しかし2週間後、週刊誌が、会見前夜のラインを丸ごと暴露する。"
+        },
+        {
+          "text": "そこに並んでいたのは反省とは程遠い「友達で押し通す予定！笑」、さらには「ありがとう文春！」と報道を茶化す言葉だった。",
+          "say": "そこに並んでいたのは、反省とは程遠い、ともだちでおしとおすよてい、わら。さらには、ありがとうぶんしゅん、と報道を茶化す言葉だった。"
+        },
+        {
+          "text": "さらに川谷の妻も、会見で自分への謝罪はなかったと明かした。",
+          "say": "さらに、かわたにの妻も、会見で自分への謝罪はなかったと明かした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-5",
+          "focus": [
+            0.62,
+            0.5
+          ],
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "10-8",
+          "focus": [
+            0.4,
+            0.2
+          ],
+          "move": "hold",
+          "depth": false
+        },
+        {
+          "pick": "6-4",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        }
+      ],
+      "cut": "hard",
+      "why": "Cú sốc: trang Bunshun in nguyên đoạn LINE ('ありがとう文春！', 'センテンス スプリング！'), cận cảnh dòng tin nhắn, rồi trang báo có bài 'vợ của Gesu Otome khóc kể'."
+    },
+    {
+      "label": "転落",
+      "era": "2016年1月",
+      "headline": "消えたCM",
+      "lines": [
+        "カメラの前での涙と、裏での軽率な本音のギャップに日本中の信頼は一瞬で崩壊。",
+        {
+          "text": "全10社のCMは即座に打ち切られ、1月の終わりには休業に追い込まれた。",
+          "say": "全10社の、シーエムは即座に打ち切られ、1月の終わりには休業に追い込まれた。"
+        },
+        "15年かけて築いた完璧なキャリアは、たった数行のメッセージで吹き飛んでしまったと言われている。"
+      ],
+      "photo": [
+        {
+          "pick": "3-15",
+          "focus": [
+            0.45,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "13-2",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Gương mặt Becky ở họp báo (nước mắt trước ống kính), trang nhất Sponichi 'ベッキー休業', rồi khép lại bằng nụ cười thời đỉnh cao đã mất."
+    }
+  ],
+  "music": {
+    "pick": "16-1"
+  }
+}

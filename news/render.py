@@ -287,6 +287,7 @@ def page_area():
 def caption_centre():
     return {"story": 1590, "ink": 1614}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
+HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
 
 
@@ -885,15 +886,25 @@ class Scene:
         box = text_layer.getbbox() or (0, 0, 1, 1)
         self.text, self.text_at = text_layer.crop(box), box[:2]
 
+    def lengths(self):
+        """How long each picture of the scene stays: an equal share, except the hook. With "fx", the first picture
+        of the video stays at most HOOK_SECONDS and the others share the rest (owner, 21/11/2026: "ảnh hook đầu
+        không quá 5s")."""
+        count, total = len(self.photos), self.end - self.start
+        if self.index == 0 and FX and count > 1 and total / count > HOOK_SECONDS:
+            return [HOOK_SECONDS] + [(total - HOOK_SECONDS) / (count - 1)] * (count - 1)
+        return [total / count] * count
+
     def picture(self, moment):
-        count = len(self.photos)
-        length = (self.end - self.start) / count
-        number = min(count - 1, max(0, int((moment - self.start) // length)))
-        local = (moment - self.start - number * length) / length
+        lengths = self.lengths()
+        starts = [self.start + sum(lengths[:number]) for number in range(len(lengths))]
+        number = max([0] + [n for n, start in enumerate(starts) if moment >= start])
+        length = lengths[number]
+        local = (moment - starts[number]) / length
         picture = self.shot(number, local, length)
         # the previous picture fades into this one; a punch-in arrives by a hard cut, or its hit would be hidden
         if number and local * length < PHOTO_FADE and self.photos[number].move != "punch-in":
-            previous = self.shot(number - 1, 1 + local, length)
+            previous = self.shot(number - 1, (moment - starts[number - 1]) / lengths[number - 1], lengths[number - 1])
             picture = Image.blend(previous, picture, ease(local * length / PHOTO_FADE))
         return picture, self.photos[number]
 
@@ -1210,7 +1221,9 @@ def draw_quote(image, line, age):
         return
     # break where the captions break (after a comma, between phrases), each piece on its own line if it fits
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
-    words, size = fit("\n".join(pieces), 920, 92, max(len(pieces), 2), smallest=52)
+    # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
+    joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
+    words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     band_height = min(height, block + 330)
