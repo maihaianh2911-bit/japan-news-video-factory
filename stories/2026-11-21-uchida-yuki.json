@@ -1,0 +1,123 @@
+{
+  "stage": "find",
+  "issue": 51,
+  "title": "内田有紀が若々しい顔のために“しない”5つのこと",
+  "date": "2026-11-21",
+  "style": "story",
+  "kicker": "美のひみつ",
+  "source": "美的.com、毎日キレイ、美ST",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:内田有紀",
+    "web:内田有紀 2025 美しい => portrait of a beautiful Japanese actress in her fifties, smiling",
+    "web:内田有紀 美的 表紙 => a Japanese beauty magazine cover with an actress",
+    "web:内田有紀 最新 => a Japanese actress in her fifties, close-up portrait",
+    "web:化粧水 ボトル 手のひら => a woman pouring lotion into her palm",
+    "web:内田有紀 素肌 => a Japanese actress with natural skin, little makeup",
+    "web:内田有紀 スキンケア インタビュー => a Japanese actress in a beauty interview photo",
+    "web:洗顔 泡 女性 => a woman washing her face with foam",
+    "web:クレンジング メイク落とし => removing makeup with cleansing oil",
+    "web:内田有紀 すっぴん風 => a Japanese actress with natural makeup, smiling",
+    "web:和食 一汁三菜 定食 => a Japanese set meal with rice, miso soup and side dishes",
+    "web:手作り フルーツジュース 朝 => a glass of fresh fruit juice with fruits",
+    "web:内田有紀 食事 笑顔 => a Japanese actress eating and smiling",
+    "web:ヨガ 女性 朝 => a woman doing yoga in the morning light",
+    "web:肩甲骨 ストレッチ 女性 => a woman stretching her shoulders",
+    "web:内田有紀 スタイル 全身 => a slim Japanese actress, full body photo",
+    "web:布団 寝室 朝日 => a cosy Japanese bedroom with a futon in soft light",
+    "web:内田有紀 穏やか 表情 => a calm Japanese actress, gentle expression",
+    "web:内田有紀 笑顔 => a Japanese actress laughing happily",
+    "web:内田有紀 2024 => portrait of a Japanese actress in her late forties",
+    "music:Debussy Arabesque piano",
+    "music:Satie Gymnopedie piano",
+    "music:Mozart piano sonata K545"
+  ],
+  "scenes": [
+    {
+      "label": "5つのこと",
+      "era": "50歳",
+      "headline": "内田有紀が\n“しない”5つのこと",
+      "lines": [
+        {
+          "text": "内田有紀さんが、50歳でも若々しい顔を保つために“しない”5つのこと。",
+          "say": "うちだゆきさんが、50歳でも若々しい顔を保つために、しない、5つのこと。",
+          "quote": true
+        },
+        "その答えは、意外なほどシンプルでした。"
+      ]
+    },
+    {
+      "label": "其の一",
+      "era": "しないこと 1",
+      "headline": "塗りすぎる\nスキンケア",
+      "lines": [
+        "一つ目は、塗りすぎるスキンケア。",
+        "スキンケアは化粧水が中心で、いたってシンプル。",
+        "肌に合わない油分の多いクリームは使わず、余計なケアをやりすぎないことを大切にしています。"
+      ]
+    },
+    {
+      "label": "其の二",
+      "era": "しないこと 2",
+      "headline": "肌を\n洗いすぎる",
+      "lines": [
+        "二つ目は、肌を洗いすぎること。",
+        "肌への負担を減らすため、洗いすぎず、なるべく触らないようにしています。",
+        "その一方で、メイクはしっかり落として、素肌でいる時間を必ず作っているそうです。"
+      ]
+    },
+    {
+      "label": "其の三",
+      "era": "しないこと 3",
+      "headline": "極端な\n糖質制限",
+      "lines": [
+        "三つ目は、極端な糖質制限。",
+        "大好きな和食を中心に、時にはジャンクフードも楽しみます。",
+        "毎朝、手作りのフルーツジュースでビタミンを補っているそうです。"
+      ]
+    },
+    {
+      "label": "其の四",
+      "era": "しないこと 4",
+      "headline": "無理な\n激しい運動",
+      "lines": [
+        "四つ目は、無理な激しい運動。",
+        "ハードな運動で追い込むのではなく、毎日5分の肩甲骨回しや、朝晩10分ずつのヨガなど、苦にならない範囲で続けています。"
+      ]
+    },
+    {
+      "label": "其の五",
+      "era": "しないこと 5",
+      "headline": "布団に\n悩みを持ち込む",
+      "lines": [
+        "そして五つ目は、布団に悩みを持ち込むこと。",
+        {
+          "text": "「悩みすぎると顔が疲れていく」と語る内田さんは、布団の中に悩みを持ち込みません。",
+          "say": "なやみすぎると顔が疲れていく、と語る、うちださんは、ふとんの中に、なやみを持ち込みません。"
+        }
+      ]
+    },
+    {
+      "label": "美容法",
+      "era": "今",
+      "headline": "一番の美容法",
+      "lines": [
+        "笑って、ごはんをおいしく食べること。",
+        {
+          "text": "それが、内田さんの一番の美容法だそうです。",
+          "say": "それが、うちださんの一番の美容法だそうです。"
+        }
+      ]
+    }
+  ]
+}
