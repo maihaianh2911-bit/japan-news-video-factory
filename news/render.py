@@ -69,6 +69,14 @@ STYLES = {
                      photo_tag_text="#f4ead2", value="#d9b96a", card="#1b1612", card_ink="#f4ead2",
                      card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#f4ead2", grain=False,
                      layout="ink"),
+    # "full": the picture fills the whole frame, nothing dark laid over it; the headline, the quote and the captions
+    # stand in the middle of the frame, a little under its centre (under the face), in white and pale gold with a
+    # dark outline (owner, 21/11/2026: "để ảnh full màn hình… không cần khoảng tối… để chữ ở giữa màn hình").
+    "full": Style(family="Serif", background="#0d0a08", text="#ffffff", muted="#f4ead2", accent="#b3261e",
+                  tag="#b3261e", tag_text="#f4ead2", photo_bed="#0d0a08", photo_tag="#0d0a08",
+                  photo_tag_text="#f4ead2", value="#ffe9a8", card="#1b1612", card_ink="#f4ead2",
+                  card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
+                  layout="full"),
 }
 style = STYLES["news"]
 
@@ -265,8 +273,9 @@ PHOTO_TOP, PHOTO_HEIGHT = 338, 700
 STORY_TOP, STORY_HEIGHT = 172, 1258     # "story": the picture from under the masthead to above the captions
 INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of the frame, melting into the page
 INK_GOLD = "#d9b96a"
-BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT)}
-ON_PICTURE = ("story", "ink")           # frames whose headline and quote are printed on the picture
+FULL_TEXT_CENTRE, OUTLINE = 1300, "#140e08"   # "full": the middle of the headline and of a quote; the text's outline
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H)}
+ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
 def box_height(name):
@@ -285,7 +294,7 @@ def page_area():
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -478,6 +487,7 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
 # In the "story" frame the headline is printed on the foot of the picture and the hook line higher still: a face
 # whose middle lies in that part is under the text. The first picture is the best one of the video.
 HEADLINE_ZONE, HOOK_ZONE, HOOK_SIDE = 0.22, 0.34, 900
+FULL_ZONE = 0.42   # "full": the text stands from about three fifths of the frame down
 
 
 def frame_windows(photo, seconds=5.0, height=PHOTO_HEIGHT):
@@ -519,6 +529,8 @@ def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
         return []
     windows = frame_windows(photo, seconds, height)
     zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout in ON_PICTURE else 0.0
+    if style.layout == "full":
+        zone = FULL_ZONE
 
     def place(box, window):   # how far down the frame the middle of the face is (0 top, 1 bottom)
         return ((box[1] + box[3]) / 2 - window[1]) / max(0.001, window[3] - window[1])
