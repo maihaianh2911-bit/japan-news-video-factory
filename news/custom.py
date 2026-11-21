@@ -17,14 +17,15 @@ from .clips import Clip
 from .edits import cut_problems, move_problems
 from .sources import Release
 from .story import Beat
-from .visuals import Photo
+from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx"}
-STYLES = ("news", "paper", "story")
+              "music", "pace", "fx", "voice"}
+STYLES = ("news", "paper", "story", "history", "full")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start"}
+QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
 FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
@@ -48,7 +49,7 @@ class Music:
 PICK = re.compile(r"^([1-9][0-9]*)-([1-9][0-9]*)$")
 NAME = re.compile(r"^[A-Za-z0-9._-]+$")
 # prefixes of a search; without one: Commons words
-SEARCH_KINDS = ("file", "music", "web", "url", "page", "jps", "wiki", "geo")
+SEARCH_KINDS = ("file", "music", "video", "web", "url", "page", "jps", "wiki", "geo")
 WISH = "=>"                                                     # "<search> => <what the picture must show>"
 GEO = re.compile(r"^(-?\d+(?:\.\d+)?)\s*[,; ]\s*(-?\d+(?:\.\d+)?)(?:\s+(\d+)\s*m?)?$")
 NOT_LATIN = re.compile(r"[^\x00-\u024f\u2000-\u206f]")          # Japanese, Chinese, Cyrillic …: the ranking reads English
@@ -84,7 +85,7 @@ def search_parts(search):
         if search.startswith(name + ":"):
             kind, words = name, search[len(name) + 1:]
             break
-    if kind not in ("file", "music", "url"):
+    if kind not in ("file", "music", "video", "url"):
         words, _, wish = words.partition(WISH)
     return kind, words.strip(), wish.strip()
 
@@ -92,7 +93,7 @@ def search_parts(search):
 def search_problems(search, where):
     """The problems of the new search syntax (wiki:, geo:, the wish after "=>"); old searches have none."""
     kind, words, wish = search_parts(search)
-    if kind in ("file", "music", "url"):
+    if kind in ("file", "music", "video", "url"):
         if f" {WISH} " in search:
             return [f'{where}: a wish ("{WISH} …") works with Commons words, web:, page:, jps:, wiki: and geo:, not with {kind}:']
         return []
@@ -164,6 +165,10 @@ def check_photo(photo, where, searches):
                         f'got {photo["start"]!r}')
     if "tone" in photo and photo["tone"] not in TONES:
         problems.append(f'{where}: "tone" must be one of {", ".join(TONES)}, got {photo["tone"]!r}')
+    for key, most in (("start", 600), ("seconds", 20)):   # of a clip (a video: search)
+        if key in photo and (not isinstance(photo[key], (int, float)) or isinstance(photo[key], bool)
+                             or not 0 <= photo[key] <= most or (key == "seconds" and photo[key] < 1)):
+            problems.append(f'{where}: "{key}" must be a number of seconds (of a clip), got {photo[key]!r}')
     problems += move_problems(photo, where)
     return problems
 
@@ -221,6 +226,9 @@ def validate(data, name=None):
             problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
+    voice = data.get("voice", 1.0)
+    if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
+        problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
     pace = data.get("pace")
     if pace is not None:
         if not isinstance(pace, dict):
@@ -255,12 +263,40 @@ def validate(data, name=None):
                     problems += text_problem(line.get("say"), f'{at}: "say"', required=False)
                     if "quote" in line and not isinstance(line["quote"], bool):
                         problems.append(f'{at}: "quote" must be true or false, got {line["quote"]!r}')
+
                 else:
                     problems += text_problem(line, at)
         if "photo" in scene:
             problems += check_photos(scene["photo"], where, searches)
         problems += cut_problems(scene, where)
     return problems
+
+
+def hook_warnings(data):
+    """The hook rules of 21/11/2026 for a story with "fx" (owner: "quá dài rồi, chỉ nên để 3 dòng thôi, ảnh hook
+    đầu không quá 5s"): a quote is printed on at most 3 rows, so it has at most QUOTE_MOST characters; and the
+    first picture stays at most 5 seconds, so a first scene read longer than that needs a second picture (about
+    0.15 s a character). Warnings, not problems: stories finished before the rule still validate."""
+    scenes = data.get("scenes")
+    if not data.get("fx") or not isinstance(scenes, list) or not scenes or not isinstance(scenes[0], dict):
+        return []
+    warnings = []
+    for number, scene in enumerate(scenes, 1):
+        for index, line in enumerate(scene.get("lines") or [], 1) if isinstance(scene, dict) else ():
+            if isinstance(line, dict) and line.get("quote") and len(line.get("text") or "") > QUOTE_MOST:
+                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 3 rows, so at most "
+                                f"{QUOTE_MOST} characters (this one has {len(line['text'])}): make the quote the first "
+                                f"part of the sentence and give the rest as the next line, not a quote")
+    first = scenes[0]
+    photo = first.get("photo")
+    count = len(photo) if isinstance(photo, list) else 1 if photo else 0
+    lines = first.get("lines") if isinstance(first.get("lines"), list) else []
+    chars = sum(len(line if isinstance(line, str) else line.get("text") or "") for line in lines
+                if isinstance(line, (str, dict)))
+    if count == 1 and chars * 0.15 > 5.5:
+        warnings.append(f"scene 1: it is read about {round(chars * 0.15)} s and the hook picture stays at most 5 s: "
+                        f"give the scene a second picture")
+    return warnings
 
 
 def read(path):
@@ -359,7 +395,7 @@ def load_story(path, pictures=None):
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
-                      float(pace.get("scene_pause", 0.0)), data.get("fx"))
+                      float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
@@ -379,17 +415,35 @@ def load_story(path, pictures=None):
             photos[index] = []
             for pick in picks:
                 entry = found[pick["pick"]]
-                clip = Clip(Path(pictures) / entry["clip"], pick.get("start", 0.0)) if entry.get("clip") else None
-                if clip:   # the still is the clip's first frame shown, so that a still preview matches the video
-                    image = toned(clip.at(0.0).copy(), pick.get("tone", "color"))
-                else:
-                    with Image.open(Path(pictures) / entry["file"]) as original:
-                        image = toned(ImageOps.exif_transpose(original).convert("RGB"), pick.get("tone", "color"))
+                tone = pick.get("tone", "color")
+                if entry.get("clip"):   # a clip of the repository (file:…mp4, news/clips.py)
+                    clip = Clip(Path(pictures) / entry["clip"], pick.get("start", 0.0))
+                    image = toned(clip.at(0.0).copy(), tone)
+                    photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
+                                               entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
+                                               entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
+                                               pick.get("fit", "cover"), pick.get("move", ""), False,
+                                               clip=clip, tone=tone, role=pick.get("role", "")))
+                    continue
+                if entry["file"].endswith(".mp4"):   # a clip: cut to the picture box of the frame, around its focus
+                    from .render import W, box_height
+                    footage = Footage(Path(pictures) / entry["file"], float(pick.get("start", 0.0)),
+                                      float(pick.get("seconds", 6.0)) + 0.6, W, box_height(release.style),
+                                      tuple(pick.get("focus", (0.5, 0.5))),
+                                      None if tone == "color" else lambda picture, tone=tone: toned(picture, tone))
+                    photos[index].append(Photo(footage.frame(len(footage.files) // 2), entry["page"],
+                                               entry["title"].removeprefix("File:"),
+                                               entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
+                                               entry.get("license_url", ""), (0.5, 0.5), "cover", "hold", False,
+                                               footage, role=pick.get("role", "")))
+                    continue
+                with Image.open(Path(pictures) / entry["file"]) as original:
+                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), tone)
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
                                            pick.get("fit", "cover"), pick.get("move", ""),
-                                           pick.get("depth", True) and not clip, clip, pick.get("tone", "color")))
+                                           pick.get("depth", True), role=pick.get("role", "")))
     return release, beats, photos
 
 
@@ -404,6 +458,8 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
+    for warning in hook_warnings(data):
+        print(f"warning: {warning}")
     caption = caption_path(sys.argv[1])
     if caption.exists():
         if problems := check_caption(caption):

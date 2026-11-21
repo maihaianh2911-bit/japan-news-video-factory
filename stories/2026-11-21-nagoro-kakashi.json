@@ -1,0 +1,250 @@
+{
+  "stage": "render",
+  "title": "人より人形が多い村 徳島・名頃のかかしの里",
+  "date": "2026-11-21",
+  "style": "history",
+  "kicker": "あの場所の真実",
+  "voice": 1.7,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.12,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:Nagoro",
+    "wiki:祖谷",
+    "Nagoro scarecrow",
+    "Nagoro dolls",
+    "Nagoro village Tokushima",
+    "Nagoro school dolls",
+    "web:名頃 かかしの里 人形 集落",
+    "web:名頃 かかしの里 バス停 人形",
+    "web:名頃 かかしの里 畑 夫婦 かかし",
+    "web:名頃小学校 教室 かかし 人形",
+    "web:名頃 かかしの里 体育館 人形",
+    "web:綾野月見 かかし 制作",
+    "web:綾野月見さん 人形 縫う",
+    "web:名頃 かかしの里 全景 山",
+    "web:天空の村 かかしの里 看板",
+    "web:名頃 かかし 父 最初の一体",
+    "web:名頃 かかしの里 おばあさん 人形 縁側",
+    "web:名頃 かかし 顔 アップ",
+    "web:祖谷 山奥 集落 風景 三好市",
+    "web:名頃 かかしの里 雪 冬",
+    "web:名頃 かかし祭り",
+    "web:Nagoro doll village classroom",
+    "web:Nagoro Tsukimi Ayano sewing doll",
+    "web:名頃 かかしの里 夕暮れ 道",
+    "video:Nagoro",
+    "video:名頃",
+    "video:scarecrow village Japan",
+    "video:Iya Valley",
+    "video:祖谷",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano"
+  ],
+  "scenes": [
+    {
+      "label": "かかしの里",
+      "era": "徳島・名頃",
+      "headline": "人より\n人形が多い村",
+      "lines": [
+        {
+          "text": "徳島県の山奥にある小さな集落には、暮らしている人がわずか20人あまりしかいないのに、",
+          "say": "とくしまけんのやまおくにある、ちいさなしゅうらくには、暮らしているひとが、わずかにじゅうにんあまりしかいないのに、",
+          "quote": true
+        },
+        {
+          "text": "等身大の人形が300体以上も、あちこちに座っています。",
+          "say": "とうしんだいのにんぎょうが、さんびゃくたいいじょうも、あちこちにすわっています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "8-3",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "move": "pan-right"
+        },
+        {
+          "pick": "7-3",
+          "move": "pan-left"
+        }
+      ],
+      "why": "Mở bằng hàng búp bê ngồi ở trạm chờ, rồi lia qua các nhóm búp bê trong làng"
+    },
+    {
+      "label": "光景",
+      "era": "徳島・名頃",
+      "headline": "バス停にも\n教室にも",
+      "lines": [
+        {
+          "text": "バス停でバスを待つお年寄り、畑仕事をする夫婦。",
+          "say": "バスていで、バスをまつおとしより、はたけしごとをするふうふ。"
+        },
+        {
+          "text": "廃校になった小学校の教室まで、机に向かう子どもたちと先生の人形で、ぎっしり埋まっています。",
+          "say": "はいこうになったしょうがっこうのきょうしつまで、つくえにむかうこどもたちと、せんせいのにんぎょうで、ぎっしりうまっています。"
+        },
+        {
+          "text": "初めて訪れた人が、思わず息を呑むほどの光景です。",
+          "say": "はじめておとずれたひとが、おもわずいきをのむほどの、こうけいです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "8-6",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-5",
+          "move": "hold",
+          "focus": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "pick": "10-4",
+          "move": "pan-left"
+        },
+        {
+          "pick": "11-1",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Trạm xe buýt, đôi vợ chồng ngoài ruộng, lớp học, phòng thể dục",
+      "cut": "fade"
+    },
+    {
+      "label": "作り手",
+      "era": "2000年代〜",
+      "headline": "たった一人で\n作り続ける人",
+      "lines": [
+        {
+          "text": "この人形たちを、たった一人で作り続けているのが、ふるさとに戻ってきた綾野月見さんです。",
+          "say": "このにんぎょうたちを、たったひとりでつくりつづけているのが、ふるさとにもどってきた、あやのつきみさんです。"
+        },
+        {
+          "text": "きっかけは2000年代の初め、畑の鳥よけに、父に似せて作った一体のかかしでした。",
+          "say": "きっかけは、にせんねんだいのはじめ、はたけのとりよけに、ちちににせてつくった、いったいのかかしでした。"
+        },
+        {
+          "text": "それを本物の父と間違えて、近所の人が挨拶をしていったといいます。",
+          "say": "それを、ほんもののちちとまちがえて、きんじょのひとが、あいさつをしていったといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "move": "pan-right"
+        },
+        {
+          "pick": "12-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "7-8",
+          "move": "hold",
+          "focus": [
+            1.0,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-10",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Tối dần sang người làm: bà Ayano giữa các con búp bê, con bù nhìn ngoài ruộng, đôi tay đang làm",
+      "cut": "dip"
+    },
+    {
+      "label": "面影",
+      "era": "徳島・名頃",
+      "headline": "去った人の\n面影を",
+      "lines": [
+        {
+          "text": "そこから月見さんは、村を離れた人や、亡くなった隣人の面影を残すように、一体ずつ縫い続けました。",
+          "say": "そこからつきみさんは、むらをはなれたひとや、なくなったりんじんのおもかげをのこすように、いったいずつ、ぬいつづけました。"
+        },
+        {
+          "text": "教室には、閉校前の最後の児童をモデルにした人形も座っています。",
+          "say": "きょうしつには、へいこうまえの、さいごのじどうをモデルにしたにんぎょうも、すわっています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-20",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-13",
+          "move": "pan-right"
+        },
+        {
+          "pick": "10-2",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-17",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cận mặt búp bê bà cụ, rồi lớp học với học sinh và cô giáo",
+      "cut": "fade"
+    },
+    {
+      "label": "記憶",
+      "era": "現在",
+      "headline": "記憶の結晶",
+      "lines": [
+        {
+          "text": "一見すると恐ろしく見える人形たち。",
+          "say": "いっけんすると、おそろしく見えるにんぎょうたち。"
+        },
+        {
+          "text": "その正体は、消えゆくふるさとの賑わいを、せめて形だけでもつなぎ止めたいという、切ない記憶の結晶でした。",
+          "say": "そのしょうたいは、きえゆくふるさとのにぎわいを、せめてかたちだけでも、つなぎとめたいという、せつないきおくのけっしょうでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-17",
+          "move": "pan-right"
+        },
+        {
+          "pick": "12-12",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-7",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tối dần: toàn cảnh thung lũng, bà Ayano bên búp bê, kết ở trạm xe buýt",
+      "cut": "dip"
+    }
+  ],
+  "music": {
+    "pick": "32-2",
+    "volume": 0.7
+  }
+}

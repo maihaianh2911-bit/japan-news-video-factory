@@ -47,7 +47,12 @@ each (the same in every repo of the owner's Japanese channels):
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
 is: frame it again, pick another, or search again.
 
-**The first picture (the hook, about the first 5 seconds)**
+**The first picture (the hook, about the first 5 seconds)** — owner, 21/11/2026: "quá dài rồi, chỉ nên để 3 dòng
+thôi, ảnh hook đầu không quá 5s": the hook line printed big (`"quote": true`) is **at most 3 rows, so at most 42
+characters**: a longer first sentence is split in two lines of the story, the first part the quote, the rest a
+normal line (the words stay the same, also for a script the owner says to keep unchanged); and **the first picture
+stays at most 5 seconds** (with `fx` the engine cuts to the scene's next picture after 5 s, so a first scene read
+longer than that needs a second picture). `python -m news.custom` prints a `warning:` for both: settle it.
 1. It is the best picture of the whole video: sharp, bright, not blurred, not grainy.
 2. It shows the face of the main person clearly, or a place or a thing the Japanese audience recognises at once.
 3. It matches the hook line: the right person, the story being told.
@@ -77,6 +82,45 @@ every one before the render): the first picture under 900 px on one side, or sho
 The faces are found by `news/faces.py` (YuNet of OpenCV Zoo, the model is `news/face_yunet.onnx`); it needs
 `pip install opencv-python-headless numpy`, and without it the preview says `note: faces not checked`: then look
 at every face yourself. The machine does not see rules 2, 3, 8 and 9: those are for your eyes, at the review.
+
+## The history frame and the new kinds of content (owner, 20–21/11/2026)
+The owner makes more channels with this engine, in this repo (owner, 20/11/2026: "dựng trong repo này luôn"; the
+code went to `main` on 21/11/2026: "cho lên nhánh chính luôn đi"). They differ from the imperial-family and star
+videos by their frame and by the name in the seal:
+- `"style": "history"`: a dark ink page; the picture (1080×1480, from the top of the frame) melts into the page at
+  its foot, the `kicker` stands in a vermilion seal written downwards (keep it to 4–7 characters), the scene's
+  `era` in gold at the top right, the headline on the melting foot, ivory captions on the dark page. The video
+  comes out of black and goes back into it. The owner approved the look on the first trial (`otani-yoshitsugu`).
+- `"style": "full"` (owner, 21/11/2026: "để ảnh full màn hình… không cần khoảng tối… để chữ ở giữa màn hình…
+  đến ảnh rồi chữ chạy theo", approved on a 9-second trial; first video `uchida-yuki`): the picture fills the whole
+  frame, nothing dark laid over it; the scene's `era` (else the `kicker`) in a red tag at the top left; the headline
+  and a quote in white with a dark outline in the middle of the frame, a little under its centre, coming in row by
+  row after the picture; the captions in pale gold under them, appearing only as the voice reads them. A quote that
+  opens a scene stays there as the scene's headline while its next lines are spoken (a list video: the quote
+  `"1. …"` opens each scene). Pick tall pictures at least about 1200 px high (a wide or small one is enlarged a
+  lot and looks soft); every face stays above three fifths of the frame (the preview warns).
+- The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
+  "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
+  những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)
+  `あの場所の真実`. Their issues are titled `[Lịch sử] …`, `[Luật ngầm] …`, `[Địa danh] …` with the label
+  `lich-su` (not `[Tin Nhật]` and not `jnews`: the workflow's issue steps and the Claude task do not act on them;
+  Claude in the chat opens the issue, comments the links and sets `jnews-busy` while working, `jnews-done` after).
+- **Clips** (owner: "có thể dùng video (đoạn ngắn)"): a search `video:<words>` finds videos on Wikimedia Commons
+  with a free licence (or `video:<address of one video file>`), keeps up to 3 of them as `<k>-<n>.mp4` (30 s at
+  most, no sound) and lays six moments of each on `sheet_<k>.jpg` with their time. A picture entry picks one like
+  a picture, with `"start"` (seconds into the kept clip) and `"seconds"` (how long, 6 by default):
+  `{"pick": "34-1", "start": 0.5, "seconds": 4, "tone": "sepia"}`. The clip plays at its own speed (slowed when
+  shorter than its place) and closes in a little; `focus` says which part of it fills the frame. Commons has few
+  clips that fit a story (tried on five stories: one or two each); the owner's own videos are the better source.
+- `"cut": "flash"`: a burst of pale light on the cut (a blow, a betrayal, the turn of the story).
+- `"voice": 1.7` (owner, 21/11/2026: "tăng voice to thêm 70%"): how loud the finished sound is, 1 = the usual
+  -16 LUFS. The music does not come up with it. **Every video of these new kinds carries `"voice": 1.7`.**
+- **Music** (owner, 21/11/2026: "nhạc nền rít quá, cho nhẹ thôi"): a gentle piano piece at `"volume": 0.7`
+  (`music:Gymnopédie Satie piano`, `music:Chopin Nocturne piano`, `music:Debussy Clair de lune piano`); no
+  shakuhachi or other shrill solo instrument.
+- Before a render, check every pick against the title and page of its source in `index.json`, not only by eye: on
+  the first videos a portrait found by `wiki:` was another man of the same battle, a print was another scene, and a
+  web portrait came from the page of the shogun before (`tools/review_picks.py` prints the source beside each).
 
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions

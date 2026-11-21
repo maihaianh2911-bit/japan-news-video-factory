@@ -72,7 +72,7 @@ from lxml import html
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from .custom import GEO, StoryError, read, search_parts
-from .sources import fetch
+from .sources import USER_AGENT, fetch
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
 JAPAN_SEARCH = "https://jpsearch.go.jp/api/item/search/jps-cross"
@@ -93,6 +93,7 @@ STANDARD = (960, 1280, 1920)           # widths Commons serves freely (https://w
 SMALL = 330                            # the small version looked at for the ranking (a standard width too)
 MATCH_MIN, UNFIT_MIN = 0.18, 0.21      # CLIP: under MATCH_MIN the picture does not show the wish; see Clip.UNFIT
 MUSIC_KEEP, MUSIC_LIMIT = 4, 12_000_000
+VIDEO_KEEP, VIDEO_SECONDS, VIDEO_HEIGHT = 3, 30, 960   # clips kept by a video: search, their length and height
 AUDIO = {"application/ogg": "ogg", "audio/ogg": "ogg", "audio/mpeg": "mp3", "audio/webm": "webm",
          "audio/x-flac": "flac", "audio/flac": "flac", "audio/wav": "wav", "audio/x-wav": "wav"}
 BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -780,6 +781,122 @@ def music_find(query, k, out):
     return kept
 
 
+def video_search(query):
+    """Videos on Commons with a licence that allows use, best matches first: the version to load (the largest
+    transcoded one up to 1080 lines, else the file itself) and the credit."""
+    params = urlencode({
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": f"{query} filetype:video",
+        "gsrnamespace": 6, "gsrlimit": 20, "prop": "videoinfo", "viprop": "url|size|mime|derivatives|extmetadata",
+    })
+    data = json.loads(get(f"https://commons.wikimedia.org/w/api.php?{params}"))
+    pages = sorted(data.get("query", {}).get("pages", {}).values(), key=lambda page: page.get("index", 0))
+    for page in pages:
+        info = (page.get("videoinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        licence = plain(meta.get("LicenseShortName", {}).get("value"))
+        if not str(info.get("mime", "")).startswith("video/") or not ALLOWED.search(licence):
+            continue
+        versions = [version for version in info.get("derivatives") or []
+                    if str(version.get("type", "")).startswith("video/") and version.get("src")
+                    and isinstance(version.get("height"), int) and 0 < version["height"] <= 1080]
+        best = max(versions, key=lambda version: version["height"], default=None)
+        yield {"title": page["title"], "page": info["descriptionurl"], "url": best["src"] if best else info["url"],
+               "license": licence, "license_url": plain(meta.get("LicenseUrl", {}).get("value")),
+               "artist": plain(meta.get("Artist", {}).get("value"))[:120],
+               "description": plain(meta.get("ImageDescription", {}).get("value"))[:300]}
+
+
+def probe(source, agent=None):
+    """(seconds, width, height) of a video file or address (ffprobe)."""
+    import subprocess
+    command = ["ffprobe", "-v", "error", *(["-user_agent", agent] if agent else []), "-select_streams", "v:0",
+               "-show_entries", "stream=width,height:format=duration", "-of", "json", str(source)]
+    result = json.loads(subprocess.run(command, capture_output=True, text=True, timeout=90, check=True).stdout)
+    stream = result["streams"][0]
+    return float(result["format"]["duration"]), int(stream["width"]), int(stream["height"])
+
+
+def video_cut(address, path, agent):
+    """Up to VIDEO_SECONDS of the video at `address`, without sound, as an mp4 of at most VIDEO_HEIGHT lines: of a
+    long video the part after its opening. Returns (seconds, width, height) of what was kept."""
+    import subprocess
+    length, _, _ = probe(address, agent)
+    start = 0.0 if length <= VIDEO_SECONDS + 10 else min(length * 0.12, 20.0)
+    subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-user_agent", agent, "-ss", f"{start:.2f}",
+                    "-t", str(VIDEO_SECONDS), "-i", address, "-an",
+                    "-vf", f"scale=-2:'min({VIDEO_HEIGHT},ih)',fps=30", "-c:v", "libx264", "-preset", "veryfast",
+                    "-crf", "24", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(path)],
+                   capture_output=True, timeout=600, check=True)
+    return probe(path)
+
+
+def video_find(words, k, out):
+    """The clips of a video: search — Commons videos by words, or one video file by its address — saved as
+    <k>-<n>.mp4 (no sound). Moving pictures for a scene: a picture entry picks one with "start" and "seconds"."""
+    import subprocess
+    if re.match(r"https?://\S+$", words):
+        parts = urlsplit(words)
+        if not parts.hostname or parts.username or parts.password or re.fullmatch(r"[0-9.:\[\]]+", parts.hostname):
+            raise Unusable(f"video: unsupported address {words}")
+        candidates = [({"title": Path(parts.path).name, "page": words, "url": words, "license": "",
+                        "license_url": "", "artist": site(words), "description": ""}, BROWSER)]
+    else:
+        candidates = [(entry, USER_AGENT) for entry in video_search(words)]
+    kept = []
+    for entry, agent in candidates:
+        if len(kept) == VIDEO_KEEP:
+            break
+        name = f"{k}-{len(kept) + 1}.mp4"
+        try:
+            with GATE:
+                seconds, width, height = video_cut(entry.pop("url"), out / name, agent)
+        except (OSError, ValueError, KeyError, IndexError, subprocess.SubprocessError) as error:
+            detail = getattr(error, "stderr", "") or ""
+            detail = detail.decode("utf-8", "replace") if isinstance(detail, bytes) else str(detail)
+            print(f"  skipped {entry['title']}: {type(error).__name__} {detail[-200:]}")
+            (out / name).unlink(missing_ok=True)
+            continue
+        finally:
+            time.sleep(1)
+        if seconds < 2 or min(width, height) < 360:
+            (out / name).unlink(missing_ok=True)
+            continue
+        kept.append({**entry, "file": name, "seconds": round(seconds, 1), "width": width, "height": height,
+                     "kind": "video"})
+    if not kept and len(candidates) == 1 and candidates[0][1] == BROWSER:
+        raise Unusable(f"video: could not load {words}")
+    return kept
+
+
+def video_sheet(entries, out, path):
+    """One row per clip: six moments of it with their time, to choose "start" from."""
+    import subprocess
+    face = ImageFont.load_default(size=17)
+    board = Image.new("RGB", (6 * 300 + 20, len(entries) * 240 + 10), "#0a0a0c")
+    draw = ImageDraw.Draw(board)
+    for row, entry in enumerate(entries):
+        top = row * 240 + 10
+        for column in range(6):
+            moment = entry["seconds"] * (column + 0.5) / 6
+            shot = out / f".shot-{row}-{column}.jpg"
+            try:
+                subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", f"{moment:.2f}", "-i",
+                                str(out / entry["file"]), "-frames:v", "1", "-vf", "scale=290:-2", str(shot)],
+                               capture_output=True, timeout=60, check=True)
+                with Image.open(shot) as picture:
+                    picture.thumbnail((290, 190))
+                    board.paste(picture.convert("RGB"), (10 + column * 300, top))
+            except (OSError, subprocess.SubprocessError):
+                pass
+            finally:
+                shot.unlink(missing_ok=True)
+            draw.text((14 + column * 300, top + 192), f"{moment:.1f}s", fill="#ffd25a", font=face)
+        where = entry["license"].replace("Public domain", "PD") or entry.get("artist", "")
+        label = f"#{row + 1}  {entry['seconds']}s  {entry['width']}x{entry['height']}  {where}  {entry['title']}"
+        draw.text((80, top + 212), label[:150], fill="#ffffff", font=face)
+    board.save(path, quality=85)
+
+
 REPO = Path(__file__).resolve().parent.parent
 CLIP_SUFFIXES = (".mp4", ".mov", ".m4v", ".webm")
 
@@ -953,6 +1070,8 @@ def find(query, k, out, seen):
         return file_find(words, k, out), {}
     if kind == "music":
         return music_find(words, k, out), {}
+    if kind == "video":
+        return video_find(words, k, out), {}
     if kind == "url":
         image, _, page = words.partition(" ")
         entry = web_entries([(image, page.strip() or image, "")])[0]
@@ -1037,7 +1156,9 @@ def main():
             print(f"{k}. {query}: FAILED ({group['error']})")
         else:
             group.update(notes)
-            if group["results"] and not query.startswith("music:"):
+            if group["results"] and query.startswith("video:"):
+                video_sheet(group["results"], out, out / f"sheet_{k}.jpg")
+            elif group["results"] and not query.startswith("music:"):
                 sheet(group["results"], out, out / f"sheet_{k}.jpg")
             about = notes.get("wikidata")
             print(f"{k}. {query}: {len(group['results'])} pictures" + ("" if group["results"] else " (no sheet)")

@@ -187,6 +187,7 @@ Owner, 19/11/2026: every picture must be seen to move for its whole time on scre
 | `page` | `paper`: a page turned from the right; `news`: the new scene slides in from the right behind a red edge | a new chapter or a new person (default of `paper`) |
 | `hard` | no transition | a shock, a contrast, a quick list; before a `punch-in` |
 | `dip` | the picture and the scene text go dark and come back (0.9 s); the header and the caption stay | a jump in time ("ten years later"), a death, the ending scene |
+| `flash` | a burst of pale light on the cut, then the new scene comes out of it (0.45 s) | a blow, a betrayal, the turn of the story |
 
 `python -m news.custom` refuses an unknown name and lists the valid ones. Names and code: `news/edits.py`,
 `news/render.py` (`named_photo`, `transition`); every edit can be seen with `python tools/edits_test.py

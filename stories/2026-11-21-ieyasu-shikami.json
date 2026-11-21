@@ -1,0 +1,314 @@
+{
+  "stage": "render",
+  "title": "いちばん情けない顔 徳川家康としかみ像",
+  "date": "2026-11-21",
+  "style": "history",
+  "kicker": "戦国の物語",
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.12,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:徳川家康",
+    "wiki:三方ヶ原の戦い",
+    "wiki:武田信玄",
+    "wiki:徳川家康三方ヶ原戦役画像",
+    "wiki:浜松城",
+    "wiki:日光東照宮",
+    "web:しかみ像 徳川家康 高画質",
+    "web:徳川家康三方ヶ原戦役画像 徳川美術館",
+    "web:しかみ像 顔 アップ",
+    "web:三方ヶ原の戦い 錦絵 浮世絵",
+    "web:三方ヶ原合戦図 屏風",
+    "web:武田信玄 肖像画",
+    "web:武田軍 騎馬 合戦図屏風",
+    "web:徳川家康 若い頃 肖像画",
+    "web:徳川家康 敗走 三方ヶ原 浮世絵 月岡芳年",
+    "web:浜松城 天守 写真",
+    "web:三方ヶ原古戦場 碑",
+    "web:焼き味噌 郷土料理",
+    "web:徳川家康 しかみ像 石像 岡崎公園",
+    "web:狩野派 絵師 絵を描く 図",
+    "web:徳川家康 肖像画 東照大権現像",
+    "web:江戸図屏風 江戸城",
+    "web:日光東照宮 陽明門",
+    "web:徳川家康 馬上 浮世絵",
+    "web:武田信玄 川中島 浮世絵 軍配",
+    "web:三方ヶ原の戦い 徳川家康 逃げる 絵",
+    "web:徳川家康 甲冑 歯朶具足",
+    "web:浜松城 徳川家康 銅像 若き日",
+    "video:horse gallop",
+    "video:Hamamatsu Castle",
+    "video:浜松城",
+    "video:Nikko Toshogu",
+    "video:日光東照宮",
+    "video:samurai horse",
+    "video:Edo castle",
+    "video:Japanese calligraphy brush painting",
+    "video:sumi-e ink painting",
+    "music:shakuhachi",
+    "music:taiko drums",
+    "music:koto Rokudan",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "video:horse",
+    "video:Japanese festival horse",
+    "video:Toshogu"
+  ],
+  "scenes": [
+    {
+      "label": "屈辱",
+      "era": "戦国",
+      "headline": "いちばん\n情けない顔",
+      "lines": [
+        {
+          "text": "天下人・徳川家康は、戦場で恐怖のあまり馬の上で漏らしてしまった直後の、",
+          "say": "てんかびと、とくがわいえやすは、せんじょうできょうふのあまり、うまの上でもらしてしまったちょくごの、",
+          "quote": true
+        },
+        {
+          "text": "いちばん情けない顔を、わざわざ絵師に描かせ、生涯手元に置いていたと伝えられています。",
+          "say": "いちばんなさけない顔を、わざわざえしにえがかせ、しょうがいてもとに置いていたと伝えられています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-15",
+          "move": "hold",
+          "focus": [
+            0.38,
+            0.23
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-16",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng bức Shikami, tiến vào khuôn mặt nhăn nhó"
+    },
+    {
+      "label": "大敗",
+      "era": "1572年",
+      "headline": "三方ヶ原の戦い",
+      "lines": [
+        {
+          "text": "1572年、若き家康は家臣の制止を振り切り、戦国最強と恐れられた武田信玄に、三方ヶ原で挑んでしまいます。",
+          "say": "せんごひゃくななじゅうにねん、わかきいえやすは、かしんのせいしをふりきり、せんごくさいきょうとおそれられた、たけだしんげんに、みかたがはらで、いどんでしまいます。"
+        },
+        {
+          "text": "結果は、歴史に残る大惨敗。",
+          "say": "けっかは、れきしにのこる、だいざんぱい。"
+        },
+        {
+          "text": "軍勢は総崩れとなり、家康は命からがら浜松城へ逃げ帰りました。",
+          "say": "ぐんぜいはそうくずれとなり、いえやすは、いのちからがら、はままつじょうへ、にげかえりました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "26-8",
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "12-9",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "depth": false
+        },
+        {
+          "pick": "26-3",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "16-15",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Tối dần về trận đánh; tranh trận, Shingen, rồi thành Hamamatsu",
+      "cut": "dip"
+    },
+    {
+      "label": "言い訳",
+      "era": "1572年",
+      "headline": "「これは焼き味噌だ」",
+      "lines": [
+        {
+          "text": "言い伝えによれば、家臣にそれを気づかれた家康は、「これは腰につけていた焼き味噌だ」と、苦しすぎる言い訳をしたといいます。",
+          "say": "いいつたえによれば、かしんにそれを気づかれたいえやすは、これは、こしにつけていた、やきみそだ、と、くるしすぎるいいわけをしたといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "7-1",
+          "move": "punch-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        }
+      ],
+      "why": "Cắt thẳng sang miso nướng, giật vào mặt tượng nhăn nhó cho câu chống chế",
+      "cut": "hard"
+    },
+    {
+      "label": "しかみ像",
+      "era": "1572年",
+      "headline": "消さずに\n描かせた",
+      "lines": [
+        {
+          "text": "普通の大名なら、口を封じてでも歴史から消したい恥のはず。",
+          "say": "ふつうのだいみょうなら、くちをふうじてでも、れきしから消したい、はじのはず。"
+        },
+        {
+          "text": "けれど家康はあえて絵師を呼び、恐怖と悔しさに歪んだ自分の姿を描かせました。",
+          "say": "けれどいえやすは、あえてえしを呼び、きょうふとくやしさにゆがんだ、じぶんのすがたを、えがかせました。"
+        },
+        {
+          "text": "それが、今も語り継がれる「しかみ像」です。",
+          "say": "それが、今もかたりつがれる、しかみぞう、です。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "14-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-12",
+          "move": "reveal",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-18",
+          "move": "hold",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Chân dung Ieyasu rồi lộ dần bức tranh treo trong bảo tàng",
+      "cut": "fade"
+    },
+    {
+      "label": "戒め",
+      "era": "その後",
+      "headline": "絵を見つめて",
+      "lines": [
+        {
+          "text": "その後、慢心しそうになるたびに、家康はこの絵を見つめ、己の愚かさを戒め続けたといいます。",
+          "say": "そのご、まんしんしそうになるたびに、いえやすはこの絵を見つめ、おのれのおろかさを、いましめつづけたといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-20",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "1-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Tượng đá Shikami rồi lùi ra chân dung Ieyasu khi đã thành thiên hạ nhân",
+      "cut": "fade"
+    },
+    {
+      "label": "天下",
+      "era": "江戸",
+      "headline": "260年の平和",
+      "lines": [
+        {
+          "text": "人生最大の屈辱から目を逸らさなかった男だからこそ、260年続く平和の世を築けたのかもしれません。",
+          "say": "じんせいさいだいのくつじょくから、目をそらさなかったおとこだからこそ、にひゃくろくじゅうねんつづく、へいわのよを、きずけたのかもしれません。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "22-2",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "45-1",
+          "start": 20.5,
+          "seconds": 4.5,
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "23-1",
+          "move": "rise"
+        }
+      ],
+      "why": "Tối dần sang thời Edo: bình phong Edo, phim cũ lễ hội Toshogu, cổng Yomeimon",
+      "cut": "dip"
+    }
+  ],
+  "voice": 1.7,
+  "music": {
+    "pick": "42-2",
+    "volume": 0.7
+  }
+}

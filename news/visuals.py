@@ -32,14 +32,53 @@ class Photo:
     fit: str = "cover"                        # "contain" shows the whole picture
     move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
     depth: bool = True                        # False: a flat picture (a document, a collage): no parallax with "fx"
+    footage: object = None                    # Footage: the picture is a clip (image is then its middle frame)
     clip: object = None                       # a news.clips.Clip: a moving picture (image is its first frame)
     tone: str = "color"                       # the tone given to each frame of a clip ("sepia", "mono")
+    role: str = ""                            # "product": the card of the product in the "goods" frame
 
     def credit(self):
         record = {key: getattr(self, key)
                   for key in ("page", "title", "creator", "license", "license_url")}
         record["edits"] = "Cropped and animated for the vertical frame"
         return record
+
+
+class Footage:
+    """The frames of a clip (a video file of the find folder), cut once by ffmpeg to fill a box of `width` x `height`
+    with a little room to move, 30 a second, and loaded when the video asks for them."""
+    RATE, ROOM = 30, 1.06
+
+    def __init__(self, source, start, seconds, width, height, focus=(0.5, 0.5), tone=None):
+        import subprocess
+        import tempfile
+        self.folder = tempfile.TemporaryDirectory(prefix="clip-")
+        self.tone, self.cache = tone, {}
+        wide, tall = round(width * self.ROOM / 2) * 2, round(height * self.ROOM / 2) * 2
+        grade = (f"scale={wide}:{tall}:force_original_aspect_ratio=increase,"
+                 f"crop={wide}:{tall}:(iw-{wide})*{focus[0]:.3f}:(ih-{tall})*{focus[1]:.3f}")
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", f"{start:.2f}", "-t",
+                        f"{seconds:.2f}", "-i", str(source), "-vf", f"fps={self.RATE},{grade}", "-q:v", "3",
+                        f"{self.folder.name}/%05d.jpg"], check=True, timeout=600)
+        from pathlib import Path
+        self.files = sorted(Path(self.folder.name).glob("*.jpg"))
+        if len(self.files) < self.RATE:
+            raise ValueError(f"the clip {source} gives under a second from {start} s")
+        self.seconds = len(self.files) / self.RATE
+
+    def frame(self, number):
+        number = min(len(self.files) - 1, max(0, number))
+        if number not in self.cache:
+            if len(self.cache) > 6:
+                self.cache.pop(next(iter(self.cache)))
+            with Image.open(self.files[number]) as picture:
+                picture = picture.convert("RGB")
+            self.cache[number] = self.tone(picture) if self.tone else picture
+        return self.cache[number]
+
+    def at(self, moment, place):
+        """The frame `moment` seconds into its place of `place` seconds: slowed when the clip is shorter."""
+        return self.frame(int(max(0.0, moment) * min(1.0, self.seconds / max(0.1, place)) * self.RATE))
 
 
 def text_field(metadata, key):

@@ -50,6 +50,7 @@ class Release:
     line_pause: float = 0.0      # seconds of silence after each line (more around a quote)
     scene_pause: float = 0.0     # seconds of silence at the end of each scene
     fx: object = None            # picture effects of a story (render.use_fx), or None
+    voice: float = 1.0           # how loud the finished sound is (render.use_voice): 1.7 = 70 % louder
 
 
 def compact(value):

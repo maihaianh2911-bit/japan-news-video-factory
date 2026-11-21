@@ -1,0 +1,313 @@
+{
+  "stage": "render",
+  "issue": 51,
+  "title": "内田有紀が若々しい顔のために“しない”5つのこと",
+  "date": "2026-11-21",
+  "style": "full",
+  "kicker": "美のひみつ",
+  "source": "美的.com、毎日キレイ、美ST",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.15,
+    "scene_pause": 0.35
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:内田有紀",
+    "web:内田有紀 2025 美しい => portrait of a beautiful Japanese actress in her fifties, smiling",
+    "web:内田有紀 美的 表紙 => a Japanese beauty magazine cover with an actress",
+    "web:内田有紀 最新 => a Japanese actress in her fifties, close-up portrait",
+    "web:化粧水 ボトル 手のひら => a woman pouring lotion into her palm",
+    "web:内田有紀 素肌 => a Japanese actress with natural skin, little makeup",
+    "web:内田有紀 スキンケア インタビュー => a Japanese actress in a beauty interview photo",
+    "web:洗顔 泡 女性 => a woman washing her face with foam",
+    "web:クレンジング メイク落とし => removing makeup with cleansing oil",
+    "web:内田有紀 すっぴん風 => a Japanese actress with natural makeup, smiling",
+    "web:和食 一汁三菜 定食 => a Japanese set meal with rice, miso soup and side dishes",
+    "web:手作り フルーツジュース 朝 => a glass of fresh fruit juice with fruits",
+    "web:内田有紀 食事 笑顔 => a Japanese actress eating and smiling",
+    "web:ヨガ 女性 朝 => a woman doing yoga in the morning light",
+    "web:肩甲骨 ストレッチ 女性 => a woman stretching her shoulders",
+    "web:内田有紀 スタイル 全身 => a slim Japanese actress, full body photo",
+    "web:布団 寝室 朝日 => a cosy Japanese bedroom with a futon in soft light",
+    "web:内田有紀 穏やか 表情 => a calm Japanese actress, gentle expression",
+    "web:内田有紀 笑顔 => a Japanese actress laughing happily",
+    "web:内田有紀 2024 => portrait of a Japanese actress in her late forties",
+    "music:Debussy Arabesque piano",
+    "music:Satie Gymnopedie piano",
+    "music:Mozart piano sonata K545"
+  ],
+  "scenes": [
+    {
+      "label": "5つのこと",
+      "headline": "内田有紀が\n“しない”5つのこと",
+      "lines": [
+        {
+          "text": "内田有紀が50歳でも若々しい顔を保つために“しない”5つのこと",
+          "say": "うちだゆきが、50歳でも若々しい顔を保つために、しない、5つのこと。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "2-2",
+          "focus": [
+            0.5,
+            0.54
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu: chân dung Uchida Yuki cười, nét và sáng (bìa 美的GRAND)."
+    },
+    {
+      "label": "其の一",
+      "era": "しないこと１",
+      "headline": "1. 塗りすぎるスキンケア",
+      "lines": [
+        {
+          "text": "1. 塗りすぎるスキンケア",
+          "say": "いち。ぬりすぎる、スキンケア。",
+          "quote": true
+        },
+        "スキンケアは化粧水中心で至ってシンプル。",
+        "肌に合わない油分の多いクリームは使わず、余計なケアをやりすぎないことを大切にしている。"
+      ],
+      "photo": [
+        {
+          "pick": "6-14",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "2-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "fade",
+      "why": "Tay áp má, nước hoa hồng trong lòng bàn tay, nụ cười da tự nhiên."
+    },
+    {
+      "label": "其の二",
+      "era": "しないこと２",
+      "headline": "2. 肌を洗いすぎる",
+      "lines": [
+        {
+          "text": "2. 肌を洗いすぎる",
+          "say": "に。はだを、あらいすぎる。",
+          "quote": true
+        },
+        "肌への負担を減らすため、洗いすぎず、なるべく触らないようにしている。",
+        "一方で、メイクはしっかり落として素肌でいる時間を必ず作る。"
+      ],
+      "photo": [
+        {
+          "pick": "4-10",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-17",
+          "focus": [
+            0.9,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-13",
+          "focus": [
+            0.5,
+            0.57
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Uchida với làn da mộc, ánh sáng dịu, rồi nụ cười rạng rỡ.",
+      "cut": "fade"
+    },
+    {
+      "label": "其の三",
+      "era": "しないこと３",
+      "headline": "3. 極端な糖質制限",
+      "lines": [
+        {
+          "text": "3. 極端な糖質制限",
+          "say": "さん。きょくたんな、とうしつせいげん。",
+          "quote": true
+        },
+        "極端な糖質制限はせず、大好きな和食が中心。",
+        "時にはジャンクフードも楽しみ、毎朝手作りのフルーツジュースでビタミンを補っている。"
+      ],
+      "photo": [
+        {
+          "pick": "11-11",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "11-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "fall"
+        },
+        {
+          "pick": "12-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mâm cơm Nhật, rồi ly nước ép trái cây buổi sáng.",
+      "cut": "fade"
+    },
+    {
+      "label": "其の四",
+      "era": "しないこと４",
+      "headline": "4. 無理な激しい運動",
+      "lines": [
+        {
+          "text": "4. 無理な激しい運動",
+          "say": "よん。むりな、はげしいうんどう。",
+          "quote": true
+        },
+        "ハードな運動で追い込むのではなく、毎日5分の肩甲骨回しや、朝晩10分ずつのヨガなど、苦にならない範囲で続けることを重視している。"
+      ],
+      "photo": [
+        {
+          "pick": "16-6",
+          "focus": [
+            0.5,
+            0.1
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-7",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.53,
+            0.4
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Dáng người thon, xoay bả vai, yoga buổi sáng bên biển.",
+      "cut": "fade"
+    },
+    {
+      "label": "其の五",
+      "era": "しないこと５",
+      "headline": "5. 布団に悩みを持ち込む",
+      "lines": [
+        {
+          "text": "5. 布団に悩みを持ち込む",
+          "say": "ご。ふとんに、なやみを持ち込む。",
+          "quote": true
+        },
+        {
+          "text": "「悩みすぎると顔が疲れていく」と語り、布団の中に悩みは持ち込まない。",
+          "say": "なやみすぎると顔が疲れていく、と語り、ふとんの中に、なやみは持ち込まない。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-7",
+          "focus": [
+            0.51,
+            0.58
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Phòng ngủ trải futon ấm, rồi Uchida bình thản.",
+      "cut": "fade"
+    },
+    {
+      "label": "美容法",
+      "headline": "一番の美容法",
+      "lines": [
+        "笑ってごはんをおいしく食べることが、一番の美容法だと考えている。",
+        "“しない”と決めるだけで、顔は少しずつ変わっていくのかもしれません。",
+        "あなたが今日からやめられそうなのは、どれですか？"
+      ],
+      "photo": [
+        {
+          "pick": "6-20",
+          "focus": [
+            0.21,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-5",
+          "focus": [
+            0.5,
+            0.55
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "2-7",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Uchida cười bên tách trà, rồi chân dung dịu dàng để kết.",
+      "cut": "fade"
+    }
+  ],
+  "music": {
+    "pick": "21-1",
+    "volume": 0.7
+  }
+}
