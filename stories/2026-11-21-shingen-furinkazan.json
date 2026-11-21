@@ -58,7 +58,8 @@
     "web:大河ドラマ 武田信玄 1988 中井貴一",
     "web:武田信玄 映画 風林火山 旗 騎馬軍団",
     "web:天と地と 映画 川中島 武田",
-    "file:stories/media/2026-11-21-shingen-furinkazan/hook.jpg"
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook.jpg",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook2.jpg"
   ],
   "scenes": [
     {
@@ -74,11 +75,11 @@
       ],
       "photo": [
         {
-          "pick": "42-1",
-          "move": "push-in",
+          "pick": "43-1",
+          "move": "hold",
           "focus": [
-            0.35,
-            0.2
+            0.5,
+            0.3
           ],
           "depth": false
         },
