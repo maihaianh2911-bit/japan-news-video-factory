@@ -277,6 +277,19 @@ ask the owner to allow `main`.
      Satie piano`; index.json gives title, `seconds` and licence; the piece loops, fades in and out, about 17 dB
      under the voice, credited on screen and in credits.txt); `"pace": {"speed": 0.92, "line_pause": 0.35,
      "scene_pause": 0.5}` (slower voice, silence after each line, more around a quote and at the end of a scene).
+   - `"style": "goods"` (owner, 21/11/2026, the goods channel made in this repo: "Ko làm ngay trên repo này đc à"; the
+     owner chose "kiểu 3" among three drawn proposals): a ranking of products from a video the owner sends. A light
+     page; at the top the product's card (600 square) with the rank on a red ribbon (the scene's `label`, e.g.
+     `第4位`); the product's name on a black bar (`headline`, one line); below, a tall card (960×760) with the footage
+     of the product in use (`photo`); the line spoken on a yellow bar at the foot. Each scene names its product card
+     with `"product": {"pick": "<k>-<n>", "focus": [x, y]}` (a still of the package; only in this style). Between
+     ranks the card turns away (`"cut": "flip"`, the default of this style). One clip a rank is fine: a clip shorter
+     than its place plays a little slower so that it lasts (`news/render.py`, `Scene.shot`). Cut the source's
+     footage and package stills with ffmpeg, sharper and more vivid (owner, 21/11/2026: "nên làm nét, và làm cho
+     video đậm màu hơn"): clips `crop=576:720:0:0,scale=864:1080:flags=lanczos,unsharp=5:5:0.9:5:5:0.0,
+     eq=saturation=1.3:contrast=1.06` (the source's captions and TikTok marks lie below y 720), stills scaled 2×
+     with the same sharpening and colour. Use `"fx": {"motion": true, "text": true}` (the mincho face does not suit
+     this frame). Example: `stories/2026-11-21-seria-top4.json` (count down 4 → 1, script approved by the owner).
    - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
      switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
      made before are not changed (a story without `fx` renders exactly as before). What each one does:

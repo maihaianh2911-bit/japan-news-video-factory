@@ -21,8 +21,8 @@ from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx", "voice"}
-STYLES = ("news", "paper", "story", "history", "full")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
+STYLES = ("news", "paper", "story", "history", "full", "goods")
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "product"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
@@ -122,9 +122,12 @@ def search_problems(search, where):
 def picks_of(scene):
     """The pictures of a scene as a list of {"pick": …} (a scene may have one picture or a list of them)."""
     photo = scene.get("photo")
-    if photo is None:
-        return []
-    return [{"pick": item} if isinstance(item, str) else item for item in (photo if isinstance(photo, list) else [photo])]
+    picks = [] if photo is None else [{"pick": item} if isinstance(item, str) else item
+                                      for item in (photo if isinstance(photo, list) else [photo])]
+    product = scene.get("product")   # "goods": the product's card at the top of the frame
+    if product is not None:
+        picks.append({**({"pick": product} if isinstance(product, str) else product), "role": "product"})
+    return picks
 
 
 def check_photos(photo, where, searches):
@@ -268,6 +271,10 @@ def validate(data, name=None):
                     problems += text_problem(line, at)
         if "photo" in scene:
             problems += check_photos(scene["photo"], where, searches)
+        if "product" in scene:
+            if data.get("style") != "goods":
+                problems.append(f'{where}: "product" (the card of the product) belongs to the "goods" style')
+            problems += check_photo(scene["product"], f"{where}, product", searches)
         problems += cut_problems(scene, where)
     return problems
 

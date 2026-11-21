@@ -79,6 +79,13 @@ STYLES = {
                   card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
                   layout="full"),
 }
+# "goods": the frame of the goods channel (owner, 21/11/2026, "kiểu 3"): a light page, the product's card at the top
+# with its rank on a red ribbon, its name on a black bar, the footage of it in use in a card below and the line spoken
+# on a yellow bar; a rank turns away like a card ("flip") before the next one.
+STYLES["goods"] = Style(family="Sans", background="#fafafa", text="#1c1c1e", muted="#8a8a8e", accent="#ff5c5c",
+                        tag="#ff5c5c", tag_text="#ffffff", photo_bed="#fafafa", value="#ff5c5c", card="#ffffff",
+                        card_ink="#1c1c1e", card_muted="#8a8a8e", rule="#d9d9de", caption_box="#ffd600",
+                        caption_text="#1c1c1e", layout="goods")
 style = STYLES["news"]
 
 
@@ -276,7 +283,11 @@ INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of
 INK_GOLD = "#d9b96a"
 FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
 # quote, the lowest their foot may come (the captions run under it), the colour of the text's outline
-BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H)}
+# "goods": the footage card is 960×760 at (60, 920) (the source is a vertical phone video: a tall card keeps more of
+# it); its picture is made 1080 wide and then fitted. The product's card is 600 square at (240, 120).
+GOODS_CARD, GOODS_PRODUCT, GOODS_BAR_Y, GOODS_CAPTION_Y = (60, 920, 960, 760), (240, 120, 600), 750, 1782
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H),
+         "goods": (GOODS_CARD[1], round(GOODS_CARD[3] * W / GOODS_CARD[2]))}
 ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
@@ -292,13 +303,13 @@ def photo_box():
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
-    if style.layout == "full":
+    if style.layout in ("full", "goods"):
         return (0, 0, W, H)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614, "full": 1560}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "goods": GOODS_CAPTION_Y}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -894,6 +905,77 @@ def full_layout(beat, release, has_photo, demo):
     return image, layer, [part for part in parts if part]
 
 
+def goods_font(size):
+    return face_of("Sans", size, True)
+
+
+def goods_layout(beat, release, has_photo, demo):
+    """The "goods" page: the plain light page with the credits at the foot; the scene's text is the rank on a red
+    ribbon (the scene's label, e.g. 第4位) and the product's name on a black bar (its headline). With "fx": text the
+    ribbon is wiped in and the bar rises; without, both stand from the start."""
+    image = Image.new("RGB", (W, H), style.background)
+    draw = ImageDraw.Draw(image)
+    credit = VOICE_CREDIT + (f"  ・  音楽 {release.music.title.rsplit('.', 1)[0]}" if release.music else "")
+    credit, size = fit(credit, 620, 22, 1, bold=False, smallest=14)
+    text(draw, W - 60, 1878, credit, size, style.muted, bold=False, anchor="rt")
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    animated, parts = bool(FX.get("text")), []
+
+    def ribbon(d):
+        if not beat.label:
+            return
+        face = goods_font(80)
+        width = round(face.getlength(beat.label)) + 120
+        d.polygon([(0, 120), (width - 40, 120), (width, 190), (width - 40, 260), (0, 260)], fill=style.accent)
+        d.text((40, 190), beat.label, font=face, fill=style.tag_text, anchor="lm")
+
+    def bar(d):
+        value, size = fit(beat.headline.replace("\n", " "), 900, 58, 2, smallest=38)
+        rows = value.count("\n") + 1
+        height = 140 if rows == 1 else 80 + rows * (size + 18)
+        d.rounded_rectangle((60, GOODS_BAR_Y, 1020, GOODS_BAR_Y + height), 30, fill=style.text)
+        d.multiline_text((540, GOODS_BAR_Y + height / 2), value, font=goods_font(size), fill="#ffffff",
+                         anchor="mm", align="center", spacing=18)
+
+    if animated:
+        parts += [piece("tag", ribbon), piece("row", bar)]
+    else:
+        draw = ImageDraw.Draw(layer)
+        ribbon(draw)
+        bar(draw)
+    return image, layer, [part for part in parts if part]
+
+
+@lru_cache(maxsize=4)
+def goods_mask(width, height, radius):
+    mask = Image.new("L", (width, height), 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, width - 1, height - 1), radius, fill=255)
+    return mask
+
+
+@lru_cache(maxsize=4)
+def goods_shadow(width, height, radius, alpha=60):
+    pad = 40
+    shadow = Image.new("RGBA", (width + 2 * pad, height + 2 * pad), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).rounded_rectangle((pad, pad + 12, pad + width, pad + height + 12), radius,
+                                             fill=(0, 0, 0, alpha))
+    return shadow.filter(ImageFilter.GaussianBlur(26))
+
+
+def overshoot(value):
+    """0 to 1 with a small overshoot at the end, for what pops in."""
+    value = clamp(value, 0.0, 1.0)
+    return 1 + 2.6 * (value - 1) ** 3 + 1.6 * (value - 1) ** 2
+
+
+def square_view(image, size, zoom, x, y):
+    """A square window of the picture at `zoom` (1 fills the square), placed by x and y (0 to 1)."""
+    iw, ih = image.size
+    side = min(iw, ih) / zoom
+    left, top = (iw - side) * clamp(x, 0, 1), (ih - side) * clamp(y, 0, 1)
+    return image.resize((size, size), Image.Resampling.BICUBIC, box=(left, top, left + side, top + side))
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
@@ -903,6 +985,8 @@ def layout(beat, release, has_photo, demo):
         return ink_layout(beat, release, has_photo, demo)
     if style.layout == "full":
         return full_layout(beat, release, has_photo, demo)
+    if style.layout == "goods":
+        return goods_layout(beat, release, has_photo, demo)
     return (*plain_layout(beat, release, has_photo, demo), [])
 
 
@@ -982,6 +1066,9 @@ class Scene:
 
     def __init__(self, index, beat, release, photos, demo, start, end):
         self.index, self.photos, self.start, self.end = index, list(photos or ()), start, max(end, start + 0.1)
+        # "goods": the product's card stands apart from the pictures that follow one another below it
+        self.product = next((photo for photo in self.photos if photo.role == "product"), None)
+        self.photos = [photo for photo in self.photos if photo.role != "product"]
         self.cut = beat.cut
         # how long the scene takes to arrive: a punch-in on its first picture waits for it
         self.arrival = 0.0 if not index else CUT_SECONDS[beat.cut] if beat.cut else TRANSITION
@@ -1019,13 +1106,66 @@ class Scene:
         if photo.footage:   # a clip plays at its own speed (slowed when it is shorter than its place), closing in a little
             frame = photo.footage.at(local * length, length + PHOTO_FADE)
             return view(frame, self.height, 1.0 + 0.05 * clamp(local, 0.0, 1.25), 0.5, 0.5)
-        if photo.clip:   # a moving picture: its frame at this moment, then the move over it
-            photo = replace(photo, image=clip_frame(photo, local * length), depth=False)
+        if photo.clip:   # a moving picture: its frame at this moment, then the move over it; a clip shorter than
+            # its place plays a little slower so that it lasts (the goods channel shows one clip a product)
+            rate = min(1.0, photo.clip.length() / max(0.1, length + PHOTO_FADE))
+            photo = replace(photo, image=clip_frame(photo, local * length * rate), depth=False)
         if photo.move:
             return named_photo(photo, local, photo.move, length, self.height, delay=0.0 if number else self.arrival)
         return moving_photo(photo, local, MOTIONS[(self.index + number) % len(MOTIONS)], self.height)
 
+    def product_card(self, age):
+        """The product's card of the "goods" frame at `age`: it pops in, then comes slowly closer."""
+        product, side = self.product, GOODS_PRODUCT[2]
+        if product.clip:
+            image = clip_frame(product, age)
+        elif product.footage:
+            image = product.footage.at(age, self.end - self.start + PHOTO_FADE)
+        else:
+            image = product.image
+        grow = overshoot(age / 0.55) if age < 0.55 else 1.0
+        zoom = 1.0 + 0.04 * clamp(age / max(0.1, self.end - self.start), 0.0, 1.0)
+        size = max(2, round(side * (0.86 + 0.14 * grow)))
+        card = square_view(image, side, zoom, *product.focus).resize((size, size), Image.Resampling.BICUBIC)
+        return card, size, clamp(age / 0.3, 0.0, 1.0)
+
+    def render_goods(self, moment):
+        age = moment - self.start
+        frame = self.background.copy().convert("RGBA")
+        photo = None
+        if self.product:
+            card, size, shown = self.product_card(age)
+            x0, y0, side = GOODS_PRODUCT
+            cx, cy = x0 + side // 2, y0 + side // 2
+            shadow = goods_shadow(size, size, 36, round(60 * shown))
+            frame.alpha_composite(shadow, (cx - size // 2 - 40, cy - size // 2 - 40))
+            mask = goods_mask(size, size, 36)
+            if shown < 1:
+                mask = mask.point(lambda level: round(level * shown))
+            frame.paste(card, (cx - size // 2, cy - size // 2), mask)
+        if self.photos:
+            picture, photo = self.picture(moment)
+            x, y, width, height = GOODS_CARD
+            frame.alpha_composite(goods_shadow(width, height, 36), (x - 40, y - 40))
+            frame.paste(picture.resize((width, height), Image.Resampling.BICUBIC), (x, y), goods_mask(width, height, 36))
+        frame = frame.convert("RGB")
+        if FX.get("text"):
+            self.draw_parts(frame, age)
+        else:
+            amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
+            layer = faded(self.text, amount) if amount < 1 else self.text
+            frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
+        shown = photo or self.product
+        if shown:
+            creator = shown.creator if len(shown.creator) <= 36 else shown.creator[:34] + "…"
+            credit = ("映像  " if (shown.footage or shown.clip) else "写真  ") + creator
+            credit, size = fit(credit, 380, 22, 1, bold=False, smallest=14)
+            text(ImageDraw.Draw(frame), 60, 1878, credit, size, style.muted, bold=False)
+        return frame
+
     def render(self, moment):
+        if style.layout == "goods":
+            return self.render_goods(moment)
         age = moment - self.start
         frame = self.background.copy()
         photo = None
@@ -1105,7 +1245,7 @@ def page_shadow(height=1460):
     return shadow
 
 
-CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45}
+CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45, "flip": 0.6}
 
 
 @lru_cache(maxsize=1)
@@ -1120,7 +1260,13 @@ def slide_shadow():
 def transition(old, new, amount, cut=""):
     """From one scene to the next. Without a chosen cut: a page turned from the right (paper) or a cross-fade
     (news). "dip": the old scene goes dark, then the new one comes up."""
-    cut = cut or ("page" if style.grain else "fade")
+    cut = cut or ("flip" if style.layout == "goods" else "page" if style.grain else "fade")
+    if cut == "flip":   # the old scene turns away like a card, the new one turns towards us
+        page = Image.new("RGB", (W, H), style.background)
+        scene, share = (old, 1 - ease(amount * 2)) if amount < 0.5 else (new, ease(amount * 2 - 1))
+        width = max(1, round(W * share))
+        page.paste(scene.resize((width, H), Image.Resampling.BILINEAR), ((W - width) // 2, 0))
+        return page
     if cut == "fade":
         return Image.blend(old, new, amount)
     if cut == "flash":   # a burst of pale light on the cut, then the new scene comes out of it (a blow, a betrayal)
@@ -1276,9 +1422,28 @@ def draw_spoken_caption(image, caption, age, span, marks=()):
     image.paste(full, (0, top), ink.point(lambda level: round(level * amount)) if amount < 1 else ink)
 
 
+def draw_goods_caption(image, caption, age=1.0):
+    """The "goods" caption: the line spoken on a yellow bar at the foot, which pops in when the line starts."""
+    face = goods_font(46)
+    rows = caption.splitlines()
+    height = 40 + 62 * len(rows)
+    bar = Image.new("RGBA", (960, height), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(bar)
+    draw.rounded_rectangle((0, 0, 959, height - 1), 26, fill=style.caption_box)
+    for number, row in enumerate(rows):
+        draw.text((480, 20 + 62 * number + 31), row, font=face, fill=style.caption_text, anchor="mm")
+    grow = overshoot(age / 0.3) if age < 0.3 else 1.0
+    width, tall = max(2, round(960 * (0.9 + 0.1 * grow))), max(2, round(height * (0.9 + 0.1 * grow)))
+    if (width, tall) != bar.size:
+        bar = bar.resize((width, tall), Image.Resampling.BICUBIC)
+    image.paste(bar, ((W - width) // 2, GOODS_CAPTION_Y - tall // 2), bar)
+
+
 def draw_captions(image, caption, age=1.0, span=None, marks=()):
     """`span`: how long the caption is spoken; with "fx": text it then darkens as it is read (`marks`: when the
     voice reaches which part of it, see voice.Caption)."""
+    if style.layout == "goods":
+        return draw_goods_caption(image, caption, age)
     if span and FX.get("text"):
         return draw_spoken_caption(image, caption, age, span, marks)
     face = font(CAPTION_SIZE)
