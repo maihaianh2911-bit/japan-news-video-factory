@@ -69,6 +69,14 @@ STYLES = {
                      photo_tag_text="#f4ead2", value="#d9b96a", card="#1b1612", card_ink="#f4ead2",
                      card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#f4ead2", grain=False,
                      layout="ink"),
+    # "full": the picture fills the whole frame, nothing dark laid over it; the headline, the quote and the captions
+    # stand in the middle of the frame, a little under its centre (under the face), in white and pale gold with a
+    # dark outline (owner, 21/11/2026: "để ảnh full màn hình… không cần khoảng tối… để chữ ở giữa màn hình").
+    "full": Style(family="Serif", background="#0d0a08", text="#ffffff", muted="#f4ead2", accent="#b3261e",
+                  tag="#b3261e", tag_text="#f4ead2", photo_bed="#0d0a08", photo_tag="#0d0a08",
+                  photo_tag_text="#f4ead2", value="#ffe9a8", card="#1b1612", card_ink="#f4ead2",
+                  card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
+                  layout="full"),
 }
 style = STYLES["news"]
 
@@ -265,8 +273,10 @@ PHOTO_TOP, PHOTO_HEIGHT = 338, 700
 STORY_TOP, STORY_HEIGHT = 172, 1258     # "story": the picture from under the masthead to above the captions
 INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of the frame, melting into the page
 INK_GOLD = "#d9b96a"
-BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT)}
-ON_PICTURE = ("story", "ink")           # frames whose headline and quote are printed on the picture
+FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
+# quote, the lowest their foot may come (the captions run under it), the colour of the text's outline
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H)}
+ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
 def box_height(name):
@@ -281,11 +291,13 @@ def photo_box():
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
+    if style.layout == "full":
+        return (0, 0, W, H)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -478,6 +490,7 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
 # In the "story" frame the headline is printed on the foot of the picture and the hook line higher still: a face
 # whose middle lies in that part is under the text. The first picture is the best one of the video.
 HEADLINE_ZONE, HOOK_ZONE, HOOK_SIDE = 0.22, 0.34, 900
+FULL_LINE = 0.6   # "full": the text stands from about three fifths of the frame down: a face ends above it
 
 
 def frame_windows(photo, seconds=5.0, height=PHOTO_HEIGHT):
@@ -520,11 +533,13 @@ def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
     windows = frame_windows(photo, seconds, height)
     zone = (HOOK_ZONE if hook else HEADLINE_ZONE) if style.layout in ON_PICTURE else 0.0
 
-    def place(box, window):   # how far down the frame the middle of the face is (0 top, 1 bottom)
-        return ((box[1] + box[3]) / 2 - window[1]) / max(0.001, window[3] - window[1])
+    def place(box, window, part=0.5):   # how far down the frame the middle (or `part`) of the face is (0 top, 1 bottom)
+        return (box[1] + (box[3] - box[1]) * part - window[1]) / max(0.001, window[3] - window[1])
     cut = any(not inside(box, window) for box in main for window in windows)
     kept = [box for box in main if all(inside(box, window) for window in windows)]
     under = bool(zone) and any(place(box, window) > 1 - zone for box in kept for window in windows)
+    if style.layout == "full":   # the text stands in the middle of the picture: the whole face stays above it
+        under = any(place(box, window, 1.0) > FULL_LINE for box in kept for window in windows)
     low = hook and any(place(box, windows[0]) > 0.5 for box in kept)
     advice = 'another move, the whole picture ("fit": "contain") or another picture'
     if cut and photo.move not in ("pan-right", "pan-left", "rise", "fall"):
@@ -544,8 +559,9 @@ def face_warnings(photo, hook=False, seconds=5.0, height=PHOTO_HEIGHT):
         said.append("a face is cut by the frame or leaves it during the move (the whole face stays in the frame): "
                     + advice)
     if under:
-        said.append("a face lies under the " + ("hook line" if hook else "headline") + " printed on the foot of the "
-                    "picture: a picture or a framing with the face higher")
+        said.append("a face lies under the " + ("hook line" if hook else "headline") + " printed on the "
+                    + ("middle" if style.layout == "full" else "foot") + " of the picture: a picture or a framing "
+                    "with the face higher")
     elif low:
         said.append("the hook: the face is in the lower half of the first picture (it belongs in the upper half, "
                     "clear of the hook line): a picture or a framing with the face higher")
@@ -791,6 +807,77 @@ def ink_layout(beat, release, has_photo, demo):
     return image, layer, [part for part in parts if part]
 
 
+def outlined(d, x, y, value, size, fill, *, bold=True, anchor="mt", stroke=7):
+    """A line of text with a dark outline, so that it reads on any picture with nothing dark laid under it."""
+    d.text((x, y), value, font=font(size, bold), fill=fill, anchor=anchor, stroke_width=stroke, stroke_fill=OUTLINE)
+
+
+def full_layout(beat, release, has_photo, demo):
+    """The "full" frame (owner, 21/11/2026): the picture fills the whole frame and nothing dark is laid over it.
+    The tag stands at the top left; the headline stands in the middle of the frame, a little under its centre
+    (under the face), white with a dark outline, and comes in row by row after the picture; the captions run
+    under it as they are spoken. Everything is drawn as pieces over the picture ("fixed": the credits)."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = Image.new("RGB", (W, H), style.background)
+
+    def credits(d):   # the voice, the source and the music at the foot, small, outlined on the picture
+        if release.publisher:
+            outlined(d, 60, 1876, f"出典  {release.publisher}", 22, style.muted, bold=False, anchor="lt", stroke=3)
+        outlined(d, W - 60, 1844, VOICE_CREDIT, 22, style.muted, bold=False, anchor="rt", stroke=3)
+        if release.music:
+            music, size = fit(f"音楽  {release.music.title.rsplit('.', 1)[0]}", 560, 20, 1, bold=False, smallest=16)
+            outlined(d, W - 60, 1876, music, size, style.muted, bold=False, anchor="rt", stroke=3)
+
+    parts.append(piece("fixed", credits))
+    if demo:
+        parts.append(piece("fixed", lambda d: outlined(d, W // 2, 90, "動作確認", 28, GOLD, stroke=3)))
+    tag = beat.era or release.kicker or "日本のニュース"
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if not has_photo:   # a text card in the place of the picture
+        draw.rounded_rectangle((70, 300, 1010, 1340), radius=18, fill=style.card, outline=style.rule, width=2)
+        draw.rectangle((119, 372, 215, 378), fill=style.accent)
+        headline, size = fit(beat.headline, 840, 68, 3, smallest=40)
+        y = text(draw, 119, 430, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 840, 120, 1, smallest=56)
+            y = text(draw, 119, y + 70, value, value_size, style.value)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 40, 5, bold=False, smallest=26)
+            text(draw, 119, y + 60, evidence, evidence_size, style.card_ink, bold=False)
+        label(draw, 60, 80, tag, style.tag, style.tag_text)
+        return image, layer, [part for part in parts if part]
+    blocks = []
+    headline, size = fit(beat.headline, 960, 92 if len(beat.headline) < 20 else 72, 3, smallest=48)
+    blocks.append((headline, size, style.text, True, 22))
+    if beat.value:
+        value, value_size = fit(beat.value, 960, 96, 1, smallest=56)
+        blocks.append((value, value_size, style.value, True, 18))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 960, 36, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, style.muted, False, 12))
+    heights = [block_height(value, size, spacing) for value, size, _, _, spacing in blocks]
+    total = sum(heights) + 22 * (len(blocks) - 1)
+    y = min(FULL_TEXT_CENTRE - total // 2, FULL_TEXT_FOOT - total)
+    if animated:
+        parts.append(piece("tag", lambda d: label(d, 60, 80, tag, style.tag, style.tag_text)))
+    else:
+        label(draw, 60, 80, tag, style.tag, style.tag_text)
+    order = 0
+    for (value, size, colour, bold, spacing), height in zip(blocks, heights):
+        for row, line in enumerate(value.splitlines()):
+            at = y + row * (size + spacing)
+            if animated:
+                parts.append(piece("row", lambda d, line=line, at=at, size=size, colour=colour, bold=bold:
+                                   outlined(d, W // 2, at, line, size, colour, bold=bold,
+                                            stroke=7 if bold else 4), order))
+                order += 1
+            else:
+                outlined(draw, W // 2, at, line, size, colour, bold=bold, stroke=7 if bold else 4)
+        y += height + 22
+    return image, layer, [part for part in parts if part]
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
@@ -798,6 +885,8 @@ def layout(beat, release, has_photo, demo):
         return story_layout(beat, release, has_photo, demo)
     if style.layout == "ink":
         return ink_layout(beat, release, has_photo, demo)
+    if style.layout == "full":
+        return full_layout(beat, release, has_photo, demo)
     return (*plain_layout(beat, release, has_photo, demo), [])
 
 
@@ -928,7 +1017,7 @@ class Scene:
                 frame.paste(picture, (0, self.top), ink_mask(self.height))
             else:
                 frame.paste(picture, (0, self.top))
-            if style.layout in ON_PICTURE:
+            if style.layout in ("story", "ink"):   # "full": nothing dark over the picture (owner, 21/11/2026)
                 shade = ink_shade(self.height) if style.layout == "ink" else story_shade(self.height)
                 frame.paste(shade, (0, self.top), shade)
         for kind, part, at, _ in self.parts:   # what never moves: the seal and the year of the "history" page
@@ -936,6 +1025,8 @@ class Scene:
                 frame.paste(part, at, part)
         if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
+            if style.layout == "full":   # the tag at the top comes in all the same
+                self.draw_parts(frame, age, only="tag")
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
             amount = ease(age / TEXT_IN) if age < TEXT_IN else 1.0
@@ -946,7 +1037,10 @@ class Scene:
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
-            if style.layout in ON_PICTURE:
+            if style.layout == "full":
+                credit, credit_size = fit(credit, 560, 22, 1, bold=False, smallest=16)
+                outlined(draw, 60, 1844, credit, credit_size, style.muted, bold=False, anchor="lt", stroke=3)
+            elif style.layout in ON_PICTURE:
                 credit, credit_size = fit(credit, 560, 24, 1, bold=False, smallest=16)
                 text(draw, 60, 1774, credit, credit_size, style.muted, bold=False)
             else:
@@ -956,12 +1050,15 @@ class Scene:
         return frame
 
 
-    def draw_parts(self, frame, age):
+    def draw_parts(self, frame, age, only=None):
         """The scene's text coming in piece by piece ("fx": text): the tag is wiped in from the left, a red rule is
-        drawn, then each row of the headline rises into its place from behind its own lower edge."""
+        drawn, then each row of the headline rises into its place from behind its own lower edge. `only`: draw the
+        pieces of that kind only."""
         start = 0.1 + 0.6 * self.arrival   # most of it is seen after the scene has arrived
+        if style.layout == "full":   # the picture is seen alone a moment first, then the text comes (owner, 21/11/2026)
+            start += 0.15
         for kind, picture, (x, y), order in self.parts:
-            if kind == "fixed":
+            if kind == "fixed" or only and kind != only:
                 continue
             if kind in ("tag", "rule"):
                 amount = ease((age - start - (0.0 if kind == "tag" else 0.12)) / (0.3 if kind == "tag" else 0.4))
@@ -1092,8 +1189,12 @@ def caption_art(caption, key):
         layer = Image.new("RGBA", (W, height + 4), (0, 0, 0, 0))
         draw = ImageDraw.Draw(layer)
         for line_index, line in enumerate(contents):
-            draw.text((W / 2, 21 + 83 * line_index), line, font=face, fill=colour, anchor="mt",
-                      stroke_width=1, stroke_fill=colour)
+            if style.layout == "full":   # printed on the picture itself: a dark outline
+                draw.text((W / 2, 21 + 83 * line_index), line, font=face, fill=colour, anchor="mt",
+                          stroke_width=6, stroke_fill=OUTLINE)
+            else:
+                draw.text((W / 2, 21 + 83 * line_index), line, font=face, fill=colour, anchor="mt",
+                          stroke_width=1, stroke_fill=colour)
         layers.append(layer)
     edges = [[W / 2 - face.getlength(line) / 2 + face.getlength(line[:count]) for count in range(len(line) + 1)]
              for line in contents]
@@ -1118,7 +1219,7 @@ def draw_spoken_caption(image, caption, age, span, marks=()):
     """The caption of "fx": text: all of it is there from the start (paler), and it darkens to full ink from left
     to right as the voice reads it: with `marks` at the real moment of every character (a touch ahead of the
     voice), else at about the pace of the reading (an estimate by character)."""
-    (pale, full), edges, weights, height = caption_art(caption, (style.caption_text, DISPLAY_FONT))
+    (pale, full), edges, weights, height = caption_art(caption, (style.caption_text, DISPLAY_FONT, style.layout))
     centre = caption_centre()
     amount = ease(age / CAPTION_IN) if age < CAPTION_IN else 1.0
     top = centre - height // 2 + round(14 * (1 - amount))
@@ -1150,8 +1251,9 @@ def draw_spoken_caption(image, caption, age, span, marks=()):
             spoken.paste(255, (0, band[0], max(0, x - SWEEP // 2), band[1]))
             spoken.paste(sweep_edge(band[1] - band[0]), (x - SWEEP // 2, band[0]))
         done -= row_total
-    pale_layer = faded(pale, amount) if amount < 1 else pale
-    image.paste(pale_layer, (0, top), pale_layer)
+    if style.layout != "full":   # "full": nothing before the voice reaches it, the words come as they are spoken
+        pale_layer = faded(pale, amount) if amount < 1 else pale
+        image.paste(pale_layer, (0, top), pale_layer)
     ink = ImageChops.multiply(full.getchannel("A"), spoken)
     image.paste(full, (0, top), ink.point(lambda level: round(level * amount)) if amount < 1 else ink)
 
@@ -1171,9 +1273,10 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
     top = 0 if layer else centre - height // 2
     if style.caption_box:
         draw.rounded_rectangle((69, top, 1011, top + height), radius=19, fill=style.caption_box)
+    outline = (6, OUTLINE) if style.layout == "full" else (1, style.caption_text)
     for line_index, line in enumerate(contents):
         draw.text((W / 2, top + 21 + 83 * line_index), line,
-                  font=face, fill=style.caption_text, anchor="mt", stroke_width=1, stroke_fill=style.caption_text)
+                  font=face, fill=style.caption_text, anchor="mt", stroke_width=outline[0], stroke_fill=outline[1])
     if layer:
         layer = faded(layer, amount)
         image.paste(layer, (0, centre - height // 2 + round(14 * (1 - amount))), layer)
@@ -1223,9 +1326,14 @@ def draw_quote(image, line, age):
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
     # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
     joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
+    if style.layout == "full":   # in the middle of the frame: as large as three rows allow
+        words, size = fit("".join(pieces), 960, 92, 3, smallest=52)
+    else:
+        words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
+    if style.layout == "full":
+        return draw_full_quote(image, rows, size, block, age)
     band_height = min(height, block + 330)
     band = quote_band(band_height)
     if style.layout == "ink":
@@ -1249,6 +1357,24 @@ def draw_quote(image, line, age):
         image.paste(strip, (0, y + 30 + index * (size + 22) + round(22 * (1 - shown))), strip)
 
 
+def draw_full_quote(image, rows, size, block, age):
+    """A quote in the "full" frame: no band, the words stand in the middle of the picture, white with a dark outline,
+    row after row rising into place (owner, 21/11/2026: "không cần khoảng tối… để chữ ở giữa màn hình")."""
+    y = min(FULL_TEXT_CENTRE - block // 2, FULL_TEXT_FOOT - block)
+    for index, row in enumerate(rows):   # the picture is seen alone a moment first, then the words come
+        shown = ease((age - 0.25 - 0.22 * index) / 0.42) if FX.get("text") else ease(age / QUOTE_IN)
+        if shown <= 0:
+            continue
+        ink = Image.new("RGBA", (W, size + 60), (0, 0, 0, 0))
+        outlined(ImageDraw.Draw(ink), W // 2, 24, row, size, style.text)
+        soft = ImageChops.offset(ink.getchannel("A"), 0, 4).filter(ImageFilter.GaussianBlur(7))
+        strip = Image.new("RGBA", ink.size, (10, 6, 2, 0))
+        strip.putalpha(soft.point(lambda level: round(level * 0.6)))
+        strip = Image.alpha_composite(strip, ink)
+        strip = faded(strip, shown) if shown < 1 else strip
+        image.paste(strip, (0, y - 24 + index * (size + 22) + round(30 * (1 - shown))), strip)
+
+
 def quote_lines(beats, captions):
     """For each caption: (the whole quote line, when its first caption starts) when it belongs to a line marked
     "quote", else None. Captions are made line by line in order (voice.narration), so they follow the lines."""
@@ -1261,6 +1387,22 @@ def quote_lines(beats, captions):
                 marks.append((line, first) if index in beat.quotes else None)
             number += len(chunks)
     return marks if len(marks) == len(captions) else [None] * len(captions)
+
+
+def held_quotes(beats, captions, quotes):
+    """The "full" frame: for each caption, the quote of its scene said before it (it stays in the middle of the
+    picture, as the scene's headline, while the scene's next lines run under it), else None; and the scene of
+    each caption."""
+    owners = [index for index, beat in enumerate(beats) for line in beat.lines for _ in caption_chunks(line)]
+    if len(owners) != len(captions):
+        return [None] * len(captions), [-1] * len(captions)
+    held, last = [], None
+    for number, quote in enumerate(quotes):
+        if number and owners[number] != owners[number - 1]:
+            last = None
+        last = quote or last
+        held.append(None if quote or style.layout != "full" else last)
+    return held, owners
 
 
 class Grain:
@@ -1393,6 +1535,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     ]
     cue = 0
     frame_index = 0
+    held, owners = held_quotes(beats, captions, quotes)
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
         try:
             for number, scene in enumerate(scenes):
@@ -1402,9 +1545,12 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                         cue += 1
                     # in the silence between two lines the last caption (or quote) stays until the next one starts
                     shown = cue - 1 if cue and moment < captions[cue].start else cue
-                    QUOTE_ON = bool(quotes[shown])
+                    kept = held[shown] if owners[shown] == number else None   # "full": the scene's quote stays
+                    QUOTE_ON = bool(quotes[shown] or kept)
                     frame = frame_at(scenes, number, moment)
                     QUOTE_ON = False
+                    if kept:
+                        draw_quote(frame, kept[0], moment - kept[1])
                     if quotes[shown]:
                         draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
                     else:
@@ -1433,13 +1579,16 @@ def stills(beats, release, photos, out):
     for index, beat in enumerate(beats):
         scene = Scene(index, beat, release, photos.get(index), False, 0.0, 10.0)   # a 10-second scene
         count = max(1, len(scene.photos))
+        held = style.layout == "full" and 0 in beat.quotes   # "full": the scene's quote stays over its pictures
         for number in range(count):
-            QUOTE_ON = 0 in beat.quotes and number == 0
+            QUOTE_ON = 0 in beat.quotes and (number == 0 or held)
             frame = scene.render(10 * (number + 0.5) / count)
             QUOTE_ON = False
-            if 0 in beat.quotes and number == 0:
-                draw_quote(frame, beat.lines[0], 1.0)
-            else:
+            if 0 in beat.quotes and (number == 0 or held):
+                draw_quote(frame, beat.lines[0], 3.0)
+            if held and number and len(beat.lines) > 1:   # under the quote, a line spoken while this picture is on
+                draw_captions(frame, caption_chunks(beat.lines[min(number, len(beat.lines) - 1)])[0])
+            elif not (0 in beat.quotes and number == 0):
                 draw_captions(frame, caption_chunks(beat.lines[0])[0])
             if grain:
                 frame = grain.apply(frame, index * 10 + number)

@@ -91,6 +91,14 @@ videos by their frame and by the name in the seal:
   its foot, the `kicker` stands in a vermilion seal written downwards (keep it to 4–7 characters), the scene's
   `era` in gold at the top right, the headline on the melting foot, ivory captions on the dark page. The video
   comes out of black and goes back into it. The owner approved the look on the first trial (`otani-yoshitsugu`).
+- `"style": "full"` (owner, 21/11/2026: "để ảnh full màn hình… không cần khoảng tối… để chữ ở giữa màn hình…
+  đến ảnh rồi chữ chạy theo", approved on a 9-second trial; first video `uchida-yuki`): the picture fills the whole
+  frame, nothing dark laid over it; the scene's `era` (else the `kicker`) in a red tag at the top left; the headline
+  and a quote in white with a dark outline in the middle of the frame, a little under its centre, coming in row by
+  row after the picture; the captions in pale gold under them, appearing only as the voice reads them. A quote that
+  opens a scene stays there as the scene's headline while its next lines are spoken (a list video: the quote
+  `"1. …"` opens each scene). Pick tall pictures at least about 1200 px high (a wide or small one is enlarged a
+  lot and looks soft); every face stays above three fifths of the frame (the preview warns).
 - The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
   "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
   những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)
