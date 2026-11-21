@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 52,
   "title": "セリアの神商品 ランキング(1〜4)",
   "date": "2026-11-21",
@@ -202,5 +202,8 @@
       ],
       "why": "Tấm dán hút: dán son, kem chống nắng, điện thoại, rửa nước, bàn chải."
     }
-  ]
+  ],
+  "music": {
+    "pick": "10-4"
+  }
 }
