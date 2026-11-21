@@ -1330,6 +1330,9 @@ def loudness():
     return chain
 
 
+MUSIC_LUFS = -35   # the music sits about 17 dB under the voice (VOICEVOX speaks at about -18 LUFS)
+
+
 def codec_args(duration, mixed=False):
     """FFmpeg output options: H.264 at constant quality, capped so that the file fits the size budget. `mixed`:
     the audio comes from a -filter_complex (voice and music), already brought to the loudness."""
