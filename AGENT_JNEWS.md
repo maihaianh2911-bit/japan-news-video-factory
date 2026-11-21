@@ -2,9 +2,9 @@
 
 > **Iron rules (owner, 16/11/2026; full text at the top of `CLAUDE.md`).** (1) Voice, script lines, subtitles and
 > on-screen text are in **Japanese**, never another language; check before the voice step and on the finished video.
-> (2) **No video under 60 seconds**: estimate before the voice step and read the real speech length after it; if it
-> would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
-> issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
+> (2) **No video under 61 seconds** (the only length rule, no upper limit; owner, 19/11/2026): estimate before the voice step and read the real speech length after it; if it
+> would be under 61 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
+> issue what was added, then go on. Never render or deliver under 61 seconds, except a trial or sample video (the
 > owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
 > (3) **Vertical, over 61 seconds and at most 160** (owner, 18/11/2026: all channels; 19/11/2026: "không cần ép 80s,
 > chỉ cần trên 61s"): never lengthen a script only to reach 80 seconds.

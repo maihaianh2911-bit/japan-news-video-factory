@@ -5,23 +5,22 @@
    on-screen text are in Japanese (tiếng Nhật). A script that arrives in another language is translated faithfully into Japanese (tiếng Nhật)
    first. Never a voice or text of another language: check the language of `lines` and the voice before the voice
    step, and again on the finished video. A video in the wrong language is not delivered: fix it and render again.
-2. **No video under 60 seconds.** Before the voice step, estimate the length from the script (use the seconds per
+2. **No video under 61 seconds** (owner, 19/11/2026: "ra lại luật mới, chỉ còn luật tối thiểu 61s": the only length rule, no upper limit). Before the voice step, estimate the length from the script (use the seconds per
    line of this channel's earlier videos); after the voice step, read the real length of the speech (the machine
-   comment gives it). If the video would be under 60 seconds, **write the script longer** (more true facts and
-   detail on the same subject, in the owner's tone, nothing invented) until it passes 60 seconds, tell the owner on
+   comment gives it). If the video would be under 61 seconds, **write the script longer** (more true facts and
+   detail on the same subject, in the owner's tone, nothing invented) until it reaches 61 seconds, tell the owner on
    the issue what was added, and only then go on. This is the one exception to "never change the owner's script".
-   Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
+   Never render or deliver a video under 61 seconds. Only exception: a trial or sample video — the owner says so,
    or the issue title or notes say `thử`, `mẫu`, `test` or `demo`.
-3. **Every video is vertical (1080×1920), longer than 61 seconds and at most 160 seconds** (owner, 18/11/2026:
-   "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
-   trên 61s"). Do not lengthen a script only to reach 80 s: a script the owner cut stays cut as long as it passes
-   61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
-   Trial or sample videos are the exception, as in rule 2.
+3. **Every video is vertical (1080×1920)** (owner, 18/11/2026). Its length has only rule 2, at least 61 seconds, no
+   upper limit (owner, 19/11/2026: "không cần ép 80s, chỉ cần trên 61s", then "ra lại luật mới, chỉ còn luật tối thiểu 61s"). Do not lengthen a script only to
+   make it longer: a script the owner cut stays cut as long as it reaches 61 s. Under 61 s add true scenes and details
+   of the same story (never padding).
 
 The owner is Vietnamese and not technical: answer in short, simple Vietnamese, no jargon. They write "tao" (I) and
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
-picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (exceptions: iron rule 2 below, a script too short for 60 seconds; and the words of a
+picture, a script the owner sends is translated faithfully to Japanese and never cut or rewritten (exceptions: iron rule 2 below, a script too short for 61 seconds; and the words of a
 source video, which are rewritten, see "When the owner sends an original video"), quality is not
 traded for usage).
 
@@ -70,7 +69,7 @@ kèm caption cho mỗi video"):
    well-known details on the same subject (dates, ages, what became of a person); never invent, never change a
    fact or a quote of the source. Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
-   characters a second at speed 1.0 plus the pauses (iron rule 3: over 61 s, at most 160 s). Tell the owner in the chat what you
+   characters a second at speed 1.0 plus the pauses (iron rule 2: at least 61 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
    - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
@@ -91,7 +90,7 @@ kèm caption cho mỗi video"):
      liền mạch, nói bao nhiêu lần rồi, đừng bao giờ chia đoạn ra như thế"). The scenes exist only for the pictures.
    - A story the sources do not confirm is framed **once** (e.g. 「長く語り継がれてきた話です」, 「…と口にしたといいます」
      at the key line), not on every line.
-   - Under 60 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
+   - Under 61 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
      treaty years). Do not end every video with 「あなたはどう感じますか？」.
    - A source video too thin for a story (a few captions, no events): tell the owner before making it.
    - Owner, 17/11/2026: the love story (`masako-rikon`: a request for divorce, his answer, the proof, the two
