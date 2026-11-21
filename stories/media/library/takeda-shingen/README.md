@@ -24,3 +24,4 @@ Dùng trong kịch bản bằng tìm kiếm `file:stories/media/library/takeda-s
 | `takeda-cavalry-illustration.jpg` | Tranh vẽ kỵ binh Takeda | 1024×1024 | note.com |
 | `uesugi-kenshin-portrait.jpg` | Chân dung Uesugi Kenshin | 768×1164 | Unknown authorUnknown author / Public domain |
 | `unpoji-hall.jpg` | Chùa Unpō-ji, nơi giữ lá cờ thật | 1920×1440 | さかおり (talk) / CC BY-SA 3.0 |
+| `hook-full-kabuto-and-flag.jpg` | Ảnh mở đầu khổ dọc kín màn hình (khung `full`): tranh mũ sừng + lá cờ, mặt ở nửa trên — đã dùng cho video Phong Lâm Hỏa Sơn | 1260×2240 | Wikimedia Commons（歌川国芳 Public domain／孫子の旗 復元 Haa900 CC0） |

@@ -1,8 +1,8 @@
 {
-  "stage": "render",
+  "stage": "find",
   "title": "手の内を旗に書いた男 武田信玄と風林火山",
   "date": "2026-11-21",
-  "style": "history",
+  "style": "full",
   "kicker": "戦国の物語",
   "voice": 1.7,
   "pace": {
@@ -59,7 +59,8 @@
     "web:武田信玄 映画 風林火山 旗 騎馬軍団",
     "web:天と地と 映画 川中島 武田",
     "file:stories/media/2026-11-21-shingen-furinkazan/hook.jpg",
-    "file:stories/media/2026-11-21-shingen-furinkazan/hook2.jpg"
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook2.jpg",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook-full-B2.jpg"
   ],
   "scenes": [
     {
@@ -75,7 +76,7 @@
       ],
       "photo": [
         {
-          "pick": "43-1",
+          "pick": "44-1",
           "move": "hold",
           "focus": [
             0.5,
@@ -88,11 +89,11 @@
           "move": "push-in",
           "focus": [
             0.5,
-            0.3
+            0.12
           ]
         }
       ],
-      "why": "Mở bằng ảnh ghép chân dung Shingen bên cạnh lá cờ Phong Lâm Hỏa Sơn, rồi Shingen trong phim"
+      "why": "Mở bằng tranh Shingen đội mũ sừng bên cạnh lá cờ Phong Lâm Hỏa Sơn, kín màn hình, rồi Shingen trong phim"
     },
     {
       "label": "孫子の旗",
@@ -166,7 +167,7 @@
       ],
       "photo": [
         {
-          "pick": "16-9",
+          "pick": "4-4",
           "move": "pan-right",
           "depth": false
         },
@@ -188,7 +189,7 @@
           ]
         }
       ],
-      "why": "Tối dần ra chiến trường: bình phong Kawanakajima, kỵ binh Takeda, cảnh phim Shingen giữa rừng cờ",
+      "why": "Tối dần ra chiến trường: bình phong Kawanakajima, kỵ binh Takeda, cảnh phim giữa rừng cờ",
       "cut": "dip"
     },
     {
@@ -203,9 +204,13 @@
       ],
       "photo": [
         {
-          "pick": "17-3",
+          "pick": "17-19",
           "move": "push-in",
-          "fit": "contain"
+          "focus": [
+            0.75,
+            0.55
+          ],
+          "depth": false
         },
         {
           "pick": "36-5",
@@ -217,7 +222,7 @@
           "depth": false
         }
       ],
-      "why": "Lóe sáng vào trận một chọi một Shingen và Kenshin, rồi kỵ binh lao tới",
+      "why": "Lóe sáng vào tranh Kawanakajima, rồi kỵ binh lao tới",
       "cut": "flash"
     },
     {
@@ -240,11 +245,11 @@
       ],
       "photo": [
         {
-          "pick": "1-1",
+          "pick": "1-10",
           "move": "push-in",
           "focus": [
-            0.5,
-            0.25
+            0.31,
+            0.3
           ],
           "depth": false
         },
@@ -258,7 +263,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Tối dần về hiện tại: chân dung Shingen, lá cờ thật, chùa Unpō-ji",
+      "why": "Tối dần về hiện tại: chân dung Shingen nổi tiếng nhất, lá cờ, chùa Unpō-ji",
       "cut": "dip"
     }
   ],
