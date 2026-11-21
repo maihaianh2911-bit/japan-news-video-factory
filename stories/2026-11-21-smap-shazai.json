@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 44,
   "title": "SMAP生謝罪 公開処刑と呼ばれた映像",
   "date": "2026-11-21",
@@ -56,7 +56,20 @@
           "say": "国民的グループ、スマップの5人が、黒いスーツで生謝罪した映像は、目から完全に光が消えていて、世間からは、こうかいしょけいとまで呼ばれていたのだった。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "11-12",
+          "fit": "contain",
+          "move": "hold"
+        }
+      ],
+      "why": "Mở bằng ảnh rõ nhất của buổi xin lỗi trực tiếp: cả 5 người vest đen trước tấm rèm (hiện cả ảnh để không mất mặt ai, mặt ở trên dòng chữ), rồi 5 người cúi đầu trên nền đen."
     },
     {
       "label": "解散報道",
@@ -68,7 +81,33 @@
           "say": "2016年1月、約30年にわたり日本のトップを走り続けた、スマップの解散報道が突然飛び出し、ファンを安心させるため、5人の生出演が急きょ決まった。"
         },
         "本来なら日本中がホッとする瞬間になるはずだったのだ。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "1-11",
+          "focus": [
+            0.55,
+            0.2
+          ],
+          "move": "hold"
+        }
+      ],
+      "cut": "dip",
+      "why": "SMAP thời đỉnh cao trên sân khấu, trang báo thể thao 13/1/2016 đưa tin giải tán, rồi 5 người ở Kohaku cuối năm 2015."
     },
     {
       "label": "黒いスーツ",
@@ -77,7 +116,24 @@
       "lines": [
         "しかし映し出されたのは、鳥肌が立つほど冷たい光景だった。",
         "トップスター5人が喪服のような黒いスーツで硬直し、その表情は恐ろしいほど疲れ切っていたという。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-2",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-4",
+          "focus": [
+            0.485,
+            0.42
+          ],
+          "move": "push-in"
+        }
+      ],
+      "cut": "hard",
+      "why": "Cảnh lạnh lẽo: 5 người đứng cứng đờ trong vest đen trước rèm tối, rồi tiến vào gương mặt mệt mỏi của Nakai."
     },
     {
       "label": "並び",
@@ -93,7 +149,33 @@
           "say": "しかもリーダーの、なかいまさひろは端へ追いやられ、中央には、きむらが立つ、異例の並び。"
         },
         "その瞬間、視聴者はこれが和解ではなく、見せしめなのだと悟ってしまった。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-5",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "9-6",
+          "fit": "contain",
+          "move": "pull-back",
+          "depth": false
+        },
+        {
+          "pick": "9-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-2",
+          "fit": "contain",
+          "move": "hold"
+        }
+      ],
+      "cut": "fade",
+      "why": "Báo hôm sau ghi lời Kusanagi cảm ơn Kimura và tiêu đề 'đã xin lỗi ông Johnny', rồi hàng đứng: Nakai bị đẩy ra mép, Kimura ở giữa, và màn hình TV mà khán giả đã xem."
     },
     {
       "label": "解散",
@@ -108,7 +190,39 @@
           "text": "そして1年も経たずSMAPは解散し、この映像は一世代の心に消えない傷跡を残したと言われている。",
           "say": "そして1年も経たず、スマップは解散し、この映像は、一世代の心に消えない傷跡を残したと言われている。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-3",
+          "fit": "contain",
+          "move": "hold",
+          "depth": false
+        },
+        {
+          "pick": "11-12",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "16-12",
+          "focus": [
+            0.45,
+            0.0
+          ],
+          "move": "hold",
+          "depth": false
+        },
+        {
+          "pick": "17-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "cut": "dip",
+      "why": "Báo sáng hôm sau, lại hình 5 người cúi đầu trên nền đen (bóng tối của giới giải trí), số báo đặc biệt 'SMAP giải tán', và cái cúi chào cuối cùng của 5 người."
     }
-  ]
+  ],
+  "music": {
+    "pick": "21-1"
+  }
 }
