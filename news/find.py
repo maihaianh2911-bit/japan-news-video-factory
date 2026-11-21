@@ -906,8 +906,12 @@ def file_find(path, k, out):
     with Image.open(source) as original:
         picture = original.convert("RGB")
     picture.thumbnail((LARGEST, LARGEST))
+    # a picture made here from others (a hook composed of two pictures) names its sources in <name>.credit.txt
+    credit = source.with_suffix(".credit.txt")
+    artist = credit.read_text(encoding="utf-8").strip().splitlines()[0] if credit.is_file() else "元動画"
     entry = {"title": source.name, "page": "", "width": picture.width, "height": picture.height, "license": "",
-             "license_url": "", "artist": "元動画", "description": f"from the source video: {path}",
+             "license_url": "", "artist": artist, "description": f"from the source video: {path}" if not credit.is_file()
+             else f"composed from other pictures: {path}",
              "file": f"{k}-1.jpg"}
     picture.save(out / entry["file"], quality=93)
     return [entry]

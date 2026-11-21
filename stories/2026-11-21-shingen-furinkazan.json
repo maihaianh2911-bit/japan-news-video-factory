@@ -57,7 +57,8 @@
     "web:大河ドラマ 風林火山 2007 武田信玄 市川亀治郎",
     "web:大河ドラマ 武田信玄 1988 中井貴一",
     "web:武田信玄 映画 風林火山 旗 騎馬軍団",
-    "web:天と地と 映画 川中島 武田"
+    "web:天と地と 映画 川中島 武田",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook.jpg"
   ],
   "scenes": [
     {
@@ -70,7 +71,27 @@
           "say": "たけだしんげんは、なぜじぶんのたたかいかたを、てきにもみえるはたにかいて、かかげたのでしょうか。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "42-1",
+          "move": "push-in",
+          "focus": [
+            0.35,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "41-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng ảnh ghép chân dung Shingen bên cạnh lá cờ Phong Lâm Hỏa Sơn, rồi Shingen trong phim"
     },
     {
       "label": "孫子の旗",
@@ -95,7 +116,34 @@
           "text": "二千年以上前の中国の兵法書、『孫子』の一節です。",
           "say": "にせんねんいじょうまえの、ちゅうごくのへいほうしょ、そんしの、いっせつです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "36-5",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "1-14",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "24-1",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Lá cờ thật chạy dọc theo 14 chữ, phim kỵ binh Kagemusha, tranh Shingen, thẻ tre Tôn Tử",
+      "cut": "fade"
     },
     {
       "label": "合図",
@@ -114,7 +162,33 @@
           "text": "速く進むとき、静かに待つとき、一気に攻めるとき、一歩も退かずに踏みとどまるとき。",
           "say": "はやくすすむとき、しずかにまつとき、いっきにせめるとき、いっぽもひかずに、ふみとどまるとき。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-9",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "18-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        },
+        {
+          "pick": "40-3",
+          "move": "hold",
+          "focus": [
+            0.55,
+            0.3
+          ]
+        }
+      ],
+      "why": "Tối dần ra chiến trường: bình phong Kawanakajima, kỵ binh Takeda, cảnh phim Shingen giữa rừng cờ",
+      "cut": "dip"
     },
     {
       "label": "恐怖",
@@ -125,7 +199,25 @@
           "text": "そしてこの旗は、敵の心にも恐れを植えつけ、これから戦う相手が、どれほど強い軍勢なのかを知らしめたのです。",
           "say": "そしてこのはたは、てきのこころにもおそれをうえつけ、これからたたかうあいてが、どれほどつよいぐんぜいなのかを、しらしめたのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-3",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "36-5",
+          "move": "pan-right",
+          "focus": [
+            0.3,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Lóe sáng vào trận một chọi một Shingen và Kenshin, rồi kỵ binh lao tới",
+      "cut": "flash"
     },
     {
       "label": "甲斐の虎",
@@ -144,8 +236,34 @@
           "text": "その旗は今も、山梨県甲州市の雲峰寺で、大切に守られています。",
           "say": "そのはたはいまも、やまなしけん、こうしゅうしの、うんぽうじで、たいせつにまもられています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "depth": false
+        },
+        {
+          "pick": "2-1",
+          "move": "rise",
+          "depth": false
+        },
+        {
+          "pick": "3-1",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tối dần về hiện tại: chân dung Shingen, lá cờ thật, chùa Unpō-ji",
+      "cut": "dip"
     }
   ],
-  "issue": 53
+  "issue": 53,
+  "music": {
+    "pick": "33-4",
+    "volume": 0.7
+  }
 }
