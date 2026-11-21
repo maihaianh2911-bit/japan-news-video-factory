@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "人より人形が多い村 徳島・名頃のかかしの里",
   "date": "2026-11-21",
   "style": "history",
@@ -65,7 +65,22 @@
           "text": "等身大の人形が300体以上も、あちこちに座っています。",
           "say": "とうしんだいのにんぎょうが、さんびゃくたいいじょうも、あちこちにすわっています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-3",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-1",
+          "move": "pan-right"
+        },
+        {
+          "pick": "7-3",
+          "move": "pan-left"
+        }
+      ],
+      "why": "Mở bằng hàng búp bê ngồi ở trạm chờ, rồi lia qua các nhóm búp bê trong làng"
     },
     {
       "label": "光景",
@@ -84,7 +99,31 @@
           "text": "初めて訪れた人が、思わず息を呑むほどの光景です。",
           "say": "はじめておとずれたひとが、おもわずいきをのむほどの、こうけいです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-6",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-5",
+          "move": "hold",
+          "focus": [
+            1.0,
+            0.5
+          ]
+        },
+        {
+          "pick": "10-4",
+          "move": "pan-left"
+        },
+        {
+          "pick": "11-1",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Trạm xe buýt, đôi vợ chồng ngoài ruộng, lớp học, phòng thể dục",
+      "cut": "fade"
     },
     {
       "label": "作り手",
@@ -103,7 +142,35 @@
           "text": "それを本物の父と間違えて、近所の人が挨拶をしていったといいます。",
           "say": "それを、ほんもののちちとまちがえて、きんじょのひとが、あいさつをしていったといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "move": "pan-right"
+        },
+        {
+          "pick": "12-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "7-8",
+          "move": "hold",
+          "focus": [
+            1.0,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-10",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Tối dần sang người làm: bà Ayano giữa các con búp bê, con bù nhìn ngoài ruộng, đôi tay đang làm",
+      "cut": "dip"
     },
     {
       "label": "面影",
@@ -118,7 +185,31 @@
           "text": "教室には、閉校前の最後の児童をモデルにした人形も座っています。",
           "say": "きょうしつには、へいこうまえの、さいごのじどうをモデルにしたにんぎょうも、すわっています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-20",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-13",
+          "move": "pan-right"
+        },
+        {
+          "pick": "10-2",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-17",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cận mặt búp bê bà cụ, rồi lớp học với học sinh và cô giáo",
+      "cut": "fade"
     },
     {
       "label": "記憶",
@@ -133,7 +224,27 @@
           "text": "その正体は、消えゆくふるさとの賑わいを、せめて形だけでもつなぎ止めたいという、切ない記憶の結晶でした。",
           "say": "そのしょうたいは、きえゆくふるさとのにぎわいを、せめてかたちだけでも、つなぎとめたいという、せつないきおくのけっしょうでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-17",
+          "move": "pan-right"
+        },
+        {
+          "pick": "12-12",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-7",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tối dần: toàn cảnh thung lũng, bà Ayano bên búp bê, kết ở trạm xe buýt",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "32-2",
+    "volume": 0.7
+  }
 }
