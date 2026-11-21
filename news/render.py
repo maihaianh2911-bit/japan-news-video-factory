@@ -1317,11 +1317,17 @@ def use_voice(volume):
 
 
 def loudness():
-    """The loudness the finished sound is brought to: -16 LUFS, raised for a story that asks for a louder voice
-    (no higher than -9: beyond that the limiter crushes the voice)."""
-    target = min(-9.0, -16 + 20 * math.log10(max(0.3, VOICE)))
-    return f"loudnorm=I={target:.1f}:TP=-1.0:LRA=7"
-MUSIC_LUFS = -35   # the music sits about 17 dB under the voice (VOICEVOX speaks at about -18 LUFS)
+    """The filters that bring the finished sound to its loudness: -16 LUFS, then, for a story that asks for a louder
+    voice, that much gain (at most 8 dB) and a limiter that keeps the peaks from clipping. (Asking loudnorm itself
+    for a higher target gave only 1.6 dB of the 4.6 asked: it will not push the peaks.)"""
+    chain = "loudnorm=I=-16:TP=-1.5:LRA=7"
+    # the limiter takes back part of the gain: measured, 8 dB of gain gives the 4.6 dB (70 %) asked for
+    gain = min(10.0, 1.75 * 20 * math.log10(max(0.3, VOICE)))
+    if abs(gain) > 0.05:
+        chain += f",volume={gain:.1f}dB"
+    if gain > 0.05:
+        chain += ",alimiter=limit=0.89:attack=3:release=60:level=disabled"
+    return chain
 
 
 def codec_args(duration, mixed=False):

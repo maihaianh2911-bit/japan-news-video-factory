@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "いちばん情けない顔 徳川家康としかみ像",
   "date": "2026-11-21",
   "style": "history",
@@ -73,7 +73,37 @@
           "say": "てんかびと、とくがわいえやすは、せんじょうできょうふのあまり、うまの上でもらしてしまったちょくごの、いちばんなさけない顔を、わざわざえしにえがかせ、しょうがいてもとに置いていたと伝えられています。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-15",
+          "move": "hold",
+          "focus": [
+            0.38,
+            0.23
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-16",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng bức Shikami, tiến vào khuôn mặt nhăn nhó"
     },
     {
       "label": "大敗",
@@ -92,7 +122,38 @@
           "text": "軍勢は総崩れとなり、家康は命からがら浜松城へ逃げ帰りました。",
           "say": "ぐんぜいはそうくずれとなり、いえやすは、いのちからがら、はままつじょうへ、にげかえりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "26-8",
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "12-9",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "depth": false
+        },
+        {
+          "pick": "26-3",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "16-15",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Tối dần về trận đánh; tranh trận, Shingen, rồi thành Hamamatsu",
+      "cut": "dip"
     },
     {
       "label": "言い訳",
@@ -103,7 +164,27 @@
           "text": "言い伝えによれば、家臣にそれを気づかれた家康は、「これは腰につけていた焼き味噌だ」と、苦しすぎる言い訳をしたといいます。",
           "say": "いいつたえによれば、かしんにそれを気づかれたいえやすは、これは、こしにつけていた、やきみそだ、と、くるしすぎるいいわけをしたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "18-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "7-1",
+          "move": "punch-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        }
+      ],
+      "why": "Cắt thẳng sang miso nướng, giật vào mặt tượng nhăn nhó cho câu chống chế",
+      "cut": "hard"
     },
     {
       "label": "しかみ像",
@@ -122,7 +203,38 @@
           "text": "それが、今も語り継がれる「しかみ像」です。",
           "say": "それが、今もかたりつがれる、しかみぞう、です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-12",
+          "move": "reveal",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "7-18",
+          "move": "hold",
+          "focus": [
+            0.4,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Chân dung Ieyasu rồi lộ dần bức tranh treo trong bảo tàng",
+      "cut": "fade"
     },
     {
       "label": "戒め",
@@ -133,7 +245,28 @@
           "text": "その後、慢心しそうになるたびに、家康はこの絵を見つめ、己の愚かさを戒め続けたといいます。",
           "say": "そのご、まんしんしそうになるたびに、いえやすはこの絵を見つめ、おのれのおろかさを、いましめつづけたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-20",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "1-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Tượng đá Shikami rồi lùi ra chân dung Ieyasu khi đã thành thiên hạ nhân",
+      "cut": "fade"
     },
     {
       "label": "天下",
@@ -144,8 +277,34 @@
           "text": "人生最大の屈辱から目を逸らさなかった男だからこそ、260年続く平和の世を築けたのかもしれません。",
           "say": "じんせいさいだいのくつじょくから、目をそらさなかったおとこだからこそ、にひゃくろくじゅうねんつづく、へいわのよを、きずけたのかもしれません。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "22-2",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "45-1",
+          "start": 20.5,
+          "seconds": 4.5,
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "23-1",
+          "move": "rise"
+        }
+      ],
+      "why": "Tối dần sang thời Edo: bình phong Edo, phim cũ lễ hội Toshogu, cổng Yomeimon",
+      "cut": "dip"
     }
   ],
-  "voice": 1.7
+  "voice": 1.7,
+  "music": {
+    "pick": "42-2",
+    "volume": 0.7
+  }
 }
