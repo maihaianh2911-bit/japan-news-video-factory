@@ -1,0 +1,255 @@
+{
+  "demo": false,
+  "duration_seconds": 80.83,
+  "release": {
+    "url": "",
+    "published": "2026-11-21",
+    "publisher": "",
+    "title": "「人格否定発言」妻を守った皇太子さま"
+  },
+  "photos": [
+    {
+      "page": "https://mainichi.jp/articles/20170614/mog/00m/040/001000c",
+      "title": "皇室：象徴天皇の役割「お気持ち踏まえ」 皇太子さま会見全文 ...",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://news.yahoo.co.jp/expert/articles/e5ee9b3097c1de27d5829279138b01a894dd5e2b",
+      "title": "新国王即位でさらに強まるデンマークとの絆 雅子さまとメアリー ...",
+      "creator": "news.yahoo.co.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://bunshun.jp/articles/photo/46478?pn=5",
+      "title": "写真](5ページ目)秋篠宮ご一家“激動の30年” 「人格否定発言」へ ...",
+      "creator": "bunshun.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://bunshun.jp/articles/photo/38275?pn=4",
+      "title": "写真](4ページ目)天皇陛下と雅子さま 「人格否定発言」の衝撃 ...",
+      "creator": "bunshun.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
+      "title": "皇后雅子さま輝く笑顔の記録】独身時代から還暦を迎えられたご ...",
+      "creator": "fujingaho.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://kaigo-postseven.com/15049/2",
+      "title": "新天皇皇后として新時代も手を携えて「雅子さまロイヤルアルバム ...",
+      "creator": "kaigo-postseven.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.25ans.jp/princess/koushitsu/g78576/newempressmf-190605/",
+      "title": "新皇后、雅子さま華麗なるファッションを振り返り！",
+      "creator": "25ans.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://bunshun.jp/articles/-/13008",
+      "title": "深夜12時を過ぎると更にエネルギッシュに 雅子さまが「小和田嬢 ...",
+      "creator": "bunshun.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://mainichi.jp/articles/20170615/k00/00e/040/250000c",
+      "title": "皇太子さま：デンマーク訪問へ 政府専用機で羽田空港出発 | 毎日新聞",
+      "creator": "mainichi.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://www.sankei.com/article/20230713-NJKFWSRJW5OI3H5LCPI4H2WJ6A/",
+      "title": "佳子さまのお住まい発表 「タイムリーではなかった」宮内庁長官 ...",
+      "creator": "sankei.com",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://topics.smt.docomo.ne.jp/article/dot/nation/dot-298147",
+      "title": "天皇陛下と雅子さま、そっと傾けた稚魚のバケツ 「一生全力で ...",
+      "creator": "topics.smt.docomo.ne.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    },
+    {
+      "page": "https://jisin.jp/koushitsu/2431622/",
+      "title": "両陛下は湖畔で内緒話、上皇ご夫妻は手をつながれてエスコート ...",
+      "creator": "jisin.jp",
+      "license": "",
+      "license_url": "",
+      "edits": "Cropped and animated for the vertical frame"
+    }
+  ],
+  "voice_credit": "VOICEVOX:青山龍星",
+  "music": {
+    "title": "Clair de Lune by Claude Debussy (1905, piano solo).opus",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_by_Claude_Debussy_(1905,_piano_solo).opus",
+    "creator": "Claude Debussy",
+    "license": "Public domain"
+  },
+  "scenes": [
+    {
+      "label": "人格否定発言",
+      "headline": "宮中の闇を\nぶちまけた皇太子",
+      "lines": [
+        "皇太子さまは記者会見で「妻、つまり今の雅子さまの人格を否定する動きがあった」と宮中の闇をぶちまけたことで、宮内庁の職員たちをマジで真っ青にさせたのだった。",
+        "本来、日本の皇族はどれほど理不尽な目にあっても公の場で本音を語らず、ただ微笑んで耐えるのが暗黙のルールとされている。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "こうたいしさまは、記者会見で、つま、つまり今の、まさこさまの、じんかくを否定する動きがあった、と、きゅうちゅうの闇を、ぶちまけたことで、くないちょうの職員たちを、マジで、まっさおにさせたのだった。",
+        "ほんらい、日本の、こうぞくは、どれほど、りふじんな目にあっても、おおやけの場で本音を語らず、ただ、ほほえんで耐えるのが、あんもくのルールとされている。"
+      ],
+      "cut": "",
+      "why": "Thái tử trong buổi họp báo (ảnh chính, mặt rõ ở nửa trên, không bị chữ che), rồi bà Masako.",
+      "era": "2004年",
+      "quotes": [
+        0
+      ],
+      "image_url": "https://mainichi.jp/articles/20170614/mog/00m/040/001000c",
+      "image_urls": [
+        "https://mainichi.jp/articles/20170614/mog/00m/040/001000c",
+        "https://news.yahoo.co.jp/expert/articles/e5ee9b3097c1de27d5829279138b01a894dd5e2b"
+      ]
+    },
+    {
+      "label": "タブーを破る",
+      "headline": "欧州訪問前の\n記者会見",
+      "lines": [
+        "それでも2004年、欧州訪問を前にした会見で、普段は温厚な陛下がそのタブーを真っ向から打ち破ったものだった。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "それでも2004年、おうしゅう訪問を前にした会見で、普段は、おんこうな、へいかが、そのタブーを、まっこうから打ち破ったものだった。"
+      ],
+      "cut": "page",
+      "why": "Thái tử trong buổi họp báo.",
+      "era": "2004年5月",
+      "quotes": [],
+      "image_url": "https://bunshun.jp/articles/photo/46478?pn=5",
+      "image_urls": [
+        "https://bunshun.jp/articles/photo/46478?pn=5",
+        "https://bunshun.jp/articles/photo/38275?pn=4"
+      ]
+    },
+    {
+      "label": "適応障害",
+      "headline": "重圧の中で",
+      "lines": [
+        "当時、優秀な外交官だった雅子さまは、世継ぎへの凄まじい重圧と閉鎖的な宮中のしきたりの中で、適応障害を発症されていたという。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "当時、優秀な、がいこうかんだった、まさこさまは、よつぎへの、すさまじい、じゅうあつと、へいさてきな、きゅうちゅうの、しきたりの中で、てきおうしょうがいを、発症されていたという。"
+      ],
+      "cut": "fade",
+      "why": "Bà Masako thời làm nhà ngoại giao, rồi lúc mệt mỏi trên xe.",
+      "era": "2003〜2004年",
+      "quotes": [],
+      "image_url": "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
+      "image_urls": [
+        "https://www.fujingaho.jp/culture/royal-family/a62603995/masakosama-memorial-album-2410/",
+        "https://kaigo-postseven.com/15049/2"
+      ]
+    },
+    {
+      "label": "バッシング",
+      "headline": "心ないバッシング",
+      "lines": [
+        "にもかかわらず、守られるどころか一部メディアや世間からは「公務をサボっている」と心ないバッシングを浴び続け、宮中でも孤立を深めていたのだそう。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "にもかかわらず、守られるどころか、一部メディアや世間からは、こうむをサボっている、と、心ないバッシングを浴び続け、きゅうちゅうでも、孤立を深めていたのだそう。"
+      ],
+      "cut": "fade",
+      "why": "Bà Masako giữa những lời chỉ trích.",
+      "era": "2004年",
+      "quotes": [],
+      "image_url": "https://www.25ans.jp/princess/koushitsu/g78576/newempressmf-190605/",
+      "image_urls": [
+        "https://www.25ans.jp/princess/koushitsu/g78576/newempressmf-190605/",
+        "https://bunshun.jp/articles/-/13008"
+      ]
+    },
+    {
+      "label": "覚悟",
+      "headline": "批判を背負う覚悟",
+      "lines": [
+        "愛する妻が追い詰められていくのをもう見ていられず、陛下は批判をすべて背負う覚悟で真実を口にされたと言われている。",
+        "その爆弾発言に日本中が凍りつき、「一体宮中で何が起きているんだ」と世間の空気は一気に変わった。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "愛する妻が、追い詰められていくのを、もう見ていられず、へいかは、批判をすべて背負う覚悟で、真実を口にされたと言われている。",
+        "その、ばくだん発言に、日本中が凍りつき、いったい、きゅうちゅうで、何が起きているんだ、と、世間の空気は、一気に変わった。"
+      ],
+      "cut": "hard",
+      "why": "Thái tử bên vợ, rồi Hoàng cung.",
+      "era": "2004年",
+      "quotes": [],
+      "image_url": "https://mainichi.jp/articles/20170615/k00/00e/040/250000c",
+      "image_urls": [
+        "https://mainichi.jp/articles/20170615/k00/00e/040/250000c",
+        "https://www.sankei.com/article/20230713-NJKFWSRJW5OI3H5LCPI4H2WJ6A/"
+      ]
+    },
+    {
+      "label": "妻を守る盾",
+      "headline": "妻を守る盾",
+      "lines": [
+        "当時は保守派から「軽率だ」と反発も受けたものの、あの日たった一人で妻を守る盾になった強さこそが、令和の今、国民に愛されるお二人の穏やかな笑顔につながっているのかもしれない。"
+      ],
+      "visual": "photo",
+      "value": "",
+      "evidence": "",
+      "say": [
+        "当時は、ほしゅはから、けいそつだ、と反発も受けたものの、あの日、たった一人で、妻を守る、たてになった強さこそが、れいわの今、こくみんに愛される、お二人の、おだやかな笑顔に、つながっているのかもしれない。"
+      ],
+      "cut": "fade",
+      "why": "Thiên hoàng và Hoàng hậu thời Reiwa cười bên nhau.",
+      "era": "令和",
+      "quotes": [],
+      "image_url": "https://topics.smt.docomo.ne.jp/article/dot/nation/dot-298147",
+      "image_urls": [
+        "https://topics.smt.docomo.ne.jp/article/dot/nation/dot-298147",
+        "https://jisin.jp/koushitsu/2431622/"
+      ]
+    }
+  ]
+}
