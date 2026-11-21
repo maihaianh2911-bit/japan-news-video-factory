@@ -47,7 +47,12 @@ each (the same in every repo of the owner's Japanese channels):
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
 is: frame it again, pick another, or search again.
 
-**The first picture (the hook, about the first 5 seconds)**
+**The first picture (the hook, about the first 5 seconds)** — owner, 21/11/2026: "quá dài rồi, chỉ nên để 3 dòng
+thôi, ảnh hook đầu không quá 5s": the hook line printed big (`"quote": true`) is **at most 3 rows, so at most 42
+characters**: a longer first sentence is split in two lines of the story, the first part the quote, the rest a
+normal line (the words stay the same, also for a script the owner says to keep unchanged); and **the first picture
+stays at most 5 seconds** (with `fx` the engine cuts to the scene's next picture after 5 s, so a first scene read
+longer than that needs a second picture). `python -m news.custom` prints a `warning:` for both: settle it.
 1. It is the best picture of the whole video: sharp, bright, not blurred, not grainy.
 2. It shows the face of the main person clearly, or a place or a thing the Japanese audience recognises at once.
 3. It matches the hook line: the right person, the story being told.

@@ -23,6 +23,7 @@ STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "sce
 STYLES = ("news", "paper", "story")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
+QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth"}
 FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
@@ -250,12 +251,40 @@ def validate(data, name=None):
                     problems += text_problem(line.get("say"), f'{at}: "say"', required=False)
                     if "quote" in line and not isinstance(line["quote"], bool):
                         problems.append(f'{at}: "quote" must be true or false, got {line["quote"]!r}')
+
                 else:
                     problems += text_problem(line, at)
         if "photo" in scene:
             problems += check_photos(scene["photo"], where, searches)
         problems += cut_problems(scene, where)
     return problems
+
+
+def hook_warnings(data):
+    """The hook rules of 21/11/2026 for a story with "fx" (owner: "quá dài rồi, chỉ nên để 3 dòng thôi, ảnh hook
+    đầu không quá 5s"): a quote is printed on at most 3 rows, so it has at most QUOTE_MOST characters; and the
+    first picture stays at most 5 seconds, so a first scene read longer than that needs a second picture (about
+    0.15 s a character). Warnings, not problems: stories finished before the rule still validate."""
+    scenes = data.get("scenes")
+    if not data.get("fx") or not isinstance(scenes, list) or not scenes or not isinstance(scenes[0], dict):
+        return []
+    warnings = []
+    for number, scene in enumerate(scenes, 1):
+        for index, line in enumerate(scene.get("lines") or [], 1) if isinstance(scene, dict) else ():
+            if isinstance(line, dict) and line.get("quote") and len(line.get("text") or "") > QUOTE_MOST:
+                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 3 rows, so at most "
+                                f"{QUOTE_MOST} characters (this one has {len(line['text'])}): make the quote the first "
+                                f"part of the sentence and give the rest as the next line, not a quote")
+    first = scenes[0]
+    photo = first.get("photo")
+    count = len(photo) if isinstance(photo, list) else 1 if photo else 0
+    lines = first.get("lines") if isinstance(first.get("lines"), list) else []
+    chars = sum(len(line if isinstance(line, str) else line.get("text") or "") for line in lines
+                if isinstance(line, (str, dict)))
+    if count == 1 and chars * 0.15 > 5.5:
+        warnings.append(f"scene 1: it is read about {round(chars * 0.15)} s and the hook picture stays at most 5 s: "
+                        f"give the scene a second picture")
+    return warnings
 
 
 def read(path):
@@ -388,6 +417,8 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
+    for warning in hook_warnings(data):
+        print(f"warning: {warning}")
     caption = caption_path(sys.argv[1])
     if caption.exists():
         if problems := check_caption(caption):
