@@ -1308,7 +1308,19 @@ def video_kbps(duration, budget=SIZE_BUDGET):
     return max(300, min(MAX_VIDEO_KBPS, int(room)))
 
 
-LOUDNESS = "loudnorm=I=-16:TP=-1.5:LRA=7"
+VOICE = 1.0   # "voice" of a story: how loud the finished sound is (1 = the usual -16 LUFS; 1.7 = 70 % louder)
+
+
+def use_voice(volume):
+    global VOICE
+    VOICE = float(volume or 1.0)
+
+
+def loudness():
+    """The loudness the finished sound is brought to: -16 LUFS, raised for a story that asks for a louder voice
+    (no higher than -9: beyond that the limiter crushes the voice)."""
+    target = min(-9.0, -16 + 20 * math.log10(max(0.3, VOICE)))
+    return f"loudnorm=I={target:.1f}:TP=-1.0:LRA=7"
 MUSIC_LUFS = -35   # the music sits about 17 dB under the voice (VOICEVOX speaks at about -18 LUFS)
 
 
@@ -1318,18 +1330,18 @@ def codec_args(duration, mixed=False):
     kbps = video_kbps(duration)
     return ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-maxrate", f"{kbps}k", "-bufsize", f"{2 * kbps}k",
             "-pix_fmt", "yuv420p",
-            "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", *([] if mixed else ["-af", LOUDNESS]),
+            "-c:a", "aac", "-b:a", f"{AUDIO_KBPS}k", *([] if mixed else ["-af", loudness()]),
             "-movflags", "+faststart", "-shortest"]
 
 
 def music_args(music, duration):
     """Inputs and audio graph that lay the music (looped if short, faded in and out) under the voice (input 1)."""
-    level = MUSIC_LUFS + 20 * math.log10(max(0.2, music.volume))
+    level = MUSIC_LUFS + 20 * math.log10(max(0.2, music.volume)) - 20 * math.log10(max(1.0, VOICE))
     fade_out = max(0.0, duration - 3.0)
     graph = (f"[1:a]aformat=sample_rates=44100:channel_layouts=mono[voice];"
              f"[2:a]aformat=channel_layouts=mono,loudnorm=I={level:.1f}:TP=-9:LRA=11,aresample=44100,"
              f"afade=t=in:st=0:d=2,afade=t=out:st={fade_out:.2f}:d=3,atrim=0:{duration:.2f}[music];"
-             f"[voice][music]amix=inputs=2:duration=first:normalize=0,{LOUDNESS},aresample=44100[mix]")
+             f"[voice][music]amix=inputs=2:duration=first:normalize=0,{loudness()},aresample=44100[mix]")
     skip = ["-ss", f"{music.start:.2f}"] if getattr(music, "start", 0) else []
     return [*skip, "-stream_loop", "-1", "-i", music.path], ["-filter_complex", graph, "-map", "0:v", "-map", "[mix]"]
 

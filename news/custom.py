@@ -19,7 +19,7 @@ from .story import Beat
 from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx"}
+              "music", "pace", "fx", "voice"}
 STYLES = ("news", "paper", "story", "history")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
@@ -220,6 +220,9 @@ def validate(data, name=None):
             problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
+    voice = data.get("voice", 1.0)
+    if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
+        problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
     pace = data.get("pace")
     if pace is not None:
         if not isinstance(pace, dict):
@@ -352,7 +355,7 @@ def load_story(path, pictures=None):
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
-                      float(pace.get("scene_pause", 0.0)), data.get("fx"))
+                      float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):

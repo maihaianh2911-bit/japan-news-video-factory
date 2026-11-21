@@ -9,7 +9,7 @@ import tempfile
 import wave
 
 from .custom import StoryError, load_story
-from .render import encode, stills, use_fx, use_style, write_subtitles
+from .render import encode, stills, use_fx, use_style, use_voice, write_subtitles
 from .sources import JST, discover, get_release
 from .story import VOICE_CREDIT, build_story
 from .visuals import find_photos
@@ -69,6 +69,7 @@ def main():
             raise SystemExit(f"error: {error}") from None
         use_style(release.style)
         use_fx(release.fx)
+        use_voice(release.voice)
         if args.stills:
             args.stills.mkdir(parents=True, exist_ok=True)
             stills(beats, release, scene_photos, args.stills)

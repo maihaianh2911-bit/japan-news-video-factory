@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "title": "一杯の茶の恩 大谷吉継と石田三成",
   "date": "2026-11-20",
   "style": "history",
@@ -60,7 +60,10 @@
     "music:shakuhachi",
     "music:koto",
     "music:biwa Japanese",
-    "music:Japanese traditional music"
+    "music:Japanese traditional music",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano"
   ],
   "scenes": [
     {
@@ -398,5 +401,6 @@
   "music": {
     "pick": "42-3",
     "volume": 1
-  }
+  },
+  "voice": 1.7
 }
