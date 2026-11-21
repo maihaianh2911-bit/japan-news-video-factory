@@ -1,0 +1,108 @@
+{
+  "stage": "find",
+  "issue": 44,
+  "title": "SMAP生謝罪 公開処刑と呼ばれた映像",
+  "date": "2026-11-21",
+  "style": "story",
+  "kicker": "スターの物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "web:SMAP 生謝罪 2016 黒いスーツ 5人 => five Japanese men in black suits standing in a row on a TV studio set",
+    "web:SMAP×SMAP 謝罪 生放送 2016年1月18日 => five men in black suits apologising on live television",
+    "page:https://www.j-cast.com/2016/01/18255889.html",
+    "page:https://www.jprime.jp/articles/-/4314",
+    "wiki:SMAP",
+    "web:SMAP 解散報道 2016 スポーツ紙 一面 => Japanese sports newspaper front pages about a boy band breakup",
+    "web:SMAP 5人 笑顔 コンサート => five Japanese pop stars smiling on a concert stage",
+    "web:SMAP 全盛期 5人 => five Japanese male idols together",
+    "web:SMAP 謝罪 表情 疲れ 2016 => tired faces of Japanese men in black suits on television",
+    "web:SMAP 謝罪会見 黒スーツ 木村拓哉 => a Japanese man in a black suit and black tie, serious face",
+    "web:SMAP 生謝罪 中居正広 => a Japanese man in a black suit speaking on television",
+    "wiki:中居正広",
+    "wiki:草彅剛",
+    "web:SMAP 謝罪 立ち位置 木村 中央 中居 端 => five men in black suits in a row, TV screenshot",
+    "web:SMAP 謝罪 草彅剛 発言 => a Japanese man in a black suit speaking with a serious face",
+    "web:SMAP 解散 2016年12月31日 新聞 => Japanese newspaper front page about a band breakup",
+    "web:SMAP 解散 ファン 花 => fans leaving flowers and messages for a Japanese band",
+    "web:SMAP 最後 2016 5人 => five Japanese men, final appearance",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Erik Satie Gnossienne piano"
+  ],
+  "scenes": [
+    {
+      "label": "公開処刑",
+      "era": "2016年1月",
+      "headline": "SMAP\n生謝罪",
+      "lines": [
+        {
+          "text": "国民的グループSMAPの5人が黒いスーツで生謝罪した映像は、目から完全に光が消えていて、世間からは「公開処刑」とまで呼ばれていたのだった。",
+          "say": "国民的グループ、スマップの5人が、黒いスーツで生謝罪した映像は、目から完全に光が消えていて、世間からは、こうかいしょけいとまで呼ばれていたのだった。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "解散報道",
+      "era": "2016年1月",
+      "headline": "突然の解散報道",
+      "lines": [
+        {
+          "text": "2016年1月、約30年にわたり日本のトップを走り続けたSMAPの解散報道が突然飛び出し、ファンを安心させるため5人の生出演が急きょ決まった。",
+          "say": "2016年1月、約30年にわたり日本のトップを走り続けた、スマップの解散報道が突然飛び出し、ファンを安心させるため、5人の生出演が急きょ決まった。"
+        },
+        "本来なら日本中がホッとする瞬間になるはずだったのだ。"
+      ]
+    },
+    {
+      "label": "黒いスーツ",
+      "era": "2016年1月18日",
+      "headline": "喪服のような黒",
+      "lines": [
+        "しかし映し出されたのは、鳥肌が立つほど冷たい光景だった。",
+        "トップスター5人が喪服のような黒いスーツで硬直し、その表情は恐ろしいほど疲れ切っていたという。"
+      ]
+    },
+    {
+      "label": "並び",
+      "era": "2016年1月18日",
+      "headline": "異例の並び",
+      "lines": [
+        {
+          "text": "さらに異様だったのが謝罪の中身で、草彅剛が「ジャニーさんに謝る機会を木村くんが作ってくれて」と、木村拓哉に感謝の言葉を述べたのだ。",
+          "say": "さらに異様だったのが謝罪の中身で、くさなぎつよしが、ジャニーさんに謝る機会を、きむらくんが作ってくれて、と、きむらたくやに感謝の言葉を述べたのだ。"
+        },
+        {
+          "text": "しかもリーダーの中居正広は端へ追いやられ、中央には木村が立つ異例の並び。",
+          "say": "しかもリーダーの、なかいまさひろは端へ追いやられ、中央には、きむらが立つ、異例の並び。"
+        },
+        "その瞬間、視聴者はこれが和解ではなく、見せしめなのだと悟ってしまった。"
+      ]
+    },
+    {
+      "label": "解散",
+      "era": "2016年12月",
+      "headline": "消えない傷跡",
+      "lines": [
+        {
+          "text": "わずか2分余りの放送は視聴率30％を超えたが、残ったのは歓喜ではなく芸能界の闇への恐怖だけ。",
+          "say": "わずか2分余りの放送は、視聴率30パーセントを超えたが、残ったのは歓喜ではなく、芸能界の闇への恐怖だけ。"
+        },
+        {
+          "text": "そして1年も経たずSMAPは解散し、この映像は一世代の心に消えない傷跡を残したと言われている。",
+          "say": "そして1年も経たず、スマップは解散し、この映像は、一世代の心に消えない傷跡を残したと言われている。"
+        }
+      ]
+    }
+  ]
+}
