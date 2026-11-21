@@ -6839,5 +6839,144 @@
     "seconds": 181.0
    }
   ]
+ },
+ {
+  "k": 46,
+  "query": "music:Gymnopédie Satie piano",
+  "results": [
+   {
+    "title": "File:Satie Gymnopedie No. 3 for piano solo 01.wav",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No._3_for_piano_solo_01.wav",
+    "size": 5357612,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Satie",
+    "description": "Satie Gymnopedie No. 3 for piano solo",
+    "file": "46-1.wav",
+    "seconds": 30.4
+   },
+   {
+    "title": "File:Erik Satie -Gymnopedie No.1 - Arr for alto saxophone and piano - David Hernando Vitores.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-Gymnopedie_No.1_-_Arr_for_alto_saxophone_and_piano_-_David_Hernando_Vitores.ogg",
+    "size": 9817830,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Erik Satie",
+    "description": "Gymnopedie No.1 - Arr for alto saxophone and piano.",
+    "file": "46-2.ogg",
+    "seconds": 220.0
+   },
+   {
+    "title": "File:Satie Gymnopedie No 3 performed by Michael Laucke.flac",
+    "page": "https://commons.wikimedia.org/wiki/File:Satie_Gymnopedie_No_3_performed_by_Michael_Laucke.flac",
+    "size": 6941233,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Mlaucke",
+    "description": "Originally written for the piano, the Gymnopedies are extremely well-suited to the natural idiomatic expression of the guitar. This arrangement of the Three Gymnopedies comprises ALL the notes of the original piano versions: a complex process since all the piano sounds must fit comfortably, or uncom",
+    "file": "46-3.flac",
+    "seconds": 123.1
+   },
+   {
+    "title": "File:Erik Satie - gymnopedies - la 1 ere. lent et douloureux.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Erik_Satie_-_gymnopedies_-_la_1_ere._lent_et_douloureux.ogg",
+    "size": 3696351,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Robin Alciatore",
+    "description": "Gymnopédies - la 1ére. lent et douloureux",
+    "file": "46-4.ogg",
+    "seconds": 183.6
+   }
+  ]
+ },
+ {
+  "k": 47,
+  "query": "music:Chopin Nocturne piano",
+  "results": [
+   {
+    "title": "File:Chopin, Nocturne op 32 no 1.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_op_32_no_1.ogg",
+    "size": 4852417,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Constantin Stephan, piano",
+    "description": "Nocturne op 32 no 1 by Frédéric Chopin performed by Constantin Stephan",
+    "file": "47-1.ogg",
+    "seconds": 283.0
+   },
+   {
+    "title": "File:Chopin, Nocturne in C-sharp minor, Op. Posth.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin,_Nocturne_in_C-sharp_minor,_Op._Posth.ogg",
+    "size": 5302273,
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "artist": "Frédéric Chopin",
+    "description": "Nocturne No. 20 in C-sharp minor, Op. posth.",
+    "file": "47-2.ogg",
+    "seconds": 252.5
+   },
+   {
+    "title": "File:Chopin Nocturne Op.27 No.1.oga",
+    "page": "https://commons.wikimedia.org/wiki/File:Chopin_Nocturne_Op.27_No.1.oga",
+    "size": 692632,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Frédéric Chopin",
+    "description": "nocturne op. 27 n° 1 Chopin, piano",
+    "file": "47-3.ogg",
+    "seconds": 49.3
+   }
+  ]
+ },
+ {
+  "k": 48,
+  "query": "music:Debussy Clair de lune piano",
+  "results": [
+   {
+    "title": "File:Moonlight - Clair de Lune (As the rememberance of Sir Debussy.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Moonlight_-_Clair_de_Lune_(As_the_rememberance_of_Sir_Debussy.ogg",
+    "size": 2808758,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "artist": "Jason M. C., Han",
+    "description": "Jason's versions played in Wikiversity: 1. Notation-reading and Notation-learning from the page 93-98 of the edition from 'Standard Grade Testing Course of Piano - Central Musical College Grading-Test Committe of China' (中央音乐学院标准考级教程编委会-海内外音乐考级), 2. and, as the respect of the impacts of UK's Trinity",
+    "file": "48-1.ogg",
+    "seconds": 251.1
+   },
+   {
+    "title": "File:Clair de Lune by Claude Debussy (1905, piano solo).opus",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_by_Claude_Debussy_(1905,_piano_solo).opus",
+    "size": 5214866,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy",
+    "description": "Clair de Lune (No. 3 from Suite Bergamasque) by Claude Debussy 1905 pub.",
+    "file": "48-2.ogg",
+    "seconds": 275.8
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track violins.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_violins.ogg",
+    "size": 3822700,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "violins backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "48-3.ogg",
+    "seconds": 236.2
+   },
+   {
+    "title": "File:Clair de Lune WikiOrchestra backing track basses.ogg",
+    "page": "https://commons.wikimedia.org/wiki/File:Clair_de_Lune_WikiOrchestra_backing_track_basses.ogg",
+    "size": 3822746,
+    "license": "Public domain",
+    "license_url": "",
+    "artist": "Claude Debussy (1922 arrangement by Hubert Mouton)",
+    "description": "bass backing track for 'Clair de Lune' chamber orchestra arrangement",
+    "file": "48-4.ogg",
+    "seconds": 236.2
+   }
+  ]
  }
 ]
