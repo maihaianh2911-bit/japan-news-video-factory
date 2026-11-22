@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 55,
   "title": "伝説の花嫁姿と一生の約束",
   "date": "2026-11-22",
@@ -31,7 +31,26 @@
           "text": "この言葉で結ばれた雅子さまの花嫁姿は、今も伝説として語り継がれています。",
           "say": "この言葉で結ばれた、まさこさまの、はなよめすがたは、今も、でんせつとして、語り継がれています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-7",
+          "focus": [
+            0.55,
+            0.22
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-11",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai người cười vẫy tay trên xe mui trần ngày cưới (ảnh mở đầu, mặt rõ), rồi bà Masako đội vương miện."
     },
     {
       "label": "婚約会見",
@@ -46,7 +65,24 @@
           "text": "現れた雅子さまの美しさに、記者たちからは思わずため息が漏れました。",
           "say": "現れた、まさこさまの美しさに、記者たちからは、思わず、ためいきが、もれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-6",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Buổi họp báo đính hôn 1/1993, rồi bà Masako mặc đồ vàng chanh cười.",
+      "cut": "fade"
     },
     {
       "label": "レモンイエロー",
@@ -57,7 +93,27 @@
           "text": "レモンイエローのアンサンブルに、同じ色の帽子とクラッチバッグ、首元と耳元には控えめなパール。",
           "say": "レモンイエローのアンサンブルに、同じ色の帽子と、クラッチバッグ、くびもとと、みみもとには、ひかえめなパール。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-4",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-13",
+          "focus": [
+            0.42,
+            0.1
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Cận mũ và ngọc trai, rồi cả bộ đồ vàng chanh đứng cạnh Thái tử.",
+      "cut": "fade"
     },
     {
       "label": "明かされた言葉",
@@ -68,7 +124,24 @@
           "text": "そしてその会見で、雅子さまが少し照れながら明かしたのが、冒頭のプロポーズの言葉だったのです。",
           "say": "そして、その会見で、まさこさまが、少し、てれながら明かしたのが、ぼうとうの、プロポーズの言葉だったのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-7",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "7-9",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Thái tử nhìn bà Masako đang cười ngượng, rồi bà cười tươi.",
+      "cut": "page"
     },
     {
       "label": "結婚の儀",
@@ -79,7 +152,24 @@
           "text": "それから半年後の6月9日、結婚の儀の日。前の晩から降り続いた豪雨は、奇跡のように上がりました。",
           "say": "それから半年後の、ろくがつここのか、けっこんのぎの日。前の晩から降り続いた、ごううは、きせきのように、上がりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-2",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-2",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ngày cưới: bà Masako mặc thập nhị đơn, rồi ảnh cưới chính thức của hai người.",
+      "cut": "dip"
     },
     {
       "label": "森英恵のドレス",
@@ -90,7 +180,35 @@
           "text": "パレードで雅子さまがまとわれたのは、世界的デザイナー森英恵さんが仕立てた、白と金のバラの花びらをあしらったドレス。",
           "say": "パレードで、まさこさまが、まとわれたのは、世界的デザイナー、もりはなえさんが仕立てた、白と金の、バラの花びらを、あしらったドレス。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-8",
+          "focus": [
+            0.53,
+            0.0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nhà thiết kế Mori Hanae, rồi chiếc váy đính hoa hồng và vương miện.",
+      "cut": "fade"
     },
     {
       "label": "成婚パレード",
@@ -101,7 +219,24 @@
           "text": "ティアラを輝かせたオープンカーが4.2キロを進むと、沿道を埋めた19万人の歓声が、お二人を包みました。",
           "say": "ティアラを輝かせたオープンカーが、よんてんにキロを進むと、えんどうを埋めた、じゅうきゅうまんにんの、かんせいが、おふたりを包みました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-11",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Xe mui trần chở hai người giữa đám đông, rồi hai người vẫy tay.",
+      "cut": "hard"
     },
     {
       "label": "宮中饗宴の儀",
@@ -112,7 +247,27 @@
           "text": "さらに宮中饗宴の儀では、アプリコット色のローブモンタントで現れ、伝統と現代が溶け合うその装いに、「皇室に新しい時代の風が吹き込んだ」と称賛が集まりました。",
           "say": "さらに、きゅうちゅう、きょうえんのぎでは、アプリコット色の、ローブモンタントで現れ、伝統と現代が溶け合う、その装いに、こうしつに、新しい時代の風が吹き込んだ、と、しょうさんが集まりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.62,
+            0.18
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-8",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tiệc mừng ở Hoàng cung: bà Masako mặc lễ phục màu mơ cạnh Thái tử.",
+      "cut": "page"
     },
     {
       "label": "一生の約束",
@@ -123,7 +278,24 @@
           "text": "そしてあの日の「一生お守りします」という約束を、11年後、皇太子さまは見事に果たされたのです。",
           "say": "そして、あの日の、いっしょう、お守りします、という約束を、じゅういちねんご、こうたいしさまは、みごとに、果たされたのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-12",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Thái tử trong buổi họp báo năm 2004, rồi hai người cùng vẫy tay trong lễ diễu hành đăng quang năm 2019.",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -156,5 +328,9 @@
     "file:stories/media/2026-11-22-masako-hanayome/v-0m38s.jpg",
     "file:stories/media/2026-11-22-masako-hanayome/v-0m47s.jpg",
     "file:stories/media/2026-11-22-masako-hanayome/v-0m56s.jpg"
-  ]
+  ],
+  "music": {
+    "pick": "22-2",
+    "volume": 0.7
+  }
 }
