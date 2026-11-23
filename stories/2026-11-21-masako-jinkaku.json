@@ -1,5 +1,5 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 43,
   "title": "「人格否定発言」妻を守った皇太子さま",
   "date": "2026-11-21",
@@ -232,7 +232,11 @@
     "web:天皇皇后両陛下 笑顔 令和 => an emperor and empress smiling warmly together",
     "web:天皇陛下 雅子さま 見つめ合う 笑顔",
     "music:Debussy Clair de lune piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "page:https://bunshun.jp/articles/photo/38275?pn=4",
+    "web:2004年5月 皇太子さま 記者会見 会見場 マイク => a Japanese crown prince in a dark suit speaking at a press conference with microphones",
+    "web:雅子さま 2004年 お出まし 硬い表情 => a Japanese princess in the 2000s with a serious or sad face",
+    "web:皇太子ご夫妻 2004年 ご一緒 => a Japanese crown prince and princess together in the mid 2000s"
   ],
   "music": {
     "pick": "15-2",
