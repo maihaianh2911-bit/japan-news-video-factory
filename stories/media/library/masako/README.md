@@ -14,3 +14,8 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `1993-engagement-yellow-smile-vertical.jpg` | Bà Masako mặc đồ vàng chanh cười tươi, họp báo đính hôn 19/1/1993, khổ dọc | 980×1227 | fujingaho.jp | 2026-11-22-masako-hanayome |
 | `1993-engagement-yellow-hat-pearls.jpg` | Cận mặt bà Masako với mũ vàng chanh và ngọc trai, đính hôn 1/1993 | 800×800 | j7p.jp | 2026-11-22-masako-hanayome |
 | `1993-engagement-yellow-portrait.jpg` | Bà Masako đồ vàng chanh, mũ, ngọc trai, khổ dọc nhỏ, 1/1993 | 558×883 | bunshun.jp | 2026-11-22-masako-hanayome |
+| `waving-black-suit.jpg` | Bà Masako mặc vest đen, vẫy tay, cười (ảnh gần vuông: dùng contain) | 1415×1216 | news.yahoo.co.jp | 2026-11-21-masako-jinkaku |
+| `diplomat-red-jacket.jpg` | Bà Masako thời làm nhà ngoại giao, áo đỏ, cười | 1003×1005 | fujingaho.jp | 2026-11-21-masako-jinkaku |
+| `car-window-tired.jpg` | Bà Masako nhìn ra cửa kính xe, vẻ mệt mỏi (thời kỳ dưỡng bệnh) | 800×535 | kaigo-postseven.com | 2026-11-21-masako-jinkaku |
+| `pink-suit-smiling.jpg` | Bà Masako mặc vest hồng, cười, khổ vuông | 1200×1200 | 25ans.jp | 2026-11-21-masako-jinkaku |
+| `teal-suit-desk.jpg` | Bà Masako mặc vest xanh ngọc ngồi ở bàn họp báo, điềm tĩnh | 600×897 | bunshun.jp | 2026-11-21-masako-jinkaku |

@@ -13,7 +13,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
 | [kokyo](kokyo/README.md) | 1 |
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
-| [masako](masako/README.md) | 8 |
-| [naruhito](naruhito/README.md) | 3 |
-| [naruhito-masako](naruhito-masako/README.md) | 10 |
+| [kunaicho](kunaicho/README.md) | 1 |
+| [masako](masako/README.md) | 13 |
+| [naruhito](naruhito/README.md) | 5 |
+| [naruhito-masako](naruhito-masako/README.md) | 13 |
 | [takeda-shingen](takeda-shingen/README.md) | 19 |

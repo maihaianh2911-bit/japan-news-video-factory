@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 43,
   "title": "「人格否定発言」妻を守った皇太子さま",
   "date": "2026-11-21",
@@ -38,12 +38,12 @@
       ],
       "photo": [
         {
-          "pick": "5-4",
+          "pick": "5-9",
           "focus": [
             0.52,
-            0.0
+            0.32
           ],
-          "move": "push-in"
+          "move": "pull-back"
         },
         {
           "pick": "12-5",
@@ -51,10 +51,11 @@
             0.5,
             0.3
           ],
-          "move": "pull-back"
+          "move": "push-in",
+          "fit": "contain"
         }
       ],
-      "why": "Thái tử trong buổi họp báo (ảnh chính, mặt rõ ở nửa trên, không bị chữ che), rồi bà Masako."
+      "why": "Mở đầu bằng ảnh Thái tử nét nhất cả video, mặt rõ ở nửa trên, rồi tới bà Masako."
     },
     {
       "label": "タブーを破る",
@@ -139,15 +140,15 @@
           "move": "push-in"
         },
         {
-          "pick": "7-7",
+          "pick": "8-7",
           "focus": [
             0.5,
             0.3
           ],
-          "move": "push-in"
+          "move": "hold"
         }
       ],
-      "why": "Bà Masako giữa những lời chỉ trích."
+      "why": "Bà Masako giữa những lời chỉ trích, vẫn lặng lẽ chịu đựng."
     },
     {
       "label": "覚悟",
@@ -197,23 +198,23 @@
       ],
       "photo": [
         {
-          "pick": "14-4",
+          "pick": "14-2",
           "focus": [
-            0.5,
-            0.35
+            0.67,
+            0.3
           ],
           "move": "push-in"
         },
         {
-          "pick": "14-2",
+          "pick": "1-12",
           "focus": [
-            0.67,
-            0.0
+            0.5,
+            0.3
           ],
-          "move": "hold"
+          "move": "pull-back"
         }
       ],
-      "why": "Thiên hoàng và Hoàng hậu thời Reiwa cười bên nhau."
+      "why": "Hai người cười bên nhau, rồi lùi ra ảnh chân dung Thiên hoàng và Hoàng hậu thời Reiwa."
     }
   ],
   "searches": [
