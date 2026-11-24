@@ -310,6 +310,14 @@ ask the owner to allow `main`.
      eq=saturation=1.3:contrast=1.06` (the source's captions and TikTok marks lie below y 720), stills scaled 2×
      with the same sharpening and colour. Use `"fx": {"motion": true, "text": true}` (the mincho face does not suit
      this frame). Example: `stories/2026-11-21-seria-top4.json` (count down 4 → 1, script approved by the owner).
+     **A ranking video opens with "トップ10" as its first word** (owner, 24/11/2026: "luôn bắt đầu bằng dạng: top
+     10 …", "của mình sẽ đưa top .. lên đầu"): the source's own hook words follow it, e.g. the source's
+     「知らなきゃヤバい マジで便利なセリアの神商品10選」 becomes 「トップ10！知らなきゃヤバい、マジで便利なセリアの神商品。」
+     (keep the source's hook words, do not invent a new hook: the owner rejected new ones). Length 62–66 s
+     (owner, 24/11/2026: "chỉ cần 62-66s thôi, phải cuốn"), count down from the lowest rank. Pictures: mostly web
+     searches (package, product, shop), the source's footage only for moments hard to find (owner, 24/11/2026:
+     "nhớ là phải tìm cả ảnh bên ngoài, đừng dùng nguyên video gốc"). Examples: `2026-11-24-osaka-okashi`,
+     `2026-11-24-seria-10-6`, `2026-11-24-boom-10-6`.
    - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
      switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
      made before are not changed (a story without `fx` renders exactly as before). What each one does:
