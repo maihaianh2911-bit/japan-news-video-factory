@@ -51,7 +51,8 @@
     "video:yabusame",
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
-    "music:Debussy Clair de lune piano"
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-portrait-fire.jpg"
   ],
   "scenes": [
     {
@@ -68,7 +69,28 @@
           "text": "夜明けの寺で襲われました。",
           "say": "よあけのてらで、おそわれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "36-1",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "12-8",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng chân dung Nobunaga nổi tiếng nhất chìm trong lửa, rồi tranh quân lính tràn vào chùa Honnō-ji"
     },
     {
       "label": "本能寺",
@@ -83,7 +105,33 @@
           "text": "中国地方で戦う羽柴秀吉を助けるため、自らも出陣する直前のことです。",
           "say": "ちゅうごくちほうでたたかう、はしばひでよしをたすけるため、みずからも、しゅつじんするちょくぜんのことです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-15",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.62
+          ],
+          "depth": false
+        },
+        {
+          "pick": "4-2",
+          "move": "rise"
+        },
+        {
+          "pick": "8-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        }
+      ],
+      "cut": "fade",
+      "why": "Bức họa Nobunaga, cổng chùa Honnō-ji ở Kyoto, rồi Hideyoshi đang đánh ở miền Tây"
     },
     {
       "label": "謀反",
@@ -107,7 +155,36 @@
           "say": "ぜひにおよばず。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-8",
+          "move": "push-in",
+          "focus": [
+            0.52,
+            0
+          ]
+        },
+        {
+          "pick": "2-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.42
+          ],
+          "depth": false
+        },
+        {
+          "pick": "18-3",
+          "move": "hold",
+          "focus": [
+            0.43,
+            0.3
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Tối dần: rừng cờ hoa cát cánh của Mitsuhide, chân dung Mitsuhide, rồi Nobunaga giữa lửa nói 「是非に及ばず」"
     },
     {
       "label": "最期",
@@ -134,7 +211,37 @@
           "text": "その亡骸は、ついに見つからなかったといいます。",
           "say": "そのなきがらは、ついに、みつからなかったといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-20",
+          "move": "rise",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "13-17",
+          "move": "pull-back",
+          "focus": [
+            0.63,
+            0.35
+          ],
+          "depth": false
+        },
+        {
+          "pick": "18-7",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "cut": "flash",
+      "why": "Lóe sáng vào trận: Nobunaga cầm cung giữa biển lửa, Mori Ranmaru, rồi bóng người trong chùa cháy"
     },
     {
       "label": "天下",
@@ -149,8 +256,34 @@
           "text": "信長が夢見た天下は、こうして秀吉の手に渡っていったのです。",
           "say": "のぶながが、ゆめみたてんかは、こうして、ひでよしのてに、わたっていったのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-2",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        },
+        {
+          "pick": "21-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        }
+      ],
+      "cut": "dip",
+      "why": "Bình phong trận Yamazaki: doanh trại Mitsuhide rồi doanh trại Hideyoshi, thiên hạ sang tay Hideyoshi"
     }
   ],
-  "issue": 60
+  "issue": 60,
+  "music": {
+    "pick": "34-2",
+    "volume": 0.7
+  }
 }
