@@ -14,7 +14,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 62,
   "scenes": [
     {
@@ -111,18 +111,18 @@
         {
           "pick": "7-1",
           "focus": [
-            0.55,
-            0.5
+            0.57,
+            0.3
           ],
-          "move": "pull-back"
+          "move": "hold"
         },
         {
           "pick": "7-9",
           "focus": [
-            0.66,
-            0.47
+            0.64,
+            0.2
           ],
-          "move": "push-in"
+          "move": "hold"
         }
       ],
       "why": "Arimura ở lễ tiễn Kanie (khung video gốc), rồi hình ảnh trong sáng của cô.",
@@ -156,7 +156,7 @@
             0.5,
             0.3
           ],
-          "move": "rise"
+          "move": "push-in"
         },
         {
           "pick": "36-1",
@@ -214,8 +214,8 @@
         {
           "pick": "18-8",
           "focus": [
-            0.43,
-            0.42
+            0.36,
+            0.05
           ],
           "move": "push-in"
         },
@@ -251,11 +251,8 @@
           "move": "push-in"
         },
         {
-          "pick": "22-6",
-          "focus": [
-            0.5,
-            0.4
-          ],
+          "pick": "22-3",
+          "fit": "contain",
           "move": "push-in"
         },
         {
