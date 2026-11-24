@@ -8,17 +8,23 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 |---|---|
 | [aiko](aiko/README.md) | 4 |
 | [akishino](akishino/README.md) | 3 |
+| [arimura-kasumi](arimura-kasumi/README.md) | 5 |
 | [bangkok](bangkok/README.md) | 3 |
 | [bhumibol](bhumibol/README.md) | 1 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hisahito](hisahito/README.md) | 1 |
+| [iijima-ai](iijima-ai/README.md) | 2 |
 | [imperial-family](imperial-family/README.md) | 11 |
+| [kanda-uno](kanda-uno/README.md) | 1 |
+| [kanie-keizo](kanie-keizo/README.md) | 1 |
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
 | [kokkai](kokkai/README.md) | 1 |
 | [kokyo](kokyo/README.md) | 1 |
+| [kudo-shizuka](kudo-shizuka/README.md) | 2 |
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
 | [masako](masako/README.md) | 13 |
+| [mori-mitsuko](mori-mitsuko/README.md) | 1 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 14 |
