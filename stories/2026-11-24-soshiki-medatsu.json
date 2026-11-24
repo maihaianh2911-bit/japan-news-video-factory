@@ -1,0 +1,175 @@
+{
+  "title": "葬式なのに目立とうとした女性芸能人3人",
+  "date": "2026-11-24",
+  "style": "full",
+  "kicker": "芸能界の裏話",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "stage": "find",
+  "issue": 62,
+  "scenes": [
+    {
+      "label": "3人",
+      "headline": "葬式なのに\n目立とうとした3人",
+      "lines": [
+        {
+          "text": "葬式なのに、目立とうとした女性芸能人が3人います。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "有村架純",
+      "era": "1人目",
+      "headline": "1人目は、有村架純。",
+      "lines": [
+        {
+          "text": "1人目は、有村架純。",
+          "quote": true,
+          "say": "ひとりめは、ありむらかすみ。"
+        },
+        {
+          "text": "2014年、総勢700人が参列した、蟹江敬三さんのお別れ会。",
+          "say": "2014年、総勢700人が参列した、かにええいぞうさんのお別れ会。"
+        },
+        {
+          "text": "ドラマ『あまちゃん』で、有村が演じた若き日の春子。",
+          "say": "ドラマ、あまちゃんで、ありむらが演じた、若き日のはるこ。"
+        },
+        {
+          "text": "その父親を演じたのが、蟹江さんでした。",
+          "say": "その父親を演じたのが、かにえさんでした。"
+        }
+      ]
+    },
+    {
+      "label": "有村架純",
+      "era": "1人目",
+      "headline": "有村架純",
+      "lines": [
+        {
+          "text": "その大切な場に、有村は、胸元がザックリ開いたタイトなミニワンピースで現れたといいます。",
+          "say": "その大切な場に、ありむらは、胸元がザックリ開いた、タイトなミニワンピースで現れたといいます。"
+        },
+        "「ちゃんとしてるイメージだったのに残念」。",
+        "SNSではそんな声が広がり、清純派女優のイメージが崩れてしまいました。"
+      ]
+    },
+    {
+      "label": "工藤静香",
+      "era": "2人目",
+      "headline": "2人目は、工藤静香。",
+      "lines": [
+        {
+          "text": "2人目は、工藤静香。",
+          "quote": true,
+          "say": "ふたりめは、くどうしずか。"
+        },
+        "2012年、92歳で亡くなった国民的女優、森光子さんの葬儀。",
+        "2300人の参列者の中で、ひときわ目立っていたのが工藤でした。"
+      ]
+    },
+    {
+      "label": "工藤静香",
+      "era": "2人目",
+      "headline": "工藤静香",
+      "lines": [
+        "40代の大人の女性が、黒いミニ丈のワンピースに、ヒールの高いロングブーツ。",
+        "「その歳で、最低限のマナーもないのか」。",
+        "ネットには呆れた声があふれました。"
+      ]
+    },
+    {
+      "label": "3人目",
+      "era": "3人目",
+      "headline": "そして最後の3人目。",
+      "lines": [
+        {
+          "text": "そして最後の3人目。",
+          "quote": true,
+          "say": "そして、最後の、さんにんめ。"
+        },
+        {
+          "text": "2008年、36歳の若さでこの世を去った飯島愛さん。",
+          "say": "2008年、36歳の若さでこの世を去った、いいじまあいさん。"
+        },
+        "そのお別れ会に、関係者700人が集まりました。"
+      ]
+    },
+    {
+      "label": "3人目",
+      "era": "3人目",
+      "headline": "3人目は…",
+      "lines": [
+        "その中で一番目立っていたのは、クリスチャン・ディオールのセットアップに、やたらと大きな透ける帽子をかぶった女性だったといいます。",
+        "さらに彼女は、自分のブログに「本日のファッション」と題して、その日の喪服コーデを載せました。"
+      ]
+    },
+    {
+      "label": "3人目",
+      "era": "3人目",
+      "headline": "3人目は…",
+      "lines": [
+        "極めつけは、自ら立ち上げたブランドのバッグまで紹介したこと。",
+        "「故人より、自分のファッションのPRなのか」。"
+      ]
+    },
+    {
+      "label": "神田うの",
+      "era": "3人目",
+      "headline": "神田うの",
+      "lines": [
+        {
+          "text": "非難が殺到したその人物とは、神田うのです。",
+          "quote": true,
+          "say": "非難が殺到したその人物とは、かんだうのです。"
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:有村架純",
+    "wiki:工藤静香",
+    "wiki:神田うの",
+    "wiki:蟹江敬三",
+    "wiki:森光子",
+    "wiki:飯島愛",
+    "web:有村架純 => portrait of a young Japanese actress with long hair, smiling",
+    "page:https://www.oricon.co.jp/prof/519303/photo/p0020140513018314400139996869104/",
+    "page:https://www.oricon.co.jp/news/2037388/full/",
+    "web:有村架純 あまちゃん 春子 => a young Japanese actress in a 1980s idol costume",
+    "web:蟹江敬三 => portrait of an older Japanese actor",
+    "web:蟹江敬三 お別れ会 祭壇 => a funeral altar with a portrait and white flowers",
+    "web:有村架純 黒 ワンピース => a young Japanese actress in a black dress",
+    "web:工藤静香 => portrait of a Japanese woman singer with long hair",
+    "web:工藤静香 森光子 葬儀 => a woman in black mourning clothes at a funeral",
+    "web:森光子 => portrait of an elderly Japanese actress smiling",
+    "web:森光子 葬儀 祭壇 => a funeral altar with a large portrait and flowers",
+    "web:飯島愛 => portrait of a Japanese TV personality woman",
+    "web:飯島愛 お別れ会 => a memorial ceremony with a portrait and flowers",
+    "web:神田うの => portrait of a glamorous Japanese celebrity woman",
+    "web:神田うの 飯島愛 お別れ会 => a woman in black clothes and a black hat at a memorial",
+    "web:黒 帽子 チュール ベール 喪服 => a woman wearing a black hat with a sheer veil",
+    "web:神田うの バッグ ブランド => a black handbag",
+    "web:神田うの ブログ ファッション => a glamorous Japanese woman posing in fashionable clothes",
+    "web:葬儀 参列者 喪服 => mourners in black clothes at a Japanese funeral",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m08s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m21s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m25s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m35s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m47s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m49s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m23s.jpg",
+    "file:stories/media/2026-11-24-soshiki-medatsu/v-0m40s.jpg",
+    "music:Gymnopédie Satie piano"
+  ]
+}

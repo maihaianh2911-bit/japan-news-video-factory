@@ -820,15 +820,8 @@ def full_layout(beat, release, has_photo, demo):
     animated, parts = bool(FX.get("text")) and has_photo, []
     image = Image.new("RGB", (W, H), style.background)
 
-    def credits(d):   # the voice, the source and the music at the foot, small, outlined on the picture
-        if release.publisher:
-            outlined(d, 60, 1876, f"出典  {release.publisher}", 22, style.muted, bold=False, anchor="lt", stroke=3)
-        outlined(d, W - 60, 1844, VOICE_CREDIT, 22, style.muted, bold=False, anchor="rt", stroke=3)
-        if release.music:
-            music, size = fit(f"音楽  {release.music.title.rsplit('.', 1)[0]}", 560, 20, 1, bold=False, smallest=16)
-            outlined(d, W - 60, 1876, music, size, style.muted, bold=False, anchor="rt", stroke=3)
-
-    parts.append(piece("fixed", credits))
+    # no credits on the picture (owner, 24/11/2026: the small lines at the foot cluttered the full picture): the
+    # source, the voice, the music and every picture are named in credits.txt, which goes in the video's description
     if demo:
         parts.append(piece("fixed", lambda d: outlined(d, W // 2, 90, "動作確認", 28, GOLD, stroke=3)))
     tag = beat.era or release.kicker or "日本のニュース"
@@ -1033,14 +1026,11 @@ class Scene:
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
-        if photo:
+        if photo and style.layout != "full":   # "full": the credits are in credits.txt only
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
-            if style.layout == "full":
-                credit, credit_size = fit(credit, 560, 22, 1, bold=False, smallest=16)
-                outlined(draw, 60, 1844, credit, credit_size, style.muted, bold=False, anchor="lt", stroke=3)
-            elif style.layout in ON_PICTURE:
+            if style.layout in ON_PICTURE:
                 credit, credit_size = fit(credit, 560, 24, 1, bold=False, smallest=16)
                 text(draw, 60, 1774, credit, credit_size, style.muted, bold=False)
             else:
