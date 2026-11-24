@@ -20,7 +20,7 @@ from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx", "voice"}
-STYLES = ("news", "paper", "story", "history", "full")
+STYLES = ("news", "paper", "story", "history", "full", "band")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)

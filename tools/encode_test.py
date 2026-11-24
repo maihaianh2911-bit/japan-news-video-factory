@@ -1,6 +1,6 @@
 """Encode 3 seconds of a story without the voice engine: two scenes with a scene change, in four frames (news,
-paper with its film grain, story with a quote over the picture and a test tone as music under the voice, and full: the
-picture over the whole frame, the same quote and music), with silence as the voice. Checks that the frames, FFmpeg, the music mix and the output format work.
+paper with its film grain, story with a quote over the picture and a test tone as music under the voice, full: the
+picture over the whole frame, and band: a wide picture over its blurred copy, both with the same quote and music), with silence as the voice. Checks that the frames, FFmpeg, the music mix and the output format work.
 Usage: python tools/encode_test.py stories/mau-boj.json <find folder> <out folder>"""
 from dataclasses import replace
 import json
@@ -24,11 +24,11 @@ def main():
     half = SECONDS / len(beats)
     intervals = [(index * half, (index + 1) * half) for index in range(len(beats))]
     captions = [Caption(start, end, caption_chunks(beat.lines[0])[0]) for beat, (start, end) in zip(beats, intervals)]
-    for name in ("news", "paper", "story", "full"):
+    for name in ("news", "paper", "story", "full", "band"):
         folder = out / name
         folder.mkdir(parents=True, exist_ok=True)
         scene_beats, scene_release = beats, release
-        if name in ("story", "full"):   # the first line printed big as a quote, a test tone as the music
+        if name in ("story", "full", "band"):   # the first line printed big as a quote, a test tone as the music
             tone = folder / "tone.ogg"
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=frequency=330:duration=2",
                             "-c:a", "libvorbis", str(tone)], check=True)

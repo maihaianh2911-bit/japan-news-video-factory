@@ -1,0 +1,71 @@
+{
+  "title": "thử khung dải ảnh (band) — vải không cháy, đoạn mẫu",
+  "date": "2026-11-24",
+  "stage": "find",
+  "style": "band",
+  "kicker": "史上最恐の素材　第一話\n燃えない布",
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "voice": 1.7,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "searches": [
+    "wiki:大プリニウス",
+    "wiki:カール大帝",
+    "wiki:石綿",
+    "asbestos fibres mineral => a close photograph of white fibrous asbestos mineral",
+    "web:石綿 布 耐火 => a piece of white fireproof asbestos cloth",
+    "Charlemagne banquet medieval => a medieval painting of a king at a banquet table",
+    "Roman funeral pyre painting => a painting of an ancient funeral pyre with flames",
+    "web:炎 暗闇 => bright orange flames in the dark",
+    "music:Gnossienne Satie piano"
+  ],
+  "scenes": [
+    {
+      "label": "燃えない布",
+      "headline": "燃えない布",
+      "era": "古代",
+      "lines": [
+        {
+          "text": "火に投げ込んでも、燃えない布がある。",
+          "quote": true
+        },
+        "古代の人々は、それを神秘の布だと信じていました。"
+      ]
+    },
+    {
+      "label": "プリニウス",
+      "headline": "プリニウスの記録",
+      "era": "1世紀",
+      "lines": [
+        {
+          "text": "ローマの博物学者プリニウスは、この布を『生きた亜麻』と呼びました。",
+          "say": "ローマのはくぶつがくしゃプリニウスは、このぬのを、いきたあま、とよびました。"
+        },
+        {
+          "text": "王が亡くなると、その亡骸をこの布で包んで火葬し、王の灰だけを集めたといいます。",
+          "say": "おうがなくなると、そのなきがらをこのぬのでつつんでかそうし、おうのはいだけをあつめたといいます。"
+        }
+      ]
+    },
+    {
+      "label": "カール大帝",
+      "headline": "カール大帝の宴",
+      "era": "中世",
+      "lines": [
+        {
+          "text": "そして中世、カール大帝は宴のあと、汚れたテーブルクロスを火に投げ込みました。",
+          "say": "そしてちゅうせい、カールたいていはうたげのあと、よごれたテーブルクロスをひになげこみました。"
+        },
+        "炎から取り出すと、布は真っ白。客たちは息をのんだと伝えられています。"
+      ]
+    }
+  ]
+}

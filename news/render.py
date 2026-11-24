@@ -77,6 +77,15 @@ STYLES = {
                   photo_tag_text="#f4ead2", value="#ffe9a8", card="#1b1612", card_ink="#f4ead2",
                   card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
                   layout="full"),
+    # "band" (trial of 24/11/2026, after a source video the owner sent): the kicker stands as the title of the
+    # series at the top and never moves, a wide picture runs across the middle of the frame over a blurred, darker
+    # copy of itself that fills the frame, the scene's era in a red tag on its corner, the headline and the
+    # captions under it. Wide pictures (paintings, old photographs) are seen almost whole.
+    "band": Style(family="Serif", background="#0b0907", text="#ffffff", muted="#e9dcc0", accent="#c8321f",
+                  tag="#c8321f", tag_text="#fff4e0", photo_bed="#0b0907", photo_tag="#0b0907",
+                  photo_tag_text="#f4ead2", value="#ffd98a", card="#1b1612", card_ink="#f4ead2",
+                  card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
+                  layout="band"),
 }
 style = STYLES["news"]
 
@@ -275,7 +284,11 @@ INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of
 INK_GOLD = "#d9b96a"
 FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
 # quote, the lowest their foot may come (the captions run under it), the colour of the text's outline
-BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H)}
+BAND_TOP, BAND_HEIGHT = 470, 760        # "band": the wide picture across the middle of the frame
+BAND_TEXT_TOP = BAND_TOP + BAND_HEIGHT + 44   # the headline under it
+BAND_QUOTE_CENTRE, BAND_QUOTE_FOOT = 1480, 1680   # a quote stands where the headline and the captions are
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H),
+         "band": (BAND_TOP, BAND_HEIGHT)}
 ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
@@ -291,13 +304,13 @@ def photo_box():
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
-    if style.layout == "full":
+    if style.layout in ("full", "band"):
         return (0, 0, W, H)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614, "full": 1560}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1532}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -871,6 +884,143 @@ def full_layout(beat, release, has_photo, demo):
     return image, layer, [part for part in parts if part]
 
 
+BAND_TITLE_GOLD = "#e9c47a"
+
+
+def spaced(d, centre, y, value, size, fill, tracking):
+    """A short line of text with room between its characters, centred on `centre`. Returns its left and right x."""
+    face = font(size)
+    total = sum(face.getlength(char) for char in value) + tracking * (len(value) - 1)
+    x = centre - total / 2
+    for char in value:
+        d.text((x, y), char, font=face, fill=fill)
+        x += face.getlength(char) + tracking
+    return centre - total / 2, centre + total / 2
+
+
+def band_layout(beat, release, has_photo, demo):
+    """The "band" frame (trial of 24/11/2026; owner: "phải làm đẹp hơn nó"): the title at the top, the same in every
+    scene and never moving: with two rows in the kicker ("史上最恐の素材　第一話\n燃えない布") the first is a small gold
+    line between two fine rules and the second the large white title, with one row only the title; a fine gold
+    ornament under it. Then the era in gold over the right corner of the picture, the wide picture across the middle,
+    and under it the scene's headline, centred, coming in row by row. The blurred copy of the picture behind it all
+    is drawn each frame (Scene.render). No credits on the frame: they are in credits.txt, as for "full"."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = Image.new("RGB", (W, H), style.background)
+    rows = [row for row in (release.kicker or "日本のニュース").splitlines() if row.strip()]
+    series, main = (rows[0], "".join(rows[1:])) if len(rows) > 1 else ("", rows[0])
+
+    def title(d):
+        top = 176 if series else 196
+        if series:
+            small, small_size = fit(series, 760, 38, 1, smallest=26)
+            left, right = spaced(d, W // 2, 118, small, small_size, BAND_TITLE_GOLD, round(small_size * 0.28))
+            middle = 118 + small_size * 0.62
+            d.rectangle((max(70, left - 150), middle, left - 26, middle + 1), fill=BAND_TITLE_GOLD)
+            d.rectangle((right + 26, middle, min(W - 70, right + 150), middle + 1), fill=BAND_TITLE_GOLD)
+        words, size = fit(main, 960, 112, 1, smallest=60)
+        d.text((W // 2, top), words, font=font(size), fill=style.text, anchor="mt")
+        line = top + size + 34
+        d.rectangle((W // 2 - 190, line, W // 2 - 22, line + 1), fill=BAND_TITLE_GOLD)
+        d.rectangle((W // 2 + 22, line, W // 2 + 190, line + 1), fill=BAND_TITLE_GOLD)
+        d.polygon([(W // 2, line - 9), (W // 2 + 9, line), (W // 2, line + 10), (W // 2 - 9, line)], fill=style.accent)
+
+    kind, picture, at, order = piece("row", title)   # with the soft shadow of a row, but it never moves
+    parts.append(("fixed", picture, at, order))
+    if demo:
+        parts.append(piece("fixed", lambda d: outlined(d, W // 2, 70, "動作確認", 28, GOLD, stroke=3)))
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if not has_photo:   # a text card in the place of the picture
+        draw.rounded_rectangle((70, BAND_TOP, 1010, BAND_TOP + BAND_HEIGHT + 200), radius=18, fill=style.card,
+                               outline=style.rule, width=2)
+        draw.rectangle((119, BAND_TOP + 72, 215, BAND_TOP + 78), fill=style.accent)
+        headline, size = fit(beat.headline, 840, 68, 3, smallest=40)
+        y = text(draw, 119, BAND_TOP + 130, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 840, 120, 1, smallest=56)
+            y = text(draw, 119, y + 70, value, value_size, style.value)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 40, 5, bold=False, smallest=26)
+            text(draw, 119, y + 60, evidence, evidence_size, style.card_ink, bold=False)
+        return image, layer, [part for part in parts if part]
+
+    def era(d):   # the year in gold, right-aligned just above the picture, a fine gold rule under it
+        value, size = fit(beat.era, 520, 46, 1, smallest=32)
+        d.text((W - 56, BAND_TOP - 30 - size), value, font=font(size), fill=BAND_TITLE_GOLD, anchor="rt")
+        width = round(font(size).getlength(value))
+        d.rectangle((W - 56 - width, BAND_TOP - 22, W - 56, BAND_TOP - 21), fill=BAND_TITLE_GOLD)
+
+    if beat.era:
+        if animated:
+            parts.append(piece("tag", era))
+        else:
+            era(draw)
+    blocks = []
+    headline, size = fit(beat.headline, 960, 70 if len(beat.headline) < 16 else 60, 2, smallest=44)
+    blocks.append((headline, size, style.text, True, 18))
+    if beat.value:
+        value, value_size = fit(beat.value, 960, 84, 1, smallest=56)
+        blocks.append((value, value_size, style.value, True, 18))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, style.muted, False, 12))
+    y, order = BAND_TEXT_TOP, 0
+    for value, size, colour, bold, spacing in blocks:
+        for row, line in enumerate(value.splitlines()):
+            at = y + row * (size + spacing)
+            if animated:
+                parts.append(piece("row", lambda d, line=line, at=at, size=size, colour=colour, bold=bold:
+                                   outlined(d, W // 2, at, line, size, colour, bold=bold,
+                                            stroke=4 if bold else 3), order))
+                order += 1
+            else:
+                outlined(draw, W // 2, at, line, size, colour, bold=bold, stroke=4 if bold else 3)
+        y += block_height(value, size, spacing) + 22
+    return image, layer, [part for part in parts if part]
+
+
+def band_light(x, y):
+    """How bright the blurred copy behind the "band" picture is at (x, y), 0 to 1 of the frame: a little light
+    around the picture, darker towards the top (the title) and the foot (the captions), and at the sides."""
+    middle = (BAND_TOP + BAND_HEIGHT / 2) / H
+    level = 0.56 - 0.36 * min(1.0, abs(y - middle) / 0.5) ** 1.3
+    return level * (1 - 0.3 * (2 * x - 1) ** 2)
+
+
+@lru_cache(maxsize=1)
+def band_shade():
+    width, height = W // 12, H // 12
+    shade = Image.new("L", (width, height))
+    shade.putdata([round(255 * band_light(x / (width - 1), y / (height - 1)))
+                   for y in range(height) for x in range(width)])
+    return shade.convert("RGB")
+
+
+def band_backdrop(picture):
+    """What the "band" frame shows behind its picture: the middle of the same picture, closer, blurred and darker
+    (band_light), filling the whole frame. It follows the picture as it moves and changes."""
+    width = min(picture.width, round(picture.height * W / H))
+    left = (picture.width - width) // 2
+    small = picture.resize((W // 12, H // 12), Image.Resampling.BILINEAR, box=(left, 0, left + width, picture.height))
+    small = ImageChops.multiply(small.filter(ImageFilter.GaussianBlur(2.2)), band_shade())
+    return small.resize((W, H), Image.Resampling.BICUBIC)
+
+
+@lru_cache(maxsize=1)
+def band_edges():
+    """A fine gold line on the top and the foot of the "band" picture, each with a soft shadow off the picture."""
+    edges = Image.new("RGBA", (W, BAND_HEIGHT + 56), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(edges)
+    for y in range(24):
+        alpha = round(140 * (1 - y / 24) ** 2)
+        draw.line((0, 25 - y, W, 25 - y), fill=(0, 0, 0, alpha))
+        draw.line((0, BAND_HEIGHT + 30 + y, W, BAND_HEIGHT + 30 + y), fill=(0, 0, 0, alpha))
+    draw.rectangle((0, 26, W, 27), fill=BAND_TITLE_GOLD)
+    draw.rectangle((0, BAND_HEIGHT + 28, W, BAND_HEIGHT + 29), fill=BAND_TITLE_GOLD)
+    return edges
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
@@ -880,6 +1030,8 @@ def layout(beat, release, has_photo, demo):
         return ink_layout(beat, release, has_photo, demo)
     if style.layout == "full":
         return full_layout(beat, release, has_photo, demo)
+    if style.layout == "band":
+        return band_layout(beat, release, has_photo, demo)
     return (*plain_layout(beat, release, has_photo, demo), [])
 
 
@@ -1006,6 +1158,8 @@ class Scene:
         photo = None
         if self.photos:
             picture, photo = self.picture(moment)
+            if style.layout == "band":   # the same picture, blurred and darker, behind it over the whole frame
+                frame = band_backdrop(picture)
             if style.layout == "ink":
                 frame.paste(picture, (0, self.top), ink_mask(self.height))
             else:
@@ -1013,12 +1167,15 @@ class Scene:
             if style.layout in ("story", "ink"):   # "full": nothing dark over the picture (owner, 21/11/2026)
                 shade = ink_shade(self.height) if style.layout == "ink" else story_shade(self.height)
                 frame.paste(shade, (0, self.top), shade)
+            if style.layout == "band":
+                edges = band_edges()
+                frame.paste(edges, (0, self.top - 28), edges)
         for kind, part, at, _ in self.parts:   # what never moves: the seal and the year of the "history" page
             if kind == "fixed":
                 frame.paste(part, at, part)
         if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
-            if style.layout == "full":   # the tag at the top comes in all the same
+            if style.layout in ("full", "band"):   # the tag at the top comes in all the same
                 self.draw_parts(frame, age, only="tag")
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
@@ -1026,7 +1183,7 @@ class Scene:
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
-        if photo and style.layout != "full":   # "full": the credits are in credits.txt only
+        if photo and style.layout not in ("full", "band"):   # "full", "band": the credits are in credits.txt only
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
@@ -1179,9 +1336,9 @@ def caption_art(caption, key):
         layer = Image.new("RGBA", (W, height + 4), (0, 0, 0, 0))
         draw = ImageDraw.Draw(layer)
         for line_index, line in enumerate(contents):
-            if style.layout == "full":   # printed on the picture itself: a dark outline
+            if style.layout in ("full", "band"):   # printed on a picture (or its blurred copy): a dark outline
                 draw.text((W / 2, 21 + 83 * line_index), line, font=face, fill=colour, anchor="mt",
-                          stroke_width=6, stroke_fill=OUTLINE)
+                          stroke_width=6 if style.layout == "full" else 4, stroke_fill=OUTLINE)
             else:
                 draw.text((W / 2, 21 + 83 * line_index), line, font=face, fill=colour, anchor="mt",
                           stroke_width=1, stroke_fill=colour)
@@ -1263,7 +1420,7 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
     top = 0 if layer else centre - height // 2
     if style.caption_box:
         draw.rounded_rectangle((69, top, 1011, top + height), radius=19, fill=style.caption_box)
-    outline = (6, OUTLINE) if style.layout == "full" else (1, style.caption_text)
+    outline = {"full": (6, OUTLINE), "band": (4, OUTLINE)}.get(style.layout, (1, style.caption_text))
     for line_index, line in enumerate(contents):
         draw.text((W / 2, top + 21 + 83 * line_index), line,
                   font=face, fill=style.caption_text, anchor="mt", stroke_width=outline[0], stroke_fill=outline[1])
@@ -1316,14 +1473,16 @@ def draw_quote(image, line, age):
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
     # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
     joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    if style.layout == "full":   # in the middle of the frame: as large as three rows allow
-        words, size = fit("".join(pieces), 960, 92, 3, smallest=52)
+    if style.layout in ("full", "band"):   # in the middle of the frame (under the picture): as large as 3 rows allow
+        words, size = fit("".join(pieces), 960, 92 if style.layout == "full" else 84, 3, smallest=52)
     else:
         words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     if style.layout == "full":
         return draw_full_quote(image, rows, size, block, age)
+    if style.layout == "band":
+        return draw_full_quote(image, rows, size, block, age, BAND_QUOTE_CENTRE, BAND_QUOTE_FOOT)
     band_height = min(height, block + 330)
     band = quote_band(band_height)
     if style.layout == "ink":
@@ -1347,10 +1506,11 @@ def draw_quote(image, line, age):
         image.paste(strip, (0, y + 30 + index * (size + 22) + round(22 * (1 - shown))), strip)
 
 
-def draw_full_quote(image, rows, size, block, age):
+def draw_full_quote(image, rows, size, block, age, centre=FULL_TEXT_CENTRE, foot=FULL_TEXT_FOOT):
     """A quote in the "full" frame: no band, the words stand in the middle of the picture, white with a dark outline,
-    row after row rising into place (owner, 21/11/2026: "không cần khoảng tối… để chữ ở giữa màn hình")."""
-    y = min(FULL_TEXT_CENTRE - block // 2, FULL_TEXT_FOOT - block)
+    row after row rising into place (owner, 21/11/2026: "không cần khoảng tối… để chữ ở giữa màn hình"). The "band"
+    frame sets it the same way under its picture (`centre`, `foot`)."""
+    y = min(centre - block // 2, foot - block)
     for index, row in enumerate(rows):   # the picture is seen alone a moment first, then the words come
         shown = ease((age - 0.25 - 0.22 * index) / 0.42) if FX.get("text") else ease(age / QUOTE_IN)
         if shown <= 0:
