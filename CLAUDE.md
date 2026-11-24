@@ -129,7 +129,10 @@ videos by their frame and by the name in the seal:
 - **The channel "Tiểu sử nhân vật nổi tiếng"** (biographies of famous people), short name **`ts`** (owner,
   24/11/2026: "Cho cái này vào 1 kênh riêng nhé, đặt tên là tiểu sử nhân vật nổi tiếng đi, viết tắt kênh ts"): the
   life of one person from childhood to fame, real pictures of every age, in the `"style": "full"` frame (owner, same
-  day: "Làm kiểu để ảnh full màn hình"), seal `人物伝`, `"voice": 1.7`, gentle piano at 0.7. Its issues are titled
+  day: "Làm kiểu để ảnh full màn hình"), seal `人物伝`, `"voice": 2.4` (as the other kinds above), gentle piano at 0.7. **At most about
+  80 seconds** (owner, of the first cut at 133 s: "Bình thường chỉ 80s là cao thôi mà"): about 400 written
+  characters of script; and **read fast**: `"pace": {"speed": 1.3, "line_pause": 0.05, "scene_pause": 0.15}`
+  (owner: "ban nãy đọc nghe rề rà quá, đọc nhanh như mấy thể loại khác"; 1.2 with pauses was too slow). Its issues are titled
   `[TS] <Japanese headline> — <Vietnamese idea>` with the label `ts` (not `jnews`; handled in the chat like the
   `lich-su` kinds above). The format came from a source video the owner sent (a short on Putin's life); the owner
   agreed that a person the Japanese audience loves fits better than a foreign politician they dislike. First video:
