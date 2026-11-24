@@ -19,8 +19,8 @@ from .story import Beat
 from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx", "voice"}
-STYLES = ("news", "paper", "story", "history", "full")
+              "music", "pace", "fx", "voice", "masthead"}
+STYLES = ("news", "paper", "story", "history", "full", "band")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
@@ -190,6 +190,10 @@ def validate(data, name=None):
     problems += text_problem(data.get("source"), '"source"', required=False)
     problems += text_problem(data.get("source_url"), '"source_url"', required=False)
     problems += text_problem(data.get("kicker"), '"kicker"', required=False)
+    problems += text_problem(data.get("masthead"), '"masthead"', required=False)
+    if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 9:
+        problems.append(f'"masthead": the big title at the top of the "band" frame, 9 characters at most, got '
+                        f'{len(data["masthead"])}')
     if data.get("style", "news") not in STYLES:
         problems.append(f'"style" must be one of {", ".join(STYLES)}, got {data.get("style")!r}')
     searches = data.get("searches", [])
@@ -384,7 +388,8 @@ def load_story(path, pictures=None):
     release = Release(data.get("source_url", ""), data["title"], date.fromisoformat(data["date"]),
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
-                      float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)))
+                      float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)),
+                      data.get("masthead", ""))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
