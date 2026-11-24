@@ -24,11 +24,11 @@ def main():
     half = SECONDS / len(beats)
     intervals = [(index * half, (index + 1) * half) for index in range(len(beats))]
     captions = [Caption(start, end, caption_chunks(beat.lines[0])[0]) for beat, (start, end) in zip(beats, intervals)]
-    for name in ("news", "paper", "story", "full", "band"):
+    for name in ("news", "paper", "story", "full", "band", "album", "magazine"):
         folder = out / name
         folder.mkdir(parents=True, exist_ok=True)
         scene_beats, scene_release = beats, release
-        if name in ("story", "full", "band"):   # the first line printed big as a quote, a test tone as the music
+        if name in ("story", "full", "band", "album", "magazine"):   # the first line printed big as a quote, a test tone as the music
             tone = folder / "tone.ogg"
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=frequency=330:duration=2",
                             "-c:a", "libvorbis", str(tone)], check=True)

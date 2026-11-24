@@ -49,10 +49,15 @@ luân phiên, xem nội dung hợp với khung nào thì làm với khung đó, 
 đc". (What was explained to the owner: the frame alone is not the main risk; a slideshow of still pictures with a
 machine voice and press photos, barely changed, is what gets flagged as unoriginal; TikTok publishes no exact rule.)
 - **The frame fits the story, and changes from video to video**: never the same frame for every video of a day or
-  of a channel in a row. Choose by the pictures and the mood: `"story"` (old newspaper: Showa and old photographs,
-  a story told in the past), `"full"` (the picture fills the screen: tall, sharp modern photos, a person's face,
-  today's news), `"band"` (blurred picture behind a wide band: landscape press photos and TV stills, history),
-  `"paper"`, `"history"`. The same story may not suit `full` if its pictures are small or wide: then `band` or
+  of a channel in a row. The five frames that turn (owner, 25/11/2026: "M có thể tự làm vài khung nữa, t nghĩ
+  khoảng 5 khung đổi liên thiên là ổn"; `"album"` and `"magazine"` made that day): `"story"` (old newspaper: Showa
+  and old photographs, a story told in the past), `"full"` (the picture fills the screen: tall, sharp modern photos,
+  a person's face), `"band"` (blurred picture behind a wide band: landscape press photos and TV stills, history),
+  `"album"` (a family photo album: the picture as a print in a white mat on cream paper, the era written under it —
+  love, couple, mother-and-child, a life looked back on), `"magazine"` (a clean white weekly-magazine page: the
+  picture across the top, a red rule, a bold black headline — today's news, a statement, a controversy, a press
+  conference). `"paper"` and `"history"` stay for their own uses. In `album` and `magazine` no text lies on the
+  picture (the quote stands under it, like `band`), and no credits are printed (they are in `credits.txt`). The same story may not suit `full` if its pictures are small or wide: then `band` or
   `story`. Say in the issue which frame and why (one line).
 - **The voice fits the story**: a story key `"speaker"` names the VOICEVOX voice, `"<name>"` (its ノーマル style)
   or `"<name>/<style>"`; without it the voice is 青山龍星. A gentle female voice for a mother-and-daughter or a
