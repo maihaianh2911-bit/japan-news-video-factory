@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-24",
+  "style": "full",
+  "kicker": "夫婦の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "stage": "find",
+  "title": "中尾彬の最期と池波志乃",
+  "issue": 70,
+  "source": "モデルプレス、デイリースポーツ、週刊文春、週刊女性PRIME、プレジデント",
+  "scenes": [
+    {
+      "label": "中尾彬",
+      "headline": "中尾彬と池波志乃",
+      "lines": [
+        {
+          "text": "中尾彬が亡くなって2年半。",
+          "quote": true,
+          "say": "なかおあきらが亡くなって、2年半。"
+        },
+        {
+          "text": "妻の池波志乃が明かした最期の姿に、涙する人が後を絶ちません。",
+          "say": "妻の、いけなみしのが明かした最期の姿に、涙する人が後を絶ちません。"
+        }
+      ]
+    },
+    {
+      "label": "出会い",
+      "era": "1978年",
+      "headline": "中尾彬",
+      "lines": [
+        {
+          "text": "中尾彬。2024年5月、81歳でこの世を去りました。",
+          "say": "なかおあきら。2024年5月、81歳でこの世を去りました。"
+        },
+        {
+          "text": "池波と出会ったのはドラマの撮影現場。",
+          "say": "いけなみと出会ったのは、ドラマの撮影現場。"
+        },
+        {
+          "text": "1978年に結婚したとき、池波は23歳、中尾は35歳でした。",
+          "say": "1978年に結婚したとき、いけなみは23歳、なかおは35歳でした。"
+        }
+      ]
+    },
+    {
+      "label": "終活",
+      "era": "終活",
+      "headline": "終活夫婦",
+      "lines": [
+        "おしどり夫婦として知られた二人は、亡くなる18年前から、人生の終わりの準備を一緒に進めてきました。",
+        "家や土地を手放し、遺言を書き、その日々を共著『終活夫婦』に残しています。"
+      ]
+    },
+    {
+      "label": "最後の外出",
+      "era": "2024年5月",
+      "headline": "最後の外出",
+      "lines": [
+        {
+          "text": "亡くなる4日前、中尾は行きつけのレストランに立ち寄り、冷凍のハヤシライスを買いました。",
+          "say": "亡くなる4日前、なかおは、行きつけのレストランに立ち寄り、冷凍のハヤシライスを買いました。"
+        },
+        "それが、最後の外出になりました。"
+      ]
+    },
+    {
+      "label": "最期",
+      "era": "2024年5月16日",
+      "headline": "5月16日の夜中",
+      "lines": [
+        "そして5月16日の夜中。",
+        {
+          "text": "池波はこう明かしています。",
+          "say": "いけなみは、こう明かしています。"
+        },
+        {
+          "text": "「自宅で私と二人の時に、とても穏やかに、本当に眠るように息を引き取りました」",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "遺言",
+      "era": "2024年5月",
+      "headline": "遺言のとおりに",
+      "lines": [
+        "葬儀は、終活で残した遺言のとおり、家族だけで営まれました。",
+        {
+          "text": "そして池波が明かしたもう一つのことが、さらに多くの人の胸を打ちました。",
+          "say": "そして、いけなみが明かしたもう一つのことが、さらに多くの人の胸を打ちました。"
+        }
+      ]
+    },
+    {
+      "label": "ねじねじ",
+      "era": "旅立ち",
+      "headline": "ねじねじマフラー",
+      "lines": [
+        "旅立ちの装いに選んだのは、夫のトレードマーク、あのねじねじマフラーでした。",
+        {
+          "text": "「自宅で看取ることができたので、私としては満足なんです」",
+          "quote": true,
+          "say": "自宅で、みとることができたので、私としては満足なんです。"
+        },
+        {
+          "text": "三回忌を迎えた今、池波は、ようやく一人で生きるペースができてきたと語っています。",
+          "say": "三回忌を迎えた今、いけなみは、ようやく一人で生きるペースができてきたと語っています。"
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:中尾彬",
+    "wiki:池波志乃",
+    "web:中尾彬 池波志乃 夫婦 => an elderly Japanese couple smiling together",
+    "web:中尾彬 => portrait of an older Japanese actor",
+    "web:中尾彬 ねじねじ マフラー => an older Japanese man wearing a twisted scarf",
+    "web:池波志乃 => portrait of a Japanese actress",
+    "web:中尾彬 池波志乃 若い頃 => a young Japanese couple in the 1970s",
+    "web:終活夫婦 中尾彬 池波志乃 本 => a book cover",
+    "web:ハヤシライス => a plate of Japanese hashed beef rice",
+    "page:https://www.daily.co.jp/gossip/2018/04/19/0011178674.shtml",
+    "page:https://www.daily.co.jp/gossip/2024/12/17/0018456143.shtml",
+    "page:https://mdpr.jp/news/detail/4283516",
+    "web:中尾彬 池波志乃 結婚40周年 => an elderly couple at a press event",
+    "web:池波志乃 2024 => an older Japanese woman speaking",
+    "web:中尾彬 笑顔 => an older Japanese man smiling",
+    "music:Gymnopédie Satie piano"
+  ]
+}
