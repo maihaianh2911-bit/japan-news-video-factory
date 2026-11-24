@@ -10,7 +10,7 @@
 > chỉ cần trên 61s"): never lengthen a script only to reach 80 seconds.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
-result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星, captions timed to the
+result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice (青山龍星 by default, or the story's `"speaker"`: `CLAUDE.md`, "Frame and voice by content"), captions timed to the
 voice. The story format, the picture rules and the preview are in `CLAUDE.md` (steps 1–4); this file says what to
 do at each label. Machine steps: `.github/workflows/news-video.yml`; results: `renders` branch, folder `<name>/`.
 

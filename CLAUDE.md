@@ -1,7 +1,7 @@
 # japan-news-video-factory — notes for Claude
 
 ## Iron rules (owner, 16/11/2026) — they come before everything else in this file
-1. **The video is in the channel's language: Japanese (tiếng Nhật).** The voice is the Japanese VOICEVOX voice 青山龍星, and the script lines, subtitles and
+1. **The video is in the channel's language: Japanese (tiếng Nhật).** The voice is a Japanese VOICEVOX voice (青山龍星 by default; since 25/11/2026 a male or female voice chosen per video, see "Frame and voice by content"), and the script lines, subtitles and
    on-screen text are in Japanese (tiếng Nhật). A script that arrives in another language is translated faithfully into Japanese (tiếng Nhật)
    first. Never a voice or text of another language: check the language of `lines` and the voice before the voice
    step, and again on the finished video. A video in the wrong language is not delivered: fix it and render again.
@@ -42,6 +42,26 @@ each (the same in every repo of the owner's Japanese channels):
 6. **Pictures a scene** (owner: "nếu nội dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"): a
    scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
    (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
+
+## Frame and voice by content (owner, 25/11/2026) — for every channel of this repo
+Asked whether one frame for every video makes TikTok see "mass-produced content", the owner decided: "M tự đổi
+luân phiên, xem nội dung hợp với khung nào thì làm với khung đó, voice thì có thể tùy biến nam nữ ở voicevox, hợp là
+đc". (What was explained to the owner: the frame alone is not the main risk; a slideshow of still pictures with a
+machine voice and press photos, barely changed, is what gets flagged as unoriginal; TikTok publishes no exact rule.)
+- **The frame fits the story, and changes from video to video**: never the same frame for every video of a day or
+  of a channel in a row. Choose by the pictures and the mood: `"story"` (old newspaper: Showa and old photographs,
+  a story told in the past), `"full"` (the picture fills the screen: tall, sharp modern photos, a person's face,
+  today's news), `"band"` (blurred picture behind a wide band: landscape press photos and TV stills, history),
+  `"paper"`, `"history"`. The same story may not suit `full` if its pictures are small or wide: then `band` or
+  `story`. Say in the issue which frame and why (one line).
+- **The voice fits the story**: a story key `"speaker"` names the VOICEVOX voice, `"<name>"` (its ノーマル style)
+  or `"<name>/<style>"`; without it the voice is 青山龍星. A gentle female voice for a mother-and-daughter or a
+  princess's story, a calm male one for an emperor, war or history, a lively one for a light story — and vary it
+  across videos too. Calm voices that suit narration: female 冥鳴ひまり, 四国めたん, 春日部つむぎ, No.7
+  (`No.7/アナウンス` or `/読み聞かせ`); male 青山龍星, 玄野武宏, 白上虎太郎, 剣崎雌雄, 雀松朱司. The render
+  credits it as `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the
+  video description). A name the engine does not have stops the voice step with the list of the voices it has:
+  copy the exact name from it. Listen to the first video in a new voice before using it again.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
@@ -270,7 +290,7 @@ kèm caption cho mỗi video"):
      sau cũng chỉ làm 65s thôi"; `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}`).
    Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
-   rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
+   rewritten), with the frame and the voice that fit the story ("Frame and voice by content", 25/11/2026; `"story"` was used for every source video from 15/11 to 24/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
    searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
    6 seconds of words (1 is enough under that, rule change 6).

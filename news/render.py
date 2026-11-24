@@ -1648,6 +1648,13 @@ def use_voice(volume):
     VOICE = float(volume or 1.0)
 
 
+def use_speaker(choice):
+    """The voice credit printed on the frames follows the story's VOICEVOX voice ("speaker"; "" = 青山龍星)."""
+    global VOICE_CREDIT
+    from .voice import voice_credit
+    VOICE_CREDIT = voice_credit(choice)
+
+
 def loudness():
     """The filters that bring the finished sound to its loudness: -16 LUFS, then, for a story that asks for a louder
     voice, that much gain (at most 8 dB) and a limiter that keeps the peaks from clipping. (Asking loudnorm itself

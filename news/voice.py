@@ -143,24 +143,37 @@ def request(path, *, params=None, data=None):
         return response.read()
 
 
-SPEAKER, STYLE = "青山龍星", "ノーマル"
+SPEAKER, STYLE = "青山龍星", "ノーマル"   # the channel's voice until 25/11/2026; a story may name another ("speaker")
 
 
-def speaker_id():
+def voice_name(choice=""):
+    """(name, style) of a story's "speaker": "<name>" (its ノーマル style) or "<name>/<style>"; "" is the default."""
+    name, _, style = (choice or f"{SPEAKER}/{STYLE}").partition("/")
+    return name, style or STYLE
+
+
+def voice_credit(choice=""):
+    """The credit VOICEVOX asks for, on screen and in credits.txt: "VOICEVOX:<name>"."""
+    return f"VOICEVOX:{voice_name(choice)[0]}"
+
+
+def speaker_id(choice=""):
+    name, wanted = voice_name(choice)
     speakers = json.loads(request("/speakers"))
-    found = next((style["id"] for speaker in speakers if speaker["name"] == SPEAKER
-                  for style in speaker["styles"] if style["name"] == STYLE), None)
+    found = next((style["id"] for speaker in speakers if speaker["name"] == name
+                  for style in speaker["styles"] if style["name"] == wanted), None)
     if found is None:
         available = ", ".join(f"{speaker['name']}/{style['name']}" for speaker in speakers for style in speaker["styles"])
-        raise RuntimeError(f"VOICEVOX voice {SPEAKER}/{STYLE} not found in this engine. Available: {available}")
+        raise RuntimeError(f"VOICEVOX voice {name}/{wanted} not found in this engine. Available: {available}")
     return found
 
 
-def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0, exact=False):
+def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0, exact=False, speaker_choice=""):
     """The voice of every line, one after the other, with `line_pause` seconds of silence after each line (a quote
     also gets one before it and a longer one after it) and `scene_pause` more at the end of each scene.
-    `exact` ("fx": text): a caption starts when the voice reaches it, not at its share of the characters."""
-    speaker = speaker_id()
+    `exact` ("fx": text): a caption starts when the voice reaches it, not at its share of the characters.
+    `speaker_choice`: the story's "speaker" (a VOICEVOX voice), "" for the channel's usual one."""
+    speaker = speaker_id(speaker_choice)
     captions = []
     intervals = []
     position = 0.0

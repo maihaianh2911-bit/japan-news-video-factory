@@ -19,7 +19,7 @@ from .story import Beat
 from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx", "voice", "masthead"}
+              "music", "pace", "fx", "voice", "masthead", "speaker"}
 STYLES = ("news", "paper", "story", "history", "full", "band")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
 LINE_KEYS = {"text", "say", "quote"}
@@ -225,6 +225,10 @@ def validate(data, name=None):
             problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
+    speaker = data.get("speaker", "")   # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits)
+    if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
+        problems.append(f'"speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. "四国めたん" or '
+                        f'"玄野武宏/ノーマル"), got {speaker!r}')
     voice = data.get("voice", 1.0)
     if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
         problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
@@ -389,7 +393,7 @@ def load_story(path, pictures=None):
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
                       float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)),
-                      data.get("masthead", ""))
+                      data.get("masthead", ""), data.get("speaker", ""))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
