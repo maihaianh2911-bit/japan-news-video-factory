@@ -1,7 +1,7 @@
 {
   "title": "史上最悪の大災害 第10位 タイタニック号の沈没",
   "date": "2026-11-24",
-  "stage": "find",
+  "stage": "render",
   "issue": 67,
   "voice": 1.7,
   "pace": {
@@ -47,7 +47,26 @@
           "quote": true,
           "say": "しじょうさいあくのだいさいがい、だいじゅうい。しずまないふね、タイタニックごうのちんぼつです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "7-5",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Mở bằng ảnh thật tàu Titanic năm 1912, rồi đám đông ở cảng tiễn tàu"
     },
     {
       "label": "ただ一人の日本人",
@@ -56,7 +75,27 @@
       "lines": [
         "実はこの船に、日本人がただ一人乗っていました。",
         "生きて帰った彼が、なぜ日本で責められたのか。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-3",
+          "move": "pan-left",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "12-1",
+          "move": "hold",
+          "focus": [
+            0.57,
+            0.3
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Con tàu rời cảng, rồi lộ mặt người Nhật duy nhất trên tàu"
     },
     {
       "label": "無視された警告",
@@ -68,7 +107,28 @@
           "text": "それでも船は速度を落とさず、夜11時40分、巨大な氷山にぶつかります。",
           "say": "それでもふねはそくどをおとさず、よるじゅういちじよんじっぷん、きょだいなひょうざんにぶつかります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-22",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "depth": false
+        },
+        {
+          "pick": "2-15",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Bức điện cảnh báo núi băng có thật, rồi chính núi băng"
     },
     {
       "label": "救命ボート",
@@ -76,7 +136,27 @@
       "era": "深夜0時",
       "lines": [
         "救命ボートは乗っている人の半分ほどの数しかなく、その多くが、席を空けたまま下ろされていきました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-7",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "8-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Xuồng được hạ xuống, rồi xuồng thưa người trên biển"
     },
     {
       "label": "夫のそばに",
@@ -84,7 +164,27 @@
       "era": "深夜1時",
       "lines": [
         "ある老婦人は席を断り、「あなたの行くところへ、私も行く」と、夫のそばに残ったといいます。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "5-3",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.0
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Bà Ida Straus, rồi hai vợ chồng bên nhau"
     },
     {
       "label": "沈没",
@@ -95,7 +195,27 @@
           "text": "船は二つに折れ、わずか2時間40分で沈み、1500人を超える命が、凍える海に消えました。",
           "say": "ふねはふたつにおれ、わずかにじかんよんじっぷんでしずみ、せんごひゃくにんをこえるいのちが、こごえるうみにきえました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.4
+          ]
+        },
+        {
+          "pick": "2-21",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Tranh tàu chìm, rồi xác tàu dưới đáy biển"
     },
     {
       "label": "細野正文",
@@ -106,20 +226,74 @@
           "text": "ボートで助かった日本人、細野正文を帰国後に待っていたのは、「大勢が死んだのに、なぜ生き残った」という冷たい非難でした。",
           "say": "ボートでたすかったにほんじん、ほそのまさぶみをきこくごにまっていたのは、おおぜいがしんだのに、なぜいきのこった、というつめたいひなんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-4",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.38
+          ],
+          "depth": false
+        },
+        {
+          "pick": "12-1",
+          "move": "hold",
+          "focus": [
+            0.4,
+            0.3
+          ]
+        },
+        {
+          "pick": "13-3",
+          "move": "push-in",
+          "focus": [
+            0.75,
+            0.3
+          ],
+          "depth": false
+        }
+      ],
+      "cut": "fade",
+      "why": "Tên ông trong danh sách được cứu, gương mặt ông, bức thư ông viết trên tàu"
     },
     {
       "label": "その孫",
       "headline": "その孫は",
-      "era": "そして",
+      "era": "1978年",
       "lines": [
         {
           "text": "その孫が、のちにYMOで世界を驚かせる音楽家、細野晴臣さんです。",
           "say": "そのまごが、のちにワイエムオーでせかいをおどろかせるおんがくか、ほそのはるおみさんです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-6",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.2
+          ]
+        },
+        {
+          "pick": "4-9",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        }
+      ],
+      "cut": "flash",
+      "why": "Cú lật: cháu ông là Hosono Haruomi của YMO"
     }
   ],
   "style": "hazard-ice",
-  "kicker": "史上最悪の大災害\nタイタニック号沈没\n第10位"
+  "kicker": "史上最悪の大災害\nタイタニック号沈没\n第10位",
+  "music": {
+    "pick": "19-2",
+    "volume": 0.7
+  }
 }
