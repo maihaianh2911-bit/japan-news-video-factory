@@ -49,6 +49,17 @@ class Style:
     caption_face: str = ""         # its typeface for the captions, when it has one
 
 
+# "hazard" (trial of 24/11/2026, for the disaster series "史上最悪の大災害 TOP10"; owner: the history frames do not
+# fit this kind): a black page with a faint grid and warning stripes, a modern black gothic type, the series and the
+# title at the top with the rank in a red badge, the picture inside viewfinder corners in the accent colour, the
+# headline and the captions under it. The kicker gives its rows: "series\ntitle\nrank" (e.g. "史上最悪の大災害\n
+# タイタニック号沈没\n第10位").
+HAZARD = Style(family="Sans", background="#0c0c0b", text="#ffffff", muted="#9a978e", accent="#f5b700",
+               tag="#f5b700", tag_text="#0c0c0b", photo_bed="#0c0c0b", photo_tag="#0c0c0b",
+               photo_tag_text="#ffffff", value="#f5b700", card="#171715", card_ink="#f2f0ea",
+               card_muted="#9a978e", rule="#171715", caption_box="", caption_text="#ffffff", grain=False,
+               layout="hazard", face="fonts/ZenKakuGothicNew-Black.ttf",
+               caption_face="fonts/ZenKakuGothicNew-Bold.ttf")
 STYLES = {
     "news": Style(),
     "paper": Style(family="Serif", background="#eee2bf", text="#2a1d10", muted="#6f5d40", accent="#8e2b1b",
@@ -88,16 +99,16 @@ STYLES = {
                   photo_tag_text="#f4ead2", value="#ffd98a", card="#1b1612", card_ink="#f4ead2",
                   card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
                   layout="band"),
-    # "hazard" (trial of 24/11/2026, for the disaster series "史上最悪の大災害 TOP10"; owner: the history frames do not
-    # fit this kind): a black page with a faint grid and warning stripes, a modern black gothic type, the series and
-    # the title at the top with the rank in a red badge, the picture inside amber viewfinder corners, the headline and
-    # the captions under it. The kicker gives its rows: "series\ntitle\nrank" (e.g. "史上最悪の大災害\nタイタニック号沈没\n第10位").
-    "hazard": Style(family="Sans", background="#0c0c0b", text="#ffffff", muted="#9a978e", accent="#f5b700",
-                    tag="#f5b700", tag_text="#0c0c0b", photo_bed="#0c0c0b", photo_tag="#0c0c0b",
-                    photo_tag_text="#ffffff", value="#f5b700", card="#171715", card_ink="#f2f0ea",
-                    card_muted="#9a978e", rule="#3a3934", caption_box="", caption_text="#ffffff", grain=False,
-                    layout="hazard", face="fonts/ZenKakuGothicNew-Black.ttf",
-                    caption_face="fonts/ZenKakuGothicNew-Bold.ttf"),
+    "hazard": HAZARD,
+    # the same frame in the colour of the disaster (owner, 24/11/2026: "chọn màu cho phù hợp"): ice blue for the sea,
+    # ice and tsunamis; fire orange for volcanoes, explosions and fires; radioactive green for nuclear accidents
+    # and poison gas. `rule` is the colour of the faint grid of the page.
+    "hazard-ice": replace(HAZARD, background="#060b11", accent="#8fdcff", tag="#8fdcff", tag_text="#060b11",
+                          value="#8fdcff", card="#0e1720", rule="#0f1923", photo_bed="#060b11"),
+    "hazard-fire": replace(HAZARD, background="#0d0806", accent="#ff7a1a", tag="#ff7a1a", tag_text="#0d0806",
+                           value="#ff7a1a", card="#1b110c", rule="#1b120d", photo_bed="#0d0806"),
+    "hazard-toxic": replace(HAZARD, background="#080b06", accent="#b8f23c", tag="#b8f23c", tag_text="#080b06",
+                            value="#b8f23c", card="#121a0e", rule="#131b0f", photo_bed="#080b06"),
 }
 style = STYLES["news"]
 
@@ -1055,26 +1066,30 @@ def band_edges():
     return edges
 
 
-HAZARD_AMBER, HAZARD_RED, HAZARD_GRID = "#f5b700", "#e8322b", "#171715"
+HAZARD_RED = "#e8322b"
 
 
 def hazard_stripes(draw, y, height):
     """A band of black and amber warning stripes across the frame."""
     draw.rectangle((0, y, W, y + height), fill="#111110")
     for x in range(-height, W + height, 36):
-        draw.polygon([(x, y + height), (x + 18, y + height), (x + 18 + height, y), (x + height, y)], fill=HAZARD_AMBER)
+        draw.polygon([(x, y + height), (x + 18, y + height), (x + 18 + height, y), (x + height, y)], fill=style.accent)
+
+
+def hazard_page(kicker):
+    return hazard_page_of(kicker, style)
 
 
 @lru_cache(maxsize=4)
-def hazard_page(kicker):
+def hazard_page_of(kicker, frame_style):
     """The still part of the "hazard" frame: a black page with a faint grid, warning stripes at the top and the foot,
     and the title block: the series in amber with the rank in a red badge beside it, the title in large white type."""
     image = Image.new("RGB", (W, H), style.background)
     draw = ImageDraw.Draw(image)
     for x in range(0, W, 54):
-        draw.line((x, 0, x, H), fill=HAZARD_GRID)
+        draw.line((x, 0, x, H), fill=style.rule)
     for y in range(0, H, 54):
-        draw.line((0, y, W, y), fill=HAZARD_GRID)
+        draw.line((0, y, W, y), fill=style.rule)
     hazard_stripes(draw, 0, 18)
     hazard_stripes(draw, H - 18, 18)
     rows = [row.strip() for row in (kicker or "日本のニュース").splitlines() if row.strip()]
@@ -1082,8 +1097,8 @@ def hazard_page(kicker):
     x = 60
     if series:
         series_text, series_size = fit(series, 560, 38, 1, bold=False, smallest=24)
-        draw.rectangle((x, 82, x + 8, 82 + series_size), fill=HAZARD_AMBER)
-        draw.text((x + 22, 80), series_text, font=face_of("Sans", series_size, True), fill=HAZARD_AMBER)
+        draw.rectangle((x, 82, x + 8, 82 + series_size), fill=style.accent)
+        draw.text((x + 22, 80), series_text, font=face_of("Sans", series_size, True), fill=style.accent)
         x += 22 + round(face_of("Sans", series_size, True).getlength(series_text)) + 26
     if rank:
         rank_size = 40
@@ -1103,8 +1118,12 @@ def hazard_page(kicker):
     return page.convert("RGB")
 
 
-@lru_cache(maxsize=1)
 def hazard_overlay():
+    return hazard_overlay_of(style.accent)
+
+
+@lru_cache(maxsize=4)
+def hazard_overlay_of(accent):
     """Over the "hazard" picture: amber viewfinder corners, and under it an amber rule with the ticks of a ruler."""
     overlay = Image.new("RGBA", (W, HAZARD_HEIGHT + 40), (0, 0, 0, 0))
     draw = ImageDraw.Draw(overlay)
@@ -1112,13 +1131,13 @@ def hazard_overlay():
     for cx, cy, sx, sy in ((inset, inset, 1, 1), (W - inset, inset, -1, 1), (inset, bottom, 1, -1),
                            (W - inset, bottom, -1, -1)):
         draw.rectangle((min(cx, cx + sx * arm), min(cy, cy + sy * thick), max(cx, cx + sx * arm),
-                        max(cy, cy + sy * thick)), fill=HAZARD_AMBER)
+                        max(cy, cy + sy * thick)), fill=style.accent)
         draw.rectangle((min(cx, cx + sx * thick), min(cy, cy + sy * arm), max(cx, cx + sx * thick),
-                        max(cy, cy + sy * arm)), fill=HAZARD_AMBER)
+                        max(cy, cy + sy * arm)), fill=style.accent)
     y = HAZARD_HEIGHT + 8
-    draw.rectangle((0, y, W, y + 3), fill=HAZARD_AMBER)
+    draw.rectangle((0, y, W, y + 3), fill=style.accent)
     for x in range(0, W, 27):
-        draw.rectangle((x, y + 3, x + 2, y + (17 if x % 135 == 0 else 10)), fill=HAZARD_AMBER)
+        draw.rectangle((x, y + 3, x + 2, y + (17 if x % 135 == 0 else 10)), fill=style.accent)
     return overlay
 
 
@@ -1134,7 +1153,7 @@ def hazard_layout(beat, release, has_photo, demo):
     draw = ImageDraw.Draw(layer)
     if not has_photo:   # a text card in the place of the picture
         draw.rectangle((60, HAZARD_TOP, 1020, HAZARD_TOP + HAZARD_HEIGHT), fill=style.card, outline=style.rule, width=2)
-        draw.rectangle((110, HAZARD_TOP + 80, 206, HAZARD_TOP + 86), fill=HAZARD_AMBER)
+        draw.rectangle((110, HAZARD_TOP + 80, 206, HAZARD_TOP + 86), fill=style.accent)
         headline, size = fit(beat.headline, 840, 72, 3, smallest=40)
         y = text(draw, 110, HAZARD_TOP + 130, headline, size, style.card_ink)
         if beat.value:
@@ -1149,7 +1168,7 @@ def hazard_layout(beat, release, has_photo, demo):
         value, size = fit(beat.era, 520, 34, 1, smallest=24)
         width = 104 + round(font(44).getlength(value) * size / 44)
         d.rectangle((54, HAZARD_TOP + 56, 54 + width, HAZARD_TOP + 112), fill=(0, 0, 0, 190))
-        d.text((70, HAZARD_TOP + 84), "ERA", font=mono(26), fill=HAZARD_AMBER, anchor="lm")
+        d.text((70, HAZARD_TOP + 84), "ERA", font=mono(26), fill=style.accent, anchor="lm")
         d.text((134, HAZARD_TOP + 84), value, font=font(44).font_variant(size=size), fill="#ffffff", anchor="lm")
 
     if beat.era:
@@ -1170,7 +1189,7 @@ def hazard_layout(beat, release, has_photo, demo):
     height = sum(block_height(value, size, spacing) for value, size, _, _, spacing in blocks)
 
     def bar(d):
-        d.rectangle((60, top + 6, 72, top + min(height, 96)), fill=HAZARD_AMBER)
+        d.rectangle((60, top + 6, 72, top + min(height, 96)), fill=style.accent)
 
     if animated:
         parts.append(piece("rule", bar))
@@ -1659,7 +1678,7 @@ def draw_quote(image, line, age):
         return draw_full_quote(image, rows, size, block, age, BAND_QUOTE_CENTRE, BAND_QUOTE_FOOT)
     if style.layout == "hazard":   # the last row in amber: it carries the point of the line
         return draw_full_quote(image, rows, size, block, age, HAZARD_QUOTE_CENTRE, HAZARD_QUOTE_FOOT,
-                               key=HAZARD_AMBER if len(rows) > 1 else "")
+                               key=style.accent if len(rows) > 1 else "")
     band_height = min(height, block + 330)
     band = quote_band(band_height)
     if style.layout == "ink":
