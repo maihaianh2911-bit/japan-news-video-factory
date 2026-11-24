@@ -77,6 +77,15 @@ STYLES = {
                   photo_tag_text="#f4ead2", value="#ffe9a8", card="#1b1612", card_ink="#f4ead2",
                   card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
                   layout="full"),
+    # "band" (owner, 24/11/2026, from a short he liked: "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh
+    # ngang"): the scene's own picture, blurred and dark, fills the frame; the kicker and the big title (masthead)
+    # stand at the top between gold rules, the era of the scene in gold on the right, the picture itself in a wide
+    # band across the middle between two thin gold lines, the headline and the pale gold captions under it.
+    "band": Style(family="Serif", background="#0e0b09", text="#ffffff", muted="#d9cdb4", accent="#b3261e",
+                  tag="#b3261e", tag_text="#f4ead2", photo_bed="#0e0b09", photo_tag="#0e0b09",
+                  photo_tag_text="#f4ead2", value="#ffe9a8", card="#1b1612", card_ink="#f4ead2",
+                  card_muted="#857b68", rule="#7a6744", caption_box="", caption_text="#f3dfae", grain=False,
+                  layout="band"),
 }
 style = STYLES["news"]
 
@@ -275,7 +284,9 @@ INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of
 INK_GOLD = "#d9b96a"
 FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
 # quote, the lowest their foot may come (the captions run under it), the colour of the text's outline
-BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H)}
+BAND_TOP, BAND_HEIGHT = 470, 780       # "band": the picture in a wide band across the middle (about 7:5)
+BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H),
+         "band": (BAND_TOP, BAND_HEIGHT)}
 ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
@@ -291,13 +302,15 @@ def photo_box():
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
+    if style.layout == "band":   # the title at the top stays while the scene changes under it
+        return (0, BAND_TOP - 90, W, H)
     if style.layout == "full":
         return (0, 0, W, H)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614, "full": 1560}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -871,9 +884,118 @@ def full_layout(beat, release, has_photo, demo):
     return image, layer, [part for part in parts if part]
 
 
+BAND_GOLD, BAND_IVORY = "#d9b96a", "#e9dcbd"
+
+
+def band_layout(beat, release, has_photo, demo):
+    """The "band" frame (owner, 24/11/2026): the kicker between two gold rules and the big title (masthead) at the
+    top, a small ornament under it, the era of the scene in gold on the right above the picture, the picture in a
+    band across the middle (drawn by Scene.render over its own blurred copy), the headline under the band. The
+    masthead and the ornament are "fixed"; the era and the headline come in with "fx": text."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = Image.new("RGB", (W, H), style.background)
+    kicker = release.kicker or "日本の物語"
+    title = release.masthead or ""
+
+    def masthead(d):
+        size = 38
+        width = font(size).getlength(kicker)
+        y = 132 if title else 210
+        d.text((W // 2, y), kicker, font=font(size), fill=BAND_IVORY, anchor="mm")
+        for x0, x1 in ((70, W // 2 - width / 2 - 26), (W // 2 + width / 2 + 26, W - 70)):
+            d.line((x0, y, x1, y), fill=BAND_GOLD, width=2)
+        if title:
+            words, title_size = fit(title, 940, 112, 1, smallest=72)
+            d.text((W // 2 + 3, 262 + 5), words, font=font(title_size), fill=(0, 0, 0, 150), anchor="mm")
+            d.text((W // 2, 262), words, font=font(title_size), fill="#ffffff", anchor="mm")
+        y = 352 if title else 262
+        d.line((W // 2 - 150, y, W // 2 - 22, y), fill=BAND_GOLD, width=2)
+        d.line((W // 2 + 22, y, W // 2 + 150, y), fill=BAND_GOLD, width=2)
+        d.polygon(((W // 2, y - 10), (W // 2 + 10, y), (W // 2, y + 10), (W // 2 - 10, y)), fill="#c23a26")
+
+    parts.append(piece("fixed", masthead))
+    if demo:
+        parts.append(piece("fixed", lambda d: text(d, W // 2, 40, "動作確認", 26, GOLD, anchor="mt")))
+
+    def era(d):   # the era of the scene, in gold on the right above the picture, underlined
+        value, size = fit(beat.era, 600, 46, 1, smallest=32)
+        d.text((W - 62, BAND_TOP - 30), value, font=font(size), fill=BAND_GOLD, anchor="rs")
+        width = font(size).getlength(value)
+        d.line((W - 62 - width - 6, BAND_TOP - 16, W - 56, BAND_TOP - 16), fill=BAND_GOLD, width=2)
+
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if beat.era:
+        if animated:
+            parts.append(piece("tag", era))
+        else:
+            era(draw)
+    if not has_photo:   # a text card in the place of the picture
+        draw.rectangle((0, BAND_TOP, W, BAND_TOP + BAND_HEIGHT), fill=style.card)
+        headline, size = fit(beat.headline, 900, 68, 3, smallest=40)
+        y = text(draw, 90, BAND_TOP + 90, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 900, 120, 1, smallest=56)
+            y = text(draw, 90, y + 60, value, value_size, style.value)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 900, 40, 5, bold=False, smallest=26)
+            text(draw, 90, y + 50, evidence, evidence_size, style.card_ink, bold=False)
+        return image, layer, [part for part in parts if part]
+    blocks = []
+    headline, size = fit(beat.headline, 960, 70, 2, smallest=46)
+    blocks.append((headline, size, style.text, True, 16))
+    if beat.value:
+        value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
+        blocks.append((value, value_size, style.value, True, 16))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, style.muted, False, 10))
+    y = BAND_TOP + BAND_HEIGHT + 44
+    order = 0
+    for value, size, colour, bold, spacing in blocks:
+        for row, line in enumerate(value.splitlines()):
+            at = y + row * (size + spacing)
+            paint = (lambda d, line=line, at=at, size=size, colour=colour, bold=bold:
+                     d.text((W // 2, at), line, font=font(size, bold), fill=colour, anchor="mt"))
+            if animated:
+                parts.append(piece("row", paint, order))
+                order += 1
+            else:
+                part = piece("row", paint)
+                if part:
+                    layer.paste(part[1], part[2], part[1])
+        y += block_height(value, size, spacing) + 18
+    return image, layer, [part for part in parts if part]
+
+
+@lru_cache(maxsize=1)
+def band_shade():
+    """Over the blurred backdrop of the "band" frame: darker at the top (the title) and at the foot (the captions)."""
+    shade = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(shade)
+    for y in range(H):
+        top = max(0.0, 1 - y / BAND_TOP) ** 1.2 * 110
+        foot = max(0.0, (y - BAND_TOP - BAND_HEIGHT) / (H - BAND_TOP - BAND_HEIGHT)) ** 1.1 * 120
+        draw.line((0, y, W, y), fill=(6, 4, 2, round(min(200, 40 + top + foot))))
+    return shade
+
+
+def band_backdrop(picture):
+    """The picture of the band, blurred and dark, filling the whole frame behind it."""
+    pw, ph = picture.size
+    cw = ph * W / H
+    small = picture.resize((27, 48), Image.Resampling.BILINEAR, box=((pw - cw) / 2, 0, (pw + cw) / 2, ph))
+    soft = small.filter(ImageFilter.GaussianBlur(2.2)).resize((W, H), Image.Resampling.BICUBIC)
+    frame = soft.point(lambda level: round(level * 0.42))
+    frame.paste(band_shade(), (0, 0), band_shade())
+    return frame
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
+    if style.layout == "band":
+        return band_layout(beat, release, has_photo, demo)
     if style.layout == "story":
         return story_layout(beat, release, has_photo, demo)
     if style.layout == "ink":
@@ -1008,6 +1130,12 @@ class Scene:
             picture, photo = self.picture(moment)
             if style.layout == "ink":
                 frame.paste(picture, (0, self.top), ink_mask(self.height))
+            elif style.layout == "band":   # the picture over its own blurred copy, between two thin gold lines
+                frame = band_backdrop(picture)
+                frame.paste(picture, (0, self.top))
+                draw = ImageDraw.Draw(frame)
+                for y in (self.top - 2, self.top + self.height):
+                    draw.rectangle((0, y, W, y + 1), fill=BAND_GOLD)
             else:
                 frame.paste(picture, (0, self.top))
             if style.layout in ("story", "ink"):   # "full": nothing dark over the picture (owner, 21/11/2026)
@@ -1018,7 +1146,7 @@ class Scene:
                 frame.paste(part, at, part)
         if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
-            if style.layout == "full":   # the tag at the top comes in all the same
+            if style.layout in ("full", "band"):   # the tag (the era) comes in all the same
                 self.draw_parts(frame, age, only="tag")
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
@@ -1026,7 +1154,7 @@ class Scene:
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
-        if photo and style.layout != "full":   # "full": the credits are in credits.txt only
+        if photo and style.layout not in ("full", "band"):   # "full", "band": the credits are in credits.txt only
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
@@ -1077,7 +1205,14 @@ def page_shadow(height=1460):
     return shadow
 
 
-CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45}
+CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45, "slide": 0.5,
+               "zoom": 0.6}
+
+
+def cut_area():
+    """The part of the frame a "slide" or a "zoom" moves: in the "band" frame the picture, the era above it and the
+    text under it (the title at the top stays put), elsewhere the page."""
+    return page_area()
 
 
 @lru_cache(maxsize=1)
@@ -1100,6 +1235,34 @@ def transition(old, new, amount, cut=""):
         if amount < 0.25:
             return Image.blend(old, light, 0.85 * amount / 0.25)
         return Image.blend(light, new, 0.15 + 0.85 * ease((amount - 0.25) / 0.75))
+    if cut in ("slide", "zoom"):
+        step = ease(amount)
+        frame = Image.blend(old, new, step)   # what does not move (the same in both scenes) stays as it is
+        area = cut_area()
+        left, top, right, bottom = area
+        width, height = right - left, bottom - top
+        before, after = old.crop(area), new.crop(area)
+        if cut == "slide":   # the new scene pushes the old one out to the left
+            shift = round(width * step)
+            moving = Image.new("RGB", (width, height))
+            moving.paste(before, (-shift, 0))
+            moving.paste(after, (width - shift, 0))
+            frame.paste(moving, (left, top))
+            if 0 < shift < width:
+                ImageDraw.Draw(frame).rectangle((left + width - shift, top, left + width - shift + 3, bottom),
+                                                fill=BAND_GOLD if style.layout == "band" else style.accent)
+            return frame
+        # "zoom": the old scene rushes towards the viewer and melts into the new one, which settles from a little close
+        grow = 1 + 0.35 * step
+        zoomed = before.resize((round(width * grow), round(height * grow)), Image.Resampling.BILINEAR)
+        x, y = (zoomed.width - width) // 2, (zoomed.height - height) // 2
+        zoomed = zoomed.crop((x, y, x + width, y + height))
+        settle = 1.12 - 0.12 * step
+        arriving = after.resize((round(width * settle), round(height * settle)), Image.Resampling.BILINEAR)
+        x, y = (arriving.width - width) // 2, (arriving.height - height) // 2
+        arriving = arriving.crop((x, y, x + width, y + height))
+        frame.paste(Image.blend(zoomed, arriving, ease(min(1.0, amount * 1.6))), (left, top))
+        return frame
     if cut == "dip":
         # Only the scene (picture and its text) goes dark; the header and the foot change quietly and the caption,
         # drawn afterwards, stays readable.
@@ -1316,14 +1479,16 @@ def draw_quote(image, line, age):
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
     # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
     joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    if style.layout == "full":   # in the middle of the frame: as large as three rows allow
-        words, size = fit("".join(pieces), 960, 92, 3, smallest=52)
+    if style.layout in ("full", "band"):   # as large as three rows allow
+        words, size = fit("".join(pieces), 960, 96, 3, smallest=52)
     else:
         words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     if style.layout == "full":
         return draw_full_quote(image, rows, size, block, age)
+    if style.layout == "band":
+        return draw_band_quote(image, rows, size, block, age)
     band_height = min(height, block + 330)
     band = quote_band(band_height)
     if style.layout == "ink":
@@ -1360,6 +1525,28 @@ def draw_full_quote(image, rows, size, block, age):
         soft = ImageChops.offset(ink.getchannel("A"), 0, 4).filter(ImageFilter.GaussianBlur(7))
         strip = Image.new("RGBA", ink.size, (10, 6, 2, 0))
         strip.putalpha(soft.point(lambda level: round(level * 0.6)))
+        strip = Image.alpha_composite(strip, ink)
+        strip = faded(strip, shown) if shown < 1 else strip
+        image.paste(strip, (0, y - 24 + index * (size + 22) + round(30 * (1 - shown))), strip)
+
+
+BAND_QUOTE_CENTRE = 1490
+
+
+def draw_band_quote(image, rows, size, block, age):
+    """A quote in the "band" frame: big and white under the picture, in the place of the headline and the
+    captions, row after row rising into place."""
+    y = BAND_QUOTE_CENTRE - block // 2
+    for index, row in enumerate(rows):
+        shown = ease((age - 0.1 - 0.22 * index) / 0.42) if FX.get("text") else ease(age / QUOTE_IN)
+        if shown <= 0:
+            continue
+        ink = Image.new("RGBA", (W, size + 60), (0, 0, 0, 0))
+        ImageDraw.Draw(ink).text((W // 2, 24), row, font=font(size), fill="#ffffff", anchor="mt",
+                                 stroke_width=2, stroke_fill=(20, 14, 8))
+        soft = ImageChops.offset(ink.getchannel("A"), 0, 5).filter(ImageFilter.GaussianBlur(8))
+        strip = Image.new("RGBA", ink.size, (6, 4, 2, 0))
+        strip.putalpha(soft.point(lambda level: round(level * 0.75)))
         strip = Image.alpha_composite(strip, ink)
         strip = faded(strip, shown) if shown < 1 else strip
         image.paste(strip, (0, y - 24 + index * (size + 22) + round(30 * (1 - shown))), strip)
@@ -1467,10 +1654,14 @@ def loudness():
     for a higher target gave only 1.6 dB of the 4.6 asked: it will not push the peaks.)"""
     chain = "loudnorm=I=-16:TP=-1.5:LRA=7"
     # the limiter takes back part of the gain: measured, 8 dB of gain gives the 4.6 dB (70 %) asked for
-    gain = min(10.0, 1.75 * 20 * math.log10(max(0.3, VOICE)))
+    gain = min(14.0, 1.75 * 20 * math.log10(max(0.3, VOICE)))
     if abs(gain) > 0.05:
         chain += f",volume={gain:.1f}dB"
-    if gain > 0.05:
+    if VOICE > 2.0:
+        # louder still (owner, 24/11/2026: "tăng voice to hơn 40%", 1.7 → 2.4): the slow limiter above stops at about
+        # -11 LUFS whatever the gain; a quicker one with a higher ceiling reaches -9 (measured: 13 dB → -9.3 LUFS)
+        chain += ",alimiter=limit=0.95:attack=1:release=20:level=disabled"
+    elif gain > 0.05:
         chain += ",alimiter=limit=0.89:attack=3:release=60:level=disabled"
     return chain
 
@@ -1549,8 +1740,9 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                                       getattr(captions[shown], "marks", ()))
                     if grain:
                         frame = grain.apply(frame, frame_index)
-                    if style.layout == "ink":   # the video comes out of the dark and goes back into it
-                        edge = min(moment / 0.5, (duration - moment) / 0.8)
+                    if style.layout in ("ink", "band"):   # the video comes out of the dark and goes back into it
+                        # ("band": the hook is seen at once, the video only goes back into the dark at its end)
+                        edge = (duration - moment) / 0.8 if style.layout == "band" else min(moment / 0.5, (duration - moment) / 0.8)
                         if edge < 1:
                             frame = Image.blend(Image.new("RGB", (W, H), "#000000"), frame, ease(max(0.0, edge)))
                     process.stdin.write(frame.tobytes())

@@ -195,6 +195,8 @@ Owner, 19/11/2026: every picture must be seen to move for its whole time on scre
 | `hard` | no transition | a shock, a contrast, a quick list; before a `punch-in` |
 | `dip` | the picture and the scene text go dark and come back (0.9 s); the header and the caption stay | a jump in time ("ten years later"), a death, the ending scene |
 | `flash` | a burst of pale light on the cut, then the new scene comes out of it (0.45 s) | a blow, a betrayal, the turn of the story |
+| `slide` | the new scene slides in from the right and pushes the old one out to the left, behind a thin line (0.5 s; in the `band` frame the title at the top stays) | a move to another place or person, the story going on |
+| `zoom` | the old scene rushes towards the viewer and melts into the new one, which settles from a little close (0.6 s) | a jump in time or place, a sudden turn |
 
 `python -m news.custom` refuses an unknown name and lists the valid ones. Names and code: `news/edits.py`,
 `news/render.py` (`named_photo`, `transition`); every edit can be seen with `python tools/edits_test.py

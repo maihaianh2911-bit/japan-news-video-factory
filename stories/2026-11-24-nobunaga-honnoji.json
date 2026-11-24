@@ -2,9 +2,9 @@
   "title": "是非に及ばず 織田信長と本能寺の変",
   "stage": "render",
   "date": "2026-11-24",
-  "style": "full",
+  "style": "band",
   "kicker": "戦国の物語",
-  "voice": 1.7,
+  "voice": 2.4,
   "pace": {
     "speed": 1.15,
     "line_pause": 0.12,
@@ -88,23 +88,23 @@
       ],
       "photo": [
         {
-          "pick": "52-1",
+          "pick": "50-11",
           "move": "push-in",
           "focus": [
-            0.5,
-            0.2
+            0.48,
+            0.35
           ]
         },
         {
           "pick": "41-1",
-          "move": "push-in",
+          "move": "pan-right",
           "focus": [
-            0.42,
+            0.45,
             0.3
           ]
         }
       ],
-      "why": "Mở bằng Nobunaga (Oguri Shun) cận mặt trên nền chùa cháy, rồi Nobunaga đẫm máu giữa lửa"
+      "why": "Mở bằng Nobunaga (Oguri Shun) cận mặt, rồi Nobunaga đẫm máu giữa lửa"
     },
     {
       "label": "本能寺",
@@ -116,14 +116,14 @@
           "say": "せんごひゃくはちじゅうにねん、ろくがつ、のぶながは、わずかなともだけをつれて、きょうとの、ほんのうじに、とまっていました。"
         }
       ],
-      "cut": "fade",
+      "cut": "slide",
       "photo": [
         {
           "pick": "46-4",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
-            0.73,
-            0
+            0.7,
+            0.0
           ]
         },
         {
@@ -131,7 +131,7 @@
           "move": "rise"
         }
       ],
-      "why": "Nobunaga giữa người hầu, rồi cổng chùa Honnō-ji thật ở Kyoto"
+      "why": "Trượt sang: Nobunaga giữa người hầu, rồi cổng chùa Honnō-ji thật ở Kyoto"
     },
     {
       "label": "出陣前",
@@ -143,14 +143,14 @@
           "say": "ちゅうごくちほうでたたかう、はしばひでよしをたすけるため、みずからも、しゅつじんするちょくぜんのことです。"
         }
       ],
-      "cut": "hard",
+      "cut": "zoom",
       "photo": [
         {
           "pick": "47-5",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
             0.42,
-            0.2
+            0.3
           ]
         },
         {
@@ -158,11 +158,11 @@
           "move": "pan-right",
           "focus": [
             0.45,
-            0.2
+            0.3
           ]
         }
       ],
-      "why": "Hideyoshi (Ikematsu Sōsuke) mặc giáp, rồi quân Hideyoshi phi ngựa ở miền Tây"
+      "why": "Phóng vào: Hideyoshi (Ikematsu Sōsuke) ở miền Tây, quân phi ngựa"
     },
     {
       "label": "謀反",
@@ -182,10 +182,10 @@
       "photo": [
         {
           "pick": "48-1",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
             0.45,
-            0.3
+            0.35
           ]
         },
         {
@@ -193,7 +193,7 @@
           "move": "push-in",
           "focus": [
             0.5,
-            0.3
+            0.2
           ]
         }
       ],
@@ -217,15 +217,23 @@
       "cut": "hard",
       "photo": [
         {
-          "pick": "46-4",
+          "pick": "50-2",
           "move": "push-in",
           "focus": [
-            0.73,
-            0.1
+            0.48,
+            0.3
+          ]
+        },
+        {
+          "pick": "42-2",
+          "move": "pan-left",
+          "focus": [
+            0.5,
+            0.35
           ]
         }
       ],
-      "why": "Nobunaga đứng nhìn xuống lúc biết bị phản, giữ mặt khi in câu 「是非に及ばず」"
+      "why": "Cắt thẳng vào mặt Nobunaga lúc biết bị phản, câu 「是非に及ばず」"
     },
     {
       "label": "最期",
@@ -244,23 +252,31 @@
       "cut": "flash",
       "photo": [
         {
+          "pick": "37-2",
+          "move": "push-in",
+          "focus": [
+            0.3,
+            0.4
+          ]
+        },
+        {
           "pick": "37-3",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
             0.2,
-            0.1
+            0.15
           ]
         },
         {
           "pick": "45-11",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
             0.7,
-            0.35
+            0.6
           ]
         }
       ],
-      "why": "Lóe sáng vào trận: Nobunaga đẫm máu cầm giáo, rồi lùi vào chùa đang cháy"
+      "why": "Lóe sáng vào trận: tên bay, Nobunaga cầm giáo, lùi vào chùa cháy"
     },
     {
       "label": "最期",
@@ -272,14 +288,14 @@
           "say": "さいごまで、そばにいた、こしょうの、もりらんまるも、ここで、いのちをおとしました。"
         }
       ],
-      "cut": "hard",
+      "cut": "slide",
       "photo": [
         {
           "pick": "49-1",
           "move": "push-in",
           "focus": [
             0.5,
-            0.25
+            0.2
           ]
         },
         {
@@ -291,7 +307,7 @@
           ]
         }
       ],
-      "why": "Mori Ranmaru (Ichikawa Danko), rồi Ranmaru cầm kiếm giữa lửa"
+      "why": "Trượt sang: Mori Ranmaru (Ichikawa Danko), rồi Ranmaru cầm kiếm giữa lửa"
     },
     {
       "label": "最期",
@@ -307,26 +323,26 @@
           "say": "そのなきがらは、ついに、みつからなかったといいます。"
         }
       ],
-      "cut": "fade",
+      "cut": "zoom",
       "photo": [
         {
           "pick": "41-1",
-          "move": "hold",
+          "move": "close-up",
           "focus": [
             0.42,
-            0.12
+            0.3
           ]
         },
         {
           "pick": "24-6",
-          "move": "push-in",
+          "move": "pull-back",
           "focus": [
             0.5,
             0.5
           ]
         }
       ],
-      "why": "Nobunaga đẫm máu giữa biển lửa, rồi chỉ còn ngọn lửa: không tìm thấy thi thể"
+      "why": "Phóng vào: Nobunaga giữa biển lửa, rồi chỉ còn ngọn lửa"
     },
     {
       "label": "天下",
@@ -346,36 +362,34 @@
       "photo": [
         {
           "pick": "48-13",
-          "move": "hold",
+          "move": "pan-right",
           "focus": [
             0.3,
-            0.2
+            0.3
           ]
         },
         {
           "pick": "48-10",
-          "move": "hold",
+          "move": "push-in",
           "focus": [
             0.45,
-            0.2
+            0.3
           ]
         },
         {
           "pick": "8-1",
           "move": "pull-back",
-          "focus": [
-            0.5,
-            0.3
-          ],
+          "fit": "contain",
           "depth": false
         }
       ],
-      "why": "Tối dần: Mitsuhide ở doanh trại, Hideyoshi (Ikematsu) trước trận Yamazaki, rồi chân dung thật của Hideyoshi"
+      "why": "Tối dần: Mitsuhide ở doanh trại, Hideyoshi trước trận Yamazaki, chân dung thật Hideyoshi"
     }
   ],
   "issue": 60,
   "music": {
     "pick": "34-2",
     "volume": 0.7
-  }
+  },
+  "masthead": "本能寺の変"
 }
