@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 58,
   "title": "陛下が愛子さまだけに伝えるもの",
   "date": "2026-11-24",
@@ -31,7 +31,26 @@
           "text": "それは、国民と喜びも悲しみも分かち合う、象徴としての心です。",
           "say": "それは、こくみんと、喜びも悲しみも、分かち合う、しょうちょうとしての、こころです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-18",
+          "focus": [
+            0.56,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-1",
+          "focus": [
+            0.18,
+            0.3
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Aiko cười vẫy tay (ảnh mở đầu, khổ dọc, mặt rõ ở nửa trên), rồi Thiên hoàng và Aiko cười cạnh nhau."
     },
     {
       "label": "陛下の帝王学",
@@ -42,7 +61,19 @@
           "text": "陛下ご自身は、学習院初等科のころから、帝王学を学んで育ちました。",
           "say": "へいかご自身は、がくしゅういん、しょとうかの、ころから、ていおうがくを、学んで育ちました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "focus": [
+            0.6,
+            0.2
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Thiên hoàng hồi nhỏ mặc đồng phục tiểu học Gakushuin đi học.",
+      "cut": "dip"
     },
     {
       "label": "悠仁さまは",
@@ -57,7 +88,27 @@
           "text": "秋篠宮さまも、記者会見でその問いに正面から答えてこなかったといいます。",
           "say": "あきしののみやさまも、記者会見で、その問いに、しょうめんから、答えてこなかったといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-4",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-7",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hoàng tử Hisahito ở buổi họp báo trưởng thành, rồi hoàng tử Akishino ở buổi họp báo sinh nhật.",
+      "cut": "page"
     },
     {
       "label": "初めての沖縄",
@@ -68,7 +119,27 @@
           "text": "2025年6月、陛下は、周囲が驚くほどの強いご意向で、23歳の愛子さまを、初めての沖縄へ連れて行きました。",
           "say": "にせんにじゅうごねん、ろくがつ、へいかは、周囲が驚くほどの、強いごいこうで、にじゅうさんさいの、あいこさまを、初めての、おきなわへ、連れて行きました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "focus": [
+            0.41,
+            0.2
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "9-3",
+          "focus": [
+            0.27,
+            0.3
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Ba người ôm hoa ở Okinawa 6/2025, rồi ba người đi vào nghĩa trang.",
+      "cut": "fade"
     },
     {
       "label": "対馬丸記念館",
@@ -79,7 +150,24 @@
           "text": "戦没者墓苑で花を手向け、対馬丸記念館では、疎開の途中で海に沈んだ子どもたちの写真と向き合いました。",
           "say": "せんぼつしゃ、ぼえんで、花を、たむけ、つしままる、きねんかんでは、そかいの途中で、海に沈んだ、子どもたちの写真と、向き合いました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-1",
+          "focus": [
+            0.24,
+            0.05
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-11",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Ba người trước tường ảnh các em bé tàu Tsushima Maru, rồi cận mặt ba người lắng nghe.",
+      "cut": "fade"
     },
     {
       "label": "長崎",
@@ -90,7 +178,24 @@
           "text": "続いて被爆地の長崎でも、原爆で亡くなった人々に、親子三人で祈りを捧げました。",
           "say": "続いて、ひばくちの、ながさきでも、げんばくで亡くなった人々に、おやこ、さんにんで、いのりを、ささげました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "12-12",
+          "focus": [
+            0.43,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Ba người cúi đặt hoa ở công viên Hòa bình Nagasaki, rồi ba người ôm hoa đi lên dốc.",
+      "cut": "dip"
     },
     {
       "label": "託す未来",
@@ -105,7 +210,35 @@
           "text": "けれど陛下が、ご自分の背中で未来を託そうとしているのは、紛れもなく愛子さまなのだと、多くの人が感じています。",
           "say": "けれど、へいかが、ご自分の、せなかで、未来を、たくそうとしているのは、まぎれもなく、あいこさまなのだと、多くの人が、感じています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "9-15",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "5-16",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Quốc hội, rồi Thiên hoàng đi trước, vợ và con gái theo sau (cái lưng của cha), cuối cùng Aiko mỉm cười.",
+      "cut": "page"
     }
   ],
   "searches": [
@@ -131,5 +264,9 @@
     "file:stories/media/2026-11-24-aiko-kokoro/v-0m47s.jpg",
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano"
-  ]
+  ],
+  "music": {
+    "pick": "21-4",
+    "volume": 0.7
+  }
 }
