@@ -1,6 +1,6 @@
 {
   "title": "是非に及ばず 織田信長と本能寺の変",
-  "stage": "render",
+  "stage": "find",
   "date": "2026-11-24",
   "style": "full",
   "kicker": "戦国の物語",
@@ -52,7 +52,22 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano",
-    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-portrait-fire.jpg"
+    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-portrait-fire.jpg",
+    "page:https://www.cinematoday.jp/gallery/E0028799",
+    "page:https://www.nhk.jp/g/ts/P52L88MYXY/blog/bl/pdRPMxDlrQ/bp/pyex2VzXVB/",
+    "page:https://thetv.jp/news/detail/1423957/",
+    "page:https://www.cinematoday.jp/news/N0155593",
+    "page:https://www.cinematoday.jp/news/N0155790",
+    "page:https://rekishikaido.php.co.jp/detail/14599",
+    "page:https://mag.japaaan.com/archives/278226/2",
+    "web:豊臣兄弟 本能寺の変 明智光秀 場面写真",
+    "web:豊臣兄弟 第27回 本能寺の変 信長 場面写真",
+    "web:豊臣兄弟 本能寺 炎 小栗旬 信長",
+    "web:豊臣兄弟 秀吉 中国大返し 場面写真",
+    "web:豊臣兄弟 第28回 山崎の戦い 明智光秀",
+    "web:豊臣兄弟 森蘭丸 本能寺",
+    "web:豊臣兄弟 小栗旬 織田信長 => a samurai lord in close-up, face clearly visible",
+    "web:豊臣兄弟 明智光秀 謀反 => a samurai general in armor in close-up, face clearly visible"
   ],
   "scenes": [
     {
