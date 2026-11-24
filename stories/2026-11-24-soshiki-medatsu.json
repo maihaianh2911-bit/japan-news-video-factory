@@ -25,7 +25,18 @@
           "text": "葬式なのに、目立とうとした女性芸能人が3人います。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-4",
+          "focus": [
+            0.47,
+            0.42
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu: chân dung Arimura Kasumi rõ mặt, sáng."
     },
     {
       "label": "有村架純",
@@ -49,7 +60,35 @@
           "text": "その父親を演じたのが、蟹江さんでした。",
           "say": "その父親を演じたのが、かにえさんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-5",
+          "focus": [
+            0.5,
+            0.38
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-2",
+          "focus": [
+            0.53,
+            0.47
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "10-1",
+          "focus": [
+            0.53,
+            0.41
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Arimura, rồi Kanie Keizo, rồi Arimura trong vai Haruko thời trẻ (Amachan).",
+      "cut": "fade"
     },
     {
       "label": "有村架純",
@@ -62,7 +101,32 @@
         },
         "「ちゃんとしてるイメージだったのに残念」。",
         "SNSではそんな声が広がり、清純派女優のイメージが崩れてしまいました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "35-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-1",
+          "focus": [
+            0.55,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-9",
+          "focus": [
+            0.66,
+            0.47
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Arimura ở lễ tiễn Kanie (khung video gốc), rồi hình ảnh trong sáng của cô.",
+      "cut": "fade"
     },
     {
       "label": "工藤静香",
@@ -76,7 +140,32 @@
         },
         "2012年、92歳で亡くなった国民的女優、森光子さんの葬儀。",
         "2300人の参列者の中で、ひときわ目立っていたのが工藤でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-9",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "36-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Kudo Shizuka, tấm ảnh lớn của Mori Mitsuko ở đám tang, rồi Kudo ở đám tang (video gốc).",
+      "cut": "dip"
     },
     {
       "label": "工藤静香",
@@ -86,7 +175,24 @@
         "40代の大人の女性が、黒いミニ丈のワンピースに、ヒールの高いロングブーツ。",
         "「その歳で、最低限のマナーもないのか」。",
         "ネットには呆れた声があふれました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "32-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "14-7",
+          "focus": [
+            0.43,
+            0.43
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Đôi bốt cao cổ ở đám tang (video gốc), rồi Kudo.",
+      "cut": "fade"
     },
     {
       "label": "3人目",
@@ -103,7 +209,32 @@
           "say": "2008年、36歳の若さでこの世を去った、いいじまあいさん。"
         },
         "そのお別れ会に、関係者700人が集まりました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "18-8",
+          "focus": [
+            0.43,
+            0.42
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "19-1",
+          "focus": [
+            0.51,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "33-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Iijima Ai, ảnh của cô ở lễ tiễn biệt, rồi người đến dự (video gốc).",
+      "cut": "dip"
     },
     {
       "label": "3人目",
@@ -112,7 +243,29 @@
       "lines": [
         "その中で一番目立っていたのは、クリスチャン・ディオールのセットアップに、やたらと大きな透ける帽子をかぶった女性だったといいます。",
         "さらに彼女は、自分のブログに「本日のファッション」と題して、その日の喪服コーデを載せました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "38-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "22-6",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "39-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Người phụ nữ mặc Dior đội mũ to (mặt che, video gốc), chiếc mũ voan, ảnh Iijima ở lễ tiễn.",
+      "cut": "fade"
     },
     {
       "label": "3人目",
@@ -121,7 +274,24 @@
       "lines": [
         "極めつけは、自ら立ち上げたブランドのバッグまで紹介したこと。",
         "「故人より、自分のファッションのPRなのか」。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "40-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "19-1",
+          "focus": [
+            0.51,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Chiếc túi (video gốc), rồi ảnh Iijima ở lễ tiễn biệt.",
+      "cut": "fade"
     },
     {
       "label": "神田うの",
@@ -133,7 +303,19 @@
           "quote": true,
           "say": "非難が殺到したその人物とは、かんだうのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-2",
+          "focus": [
+            0.5,
+            0.52
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Lộ mặt: Kanda Uno.",
+      "cut": "flash"
     }
   ],
   "searches": [
@@ -177,5 +359,9 @@
     "file:stories/media/2026-11-24-soshiki-medatsu/v-0m35s-top.jpg",
     "file:stories/media/2026-11-24-soshiki-medatsu/v-0m47s-top.jpg",
     "file:stories/media/2026-11-24-soshiki-medatsu/v-0m49s-top.jpg"
-  ]
+  ],
+  "music": {
+    "pick": "34-4",
+    "volume": 0.7
+  }
 }
