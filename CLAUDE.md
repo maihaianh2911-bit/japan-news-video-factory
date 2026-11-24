@@ -16,7 +16,11 @@
    "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
    trên 61s"). Do not lengthen a script only to reach 80 s: a script the owner cut stays cut as long as it passes
    61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
-   Trial or sample videos are the exception, as in rule 2.
+   Trial or sample videos are the exception, as in rule 2. The render itself stops before drawing a frame when the
+   real voice lasts 61 s or less or over 160 s, unless the story's `title` says `thử`, `mẫu`, `test` or `demo`
+   (`news/__main__.py`; owner, 24/11/2026, after a 53-second video was rendered: "dưới 61s mà vẫn dựng là sao?").
+   The voice reads faster than the 6.5-kana estimate: at speed 1.2 a script came out at 0.78 of its estimate, so
+   write about a quarter more than the estimate says.
 
 ## The owner's rule changes of 19/11/2026 — they win over any older sentence in this file or in `AGENT_JNEWS.md`
 The owner read the list of the hard rules and said of six of them "mấy cái này ko hợp lí", then chose what replaces
@@ -102,6 +106,21 @@ videos by their frame and by the name in the seal:
   on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
   the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
   pastes in the video's description; say so when giving the links.
+- **The disaster series** (owner, 24/11/2026: "1 series: top các thảm họa kinh hoàng nhất… mỗi video kể về 1 thảm
+  họa"): 「史上最悪の大災害」, one disaster a video, counting down from 第10位 (Titanic) to 第1位 (the plan: 10
+  Titanic, 9 Lake Nyos, 8 Halifax, 7 Pompeii, 6 Bhopal, 5 Chernobyl, 4 Krakatoa, 3 Tambora, 2 Kantō 1923, 1 Indian
+  Ocean 2004). The first line says the rank and the disaster, a surprising human detail comes right after it to keep
+  the viewer (owner: "đưa chi tiết người Nhật sống sót lên gần đầu để câu tương tác"), 62–70 s ("62-70s thôi cho
+  cuốn"). Issues `[Thảm họa] …` with the label `lich-su`. Frame **`"style": "hazard-…"`** (owner chose it, "Dựng
+  khung A thôi", after turning down `band`, `history` and `full` for this kind: "dựng kiểu này chỉ phù hợp với loại
+  video lịch sử"): a black page with a faint grid and warning stripes, a modern black gothic (Zen Kaku Gothic New,
+  fetched by the workflow), the series and the title at the top with the rank in a red badge, the picture inside
+  viewfinder corners with the `era` in a chip, the headline and the captions under it. The `kicker` gives its rows:
+  `"史上最悪の大災害\nタイタニック号沈没\n第10位"`. The colour follows the disaster ("chọn màu cho phù hợp"):
+  `hazard-ice` (sea, ice, tsunamis), `hazard-fire` (volcanoes, explosions, fires), `hazard-toxic` (nuclear, poison
+  gas), `hazard` (amber). First video: `2026-11-24-titanic`.
+- `"style": "band"` (a trial of 24/11/2026, not adopted): the kicker as a fixed title, a wide picture across the
+  middle over a blurred copy of itself. The owner liked it ("đẹp phết") but found it a history look.
 - The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
   "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
   những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)

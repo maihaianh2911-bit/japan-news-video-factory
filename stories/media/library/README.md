@@ -15,6 +15,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hisahito](hisahito/README.md) | 1 |
 | [honnoji](honnoji/README.md) | 2 |
+| [hosono-haruomi](hosono-haruomi/README.md) | 2 |
+| [hosono-masabumi](hosono-masabumi/README.md) | 3 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
 | [imperial-family](imperial-family/README.md) | 11 |
 | [kanda-uno](kanda-uno/README.md) | 1 |
@@ -36,9 +38,11 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [oda-nobunaga](oda-nobunaga/README.md) | 10 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 7 |
+| [straus](straus/README.md) | 2 |
 | [takeda-shingen](takeda-shingen/README.md) | 19 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
+| [titanic](titanic/README.md) | 13 |
 | [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 4 |
 | [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
