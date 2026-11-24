@@ -108,6 +108,14 @@ videos by their frame and by the name in the seal:
   `あの場所の真実`. Their issues are titled `[Lịch sử] …`, `[Luật ngầm] …`, `[Địa danh] …` with the label
   `lich-su` (not `[Tin Nhật]` and not `jnews`: the workflow's issue steps and the Claude task do not act on them;
   Claude in the chat opens the issue, comments the links and sets `jnews-busy` while working, `jnews-done` after).
+- **The channel "Tiểu sử nhân vật nổi tiếng"** (biographies of famous people), short name **`ts`** (owner,
+  24/11/2026: "Cho cái này vào 1 kênh riêng nhé, đặt tên là tiểu sử nhân vật nổi tiếng đi, viết tắt kênh ts"): the
+  life of one person from childhood to fame, real pictures of every age, in the `"style": "full"` frame (owner, same
+  day: "Làm kiểu để ảnh full màn hình"), seal `人物伝`, `"voice": 1.7`, gentle piano at 0.7. Its issues are titled
+  `[TS] <Japanese headline> — <Vietnamese idea>` with the label `ts` (not `jnews`; handled in the chat like the
+  `lich-su` kinds above). The format came from a source video the owner sent (a short on Putin's life); the owner
+  agreed that a person the Japanese audience loves fits better than a foreign politician they dislike. First video:
+  `2026-11-24-naruhito-oyamoto` (issue #66).
 - **Clips** (owner: "có thể dùng video (đoạn ngắn)"): a search `video:<words>` finds videos on Wikimedia Commons
   with a free licence (or `video:<address of one video file>`), keeps up to 3 of them as `<k>-<n>.mp4` (30 s at
   most, no sound) and lays six moments of each on `sheet_<k>.jpg` with their time. A picture entry picks one like
