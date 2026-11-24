@@ -10,3 +10,5 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `shikami-portrait.jpg` | Bức しかみ像: Ieyasu nhăn mặt sau trận Mikatagahara, khổ dọc | 1066×1465 | 徳川家康三方ヶ原戦役画像（しかみ像）徳川美術館蔵（shizuoka-hamamatsu-izu.com） | 2026-11-24-yukimura-osaka |
 | `golden-fan-umajirushi.jpg` | Cờ quạt vàng (馬印) của Ieyasu trưng bày ở bảo tàng | 1200×1200 | goobike.com | 2026-11-24-yukimura-osaka |
 | `yoshitoshi-osaka-danger.jpg` | Tranh Yoshitoshi 大阪夏御陣御危難の圖: Ieyasu lâm nguy ở trận Osaka, khổ dọc | 1200×1594 | note.com | 2026-11-24-yukimura-osaka |
+| `drama-sanadamaru-uchino-old-bruised.jpg` | Phim 真田丸: Ieyasu già (Uchino Seiyō) mặt trầy, giáp | 960×639 | daily.co.jp | 2026-11-24-yukimura-osaka |
+| `drama-sanadamaru-uchino-shocked.jpg` | Phim 真田丸: Ieyasu già (Uchino Seiyō) bàng hoàng ở trận Osaka | 1080×1080 | x.com | 2026-11-24-yukimura-osaka |

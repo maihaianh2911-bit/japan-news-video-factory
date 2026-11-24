@@ -38,11 +38,11 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [naruhito-masako](naruhito-masako/README.md) | 17 |
 | [oda-nobunaga](oda-nobunaga/README.md) | 10 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
-| [sanada-yukimura](sanada-yukimura/README.md) | 7 |
+| [sanada-yukimura](sanada-yukimura/README.md) | 15 |
 | [showa-tenno](showa-tenno/README.md) | 1 |
 | [takeda-shingen](takeda-shingen/README.md) | 19 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
-| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 4 |
+| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 6 |
 | [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
