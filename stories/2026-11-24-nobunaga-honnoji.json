@@ -1,6 +1,6 @@
 {
   "title": "是非に及ばず 織田信長と本能寺の変",
-  "stage": "render",
+  "stage": "find",
   "date": "2026-11-24",
   "style": "full",
   "kicker": "戦国の物語",
@@ -67,7 +67,8 @@
     "web:豊臣兄弟 第28回 山崎の戦い 明智光秀",
     "web:豊臣兄弟 森蘭丸 本能寺",
     "web:豊臣兄弟 小栗旬 織田信長 => a samurai lord in close-up, face clearly visible",
-    "web:豊臣兄弟 明智光秀 謀反 => a samurai general in armor in close-up, face clearly visible"
+    "web:豊臣兄弟 明智光秀 謀反 => a samurai general in armor in close-up, face clearly visible",
+    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-oguri-fire.jpg"
   ],
   "scenes": [
     {
@@ -87,13 +88,12 @@
       ],
       "photo": [
         {
-          "pick": "36-1",
-          "move": "hold",
+          "pick": "52-1",
+          "move": "push-in",
           "focus": [
             0.5,
             0.2
-          ],
-          "depth": false
+          ]
         },
         {
           "pick": "41-1",
@@ -104,7 +104,7 @@
           ]
         }
       ],
-      "why": "Mở bằng chân dung thật của Nobunaga trong lửa, rồi Nobunaga (Oguri Shun) đẫm máu giữa chùa cháy"
+      "why": "Mở bằng Nobunaga (Oguri Shun) cận mặt trên nền chùa cháy, rồi Nobunaga đẫm máu giữa lửa"
     },
     {
       "label": "本能寺",
