@@ -22,6 +22,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [honnoji](honnoji/README.md) | 2 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
 | [ikenami-shino](ikenami-shino/README.md) | 2 |
+| [imagawa-yoshimoto](imagawa-yoshimoto/README.md) | 2 |
 | [imperial-family](imperial-family/README.md) | 15 |
 | [ishida-mitsunari](ishida-mitsunari/README.md) | 1 |
 | [kanda-uno](kanda-uno/README.md) | 1 |
@@ -46,7 +47,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 20 |
 | [naruhito-masako](naruhito-masako/README.md) | 21 |
-| [oda-nobunaga](oda-nobunaga/README.md) | 10 |
+| [oda-nobunaga](oda-nobunaga/README.md) | 12 |
+| [okehazama-1560](okehazama-1560/README.md) | 5 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [otani-yoshitsugu](otani-yoshitsugu/README.md) | 1 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 15 |
@@ -55,7 +57,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [takeda-shingen](takeda-shingen/README.md) | 19 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
-| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 8 |
+| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 9 |
 | [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
 | [yamanakako](yamanakako/README.md) | 1 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
