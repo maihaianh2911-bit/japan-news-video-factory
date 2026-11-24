@@ -1578,7 +1578,7 @@ def stills(beats, release, photos, out):
                 draw_quote(frame, beat.lines[0], 3.0)
             if held and number and len(beat.lines) > 1:   # under the quote, a line spoken while this picture is on
                 draw_captions(frame, caption_chunks(beat.lines[min(number, len(beat.lines) - 1)])[0])
-            elif not (0 in beat.quotes and number == 0):
+            elif not (0 in beat.quotes and (number == 0 or held)):
                 draw_captions(frame, caption_chunks(beat.lines[0])[0])
             if grain:
                 frame = grain.apply(frame, index * 10 + number)

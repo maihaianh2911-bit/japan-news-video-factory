@@ -15,7 +15,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 65,
   "scenes": [
     {
@@ -26,7 +26,26 @@
           "text": "「戦友」と呼び合ってきたりくりゅうの二人が、ついに本当の関係を明かしました。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-17",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-2",
+          "focus": [
+            0.79,
+            0.15
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: hai người cười với huy chương vàng Olympic, rồi lúc trượt cùng nhau."
     },
     {
       "label": "2019年",
@@ -38,7 +57,27 @@
           "text": "ペアを解消し、引退も考えていた26歳の木原龍一は、愛知のリンクでアルバイトをしていました。",
           "say": "ペアを解消し、引退も考えていた、26歳のきはらりゅういちは、愛知のリンクでアルバイトをしていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "22-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Kihara với bạn diễn cũ (2018), rồi một sân băng ở Aichi.",
+      "cut": "fade"
     },
     {
       "label": "出会い",
@@ -50,7 +89,32 @@
           "say": "人数合わせで顔を出したペア教室で、初めて組んだのが、17歳のみうらりく。"
         },
         "三浦はその瞬間を、「雷が落ちた」と振り返っています。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "16-3",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Cặp đôi mới thành lập 2019, những tấm huy chương đầu tiên, Miura bay trên tay Kihara.",
+      "cut": "fade"
     },
     {
       "label": "戦友",
@@ -58,12 +122,32 @@
       "headline": "戦友、そして家族",
       "lines": [
         "9歳差の二人は、互いを「戦友」、そして「家族のような存在」と呼んできました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-12",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-7",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ôm nhau khóc khi vô địch thế giới, rồi tư thế quỳ trong bài thi.",
+      "cut": "fade"
     },
     {
       "label": "五輪",
       "era": "2026年2月",
-      "headline": "ミラノ・コルティナ五輪",
+      "headline": "ミラノ・コルティナ\n五輪",
       "lines": [
         "ミラノ・コルティナ五輪。",
         {
@@ -79,7 +163,32 @@
           "quote": true,
           "say": "りくが、りゅういちくんのために滑るね。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-8",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "27-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "11-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Kihara gục khóc sau bài ngắn, Miura ôm mặt anh (video gốc), hai người nhìn nhau.",
+      "cut": "dip"
     },
     {
       "label": "金メダル",
@@ -88,7 +197,32 @@
       "lines": [
         "翌日のフリーは、世界歴代最高点。",
         "日本のペアとして初めての、金メダルでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "26-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "11-14",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cú nâng của bài tự do, cái ôm sau bài thi (video gốc), ôm nhau trên băng.",
+      "cut": "flash"
     },
     {
       "label": "引退会見",
@@ -100,7 +234,29 @@
           "say": "4月の引退会見で、きはらは、声を掛けてもらえなかったら、僕は引退していた、と語りましたが、"
         },
         "二人の関係について、すべてを明かすことはありませんでした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-12",
+          "focus": [
+            0.55,
+            0.52
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "14-7",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "14-5",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hậu trường và họp báo giải nghệ tháng 4/2026.",
+      "cut": "fade"
     },
     {
       "label": "婚約",
@@ -111,7 +267,16 @@
           "text": "そして8月、二人は婚約を発表します。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-17",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Công bố đính hôn: hai người cười rạng rỡ.",
+      "cut": "fade"
     },
     {
       "label": "プロポーズ",
@@ -123,7 +288,26 @@
           "text": "木原は、五輪で大逆転したあのフリーの衣装でひざまずき、指輪を差し出しました。",
           "say": "きはらは、五輪で大逆転した、あのフリーの衣装でひざまずき、指輪を差し出しました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-3",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-2",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Kihara quỳ trên băng đưa nhẫn, ở sân băng Nagoya.",
+      "cut": "fade"
     },
     {
       "label": "笑顔",
@@ -131,7 +315,21 @@
       "headline": "指輪と笑顔",
       "lines": [
         "公開された写真には、指輪が関節で止まってしまい、笑い合う二人の姿もありました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "8-1",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai người cười khi nhẫn kẹt ở đốt ngón tay, rồi bàn tay đeo nhẫn.",
+      "cut": "fade"
     }
   ],
   "searches": [
@@ -163,5 +361,9 @@
     "file:stories/media/2026-11-24-rikuryu/v-0m07s.jpg",
     "file:stories/media/2026-11-24-rikuryu/v-0m10s.jpg",
     "music:Chopin Nocturne piano"
-  ]
+  ],
+  "music": {
+    "pick": "28-1",
+    "volume": 0.7
+  }
 }
