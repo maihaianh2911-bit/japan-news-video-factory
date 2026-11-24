@@ -1,6 +1,6 @@
 {
   "title": "桶狭間の戦い 二千で二万五千を破った信長",
-  "stage": "render",
+  "stage": "find",
   "date": "2026-11-24",
   "style": "band",
   "kicker": "戦国の物語",
@@ -36,7 +36,7 @@
       ],
       "photo": [
         {
-          "pick": "29-1",
+          "pick": "30-1",
           "move": "push-in",
           "fit": "contain",
           "depth": false
@@ -266,7 +266,8 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano",
-    "file:stories/media/2026-11-24-okehazama/hook-vs-nobunaga-yoshimoto.jpg"
+    "file:stories/media/2026-11-24-okehazama/hook-vs-nobunaga-yoshimoto.jpg",
+    "file:stories/media/2026-11-24-okehazama/hook-vs-names.jpg"
   ],
   "music": {
     "pick": "27-2",
