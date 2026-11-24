@@ -1,0 +1,118 @@
+{
+  "title": "史上最悪の大災害 第9位 ニオス湖の悲劇",
+  "date": "2026-11-24",
+  "stage": "find",
+  "issue": 76,
+  "style": "hazard-toxic",
+  "kicker": "史上最悪の大災害\nニオス湖の悲劇\n第9位",
+  "voice": 1.7,
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:Lake Nyos",
+    "wiki:Lake Nyos disaster",
+    "wiki:Lake Monoun",
+    "Lake Nyos => a crater lake surrounded by green hills in Cameroon",
+    "Lake Nyos 1986 dead cattle => dead cattle lying in a grassy valley",
+    "Lake Nyos degassing => a fountain of water spraying from a pipe in a lake",
+    "web:ニオス湖 => a crater lake surrounded by green hills",
+    "web:ニオス湖 1986 犠牲 => dead cattle lying in a field after a gas disaster",
+    "web:Lake Nyos disaster 1986 village => a small village in green hills of Cameroon",
+    "web:Lake Nyos 1986 red water => a lake with red brown water after a disaster",
+    "web:Lake Nyos survivor 1986 => a portrait of an African survivor of the gas disaster",
+    "web:ニオス湖 ガス抜き パイプ => a fountain of water spraying high from a lake",
+    "web:Lake Nyos degassing pipe fountain => a tall fountain of water in a lake",
+    "web:谷 霧 夜 => mist flowing through a dark valley at night",
+    "music:Gnossienne Satie piano",
+    "music:Chopin Nocturne piano"
+  ],
+  "scenes": [
+    {
+      "label": "沈黙した村",
+      "headline": "沈黙した村",
+      "era": "1986年",
+      "lines": [
+        {
+          "text": "史上最悪の大災害、第9位。一夜で村が沈黙した、ニオス湖の悲劇です。",
+          "quote": true,
+          "say": "しじょうさいあくのだいさいがい、だいきゅうい。いちやでむらがちんもくした、ニオスこのひげきです。"
+        }
+      ]
+    },
+    {
+      "label": "目覚めない娘",
+      "headline": "目覚めない娘",
+      "era": "1986年",
+      "lines": [
+        "ある父親は、長い眠りから目を覚ますと、隣で眠っていた娘が、もう息をしていないことに気づいたといいます。",
+        "村を襲ったのは、火でも水でもありませんでした。"
+      ]
+    },
+    {
+      "label": "火口湖",
+      "headline": "静かな火口湖",
+      "era": "カメルーン",
+      "lines": [
+        "舞台は1986年、アフリカ・カメルーンの山あいにある、静かな火口湖です。",
+        "その湖の底には、地下のマグマから染み出した二酸化炭素が、長い年月をかけて溜まり続けていました。"
+      ]
+    },
+    {
+      "label": "前触れ",
+      "headline": "2年前の前触れ",
+      "era": "1984年",
+      "lines": [
+        "実は2年前にも、近くの別の湖で37人が謎の死を遂げていましたが、それが前触れだとは、まだ誰も知りませんでした。"
+      ]
+    },
+    {
+      "label": "見えないガス",
+      "headline": "見えないガス",
+      "era": "8月21日夜",
+      "lines": [
+        "そして8月21日の夜、湖は突然、溜め込んだガスを一気に吐き出します。",
+        {
+          "text": "空気より重い目に見えないガスは、谷を這うように流れ下り、25キロ先の村にまで届きました。",
+          "say": "くうきよりおもいめにみえないガスは、たにをはうようにながれくだり、にじゅうごキロさきのむらにまでとどきました。"
+        }
+      ]
+    },
+    {
+      "label": "犠牲",
+      "headline": "1700人以上",
+      "era": "8月21日夜",
+      "lines": [
+        "人も牛も、鳥や虫までもが、声もなく倒れていきます。",
+        {
+          "text": "命を奪われたのは1700人以上。その多くは、眠ったまま二度と目を覚ましませんでした。",
+          "say": "いのちをうばわれたのはせんななひゃくにんいじょう。そのおおくは、ねむったままにどとめをさましませんでした。"
+        }
+      ]
+    },
+    {
+      "label": "赤い湖",
+      "headline": "赤く染まった湖",
+      "era": "翌朝",
+      "lines": [
+        "翌朝、青かった湖の水は、赤茶色に変わっていたといいます。"
+      ]
+    },
+    {
+      "label": "今も",
+      "headline": "今も続くガス抜き",
+      "era": "現在",
+      "lines": [
+        "今も湖には、ガスを少しずつ逃がすパイプが立ち、水を空高く噴き上げ続けています。"
+      ]
+    }
+  ]
+}
