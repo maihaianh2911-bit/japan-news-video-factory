@@ -44,10 +44,10 @@
         {
           "pick": "4-1",
           "focus": [
-            0.18,
+            0.28,
             0.3
           ],
-          "move": "hold"
+          "move": "push-in"
         }
       ],
       "why": "Aiko cười vẫy tay (ảnh mở đầu, khổ dọc, mặt rõ ở nửa trên), rồi Thiên hoàng và Aiko cười cạnh nhau."
@@ -123,19 +123,16 @@
       "photo": [
         {
           "pick": "9-5",
-          "focus": [
-            0.41,
-            0.2
-          ],
-          "move": "hold"
+          "fit": "contain",
+          "move": "push-in"
         },
         {
           "pick": "9-3",
           "focus": [
-            0.27,
+            0.295,
             0.3
           ],
-          "move": "hold"
+          "move": "push-in"
         }
       ],
       "why": "Ba người ôm hoa ở Okinawa 6/2025, rồi ba người đi vào nghĩa trang.",

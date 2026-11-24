@@ -45,9 +45,9 @@
           "pick": "29-1",
           "focus": [
             0.5,
-            0.6
+            0.85
           ],
-          "move": "hold"
+          "move": "pull-back"
         }
       ],
       "why": "Thái tử ướt đẫm dưới mưa ở lễ đón Bangkok (ảnh mở đầu), rồi cận mặt mỉm cười dưới mưa (video gốc)."
@@ -168,9 +168,9 @@
           "pick": "28-1",
           "focus": [
             0.5,
-            0.6
+            0.8
           ],
-          "move": "hold"
+          "move": "push-in"
         }
       ],
       "why": "Cận mặt Thái tử vẫn cười dù ướt đẫm (video gốc).",
