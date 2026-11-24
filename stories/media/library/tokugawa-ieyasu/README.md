@@ -12,3 +12,5 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `yoshitoshi-osaka-danger.jpg` | Tranh Yoshitoshi 大阪夏御陣御危難の圖: Ieyasu lâm nguy ở trận Osaka, khổ dọc | 1200×1594 | note.com | 2026-11-24-yukimura-osaka |
 | `drama-sanadamaru-uchino-old-bruised.jpg` | Phim 真田丸: Ieyasu già (Uchino Seiyō) mặt trầy, giáp | 960×639 | daily.co.jp | 2026-11-24-yukimura-osaka |
 | `drama-sanadamaru-uchino-shocked.jpg` | Phim 真田丸: Ieyasu già (Uchino Seiyō) bàng hoàng ở trận Osaka | 1080×1080 | x.com | 2026-11-24-yukimura-osaka |
+| `film-sekigahara-yakusho-portrait.jpg` | Phim 関ヶ原 2017: Ieyasu (Yakusho Kōji) đội mũ đen, cận mặt | 960×640 | ameblo.jp | 2026-11-24-sekigahara |
+| `film-sekigahara-yakusho-shouting.jpg` | Phim 関ヶ原 2017: Ieyasu (Yakusho Kōji) gào lên giữa quân | 640×426 | cinemacafe.net | 2026-11-24-sekigahara |
