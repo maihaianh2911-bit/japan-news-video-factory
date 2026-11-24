@@ -13,7 +13,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "title": "中尾彬の最期と池波志乃",
   "issue": 70,
   "source": "モデルプレス、デイリースポーツ、週刊文春、週刊女性PRIME、プレジデント",
@@ -31,11 +31,30 @@
           "text": "妻の池波志乃が明かした最期の姿に、涙する人が後を絶ちません。",
           "say": "妻の、いけなみしのが明かした最期の姿に、涙する人が後を絶ちません。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-6",
+          "focus": [
+            0.44,
+            0.2
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "3-5",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: hai vợ chồng ngồi cạnh nhau cười, rồi đứng bên nhau."
     },
     {
       "label": "出会い",
-      "era": "1978年",
+      "era": "出会い",
       "headline": "中尾彬",
       "lines": [
         {
@@ -50,7 +69,35 @@
           "text": "1978年に結婚したとき、池波は23歳、中尾は35歳でした。",
           "say": "1978年に結婚したとき、いけなみは23歳、なかおは35歳でした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-6",
+          "focus": [
+            0.47,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "7-8",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nakao lúc về già, rồi hai người thời trẻ (ảnh đen trắng).",
+      "cut": "fade"
     },
     {
       "label": "終活",
@@ -59,7 +106,33 @@
       "lines": [
         "おしどり夫婦として知られた二人は、亡くなる18年前から、人生の終わりの準備を一緒に進めてきました。",
         "家や土地を手放し、遺言を書き、その日々を共著『終活夫婦』に残しています。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.15
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-3",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "13-2",
+          "focus": [
+            0.47,
+            0.2
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Khoác tay nhau đi dạo, bìa sách 'Vợ chồng chuẩn bị hậu sự', kỷ niệm 40 năm cưới.",
+      "cut": "fade"
     },
     {
       "label": "最後の外出",
@@ -71,7 +144,35 @@
           "say": "亡くなる4日前、なかおは、行きつけのレストランに立ち寄り、冷凍のハヤシライスを買いました。"
         },
         "それが、最後の外出になりました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-4",
+          "focus": [
+            0.55,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Đĩa cơm hayashi, rồi Nakao với chiếc khăn quen thuộc.",
+      "cut": "fade"
     },
     {
       "label": "最期",
@@ -87,7 +188,35 @@
           "text": "「自宅で私と二人の時に、とても穏やかに、本当に眠るように息を引き取りました」",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-6",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-5",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.15
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Ikenami, rồi hai vợ chồng bên nhau.",
+      "cut": "dip"
     },
     {
       "label": "遺言",
@@ -99,7 +228,24 @@
           "text": "そして池波が明かしたもう一つのことが、さらに多くの人の胸を打ちました。",
           "say": "そして、いけなみが明かしたもう一つのことが、さらに多くの人の胸を打ちました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-4",
+          "focus": [
+            0.55,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "11-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Nakao, rồi Ikenami kể chuyện.",
+      "cut": "fade"
     },
     {
       "label": "ねじねじ",
@@ -116,7 +262,40 @@
           "text": "三回忌を迎えた今、池波は、ようやく一人で生きるペースができてきたと語っています。",
           "say": "三回忌を迎えた今、いけなみは、ようやく一人で生きるペースができてきたと語っています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-2",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.53,
+            0.54
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "6-6",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Chiếc khăn xoắn, Nakao đeo khăn, Ikenami đeo cặp kính chồng tặng.",
+      "cut": "fade"
     }
   ],
   "searches": [
@@ -136,5 +315,9 @@
     "web:池波志乃 2024 => an older Japanese woman speaking",
     "web:中尾彬 笑顔 => an older Japanese man smiling",
     "music:Gymnopédie Satie piano"
-  ]
+  ],
+  "music": {
+    "pick": "16-1",
+    "volume": 0.7
+  }
 }
