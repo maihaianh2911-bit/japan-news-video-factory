@@ -14,13 +14,17 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [arimura-kasumi](arimura-kasumi/README.md) | 5 |
 | [bangkok](bangkok/README.md) | 3 |
 | [bhumibol](bhumibol/README.md) | 1 |
+| [daigo](daigo/README.md) | 2 |
+| [daigo-kitagawa](daigo-kitagawa/README.md) | 3 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hisahito](hisahito/README.md) | 1 |
 | [honnoji](honnoji/README.md) | 2 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
+| [ikenami-shino](ikenami-shino/README.md) | 2 |
 | [imperial-family](imperial-family/README.md) | 15 |
 | [kanda-uno](kanda-uno/README.md) | 1 |
 | [kanie-keizo](kanie-keizo/README.md) | 1 |
+| [kitagawa-keiko](kitagawa-keiko/README.md) | 1 |
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
 | [kokkai](kokkai/README.md) | 1 |
 | [kokyo](kokyo/README.md) | 1 |
@@ -32,6 +36,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
 | [mori-ranmaru](mori-ranmaru/README.md) | 2 |
+| [nakao-akira](nakao-akira/README.md) | 2 |
+| [nakao-ikenami](nakao-ikenami/README.md) | 6 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 20 |
