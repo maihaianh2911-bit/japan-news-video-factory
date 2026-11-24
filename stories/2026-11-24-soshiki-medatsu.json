@@ -4,9 +4,9 @@
   "style": "full",
   "kicker": "芸能界の裏話",
   "pace": {
-    "speed": 1.2,
-    "line_pause": 0.1,
-    "scene_pause": 0.2
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
   },
   "fx": {
     "motion": true,
@@ -22,7 +22,7 @@
       "headline": "葬式なのに\n目立とうとした3人",
       "lines": [
         {
-          "text": "葬式なのに、目立とうとした女性芸能人が3人います。",
+          "text": "葬式なのに、目立とうとした女性芸能人3人。",
           "quote": true
         }
       ],
@@ -53,12 +53,8 @@
           "say": "2014年、総勢700人が参列した、かにええいぞうさんのお別れ会。"
         },
         {
-          "text": "ドラマ『あまちゃん』で、有村が演じた若き日の春子。",
-          "say": "ドラマ、あまちゃんで、ありむらが演じた、若き日のはるこ。"
-        },
-        {
-          "text": "その父親を演じたのが、蟹江さんでした。",
-          "say": "その父親を演じたのが、かにえさんでした。"
+          "text": "『あまちゃん』で、有村が演じた春子の父親役だった人です。",
+          "say": "あまちゃんで、ありむらが演じた、はるこの父親役だった人です。"
         }
       ],
       "photo": [
@@ -87,8 +83,8 @@
           "move": "push-in"
         }
       ],
-      "why": "Arimura, rồi Kanie Keizo, rồi Arimura trong vai Haruko thời trẻ (Amachan).",
-      "cut": "fade"
+      "cut": "fade",
+      "why": "Arimura, rồi Kanie Keizo, rồi Arimura trong vai Haruko (Amachan)."
     },
     {
       "label": "有村架純",
@@ -96,11 +92,11 @@
       "headline": "有村架純",
       "lines": [
         {
-          "text": "その大切な場に、有村は、胸元がザックリ開いたタイトなミニワンピースで現れたといいます。",
+          "text": "その大切な場に有村は、胸元がザックリ開いたタイトなミニワンピースで現れたといいます。",
           "say": "その大切な場に、ありむらは、胸元がザックリ開いた、タイトなミニワンピースで現れたといいます。"
         },
-        "「ちゃんとしてるイメージだったのに残念」。",
-        "SNSではそんな声が広がり、清純派女優のイメージが崩れてしまいました。"
+        "「ちゃんとしてるイメージだったのに残念」と、SNSは騒然。",
+        "清純派のイメージが崩れてしまいました。"
       ],
       "photo": [
         {
@@ -125,8 +121,8 @@
           "move": "hold"
         }
       ],
-      "why": "Arimura ở lễ tiễn Kanie (khung video gốc), rồi hình ảnh trong sáng của cô.",
-      "cut": "fade"
+      "cut": "fade",
+      "why": "Arimura ở lễ tiễn Kanie (video gốc), rồi hình ảnh trong sáng của cô."
     },
     {
       "label": "工藤静香",
@@ -139,7 +135,7 @@
           "say": "ふたりめは、くどうしずか。"
         },
         "2012年、92歳で亡くなった国民的女優、森光子さんの葬儀。",
-        "2300人の参列者の中で、ひときわ目立っていたのが工藤でした。"
+        "参列者2300人の中で、ひときわ目立っていました。"
       ],
       "photo": [
         {
@@ -164,23 +160,27 @@
           "move": "push-in"
         }
       ],
-      "why": "Kudo Shizuka, tấm ảnh lớn của Mori Mitsuko ở đám tang, rồi Kudo ở đám tang (video gốc).",
-      "cut": "dip"
+      "cut": "dip",
+      "why": "Kudo Shizuka, ảnh lớn của Mori Mitsuko ở đám tang, rồi Kudo ở đám tang (video gốc)."
     },
     {
       "label": "工藤静香",
       "era": "2人目",
       "headline": "工藤静香",
       "lines": [
-        "40代の大人の女性が、黒いミニ丈のワンピースに、ヒールの高いロングブーツ。",
-        "「その歳で、最低限のマナーもないのか」。",
-        "ネットには呆れた声があふれました。"
+        "40代の大人の女性なのに、黒いミニ丈のワンピースに、ヒールの高いロングブーツ。",
+        "「その歳で、最低限のマナーもないのか」と、ネットには呆れた声があふれました。"
       ],
       "photo": [
         {
           "pick": "32-1",
           "fit": "contain",
           "move": "push-in"
+        },
+        {
+          "pick": "36-1",
+          "fit": "contain",
+          "move": "pull-back"
         },
         {
           "pick": "14-7",
@@ -191,8 +191,8 @@
           "move": "pull-back"
         }
       ],
-      "why": "Đôi bốt cao cổ ở đám tang (video gốc), rồi Kudo.",
-      "cut": "fade"
+      "cut": "fade",
+      "why": "Đôi bốt ở đám tang (video gốc), Kudo ở đám tang, rồi Kudo."
     },
     {
       "label": "3人目",
@@ -205,10 +205,9 @@
           "say": "そして、最後の、さんにんめ。"
         },
         {
-          "text": "2008年、36歳の若さでこの世を去った飯島愛さん。",
-          "say": "2008年、36歳の若さでこの世を去った、いいじまあいさん。"
-        },
-        "そのお別れ会に、関係者700人が集まりました。"
+          "text": "2008年、36歳の若さで亡くなった飯島愛さんのお別れ会。",
+          "say": "2008年、36歳の若さで亡くなった、いいじまあいさんのお別れ会。"
+        }
       ],
       "photo": [
         {
@@ -226,25 +225,24 @@
             0.4
           ],
           "move": "push-in"
-        },
-        {
-          "pick": "33-1",
-          "fit": "contain",
-          "move": "pull-back"
         }
       ],
-      "why": "Iijima Ai, ảnh của cô ở lễ tiễn biệt, rồi người đến dự (video gốc).",
-      "cut": "dip"
+      "cut": "dip",
+      "why": "Iijima Ai, rồi ảnh của cô ở lễ tiễn biệt."
     },
     {
       "label": "3人目",
       "era": "3人目",
       "headline": "3人目は…",
       "lines": [
-        "その中で一番目立っていたのは、クリスチャン・ディオールのセットアップに、やたらと大きな透ける帽子をかぶった女性だったといいます。",
-        "さらに彼女は、自分のブログに「本日のファッション」と題して、その日の喪服コーデを載せました。"
+        "700人の中で一番目立っていたのは、ディオールのスーツに、やたらと大きな透ける帽子をかぶった女性だったといいます。"
       ],
       "photo": [
+        {
+          "pick": "33-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
         {
           "pick": "38-1",
           "fit": "contain",
@@ -254,25 +252,25 @@
           "pick": "22-3",
           "fit": "contain",
           "move": "push-in"
-        },
-        {
-          "pick": "39-1",
-          "fit": "contain",
-          "move": "pull-back"
         }
       ],
-      "why": "Người phụ nữ mặc Dior đội mũ to (mặt che, video gốc), chiếc mũ voan, ảnh Iijima ở lễ tiễn.",
-      "cut": "fade"
+      "cut": "fade",
+      "why": "Người đến dự (video gốc), người phụ nữ mặc Dior đội mũ to (mặt che), chiếc mũ voan."
     },
     {
       "label": "3人目",
       "era": "3人目",
       "headline": "3人目は…",
       "lines": [
-        "極めつけは、自ら立ち上げたブランドのバッグまで紹介したこと。",
-        "「故人より、自分のファッションのPRなのか」。"
+        "しかも彼女は、ブログに「本日のファッション」として喪服コーデを載せ、自分で立ち上げたブランドのバッグまで紹介。",
+        "「故人より、自分のPRなのか」。"
       ],
       "photo": [
+        {
+          "pick": "39-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
         {
           "pick": "40-1",
           "fit": "contain",
@@ -287,8 +285,8 @@
           "move": "pull-back"
         }
       ],
-      "why": "Chiếc túi (video gốc), rồi ảnh Iijima ở lễ tiễn biệt.",
-      "cut": "fade"
+      "cut": "fade",
+      "why": "Ảnh Iijima ở lễ tiễn, chiếc túi (video gốc), rồi bàn thờ Iijima."
     },
     {
       "label": "神田うの",
@@ -311,8 +309,8 @@
           "move": "push-in"
         }
       ],
-      "why": "Lộ mặt: Kanda Uno.",
-      "cut": "flash"
+      "cut": "flash",
+      "why": "Lộ mặt: Kanda Uno."
     }
   ],
   "searches": [
