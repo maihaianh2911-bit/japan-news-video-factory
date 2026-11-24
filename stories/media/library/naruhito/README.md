@@ -20,3 +20,9 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2012-thailand-rain-smile-closeup.jpg` | Thái tử cười, ướt mưa, cận mặt nghiêng, lễ đón Bangkok 2012 (cắt từ video gốc) | 720×678 | 元動画 | 2026-11-24-thai-ame |
 | `2012-thailand-rain-profile.jpg` | Thái tử nghiêng mặt dưới mưa, lễ đón Bangkok 2012 (cắt từ video gốc) | 720×678 | 元動画 | 2026-11-24-thai-ame |
 | `child-gakushuin-uniform-walking.jpg` | Thiên hoàng hồi nhỏ mặc đồng phục tiểu học Gakushuin đi học (ảnh màu) | 1280×1280 | cocreco.kodansha.co.jp | 2026-11-24-aiko-kokoro |
+| `1980s-hiking-orange-hat.jpg` | Naruhito tuổi 20 leo núi, mũ cam, áo xanh, người đi cùng phía sau (dùng contain) | 750×1000 | 47news.jp | 2026-11-24-naruhito-oyamoto |
+| `young-viola.jpg` | Naruhito thời trẻ kéo đàn viola, ảnh đen trắng (khổ dọc nhỏ) | 568×750 | news-postseven.com | 2026-11-24-naruhito-oyamoto |
+| `1983-oxford-matriculation.jpg` | Lễ nhập học Oxford 1983: Naruhito áo choàng, được đội mũ vuông (dùng contain) | 714×1036 | dailyshincho.jp | 2026-11-24-naruhito-oyamoto |
+| `1985-oxford-bicycle.jpg` | Naruhito dắt xe đạp trên phố Oxford 1985, áo len xanh, khổ dọc lớn | 1321×2000 | asahi.com | 2026-11-24-naruhito-oyamoto |
+| `1980s-oxford-pub-friends.jpg` | Naruhito ngồi bàn ngoài trời ở quán cùng bạn bè thời Oxford (dùng contain) | 800×535 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
+| `1980s-oxford-pub-beer.jpg` | Naruhito nâng cốc bia ở quán rượu Oxford (dùng contain) | 799×616 | mainichi.jp | 2026-11-24-naruhito-oyamoto |

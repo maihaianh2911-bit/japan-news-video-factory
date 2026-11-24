@@ -15,7 +15,11 @@
   "face": true
  },
  "voice": 1.7,
- "stage": "find",
+ "music": {
+  "pick": "42-1",
+  "volume": 0.7
+ },
+ "stage": "render",
  "issue": 66,
  "scenes": [
   {
@@ -27,7 +31,18 @@
      "say": "てんのうへいかは、おやのてで、そだてられた、はじめての、てんのうです。",
      "quote": true
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "8-1",
+     "move": "push-in",
+     "focus": [
+      0.5,
+      0.24
+     ]
+    }
+   ],
+   "why": "Mở đầu: chân dung chính thức của Thiên hoàng năm 2019, nét, mặt rõ ở nửa trên."
   },
   {
    "label": "しきたり",
@@ -42,7 +57,27 @@
      "text": "それが、皇室の長いしきたりだったのです。",
      "say": "それが、こうしつの、ながい、しきたりだったのです。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "17-8",
+     "move": "push-in",
+     "focus": [
+      0.46,
+      0.3
+     ]
+    },
+    {
+     "pick": "18-3",
+     "move": "pull-back",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    }
+   ],
+   "why": "Lùi về quá khứ: Thiên hoàng Showa hồi bé trên ngựa gỗ, rồi Thượng hoàng hồi bé.",
+   "cut": "dip"
   },
   {
    "label": "両親",
@@ -53,7 +88,16 @@
      "text": "そのしきたりを破ったのが、上皇さまと、民間から嫁いだ美智子さまでした。",
      "say": "そのしきたりを、やぶったのが、じょうこうさまと、みんかんから、とついだ、みちこさまでした。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "21-1",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "why": "Lễ cưới 1959 của Thượng hoàng và bà Michiko trên xe ngựa.",
+   "cut": "fade"
   },
   {
    "label": "母の手で",
@@ -64,7 +108,21 @@
      "text": "浩宮さまが生まれると、美智子さまは乳母に任せず、自ら母乳を与えて育てたといいます。",
      "say": "ひろのみやさまが、うまれると、みちこさまは、うばに、まかせず、みずから、ぼにゅうを、あたえて、そだてたといいます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "16-1",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "16-3",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Bà Michiko ôm bé Naruhito mới sinh rời bệnh viện 1960, rồi cha mẹ cùng bế con.",
+   "cut": "fade"
   },
   {
    "label": "母の言葉",
@@ -79,7 +137,21 @@
      "text": "のちに「ナルちゃん憲法」と呼ばれる、母の言葉です。",
      "say": "のちに、なるちゃんけんぽうと、よばれる、ははの、ことばです。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "15-4",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "15-12",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Bà Michiko bế con trai bên chồng, rồi hai mẹ con bên cửa sổ.",
+   "cut": "fade"
   },
   {
    "label": "青年",
@@ -90,7 +162,24 @@
      "text": "そうして育った少年は、やがて山とビオラを愛する、穏やかな青年になります。",
      "say": "そうして、そだった、しょうねんは、やがて、やまと、ビオラを、あいする、おだやかな、せいねんに、なります。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "25-2",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "26-1",
+     "focus": [
+      0.45,
+      0.2
+     ],
+     "move": "push-in"
+    }
+   ],
+   "why": "Chàng trai Naruhito leo núi tuổi 20, rồi kéo đàn viola.",
+   "cut": "dip"
   },
   {
    "label": "留学",
@@ -101,7 +190,24 @@
      "text": "23歳でイギリスのオックスフォード大学へ留学すると、そこには、生まれて初めての自由が待っていました。",
      "say": "にじゅうさんさいで、イギリスの、オックスフォードだいがくへ、りゅうがくすると、そこには、うまれて、はじめての、じゆうが、まっていました。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "29-4",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "27-4",
+     "focus": [
+      0.55,
+      0.32
+     ],
+     "move": "rise"
+    }
+   ],
+   "why": "Lễ nhập học Oxford, rồi dắt xe đạp trên phố Oxford.",
+   "cut": "page"
   },
   {
    "label": "自由",
@@ -116,11 +222,25 @@
      "text": "のちに陛下は、この2年間を、人生で最も楽しい時の一つだったと振り返っています。",
      "say": "のちに、へいかは、この、にねんかんを、じんせいで、もっとも、たのしい、ときの、ひとつだったと、ふりかえっています。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "29-5",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "29-9",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Ngồi quán cùng bạn bè, rồi nâng cốc bia ở quán rượu Oxford.",
+   "cut": "fade"
   },
   {
    "label": "出会い",
-   "era": "1993年",
+   "era": "1986〜1993年",
    "headline": "6年越しの想い",
    "lines": [
     {
@@ -131,7 +251,21 @@
      "text": "6年越しの想いが実り、二人は結婚します。",
      "say": "ろくねんごしの、おもいが、みのり、ふたりは、けっこんします。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "10-1",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "11-1",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Hai người ở họp báo đính hôn 1993 (bà Masako cười ngượng), rồi ngày cưới trên xe mui trần.",
+   "cut": "page"
   },
   {
    "label": "待ち望んだ命",
@@ -146,7 +280,21 @@
      "text": "結婚から8年余り、ようやく生まれたのが愛子さまです。",
      "say": "けっこんから、はちねんあまり、ようやく、うまれたのが、あいこさまです。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "31-2",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "32-1",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "why": "Hai người năm 1999, rồi rời bệnh viện cùng Aiko mới sinh 12/2001.",
+   "cut": "dip"
   },
   {
    "label": "涙",
@@ -157,7 +305,21 @@
      "text": "会見で雅子さまは、「生まれてきてありがとう」という気持ちだったと語り、涙をこらえきれませんでした。",
      "say": "かいけんで、まさこさまは、うまれてきて、ありがとう、という、きもちだったと、かたり、なみだを、こらえきれませんでした。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "33-7",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "32-9",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Hai người bế Aiko, rồi bà Masako cười với con gái nhỏ.",
+   "cut": "fade"
   },
   {
    "label": "父の詩",
@@ -172,7 +334,21 @@
      "text": "それは「子は親の鏡」という詩で、愛された子は、人を愛することを学ぶと語りかけます。",
      "say": "それは、こは、おやの、かがみ、という、しで、あいされた、こは、ひとを、あいすることを、まなぶと、かたりかけます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "36-7",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "36-1",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Cả nhà hái quýt với Aiko nhỏ, rồi Thiên hoàng nâng Aiko lên cây.",
+   "cut": "fade"
   },
   {
    "label": "即位",
@@ -183,7 +359,24 @@
      "text": "そして2019年5月、即位した陛下は、最初のお言葉で、「常に国民を思い、国民に寄り添いながら」務めを果たすと誓いました。",
      "say": "そして、にせんじゅうきゅうねん、ごがつ、そくいした、へいかは、さいしょの、おことばで、つねに、こくみんを、おもい、こくみんに、よりそいながら、つとめを、はたすと、ちかいました。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "37-3",
+     "focus": [
+      0.31,
+      0.25
+     ],
+     "move": "push-in"
+    },
+    {
+     "pick": "37-9",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Lễ triều kiến sau khi lên ngôi 1/5/2019: Thiên hoàng đọc lời phát biểu đầu tiên.",
+   "cut": "page"
   },
   {
    "label": "寄り添う心",
@@ -195,7 +388,24 @@
      "say": "ははに、よりそわれて、そだった、しょうねんが、こんどは、こくみんに、よりそうと、ちかったのです。",
      "quote": true
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "15-11",
+     "move": "push-in",
+     "focus": [
+      0.5,
+      0.2
+     ]
+    },
+    {
+     "pick": "38-16",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Kết: bà Michiko bế con trai ở bãi biển, rồi Thiên hoàng vẫy tay chào dân năm 2019.",
+   "cut": "dip"
   }
  ],
  "searches": [
