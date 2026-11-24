@@ -26,6 +26,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
 | [masako](masako/README.md) | 13 |
+| [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
 | [mori-ranmaru](mori-ranmaru/README.md) | 1 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
