@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 75,
   "title": "「生まれてきてくれてありがとう」と「生んでくれてありがとう」",
   "date": "2026-11-24",
@@ -32,7 +32,26 @@
           "text": "そして20年後、その娘が返した一言が、多くの人の涙を誘っています。",
           "say": "そして、にじゅうねんご、その娘が返した、ひとことが、多くの人の涙を、誘っています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-16",
+          "focus": [
+            0.33,
+            0.0
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai vợ chồng bế bé Aiko mới sinh 12/2001 (ảnh mở đầu, mặt rõ ở nửa trên), rồi Aiko 20 tuổi ở họp báo."
     },
     {
       "label": "母と娘",
@@ -43,7 +62,16 @@
           "text": "雅子さまと、長女の愛子さまです。",
           "say": "まさこさまと、長女の、あいこさまです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-9",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hai mẹ con bây giờ, cười bên nhau.",
+      "cut": "fade"
     },
     {
       "label": "重圧",
@@ -54,7 +82,28 @@
           "text": "皇太子妃となった雅子さまには、「男の子を」という重圧がのしかかり、1999年には流産の悲しみも経験しました。",
           "say": "こうたいしひとなった、まさこさまには、男の子を、という、じゅうあつが、のしかかり、せんきゅうひゃくきゅうじゅうきゅうねんには、りゅうざんの悲しみも、経験しました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-10",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back",
+          "depth": false
+        }
+      ],
+      "why": "Bà Masako thời làm vợ Thái tử, rồi trang ảnh '1999年の雅子さま'.",
+      "cut": "dip"
     },
     {
       "label": "誕生",
@@ -65,7 +114,16 @@
           "text": "2001年12月1日、ようやく生まれたのが愛子さまでした。",
           "say": "にせんいちねん、じゅうにがつ、ついたち、ようやく生まれたのが、あいこさまでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Ngày ra viện 12/2001: Thái tử đi cạnh, bà Masako bế con gái mới sinh.",
+      "cut": "zoom"
     },
     {
       "label": "会見",
@@ -76,7 +134,24 @@
           "text": "翌年4月の会見。雅子さまは声を震わせながら、「生まれてきてくれてありがとう」という思いを語ります。",
           "say": "翌年、しがつの会見。まさこさまは、声を震わせながら、生まれてきてくれて、ありがとう、という思いを、語ります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-5",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Buổi họp báo 4/2002, rồi bà Masako nhìn con gái cười.",
+      "cut": "slide"
     },
     {
       "label": "涙もろく",
@@ -87,7 +162,19 @@
           "text": "そして、「すみません、母親になって涙もろくなって」と、目元を押さえました。",
           "say": "そして、すみません、ははおやになって、なみだもろくなって、と、めもとを、押さえました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-17",
+          "focus": [
+            0.5,
+            0.1
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Masako cười hạnh phúc, ôm bé Aiko.",
+      "cut": "fade"
     },
     {
       "label": "終わらない重圧",
@@ -102,7 +189,24 @@
           "text": "2年後、雅子さまは適応障害と診断され、長い療養に入ります。",
           "say": "にねんご、まさこさまは、てきおうしょうがいと、診断され、長い、りょうように、入ります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.48,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-6",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Masako nhìn ra cửa kính xe, vẻ mệt mỏi, rồi hai vợ chồng trong xe ban đêm (những năm dưỡng bệnh).",
+      "cut": "dip"
     },
     {
       "label": "初めての会見",
@@ -113,7 +217,19 @@
           "text": "2022年3月、20歳になった愛子さまの、初めての記者会見。",
           "say": "にせんにじゅうにねん、さんがつ、はたちになった、あいこさまの、初めての、記者会見。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-13",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Aiko 20 tuổi ở buổi họp báo đầu tiên 3/2022 (ảnh của Cơ quan Nội chính).",
+      "cut": "flash"
     },
     {
       "label": "娘の返事",
@@ -124,7 +240,32 @@
           "text": "「母の『生まれてきてくれてありがとう』という言葉に掛けて、私も『生んでくれてありがとう』と両親に伝えたい」",
           "say": "母の、生まれてきてくれて、ありがとう、という言葉に掛けて、私も、生んでくれて、ありがとう、と、両親に伝えたい"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-8",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "11-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Aiko nói câu cảm ơn, rồi cận mặt, cuối cùng hai mẹ con hồi Aiko còn nhỏ.",
+      "cut": "slide"
     }
   ],
   "searches": [
@@ -146,5 +287,9 @@
     "file:stories/media/library/imperial-family/naruhito-aiko-masako-laughing.jpg",
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano"
-  ]
+  ],
+  "music": {
+    "pick": "17-4",
+    "volume": 0.7
+  }
 }

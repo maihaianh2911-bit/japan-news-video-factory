@@ -6,7 +6,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 
 | Chủ đề | Số ảnh |
 |---|---|
-| [aiko](aiko/README.md) | 8 |
+| [aiko](aiko/README.md) | 12 |
 | [akechi-mitsuhide](akechi-mitsuhide/README.md) | 4 |
 | [akihito](akihito/README.md) | 1 |
 | [akihito-michiko](akihito-michiko/README.md) | 2 |
@@ -32,8 +32,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kudo-shizuka](kudo-shizuka/README.md) | 2 |
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
-| [masako](masako/README.md) | 14 |
-| [masako-aiko](masako-aiko/README.md) | 10 |
+| [masako](masako/README.md) | 16 |
+| [masako-aiko](masako-aiko/README.md) | 14 |
 | [michiko](michiko/README.md) | 4 |
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
@@ -43,7 +43,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 20 |
-| [naruhito-masako](naruhito-masako/README.md) | 17 |
+| [naruhito-masako](naruhito-masako/README.md) | 21 |
 | [oda-nobunaga](oda-nobunaga/README.md) | 10 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 15 |
