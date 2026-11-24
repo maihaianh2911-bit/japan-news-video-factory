@@ -10,3 +10,7 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2026-semiconductor-conference-speech.jpg` | Aiko phát biểu ở hội nghị bán dẫn 17/8/2026, cận mặt | 1200×832 | sankei.com | 2026-11-21-natsuyasumi |
 | `smile-waving-vertical.jpg` | Aiko cười vẫy tay, áo xanh nhạt, khổ dọc (đã làm ảnh mở đầu) | 800×1200 | jisin.jp | 2026-11-24-aiko-kokoro |
 | `smile-closeup-navy.jpg` | Aiko cười rạng rỡ cận mặt, áo navy, ngọc trai | 1200×800 | jisin.jp | 2026-11-24-aiko-kokoro |
+| `child-portrait-blue-dress.jpg` | Aiko hồi tiểu học, váy yếm xanh, ngồi cười (khổ dọc lớn) | 1036×1452 | elle.com | 2026-11-24-masako-tsukisoi |
+| `child-alone-umbrella-winter.jpg` | Aiko hồi tiểu học một mình, áo phao trắng, cầm ô (mùa đông) | 637×883 | bunshun.jp | 2026-11-24-masako-tsukisoi |
+| `2024-red-cross-entrance.jpg` | Aiko bước ra cửa trụ sở Hội Chữ thập đỏ 4/2024, ảnh rất lớn | 2400×1862 | sankei.com | 2026-11-24-masako-tsukisoi |
+| `2024-red-cross-smile-vertical.jpg` | Aiko cười trước trụ sở Chữ thập đỏ 4/2024, khổ dọc lớn | 1200×1723 | sankei.com | 2026-11-24-masako-tsukisoi |

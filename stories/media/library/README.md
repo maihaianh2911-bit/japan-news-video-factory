@@ -6,7 +6,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 
 | Chủ đề | Số ảnh |
 |---|---|
-| [aiko](aiko/README.md) | 4 |
+| [aiko](aiko/README.md) | 8 |
 | [akechi-mitsuhide](akechi-mitsuhide/README.md) | 4 |
 | [akihito](akihito/README.md) | 1 |
 | [akihito-michiko](akihito-michiko/README.md) | 2 |
@@ -16,6 +16,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [bhumibol](bhumibol/README.md) | 1 |
 | [daigo](daigo/README.md) | 2 |
 | [daigo-kitagawa](daigo-kitagawa/README.md) | 3 |
+| [gakushuin](gakushuin/README.md) | 2 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hisahito](hisahito/README.md) | 1 |
 | [honnoji](honnoji/README.md) | 2 |
@@ -32,6 +33,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
 | [masako](masako/README.md) | 14 |
+| [masako-aiko](masako-aiko/README.md) | 10 |
 | [michiko](michiko/README.md) | 4 |
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
@@ -51,4 +53,5 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [thailand](thailand/README.md) | 2 |
 | [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 6 |
 | [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
+| [yamanakako](yamanakako/README.md) | 1 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
