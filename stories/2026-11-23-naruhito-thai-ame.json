@@ -1,0 +1,348 @@
+{
+  "stage": "render",
+  "issue": 56,
+  "title": "豪雨の中、動かなかった陛下",
+  "date": "2012-06-18",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "豪雨の中で",
+      "era": "2012年",
+      "headline": "びしょ濡れでも\n笑顔を貫いた陛下",
+      "lines": [
+        {
+          "text": "土砂降りの雨に打たれても、天皇陛下は一歩も動きませんでした。",
+          "say": "どしゃぶりの雨に打たれても、てんのうへいかは、いっぽも、うごきませんでした。",
+          "quote": true
+        },
+        {
+          "text": "びしょ濡れのまま笑顔を貫いたその姿に、タイの人々は息をのんだのです。",
+          "say": "びしょぬれのまま、えがおを、つらぬいた、その姿に、タイの人々は、いきをのんだのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "focus": [
+            0.47,
+            0.32
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.47,
+            0.32
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở bằng đúng tấm ảnh陛下 ướt sũng dưới mưa ở Bangkok, rồi lùi ra thấy cả trận mưa."
+    },
+    {
+      "label": "タイ訪問",
+      "era": "2012年6月",
+      "headline": "皇太子として\nタイへ",
+      "lines": [
+        {
+          "text": "2012年、まだ皇太子だった陛下がタイを訪れたときのことです。",
+          "say": "にせんじゅうにねん、まだ、こうたいしだった陛下が、タイを訪れたときのことです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-7",
+          "focus": [
+            0.45,
+            0.62
+          ],
+          "move": "reveal"
+        }
+      ],
+      "why": "Mở ra cảnh Bangkok để người xem biết câu chuyện ở Thái Lan.",
+      "cut": "fade"
+    },
+    {
+      "label": "プミポン国王",
+      "era": "2012年6月",
+      "headline": "病院を出て\n宮殿へ戻った国王",
+      "lines": [
+        {
+          "text": "当時84歳、入院中だったプミポン国王は、陛下に会うためだけに病院を出て宮殿へ戻り、異例の3時間近い会談が実現しました。",
+          "say": "とうじ、はちじゅうよんさい、にゅういんちゅうだった、プミポン国王は、陛下に会うためだけに、病院を出て、きゅうでんへ戻り、いれいの、さんじかん近い、かいだんが、じつげんしました。"
+        },
+        {
+          "text": "これだけでも、タイ国内には大きな衝撃が走りました。",
+          "say": "これだけでも、タイこくないには、大きな、しょうげきが、はしりました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-2",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-18",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "6-9",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nhân vật mới: vua Phumiphon, bệnh viện ông nằm, rồi cuộc gặp 3 tiếng.",
+      "cut": "page"
+    },
+    {
+      "label": "歓迎式典",
+      "era": "2012年6月",
+      "headline": "突然の豪雨にも\n動かなかった",
+      "lines": [
+        {
+          "text": "けれど、本当の伝説はそのあとの歓迎式典で生まれます。",
+          "say": "けれど、ほんとうの、でんせつは、そのあとの、かんげいしきてんで、生まれます。"
+        },
+        {
+          "text": "突然の豪雨に、周りの人々が慌ただしく動き出すなか、陛下だけは一切動かず、濡れたまま、笑顔で儀式に向き合い続けたといいます。",
+          "say": "とつぜんの、ごううに、周りの人々が、あわただしく動き出すなか、陛下だけは、いっさい動かず、ぬれたまま、えがおで、ぎしきに、向き合い続けたといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.47,
+            0.32
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Trời chuyển giông ở hoàng cung, rồi giật mạnh vào cảnh mưa: khúc ngoặt của câu chuyện.",
+      "cut": "flash"
+    },
+    {
+      "label": "称賛の声",
+      "era": "2012年6月",
+      "headline": "「真のゲストだ」",
+      "lines": [
+        {
+          "text": "タイの人々への深い敬意を貫くその姿に、現地からは「真のゲストだ」「国王と同じ敬意を示すべき方だ」と、称賛の声が殺到しました。",
+          "say": "タイの人々への、ふかい、けいいを、つらぬく、その姿に、げんちからは、しんのゲストだ、こくおうと同じ、けいいを、しめすべき方だ、と、しょうさんの声が、さっとうしました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "20-1",
+          "focus": [
+            0.26,
+            0.26
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "24-8",
+          "focus": [
+            0.52,
+            0.55
+          ],
+          "move": "pan-right"
+        }
+      ],
+      "why": "Lời khen của người Thái: ảnh陛下 ở Thái Lan, rồi tới người dân Thái.",
+      "cut": "fade"
+    },
+    {
+      "label": "カンボジア",
+      "era": "2012年6月",
+      "headline": "式典より先に\n向かった場所",
+      "lines": [
+        {
+          "text": "そして次の訪問先、カンボジア。",
+          "say": "そして、次の、ほうもんさき、カンボジア。"
+        },
+        {
+          "text": "陛下は公式の歓迎式典よりも先に、ある場所へ向かわれました。",
+          "say": "陛下は、こうしきの、かんげいしきてんよりも先に、ある場所へ、向かわれました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "14-2",
+          "focus": [
+            0.24,
+            0.24
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-4",
+          "focus": [
+            0.25,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Sang chương mới ở Campuchia, rồi mở ra cảnh陛下 cúi đầu trước bia.",
+      "cut": "page"
+    },
+    {
+      "label": "中田厚仁さん",
+      "era": "1993年",
+      "headline": "PKOで命を落とした\nボランティア",
+      "lines": [
+        {
+          "text": "19年前、PKOの選挙支援で命を落とした日本人ボランティア、中田厚仁さんの慰霊碑です。",
+          "say": "じゅうきゅうねんまえ、ピーケーオーの、せんきょしえんで、命を落とした、日本人ボランティア、なかたあつひとさんの、いれいひです。"
+        },
+        {
+          "text": "当時25歳の若者でした。",
+          "say": "とうじ、にじゅうごさいの、わかものでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "9-11",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "11-14",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Lùi về 1993: tấm bia có ảnh anh Nakata, rồi chính anh lúc còn sống.",
+      "cut": "dip"
+    },
+    {
+      "label": "父の感謝",
+      "era": "2012年6月",
+      "headline": "涙ながらに\n語った父",
+      "lines": [
+        {
+          "text": "父の武仁さんは、「息子のことを、もう一度日本中に思い出させてくれた」と、涙ながらに感謝を語っています。",
+          "say": "ちちの、たけひとさんは、むすこのことを、もう一度、にほんじゅうに、思い出させてくれた、と、なみだながらに、かんしゃを、かたっています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-2",
+          "focus": [
+            0.58,
+            0.26
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Người cha cầm di ảnh con, rồi lặng nhìn: câu nói của ông.",
+      "cut": "fade"
+    },
+    {
+      "label": "誠実さ",
+      "era": "2012年",
+      "headline": "揺るがない\n誠実さ",
+      "lines": [
+        {
+          "text": "人の心を動かすのは、権威や格式ではありません。",
+          "say": "人の心を動かすのは、けんいや、かくしきではありません。"
+        },
+        {
+          "text": "雨の日も、遠い異国の小さな慰霊碑の前でも、変わらない誠実さなのです。",
+          "say": "雨の日も、遠い、いこくの、小さな、いれいひの前でも、変わらない、せいじつさなのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "focus": [
+            0.52,
+            0.22
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-1",
+          "focus": [
+            0.5,
+            0.42
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kết: quyền uy và nghi lễ, rồi lùi ra tấm bia nhỏ nơi xứ xa.",
+      "cut": "dip"
+    }
+  ],
+  "searches": [
+    "wiki:徳仁",
+    "wiki:プミポン・アドゥンヤデート",
+    "wiki:中田厚仁",
+    "wiki:中田武仁",
+    "wiki:シリラート病院",
+    "web:皇太子さま タイ訪問 2012 雨 歓迎式典 => a Japanese crown prince standing in heavy rain at a welcome ceremony",
+    "web:皇太子さま タイ 2012 プミポン国王 会見 => a Japanese crown prince meeting the elderly King of Thailand",
+    "web:皇太子 タイ 2012年6月 訪問 => a Japanese crown prince visiting Thailand",
+    "web:皇太子さま カンボジア 2012 中田厚仁 慰霊碑 => a Japanese crown prince laying flowers at a memorial in Cambodia",
+    "web:中田厚仁 カンボジア 慰霊碑 => a memorial stone in a Cambodian village",
+    "web:中田武仁 => an elderly Japanese man",
+    "web:プミポン国王 2012 => the elderly King of Thailand",
+    "web:タイ 王宮 バンコク => the Grand Palace in Bangkok",
+    "web:皇太子さま カンボジア 2012 訪問 => a Japanese crown prince visiting Cambodia",
+    "file:stories/media/library/naruhito/2019-formal-portrait.jpg",
+    "file:stories/media/library/naruhito/portrait-closeup-silver-tie.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1",
+    "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1?p=2",
+    "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1?p=3",
+    "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1?p=4",
+    "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1?p=5",
+    "web:タイ 国民 プミポン国王 黄色 祈る 人々 => a crowd of Thai people in yellow shirts praying",
+    "web:皇太子さま 2012 タイ 歓迎式典 傘 雨 => a man in a dark suit standing in rain at an outdoor ceremony with soldiers"
+  ]
+}

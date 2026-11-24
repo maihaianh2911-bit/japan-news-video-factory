@@ -100,6 +100,10 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
   decisions above (all four on). `title`: the issue title in Japanese
   (not shown). `date`: "Ngày của tin", else the day the issue was opened. `source`: "Nguồn tin" (the publisher
   name is shown as 出典; a link goes to `source_url`), left out when empty.
+- Searches: first look in **the picture library** (`python tools/library.py list`, then `python tools/library.py
+  sheet <subject>` for each person, couple, place and event of the story) and add a `file:` search for every
+  library picture that fits a scene; then the `wiki:`, `web:` and other searches as usual, for what the library
+  lacks and for better pictures.
 - Check: `pip install -q -r requirements.txt` if needed, then `python -m news.custom stories/<name>.json`.
 - Commit `[jnews #N] kịch bản`, push, remove `jnews-busy`. (Picture search ~2 min; you are called at `jnews-pick`.)
 
@@ -144,6 +148,9 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
    19/11/2026.)
    Any row that fails: pick another picture (or append searches, step 2), preview, run the review again. Render
    only when every row passes, and write in the closing comment "Đã duyệt ảnh: N/N ảnh khớp lời đọc".
+   Then keep every pick that passed in **the picture library** (`CLAUDE.md`, "The picture library"):
+   `python tools/library.py add <find folder> <pick>=<subject>/<name>#<what it shows, in Vietnamese> …`, and
+   commit it with the story.
 6. Write the posting caption `captions/<name>.txt` (format: `CLAUDE.md`, "Posting caption"; only facts of the
    script) and check it with `python -m news.captions captions/<name>.txt`; it is published with the video.
 7. Set `stage: "render"`, commit `[jnews #N] chọn ảnh`, push, remove `jnews-busy`. (Voice and video ~3–6 min; you

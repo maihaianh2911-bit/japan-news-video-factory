@@ -1,0 +1,275 @@
+{
+  "stage": "render",
+  "title": "手の内を旗に書いた男 武田信玄と風林火山",
+  "date": "2026-11-21",
+  "style": "full",
+  "kicker": "戦国の物語",
+  "voice": 1.7,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.12,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:武田信玄",
+    "wiki:風林火山",
+    "wiki:雲峰寺",
+    "wiki:川中島の戦い",
+    "wiki:上杉謙信",
+    "wiki:甲府駅",
+    "web:武田信玄 風林火山 旗 浮世絵",
+    "web:武田信玄 風林火山の旗 甲冑 絵",
+    "web:信玄公祭り 武田信玄 風林火山 旗",
+    "web:武田信玄 銅像 風林火山",
+    "web:武田信玄 陣 風林火山 旗 床几",
+    "web:孫子の旗 雲峰寺 風林火山 旗",
+    "web:風林火山 旗 紺地 金泥 実物",
+    "web:武田信玄 肖像画",
+    "web:武田信玄 浮世絵 軍配",
+    "web:川中島合戦図屏風",
+    "web:川中島 一騎討ち 浮世絵 信玄 謙信",
+    "web:武田騎馬隊 合戦図屏風",
+    "web:風林火山 旗 甲冑 武田 陣",
+    "web:信玄公祭り 甲州軍団 風林火山 旗",
+    "web:武田信玄 像 甲府駅 銅像",
+    "web:上杉謙信 肖像画",
+    "web:雲峰寺 山門 甲州市",
+    "web:孫子 兵法 古書",
+    "web:戦国 合戦 旗指物 屏風",
+    "web:武田信玄 陣 床几 浮世絵",
+    "video:Shingen-ko festival",
+    "video:信玄公祭り",
+    "video:yabusame",
+    "video:samurai armor",
+    "video:Japanese flag waving",
+    "video:Takeda Shingen",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano",
+    "web:影武者 黒澤明 武田信玄 風林火山 旗",
+    "web:影武者 1980 仲代達矢 信玄 騎馬",
+    "web:大河ドラマ 風林火山 2007 武田信玄 市川亀治郎",
+    "web:大河ドラマ 武田信玄 1988 中井貴一",
+    "web:武田信玄 映画 風林火山 旗 騎馬軍団",
+    "web:天と地と 映画 川中島 武田",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook.jpg",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook2.jpg",
+    "file:stories/media/2026-11-21-shingen-furinkazan/hook-full-B2.jpg"
+  ],
+  "scenes": [
+    {
+      "label": "風林火山",
+      "era": "戦国",
+      "headline": "敵に見せた\n戦い方",
+      "lines": [
+        {
+          "text": "武田信玄は、なぜ自分の戦い方を、敵にも見える旗に書いて掲げたのでしょうか。",
+          "say": "たけだしんげんは、なぜじぶんのたたかいかたを、てきにもみえるはたにかいて、かかげたのでしょうか。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "44-1",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "41-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.12
+          ]
+        }
+      ],
+      "why": "Mở bằng tranh Shingen đội mũ sừng bên cạnh lá cờ Phong Lâm Hỏa Sơn, kín màn hình, rồi Shingen trong phim"
+    },
+    {
+      "label": "孫子の旗",
+      "era": "甲斐",
+      "headline": "紺地に金の\n十四文字",
+      "lines": [
+        {
+          "text": "戦国最強とうたわれた武田の騎馬軍団の陣には、紺地に金の文字で、十四の漢字を記した大きな旗が翻っていました。",
+          "say": "せんごくさいきょうとうたわれた、たけだのきばぐんだんのじんには、こんじにきんのもじで、じゅうよんのかんじをしるした、おおきなはたが、ひるがえっていました。"
+        },
+        {
+          "text": "「疾きこと風の如く、徐かなること林の如く」",
+          "say": "はやきこと、かぜのごとく、しずかなること、はやしのごとく。",
+          "quote": true
+        },
+        {
+          "text": "「侵掠すること火の如く、動かざること山の如し」",
+          "say": "しんりゃくすること、ひのごとく、うごかざること、やまのごとし。",
+          "quote": true
+        },
+        {
+          "text": "二千年以上前の中国の兵法書、『孫子』の一節です。",
+          "say": "にせんねんいじょうまえの、ちゅうごくのへいほうしょ、そんしの、いっせつです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "move": "fall",
+          "depth": false
+        },
+        {
+          "pick": "36-5",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "1-14",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "24-1",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Lá cờ thật chạy dọc theo 14 chữ, phim kỵ binh Kagemusha, tranh Shingen, thẻ tre Tôn Tử",
+      "cut": "fade"
+    },
+    {
+      "label": "合図",
+      "era": "戦場",
+      "headline": "見上げるだけで\n分かる合図",
+      "lines": [
+        {
+          "text": "この言葉はのちに「風林火山」と呼ばれ、まさに信玄の戦い方そのものでした。",
+          "say": "このことばはのちに、ふうりんかざんとよばれ、まさにしんげんのたたかいかた、そのものでした。"
+        },
+        {
+          "text": "無線も拡声器もない戦場で、高く掲げられた旗は、何万もの兵が見上げるだけで分かる合図でした。",
+          "say": "むせんもかくせいきもないせんじょうで、たかくかかげられたはたは、なんまんものへいが、みあげるだけでわかる、あいずでした。"
+        },
+        {
+          "text": "速く進むとき、静かに待つとき、一気に攻めるとき、一歩も退かずに踏みとどまるとき。",
+          "say": "はやくすすむとき、しずかにまつとき、いっきにせめるとき、いっぽもひかずに、ふみとどまるとき。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-4",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "18-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        },
+        {
+          "pick": "40-3",
+          "move": "hold",
+          "focus": [
+            0.55,
+            0.3
+          ]
+        }
+      ],
+      "why": "Tối dần ra chiến trường: bình phong Kawanakajima, kỵ binh Takeda, cảnh phim giữa rừng cờ",
+      "cut": "dip"
+    },
+    {
+      "label": "恐怖",
+      "era": "戦場",
+      "headline": "敵の心に\n恐れを",
+      "lines": [
+        {
+          "text": "そしてこの旗は、敵の心にも恐れを植えつけ、これから戦う相手が、どれほど強い軍勢なのかを知らしめたのです。",
+          "say": "そしてこのはたは、てきのこころにもおそれをうえつけ、これからたたかうあいてが、どれほどつよいぐんぜいなのかを、しらしめたのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-19",
+          "move": "push-in",
+          "focus": [
+            0.75,
+            0.55
+          ],
+          "depth": false
+        },
+        {
+          "pick": "36-5",
+          "move": "pan-right",
+          "focus": [
+            0.3,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Lóe sáng vào tranh Kawanakajima, rồi kỵ binh lao tới",
+      "cut": "flash"
+    },
+    {
+      "label": "甲斐の虎",
+      "era": "現在",
+      "headline": "一枚の旗に\n込めた兵法",
+      "lines": [
+        {
+          "text": "味方には規律を、敵には恐怖を。",
+          "say": "みかたにはきりつを、てきにはきょうふを。"
+        },
+        {
+          "text": "たった一枚の旗に、甲斐の虎と呼ばれた男の兵法が、すべて詰まっていました。",
+          "say": "たったいちまいのはたに、かいのとらとよばれたおとこのへいほうが、すべてつまっていました。"
+        },
+        {
+          "text": "その旗は今も、山梨県甲州市の雲峰寺で、大切に守られています。",
+          "say": "そのはたはいまも、やまなしけん、こうしゅうしの、うんぽうじで、たいせつにまもられています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-10",
+          "move": "push-in",
+          "focus": [
+            0.31,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "2-1",
+          "move": "rise",
+          "depth": false
+        },
+        {
+          "pick": "3-1",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tối dần về hiện tại: chân dung Shingen nổi tiếng nhất, lá cờ, chùa Unpō-ji",
+      "cut": "dip"
+    }
+  ],
+  "issue": 53,
+  "music": {
+    "pick": "33-4",
+    "volume": 0.7
+  }
+}

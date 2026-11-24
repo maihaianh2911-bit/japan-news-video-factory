@@ -1,0 +1,311 @@
+{
+  "stage": "render",
+  "issue": 54,
+  "title": "夏休みを捨てた天皇ご一家",
+  "date": "2026-11-21",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "たけしの本音",
+      "era": "2026年夏",
+      "headline": "夏休みを捨てた\n天皇ご一家",
+      "lines": [
+        {
+          "text": "「口先で国民に寄り添うのは、誰だってできるけどよ」",
+          "say": "くちさきで、こくみんに寄り添うのは、だれだって、できるけどよ",
+          "quote": true
+        },
+        {
+          "text": "「自分の夏休みを黙って全部捨てるなんて、普通の人間には絶対できねぇよ！」",
+          "say": "自分の夏休みを、だまって全部捨てるなんて、普通の人間には、絶対できねえよ！"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-2",
+          "focus": [
+            0.5,
+            0.14
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-15",
+          "focus": [
+            0.5,
+            0.28
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Thiên hoàng mặt rõ (ảnh mở đầu), rồi Takeshi, người nói câu này."
+    },
+    {
+      "label": "決定的な差",
+      "era": "2026年",
+      "headline": "天皇御一家と\nとある宮家",
+      "lines": [
+        {
+          "text": "ビートたけし氏が、天皇御一家と、とある宮家の「決定的な差」について、本音を漏らしたと話題になっています。",
+          "say": "ビートたけし氏が、てんのうごいっかと、とある、みやけの、決定的な差について、本音を漏らしたと、話題になっています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-7",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-13",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Takeshi đang nói vào micro, rồi gia đình Thiên hoàng ba người.",
+      "cut": "fade"
+    },
+    {
+      "label": "熊本地震",
+      "era": "2026年7月",
+      "headline": "震度7の大地震が\n熊本を襲う",
+      "lines": [
+        {
+          "text": "7月末、震度7の大地震があの熊本を襲い、多くの命が奪われた直後、陛下は静かに決断されました。",
+          "say": "しちがつまつ、しんどななの、だいじしんが、あの熊本を襲い、多くの命が奪われた直後、へいかは、静かに決断されました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-4",
+          "focus": [
+            0.6,
+            0.55
+          ],
+          "move": "pan-left"
+        },
+        {
+          "pick": "7-4",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Nhà đổ sau động đất Kumamoto, rồi gương mặt nghiêm của Thiên hoàng.",
+      "cut": "dip"
+    },
+    {
+      "label": "華やかな外遊",
+      "era": "2026年8月",
+      "headline": "南米への\n華やかな外遊",
+      "lines": [
+        {
+          "text": "一方、8000人のイベントや、南米への外遊へ華やかに出かけた「自由」な方々とは違って、",
+          "say": "いっぽう、はっせんにんのイベントや、なんべいへの、がいゆうへ、はなやかに出かけた、じゆうな、かたがたとは違って、"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "15-15",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-11",
+          "focus": [
+            0.55,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Vợ chồng hoàng tử Akishino lên máy bay đi Nam Mỹ, rồi ở buổi lễ.",
+      "cut": "hard"
+    },
+    {
+      "label": "夏休みを返上",
+      "era": "2026年夏",
+      "headline": "御用邸での夏休みを\nすべて取りやめ",
+      "lines": [
+        {
+          "text": "天皇陛下と雅子さま、そして愛子さまは、毎年楽しみにしていた御用邸での夏休みを、すべて取りやめられたのです。",
+          "say": "てんのうへいかと、まさこさま、そして、あいこさまは、毎年楽しみにしていた、ごようていでの夏休みを、すべて取りやめられたのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-18",
+          "focus": [
+            0.45,
+            0.35
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "18-7",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Ba người cùng chú chó trong kỳ nghỉ hè ở Nasu, rồi ba người trên bãi biển Suzaki (kỳ nghỉ đã bỏ).",
+      "cut": "fade"
+    },
+    {
+      "label": "どっちが本物か",
+      "era": "2026年",
+      "headline": "どっちが本物か",
+      "lines": [
+        {
+          "text": "たけし氏は、呆れたようにこう語ります。",
+          "say": "たけし氏は、あきれたように、こう語ります。"
+        },
+        {
+          "text": "「被災地が苦しんでる時に、歓声を浴びに出かけるのと、冷房を控えた皇居にこもって、国民の安寧を静かに祈り続けるご一家。どっちが本物か、バカでもわかるだろ」",
+          "say": "ひさいちが、苦しんでる時に、かんせいを浴びに出かけるのと、れいぼうを控えた、こうきょにこもって、こくみんの、あんねいを、静かに祈り続けるごいっか。どっちが本物か、バカでもわかるだろ"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "9-7",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "21-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "22-3",
+          "focus": [
+            0.48,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Takeshi, nơi sơ tán, Hoàng cung, rồi hai vợ chồng Thiên hoàng cúi đầu mặc niệm.",
+      "cut": "hard"
+    },
+    {
+      "label": "愛子さまのおことば",
+      "era": "2026年8月",
+      "headline": "半導体の国際会議で\n真っ先に被災地を",
+      "lines": [
+        {
+          "text": "さらに8月、世界34の国と地域から研究者が集まった国際会議で、愛子さまが半導体の話より先に、真っ先に被災地を案じられた姿に、たけし氏は心を震わせました。",
+          "say": "さらに、はちがつ、世界、さんじゅうよんの国と地域から、研究者が集まった国際会議で、あいこさまが、はんどうたいの話より先に、まっさきに、ひさいちを、あんじられた姿に、たけし氏は、心を震わせました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "23-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "23-1",
+          "focus": [
+            0.5,
+            0.28
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-13",
+          "focus": [
+            0.45,
+            0.0
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Hội nghị đông người, Aiko phát biểu, rồi Takeshi.",
+      "cut": "page"
+    }
+  ],
+  "searches": [
+    "wiki:徳仁",
+    "wiki:皇后雅子",
+    "wiki:愛子内親王",
+    "wiki:北野武",
+    "wiki:須崎御用邸",
+    "wiki:皇居",
+    "web:天皇陛下 記者会見 2026 => a clear close view of the face of the Japanese emperor speaking",
+    "web:天皇陛下 アップ 令和 => a close portrait of the Japanese emperor",
+    "web:ビートたけし 会見 => an elderly Japanese man speaking into a microphone",
+    "web:北野武 2026 囲み取材 => an elderly Japanese man talking to reporters",
+    "web:熊本地震 2026 宇城市 倒壊 => collapsed houses after an earthquake in Japan",
+    "web:令和8年熊本地震 被害 => damage after a strong earthquake in a Japanese town",
+    "web:熊本地震 2026 避難所 => evacuees in a gymnasium shelter in Japan",
+    "web:天皇陛下 険しい表情 => the Japanese emperor with a serious face",
+    "web:秋篠宮ご夫妻 パラグアイ 2026 => a Japanese prince and princess on an official visit abroad",
+    "web:秋篠宮ご夫妻 パラグアイ 式典 日系人 => a Japanese prince and princess greeting a crowd",
+    "web:天皇ご一家 那須御用邸 2026 => the Japanese emperor, empress and princess in summer clothes outdoors",
+    "web:天皇ご一家 須崎御用邸 浜 散策 => the Japanese emperor family walking on a beach",
+    "web:須崎御用邸 下田 海 => a seaside imperial villa by the sea",
+    "web:天皇皇后両陛下 愛子さま 笑顔 => the Japanese emperor, empress and their daughter smiling together",
+    "web:皇居 二重橋 夏 => the Imperial Palace bridge in Tokyo in summer",
+    "web:天皇陛下 黙祷 => the Japanese emperor bowing his head in silent prayer",
+    "web:愛子さま 半導体物理国際会議 => a young Japanese princess giving a speech at a conference",
+    "page:https://news-postseven.com/archives/20260823_2127587.html",
+    "web:愛子さま 国際会議 おことば 2026年8月 => a young Japanese princess speaking at a podium",
+    "page:https://j7p.jp/179221",
+    "music:Chopin Nocturne piano",
+    "music:Gymnopédie Satie piano",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m08s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m14s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m21s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m25s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m31s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m34s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m37s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m46s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m53s.jpg",
+    "file:stories/media/2026-11-21-natsuyasumi/v-0m57s.jpg"
+  ],
+  "music": {
+    "pick": "28-4",
+    "volume": 0.7
+  }
+}

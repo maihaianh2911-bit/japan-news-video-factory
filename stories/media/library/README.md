@@ -1,0 +1,25 @@
+# Kho ảnh (chủ kênh, 22/11/2026)
+
+Mỗi thư mục là một chủ đề (một người, một cặp, một gia đình, một nơi, một sự kiện). Xem `python tools/library.py
+list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm kiếm cho video mới; ảnh đã duyệt của mỗi video
+được thêm bằng `python tools/library.py add …` (xem đầu tệp `tools/library.py`).
+
+| Chủ đề | Số ảnh |
+|---|---|
+| [aiko](aiko/README.md) | 2 |
+| [akishino](akishino/README.md) | 2 |
+| [bangkok](bangkok/README.md) | 3 |
+| [bhumibol](bhumibol/README.md) | 1 |
+| [hanae-mori](hanae-mori/README.md) | 1 |
+| [imperial-family](imperial-family/README.md) | 3 |
+| [kitano-takeshi](kitano-takeshi/README.md) | 4 |
+| [kokyo](kokyo/README.md) | 1 |
+| [kumamoto-2026](kumamoto-2026/README.md) | 2 |
+| [kunaicho](kunaicho/README.md) | 1 |
+| [masako](masako/README.md) | 13 |
+| [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
+| [nakata-takehito](nakata-takehito/README.md) | 2 |
+| [naruhito](naruhito/README.md) | 10 |
+| [naruhito-masako](naruhito-masako/README.md) | 13 |
+| [takeda-shingen](takeda-shingen/README.md) | 19 |
+| [thai-people](thai-people/README.md) | 1 |

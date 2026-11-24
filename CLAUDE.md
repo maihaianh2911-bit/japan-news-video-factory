@@ -118,6 +118,23 @@ videos by their frame and by the name in the seal:
 - **Music** (owner, 21/11/2026: "nhạc nền rít quá, cho nhẹ thôi"): a gentle piano piece at `"volume": 0.7`
   (`music:Gymnopédie Satie piano`, `music:Chopin Nocturne piano`, `music:Debussy Clair de lune piano`); no
   shakuhachi or other shrill solo instrument.
+- **Nothing is built before the owner approves the script** (owner, 21/11/2026, angry that the picture search
+  of `shingen-furinkazan` was started right after a rewrite was shown: "đã chốt kịch bản đâu mà dựng"). When the
+  script is rewritten or its length changed, show it in the chat and wait for a clear yes (「ok」「dựng đi」「chốt」);
+  no issue, no story file, no push and no search before that. An instruction about the script ("cuốn hơn",
+  "61s thôi") is a request for a new draft, not a go-ahead.
+- **The picture library** (owner, 22/11/2026: "Các lần tìm t thấy đc rất nhiều ảnh luôn, tại sao k lưu những ảnh
+  đẹp nhất lại, lần sau chỉ cần quét trong kho là có sẵn"): every picture that passed the review of a video is kept
+  in `stories/media/library/<subject>/` (one folder for a person, a couple, a family, a place or an event:
+  `masako`, `naruhito`, `naruhito-masako`, `imperial-family`, `aiko`, `kumamoto-2026` …), with `<name>.credit.txt`
+  and a line in the folder's `README.md` saying in Vietnamese what it shows; `stories/media/library/README.md`
+  lists the subjects. **Before writing the searches of a new video**, run `python tools/library.py list` and
+  `python tools/library.py sheet <subject>` for the people, places and events of the story, look at the sheets, and
+  add a search `file:stories/media/library/<subject>/<name>.jpg` for every picture that fits (it is credited to its
+  first source); search the web only for what the library lacks or to find better. **After the review passes**,
+  keep the picks: `python tools/library.py add <find folder> <pick>=<subject>/<name>#<what it shows> …` (the same
+  picture is never kept twice; names in lower-case ASCII, a year first when it carries the moment), and push them
+  with the story.
 - Before a render, check every pick against the title and page of its source in `index.json`, not only by eye: on
   the first videos a portrait found by `wiki:` was another man of the same battle, a print was another scene, and a
   web portrait came from the page of the shogun before (`tools/review_picks.py` prints the source beside each).
