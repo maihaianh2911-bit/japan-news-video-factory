@@ -1,0 +1,150 @@
+{
+  "stage": "find",
+  "issue": 73,
+  "title": "批判されても娘と学校へ通った雅子さま",
+  "date": "2026-11-24",
+  "source": "文春オンライン、週刊女性PRIME",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "scenes": [
+    {
+      "label": "付き添い登校",
+      "era": "2010年",
+      "headline": "娘と毎日\n学校へ通った母",
+      "lines": [
+        {
+          "text": "雅子さまには、愛子さまと毎日一緒に学校へ通っていた時期があります。",
+          "say": "まさこさまには、あいこさまと、毎日一緒に、学校へ通っていた時期があります。",
+          "quote": true
+        }
+      ]
+    },
+    {
+      "label": "批判",
+      "era": "2010年",
+      "headline": "日本中から\n浴びた批判",
+      "lines": [
+        {
+          "text": "そのため、「甘やかし過ぎ」「母子密着」と、日本中から激しい批判を浴びました。",
+          "say": "そのため、あまやかしすぎ、ぼしみっちゃく、と、にほんじゅうから、激しい批判を浴びました。"
+        }
+      ]
+    },
+    {
+      "label": "本当の理由",
+      "era": "2010年",
+      "headline": "母が隠していた\n本当の理由",
+      "lines": [
+        {
+          "text": "けれど、雅子さまがそうしたのには、本当の理由がありました。",
+          "say": "けれど、まさこさまが、そうしたのには、本当の理由がありました。"
+        }
+      ]
+    },
+    {
+      "label": "行けなくなった学校",
+      "era": "2010年2月",
+      "headline": "学校へ\n行けなくなった娘",
+      "lines": [
+        {
+          "text": "2010年の冬、学習院初等科2年生だった愛子さまは、乱暴な男の子たちが怖くて、学校へ行けなくなっていたのです。",
+          "say": "にせんじゅうねんの冬、がくしゅういん、しょとうか、にねんせいだった、あいこさまは、らんぼうな、男の子たちが怖くて、学校へ行けなくなっていたのです。"
+        }
+      ]
+    },
+    {
+      "label": "見守る母",
+      "era": "2010年",
+      "headline": "廊下から\n見守り続けた母",
+      "lines": [
+        {
+          "text": "娘がもう一度、学校に通えるように。",
+          "say": "娘が、もう一度、学校に通えるように。"
+        },
+        {
+          "text": "雅子さまは教室の後ろや廊下から授業を見守り、休み時間には、校庭の隅から娘の姿を見つめ続けたといいます。",
+          "say": "まさこさまは、教室の後ろや、ろうかから、授業を見守り、休み時間には、こうていの隅から、娘の姿を、見つめ続けたといいます。"
+        }
+      ]
+    },
+    {
+      "label": "山中湖",
+      "era": "2011年9月",
+      "headline": "山中湖の校外学習にも\nそっと後から",
+      "lines": [
+        {
+          "text": "2011年9月、山中湖への2泊3日の校外学習でも、子どもたちの一行から少し遅れて、そっと後をついて行きました。",
+          "say": "にせんじゅういちねん、くがつ、やまなかこへの、にはく、みっかの、こうがいがくしゅうでも、子どもたちの一行から、少し遅れて、そっと、後をついて行きました。"
+        }
+      ]
+    },
+    {
+      "label": "茶番",
+      "era": "2011年",
+      "headline": "「茶番だ」",
+      "lines": [
+        {
+          "text": "記者会見では、「茶番だ」という言葉まで飛び出します。",
+          "say": "記者会見では、ちゃばんだ、という言葉まで、飛び出します。"
+        }
+      ]
+    },
+    {
+      "label": "ひとりで校門へ",
+      "era": "2011年9月",
+      "headline": "19か月ぶりに\nひとりで校門へ",
+      "lines": [
+        {
+          "text": "それでも、その月の終わり。愛子さまは19か月ぶりに、母の付き添いなしで校門をくぐりました。",
+          "say": "それでも、その月の終わり。あいこさまは、じゅうきゅうかげつぶりに、母の付き添いなしで、こうもんを、くぐりました。"
+        }
+      ]
+    },
+    {
+      "label": "今の愛子さま",
+      "era": "令和",
+      "headline": "母が守り抜いた\n小さな背中",
+      "lines": [
+        {
+          "text": "母が守り抜いたあの小さな背中は、今、日本赤十字社で、人を支える仕事を選んでいます。",
+          "say": "母が守り抜いた、あの小さな背中は、今、にほんせきじゅうじしゃで、人を支える仕事を、選んでいます。"
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:学習院初等科",
+    "web:雅子さま 愛子さま 付き添い登校 2010 => a Japanese mother walking with a little girl in a school uniform",
+    "web:雅子さま 愛子さま 登校 学習院初等科 2011 => a Japanese princess walking beside her young daughter to school",
+    "web:愛子さま 初等科 制服 2010 => a little Japanese girl in a navy school uniform and hat",
+    "web:愛子さま 小学生 ランドセル 登校 => a little Japanese girl with a school backpack",
+    "web:雅子さま 2010 => a close portrait of a Japanese princess with a gentle face",
+    "web:雅子さま 2011 憂い 表情 => a Japanese princess looking thoughtful",
+    "web:学習院初等科 校舎 正門 => the gate of a Japanese elementary school",
+    "web:雅子さま 山中湖 校外学習 2011 => a Japanese princess walking near a lake with officials",
+    "web:愛子さま 山中湖 校外学習 2011年9月 => a little Japanese girl on a school trip",
+    "web:山中湖 富士山 => Lake Yamanaka with Mount Fuji",
+    "web:東宮大夫 定例会見 2011 => a Japanese official speaking to reporters at a press conference",
+    "web:愛子さま ひとりで登校 2011年9月 => a little Japanese girl walking to school alone",
+    "web:愛子さま 日本赤十字社 出勤 2024 => a young Japanese woman arriving at an office building",
+    "web:愛子さま 日赤 勤務 笑顔 => a young Japanese princess smiling at work",
+    "web:雅子さま 愛子さま 笑顔 母娘 => a Japanese mother and her grown daughter smiling together",
+    "page:https://bunshun.jp/articles/-/42239",
+    "page:https://bunshun.jp/articles/-/37604",
+    "file:stories/media/library/aiko/smile-closeup-navy.jpg",
+    "file:stories/media/library/masako/2002-baby-aiko-sofa.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano"
+  ]
+}
