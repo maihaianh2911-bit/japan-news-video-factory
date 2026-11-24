@@ -7,7 +7,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | Chủ đề | Số ảnh |
 |---|---|
 | [aiko](aiko/README.md) | 4 |
-| [akechi-mitsuhide](akechi-mitsuhide/README.md) | 2 |
+| [akechi-mitsuhide](akechi-mitsuhide/README.md) | 4 |
 | [akishino](akishino/README.md) | 3 |
 | [arimura-kasumi](arimura-kasumi/README.md) | 5 |
 | [bangkok](bangkok/README.md) | 3 |
@@ -28,17 +28,17 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [masako](masako/README.md) | 13 |
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
-| [mori-ranmaru](mori-ranmaru/README.md) | 1 |
+| [mori-ranmaru](mori-ranmaru/README.md) | 2 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 14 |
 | [naruhito-masako](naruhito-masako/README.md) | 13 |
-| [oda-nobunaga](oda-nobunaga/README.md) | 5 |
+| [oda-nobunaga](oda-nobunaga/README.md) | 10 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 7 |
 | [takeda-shingen](takeda-shingen/README.md) | 19 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
 | [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 4 |
-| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 1 |
+| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
