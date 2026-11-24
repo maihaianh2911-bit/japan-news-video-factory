@@ -45,6 +45,8 @@ class Style:
     caption_text: str = WHITE
     grain: bool = False
     layout: str = "news"           # "news": picture in the upper part; "story": a large picture with the text on it
+    face: str = ""                 # the frame's own typeface for large bold text (a font file), before the "fx" face
+    caption_face: str = ""         # its typeface for the captions, when it has one
 
 
 STYLES = {
@@ -86,6 +88,16 @@ STYLES = {
                   photo_tag_text="#f4ead2", value="#ffd98a", card="#1b1612", card_ink="#f4ead2",
                   card_muted="#857b68", rule="#5a4d33", caption_box="", caption_text="#ffe9a8", grain=False,
                   layout="band"),
+    # "hazard" (trial of 24/11/2026, for the disaster series "史上最悪の大災害 TOP10"; owner: the history frames do not
+    # fit this kind): a black page with a faint grid and warning stripes, a modern black gothic type, the series and
+    # the title at the top with the rank in a red badge, the picture inside amber viewfinder corners, the headline and
+    # the captions under it. The kicker gives its rows: "series\ntitle\nrank" (e.g. "史上最悪の大災害\nタイタニック号沈没\n第10位").
+    "hazard": Style(family="Sans", background="#0c0c0b", text="#ffffff", muted="#9a978e", accent="#f5b700",
+                    tag="#f5b700", tag_text="#0c0c0b", photo_bed="#0c0c0b", photo_tag="#0c0c0b",
+                    photo_tag_text="#ffffff", value="#f5b700", card="#171715", card_ink="#f2f0ea",
+                    card_muted="#9a978e", rule="#3a3934", caption_box="", caption_text="#ffffff", grain=False,
+                    layout="hazard", face="fonts/ZenKakuGothicNew-Black.ttf",
+                    caption_face="fonts/ZenKakuGothicNew-Bold.ttf"),
 }
 style = STYLES["news"]
 
@@ -119,10 +131,28 @@ PHRASES = budoux.load_default_japanese_parser()
 
 
 def font(size, bold=True):
-    """The typeface of the frame; large bold text is set in the display face when the story has one."""
+    """The typeface of the frame; large bold text is set in the frame's own face, else in the display face when the
+    story has one."""
+    if bold and size >= 40 and style.face and Path(style.face).exists():
+        return display_face(style.face, size)
     if DISPLAY_FONT and bold and size >= 40:
         return display_face(DISPLAY_FONT, size)
     return face_of(style.family, size, bold)
+
+
+def caption_font():
+    """The typeface of the captions: the frame's own caption face when it has one, else the large bold text's."""
+    if style.caption_face and Path(style.caption_face).exists():
+        return display_face(style.caption_face, CAPTION_SIZE)
+    return font(CAPTION_SIZE)
+
+
+MONO = "/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf"
+
+
+def mono(size):
+    """A monospaced type for the small technical labels of the "hazard" frame (Latin letters and digits)."""
+    return display_face(MONO, size) if Path(MONO).exists() else face_of("Sans", size, True)
 
 
 @lru_cache(maxsize=128)
@@ -287,8 +317,10 @@ FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": th
 BAND_TOP, BAND_HEIGHT = 470, 760        # "band": the wide picture across the middle of the frame
 BAND_TEXT_TOP = BAND_TOP + BAND_HEIGHT + 44   # the headline under it
 BAND_QUOTE_CENTRE, BAND_QUOTE_FOOT = 1480, 1680   # a quote stands where the headline and the captions are
+HAZARD_TOP, HAZARD_HEIGHT = 372, 900    # "hazard": the picture under the title, inside the viewfinder corners
+HAZARD_QUOTE_CENTRE, HAZARD_QUOTE_FOOT = 1490, 1700
 BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H),
-         "band": (BAND_TOP, BAND_HEIGHT)}
+         "band": (BAND_TOP, BAND_HEIGHT), "hazard": (HAZARD_TOP, HAZARD_HEIGHT)}
 ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
@@ -306,11 +338,13 @@ def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
     if style.layout in ("full", "band"):
         return (0, 0, W, H)
+    if style.layout == "hazard":   # the title and the stripes stay, the picture and its text change
+        return (0, HAZARD_TOP - 30, W, 1730)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
 
 def caption_centre():
-    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1532}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1532, "hazard": 1588}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -1021,6 +1055,141 @@ def band_edges():
     return edges
 
 
+HAZARD_AMBER, HAZARD_RED, HAZARD_GRID = "#f5b700", "#e8322b", "#171715"
+
+
+def hazard_stripes(draw, y, height):
+    """A band of black and amber warning stripes across the frame."""
+    draw.rectangle((0, y, W, y + height), fill="#111110")
+    for x in range(-height, W + height, 36):
+        draw.polygon([(x, y + height), (x + 18, y + height), (x + 18 + height, y), (x + height, y)], fill=HAZARD_AMBER)
+
+
+@lru_cache(maxsize=4)
+def hazard_page(kicker):
+    """The still part of the "hazard" frame: a black page with a faint grid, warning stripes at the top and the foot,
+    and the title block: the series in amber with the rank in a red badge beside it, the title in large white type."""
+    image = Image.new("RGB", (W, H), style.background)
+    draw = ImageDraw.Draw(image)
+    for x in range(0, W, 54):
+        draw.line((x, 0, x, H), fill=HAZARD_GRID)
+    for y in range(0, H, 54):
+        draw.line((0, y, W, y), fill=HAZARD_GRID)
+    hazard_stripes(draw, 0, 18)
+    hazard_stripes(draw, H - 18, 18)
+    rows = [row.strip() for row in (kicker or "日本のニュース").splitlines() if row.strip()]
+    series, title, rank = (rows + ["", "", ""])[:3] if len(rows) > 1 else ("", rows[0], "")
+    x = 60
+    if series:
+        series_text, series_size = fit(series, 560, 38, 1, bold=False, smallest=24)
+        draw.rectangle((x, 82, x + 8, 82 + series_size), fill=HAZARD_AMBER)
+        draw.text((x + 22, 80), series_text, font=face_of("Sans", series_size, True), fill=HAZARD_AMBER)
+        x += 22 + round(face_of("Sans", series_size, True).getlength(series_text)) + 26
+    if rank:
+        rank_size = 40
+        width = round(font(44).getlength(rank) * rank_size / 44) + 40
+        draw.rounded_rectangle((x, 70, x + width, 70 + rank_size + 24), radius=8, fill=HAZARD_RED)
+        draw.text((x + width // 2, 70 + (rank_size + 24) // 2), rank, font=font(44).font_variant(size=rank_size),
+                  fill="#ffffff", anchor="mm")
+    words, size = fit(title, 968, 122, 1, smallest=60)
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(layer).text((56, 150), words, font=font(size), fill="#ffffff")
+    shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    shadow.putalpha(ImageChops.offset(layer.getchannel("A"), 0, 6).filter(ImageFilter.GaussianBlur(8))
+                    .point(lambda level: round(level * 0.75)))
+    page = image.convert("RGBA")
+    page.alpha_composite(shadow)
+    page.alpha_composite(layer)
+    return page.convert("RGB")
+
+
+@lru_cache(maxsize=1)
+def hazard_overlay():
+    """Over the "hazard" picture: amber viewfinder corners, and under it an amber rule with the ticks of a ruler."""
+    overlay = Image.new("RGBA", (W, HAZARD_HEIGHT + 40), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(overlay)
+    inset, arm, thick, bottom = 34, 74, 6, HAZARD_HEIGHT - 34
+    for cx, cy, sx, sy in ((inset, inset, 1, 1), (W - inset, inset, -1, 1), (inset, bottom, 1, -1),
+                           (W - inset, bottom, -1, -1)):
+        draw.rectangle((min(cx, cx + sx * arm), min(cy, cy + sy * thick), max(cx, cx + sx * arm),
+                        max(cy, cy + sy * thick)), fill=HAZARD_AMBER)
+        draw.rectangle((min(cx, cx + sx * thick), min(cy, cy + sy * arm), max(cx, cx + sx * thick),
+                        max(cy, cy + sy * arm)), fill=HAZARD_AMBER)
+    y = HAZARD_HEIGHT + 8
+    draw.rectangle((0, y, W, y + 3), fill=HAZARD_AMBER)
+    for x in range(0, W, 27):
+        draw.rectangle((x, y + 3, x + 2, y + (17 if x % 135 == 0 else 10)), fill=HAZARD_AMBER)
+    return overlay
+
+
+def hazard_layout(beat, release, has_photo, demo):
+    """The "hazard" frame (trial of 24/11/2026): the page and title block of hazard_page; on the picture the era in a
+    chip (ERA ▸ 1912年), wiped in; under it an amber bar and the headline, left-aligned, coming in row by row. The
+    viewfinder corners are laid over the picture each frame (Scene.render). No credits on the frame: credits.txt."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = hazard_page(release.kicker).copy()
+    if demo:
+        parts.append(piece("fixed", lambda d: outlined(d, W // 2, 30, "動作確認", 28, GOLD, stroke=3)))
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(layer)
+    if not has_photo:   # a text card in the place of the picture
+        draw.rectangle((60, HAZARD_TOP, 1020, HAZARD_TOP + HAZARD_HEIGHT), fill=style.card, outline=style.rule, width=2)
+        draw.rectangle((110, HAZARD_TOP + 80, 206, HAZARD_TOP + 86), fill=HAZARD_AMBER)
+        headline, size = fit(beat.headline, 840, 72, 3, smallest=40)
+        y = text(draw, 110, HAZARD_TOP + 130, headline, size, style.card_ink)
+        if beat.value:
+            value, value_size = fit(beat.value, 840, 130, 1, smallest=56)
+            y = text(draw, 110, y + 70, value, value_size, style.value)
+        if beat.evidence:
+            evidence, evidence_size = fit(beat.evidence, 830, 40, 5, bold=False, smallest=26)
+            text(draw, 110, y + 60, evidence, evidence_size, style.card_ink, bold=False)
+        return image, layer, [part for part in parts if part]
+
+    def era(d):
+        value, size = fit(beat.era, 520, 34, 1, smallest=24)
+        width = 104 + round(font(44).getlength(value) * size / 44)
+        d.rectangle((54, HAZARD_TOP + 56, 54 + width, HAZARD_TOP + 112), fill=(0, 0, 0, 190))
+        d.text((70, HAZARD_TOP + 84), "ERA", font=mono(26), fill=HAZARD_AMBER, anchor="lm")
+        d.text((134, HAZARD_TOP + 84), value, font=font(44).font_variant(size=size), fill="#ffffff", anchor="lm")
+
+    if beat.era:
+        if animated:
+            parts.append(piece("tag", era))
+        else:
+            era(draw)
+    top = HAZARD_TOP + HAZARD_HEIGHT + 46
+    blocks = []
+    headline, size = fit(beat.headline, 900, 70 if len(beat.headline) < 14 else 58, 2, smallest=44)
+    blocks.append((headline, size, style.text, True, 16))
+    if beat.value:
+        value, value_size = fit(beat.value, 900, 84, 1, smallest=56)
+        blocks.append((value, value_size, style.value, True, 16))
+    if beat.evidence:
+        evidence, evidence_size = fit(beat.evidence, 900, 34, 2, bold=False, smallest=26)
+        blocks.append((evidence, evidence_size, style.muted, False, 12))
+    height = sum(block_height(value, size, spacing) for value, size, _, _, spacing in blocks)
+
+    def bar(d):
+        d.rectangle((60, top + 6, 72, top + min(height, 96)), fill=HAZARD_AMBER)
+
+    if animated:
+        parts.append(piece("rule", bar))
+    else:
+        bar(draw)
+    y, order = top, 0
+    for value, size, colour, bold, spacing in blocks:
+        for row, line in enumerate(value.splitlines()):
+            at = y + row * (size + spacing)
+            if animated:
+                parts.append(piece("row", lambda d, line=line, at=at, size=size, colour=colour, bold=bold:
+                                   d.text((96, at), line, font=font(size, bold), fill=colour), order))
+                order += 1
+            else:
+                draw.text((96, at), line, font=font(size, bold), fill=colour)
+        y += block_height(value, size, spacing) + 20
+    return image, layer, [part for part in parts if part]
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
@@ -1032,6 +1201,8 @@ def layout(beat, release, has_photo, demo):
         return full_layout(beat, release, has_photo, demo)
     if style.layout == "band":
         return band_layout(beat, release, has_photo, demo)
+    if style.layout == "hazard":
+        return hazard_layout(beat, release, has_photo, demo)
     return (*plain_layout(beat, release, has_photo, demo), [])
 
 
@@ -1170,12 +1341,15 @@ class Scene:
             if style.layout == "band":
                 edges = band_edges()
                 frame.paste(edges, (0, self.top - 28), edges)
+            if style.layout == "hazard":   # the viewfinder corners and the ruler under the picture
+                overlay = hazard_overlay()
+                frame.paste(overlay, (0, self.top), overlay)
         for kind, part, at, _ in self.parts:   # what never moves: the seal and the year of the "history" page
             if kind == "fixed":
                 frame.paste(part, at, part)
         if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
-            if style.layout in ("full", "band"):   # the tag at the top comes in all the same
+            if style.layout in ("full", "band", "hazard"):   # the tag at the top comes in all the same
                 self.draw_parts(frame, age, only="tag")
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
@@ -1183,7 +1357,7 @@ class Scene:
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
-        if photo and style.layout not in ("full", "band"):   # "full", "band": the credits are in credits.txt only
+        if photo and style.layout not in ("full", "band", "hazard"):   # these: the credits are in credits.txt only
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
@@ -1328,7 +1502,7 @@ def sweep_edge(height):
 def caption_art(caption, key):
     """A caption drawn twice, paler (not yet spoken) and in full ink (spoken), with the x of every character edge
     and the reading weight of every character, line by line. `key`: what the drawing depends on besides the text."""
-    face = font(CAPTION_SIZE)
+    face = caption_font()
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
     layers = []
@@ -1410,7 +1584,7 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
     voice reaches which part of it, see voice.Caption)."""
     if span and FX.get("text"):
         return draw_spoken_caption(image, caption, age, span, marks)
-    face = font(CAPTION_SIZE)
+    face = caption_font()
     contents = caption.splitlines()
     height = 83 * len(contents) + 26
     centre = caption_centre()
@@ -1473,7 +1647,7 @@ def draw_quote(image, line, age):
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
     # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
     joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    if style.layout in ("full", "band"):   # in the middle of the frame (under the picture): as large as 3 rows allow
+    if style.layout in ("full", "band", "hazard"):   # in the middle of the frame (under the picture): 3 rows at most
         words, size = fit("".join(pieces), 960, 92 if style.layout == "full" else 84, 3, smallest=52)
     else:
         words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
@@ -1483,6 +1657,9 @@ def draw_quote(image, line, age):
         return draw_full_quote(image, rows, size, block, age)
     if style.layout == "band":
         return draw_full_quote(image, rows, size, block, age, BAND_QUOTE_CENTRE, BAND_QUOTE_FOOT)
+    if style.layout == "hazard":   # the last row in amber: it carries the point of the line
+        return draw_full_quote(image, rows, size, block, age, HAZARD_QUOTE_CENTRE, HAZARD_QUOTE_FOOT,
+                               key=HAZARD_AMBER if len(rows) > 1 else "")
     band_height = min(height, block + 330)
     band = quote_band(band_height)
     if style.layout == "ink":
@@ -1506,17 +1683,17 @@ def draw_quote(image, line, age):
         image.paste(strip, (0, y + 30 + index * (size + 22) + round(22 * (1 - shown))), strip)
 
 
-def draw_full_quote(image, rows, size, block, age, centre=FULL_TEXT_CENTRE, foot=FULL_TEXT_FOOT):
+def draw_full_quote(image, rows, size, block, age, centre=FULL_TEXT_CENTRE, foot=FULL_TEXT_FOOT, key=""):
     """A quote in the "full" frame: no band, the words stand in the middle of the picture, white with a dark outline,
     row after row rising into place (owner, 21/11/2026: "không cần khoảng tối… để chữ ở giữa màn hình"). The "band"
-    frame sets it the same way under its picture (`centre`, `foot`)."""
+    frame sets it the same way under its picture (`centre`, `foot`); `key`: the colour of the last row, if not white."""
     y = min(centre - block // 2, foot - block)
     for index, row in enumerate(rows):   # the picture is seen alone a moment first, then the words come
         shown = ease((age - 0.25 - 0.22 * index) / 0.42) if FX.get("text") else ease(age / QUOTE_IN)
         if shown <= 0:
             continue
         ink = Image.new("RGBA", (W, size + 60), (0, 0, 0, 0))
-        outlined(ImageDraw.Draw(ink), W // 2, 24, row, size, style.text)
+        outlined(ImageDraw.Draw(ink), W // 2, 24, row, size, key if key and index == len(rows) - 1 else style.text)
         soft = ImageChops.offset(ink.getchannel("A"), 0, 4).filter(ImageFilter.GaussianBlur(7))
         strip = Image.new("RGBA", ink.size, (10, 6, 2, 0))
         strip.putalpha(soft.point(lambda level: round(level * 0.6)))

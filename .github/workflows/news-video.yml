@@ -293,7 +293,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: fonts
-          key: font-shippori-mincho-b1-extrabold
+          key: font-shippori-mincho-b1-extrabold-zen-kaku-gothic-new
       - name: Hiệu ứng hình (không bắt buộc)
         # Optional, nothing here stops the run: without the libraries or the model the pictures stay flat, without
         # the typeface the usual one is used (news/render.py warns), and the video is made all the same. Only the
@@ -312,6 +312,15 @@ jobs:
               && mv "$FONT.part" "$FONT"; } \
               || { rm -f "$FONT.part"; echo "::warning::không tải được phông chữ Shippori Mincho B1: dùng phông chữ thường"; }
           fi
+          # the black gothic of the "hazard" frame (Zen Kaku Gothic New, SIL Open Font License)
+          for WEIGHT in Black Bold; do
+            GOTHIC=fonts/ZenKakuGothicNew-$WEIGHT.ttf
+            [[ -s "$GOTHIC" ]] && continue
+            { curl -fsSL --retry 3 --max-time 120 -o "$GOTHIC.part" \
+                "https://raw.githubusercontent.com/google/fonts/main/ofl/zenkakugothicnew/ZenKakuGothicNew-$WEIGHT.ttf" \
+              && mv "$GOTHIC.part" "$GOTHIC"; } \
+              || { rm -f "$GOTHIC.part"; echo "::warning::không tải được phông chữ Zen Kaku Gothic New $WEIGHT: dùng phông chữ thường"; }
+          done
       - name: Get the pictures already found for the story
         if: matrix.mode == 'story' || matrix.mode == 'check'
         env:
