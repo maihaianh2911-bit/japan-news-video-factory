@@ -1,7 +1,7 @@
 {
   "title": "thử khung ảnh full màn hình (full) — vải không cháy, đoạn mẫu",
   "date": "2026-11-24",
-  "stage": "find",
+  "stage": "render",
   "style": "full",
   "kicker": "史上最恐の素材",
   "fx": {
@@ -38,7 +38,22 @@
           "quote": true
         },
         "古代の人々は、それを神秘の布だと信じていました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ]
+        },
+        {
+          "pick": "3-18",
+          "move": "pan-right"
+        }
+      ],
+      "why": "Mở đầu bằng ngọn lửa, rồi tấm vải amiăng thật"
     },
     {
       "label": "プリニウス",
@@ -53,7 +68,23 @@
           "text": "王が亡くなると、その亡骸をこの布で包んで火葬し、王の灰だけを集めたといいます。",
           "say": "おうがなくなると、そのなきがらをこのぬのでつつんでかそうし、おうのはいだけをあつめたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-19",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "8-1",
+          "move": "pan-left"
+        }
+      ],
+      "cut": "fade",
+      "why": "Chân dung Pliny, rồi ngọn lửa của lễ hỏa táng"
     },
     {
       "label": "カール大帝",
@@ -65,7 +96,31 @@
           "say": "そしてちゅうせい、カールたいていはうたげのあと、よごれたテーブルクロスをひになげこみました。"
         },
         "炎から取り出すと、布は真っ白。客たちは息をのんだと伝えられています。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "2-2",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Tượng bán thân Charlemagne, rồi cảnh triều đình đứng xem"
     }
-  ]
+  ],
+  "music": {
+    "pick": "9-1",
+    "volume": 0.7
+  }
 }
