@@ -259,6 +259,15 @@ kèm caption cho mỗi video"):
    - Owner, 17/11/2026: the love story (`masako-rikon`: a request for divorce, his answer, the proof, the two
      side by side in 2019) was the only video with views. When a source story has a love, couple or
      mother-and-child side, lead with it in the first line and build the story on it (true facts only).
+   - **The owner's model script** (24/11/2026, "học tập cách viết này", for the scripts Claude writes on its own
+     as for the rest; it was about Takeuchi Yuko's widower): (1) the hook gives the time since the event, the
+     person and the striking fact ("6 years since Takeuchi Yuko died, her husband Nakabayashi Taiki has not
+     remarried"); (2) a teaser of something still going on that moves people ("what he keeps doing, as if keeping
+     a promise to his wife, brings people to tears"); (3) the name again and the event in one plain line; (4) the
+     decision or turn; (5) what people said on SNS, quoted in 「」 — only comments a press article reports, never
+     made up; (6) a line that raises the stakes ("and his life after that refusal touched people even more"), then
+     the payoff details. Short plain sentences, news-like but warm, about 65 seconds (owner, 24/11/2026: "video
+     sau cũng chỉ làm 65s thôi"; `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}`).
    Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
    rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
