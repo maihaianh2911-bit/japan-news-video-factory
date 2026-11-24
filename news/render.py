@@ -302,7 +302,9 @@ def photo_box():
 
 def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
-    if style.layout in ("full", "band"):
+    if style.layout == "band":   # the title at the top stays while the scene changes under it
+        return (0, BAND_TOP - 90, W, H)
+    if style.layout == "full":
         return (0, 0, W, H)
     return (0, 0, W, 1752) if style.layout in ON_PICTURE else (0, 245, W, 1700)
 
@@ -1203,7 +1205,14 @@ def page_shadow(height=1460):
     return shadow
 
 
-CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45}
+CUT_SECONDS = {"fade": TRANSITION, "page": TRANSITION, "dip": 0.9, "hard": 0.0, "flash": 0.45, "slide": 0.5,
+               "zoom": 0.6}
+
+
+def cut_area():
+    """The part of the frame a "slide" or a "zoom" moves: in the "band" frame the picture, the era above it and the
+    text under it (the title at the top stays put), elsewhere the page."""
+    return page_area()
 
 
 @lru_cache(maxsize=1)
@@ -1226,6 +1235,34 @@ def transition(old, new, amount, cut=""):
         if amount < 0.25:
             return Image.blend(old, light, 0.85 * amount / 0.25)
         return Image.blend(light, new, 0.15 + 0.85 * ease((amount - 0.25) / 0.75))
+    if cut in ("slide", "zoom"):
+        step = ease(amount)
+        frame = Image.blend(old, new, step)   # what does not move (the same in both scenes) stays as it is
+        area = cut_area()
+        left, top, right, bottom = area
+        width, height = right - left, bottom - top
+        before, after = old.crop(area), new.crop(area)
+        if cut == "slide":   # the new scene pushes the old one out to the left
+            shift = round(width * step)
+            moving = Image.new("RGB", (width, height))
+            moving.paste(before, (-shift, 0))
+            moving.paste(after, (width - shift, 0))
+            frame.paste(moving, (left, top))
+            if 0 < shift < width:
+                ImageDraw.Draw(frame).rectangle((left + width - shift, top, left + width - shift + 3, bottom),
+                                                fill=BAND_GOLD if style.layout == "band" else style.accent)
+            return frame
+        # "zoom": the old scene rushes towards the viewer and melts into the new one, which settles from a little close
+        grow = 1 + 0.35 * step
+        zoomed = before.resize((round(width * grow), round(height * grow)), Image.Resampling.BILINEAR)
+        x, y = (zoomed.width - width) // 2, (zoomed.height - height) // 2
+        zoomed = zoomed.crop((x, y, x + width, y + height))
+        settle = 1.12 - 0.12 * step
+        arriving = after.resize((round(width * settle), round(height * settle)), Image.Resampling.BILINEAR)
+        x, y = (arriving.width - width) // 2, (arriving.height - height) // 2
+        arriving = arriving.crop((x, y, x + width, y + height))
+        frame.paste(Image.blend(zoomed, arriving, ease(min(1.0, amount * 1.6))), (left, top))
+        return frame
     if cut == "dip":
         # Only the scene (picture and its text) goes dark; the header and the foot change quietly and the caption,
         # drawn afterwards, stays readable.
@@ -1617,10 +1654,14 @@ def loudness():
     for a higher target gave only 1.6 dB of the 4.6 asked: it will not push the peaks.)"""
     chain = "loudnorm=I=-16:TP=-1.5:LRA=7"
     # the limiter takes back part of the gain: measured, 8 dB of gain gives the 4.6 dB (70 %) asked for
-    gain = min(10.0, 1.75 * 20 * math.log10(max(0.3, VOICE)))
+    gain = min(14.0, 1.75 * 20 * math.log10(max(0.3, VOICE)))
     if abs(gain) > 0.05:
         chain += f",volume={gain:.1f}dB"
-    if gain > 0.05:
+    if VOICE > 2.0:
+        # louder still (owner, 24/11/2026: "tăng voice to hơn 40%", 1.7 → 2.4): the slow limiter above stops at about
+        # -11 LUFS whatever the gain; a quicker one with a higher ceiling reaches -9 (measured: 13 dB → -9.3 LUFS)
+        chain += ",alimiter=limit=0.95:attack=1:release=20:level=disabled"
+    elif gain > 0.05:
         chain += ",alimiter=limit=0.89:attack=3:release=60:level=disabled"
     return chain
 

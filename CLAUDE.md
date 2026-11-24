@@ -102,6 +102,24 @@ videos by their frame and by the name in the seal:
   on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
   the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
   pastes in the video's description; say so when giving the links.
+- `"style": "band"` — **the frame of the history videos from 24/11/2026** (owner, showing a short he liked:
+  "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang"; approved on a 30-second trial: "Dựng đi"): the
+  scene's own picture, blurred and dark, fills the frame; at the top the `kicker` small between two gold rules and
+  the story's `"masthead"` (a big title of at most 9 characters, e.g. `本能寺の変`) with a small red diamond under it;
+  the scene's `era` in gold on the right above the picture; the picture in a wide band across the middle (1080×780,
+  between two thin gold lines) — landscape pictures and drama stills fit it whole, a portrait or a scroll is shown
+  `"fit": "contain"`; the headline in white and the pale gold captions under the band; the hook quote big and white
+  under the band. No text lies on the picture, so a face is never under text; the rule left is that the face stays
+  inside the band during the move. First video: `nobunaga-honnoji` (version 3).
+- **Every picture moves** (owner, 24/11/2026: "nhớ phải luôn cho ảnh chuyển động"): no `hold`; a tall picture in the
+  band gets `push-in` with its `focus` on the face (a `rise` starts at its foot, with the face out of the band).
+  Vary the cuts between scenes (`slide`, `zoom`, `flash`, `dip`, `hard`; owner: "có thể thêm hiệu ứng chuyển cảnh").
+- **Drama stills first** (owner, 24/11/2026: "nên dùng nhiều hình ảnh phim ảnh hơn"): the people of a history story
+  are shown mostly by stills of one taiga drama (one face per person for the whole video: Nobunaga = Oguri Shun in
+  `豊臣兄弟！`, Yukimura = Sakai Masato in `真田丸`), found through the press galleries of the episode (`page:` of a
+  cinematoday / thetv gallery, `web:<drama> <episode> 場面写真`); two or three real pictures (the place today, the
+  real portrait) keep it true. **The hook is a drama still or a fine photograph, never an old painting** (owner,
+  24/11/2026, angry: "cái hook mở đầu quan trọng nhất mà lại để cái tranh cổ rõ xấu").
 - The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
   "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
   những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)
@@ -124,8 +142,9 @@ videos by their frame and by the name in the seal:
   shorter than its place) and closes in a little; `focus` says which part of it fills the frame. Commons has few
   clips that fit a story (tried on five stories: one or two each); the owner's own videos are the better source.
 - `"cut": "flash"`: a burst of pale light on the cut (a blow, a betrayal, the turn of the story).
-- `"voice": 1.7` (owner, 21/11/2026: "tăng voice to thêm 70%"): how loud the finished sound is, 1 = the usual
-  -16 LUFS. The music does not come up with it. **Every video of these new kinds carries `"voice": 1.7`.**
+- `"voice": 2.4` (owner, 21/11/2026: "tăng voice to thêm 70%" → 1.7; 24/11/2026: "tăng voice to hơn 40%" → 2.4):
+  how loud the finished sound is, 1 = the usual -16 LUFS (1.7 ≈ -12 LUFS, 2.4 ≈ -9 LUFS with a quicker limiter).
+  The music does not come up with it. **Every video of these new kinds carries `"voice": 2.4`.**
 - **Music** (owner, 21/11/2026: "nhạc nền rít quá, cho nhẹ thôi"): a gentle piano piece at `"volume": 0.7`
   (`music:Gymnopédie Satie piano`, `music:Chopin Nocturne piano`, `music:Debussy Clair de lune piano`); no
   shakuhachi or other shrill solo instrument.
