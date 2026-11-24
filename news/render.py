@@ -1660,7 +1660,7 @@ def loudness():
     if VOICE > 2.0:
         # louder still (owner, 24/11/2026: "tăng voice to hơn 40%", 1.7 → 2.4): the slow limiter above stops at about
         # -11 LUFS whatever the gain; a quicker one with a higher ceiling reaches -9 (measured: 13 dB → -9.3 LUFS)
-        chain += ",alimiter=limit=0.95:attack=1:release=20:level=disabled"
+        chain += ",alimiter=limit=0.89:attack=1:release=20:level=disabled"
     elif gain > 0.05:
         chain += ",alimiter=limit=0.89:attack=3:release=60:level=disabled"
     return chain
