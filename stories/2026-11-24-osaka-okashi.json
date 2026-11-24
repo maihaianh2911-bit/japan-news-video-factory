@@ -1,0 +1,92 @@
+{
+  "stage": "find",
+  "title": "大阪に行ったら絶対に買うべき激うまお菓子(5〜8位)",
+  "date": "2026-11-24",
+  "style": "goods",
+  "kicker": "大阪みやげ",
+  "pace": {
+    "speed": 1.1,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "fx": {
+    "motion": true,
+    "text": true
+  },
+  "voice": 1.7,
+  "searches": [
+    "web:551蓬莱 豚まん",
+    "web:551蓬莱 店舗 行列",
+    "web:551蓬莱 焼売 餃子",
+    "web:551蓬莱 豚まん お土産 箱",
+    "web:たこパティエ",
+    "web:たこパティエ 箱 お土産",
+    "web:たこパティエ 中身",
+    "web:月化粧 青木松風庵",
+    "web:月化粧 断面 みるく饅頭",
+    "web:青木松風庵 店舗",
+    "web:喜八洲総本舗 みたらし団子",
+    "web:喜八洲総本舗 十三 本店",
+    "web:喜八洲 みたらし団子 焼き",
+    "wiki:新大阪駅",
+    "wiki:十三駅",
+    "music:Chopin Waltz piano",
+    "file:stories/media/2026-11-24-osaka-okashi/v-551-waru.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-551-seiro.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-tako-waru.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-tsuki-kojo.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-tsuki-waru.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-tsuki-dan.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-kihachi-tare.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-kihachi-yaki.mp4",
+    "file:stories/media/2026-11-24-osaka-okashi/v-kihachi-kushi.mp4"
+  ],
+  "scenes": [
+    {
+      "label": "大阪みやげ",
+      "headline": "大阪の激うまお菓子",
+      "lines": [
+        "大阪に行ったら、絶対に買って帰るべき、激うまのお菓子があります。"
+      ]
+    },
+    {
+      "label": "第8位",
+      "headline": "喜八洲のみたらし団子",
+      "cut": "flip",
+      "lines": [
+        "第8位は、喜八洲のみたらし団子。昭和23年創業、十三の名店の看板商品で、一日に2万本も売れるといいます。",
+        "円筒形の団子を直火で炙って焦げ目をつけるから、香ばしさがまるで違います。そこにタレがたっぷり絡んで、まさに絶品。",
+        "新大阪駅でも買えるので、本場の味を、そのまま手土産にできます。"
+      ]
+    },
+    {
+      "label": "第7位",
+      "headline": "みるく饅頭 月化粧",
+      "cut": "flip",
+      "lines": [
+        "第7位は、青木松風庵の、みるく饅頭「月化粧」。累計1億6千万個も売れた、大阪の定番です。",
+        "北海道産の白豆で作る自家製のミルク餡に、練乳とバターの濃厚な甘さ。和と洋が絶妙に溶け合った味わいです。",
+        "冷やして食べると、さらに美味しくなり、賞味期限が80日と長いのも、お土産にうれしいところです。"
+      ]
+    },
+    {
+      "label": "第6位",
+      "headline": "たこパティエ",
+      "cut": "flip",
+      "lines": [
+        "第6位は、たこパティエ。パティシエが手作りする、ちょっと変わり種のお菓子で、なんと、たこ焼きがモチーフ。",
+        "サクサクの生地に、たこ焼きの風味が広がります。一口サイズで女性にも大人気、6個入りが324円で買えて、新大阪駅の売店でも見つかります。"
+      ]
+    },
+    {
+      "label": "第5位",
+      "headline": "551蓬莱の豚まん",
+      "cut": "flip",
+      "lines": [
+        "そして第5位は、551蓬莱の豚まん。一日に17万個も売れる、手作りの豚まんです。",
+        "泉州産の玉ねぎと豚肉のハーモニーに、一つ一つ職人が手で包むこだわり。まさに、大阪の誇りです。",
+        "店名の「551」は、電話番号の末尾から来ているそうです。焼売や餃子も人気の定番で、冷凍で持ち帰るのが、大阪流です。"
+      ]
+    }
+  ]
+}
