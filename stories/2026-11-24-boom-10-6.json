@@ -1,0 +1,96 @@
+{
+  "stage": "find",
+  "issue": 64,
+  "title": "大流行してたのに一瞬で見なくなったものトップ10(10〜6位)",
+  "date": "2026-11-24",
+  "style": "goods",
+  "kicker": "消えたブーム",
+  "pace": {
+    "speed": 1.1,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "fx": {
+    "motion": true,
+    "text": true
+  },
+  "voice": 1.7,
+  "searches": [
+    "web:マリトッツォ",
+    "web:マリトッツォ コンビニ",
+    "web:10円パン",
+    "web:10円パン チーズ 伸びる",
+    "web:10円パン 竹下通り 行列",
+    "web:ひき肉ステーキ",
+    "web:ひき肉ステーキ 100円",
+    "web:チーズティー",
+    "web:チーズティー 専門店 行列",
+    "web:高級食パン 乃が美",
+    "web:高級食パン 嵜本",
+    "web:高級食パン 専門店 行列",
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-24-boom-10-6/v-hiki-sauce.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-hiki-yaku.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-juen-cheese.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-juen-kikai.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-mari-cream.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-mari-waru.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-pan-mimi.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-pan-saku.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-tea-cream.mp4",
+    "file:stories/media/2026-11-24-boom-10-6/v-tea-sosogu.mp4"
+  ],
+  "scenes": [
+    {
+      "label": "トップ10",
+      "headline": "一瞬で消えたブーム",
+      "lines": [
+        "トップ10！大流行してたのに、一瞬で見なくなったもの。"
+      ]
+    },
+    {
+      "label": "第10位",
+      "headline": "マリトッツォ",
+      "lines": [
+        "第10位は、マリトッツォ。ローマ生まれのクリームたっぷりのパンで、コンビニ各社が一斉に参戦しました。",
+        "でも、話題ばかりが先に走って中身が追いつかず、気づけば店頭から消えていました。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第9位",
+      "headline": "10円パン",
+      "lines": [
+        "第9位は、10円パン。チーズがとろーりと伸びる姿で、竹下通りに大行列ができました。",
+        "ところが値段は10円ではなく、数百円。形につられて買っても、二度目はなかったんです。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第8位",
+      "headline": "ひき肉ステーキ",
+      "lines": [
+        "第8位は、ひき肉ステーキ。一枚100円ほどでステーキ気分が味わえると話題に。",
+        "でも、塊肉への憧れには勝てず、ありきたりな味に飽きられて、静かに消えました。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第7位",
+      "headline": "チーズティー",
+      "lines": [
+        "第7位は、チーズティー。塩気と甘さがクセになると、専門店が続々とできましたが、タピオカと同じ道をたどって、早々に退場。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第6位",
+      "headline": "高級生食パン",
+      "lines": [
+        "そして第6位は、高級生食パン。一本1000円を超えるのに、行列ができました。",
+        "乃が美や嵜本が火付け役となり、耳までふんわりの味が大人気に。ところが専門店が増えすぎて、市場はあっという間に飽和したんです。"
+      ],
+      "cut": "flip"
+    }
+  ]
+}

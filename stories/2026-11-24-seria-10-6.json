@@ -1,0 +1,100 @@
+{
+  "stage": "find",
+  "issue": 63,
+  "title": "マジで便利なセリアの神商品トップ10(10〜6位)",
+  "date": "2026-11-24",
+  "style": "goods",
+  "kicker": "セリア神商品",
+  "pace": {
+    "speed": 1.1,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "fx": {
+    "motion": true,
+    "text": true
+  },
+  "voice": 1.7,
+  "searches": [
+    "web:セリア ミニモップ ハンドル付き",
+    "web:セリア ミニモップ 使い方",
+    "web:セリア パンの冷凍保存袋",
+    "web:セリア フリーザーバッグ 食パン",
+    "web:セリア 2wayパウチ",
+    "web:セリア 詰め替えパウチ 旅行",
+    "web:セリア ミニゆでザル",
+    "web:セリア 鍋に引っ掛ける ザル",
+    "web:セリア マグネットスイングケース",
+    "web:セリア マグネット スイング 収納 冷蔵庫",
+    "web:セリア 店舗 外観",
+    "music:Satie Gymnopédie piano",
+    "file:stories/media/2026-11-24-seria-10-6/v-case-akeru.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-case-genkan.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-case-reizouko.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-mop-shibori.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-mop-sink.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-mop-table.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-pan-ireru.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-pan-reitou.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-pouch-shampoo.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-pouch-te.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-pouch-tsume.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-zaru-men.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-zaru-nabe.mp4",
+    "file:stories/media/2026-11-24-seria-10-6/v-zaru-tamago.mp4"
+  ],
+  "scenes": [
+    {
+      "label": "トップ10",
+      "headline": "セリアの神商品",
+      "lines": [
+        "トップ10！知らなきゃヤバい、マジで便利なセリアの神商品。"
+      ]
+    },
+    {
+      "label": "第10位",
+      "headline": "ミニモップ",
+      "lines": [
+        "第10位は、ミニモップ。握り手を押すだけで、スポンジの水をギュッと絞れるので、手を汚しません。",
+        "浴室の壁や窓の水滴も、スッとひと拭き。コンパクトだから、置き場所にも困りません。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第9位",
+      "headline": "パンの冷凍保存袋",
+      "lines": [
+        "第9位は、パンの冷凍保存袋。パン専用に作られた、厚手の保存袋です。",
+        "乾燥も冷凍庫のにおいも防いで、二重チャックで密閉力も抜群。一枚ずつ凍らせておけば安心です。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第8位",
+      "headline": "2wayパウチ",
+      "lines": [
+        "第8位は、2wayパウチ。シャンプーや化粧水を、数日分ずつ小分けできます。",
+        "注ぐか、挟むか、2通りの使い方ができて、旅行の荷物が驚くほど軽くなります。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第7位",
+      "headline": "ミニゆでザル",
+      "lines": [
+        "第7位は、ミニゆでザル。鍋の縁に引っ掛けて使えます。",
+        "少しのパスタや野菜なら、ザルごと引き上げるだけで水切り完了。ゆで時間の違う麺も、同時に仕分けられます。"
+      ],
+      "cut": "flip"
+    },
+    {
+      "label": "第6位",
+      "headline": "マグネットスイングケース",
+      "lines": [
+        "そして第6位は、マグネットスイングケース。裏の磁石で、冷蔵庫にピタッとくっつきます。",
+        "ふたは片手でパカッと開くスイング式。鍵を入れて玄関のドアに貼れば、忘れ物も防げます。"
+      ],
+      "cut": "flip"
+    }
+  ]
+}
