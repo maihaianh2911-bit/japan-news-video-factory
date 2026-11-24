@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 57,
   "title": "土砂降りでも動かなかった皇太子さま",
   "date": "2026-11-24",
@@ -23,7 +23,7 @@
       "headline": "雨の中\n動かなかった皇太子",
       "lines": [
         {
-          "text": "「土砂降りの雨に打たれても、微動だにしなかった皇太子さま」",
+          "text": "土砂降りの雨に打たれても、微動だにしなかった皇太子さま",
           "say": "どしゃぶりの雨に打たれても、びどうだにしなかった、こうたいしさま",
           "quote": true
         },
@@ -31,7 +31,26 @@
           "text": "その姿に、タイの人々は息をのみました。",
           "say": "その姿に、タイの人々は、いきをのみました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.58,
+            0.32
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "29-1",
+          "focus": [
+            0.5,
+            0.85
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Thái tử ướt đẫm dưới mưa ở lễ đón Bangkok (ảnh mở đầu), rồi cận mặt mỉm cười dưới mưa (video gốc)."
     },
     {
       "label": "タイとカンボジアへ",
@@ -42,7 +61,19 @@
           "text": "2012年6月、今の天皇陛下は、皇太子としてタイとカンボジアを訪れました。",
           "say": "にせんじゅうにねん、ろくがつ、今の、てんのうへいかは、こうたいしとして、タイとカンボジアを訪れました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "23-2",
+          "focus": [
+            0.12,
+            0.3
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Thái tử năm 2012 trong chuyến thăm (Campuchia, Đại học Phnom Penh).",
+      "cut": "fade"
     },
     {
       "label": "プミポン国王",
@@ -57,7 +88,35 @@
           "text": "それでも陛下に会うために宮殿へ戻り、3時間近く語り合ったといわれ、タイ中に衝撃が走りました。",
           "say": "それでも、へいかに会うために、きゅうでんへ戻り、さんじかん近く、語り合ったといわれ、タイじゅうに、しょうげきが走りました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Vua Bhumibol lúc già, bệnh viện Siriraj nơi ông nằm, rồi Hoàng cung Bangkok.",
+      "cut": "page"
     },
     {
       "label": "歓迎式典",
@@ -72,7 +131,27 @@
           "text": "バンコクでの歓迎式典の最中、突然、激しい土砂降りが襲ったのです。",
           "say": "バンコクでの、かんげいしきてんの、さいちゅう、とつぜん、激しい、どしゃぶりが、襲ったのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "focus": [
+            0.35,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.62,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Người Thái vẫy cờ đón, rồi cảnh mưa trút xuống lễ đón (ảnh rộng).",
+      "cut": "dip"
     },
     {
       "label": "笑顔のまま",
@@ -83,7 +162,19 @@
           "text": "びしょ濡れになりながらも、陛下は笑顔を崩さず、最後まで儀式に向き合いました。",
           "say": "びしょぬれになりながらも、へいかは、えがおを崩さず、最後まで、ぎしきに、向き合いました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "focus": [
+            0.5,
+            0.8
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Cận mặt Thái tử vẫn cười dù ướt đẫm (video gốc).",
+      "cut": "hard"
     },
     {
       "label": "真のゲスト",
@@ -94,7 +185,27 @@
           "text": "「まさに真のゲストだ」「我々の国王と同じ敬意を示すべき方だ」と、称賛の声が上がりました。",
           "say": "まさに、しんのゲストだ。われわれの、こくおうと同じ、けいいを、しめすべき方だ、と、しょうさんの声が、上がりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-11",
+          "focus": [
+            0.4,
+            0.35
+          ],
+          "move": "rise"
+        },
+        {
+          "pick": "20-10",
+          "focus": [
+            0.6,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cờ Thái và cờ vàng hoàng gia, rồi chùa và cờ Thái: tiếng khen của người Thái.",
+      "cut": "fade"
     },
     {
       "label": "カンボジアの慰霊碑",
@@ -105,7 +216,35 @@
           "text": "さらにカンボジアで陛下が花を手向けたのは、19年前、国連の活動中に命を落とした日本人ボランティア、中田厚仁さんの慰霊碑でした。",
           "say": "さらに、カンボジアで、へいかが、花をたむけたのは、じゅうきゅうねんまえ、こくれんの活動中に、命を落とした、日本人ボランティア、なかたあつひとさんの、いれいひでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "24-1",
+          "focus": [
+            0.02,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-1",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Anh Nakata đội mũ Liên Hợp Quốc năm 1993, Thái tử chắp tay trước bia ở Campuchia, rồi tấm bia có ảnh anh.",
+      "cut": "page"
     },
     {
       "label": "父の涙",
@@ -116,7 +255,24 @@
           "text": "「息子のことを、もう一度日本中に思い出させてくれた。陛下に感謝しています」。父親は、涙ながらにそう語りました。",
           "say": "むすこのことを、もう一度、にほんじゅうに、思い出させてくれた。へいかに、感謝しています。ちちおやは、なみだながらに、そう語りました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Người cha cầm ảnh con trai, rồi Thái tử cúi đầu (video gốc).",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -146,6 +302,13 @@
     "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1",
     "page:https://news.ntv.co.jp/category/society/aea42ebf7ff8489a88cbc42d482830a1?p=4",
     "music:Gymnopédie Satie piano",
-    "music:Chopin Nocturne piano"
-  ]
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-24-thai-ame/v-0m29s.jpg",
+    "file:stories/media/2026-11-24-thai-ame/v-0m35s.jpg",
+    "file:stories/media/2026-11-24-thai-ame/v-0m26s.jpg"
+  ],
+  "music": {
+    "pick": "26-3",
+    "volume": 0.7
+  }
 }

@@ -16,3 +16,7 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2012-thailand-sirindhorn-dinner.jpg` | 陛下 dự tiệc tối của công chúa Sirindhorn, Thái Lan 2012 | 1200×675 | news.ntv.co.jp | 2026-11-23-naruhito-thai-ame |
 | `2012-cambodia-phnompenh-university.jpg` | 陛下 trò chuyện với sinh viên Đại học Phnom Penh 27/6/2012 | 1200×675 | news.ntv.co.jp | 2026-11-23-naruhito-thai-ame |
 | `2012-cambodia-memorial-bow.jpg` | 陛下 chắp tay cúi đầu trước bia tưởng niệm ở Campuchia 2012 | 650×433 | jiji.com | 2026-11-23-naruhito-thai-ame |
+| `2012-cambodia-memorial-nakata-wide.jpg` | Thái tử chắp tay trước bia Nakata ở Phnom Penh 27/6/2012, ảnh rộng có bia và hoa (NTV) | 1200×675 | news.ntv.co.jp | 2026-11-24-thai-ame |
+| `2012-thailand-rain-smile-closeup.jpg` | Thái tử cười, ướt mưa, cận mặt nghiêng, lễ đón Bangkok 2012 (cắt từ video gốc) | 720×678 | 元動画 | 2026-11-24-thai-ame |
+| `2012-thailand-rain-profile.jpg` | Thái tử nghiêng mặt dưới mưa, lễ đón Bangkok 2012 (cắt từ video gốc) | 720×678 | 元動画 | 2026-11-24-thai-ame |
+| `child-gakushuin-uniform-walking.jpg` | Thiên hoàng hồi nhỏ mặc đồng phục tiểu học Gakushuin đi học (ảnh màu) | 1280×1280 | cocreco.kodansha.co.jp | 2026-11-24-aiko-kokoro |

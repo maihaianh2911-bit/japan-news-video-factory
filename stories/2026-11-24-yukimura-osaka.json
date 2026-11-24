@@ -1,0 +1,310 @@
+{
+  "title": "日本一の兵 真田幸村と大坂夏の陣",
+  "stage": "render",
+  "date": "2026-11-24",
+  "style": "full",
+  "kicker": "戦国の物語",
+  "voice": 1.7,
+  "pace": {
+    "speed": 1.1,
+    "line_pause": 0.12,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "searches": [
+    "wiki:真田信繁",
+    "wiki:大坂の陣",
+    "wiki:徳川家康",
+    "wiki:安居神社",
+    "wiki:大坂城",
+    "wiki:真田丸 (城郭)",
+    "wiki:茶臼山 (大阪市)",
+    "web:真田幸村 肖像画 上田市立博物館",
+    "web:真田信繁 肖像画 高画質",
+    "web:大坂夏の陣図屏風 真田",
+    "web:大坂夏の陣図屏風 大阪城天守閣",
+    "web:真田幸村 赤備え 甲冑",
+    "web:真田幸村 像 安居神社",
+    "web:真田幸村 銅像 上田駅",
+    "web:六文銭 旗 真田",
+    "web:真田丸 大河ドラマ 堺雅人 甲冑",
+    "web:上田真田まつり 赤備え 武者行列",
+    "web:徳川家康 肖像画 晩年",
+    "web:大坂夏の陣 家康 本陣 浮世絵",
+    "web:真田幸村 浮世絵 突撃",
+    "web:大坂城 天守閣 夕景",
+    "web:大坂城 落城 炎 屏風",
+    "web:茶臼山 真田幸村 陣跡",
+    "web:真田幸村 戦死跡 碑 安居神社",
+    "web:真田幸村 浮世絵 歌川",
+    "web:徳川家康 馬印 金扇",
+    "web:真田幸村 甲冑 鹿角 兜",
+    "video:Osaka Castle",
+    "video:samurai festival",
+    "video:samurai armor",
+    "video:yabusame",
+    "video:fire flames night",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-24-yukimura-osaka/hook-yukimura-akazonae.jpg",
+    "file:stories/media/2026-11-24-yukimura-osaka/ieyasu-shikami.jpg"
+  ],
+  "scenes": [
+    {
+      "label": "真田幸村",
+      "era": "1615年",
+      "headline": "家康を\n追い詰めた男",
+      "lines": [
+        {
+          "text": "天下人・徳川家康に、死を覚悟させた男がいます。",
+          "say": "てんかびと、とくがわいえやすに、しをかくごさせた、おとこがいます。",
+          "quote": true
+        },
+        {
+          "text": "その名は、真田幸村。",
+          "say": "そのなは、さなだゆきむら。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "36-1",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "depth": false
+        },
+        {
+          "pick": "9-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Mở bằng Yukimura mũ sừng hươu, sáu đồng tiền, trên nền bình phong trận Osaka; rồi chân dung thật của ông"
+    },
+    {
+      "label": "大坂夏の陣",
+      "era": "1615年5月",
+      "headline": "豊臣家\n最後の戦い",
+      "lines": [
+        {
+          "text": "一六一五年、大坂夏の陣。",
+          "say": "せんろっぴゃくじゅうごねん、おおさかなつのじん。"
+        },
+        {
+          "text": "豊臣家を守る最後の戦いで、大坂方はすでに追い詰められていました。",
+          "say": "とよとみけをまもる、さいごのたたかいで、おおさかがたは、すでに、おいつめられていました。"
+        },
+        {
+          "text": "五月七日、幸村は赤一色の鎧の軍勢を率いて、家康の本陣だけを目指して突き進みます。",
+          "say": "ごがつなのか、ゆきむらは、あかいっしょくの、よろいのぐんぜいをひきいて、いえやすのほんじんだけをめざして、つきすすみます。"
+        },
+        {
+          "text": "狙いはただ一つ、家康の首。",
+          "say": "ねらいは、ただひとつ、いえやすのくび。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "2-7",
+          "move": "pan-right",
+          "focus": [
+            0.3,
+            0.35
+          ],
+          "depth": false
+        },
+        {
+          "pick": "1-13",
+          "move": "rise",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-2",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "3-1",
+          "move": "hold",
+          "focus": [
+            0.5,
+            0.75
+          ],
+          "depth": false
+        }
+      ],
+      "cut": "fade",
+      "why": "Thành Osaka trên bình phong, giáp đỏ, quân đỏ xông lên, rồi Ieyasu — mục tiêu duy nhất"
+    },
+    {
+      "label": "突撃",
+      "era": "1615年5月7日",
+      "headline": "倒れた馬印",
+      "lines": [
+        {
+          "text": "真田隊は何度も本陣に斬り込み、家康の旗本は崩れ、家康の馬印は倒れました。",
+          "say": "さなだたいは、なんども、ほんじんにきりこみ、いえやすの、はたもとはくずれ、いえやすの、うまじるしは、たおれました。"
+        },
+        {
+          "text": "馬印が倒れたのは、三方ヶ原で大敗して以来のことだったといいます。",
+          "say": "うまじるしがたおれたのは、みかたがはらで、たいはいしていらいの、ことだったといいます。"
+        },
+        {
+          "text": "家康は一時、自害まで覚悟したとも伝えられています。",
+          "say": "いえやすは、いちじ、じがいまで、かくごしたとも、つたえられています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-7",
+          "move": "pan-left",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "26-1",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.4
+          ]
+        },
+        {
+          "pick": "37-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "depth": false
+        },
+        {
+          "pick": "19-1",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "cut": "flash",
+      "why": "Lóe sáng vào trận: quân xông vào bản doanh, cờ quạt vàng của Ieyasu, bức Ieyasu nhăn mặt sau trận Mikatagahara, tranh Ieyasu lâm nguy ở Osaka"
+    },
+    {
+      "label": "最期",
+      "era": "安居神社",
+      "headline": "多勢に無勢",
+      "lines": [
+        {
+          "text": "けれど、多勢に無勢。",
+          "say": "けれど、たぜいに、ぶぜい。"
+        },
+        {
+          "text": "疲れ果てた幸村は、神社の境内で腰を下ろしていたところを討たれました。四十九歳でした。",
+          "say": "つかれはてた、ゆきむらは、じんじゃのけいだいで、こしをおろしていたところを、うたれました。よんじゅうきゅうさいでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-8",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "24-12",
+          "move": "push-in",
+          "focus": [
+            0.15,
+            0.3
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Tối dần về đền Yasui, nơi Yukimura ngồi nghỉ và bị giết"
+    },
+    {
+      "label": "日本一の兵",
+      "era": "その後",
+      "headline": "真田日本一の兵",
+      "lines": [
+        {
+          "text": "この戦いを見た薩摩の島津家は、幸村をこう書き残しています。",
+          "say": "このたたかいをみた、さつまの、しまづけは、ゆきむらを、こう、かきのこしています。"
+        },
+        {
+          "text": "「真田日本一の兵」",
+          "say": "さなだ、ひのもといちの、つわもの。",
+          "quote": true
+        },
+        {
+          "text": "翌日、大坂城は落ち、豊臣家は滅びました。",
+          "say": "よくじつ、おおさかじょうはおち、とよとみけは、ほろびました。"
+        },
+        {
+          "text": "それでも、敗れた側の武将の名が、四百年たった今も語り継がれているのです。",
+          "say": "それでも、やぶれたがわの、ぶしょうのなが、よんひゃくねんたったいまも、かたりつがれているのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-3",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "22-3",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        },
+        {
+          "pick": "17-8",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "cut": "fade",
+      "why": "Giáp đỏ sừng hươu cho câu 「真田日本一の兵」, thành Osaka trên bình phong, rồi lễ hội Ueda hôm nay"
+    }
+  ],
+  "issue": 61,
+  "music": {
+    "pick": "35-2",
+    "volume": 0.7
+  }
+}

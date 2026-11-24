@@ -6,20 +6,38 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 
 | Chủ đề | Số ảnh |
 |---|---|
-| [aiko](aiko/README.md) | 2 |
-| [akishino](akishino/README.md) | 2 |
+| [aiko](aiko/README.md) | 4 |
+| [akechi-mitsuhide](akechi-mitsuhide/README.md) | 2 |
+| [akishino](akishino/README.md) | 3 |
+| [arimura-kasumi](arimura-kasumi/README.md) | 5 |
 | [bangkok](bangkok/README.md) | 3 |
 | [bhumibol](bhumibol/README.md) | 1 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
-| [imperial-family](imperial-family/README.md) | 3 |
+| [hisahito](hisahito/README.md) | 1 |
+| [honnoji](honnoji/README.md) | 2 |
+| [iijima-ai](iijima-ai/README.md) | 2 |
+| [imperial-family](imperial-family/README.md) | 11 |
+| [kanda-uno](kanda-uno/README.md) | 1 |
+| [kanie-keizo](kanie-keizo/README.md) | 1 |
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
+| [kokkai](kokkai/README.md) | 1 |
 | [kokyo](kokyo/README.md) | 1 |
+| [kudo-shizuka](kudo-shizuka/README.md) | 2 |
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
 | [masako](masako/README.md) | 13 |
+| [mori-mitsuko](mori-mitsuko/README.md) | 1 |
+| [mori-ranmaru](mori-ranmaru/README.md) | 1 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
-| [naruhito](naruhito/README.md) | 10 |
+| [naruhito](naruhito/README.md) | 14 |
 | [naruhito-masako](naruhito-masako/README.md) | 13 |
+| [oda-nobunaga](oda-nobunaga/README.md) | 5 |
+| [osaka-1615](osaka-1615/README.md) | 4 |
+| [sanada-yukimura](sanada-yukimura/README.md) | 7 |
 | [takeda-shingen](takeda-shingen/README.md) | 19 |
 | [thai-people](thai-people/README.md) | 1 |
+| [thailand](thailand/README.md) | 2 |
+| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 4 |
+| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 1 |
+| [yamazaki-1582](yamazaki-1582/README.md) | 2 |

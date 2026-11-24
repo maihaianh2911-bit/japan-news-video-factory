@@ -98,7 +98,10 @@ videos by their frame and by the name in the seal:
   row after the picture; the captions in pale gold under them, appearing only as the voice reads them. A quote that
   opens a scene stays there as the scene's headline while its next lines are spoken (a list video: the quote
   `"1. …"` opens each scene). Pick tall pictures at least about 1200 px high (a wide or small one is enlarged a
-  lot and looks soft); every face stays above three fifths of the frame (the preview warns).
+  lot and looks soft); every face stays above three fifths of the frame (the preview warns). No credits are printed
+  on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
+  the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
+  pastes in the video's description; say so when giving the links.
 - The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
   "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
   những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)

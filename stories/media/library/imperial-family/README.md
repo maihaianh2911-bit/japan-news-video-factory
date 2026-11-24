@@ -9,3 +9,11 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `nasu-summer-standing.jpg` | Ba người mặc đồ hè đứng trên cỏ ở Nasu (khổ vuông, ba người cách xa: dùng contain) | 1200×1200 | shimotsuke.co.jp | 2026-11-21-natsuyasumi |
 | `nasu-dog-yuri.jpg` | Ba người ngồi cùng chú chó Yuri ở Nasu, mùa hè, ảnh lớn rõ (Commons) | 1920×1280 | 在スリランカ日本国大使館 / CC BY 4.0 | 2026-11-21-natsuyasumi |
 | `suzaki-beach-vertical.jpg` | Ba người trò chuyện trên bãi biển Suzaki, khổ dọc | 800×1200 | jisin.jp | 2026-11-21-natsuyasumi |
+| `naruhito-aiko-masako-laughing.jpg` | Thiên hoàng, Aiko, Masako cười cạnh nhau, áo xanh (xem bóng chày WBC 2026) | 1200×800 | jisin.jp | 2026-11-24-aiko-kokoro |
+| `2025-okinawa-flowers.jpg` | Ba người ôm hoa ở nghĩa trang Okinawa 6/2025 | 1080×715 | japan-forward.com | 2026-11-24-aiko-kokoro |
+| `2025-okinawa-walking-cemetery.jpg` | Ba người đi vào nghĩa trang Okinawa 6/2025 (mặt nhỏ) | 800×491 | mainichi.jp | 2026-11-24-aiko-kokoro |
+| `2025-okinawa-walking-vertical.jpg` | Thiên hoàng đi trước, Masako và Aiko theo sau ở Okinawa 6/2025, khổ dọc lớn | 1200×1955 | sankei.com | 2026-11-24-aiko-kokoro |
+| `2025-tsushimamaru-museum-wall.jpg` | Ba người trước tường ảnh các em bé tàu Tsushima Maru, Okinawa 6/2025 | 750×499 | okinawatimes.co.jp | 2026-11-24-aiko-kokoro |
+| `2025-tsushimamaru-listening.jpg` | Cận ba người lắng nghe ở nhà tưởng niệm Tsushima Maru 6/2025 (dùng contain) | 1000×666 | kunaicho.go.jp | 2026-11-24-aiko-kokoro |
+| `2025-nagasaki-laying-flowers.jpg` | Ba người cúi đặt hoa ở công viên Hòa bình Nagasaki 9/2025 (dùng contain) | 800×533 | mainichi.jp | 2026-11-24-aiko-kokoro |
+| `2025-nagasaki-walking-flowers.jpg` | Ba người ôm hoa đi lên dốc ở Nagasaki 9/2025 | 1000×1000 | kunaicho.go.jp | 2026-11-24-aiko-kokoro |

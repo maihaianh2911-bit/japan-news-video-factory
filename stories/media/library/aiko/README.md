@@ -8,3 +8,5 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 |---|---|---|---|---|
 | `2026-semiconductor-conference-wide.jpg` | Aiko đứng trước hội trường hội nghị bán dẫn 17/8/2026, khán giả phía trước | 800×540 | mainichi.jp | 2026-11-21-natsuyasumi |
 | `2026-semiconductor-conference-speech.jpg` | Aiko phát biểu ở hội nghị bán dẫn 17/8/2026, cận mặt | 1200×832 | sankei.com | 2026-11-21-natsuyasumi |
+| `smile-waving-vertical.jpg` | Aiko cười vẫy tay, áo xanh nhạt, khổ dọc (đã làm ảnh mở đầu) | 800×1200 | jisin.jp | 2026-11-24-aiko-kokoro |
+| `smile-closeup-navy.jpg` | Aiko cười rạng rỡ cận mặt, áo navy, ngọc trai | 1200×800 | jisin.jp | 2026-11-24-aiko-kokoro |
