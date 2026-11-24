@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 73,
   "title": "批判されても娘と学校へ通った雅子さま",
   "date": "2026-11-24",
@@ -28,7 +28,26 @@
           "say": "まさこさまには、あいこさまと、毎日一緒に、学校へ通っていた時期があります。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-2",
+          "focus": [
+            0.42,
+            0.05
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-4",
+          "focus": [
+            0.55,
+            0.0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Masako vẫy tay, dắt Aiko đi học (ảnh mở đầu, hai mặt ở nửa trên), rồi hai mẹ con nắm tay nhau."
     },
     {
       "label": "批判",
@@ -39,7 +58,25 @@
           "text": "そのため、「甘やかし過ぎ」「母子密着」と、日本中から激しい批判を浴びました。",
           "say": "そのため、あまやかしすぎ、ぼしみっちゃく、と、にほんじゅうから、激しい批判を浴びました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-15",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "2-3",
+          "focus": [
+            0.5,
+            0.1
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Tờ tạp chí gọi bà là 'người mẹ quái vật', rồi hai mẹ con vẫn đi học cùng nhau.",
+      "cut": "dip"
     },
     {
       "label": "本当の理由",
@@ -50,7 +87,19 @@
           "text": "けれど、雅子さまがそうしたのには、本当の理由がありました。",
           "say": "けれど、まさこさまが、そうしたのには、本当の理由がありました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-7",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Lý do thật: cô bé Aiko hồi tiểu học.",
+      "cut": "zoom"
     },
     {
       "label": "行けなくなった学校",
@@ -61,7 +110,27 @@
           "text": "2010年の冬、学習院初等科2年生だった愛子さまは、乱暴な男の子たちが怖くて、学校へ行けなくなっていたのです。",
           "say": "にせんじゅうねんの冬、がくしゅういん、しょとうか、にねんせいだった、あいこさまは、らんぼうな、男の子たちが怖くて、学校へ行けなくなっていたのです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-6",
+          "focus": [
+            0.6,
+            0.1
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cổng trường tiểu học Gakushuin, rồi mẹ dắt Aiko áo hồng đến trường mùa đông.",
+      "cut": "fade"
     },
     {
       "label": "見守る母",
@@ -76,7 +145,35 @@
           "text": "雅子さまは教室の後ろや廊下から授業を見守り、休み時間には、校庭の隅から娘の姿を見つめ続けたといいます。",
           "say": "まさこさまは、教室の後ろや、ろうかから、授業を見守り、休み時間には、こうていの隅から、娘の姿を、見つめ続けたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "focus": [
+            0.45,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-7",
+          "focus": [
+            0.55,
+            0.1
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "focus": [
+            0.55,
+            0.1
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai mẹ con nắm tay đi trên đường, bà dắt con mặc đồng phục, rồi lại cùng nhau đến trường.",
+      "cut": "slide"
     },
     {
       "label": "山中湖",
@@ -87,7 +184,24 @@
           "text": "2011年9月、山中湖への2泊3日の校外学習でも、子どもたちの一行から少し遅れて、そっと後をついて行きました。",
           "say": "にせんじゅういちねん、くがつ、やまなかこへの、にはく、みっかの、こうがいがくしゅうでも、子どもたちの一行から、少し遅れて、そっと、後をついて行きました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-11",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hồ Yamanaka và núi Phú Sĩ, rồi bà Masako đi theo con cùng đoàn người.",
+      "cut": "dip"
     },
     {
       "label": "茶番",
@@ -98,7 +212,19 @@
           "text": "記者会見では、「茶番だ」という言葉まで飛び出します。",
           "say": "記者会見では、ちゃばんだ、という言葉まで、飛び出します。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-8",
+          "focus": [
+            0.45,
+            0.05
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Bà Masako vẫy tay khi dắt con đi học, giữa những lời chê 'trò hề'.",
+      "cut": "flash"
     },
     {
       "label": "ひとりで校門へ",
@@ -109,7 +235,27 @@
           "text": "それでも、その月の終わり。愛子さまは19か月ぶりに、母の付き添いなしで校門をくぐりました。",
           "say": "それでも、その月の終わり。あいこさまは、じゅうきゅうかげつぶりに、母の付き添いなしで、こうもんを、くぐりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-7",
+          "focus": [
+            0.55,
+            0.15
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-5",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Aiko tự đi một mình (mùa đông, cầm ô), rồi cổng trường tiểu học Gakushuin.",
+      "cut": "zoom"
     },
     {
       "label": "今の愛子さま",
@@ -120,7 +266,27 @@
           "text": "母が守り抜いたあの小さな背中は、今、日本赤十字社で、人を支える仕事を選んでいます。",
           "say": "母が守り抜いた、あの小さな背中は、今、にほんせきじゅうじしゃで、人を支える仕事を、選んでいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "focus": [
+            0.45,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-9",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Aiko hôm nay bước ra từ trụ sở Hội Chữ thập đỏ, rồi Aiko cười rạng rỡ.",
+      "cut": "slide"
     }
   ],
   "searches": [
@@ -146,5 +312,9 @@
     "file:stories/media/library/masako/2002-baby-aiko-sofa.jpg",
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano"
-  ]
+  ],
+  "music": {
+    "pick": "21-4",
+    "volume": 0.7
+  }
 }
