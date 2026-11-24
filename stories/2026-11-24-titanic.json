@@ -1,7 +1,7 @@
 {
   "title": "史上最悪の大災害 第10位 タイタニック号の沈没",
   "date": "2026-11-24",
-  "stage": "render",
+  "stage": "find",
   "issue": 67,
   "voice": 1.7,
   "pace": {
@@ -34,7 +34,12 @@
     "web:タイタニック 救命ボート 1912 => people in a lifeboat on the sea",
     "Olympic class grand staircase => a grand wooden staircase on a luxury ship",
     "music:Nearer My God to Thee",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "Titanic band musicians 1912 => a group portrait of a small band of musicians with instruments",
+    "wiki:Wallace Hartley",
+    "Titanic crow's nest => a lookout basket high on the mast of an ocean liner",
+    "web:タイタニック 見張り台 => the lookout crow's nest on the mast of the Titanic",
+    "web:タイタニック 楽団 => the musicians of the Titanic band"
   ],
   "scenes": [
     {
@@ -103,6 +108,10 @@
       "era": "4月14日",
       "lines": [
         "初めての航海に出た世界最大の客船には、氷山の警告が何度も届いていました。",
+        {
+          "text": "見張り台には、双眼鏡すらなかったといいます。",
+          "say": "みはりだいには、そうがんきょうすらなかったといいます。"
+        },
         {
           "text": "それでも船は速度を落とさず、夜11時40分、巨大な氷山にぶつかります。",
           "say": "それでもふねはそくどをおとさず、よるじゅういちじよんじっぷん、きょだいなひょうざんにぶつかります。"
@@ -187,13 +196,30 @@
       "why": "Bà Ida Straus, rồi hai vợ chồng bên nhau"
     },
     {
+      "label": "楽団",
+      "headline": "最後の演奏",
+      "era": "深夜2時",
+      "cut": "fade",
+      "why": "Ban nhạc chơi tới phút cuối trên boong tàu nghiêng",
+      "lines": [
+        {
+          "text": "傾いていく甲板の上で、楽団は最後まで演奏を続けたといいます。",
+          "say": "かたむいていくかんぱんのうえで、がくだんはさいごまでえんそうをつづけたといいます。"
+        }
+      ]
+    },
+    {
       "label": "沈没",
       "headline": "わずか2時間40分",
       "era": "4月15日",
       "lines": [
         {
-          "text": "船は二つに折れ、わずか2時間40分で沈み、1500人を超える命が、凍える海に消えました。",
-          "say": "ふねはふたつにおれ、わずかにじかんよんじっぷんでしずみ、せんごひゃくにんをこえるいのちが、こごえるうみにきえました。"
+          "text": "船は二つに折れ、わずか2時間40分で沈みます。",
+          "say": "ふねはふたつにおれ、わずかにじかんよんじっぷんでしずみます。"
+        },
+        {
+          "text": "氷点下2度の海で、1500人を超える命が消えました。",
+          "say": "ひょうてんかにどのうみで、せんごひゃくにんをこえるいのちがきえました。"
         }
       ],
       "photo": [
@@ -223,8 +249,12 @@
       "era": "帰国後",
       "lines": [
         {
-          "text": "ボートで助かった日本人、細野正文を帰国後に待っていたのは、「大勢が死んだのに、なぜ生き残った」という冷たい非難でした。",
-          "say": "ボートでたすかったにほんじん、ほそのまさぶみをきこくごにまっていたのは、おおぜいがしんだのに、なぜいきのこった、というつめたいひなんでした。"
+          "text": "細野正文は、「あと2人乗れる」という声を聞き、とっさにボートへ飛び乗って助かったといいます。",
+          "say": "ほそのまさぶみは、あとふたりのれる、というこえをきき、とっさにボートへとびのってたすかったといいます。"
+        },
+        {
+          "text": "けれど帰国した彼を待っていたのは、「大勢が死んだのに、なぜ生き残った」という冷たい非難でした。",
+          "say": "けれどきこくしたかれをまっていたのは、おおぜいがしんだのに、なぜいきのこった、というつめたいひなんでした。"
         }
       ],
       "photo": [

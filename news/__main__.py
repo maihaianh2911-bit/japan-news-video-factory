@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import json
 import os
 from pathlib import Path
+import re
 import tempfile
 import wave
 
@@ -16,6 +17,12 @@ from .visuals import find_photos
 from .voice import narration
 
 DEMO_URL = "https://www.boj.or.jp/mopo/mpmdeci/state_2025/k250124a.htm"
+MIN_SECONDS, MAX_SECONDS = 61, 160   # the length of every video but a trial (CLAUDE.md, iron rules 2 and 3)
+
+
+def trial(title):
+    """A trial or sample video (the owner's words thử, mẫu, test, demo in its title) may be of any length."""
+    return bool(re.search(r"thử|mẫu|\btest\b|\bdemo\b", title or "", re.IGNORECASE))
 
 
 def prepare(args, today):
@@ -107,6 +114,17 @@ def main():
             duration = intervals[-1][1]
         if duration > 90 and not args.story:
             raise RuntimeError(f"Grounded narration exceeds the 90-second format: {duration:.1f}s")
+        if args.story and not trial(release.title) and not MIN_SECONDS < duration <= MAX_SECONDS:
+            # owner, 24/11/2026, after a 53-second video was rendered: "dưới 61s mà vẫn dựng là sao? Chỉ có view
+            # demo mới đc dưới 61s thôi": the length is checked on the real voice, before a single frame is drawn
+            why = (f"giọng đọc dài {duration:.0f} giây, " + ("dưới 61 giây: cần viết kịch bản dài hơn"
+                   if duration <= MIN_SECONDS else "quá 160 giây: cần cắt bớt kịch bản"))
+            if env_path := os.environ.get("GITHUB_ENV"):
+                with Path(env_path).open("a", encoding="utf-8") as env:
+                    env.write(f"WHY={why}\n")
+            raise SystemExit(f"error: the voice lasts {duration:.1f} s; a video lasts over {MIN_SECONDS} s and at most "
+                             f"{MAX_SECONDS} s (CLAUDE.md, iron rule 3): lengthen or cut the script, or write thử, mẫu, "
+                             f"test or demo in the title of a trial. Nothing was rendered.")
         with wave.open(str(wav)) as voice:
             if voice.getnframes() == 0:
                 raise RuntimeError("No voice audio produced")
