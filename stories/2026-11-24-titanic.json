@@ -1,7 +1,7 @@
 {
   "title": "史上最悪の大災害 第10位 タイタニック号の沈没",
   "date": "2026-11-24",
-  "stage": "find",
+  "stage": "render",
   "issue": 67,
   "voice": 1.7,
   "pace": {
@@ -128,6 +128,14 @@
           "depth": false
         },
         {
+          "pick": "22-1",
+          "move": "push-in",
+          "focus": [
+            0.72,
+            0.3
+          ]
+        },
+        {
           "pick": "2-15",
           "move": "push-in",
           "focus": [
@@ -137,7 +145,7 @@
         }
       ],
       "cut": "fade",
-      "why": "Bức điện cảnh báo núi băng có thật, rồi chính núi băng"
+      "why": "Bức điện cảnh báo, chòi canh không có ống nhòm, rồi núi băng"
     },
     {
       "label": "救命ボート",
@@ -206,6 +214,25 @@
           "text": "傾いていく甲板の上で、楽団は最後まで演奏を続けたといいます。",
           "say": "かたむいていくかんぱんのうえで、がくだんはさいごまでえんそうをつづけたといいます。"
         }
+      ],
+      "photo": [
+        {
+          "pick": "20-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        },
+        {
+          "pick": "24-16",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
       ]
     },
     {
@@ -259,6 +286,14 @@
       ],
       "photo": [
         {
+          "pick": "8-3",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
           "pick": "3-4",
           "move": "push-in",
           "focus": [
@@ -286,7 +321,7 @@
         }
       ],
       "cut": "fade",
-      "why": "Tên ông trong danh sách được cứu, gương mặt ông, bức thư ông viết trên tàu"
+      "why": "Xuồng cứu sinh, tên ông trong danh sách được cứu, gương mặt ông, bức thư ông viết trên tàu"
     },
     {
       "label": "その孫",
