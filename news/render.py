@@ -1637,11 +1637,18 @@ def ink_quote_band(height):
     return band
 
 
-def draw_quote(image, line, age):
+HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108}   # a short opening line, printed larger
+
+
+def draw_quote(image, line, age, hook=False):
     """A quote printed big while it is spoken. The picture stays bright: the main picture is what keeps the
     viewer (owner, 17/11/2026), so only the foot of the picture gets a soft dark band, the words stand on it
-    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice."""
+    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice.
+    `hook`: the opening line of the video. With "fx": text it is all there from the first frame, larger when it is
+    short (owner, 25/11/2026, on the growth plan: the first two seconds decide whether a Short is watched)."""
     top, height = photo_box()
+    if hook and FX.get("text"):
+        age = max(age, 3.0)
     amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
     if amount <= 0:
         return
@@ -1651,9 +1658,13 @@ def draw_quote(image, line, age):
     # 44-48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng"): more pieces are run together and wrapped
     joined = "\n".join(pieces) if len(pieces) <= QUOTE_ROWS else "".join(pieces)
     if style.layout in ("full", "band", "album", "magazine"):   # as large as the rows allow
-        words, size = fit("".join(pieces), 960, 96 if style.layout in ("full", "band") else 84, QUOTE_ROWS, smallest=52)
+        largest = 96 if style.layout in ("full", "band") else 84
+        if hook and FX.get("text"):   # the opening line: larger when it is short enough
+            largest = HOOK_SIZE[style.layout]
+        words, size = fit("".join(pieces), 960, largest, QUOTE_ROWS, smallest=52)
     else:
-        words, size = fit(joined, 920, 92, min(QUOTE_ROWS, max(len(pieces), 2)), smallest=52)
+        words, size = fit(joined, 920, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
+                          smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     if style.layout == "full":
@@ -1898,7 +1909,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     QUOTE_ON = False
     scenes[0].__dict__.pop("quiet_until", None)   # the cover must not hold back the first scene's text
     if quotes[0]:
-        draw_quote(cover, quotes[0][0], 1.0)
+        draw_quote(cover, quotes[0][0], 1.0, hook=True)
     else:
         draw_captions(cover, captions[0].text)
     cover.save(out / "cover.jpg", quality=92)
@@ -1927,10 +1938,13 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     QUOTE_ON = bool(quotes[shown] or kept)
                     frame = frame_at(scenes, number, moment)
                     QUOTE_ON = False
+                    # the opening line of the video (scene 1's quote) is there from the first frame
+                    opening = quotes[0][0] if quotes[0] and number == 0 else None
                     if kept:
-                        draw_quote(frame, kept[0], moment - kept[1])
+                        draw_quote(frame, kept[0], moment - kept[1], hook=kept[0] is opening)
                     if quotes[shown]:
-                        draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
+                        draw_quote(frame, quotes[shown][0], moment - quotes[shown][1],
+                                   hook=quotes[shown][0] is opening)
                     else:
                         draw_captions(frame, captions[shown].text, moment - captions[shown].start,
                                       captions[shown].end - captions[shown].start,
@@ -1964,7 +1978,7 @@ def stills(beats, release, photos, out):
             frame = scene.render(10 * (number + 0.5) / count)
             QUOTE_ON = False
             if 0 in beat.quotes and (number == 0 or held):
-                draw_quote(frame, beat.lines[0], 3.0)
+                draw_quote(frame, beat.lines[0], 3.0, hook=index == 0)
             if held and number and len(beat.lines) > 1:   # under the quote, a line spoken while this picture is on
                 draw_captions(frame, caption_chunks(beat.lines[min(number, len(beat.lines) - 1)])[0])
             elif not (0 in beat.quotes and (number == 0 or held)):

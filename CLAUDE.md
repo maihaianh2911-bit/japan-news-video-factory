@@ -82,6 +82,27 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   the owner wants voices compared, send an **mp3** (the owner, 25/11/2026: "làm file mp3 trc, chốt voice đã") with
   the time each voice starts, not a video.
 
+## The growth plan (owner, 25/11/2026: the latest videos got no views; "Ok từ ngày mai hãy cải thiện")
+Claude gave the owner the likely causes (weak first two seconds; a machine voice; 65–80-second Shorts on a new
+channel; one channel mixing every topic; a mass-produced look) and a two-week plan, which the owner accepted. From
+26/11/2026, for every new video of the `[Tin Nhật]` channel (the voice and the flute are already new, see above):
+- **The first two seconds decide.** The opening quote tells the whole idea, as the hook rule below says (the
+  channel's three videos over 100k views had hooks of 44–48 characters on 4 rows), and with `fx` the engine shows
+  it **from the very first frame**, larger when it is short (`draw_quote(…, hook=True)`, all frames). The first
+  picture is the most striking face of the story and moves from the first frame (`push-in` or `punch-in`, never
+  `hold`).
+- **A length test for two weeks**: of the first six videos from 26/11, three are short, **30–40 seconds** (about
+  230 written characters at speed 1.25), three stay 61–70 s, alternately. The short ones are trials in the sense of
+  iron rule 2 (their issue notes say `thử độ dài`); tell the owner which is which. The owner compares "viewed vs
+  swiped away" and the average % viewed in YouTube Studio, and decides the length afterwards.
+- **One theme for this channel**: keep it on the kind of story its videos with views told (love and married life
+  of famous people and of the imperial family: `masako-rikon` and the 100k videos — ask the owner which three they
+  are if it is not known); no beauty tips, sports or gossip lists on it (another channel, if the owner opens one).
+- **Posting is the owner's side** (told in the chat): one or two videos a day at 19–21 h Japan time, about 20
+  videos before judging, never delete a video.
+- After a week, ask the owner for the YouTube Studio numbers of 3–5 videos (views, viewed vs swiped away, average %
+  viewed): 0–50 views each points at the channel (settings, re-uploads, VPN), a few hundred that stop at the videos.
+
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
 is: frame it again, pick another, or search again.
