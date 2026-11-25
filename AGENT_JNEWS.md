@@ -91,6 +91,10 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   `CLAUDE.md` step 1). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
   `"depth": false` in its picture entry. Stories made before 17/11 are not changed: add `fx` to an old story only
   when the owner asks for that video to be made again with the effects.
+- Voice and music (owner, 25/11/2026, from a sampler of 13 voices): every **new** story carries
+  `"speaker": "もち子さん"` and the owner's flute, `"music:file:stories/media/music/owner-flute-1-long.mp3"` as a
+  search and `"music": {"pick": "<k>-1", "volume": 0.7}` (`CLAUDE.md`, "Frame and voice by content"). The frame
+  changes from video to video by content (`story`, `full`, `band`, `album`, `magazine`).
 - Quality is not traded for usage: preview before rendering.
 
 ## 1. `jnews-plan` → `stories/<name>.json`

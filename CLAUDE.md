@@ -73,6 +73,14 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   Commons flute pieces are not used; the owner's own flute is `stories/media/music/owner-flute-1.mp3` (58.7 s,
   `"music:file:stories/media/music/owner-flute-1.mp3"` as a search, credited 提供音源), and the voice is chosen
   from a sampler video of 13 voices (`stories/2026-11-25-test-voice-samples.json`) by the owner.
+- **The voice and the music of the imperial-family and star videos (`[Tin Nhật]`), from 25/11/2026** — the owner
+  heard the sampler (an mp3 of the 13 voices over the flute) and chose: "giọng nữ số 1" = **もち子さん**. Every new
+  story of this channel carries `"speaker": "もち子さん"` and the owner's flute: the search
+  `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece joined three times with 4-second
+  cross-fades, 168 s, so that it never jumps where it would loop) and `"music": {"pick": "<k>-1", "volume": 0.7}`.
+  The gentle piano and 青山龍星 stay for the other channels (history, `ts`, …) until the owner says otherwise. When
+  the owner wants voices compared, send an **mp3** (the owner, 25/11/2026: "làm file mp3 trc, chốt voice đã") with
+  the time each voice starts, not a video.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
