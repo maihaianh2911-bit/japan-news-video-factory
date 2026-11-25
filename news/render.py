@@ -467,7 +467,9 @@ def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
     p = paced(t)   # the steady moves follow the rhythm of the camera; reveal and punch-in have their own
     (fx, fy) = photo.focus
     if photo.fit == "contain":   # the whole picture: it grows, shrinks or stays
-        small = 1 - clamp(0.035 * seconds, 0.10, 0.18)
+        # a quarter or more in size (owner, 25/11/2026: a whole picture growing by a tenth looked still, mostly in
+        # the "album" print, which is smaller than the frame)
+        small = 1 - clamp(0.05 * seconds, 0.22, 0.32)
         size = {"push-in": small + (1 - small) * min(1, p), "pull-back": 1 - (1 - small) * min(1, p)}.get(name, 1.0)
         return whole_photo(photo.image, (size - 0.86) / 0.14, height)
     image = with_depth(photo, name, t if name in ("reveal", "punch-in") else p)
