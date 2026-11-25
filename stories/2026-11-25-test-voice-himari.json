@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "（試作）女性の声と和楽器: 冥鳴ひまり",
   "date": "2026-11-25",
   "source": "文春オンライン、nippon.com",
@@ -289,5 +289,9 @@
     "music:koto Rokudan",
     "music:koto Japanese traditional"
   ],
-  "speaker": "冥鳴ひまり"
+  "speaker": "冥鳴ひまり",
+  "music": {
+    "pick": "16-3",
+    "volume": 0.6
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "title": "（試作）女性の声と和楽器: No.7",
   "date": "2026-11-25",
   "source": "文春オンライン、nippon.com",
@@ -289,5 +289,10 @@
     "music:koto Rokudan",
     "music:koto Japanese traditional"
   ],
-  "speaker": "No.7/読み聞かせ"
+  "speaker": "No.7/読み聞かせ",
+  "music": {
+    "pick": "16-2",
+    "volume": 0.6,
+    "start": 3.0
+  }
 }
