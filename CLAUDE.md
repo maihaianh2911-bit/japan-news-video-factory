@@ -95,10 +95,8 @@ rule below; the voice and the flute are already new, see above):
   it **from the very first frame**, larger when it is short (`draw_quote(…, hook=True)`, all frames). The first
   picture is the most striking face of the story and moves from the first frame (`push-in` or `punch-in`, never
   `hold`).
-- **A length test for two weeks**: of the first six videos from 26/11, three are short, **30–40 seconds** (about
-  230 written characters at speed 1.25), three stay 61–70 s, alternately. The short ones are trials in the sense of
-  iron rule 2 (their issue notes say `thử độ dài`); tell the owner which is which. The owner compares "viewed vs
-  swiped away" and the average % viewed in YouTube Studio, and decides the length afterwards.
+- **No length test**: Claude had proposed alternating 30–40-second videos; the owner refused (25/11/2026, angry: "Sao
+  lại 36s. Video k đc dưới 60s cơ mà"). Every video stays over 61 s, about 65 s (iron rules 2 and 3).
 - **One theme for this channel**: the love and married life of famous people (couples, a marriage, a loss, a
   promise kept), the kind of story that has drawn views on these channels (`masako-rikon`); no beauty tips or
   gossip lists on it (another channel, if the owner opens one).
