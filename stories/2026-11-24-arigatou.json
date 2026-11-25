@@ -1,10 +1,10 @@
 {
-  "stage": "render",
+  "stage": "find",
   "issue": 75,
   "title": "「生まれてきてくれてありがとう」と「生んでくれてありがとう」",
   "date": "2026-11-24",
   "source": "文春オンライン、nippon.com",
-  "style": "story",
+  "style": "album",
   "kicker": "皇室の物語",
   "pace": {
     "speed": 1.2,
@@ -286,10 +286,12 @@
     "file:stories/media/library/aiko/smile-closeup-navy.jpg",
     "file:stories/media/library/imperial-family/naruhito-aiko-masako-laughing.jpg",
     "music:Gymnopédie Satie piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
   ],
   "music": {
-    "pick": "17-4",
+    "pick": "19-1",
     "volume": 0.7
-  }
+  },
+  "speaker": "もち子さん"
 }
