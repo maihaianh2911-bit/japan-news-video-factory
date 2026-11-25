@@ -25,9 +25,11 @@ each (the same in every repo of the owner's Japanese channels):
    it so that it is better and more gripping (the writing rules of "When the owner sends an original video" apply
    to it too), keeping the owner's story and main idea. It is no longer translated sentence by sentence and left
    as it is. Say in the chat or on the issue what was changed.
-2. **Rumours and unconfirmed details may be told on every channel** (owner: "Dùng tin đồn ở mọi kênh"): framed as
-   told at the key line (「…と噂されています」, 「…といいます」, 「週刊誌によると」), and the posting caption says so in a ※
-   note (which part is a rumour, what is known).
+2. **Rumours and unconfirmed details may be told on every channel** (owner: "Dùng tin đồn ở mọi kênh"), and the
+   posting caption says so in a ※ note (which part is a rumour, what is known). **No hedging words in the
+   narration** (owner, 24/11/2026: "phần đính chính sẽ ghi ở caption, đừng ghi vào video"; 25/11/2026: "Tao đéo thích
+   từ nghe nói với hình như cc gì cả"): no 「…といいます」「…と噂されています」「…らしい」「…ようです」; a fact or a
+   quote a press article reports is told plainly, and only the ※ note of the caption says what is unconfirmed.
 3. **The telling may be dramatised** (owner: "Thêm thắt cho kịch tính"): feelings, a narrator's lead-in, suspense,
    the order of the telling. The one line that stays: an event or a quote of a real person is never made up and
    told as a fact.
