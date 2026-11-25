@@ -2,9 +2,9 @@
   "title": "日本一の兵 真田幸村と大坂夏の陣",
   "stage": "render",
   "date": "2026-11-24",
-  "style": "full",
+  "style": "band",
   "kicker": "戦国の物語",
-  "voice": 1.7,
+  "voice": 2.4,
   "pace": {
     "speed": 1.1,
     "line_pause": 0.12,
@@ -53,7 +53,13 @@
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano",
     "file:stories/media/2026-11-24-yukimura-osaka/hook-yukimura-akazonae.jpg",
-    "file:stories/media/2026-11-24-yukimura-osaka/ieyasu-shikami.jpg"
+    "file:stories/media/2026-11-24-yukimura-osaka/ieyasu-shikami.jpg",
+    "web:真田丸 最終回 場面写真 幸村 家康",
+    "web:真田丸 内野聖陽 家康 最終回 場面写真",
+    "web:真田丸 堺雅人 幸村 赤備え 突撃 場面写真",
+    "web:真田丸 最終回 幸村 最期 場面写真",
+    "web:真田丸 大坂夏の陣 場面写真 天王寺",
+    "web:真田丸 堺雅人 真田幸村 => a samurai in red armor with deer antler helmet, face clearly visible"
   ],
   "scenes": [
     {
@@ -73,25 +79,23 @@
       ],
       "photo": [
         {
-          "pick": "36-1",
-          "move": "hold",
-          "focus": [
-            0.5,
-            0.25
-          ],
-          "depth": false
-        },
-        {
-          "pick": "9-1",
+          "pick": "38-10",
           "move": "push-in",
           "focus": [
             0.5,
             0.3
-          ],
-          "depth": false
+          ]
+        },
+        {
+          "pick": "38-18",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
         }
       ],
-      "why": "Mở bằng Yukimura mũ sừng hươu, sáu đồng tiền, trên nền bình phong trận Osaka; rồi chân dung thật của ông"
+      "why": "Mở bằng Yukimura (Sakai Masato) giáp đỏ mũ sừng hươu chĩa giáo, rồi Yukimura cận mặt khi đọc tên"
     },
     {
       "label": "大坂夏の陣",
@@ -121,39 +125,37 @@
           "move": "pan-right",
           "focus": [
             0.3,
-            0.35
+            0.4
           ],
           "depth": false
         },
         {
-          "pick": "1-13",
-          "move": "rise",
+          "pick": "40-18",
+          "move": "pull-back",
           "focus": [
-            0.5,
-            0.3
+            0.55,
+            0.15
           ]
         },
         {
-          "pick": "10-2",
-          "move": "fall",
+          "pick": "38-19",
+          "move": "push-in",
           "focus": [
-            0.5,
-            0.5
-          ],
-          "depth": false
+            0.55,
+            0.45
+          ]
         },
         {
-          "pick": "3-1",
-          "move": "hold",
+          "pick": "39-7",
+          "move": "push-in",
           "focus": [
-            0.5,
-            0.75
-          ],
-          "depth": false
+            0.0,
+            0.22
+          ]
         }
       ],
-      "cut": "fade",
-      "why": "Thành Osaka trên bình phong, giáp đỏ, quân đỏ xông lên, rồi Ieyasu — mục tiêu duy nhất"
+      "cut": "slide",
+      "why": "Trượt sang: thành Osaka trên bình phong, quân giáp đỏ xông lên, Yukimura phi thẳng về phía Ieyasu, rồi Ieyasu (Uchino Seiyō)"
     },
     {
       "label": "突撃",
@@ -175,43 +177,38 @@
       ],
       "photo": [
         {
-          "pick": "10-7",
-          "move": "pan-left",
+          "pick": "38-8",
+          "move": "pan-right",
           "focus": [
             0.5,
             0.5
-          ],
-          "depth": false
+          ]
         },
         {
           "pick": "26-1",
           "move": "push-in",
           "focus": [
-            0.4,
+            0.45,
             0.4
           ]
         },
         {
           "pick": "37-1",
           "move": "push-in",
-          "focus": [
-            0.5,
-            0.2
-          ],
+          "fit": "contain",
           "depth": false
         },
         {
-          "pick": "19-1",
-          "move": "fall",
+          "pick": "38-7",
+          "move": "push-in",
           "focus": [
-            0.5,
-            0.5
-          ],
-          "depth": false
+            0.45,
+            0.3
+          ]
         }
       ],
       "cut": "flash",
-      "why": "Lóe sáng vào trận: quân xông vào bản doanh, cờ quạt vàng của Ieyasu, bức Ieyasu nhăn mặt sau trận Mikatagahara, tranh Ieyasu lâm nguy ở Osaka"
+      "why": "Lóe sáng vào trận: quân đỏ tràn vào bản doanh, cờ quạt vàng thật của Ieyasu, bức しかみ像, Ieyasu bàng hoàng"
     },
     {
       "label": "最期",
@@ -229,24 +226,32 @@
       ],
       "photo": [
         {
-          "pick": "1-8",
-          "move": "fall",
+          "pick": "41-4",
+          "move": "push-in",
           "focus": [
             0.5,
-            0.35
+            0.5
+          ]
+        },
+        {
+          "pick": "38-9",
+          "move": "push-in",
+          "focus": [
+            0.53,
+            0.64
           ]
         },
         {
           "pick": "24-12",
           "move": "push-in",
           "focus": [
-            0.15,
-            0.3
+            0.2,
+            0.35
           ]
         }
       ],
       "cut": "dip",
-      "why": "Tối dần về đền Yasui, nơi Yukimura ngồi nghỉ và bị giết"
+      "why": "Tối dần: Yukimura ngồi nghỉ trong sân đền, gương mặt đẫm máu, rồi tượng Yukimura ở đền Yasui hôm nay"
     },
     {
       "label": "日本一の兵",
@@ -273,8 +278,16 @@
       ],
       "photo": [
         {
+          "pick": "41-13",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ]
+        },
+        {
           "pick": "12-3",
-          "move": "pull-back",
+          "move": "push-in",
           "focus": [
             0.5,
             0.3
@@ -298,13 +311,14 @@
           ]
         }
       ],
-      "cut": "fade",
-      "why": "Giáp đỏ sừng hươu cho câu 「真田日本一の兵」, thành Osaka trên bình phong, rồi lễ hội Ueda hôm nay"
+      "cut": "zoom",
+      "why": "Phóng vào: Yukimura giơ kiếm cho câu 「真田日本一の兵」, mũ giáp đỏ, thành Osaka trên bình phong, lễ hội Ueda hôm nay"
     }
   ],
   "issue": 61,
   "music": {
     "pick": "35-2",
     "volume": 0.7
-  }
+  },
+  "masthead": "大坂夏の陣"
 }

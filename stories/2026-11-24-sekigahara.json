@@ -1,0 +1,312 @@
+{
+  "title": "関ヶ原の戦い わずか半日の天下分け目",
+  "stage": "render",
+  "date": "2026-11-24",
+  "style": "band",
+  "kicker": "戦国の物語",
+  "masthead": "関ヶ原の戦い",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.12,
+    "line_pause": 0.12,
+    "scene_pause": 0.3
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "issue": 72,
+  "scenes": [
+    {
+      "label": "関ヶ原",
+      "era": "1600年",
+      "headline": "家康 対 三成",
+      "lines": [
+        {
+          "text": "日本の歴史で最大の合戦は、わずか半日で終わりました。",
+          "say": "にほんのれきしで、さいだいのかっせんは、わずかはんにちで、おわりました。",
+          "quote": true
+        },
+        {
+          "text": "家康率いる東軍七万と、三成の西軍八万がぶつかります。",
+          "say": "いえやすひきいる、とうぐんななまんと、みつなりの、せいぐんはちまんが、ぶつかります。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "33-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "11-4",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Mở bằng Ieyasu (Yakusho Kōji) đối mặt Mitsunari (Okada Junichi), chữ VS, rồi biển quân ngập khói"
+    },
+    {
+      "label": "天下",
+      "era": "1600年9月",
+      "headline": "空いた天下",
+      "lines": [
+        {
+          "text": "天下人・秀吉が世を去り、天下の頂点は空席となっていました。",
+          "say": "てんかびと、ひでよしが、よをさり、てんかのちょうてんは、くうせきと、なっていました。"
+        },
+        {
+          "text": "山に陣を敷いた西軍の方が、明らかに有利です。",
+          "say": "やまにじんをしいた、せいぐんのほうが、あきらかに、ゆうりです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "9-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "17-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Trượt sang: Hideyoshi (Takito Kenichi) đã mất, bình phong trận Sekigahara với các doanh trại trên núi",
+      "cut": "slide"
+    },
+    {
+      "label": "松尾山",
+      "era": "1600年9月",
+      "headline": "十九歳の小早川秀秋",
+      "lines": [
+        {
+          "text": "けれど、この戦いの行方を握っていたのは、二人のどちらでもありません。",
+          "say": "けれど、このたたかいの、ゆくえをにぎっていたのは、ふたりのどちらでもありません。"
+        },
+        {
+          "text": "松尾山に一万五千の兵を置いた、十九歳の小早川秀秋です。",
+          "say": "まつおやまに、いちまんごせんのへいをおいた、じゅうきゅうさいの、こばやかわひであきです。"
+        },
+        {
+          "text": "秀秋は裏で家康と通じていました。",
+          "say": "ひであきは、うらで、いえやすと、つうじていました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "19-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "10-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Phóng vào núi Matsuo, rồi Kobayakawa (Higashide Masahiro) 19 tuổi",
+      "cut": "zoom"
+    },
+    {
+      "label": "松尾山",
+      "era": "正午",
+      "headline": "動かない一万五千",
+      "lines": [
+        {
+          "text": "それなのに、戦いが始まっても山を下りようとしません。",
+          "say": "それなのに、たたかいがはじまっても、やまをおりようとしません。"
+        },
+        {
+          "text": "昼になっても動きはなく、しびれを切らした家康は、松尾山へ鉄砲を撃ちかけさせたといいます。",
+          "say": "ひるになっても、うごきはなく、しびれをきらしたいえやすは、まつおやまへ、てっぽうを、うちかけさせたといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "8-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Tối dần: Kobayakawa chần chừ trong trại, Ieyasu gào lên, súng nổ",
+      "cut": "dip"
+    },
+    {
+      "label": "裏切り",
+      "era": "正午",
+      "headline": "裏切り",
+      "lines": [
+        {
+          "text": "その直後、一万五千が山を駆け下ります。",
+          "say": "そのちょくご、いちまんごせんが、やまをかけおります。"
+        },
+        {
+          "text": "けれど向かった先は、味方であるはずの大谷吉継の陣でした。",
+          "say": "けれど、むかったさきは、みかたであるはずの、おおたによしつぐのじんでした。"
+        },
+        {
+          "text": "そこから武将たちが次々と寝返り、西軍はあっという間に崩れます。",
+          "say": "そこから、ぶしょうたちが、つぎつぎとねがえり、せいぐんは、あっというまに、くずれます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "12-6",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Lóe sáng: quân ào xuống, Ōtani Yoshitsugu khăn trắng, Tây quân tan vỡ",
+      "cut": "flash"
+    },
+    {
+      "label": "その後",
+      "era": "その後",
+      "headline": "裏切り者の最期",
+      "lines": [
+        {
+          "text": "三成は捕らえられ、京で首をはねられました。",
+          "say": "みつなりは、とらえられ、きょうで、くびをはねられました。"
+        },
+        {
+          "text": "そして裏切った秀秋自身も、わずか二年後、二十一歳の若さで急死するのです。",
+          "say": "そして、うらぎった、ひであきじしんも、わずかにねんご、にじゅういっさいのわかさで、きゅうしするのです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "8-7",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.3
+          ]
+        },
+        {
+          "pick": "22-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ],
+          "depth": false
+        },
+        {
+          "pick": "10-2",
+          "move": "push-in",
+          "focus": [
+            0.7,
+            0.4
+          ]
+        }
+      ],
+      "why": "Tối dần: Mitsunari, tranh cảnh xử chém ở Kyoto, rồi Kobayakawa ngồi một mình",
+      "cut": "dip"
+    }
+  ],
+  "searches": [
+    "wiki:関ヶ原の戦い",
+    "wiki:石田三成",
+    "wiki:徳川家康",
+    "wiki:小早川秀秋",
+    "wiki:大谷吉継",
+    "wiki:関ヶ原古戦場",
+    "wiki:松尾山 (岐阜県)",
+    "web:映画 関ヶ原 場面写真 岡田准一 石田三成",
+    "web:映画 関ヶ原 場面写真 役所広司 徳川家康",
+    "web:映画 関ヶ原 東出昌大 小早川秀秋",
+    "web:映画 関ヶ原 大谷刑部 場面写真",
+    "web:映画 関ヶ原 合戦シーン 場面写真",
+    "web:映画 関ヶ原 岡田准一 役所広司",
+    "web:どうする家康 関ヶ原 場面写真 松本潤",
+    "web:どうする家康 石田三成 中村七之助 関ヶ原",
+    "web:どうする家康 小早川秀秋 嘉島陸 松尾山",
+    "web:関ヶ原合戦図屏風 高画質",
+    "web:関ヶ原古戦場 決戦地 石碑",
+    "web:松尾山 小早川秀秋 陣跡 眺望",
+    "web:関ヶ原 笹尾山 石田三成陣跡",
+    "web:関ヶ原 朝霧 古戦場",
+    "web:石田三成 六条河原 処刑 浮世絵",
+    "web:小早川秀秋 肖像 高台寺",
+    "web:石田三成 肖像画",
+    "web:映画 関ヶ原 岡田准一 => a samurai lord in armor in close-up, face clearly visible",
+    "web:映画 関ヶ原 役所広司 家康 => an old samurai lord in armor in close-up, face clearly visible",
+    "file:stories/media/library/tokugawa-ieyasu/golden-fan-umajirushi.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/kano-tanyu-portrait-full.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-24-sekigahara/hook-vs-ieyasu-mitsunari.jpg",
+    "file:stories/media/2026-11-24-sekigahara/hook-vs-names.jpg"
+  ],
+  "music": {
+    "pick": "31-2",
+    "volume": 0.7
+  }
+}

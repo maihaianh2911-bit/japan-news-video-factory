@@ -2,9 +2,9 @@
   "title": "是非に及ばず 織田信長と本能寺の変",
   "stage": "render",
   "date": "2026-11-24",
-  "style": "full",
+  "style": "band",
   "kicker": "戦国の物語",
-  "voice": 1.7,
+  "voice": 2.4,
   "pace": {
     "speed": 1.15,
     "line_pause": 0.12,
@@ -52,7 +52,23 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano",
-    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-portrait-fire.jpg"
+    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-portrait-fire.jpg",
+    "page:https://www.cinematoday.jp/gallery/E0028799",
+    "page:https://www.nhk.jp/g/ts/P52L88MYXY/blog/bl/pdRPMxDlrQ/bp/pyex2VzXVB/",
+    "page:https://thetv.jp/news/detail/1423957/",
+    "page:https://www.cinematoday.jp/news/N0155593",
+    "page:https://www.cinematoday.jp/news/N0155790",
+    "page:https://rekishikaido.php.co.jp/detail/14599",
+    "page:https://mag.japaaan.com/archives/278226/2",
+    "web:豊臣兄弟 本能寺の変 明智光秀 場面写真",
+    "web:豊臣兄弟 第27回 本能寺の変 信長 場面写真",
+    "web:豊臣兄弟 本能寺 炎 小栗旬 信長",
+    "web:豊臣兄弟 秀吉 中国大返し 場面写真",
+    "web:豊臣兄弟 第28回 山崎の戦い 明智光秀",
+    "web:豊臣兄弟 森蘭丸 本能寺",
+    "web:豊臣兄弟 小栗旬 織田信長 => a samurai lord in close-up, face clearly visible",
+    "web:豊臣兄弟 明智光秀 謀反 => a samurai general in armor in close-up, face clearly visible",
+    "file:stories/media/2026-11-24-nobunaga-honnoji/hook-oguri-fire.jpg"
   ],
   "scenes": [
     {
@@ -72,25 +88,23 @@
       ],
       "photo": [
         {
-          "pick": "36-1",
-          "move": "hold",
+          "pick": "50-11",
+          "move": "push-in",
           "focus": [
-            0.5,
-            0.2
-          ],
-          "depth": false
+            0.48,
+            0.35
+          ]
         },
         {
-          "pick": "12-8",
-          "move": "fall",
+          "pick": "41-1",
+          "move": "pan-right",
           "focus": [
-            0.5,
-            0.35
-          ],
-          "depth": false
+            0.45,
+            0.3
+          ]
         }
       ],
-      "why": "Mở bằng chân dung Nobunaga nổi tiếng nhất chìm trong lửa, rồi tranh quân lính tràn vào chùa Honnō-ji"
+      "why": "Mở bằng Nobunaga (Oguri Shun) cận mặt, rồi Nobunaga đẫm máu giữa lửa"
     },
     {
       "label": "本能寺",
@@ -100,38 +114,55 @@
         {
           "text": "一五八二年六月、信長はわずかな供だけを連れて、京都の本能寺に泊まっていました。",
           "say": "せんごひゃくはちじゅうにねん、ろくがつ、のぶながは、わずかなともだけをつれて、きょうとの、ほんのうじに、とまっていました。"
+        }
+      ],
+      "cut": "slide",
+      "photo": [
+        {
+          "pick": "46-4",
+          "move": "push-in",
+          "focus": [
+            0.7,
+            0.0
+          ]
         },
+        {
+          "pick": "4-2",
+          "move": "rise"
+        }
+      ],
+      "why": "Trượt sang: Nobunaga giữa người hầu, rồi cổng chùa Honnō-ji thật ở Kyoto"
+    },
+    {
+      "label": "出陣前",
+      "era": "1582年6月",
+      "headline": "秀吉の援軍へ",
+      "lines": [
         {
           "text": "中国地方で戦う羽柴秀吉を助けるため、自らも出陣する直前のことです。",
           "say": "ちゅうごくちほうでたたかう、はしばひでよしをたすけるため、みずからも、しゅつじんするちょくぜんのことです。"
         }
       ],
+      "cut": "zoom",
       "photo": [
         {
-          "pick": "1-15",
-          "move": "pull-back",
-          "focus": [
-            0.5,
-            0.62
-          ],
-          "depth": false
-        },
-        {
-          "pick": "4-2",
-          "move": "rise"
-        },
-        {
-          "pick": "8-1",
+          "pick": "47-5",
           "move": "push-in",
           "focus": [
-            0.5,
+            0.42,
             0.3
-          ],
-          "depth": false
+          ]
+        },
+        {
+          "pick": "47-2",
+          "move": "pan-right",
+          "focus": [
+            0.45,
+            0.3
+          ]
         }
       ],
-      "cut": "fade",
-      "why": "Bức họa Nobunaga, cổng chùa Honnō-ji ở Kyoto, rồi Hideyoshi đang đánh ở miền Tây"
+      "why": "Phóng vào: Hideyoshi (Ikematsu Sōsuke) ở miền Tây, quân phi ngựa"
     },
     {
       "label": "謀反",
@@ -145,7 +176,34 @@
         {
           "text": "寺を取り囲んでいたのは、桔梗の旗。明智光秀の軍勢、およそ一万三千でした。",
           "say": "てらをとりかこんでいたのは、ききょうのはた。あけちみつひでのぐんぜい、およそ、いちまんさんぜんでした。"
+        }
+      ],
+      "cut": "dip",
+      "photo": [
+        {
+          "pick": "48-1",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.35
+          ]
         },
+        {
+          "pick": "44-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ]
+        }
+      ],
+      "why": "Tối dần: Mitsuhide (Kaname Jun) đội mũ hoa cát cánh, rồi Mitsuhide nhìn thẳng"
+    },
+    {
+      "label": "謀反",
+      "era": "夜明け前",
+      "headline": "ただひと言",
+      "lines": [
         {
           "text": "謀反と知った信長が口にしたのは、ただひと言。",
           "say": "むほんとしった、のぶながが、くちにしたのは、ただひとこと。"
@@ -156,35 +214,26 @@
           "quote": true
         }
       ],
+      "cut": "hard",
       "photo": [
         {
-          "pick": "19-8",
+          "pick": "50-2",
           "move": "push-in",
           "focus": [
-            0.52,
-            0
+            0.48,
+            0.3
           ]
         },
         {
-          "pick": "2-2",
-          "move": "push-in",
+          "pick": "42-2",
+          "move": "pan-left",
           "focus": [
             0.5,
-            0.42
-          ],
-          "depth": false
-        },
-        {
-          "pick": "18-3",
-          "move": "hold",
-          "focus": [
-            0.43,
-            0.3
+            0.35
           ]
         }
       ],
-      "cut": "dip",
-      "why": "Tối dần: rừng cờ hoa cát cánh của Mitsuhide, chân dung Mitsuhide, rồi Nobunaga giữa lửa nói 「是非に及ばず」"
+      "why": "Cắt thẳng vào mặt Nobunaga lúc biết bị phản, câu 「是非に及ばず」"
     },
     {
       "label": "最期",
@@ -198,11 +247,73 @@
         {
           "text": "しかし傷を負うと奥へ下がり、火を放たせます。",
           "say": "しかし、きずをおうと、おくへさがり、ひをはなたせます。"
+        }
+      ],
+      "cut": "flash",
+      "photo": [
+        {
+          "pick": "37-2",
+          "move": "push-in",
+          "focus": [
+            0.3,
+            0.4
+          ]
         },
+        {
+          "pick": "37-3",
+          "move": "push-in",
+          "focus": [
+            0.2,
+            0.15
+          ]
+        },
+        {
+          "pick": "45-11",
+          "move": "push-in",
+          "focus": [
+            0.7,
+            0.6
+          ]
+        }
+      ],
+      "why": "Lóe sáng vào trận: tên bay, Nobunaga cầm giáo, lùi vào chùa cháy"
+    },
+    {
+      "label": "最期",
+      "era": "1582年6月",
+      "headline": "森蘭丸",
+      "lines": [
         {
           "text": "最後までそばにいた小姓の森蘭丸も、ここで命を落としました。",
           "say": "さいごまで、そばにいた、こしょうの、もりらんまるも、ここで、いのちをおとしました。"
+        }
+      ],
+      "cut": "slide",
+      "photo": [
+        {
+          "pick": "49-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ]
         },
+        {
+          "pick": "37-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.3
+          ]
+        }
+      ],
+      "why": "Trượt sang: Mori Ranmaru (Ichikawa Danko), rồi Ranmaru cầm kiếm giữa lửa"
+    },
+    {
+      "label": "最期",
+      "era": "1582年6月",
+      "headline": "四十九歳の最期",
+      "lines": [
         {
           "text": "燃え上がる本能寺の中で、信長は四十九歳の生涯を閉じます。",
           "say": "もえあがる、ほんのうじのなかで、のぶながは、よんじゅうきゅうさいの、しょうがいをとじます。"
@@ -212,36 +323,26 @@
           "say": "そのなきがらは、ついに、みつからなかったといいます。"
         }
       ],
+      "cut": "zoom",
       "photo": [
         {
-          "pick": "2-20",
-          "move": "rise",
+          "pick": "41-1",
+          "move": "close-up",
           "focus": [
-            0.5,
+            0.42,
             0.3
-          ],
-          "depth": false
+          ]
         },
         {
-          "pick": "13-17",
-          "move": "pull-back",
-          "focus": [
-            0.63,
-            0.35
-          ],
-          "depth": false
-        },
-        {
-          "pick": "18-7",
+          "pick": "24-6",
           "move": "pull-back",
           "focus": [
             0.5,
-            0.4
+            0.5
           ]
         }
       ],
-      "cut": "flash",
-      "why": "Lóe sáng vào trận: Nobunaga cầm cung giữa biển lửa, Mori Ranmaru, rồi bóng người trong chùa cháy"
+      "why": "Phóng vào: Nobunaga giữa biển lửa, rồi chỉ còn ngọn lửa"
     },
     {
       "label": "天下",
@@ -257,33 +358,38 @@
           "say": "のぶながが、ゆめみたてんかは、こうして、ひでよしのてに、わたっていったのです。"
         }
       ],
+      "cut": "dip",
       "photo": [
         {
-          "pick": "21-2",
-          "move": "fall",
+          "pick": "48-13",
+          "move": "pan-right",
           "focus": [
-            0.5,
-            0.4
-          ],
-          "depth": false
+            0.3,
+            0.3
+          ]
         },
         {
-          "pick": "21-3",
+          "pick": "48-10",
           "move": "push-in",
           "focus": [
-            0.5,
-            0.4
-          ],
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "8-1",
+          "move": "pull-back",
+          "fit": "contain",
           "depth": false
         }
       ],
-      "cut": "dip",
-      "why": "Bình phong trận Yamazaki: doanh trại Mitsuhide rồi doanh trại Hideyoshi, thiên hạ sang tay Hideyoshi"
+      "why": "Tối dần: Mitsuhide ở doanh trại, Hideyoshi trước trận Yamazaki, chân dung thật Hideyoshi"
     }
   ],
   "issue": 60,
   "music": {
     "pick": "34-2",
     "volume": 0.7
-  }
+  },
+  "masthead": "本能寺の変"
 }

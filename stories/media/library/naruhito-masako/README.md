@@ -19,3 +19,11 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `facing-each-other-smiling.jpg` | Hai vợ chồng đứng quay mặt nhìn nhau, cười | 799×645 | mainichi.jp | 2026-11-21-masako-jinkaku |
 | `window-waving-close.jpg` | Hai người cười, vẫy tay bên khung cửa sổ, hai mặt lớn rõ | 1200×800 | jisin.jp | 2026-11-21-masako-jinkaku |
 | `2019-official-portrait-standing.jpg` | Chân dung chính thức: Thiên hoàng và Hoàng hậu đứng cạnh nhau, ảnh rất lớn (Commons) | 1920×2879 | 在サンパウロ日本国総領事館 / CC BY 4.0 | 2026-11-21-masako-jinkaku |
+| `late-1990s-blue-hat-europe.jpg` | Hai vợ chồng Thái tử, bà Masako mũ xanh lớn, chuyến thăm châu Âu cuối thập niên 1990 (có lẽ lễ cưới hoàng gia Bỉ 12/1999) (dùng contain) | 1200×881 | bunshun.jp | 2026-11-24-naruhito-oyamoto |
+| `2019-chokennogi-speech.jpg` | 1/5/2019 lễ triều kiến sau khi lên ngôi: Thiên hoàng đọc lời phát biểu đầu tiên, Hoàng hậu bên cạnh, ảnh lớn | 2000×1378 | asahi.com | 2026-11-24-naruhito-oyamoto |
+| `2019-chokennogi-standing.jpg` | 1/5/2019 lễ triều kiến: hai người đứng trước ngai, khổ dọc (dùng contain) | 700×903 | topics.or.jp | 2026-11-24-naruhito-oyamoto |
+| `2019-05-general-greeting-yellow.jpg` | 4/5/2019 lễ chúc mừng đầu tiên: Thiên hoàng vẫy tay, Hoàng hậu mũ vàng (dùng contain) | 799×608 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
+| `2001-newborn-aiko-close.jpg` | Hai vợ chồng bế bé Aiko mới sinh 12/2001, ảnh lớn (đã làm ảnh mở đầu) | 2000×1338 | asahi.com | 2026-11-24-arigatou |
+| `2001-hospital-leaving-newborn.jpg` | Ra viện Cơ quan Nội chính 12/2001: Thái tử đi cạnh, bà Masako bế con (dùng contain) | 2000×1452 | asahi.com | 2026-11-24-arigatou |
+| `2002-press-conference-tears.jpg` | Họp báo 4/2002 sau khi sinh Aiko, hai người ngồi, hoa (dùng contain) | 750×498 | bunshun.jp | 2026-11-24-arigatou |
+| `car-night-window.jpg` | Hai vợ chồng trong xe ban đêm, bà Masako nhìn ra cửa kính (dùng contain) | 750×500 | bunshun.jp | 2026-11-24-arigatou |

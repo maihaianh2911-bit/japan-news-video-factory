@@ -51,6 +51,8 @@ class Release:
     scene_pause: float = 0.0     # seconds of silence at the end of each scene
     fx: object = None            # picture effects of a story (render.use_fx), or None
     voice: float = 1.0           # how loud the finished sound is (render.use_voice): 1.7 = 70 % louder
+    masthead: str = ""           # "band" frame: the big title at the top of the video (the kicker stands above it)
+    speaker: str = ""            # VOICEVOX voice "<name>" or "<name>/<style>" ("" = 青山龍星/ノーマル, voice.SPEAKER)
 
 
 def compact(value):

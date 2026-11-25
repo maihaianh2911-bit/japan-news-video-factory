@@ -9,11 +9,11 @@ import tempfile
 import wave
 
 from .custom import StoryError, load_story
-from .render import encode, stills, use_fx, use_style, use_voice, write_subtitles
+from .render import encode, stills, use_fx, use_speaker, use_style, use_voice, write_subtitles
 from .sources import JST, discover, get_release
-from .story import VOICE_CREDIT, build_story
+from .story import build_story
 from .visuals import find_photos
-from .voice import narration
+from .voice import narration, voice_credit
 
 DEMO_URL = "https://www.boj.or.jp/mopo/mpmdeci/state_2025/k250124a.htm"
 
@@ -70,6 +70,7 @@ def main():
         use_style(release.style)
         use_fx(release.fx)
         use_voice(release.voice)
+        use_speaker(getattr(release, "speaker", ""))
         if args.stills:
             args.stills.mkdir(parents=True, exist_ok=True)
             stills(beats, release, scene_photos, args.stills)
@@ -100,7 +101,8 @@ def main():
         wav = Path(scratch) / "voice.wav"
         intervals, captions = narration(beats, wav, speed=release.speed, line_pause=release.line_pause,
                                         exact=bool((getattr(release, "fx", None) or {}).get("text")),
-                                        scene_pause=release.scene_pause)
+                                        scene_pause=release.scene_pause,
+                                        speaker_choice=getattr(release, "speaker", ""))
         duration = intervals[-1][1]
         if duration > 90 and not args.story:
             intervals, captions = narration(beats, wav, speed=min(1.25, 0.96 * duration / 87))
@@ -119,7 +121,7 @@ def main():
         "release": {"url": release.url, "published": release.published.isoformat(),
                     "publisher": release.publisher, "title": release.title},
         "photos": [photo.credit() for photo in photos],
-        "voice_credit": VOICE_CREDIT,
+        "voice_credit": voice_credit(getattr(release, "speaker", "")),
         "music": release.music.credit() if release.music else None,
         "scenes": [
             dict(asdict(beat),

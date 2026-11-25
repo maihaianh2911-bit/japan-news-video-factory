@@ -1,0 +1,357 @@
+{
+ "title": "親の手で育てられた初めての天皇",
+ "date": "2026-11-24",
+ "style": "full",
+ "kicker": "人物伝",
+ "pace": {
+  "speed": 1.3,
+  "line_pause": 0.05,
+  "scene_pause": 0.15
+ },
+ "fx": {
+  "motion": true,
+  "depth": true,
+  "text": true,
+  "face": true
+ },
+ "voice": 2.4,
+ "music": {
+  "pick": "42-1",
+  "volume": 0.7
+ },
+ "stage": "render",
+ "issue": 66,
+ "scenes": [
+  {
+   "label": "親の手で",
+   "headline": "親の手で育った\n初めての天皇",
+   "lines": [
+    {
+     "text": "天皇陛下は、親の手で育てられた、初めての天皇です。",
+     "say": "てんのうへいかは、おやのてで、そだてられた、はじめての、てんのうです。",
+     "quote": true
+    }
+   ],
+   "photo": [
+    {
+     "pick": "8-1",
+     "focus": [
+      0.5,
+      0.24
+     ],
+     "move": "push-in"
+    }
+   ],
+   "why": "Mở đầu: chân dung chính thức của Thiên hoàng năm 2019, nét, mặt rõ ở nửa trên."
+  },
+  {
+   "label": "しきたり",
+   "era": "明治〜昭和",
+   "headline": "親と離れて育つ\n皇室のしきたり",
+   "lines": [
+    {
+     "text": "祖父の昭和天皇は生後70日、父の上皇さまは3歳で親元を離されて育つ、それが皇室のしきたりでした。",
+     "say": "そふの、しょうわてんのうは、せいご、ななじゅうにち、ちちの、じょうこうさまは、さんさいで、おやもとを、はなされて、そだつ、それが、こうしつの、しきたりでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "17-8",
+     "focus": [
+      0.46,
+      0.3
+     ],
+     "move": "push-in"
+    },
+    {
+     "pick": "18-3",
+     "focus": [
+      0.5,
+      0.2
+     ],
+     "move": "pull-back"
+    }
+   ],
+   "cut": "dip",
+   "why": "Lùi về quá khứ: Thiên hoàng Showa hồi bé trên ngựa gỗ, rồi Thượng hoàng hồi bé."
+  },
+  {
+   "label": "両親",
+   "era": "1959年",
+   "headline": "しきたりを\n破った両親",
+   "lines": [
+    {
+     "text": "それを破ったのが、上皇さまと、民間から嫁いだ美智子さまです。",
+     "say": "それを、やぶったのが、じょうこうさまと、みんかんから、とついだ、みちこさまです。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "21-1",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "cut": "fade",
+   "why": "Lễ cưới 1959 của Thượng hoàng và bà Michiko trên xe ngựa."
+  },
+  {
+   "label": "母の手で",
+   "era": "1960年",
+   "headline": "乳母に任せず\n母の手で",
+   "lines": [
+    {
+     "text": "母は乳母に任せず、自ら母乳で育てたといいます。",
+     "say": "母は、うばに、まかせず、みずから、ぼにゅうで、そだてたと、いいます。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "16-1",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "cut": "fade",
+   "why": "Bà Michiko ôm bé Naruhito mới sinh rời bệnh viện 1960."
+  },
+  {
+   "label": "母の言葉",
+   "era": "1960年代",
+   "headline": "ナルちゃん憲法",
+   "lines": [
+    {
+     "text": "家を空けるときに残した育て方のメモは、のちに「ナルちゃん憲法」と呼ばれました。",
+     "say": "いえを、あけるときに、のこした、そだてかたの、メモは、のちに、なるちゃんけんぽうと、よばれました。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "15-4",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "15-12",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "fade",
+   "why": "Bà Michiko bế con trai bên chồng, rồi hai mẹ con bên cửa sổ."
+  },
+  {
+   "label": "留学",
+   "era": "1983年",
+   "headline": "オックスフォードで\n知った自由",
+   "lines": [
+    {
+     "text": "23歳で留学したオックスフォードでは、自分で洗濯をし、友人とパブにも通う、初めての自由な日々でした。",
+     "say": "にじゅうさんさいで、りゅうがくした、オックスフォードでは、じぶんで、せんたくをし、ゆうじんと、パブにも、かよう、はじめての、じゆうな、ひびでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "29-4",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "27-4",
+     "focus": [
+      0.55,
+      0.32
+     ],
+     "move": "rise"
+    },
+    {
+     "pick": "29-9",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "page",
+   "why": "Lễ nhập học Oxford, dắt xe đạp trên phố Oxford, rồi nâng cốc bia ở quán rượu."
+  },
+  {
+   "label": "出会い",
+   "era": "1986〜1993年",
+   "headline": "6年越しの想い",
+   "lines": [
+    {
+     "text": "帰国の翌年に雅子さまと出会い、6年越しの想いを実らせて結婚します。",
+     "say": "きこくの、よくねんに、まさこさまと、であい、ろくねんごしの、おもいを、みのらせて、けっこんします。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "10-1",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "11-1",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "page",
+   "why": "Hai người ở họp báo đính hôn 1993, rồi ngày cưới trên xe mui trần."
+  },
+  {
+   "label": "待ち望んだ命",
+   "era": "2001年",
+   "headline": "結婚から8年\n待ち望んだ命",
+   "lines": [
+    {
+     "text": "けれど流産の悲しみも経て、愛子さまを授かったのは、結婚から8年余りのことでした。",
+     "say": "けれど、りゅうざんの、かなしみも、へて、あいこさまを、さずかったのは、けっこんから、はちねんあまりの、ことでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "31-2",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "32-1",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "cut": "dip",
+   "why": "Hai người cuối thập niên 1990, rồi rời bệnh viện cùng Aiko mới sinh 12/2001."
+  },
+  {
+   "label": "父の詩",
+   "era": "2005年",
+   "headline": "「子は親の鏡」",
+   "lines": [
+    {
+     "text": "愛子さまが3歳のとき、陛下は誕生日の会見で、「子は親の鏡」という詩を読み上げます。",
+     "say": "あいこさまが、さんさいのとき、へいかは、たんじょうびの、かいけんで、こは、おやの、かがみ、という、しを、よみあげます。"
+    },
+    {
+     "text": "愛された子は、人を愛することを学ぶ、と語りかける詩でした。",
+     "say": "あいされた、こは、ひとを、あいすることを、まなぶ、と、かたりかける、しでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "36-7",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "36-1",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "fade",
+   "why": "Cả nhà hái quýt với Aiko nhỏ, rồi Thái tử nâng Aiko lên cây."
+  },
+  {
+   "label": "即位",
+   "era": "2019年",
+   "headline": "国民に\n寄り添いながら",
+   "lines": [
+    {
+     "text": "そして2019年、即位した陛下は最初のお言葉で、「国民に寄り添いながら」務めを果たすと誓いました。",
+     "say": "そして、にせんじゅうきゅうねん、そくいした、へいかは、さいしょの、おことばで、こくみんに、よりそいながら、つとめを、はたすと、ちかいました。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "37-3",
+     "focus": [
+      0.31,
+      0.25
+     ],
+     "move": "push-in"
+    },
+    {
+     "pick": "37-9",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "page",
+   "why": "Lễ triều kiến sau khi lên ngôi 1/5/2019: Thiên hoàng đọc lời phát biểu đầu tiên."
+  },
+  {
+   "label": "寄り添う心",
+   "era": "令和",
+   "headline": "母から受け継いだ\n寄り添う心",
+   "lines": [
+    {
+     "text": "母に寄り添われて育った少年が、今度は、国民に寄り添うと誓ったのです。",
+     "say": "ははに、よりそわれて、そだった、しょうねんが、こんどは、こくみんに、よりそうと、ちかったのです。",
+     "quote": true
+    }
+   ],
+   "photo": [
+    {
+     "pick": "15-11",
+     "focus": [
+      0.5,
+      0.2
+     ],
+     "move": "push-in"
+    },
+    {
+     "pick": "38-16",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "cut": "dip",
+   "why": "Kết: bà Michiko bế con trai ở bãi biển, rồi Thiên hoàng vẫy tay chào dân năm 2019."
+  }
+ ],
+ "searches": [
+  "wiki:徳仁",
+  "wiki:明仁",
+  "wiki:上皇后美智子",
+  "wiki:昭和天皇",
+  "wiki:皇后雅子",
+  "wiki:愛子内親王",
+  "wiki:Merton College, Oxford",
+  "file:stories/media/library/naruhito/2019-formal-portrait.jpg",
+  "file:stories/media/library/naruhito/child-gakushuin-uniform-walking.jpg",
+  "file:stories/media/library/naruhito-masako/1993-engagement-shy-smile.jpg",
+  "file:stories/media/library/naruhito-masako/1993-parade-waving-open-car.jpg",
+  "file:stories/media/library/naruhito-masako/1993-kyoen-apricot-vertical.jpg",
+  "file:stories/media/library/naruhito-masako/2019-official-portrait-standing.jpg",
+  "file:stories/media/library/imperial-family/suzaki-beach-vertical.jpg",
+  "web:美智子さま 浩宮さま 抱く 1960 => a young Japanese mother holding her baby son",
+  "web:皇太子ご夫妻 浩宮さま 誕生 1960 => a young Japanese couple with their newborn baby",
+  "web:昭和天皇 幼少期 迪宮 写真 => an old photograph of a Japanese baby prince",
+  "web:上皇さま 幼少期 継宮 写真 => an old photograph of a small Japanese boy prince",
+  "Hirohito childhood photograph => an old photograph of a small Japanese boy",
+  "Crown Prince Akihito childhood => an old photograph of a small Japanese boy",
+  "web:皇太子明仁親王 美智子さま ご成婚 1959 => a Japanese couple waving from a carriage in 1959",
+  "web:美智子さま 浩宮さま 育児 => a young Japanese mother caring for her baby",
+  "web:美智子さま 浩宮さま 幼少 散歩 => a Japanese mother walking with her little son",
+  "web:ナルちゃん憲法 美智子さま 浩宮 => a young Japanese mother with her toddler son",
+  "web:浩宮さま 登山 若い頃 => a young Japanese man hiking in the mountains",
+  "web:浩宮さま ビオラ 演奏 => a young Japanese man playing the viola",
+  "web:浩宮さま オックスフォード 留学 1983 => a young Japanese man at Oxford university",
+  "web:浩宮さま マートン・カレッジ 留学 => a young Japanese prince at an Oxford college",
+  "web:浩宮さま 英国留学 友人 テムズ => a young Japanese man with friends in England",
+  "web:皇太子さま 雅子さま 婚約 1993 => a Japanese prince and his fiancee smiling",
+  "web:皇太子ご夫妻 1999 => a Japanese crown prince and princess in the late 1990s",
+  "web:愛子さま 誕生 2001 皇太子ご夫妻 抱く => a Japanese couple holding their newborn baby girl",
+  "web:雅子さま 涙 会見 2002 生まれてきてありがとう => a Japanese princess with tears at a press conference",
+  "web:皇太子ご夫妻 会見 2002 愛子さま 誕生 => a Japanese couple at a press conference",
+  "web:皇太子さま 誕生日会見 2005 子は親の鏡 => a Japanese crown prince speaking at a press conference",
+  "web:皇太子さま 愛子さま 幼少 遊ぶ => a Japanese father playing with his little daughter",
+  "web:即位後朝見の儀 2019 天皇陛下 おことば => the Japanese emperor reading a speech at a palace ceremony",
+  "web:天皇陛下 即位 2019 国民に寄り添い => the Japanese emperor at his enthronement",
+  "web:天皇陛下 美智子さま 並んで 笑顔 => the Japanese emperor with his elderly mother",
+  "web:美智子さま 浩宮さま 抱っこ 笑顔 => a Japanese mother hugging her little son",
+  "music:Gymnopédie Satie piano",
+  "music:Chopin Nocturne piano"
+ ]
+}

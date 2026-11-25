@@ -1,7 +1,7 @@
 # japan-news-video-factory — notes for Claude
 
 ## Iron rules (owner, 16/11/2026) — they come before everything else in this file
-1. **The video is in the channel's language: Japanese (tiếng Nhật).** The voice is the Japanese VOICEVOX voice 青山龍星, and the script lines, subtitles and
+1. **The video is in the channel's language: Japanese (tiếng Nhật).** The voice is a Japanese VOICEVOX voice (青山龍星 by default; since 25/11/2026 a male or female voice chosen per video, see "Frame and voice by content"), and the script lines, subtitles and
    on-screen text are in Japanese (tiếng Nhật). A script that arrives in another language is translated faithfully into Japanese (tiếng Nhật)
    first. Never a voice or text of another language: check the language of `lines` and the voice before the voice
    step, and again on the finished video. A video in the wrong language is not delivered: fix it and render again.
@@ -42,6 +42,31 @@ each (the same in every repo of the owner's Japanese channels):
 6. **Pictures a scene** (owner: "nếu nội dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"): a
    scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
    (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
+
+## Frame and voice by content (owner, 25/11/2026) — for every channel of this repo
+Asked whether one frame for every video makes TikTok see "mass-produced content", the owner decided: "M tự đổi
+luân phiên, xem nội dung hợp với khung nào thì làm với khung đó, voice thì có thể tùy biến nam nữ ở voicevox, hợp là
+đc". (What was explained to the owner: the frame alone is not the main risk; a slideshow of still pictures with a
+machine voice and press photos, barely changed, is what gets flagged as unoriginal; TikTok publishes no exact rule.)
+- **The frame fits the story, and changes from video to video**: never the same frame for every video of a day or
+  of a channel in a row. The five frames that turn (owner, 25/11/2026: "M có thể tự làm vài khung nữa, t nghĩ
+  khoảng 5 khung đổi liên thiên là ổn"; `"album"` and `"magazine"` made that day): `"story"` (old newspaper: Showa
+  and old photographs, a story told in the past), `"full"` (the picture fills the screen: tall, sharp modern photos,
+  a person's face), `"band"` (blurred picture behind a wide band: landscape press photos and TV stills, history),
+  `"album"` (a family photo album: the picture as a print in a white mat on cream paper, the era written under it —
+  love, couple, mother-and-child, a life looked back on), `"magazine"` (a clean white weekly-magazine page: the
+  picture across the top, a red rule, a bold black headline — today's news, a statement, a controversy, a press
+  conference). `"paper"` and `"history"` stay for their own uses. In `album` and `magazine` no text lies on the
+  picture (the quote stands under it, like `band`), and no credits are printed (they are in `credits.txt`). The same story may not suit `full` if its pictures are small or wide: then `band` or
+  `story`. Say in the issue which frame and why (one line).
+- **The voice fits the story**: a story key `"speaker"` names the VOICEVOX voice, `"<name>"` (its ノーマル style)
+  or `"<name>/<style>"`; without it the voice is 青山龍星. A gentle female voice for a mother-and-daughter or a
+  princess's story, a calm male one for an emperor, war or history, a lively one for a light story — and vary it
+  across videos too. Calm voices that suit narration: female 冥鳴ひまり, 四国めたん, 春日部つむぎ, No.7
+  (`No.7/アナウンス` or `/読み聞かせ`); male 青山龍星, 玄野武宏, 白上虎太郎, 剣崎雌雄, 雀松朱司. The render
+  credits it as `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the
+  video description). A name the engine does not have stops the voice step with the list of the voices it has:
+  copy the exact name from it. Listen to the first video in a new voice before using it again.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
@@ -102,12 +127,41 @@ videos by their frame and by the name in the seal:
   on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
   the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
   pastes in the video's description; say so when giving the links.
+- `"style": "band"` — **the frame of the history videos from 24/11/2026** (owner, showing a short he liked:
+  "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang"; approved on a 30-second trial: "Dựng đi"): the
+  scene's own picture, blurred and dark, fills the frame; at the top the `kicker` small between two gold rules and
+  the story's `"masthead"` (a big title of at most 9 characters, e.g. `本能寺の変`) with a small red diamond under it;
+  the scene's `era` in gold on the right above the picture; the picture in a wide band across the middle (1080×780,
+  between two thin gold lines) — landscape pictures and drama stills fit it whole, a portrait or a scroll is shown
+  `"fit": "contain"`; the headline in white and the pale gold captions under the band; the hook quote big and white
+  under the band. No text lies on the picture, so a face is never under text; the rule left is that the face stays
+  inside the band during the move. First video: `nobunaga-honnoji` (version 3).
+- **Every picture moves** (owner, 24/11/2026: "nhớ phải luôn cho ảnh chuyển động"): no `hold`; a tall picture in the
+  band gets `push-in` with its `focus` on the face (a `rise` starts at its foot, with the face out of the band).
+  Vary the cuts between scenes (`slide`, `zoom`, `flash`, `dip`, `hard`; owner: "có thể thêm hiệu ứng chuyển cảnh").
+- **Drama stills first** (owner, 24/11/2026: "nên dùng nhiều hình ảnh phim ảnh hơn"): the people of a history story
+  are shown mostly by stills of one taiga drama (one face per person for the whole video: Nobunaga = Oguri Shun in
+  `豊臣兄弟！`, Yukimura = Sakai Masato in `真田丸`), found through the press galleries of the episode (`page:` of a
+  cinematoday / thetv gallery, `web:<drama> <episode> 場面写真`); two or three real pictures (the place today, the
+  real portrait) keep it true. **The hook is a drama still or a fine photograph, never an old painting** (owner,
+  24/11/2026, angry: "cái hook mở đầu quan trọng nhất mà lại để cái tranh cổ rõ xấu").
 - The kinds of content so far and their seal: history `戦国の物語` / `江戸の物語` (by the period of the story);
   "Luật ngầm & Đời sống truyền thống Nhật Bản" (hidden rules and traditional life) `日本の掟`; "Sự thật đằng sau
   những địa danh & bức ảnh thật gây ám ảnh" (the truth behind places and haunting real photographs)
   `あの場所の真実`. Their issues are titled `[Lịch sử] …`, `[Luật ngầm] …`, `[Địa danh] …` with the label
   `lich-su` (not `[Tin Nhật]` and not `jnews`: the workflow's issue steps and the Claude task do not act on them;
   Claude in the chat opens the issue, comments the links and sets `jnews-busy` while working, `jnews-done` after).
+- **The channel "Tiểu sử nhân vật nổi tiếng"** (biographies of famous people), short name **`ts`** (owner,
+  24/11/2026: "Cho cái này vào 1 kênh riêng nhé, đặt tên là tiểu sử nhân vật nổi tiếng đi, viết tắt kênh ts"): the
+  life of one person from childhood to fame, real pictures of every age, in the `"style": "full"` frame (owner, same
+  day: "Làm kiểu để ảnh full màn hình"), seal `人物伝`, `"voice": 2.4` (as the other kinds above), gentle piano at 0.7. **At most about
+  80 seconds** (owner, of the first cut at 133 s: "Bình thường chỉ 80s là cao thôi mà"): about 400 written
+  characters of script; and **read fast**: `"pace": {"speed": 1.3, "line_pause": 0.05, "scene_pause": 0.15}`
+  (owner: "ban nãy đọc nghe rề rà quá, đọc nhanh như mấy thể loại khác"; 1.2 with pauses was too slow). Its issues are titled
+  `[TS] <Japanese headline> — <Vietnamese idea>` with the label `ts` (not `jnews`; handled in the chat like the
+  `lich-su` kinds above). The format came from a source video the owner sent (a short on Putin's life); the owner
+  agreed that a person the Japanese audience loves fits better than a foreign politician they dislike. First video:
+  `2026-11-24-naruhito-oyamoto` (issue #66).
 - **Clips** (owner: "có thể dùng video (đoạn ngắn)"): a search `video:<words>` finds videos on Wikimedia Commons
   with a free licence (or `video:<address of one video file>`), keeps up to 3 of them as `<k>-<n>.mp4` (30 s at
   most, no sound) and lays six moments of each on `sheet_<k>.jpg` with their time. A picture entry picks one like
@@ -116,8 +170,9 @@ videos by their frame and by the name in the seal:
   shorter than its place) and closes in a little; `focus` says which part of it fills the frame. Commons has few
   clips that fit a story (tried on five stories: one or two each); the owner's own videos are the better source.
 - `"cut": "flash"`: a burst of pale light on the cut (a blow, a betrayal, the turn of the story).
-- `"voice": 1.7` (owner, 21/11/2026: "tăng voice to thêm 70%"): how loud the finished sound is, 1 = the usual
-  -16 LUFS. The music does not come up with it. **Every video of these new kinds carries `"voice": 1.7`.**
+- `"voice": 2.4` (owner, 21/11/2026: "tăng voice to thêm 70%" → 1.7; 24/11/2026: "tăng voice to hơn 40%" → 2.4):
+  how loud the finished sound is, 1 = the usual -16 LUFS (1.7 ≈ -12 LUFS, 2.4 ≈ -9 LUFS with a quicker limiter).
+  The music does not come up with it. **Every video of these new kinds carries `"voice": 2.4`.**
 - **Music** (owner, 21/11/2026: "nhạc nền rít quá, cho nhẹ thôi"): a gentle piano piece at `"volume": 0.7`
   (`music:Gymnopédie Satie piano`, `music:Chopin Nocturne piano`, `music:Debussy Clair de lune piano`); no
   shakuhachi or other shrill solo instrument.
@@ -229,9 +284,18 @@ kèm caption cho mỗi video"):
    - Owner, 17/11/2026: the love story (`masako-rikon`: a request for divorce, his answer, the proof, the two
      side by side in 2019) was the only video with views. When a source story has a love, couple or
      mother-and-child side, lead with it in the first line and build the story on it (true facts only).
+   - **The owner's model script** (24/11/2026, "học tập cách viết này", for the scripts Claude writes on its own
+     as for the rest; it was about Takeuchi Yuko's widower): (1) the hook gives the time since the event, the
+     person and the striking fact ("6 years since Takeuchi Yuko died, her husband Nakabayashi Taiki has not
+     remarried"); (2) a teaser of something still going on that moves people ("what he keeps doing, as if keeping
+     a promise to his wife, brings people to tears"); (3) the name again and the event in one plain line; (4) the
+     decision or turn; (5) what people said on SNS, quoted in 「」 — only comments a press article reports, never
+     made up; (6) a line that raises the stakes ("and his life after that refusal touched people even more"), then
+     the payoff details. Short plain sentences, news-like but warm, about 65 seconds (owner, 24/11/2026: "video
+     sau cũng chỉ làm 65s thôi"; `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}`).
    Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
-   rewritten), with `style: "story"` (used for every source video since 15/11) and a fitting `kicker` (e.g. `皇室の物語`
+   rewritten), with the frame and the voice that fit the story ("Frame and voice by content", 25/11/2026; `"story"` was used for every source video from 15/11 to 24/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
    searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
    6 seconds of words (1 is enough under that, rule change 6).

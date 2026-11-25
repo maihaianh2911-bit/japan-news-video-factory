@@ -19,3 +19,6 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `car-window-tired.jpg` | Bà Masako nhìn ra cửa kính xe, vẻ mệt mỏi (thời kỳ dưỡng bệnh) | 800×535 | kaigo-postseven.com | 2026-11-21-masako-jinkaku |
 | `pink-suit-smiling.jpg` | Bà Masako mặc vest hồng, cười, khổ vuông | 1200×1200 | 25ans.jp | 2026-11-21-masako-jinkaku |
 | `teal-suit-desk.jpg` | Bà Masako mặc vest xanh ngọc ngồi ở bàn họp báo, điềm tĩnh | 600×897 | bunshun.jp | 2026-11-21-masako-jinkaku |
+| `2002-baby-aiko-sofa.jpg` | Bà Masako cười với bé Aiko cười trên sofa (dùng contain) | 800×612 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
+| `1990s-kimono-smile.jpg` | Bà Masako kimono vàng nhạt, thập niên 1990, cận mặt | 800×800 | j7p.jp | 2026-11-24-arigatou |
+| `1999-magazine-blue-hat.jpg` | Trang tạp chí '1999年の雅子さま', mũ xanh (ảnh phẳng) | 945×1200 | paypayfleamarket.yahoo.co.jp | 2026-11-24-arigatou |

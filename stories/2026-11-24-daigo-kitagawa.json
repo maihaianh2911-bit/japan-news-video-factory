@@ -1,0 +1,301 @@
+{
+  "date": "2026-11-24",
+  "style": "full",
+  "kicker": "夫婦の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "stage": "render",
+  "title": "DAIGOと北川景子、結婚10年",
+  "issue": 71,
+  "source": "デイリースポーツ、モデルプレス、LIMO、J-CAST",
+  "scenes": [
+    {
+      "label": "KSK",
+      "headline": "DAIGOと北川景子",
+      "lines": [
+        {
+          "text": "結婚から10年。DAIGOが北川景子に贈ったプロポーズの言葉は、たった3文字でした。",
+          "quote": true,
+          "say": "結婚から10年。だいごが、きたがわけいこに贈ったプロポーズの言葉は、たった3文字でした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.49,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-7",
+          "focus": [
+            0.6,
+            0.15
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Mở đầu: DAIGO, rồi hai vợ chồng ở tiệc cưới."
+    },
+    {
+      "label": "DAIGO",
+      "era": "DAIGO",
+      "headline": "DAIGO",
+      "lines": [
+        {
+          "text": "その10年目の記念日に、DAIGOが公開した一枚に、多くの人が心を温められました。",
+          "say": "その10年目の記念日に、だいごが公開した一枚に、多くの人が心を温められました。"
+        },
+        {
+          "text": "DAIGO。元総理・竹下登の孫で、アルファベットの略語、DAI語でおなじみです。",
+          "say": "だいご。元総理、たけしたのぼるの孫で、アルファベットの略語、だいごでおなじみです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-9",
+          "focus": [
+            0.32,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-3",
+          "focus": [
+            0.48,
+            0.3
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.46,
+            0.25
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "DAIGO, ông nội là cựu Thủ tướng Takeshita Noboru, DAIGO làm dấu tay.",
+      "cut": "fade"
+    },
+    {
+      "label": "再会",
+      "era": "2014年",
+      "headline": "再会と100キロ",
+      "lines": [
+        {
+          "text": "北川景子との再会は、2014年1月11日。バラエティ番組のロケでした。",
+          "say": "きたがわけいことの再会は、2014年1月11日。バラエティ番組のロケでした。"
+        },
+        {
+          "text": "2015年8月、DAIGOは24時間テレビで100キロを走り切ります。",
+          "say": "2015年8月、だいごは、24時間テレビで100キロを走り切ります。"
+        },
+        {
+          "text": "スタートの日は、北川の誕生日でした。",
+          "say": "スタートの日は、きたがわの誕生日でした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "focus": [
+            0.42,
+            0.59
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "8-2",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "12-5",
+          "focus": [
+            0.57,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kitagawa Keiko, DAIGO chạy marathon 100 km năm 2015, Kitagawa cười.",
+      "cut": "fade"
+    },
+    {
+      "label": "プロポーズ",
+      "era": "2015年8月",
+      "headline": "プロポーズ",
+      "lines": [
+        {
+          "text": "そしてその夏、DAIGOはプロポーズします。",
+          "say": "そしてその夏、だいごはプロポーズします。"
+        },
+        {
+          "text": "言葉は「KSK」。結婚してください。",
+          "quote": true,
+          "say": "言葉は、ケーエスケー。結婚してください。"
+        },
+        {
+          "text": "けれど北川は、DAI語で返事ができなかったことを、ずっと悔やんでいたといいます。",
+          "say": "けれど、きたがわは、だいごで返事ができなかったことを、ずっと悔やんでいたといいます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-9",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-5",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "4-11",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Họp báo cưới 2016, Kitagawa khoe nhẫn.",
+      "cut": "fade"
+    },
+    {
+      "label": "結婚",
+      "era": "2016年",
+      "headline": "再会の日に",
+      "lines": [
+        {
+          "text": "そこでDAIGOは、披露宴で、もう一度歌に乗せて「KSK」を伝えました。",
+          "say": "そこで、だいごは、披露宴で、もう一度歌に乗せて、ケーエスケーを伝えました。"
+        },
+        "婚姻届を出したのは、2016年1月11日。二人が再会した、ちょうど2年後の同じ日でした。"
+      ],
+      "photo": [
+        {
+          "pick": "9-7",
+          "focus": [
+            0.55,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-6",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Tiệc cưới, ảnh cưới, hai người ở họp báo.",
+      "cut": "fade"
+    },
+    {
+      "label": "会見",
+      "era": "2016年",
+      "headline": "主導権は？",
+      "lines": [
+        {
+          "text": "会見で、家庭の主導権はどちらかと聞かれると、二人そろって北川だと答えています。",
+          "say": "会見で、家庭の主導権はどちらかと聞かれると、二人そろって、きたがわだと答えています。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-5",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "9-5",
+          "focus": [
+            0.51,
+            0.1
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Hai người cười ở họp báo.",
+      "cut": "fade"
+    },
+    {
+      "label": "10年",
+      "era": "2026年1月",
+      "headline": "結婚10年",
+      "lines": [
+        {
+          "text": "そして迎えた10年目の結婚記念日。DAIGOが公開したのは、お祝いのケーキと、一枚のTシャツ。",
+          "say": "そして迎えた10年目の結婚記念日。だいごが公開したのは、お祝いのケーキと、一枚のTシャツ。"
+        },
+        "そこには、娘が描いたイラストがプリントされていました。",
+        "ネットには、10年の節目を祝う声があふれました。"
+      ],
+      "photo": [
+        {
+          "pick": "10-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-1",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "14-2",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Bánh kỷ niệm 10 năm và chiếc áo in hình con gái vẽ, rồi hai vợ chồng.",
+      "cut": "fade"
+    }
+  ],
+  "searches": [
+    "wiki:DAIGO",
+    "wiki:北川景子",
+    "wiki:竹下登",
+    "web:DAIGO 北川景子 結婚会見 => a smiling couple at a wedding press conference",
+    "page:https://mdpr.jp/wedding/detail/1556730",
+    "page:https://www.daily.co.jp/gossip/2016/01/12/0008714697.shtml",
+    "page:https://www.daily.co.jp/gossip/marriage/2016/04/30/0009041265.shtml",
+    "web:DAIGO 24時間テレビ マラソン 2015 => a man running a marathon",
+    "web:DAIGO 北川景子 披露宴 => a bride and groom at a wedding reception",
+    "web:DAIGO 結婚10周年 ケーキ Tシャツ => a celebration cake",
+    "page:https://limo.media/articles/-/110774",
+    "web:北川景子 => portrait of a Japanese actress smiling",
+    "web:DAIGO => portrait of a Japanese male singer smiling",
+    "web:DAIGO 北川景子 夫婦 => a smiling couple",
+    "web:北川景子 DAIGO 火曜サプライズ => a man and a woman on a TV variety show",
+    "web:竹下登 => portrait of a Japanese prime minister",
+    "music:Debussy Clair de lune piano"
+  ],
+  "music": {
+    "pick": "17-2",
+    "volume": 0.7
+  }
+}

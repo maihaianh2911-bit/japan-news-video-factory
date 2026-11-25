@@ -28,6 +28,8 @@ CUTS = {
     "dip": "tối dần rồi sáng lại",
     "flash": "lóe sáng rồi hiện cảnh mới",
     "flip": "lật thẻ sang món tiếp theo (khung đồ dùng)",
+    "slide": "cảnh mới trượt vào từ bên phải, đẩy cảnh cũ sang trái",
+    "zoom": "cảnh cũ phóng vụt vào rồi tan thành cảnh mới",
 }
 AUTO_MOVES = ("push-in", "pan-right", "pull-back", "pan-left")   # what the automatic choice looks like, in turn
 AUTO_CUT = {"news": "fade", "paper": "page"}
