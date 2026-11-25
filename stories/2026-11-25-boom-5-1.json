@@ -15,6 +15,7 @@
     "text": true
   },
   "voice": 1.7,
+  "speaker": "玄野武宏",
   "searches": [
     "web:ギャレット ポップコーン",
     "web:ギャレット 原宿 行列",
@@ -61,7 +62,7 @@
           "move": "push-in"
         },
         {
-          "pick": "14-5",
+          "pick": "13-12",
           "focus": [
             0.5,
             0.5
@@ -69,7 +70,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Mở đầu: ảnh ghép 4 món, hàng dài trước tiệm Garrett, rồi trước tiệm trà sữa."
+      "why": "Mở đầu: ảnh ghép 4 món, hàng dài trước tiệm Garrett, rồi ly trà sữa cận cảnh."
     },
     {
       "label": "第5位",
@@ -148,20 +149,20 @@
       },
       "photo": [
         {
+          "pick": "6-13",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
           "pick": "5-2",
           "focus": [
             0.5,
             0.5
           ],
           "move": "push-in"
-        },
-        {
-          "pick": "5-1",
-          "focus": [
-            0.5,
-            0.5
-          ],
-          "move": "pull-back"
         },
         {
           "pick": "4-3",
@@ -180,7 +181,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Kẹo caramel: hàng người chờ mua, kẹo cận cảnh."
+      "why": "Kẹo caramel: trang trại Hanabatake, hàng người chờ mua, kẹo cận cảnh."
     },
     {
       "label": "第3位",
@@ -213,7 +214,7 @@
           "move": "push-in"
         },
         {
-          "pick": "8-4",
+          "pick": "9-1",
           "focus": [
             0.5,
             0.5
@@ -237,7 +238,7 @@
           "move": "pull-back"
         }
       ],
-      "why": "Krispy Kreme: hàng dài ở tiệm Shinjuku, hộp bánh, rồi tiệm lúc chiều tối."
+      "why": "Krispy Kreme: hàng dài ở tiệm Shinjuku, bánh phủ đường trên vỉ, hộp bánh, rồi tiệm lúc chiều tối."
     },
     {
       "label": "第2位",
@@ -319,20 +320,20 @@
       },
       "photo": [
         {
+          "pick": "14-10",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        },
+        {
           "pick": "14-9",
           "focus": [
             0.5,
             0.5
           ],
           "move": "push-in"
-        },
-        {
-          "pick": "14-5",
-          "focus": [
-            0.5,
-            0.5
-          ],
-          "move": "pull-back"
         },
         {
           "pick": "15-10",
@@ -351,7 +352,7 @@
           "move": "rise"
         }
       ],
-      "why": "Trà sữa: hàng người xếp, rồi các tiệm đóng cửa kéo rèm."
+      "why": "Trà sữa: cô gái cầm ly trà sữa, hàng người xếp, rồi các tiệm đóng cửa kéo rèm."
     }
   ],
   "music": {
