@@ -167,9 +167,12 @@ def speaker_id(choice=""):
     speakers = json.loads(request("/speakers"))
     found = next((style["id"] for speaker in speakers if speaker["name"] == name
                   for style in speaker["styles"] if style["name"] == wanted), None)
-    if found is None and "/" not in (choice or "/"):   # a name alone: its first style when it has no ノーマル
-        found = next((speaker["styles"][0]["id"] for speaker in speakers if speaker["name"] == name
-                      and speaker["styles"]), None)
+    for whole in ([name] if "/" not in (choice or "/") else []) + ([choice] if choice and "/" in choice else []):
+        if found is None:   # a name alone (its first style when it has no ノーマル), or a name with a "/" in it (小夜/SAYO)
+            found = next((style["id"] for speaker in speakers if speaker["name"] == whole
+                          for style in speaker["styles"] if style["name"] == STYLE), None) or next(
+                (speaker["styles"][0]["id"] for speaker in speakers if speaker["name"] == whole and speaker["styles"]),
+                None)
     if found is None:
         available = ", ".join(f"{speaker['name']}/{style['name']}" for speaker in speakers for style in speaker["styles"])
         raise RuntimeError(f"VOICEVOX voice {name}/{wanted} not found in this engine. Available: {available}")
