@@ -31,7 +31,8 @@
     "web:タピオカミルクティー",
     "web:タピオカ 行列 原宿",
     "web:タピオカ 店 閉店",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "file:stories/media/2026-11-25-boom-5-1/web-tong.jpg"
   ],
   "scenes": [
     {
@@ -42,7 +43,33 @@
           "text": "トップ10！大流行してたのに、一瞬で見なくなったもの、パート2。",
           "say": "トップテン！大流行してたのに、一瞬で見なくなったもの、パートツー。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "17-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "2-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: ảnh ghép 4 món, hàng dài trước tiệm Garrett, rồi trước tiệm trà sữa."
     },
     {
       "label": "第5位",
@@ -54,7 +81,49 @@
         },
         "ところが専門店は次々と閉店し、行列も消えました。"
       ],
-      "cut": "flip"
+      "cut": "flip",
+      "product": {
+        "pick": "1-2",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "1-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-16",
+          "focus": [
+            0.5,
+            0.6
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Bỏng ngô Garrett: tiệm Harajuku, hàng dài, bỏng ngô, rồi tòa nhà vắng."
     },
     {
       "label": "第4位",
@@ -69,7 +138,49 @@
           "say": "しかし勢いは続かず、札幌の工場は、わずかいちねんほどで閉鎖されたんです。"
         }
       ],
-      "cut": "flip"
+      "cut": "flip",
+      "product": {
+        "pick": "4-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "5-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-11",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Kẹo caramel: hàng người chờ mua, kẹo cận cảnh."
     },
     {
       "label": "第3位",
@@ -84,7 +195,49 @@
           "say": "ところがにせんじゅうろくねんには、にじゅってん近くが一斉に閉店しました。"
         }
       ],
-      "cut": "flip"
+      "cut": "flip",
+      "product": {
+        "pick": "7-14",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pan-right"
+        },
+        {
+          "pick": "7-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-16",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Krispy Kreme: hàng dài ở tiệm Shinjuku, hộp bánh, rồi tiệm lúc chiều tối."
     },
     {
       "label": "第2位",
@@ -99,7 +252,49 @@
           "say": "フィリピンは生産を一気に増やしましたが、ブームはすぐにしぼみ、輸出はいちねんで半分以下に。"
         }
       ],
-      "cut": "flip"
+      "cut": "flip",
+      "product": {
+        "pick": "10-10",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "10-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-14",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Thạch dừa: bát thạch dừa, đồ uống, thìa thạch dừa, chè trái cây."
     },
     {
       "label": "第1位",
@@ -114,7 +309,53 @@
           "say": "ところがにせんにじゅうねんには閉店が相次ぎ、神戸・さんのみやでは、ブームでできた店の半分が姿を消しました。"
         }
       ],
-      "cut": "flip"
+      "cut": "flip",
+      "product": {
+        "pick": "13-4",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "14-9",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "15-10",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-6",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "rise"
+        }
+      ],
+      "why": "Trà sữa: hàng người xếp, rồi các tiệm đóng cửa kéo rèm."
     }
-  ]
+  ],
+  "music": {
+    "pick": "16-1",
+    "volume": 0.7
+  }
 }
