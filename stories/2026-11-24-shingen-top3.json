@@ -29,7 +29,18 @@
           "say": "かいのとら、たけだしんげん、もっともかがやかしい、せんか、トップスリー。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng Shingen (Abe Hiroshi) đội mũ lông trắng"
     },
     {
       "label": "第三位",
@@ -53,7 +64,35 @@
           "text": "対する武田軍は三千でした。",
           "say": "たいする、たけだぐんは、さんぜんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "23-2",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "9-1",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-14",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Trượt sang hạng 3: núi non Shinano trong sương, Shingen, quân Takeda tiến",
+      "cut": "slide"
     },
     {
       "label": "第三位",
@@ -72,7 +111,36 @@
           "text": "この勝利から十一年、信玄は信濃のほぼすべてを手に入れました。",
           "say": "このしょうりから、じゅういちねん、しんげんは、しなののほぼすべてを、てにいれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "24-6",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "27-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "23-7",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Tối dần: tranh trận đánh ban đêm, kỵ binh, hồ Suwa ở Shinano",
+      "cut": "dip"
     },
     {
       "label": "第二位",
@@ -92,7 +160,35 @@
           "text": "信玄は軍を二つに分け、別働隊一万二千を妻女山の上杉陣へ向かわせました。",
           "say": "しんげんは、ぐんをふたつにわけ、べつどうたい、いちまんにせんを、さいじょさんの、うえすぎじんへ、むかわせました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "29-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "14-1",
+          "move": "push-in",
+          "focus": [
+            0.33,
+            0
+          ]
+        },
+        {
+          "pick": "18-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Phóng vào hạng 2: tượng Shingen và Kenshin, Kenshin (GACKT), núi Saijo nhìn xuống Kawanakajima",
+      "cut": "zoom"
     },
     {
       "label": "第二位",
@@ -111,7 +207,36 @@
           "text": "本陣は持ちこたえ、山を下りた高坂昌信らの別働隊が上杉軍の横を突くと、謙信は兵を引きました。",
           "say": "ほんじんはもちこたえ、やまをおりた、こうさかまさのぶらの、べつどうたいが、うえすぎぐんのよこをつくと、けんしんは、へいをひきました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "14-13",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ]
+        },
+        {
+          "pick": "9-17",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Lóe sáng: tranh đánh tay đôi, tượng tay đôi ở Hachimanbara, quân Takeda",
+      "cut": "flash"
     },
     {
       "label": "第二位",
@@ -126,7 +251,28 @@
           "text": "それでも、北信濃は武田のものになりました。",
           "say": "それでも、きたしなのは、たけだのものに、なりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "30-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Tối dần: quân sư Yamamoto Kansuke (Uchino Seiyō), bình phong Kawanakajima",
+      "cut": "dip"
     },
     {
       "label": "第一位",
@@ -146,7 +292,25 @@
           "text": "迎え撃つのは、徳川家康の八千と、織田信長が送った援軍三千。",
           "say": "むかえうつのは、とくがわいえやすのはっせんと、おだのぶながが、おくった、えんぐんさんぜん。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "37-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "12-6",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Phóng vào hạng 1: Shingen VS Ieyasu có tên, rồi kỵ binh Takeda",
+      "cut": "zoom"
     },
     {
       "label": "第一位",
@@ -161,7 +325,36 @@
           "text": "そこへ武田の騎馬隊が突っ込み、勝頼らの二の矢が続きます。",
           "say": "そこへ、たけだのきばたいが、つっこみ、かつよりらの、にのやが、つづきます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "10-8",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "10-16",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Lóe sáng: trận Mikatagahara trong phim, võ sĩ Takeda giáp đỏ, tranh trận đánh giữa tuyết",
+      "cut": "flash"
     },
     {
       "label": "第一位",
@@ -176,7 +369,25 @@
           "text": "家康の生涯で、最も大きな敗北です。",
           "say": "いえやすのしょうがいで、もっともおおきな、はいぼくです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-1",
+          "move": "push-in",
+          "focus": [
+            0.75,
+            0
+          ]
+        },
+        {
+          "pick": "32-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Cắt thẳng: Ieyasu bò chạy, bức Ieyasu nhăn mặt",
+      "cut": "hard"
     },
     {
       "label": "その後",
@@ -187,7 +398,27 @@
           "text": "そしてその三か月余り後、信玄は陣中で病が重くなり、五十三歳で世を去りました。",
           "say": "そして、そのさんかげつあまりのち、しんげんは、じんちゅうで、やまいがおもくなり、ごじゅうさんさいで、よをさりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.2
+          ]
+        },
+        {
+          "pick": "26-16",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Tối dần: Shingen ngồi giữa rừng, rồi mộ Shingen ngày nay",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -226,6 +457,11 @@
     "file:stories/media/library/takeda-shingen/shingen-kuniyoshi-kabuto-print.jpg",
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
-    "music:Debussy Clair de lune piano"
-  ]
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-24-shingen-top3/vs-shingen-ieyasu.jpg"
+  ],
+  "music": {
+    "pick": "35-2",
+    "volume": 0.7
+  }
 }
