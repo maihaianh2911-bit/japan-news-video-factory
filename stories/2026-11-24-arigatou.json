@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 75,
   "title": "「生まれてきてくれてありがとう」と「生んでくれてありがとう」",
   "date": "2026-11-24",
@@ -20,7 +20,7 @@
   "scenes": [
     {
       "label": "母の涙",
-      "era": "2002年",
+      "era": "2002年 ― 2022年",
       "headline": "母が流した\n喜びの涙",
       "lines": [
         {
@@ -55,7 +55,7 @@
     },
     {
       "label": "母と娘",
-      "era": "令和",
+      "era": "母と娘",
       "headline": "雅子さまと\n愛子さま",
       "lines": [
         {
@@ -259,12 +259,12 @@
           "move": "pull-back"
         },
         {
-          "pick": "11-1",
+          "pick": "11-7",
           "fit": "contain",
           "move": "push-in"
         }
       ],
-      "why": "Aiko nói câu cảm ơn, rồi cận mặt, cuối cùng hai mẹ con hồi Aiko còn nhỏ.",
+      "why": "Aiko nói câu cảm ơn, cận mặt, rồi kết bằng hai mẹ con bây giờ cười bên nhau.",
       "cut": "slide"
     }
   ],
