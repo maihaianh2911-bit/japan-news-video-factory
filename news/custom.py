@@ -23,7 +23,7 @@ STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "sce
 STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazine")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker"}
 LINE_KEYS = {"text", "say", "quote"}
-QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
+QUOTE_MOST = 56   # characters of a quote line: 4 rows (owner, 21/11/2026: 3 rows, 42; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng")
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
 FX_KEYS = {"motion", "depth", "text", "face"}
 TONES = ("sepia", "mono", "color")
@@ -280,7 +280,8 @@ def validate(data, name=None):
 
 def hook_warnings(data):
     """The hook rules of 21/11/2026 for a story with "fx" (owner: "quá dài rồi, chỉ nên để 3 dòng thôi, ảnh hook
-    đầu không quá 5s"): a quote is printed on at most 3 rows, so it has at most QUOTE_MOST characters; and the
+    đầu không quá 5s"; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng" → 4 rows): a quote is printed on at
+    most 4 rows, so it has at most QUOTE_MOST characters; and the
     first picture stays at most 5 seconds, so a first scene read longer than that needs a second picture (about
     0.15 s a character). Warnings, not problems: stories finished before the rule still validate."""
     scenes = data.get("scenes")
@@ -290,7 +291,7 @@ def hook_warnings(data):
     for number, scene in enumerate(scenes, 1):
         for index, line in enumerate(scene.get("lines") or [], 1) if isinstance(scene, dict) else ():
             if isinstance(line, dict) and line.get("quote") and len(line.get("text") or "") > QUOTE_MOST:
-                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 3 rows, so at most "
+                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 4 rows, so at most "
                                 f"{QUOTE_MOST} characters (this one has {len(line['text'])}): make the quote the first "
                                 f"part of the sentence and give the rest as the next line, not a quote")
     first = scenes[0]

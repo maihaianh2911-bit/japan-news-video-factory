@@ -87,9 +87,11 @@ Each rule is a question a look at the picture answers with yes or no. A picture 
 is: frame it again, pick another, or search again.
 
 **The first picture (the hook, about the first 5 seconds)** — owner, 21/11/2026: "quá dài rồi, chỉ nên để 3 dòng
-thôi, ảnh hook đầu không quá 5s": the hook line printed big (`"quote": true`) is **at most 3 rows, so at most 42
-characters**: a longer first sentence is split in two lines of the story, the first part the quote, the rest a
-normal line (the words stay the same, also for a script the owner says to keep unchanged); and **the first picture
+thôi, ảnh hook đầu không quá 5s"; changed on 25/11/2026, after the three videos of the channel with over 100k views
+turned out to have hooks of 44–48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng". The hook line
+printed big (`"quote": true`) tells the whole idea: **at most 4 rows, so at most 56 characters**; a still longer
+first sentence is split in two lines of the story, the first part the quote, the rest a normal line (the words stay
+the same, also for a script the owner says to keep unchanged); and **the first picture
 stays at most 5 seconds** (with `fx` the engine cuts to the scene's next picture after 5 s, so a first scene read
 longer than that needs a second picture). `python -m news.custom` prints a `warning:` for both: settle it.
 1. It is the best picture of the whole video: sharp, bright, not blurred, not grainy.
@@ -216,6 +218,11 @@ The owner is Vietnamese and not technical: answer in short, simple Vietnamese, n
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
 picture, quality is not traded for usage; a script the owner sends was translated faithfully and never cut or
 rewritten until 19/11/2026: it may now be improved, rule change 1 above).
+
+**The chat of the `[Tin Nhật]` channel makes videos of the Japanese imperial family only** (owner, 25/11/2026: "Chat
+này vẫn chỉ làm hoàng gia nhật"; before, angry at a story of a singer: "mày làm hoàng gia nhật cơ mà"): stories
+Claude proposes or writes there are about the Japanese imperial family (天皇家, 秋篠宮家, the princesses who left
+it, the emperors and empresses of the past), never a foreign royal family or a star.
 
 This repo makes vertical Japanese news shorts (1080×1920): news frame, VOICEVOX voice 青山龍星, captions timed to
 the voice. The daily schedule is off (owner, 12/11/2026). Since 13/11/2026 it works like the owner's other channels:

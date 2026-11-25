@@ -1607,6 +1607,7 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
 QUOTE_IN = 0.35
 
 
+QUOTE_ROWS = 4     # the rows a quote may take (owner, 25/11/2026)
 QUOTE_ON = False   # set by encode()/stills() while a quote is shown: the scene's own text waits meanwhile
 
 
@@ -1646,12 +1647,13 @@ def draw_quote(image, line, age):
         return
     # break where the captions break (after a comma, between phrases), each piece on its own line if it fits
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
-    # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
-    joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    if style.layout in ("full", "band", "album", "magazine"):   # as large as three rows allow
-        words, size = fit("".join(pieces), 960, 96 if style.layout in ("full", "band") else 84, 3, smallest=52)
+    # 4 rows at most (owner, 21/11/2026: 3 rows; 25/11/2026, after the three videos with the most views had hooks of
+    # 44-48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng"): more pieces are run together and wrapped
+    joined = "\n".join(pieces) if len(pieces) <= QUOTE_ROWS else "".join(pieces)
+    if style.layout in ("full", "band", "album", "magazine"):   # as large as the rows allow
+        words, size = fit("".join(pieces), 960, 96 if style.layout in ("full", "band") else 84, QUOTE_ROWS, smallest=52)
     else:
-        words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
+        words, size = fit(joined, 920, 92, min(QUOTE_ROWS, max(len(pieces), 2)), smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     if style.layout == "full":
