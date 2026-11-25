@@ -121,7 +121,7 @@ def main():
         "release": {"url": release.url, "published": release.published.isoformat(),
                     "publisher": release.publisher, "title": release.title},
         "photos": [photo.credit() for photo in photos],
-        "voice_credit": voice_credit(getattr(release, "speaker", "")),
+        "voice_credit": voice_credit(getattr(release, "speaker", ""), [beat.speaker for beat in beats if beat.speaker]),
         "music": release.music.credit() if release.music else None,
         "scenes": [
             dict(asdict(beat),

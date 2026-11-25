@@ -66,7 +66,13 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   (`No.7/アナウンス` or `/読み聞かせ`); male 青山龍星, 玄野武宏, 白上虎太郎, 剣崎雌雄, 雀松朱司. The render
   credits it as `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the
   video description). A name the engine does not have stops the voice step with the list of the voices it has:
-  copy the exact name from it. Listen to the first video in a new voice before using it again.
+  copy the exact name from it. Listen to the first video in a new voice before using it again. A scene may have its
+  own `"speaker"` too (a sampler of voices, a quote in another voice); the credit then names every voice used.
+  Owner, 25/11/2026, after two trials (冥鳴ひまり with a classical shakuhachi, No.7 読み聞かせ with a modern one):
+  "ko hay, cả 2 giọng lẫn sáo đều ko, dùng sáo tao gửi này, còn giọng thì tìm lại" — those two voices and those two
+  Commons flute pieces are not used; the owner's own flute is `stories/media/music/owner-flute-1.mp3` (58.7 s,
+  `"music:file:stories/media/music/owner-flute-1.mp3"` as a search, credited 提供音源), and the voice is chosen
+  from a sampler video of 13 voices (`stories/2026-11-25-test-voice-samples.json`) by the owner.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it

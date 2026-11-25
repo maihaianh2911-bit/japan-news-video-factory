@@ -22,6 +22,8 @@ For every entry of "searches" not searched before:
 - "url:<picture address> [<page address>]": that one picture.
 - "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
   video, owner 16/11/2026), credited as 元動画 (the source video).
+- "music:file:stories/media/<…>.mp3": a piece kept in the repository (the owner's own, 25/11/2026), credited by
+  the first line of <name>.credit.txt beside it.
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
   12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence.
 
@@ -760,7 +762,27 @@ def seconds_of(path):
         return None
 
 
+MUSIC_FILES = {".mp3": "mp3", ".ogg": "ogg", ".oga": "ogg", ".wav": "wav", ".flac": "flac", ".m4a": "m4a"}
+
+
+def music_file(path, k, out):
+    """A piece kept in the repository (owner, 25/11/2026: "dùng sáo tao gửi này"): "music:file:stories/media/…",
+    credited by the first line of <name>.credit.txt beside it."""
+    source = (REPO / path).resolve()
+    if not str(source).startswith(str((REPO / "stories" / "media").resolve()) + "/") or not source.is_file() \
+            or source.suffix.lower() not in MUSIC_FILES:
+        raise Unusable(f"music:file: must name an audio file under stories/media/, got {path!r}")
+    credit = source.with_suffix(".credit.txt")
+    artist = credit.read_text(encoding="utf-8").strip().splitlines()[0] if credit.is_file() else "提供音源"
+    name = f"{k}-1.{MUSIC_FILES[source.suffix.lower()]}"
+    (out / name).write_bytes(source.read_bytes())
+    return [{"title": source.name, "page": "", "license": "", "license_url": "", "artist": artist,
+             "description": f"kept in the repository: {path}", "file": name, "seconds": seconds_of(out / name)}]
+
+
 def music_find(query, k, out):
+    if query.startswith("file:"):
+        return music_file(query[len("file:"):].strip(), k, out)
     kept = []
     for result in music_search(query):
         if len(kept) == MUSIC_KEEP:

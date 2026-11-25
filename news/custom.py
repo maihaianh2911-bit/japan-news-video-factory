@@ -21,7 +21,7 @@ from .visuals import Footage, Photo
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx", "voice", "masthead", "speaker"}
 STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazine")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era"}
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
@@ -225,10 +225,13 @@ def validate(data, name=None):
             problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
-    speaker = data.get("speaker", "")   # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits)
-    if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
-        problems.append(f'"speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. "四国めたん" or '
-                        f'"玄野武宏/ノーマル"), got {speaker!r}')
+    # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits), of the story or of one scene
+    for where, speaker in [("story", data.get("speaker", ""))] + [
+            (f"scene {number}", scene.get("speaker", "")) for number, scene in enumerate(data.get("scenes") or [], 1)
+            if isinstance(scene, dict)]:
+        if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
+            problems.append(f'{where}: "speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. '
+                            f'"四国めたん" or "玄野武宏/ノーマル"), got {speaker!r}')
     voice = data.get("voice", 1.0)
     if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
         problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
@@ -405,7 +408,7 @@ def load_story(path, pictures=None):
                           scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else (),
                           scene.get("cut", ""), scene.get("why", ""), scene.get("era", ""),
                           tuple(number for number, line in enumerate(scene["lines"])
-                                if isinstance(line, dict) and line.get("quote"))))
+                                if isinstance(line, dict) and line.get("quote")), scene.get("speaker", "")))
         if picks:
             if found is None:
                 raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "
