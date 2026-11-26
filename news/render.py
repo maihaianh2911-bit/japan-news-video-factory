@@ -367,7 +367,7 @@ def paper_grain(color):
 
 # --- motion: pictures that move, text that comes in, transitions between scenes, film grain (paper) ---
 PHOTO_TOP, PHOTO_HEIGHT = 338, 700
-STORY_TOP, STORY_HEIGHT = 172, 1258     # "story": the picture from under the masthead to above the captions
+STORY_TOP, STORY_HEIGHT = 172, 1000     # "story": the picture from under the masthead to above the captions
 INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of the frame, melting into the page
 INK_GOLD = "#d9b96a"
 FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
@@ -406,7 +406,7 @@ def page_area():
 def caption_centre():
     if HOST and style.layout == "band":
         return HOST_CAPTION_CENTRE
-    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1252, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
+    return {"story": 1268, "ink": 1614, "full": 1560, "band": 1252, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -1049,7 +1049,7 @@ def band_layout(beat, release, has_photo, demo):
         return image, layer, [part for part in parts if part]
     blocks = []
     # one row, between the picture and the captions: the text stays above the part of the screen TikTok covers
-    headline, size = fit(beat.headline if HOST else beat.headline.replace("\n", ""), 960 if HOST else 820,
+    headline, size = fit(beat.headline.replace("\n", ""), 960 if HOST else 820,
                          56 if HOST else 62, 1, smallest=40)
     blocks.append((headline, size, style.text, True, 16))
     if beat.value:
@@ -1753,7 +1753,8 @@ def draw_quote(image, line, age, hook=False):
         while style.layout == "band" and size > 52 and block_height(words, size, 22) > BAND_QUOTE_ROOM:
             words, size = fit("".join(pieces), wide, size - 4, QUOTE_ROWS, smallest=52)
     else:
-        words, size = fit(joined, 920, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
+        # 850 wide: clear of the icons TikTok lays on the right of the screen
+        words, size = fit(joined, 850, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
                           smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
