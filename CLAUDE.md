@@ -105,6 +105,37 @@ rule below; the voice and the flute are already new, see above):
 - After a week, ask the owner for the YouTube Studio numbers of 3–5 videos (views, viewed vs swiped away, average %
   viewed): 0–50 views each points at the channel (settings, re-uploads, VPN), a few hundred that stop at the videos.
 
+## Two new kinds of content in the narrator frame (owner, 26/11/2026) — being set up, no video made yet
+The owner showed a Vietnamese short (a masked presenter at the foot, the pictures above, a big title between them:
+"Cha đẻ của TĐ Phú Cường") and said: "Tao định đẻ thêm 2 loại nội dung cho video này, 1 loại sẽ dành cho doanh nhân,
+chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` frame with a narrator (`"host"`).
+- **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
+  Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
+- **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
+  ファスト映画 (arrests in 2021, 500 million yen of damages) and proposed behind-the-scenes stories instead; the owner
+  answered "TikTok vẫn cho làm review phim mà". So reviews are made, in our own words with our own comment (the
+  film's dialogue is not read out at length). The angle is a question about a film, the owner's example: "vì sao khi
+  xem mộ đom đóm những người cứng rắn nhất cũng sẽ khóc".
+- **How a video of these two kinds is made** (owner: "tao sẽ gửi cho mày một video khá dài khoảng 10 phút, hoặc là
+  tao sẽ gửi cho mày một kịch bản dài. Sau đó mày sẽ dựa vào đó để dựng lại một kịch bản mới khoảng 3 phút, 2 đến 3
+  phút thôi. Sau đó thì phần hình ảnh thì có thể lấy ở video tao gửi, nhưng mà mình sẽ chỉ làm khoảng 5 giây đầu hook
+  là video, còn đoạn sau mình sẽ dùng hình ảnh"): the owner sends a long source (a video of about 10 minutes, or a
+  long script); Claude writes a new script of **2–3 minutes** from it, shown in the chat and approved before anything
+  is built; **the first about 5 seconds (the hook) are moving footage** from the owner's video, everything after is
+  still pictures (frames of the owner's video, `tools/video_frames.py`, and the searches).
+- **Length**: 2–3 minutes are the owner's words for these two kinds, so up to 180 s here (the owner was told that
+  iron rule 3 says 160 s and that Claude reads this as "these two kinds only"; the other kinds keep 160 s).
+- **Not settled yet** (Claude's proposals, the owner has not answered): the seals `成功者の物語` and `映画の裏話`; the
+  issue titles `[Doanh nhân] …` and `[Phim] …`; a narrator character for each kind (the samurai is for history;
+  proposed for films: a cinema attendant in uniform holding popcorn), drawn by ChatGPT on green like the samurai.
+- **What the engine lacks for it**: a clip comes from Commons or from an https address only (`video:` in
+  `news/find.py`): the hook clip of the owner's video needs `video:file:stories/media/<story>/<name>.mp4`, to be
+  added and tried on the first source video (the owner approves the trial). The cloud session has no speech-to-text
+  (the model's host is refused by the network): the words of a source video are read from its burnt-in captions;
+  when it has none, ask the owner for the script as text.
+- A first script was drafted before the owner described this way of working (火垂るの墓, about 70 s, in the chat of
+  26/11/2026, not approved): it is rewritten to 2–3 minutes from the owner's source when it comes.
+
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
 is: frame it again, pick another, or search again.
