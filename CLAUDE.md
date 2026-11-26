@@ -52,9 +52,11 @@ it stands in that channel's own section.
     understands: who, what happened, and the one thing of the story worth remembering (a contrast, a number, or a
     real quote). A name the Japanese audience recognises at once stands in the first line; an unknown name comes
     later. A channel with a hook pattern of its own follows it (the business channel: 「…の生みの親」).
-12b. **How long the hook is.** About 44–48 characters (the three videos over 100k views), at most 4 rows, 56
-    characters, printed big on the first picture (`"quote": true`). A hook read for more than 5 seconds needs two
-    pictures in the first scene.
+12b. **The hook has no length to aim at: it only has to say the whole idea** (owner, 26/11/2026: "hook chỉ cần
+    hết ý là đc"; the "about 44–48 characters" of the earlier text is gone). Only what the screen holds stays:
+    the line printed big on the first picture (`"quote": true`) takes at most 4 rows, 56 characters; a longer
+    first sentence is split in two lines of the story, the first part the big quote, the rest a normal line, the
+    words unchanged. A hook read for more than 5 seconds needs two pictures in the first scene.
 13. **The hook is on screen from the very first frame; the first picture moves from the first frame** (`push-in`
     or `punch-in`, never `hold`) **and stays at most 5 seconds.** (Since 26/11/2026 for every channel; it was the
     star channel's rule.)
@@ -183,8 +185,7 @@ may come back, the same story may not): look through `stories/` before proposing
 - **Must — the music**: the owner's flute (above).
 - **To start from**: a story with a love, couple or mother-and-child side leads with it in the first line (owner,
   17/11/2026: `masako-rikon` was the only video with views); one moment a video (a whole life is the `ts` kind's);
-  the owner's model script of 24/11/2026 ("When the owner sends an original video"); a hook of 44–48 characters
-  on 4 rows, as the three videos over 100k views had.
+  the owner's model script of 24/11/2026 ("When the owner sends an original video").
 - The seal: `皇室の物語` (`皇室の話題` for news of the day).
 
 ### 2. Stars
@@ -578,7 +579,7 @@ kèm caption cho mỗi video"):
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
    - **The first line is the hook of common rules 12 and 12b** (one complete sentence a stranger understands:
-     who, what happened, the one thing worth remembering; about 44–48 characters), so that the viewer
+     who, what happened, the one thing worth remembering; no length to aim at), so that the viewer
      remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
      この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
      優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story. The ending is free (owner,
