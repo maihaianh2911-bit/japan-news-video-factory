@@ -1,6 +1,6 @@
 {
   "title": "農民から天下人へ 豊臣秀吉",
-  "stage": "find",
+  "stage": "render",
   "date": "2026-11-26",
   "style": "band",
   "kicker": "戦国の物語",
@@ -46,7 +46,26 @@
           "text": "豊臣秀吉です。",
           "say": "とよとみひでよしです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-2",
+          "move": "push-in",
+          "focus": [
+            0.3,
+            0.25
+          ]
+        },
+        {
+          "pick": "8-11",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng Hideyoshi trẻ (Ikematsu Sōsuke) cười tươi, rồi Hideyoshi già trong điện vàng"
     },
     {
       "label": "尾張",
@@ -57,7 +76,27 @@
           "text": "一五三七年、尾張の貧しい農家に生まれた秀吉は、少年の頃に家を飛び出し、やがて織田信長に仕えます。",
           "say": "せんごひゃくさんじゅうななねん、おわりの、まずしいのうかにうまれた、ひでよしは、しょうねんのころに、いえをとびだし、やがて、おだのぶながに、つかえます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "21-12",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "10-12",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        }
+      ],
+      "why": "Trượt sang: nơi Hideyoshi sinh ra ở Nakamura, Tōkichirō trẻ áo rách",
+      "cut": "slide"
     },
     {
       "label": "草履取り",
@@ -72,7 +111,27 @@
           "text": "冬の朝、懐で温めた草履を差し出して、信長に気に入られたという話は、今も語り継がれています。",
           "say": "ふゆのあさ、ふところで、あたためたぞうりを、さしだして、のぶながに、きにいられたというはなしは、いまも、かたりつがれています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-4",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.5
+          ]
+        },
+        {
+          "pick": "9-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        }
+      ],
+      "why": "Tối dần: chân trần và đôi dép rơm, Tōkichirō nhảy lên vui sướng",
+      "cut": "dip"
     },
     {
       "label": "金ヶ崎",
@@ -91,7 +150,35 @@
           "text": "三十代の終わりには、ついに長浜城の主となります。",
           "say": "さんじゅうだいのおわりには、ついに、ながはまじょうの、あるじとなります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "28-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.15
+          ]
+        },
+        {
+          "pick": "26-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "3-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Phóng vào: rút chạy ở Kanegasaki, chặn hậu, rồi thành Nagahama",
+      "cut": "zoom"
     },
     {
       "label": "本能寺",
@@ -106,7 +193,35 @@
           "text": "主君の死を知った秀吉は、二百キロを十日足らずで駆け戻り、山崎で明智光秀を討ちました。",
           "say": "しゅくんのしをしった、ひでよしは、にひゃくキロを、とおかたらずで、かけもどり、やまざきで、あけちみつひでを、うちました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "27-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "12-5",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.35
+          ]
+        },
+        {
+          "pick": "8-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        }
+      ],
+      "why": "Lóe sáng: Nobunaga, cuộc quay về thần tốc, Hideyoshi gào trong mưa",
+      "cut": "flash"
     },
     {
       "label": "関白",
@@ -125,7 +240,35 @@
           "text": "一五九〇年には小田原の北条氏を降し、ついに天下を一つにまとめました。",
           "say": "せんごひゃくきゅうじゅうねんには、おだわらの、ほうじょうしをくだし、ついに、てんかを、ひとつにまとめました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "13-2",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "17-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Phóng vào: Hideyoshi mặc lễ phục Quan bạch, các lãnh chúa cúi lạy, thành Osaka",
+      "cut": "zoom"
     },
     {
       "label": "辞世",
@@ -141,7 +284,25 @@
           "say": "つゆとおち、つゆときえにし、わがみかな。なにわのことも、ゆめのまたゆめ。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "23-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "4-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Tối dần: chân dung thật Hideyoshi, thành Osaka",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -177,5 +338,9 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano"
-  ]
+  ],
+  "music": {
+    "pick": "31-2",
+    "volume": 0.7
+  }
 }
