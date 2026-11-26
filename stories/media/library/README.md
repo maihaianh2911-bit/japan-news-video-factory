@@ -17,11 +17,14 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [bhumibol](bhumibol/README.md) | 1 |
 | [daigo](daigo/README.md) | 2 |
 | [daigo-kitagawa](daigo-kitagawa/README.md) | 3 |
+| [danjuro-children](danjuro-children/README.md) | 7 |
+| [danjuro-mao](danjuro-mao/README.md) | 3 |
 | [gakushuin](gakushuin/README.md) | 2 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
 | [hisahito](hisahito/README.md) | 1 |
 | [honnoji](honnoji/README.md) | 2 |
+| [ichikawa-danjuro](ichikawa-danjuro/README.md) | 2 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
 | [ikenami-shino](ikenami-shino/README.md) | 2 |
 | [imagawa-yoshimoto](imagawa-yoshimoto/README.md) | 2 |
@@ -36,6 +39,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kitagawa-keiko](kitagawa-keiko/README.md) | 1 |
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
 | [kobayakawa-hideaki](kobayakawa-hideaki/README.md) | 3 |
+| [kobayashi-mao](kobayashi-mao/README.md) | 3 |
 | [kokkai](kokkai/README.md) | 1 |
 | [kokyo](kokyo/README.md) | 1 |
 | [kudo-shizuka](kudo-shizuka/README.md) | 2 |
