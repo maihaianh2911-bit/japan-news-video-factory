@@ -69,7 +69,8 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   credits it as `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the
   video description). A name the engine does not have stops the voice step with the list of the voices it has:
   copy the exact name from it. Listen to the first video in a new voice before using it again. Owner, 26/11/2026, of 剣崎雌雄 at speed 1.15: "đọc nhanh hơi bị cướp chữ, nghe nhiều chữ dính vào nhau": that voice
-  is fast by nature, so it reads at `"speed": 1.0` with `"line_pause": 0.2` at most; check the speed of every new voice. A scene may have its
+  is fast by nature, so it reads at `"speed": 1.0`, with short pauses (`"line_pause": 0.08`, `"scene_pause": 0.2`; 0.2/0.35 was
+  "khoảng nghỉ lại hơi dài"); check the speed of every new voice. A scene may have its
   own `"speaker"` too (a sampler of voices, a quote in another voice); the credit then names every voice used.
   Owner, 25/11/2026, after two trials (冥鳴ひまり with a classical shakuhachi, No.7 読み聞かせ with a modern one):
   "ko hay, cả 2 giọng lẫn sáo đều ko, dùng sáo tao gửi này, còn giọng thì tìm lại" — those two voices and those two
