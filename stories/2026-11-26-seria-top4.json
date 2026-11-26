@@ -1,11 +1,11 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 87,
   "title": "マジで便利なセリアの神商品トップ4",
   "date": "2026-11-26",
   "style": "goods",
   "pace": {
-    "speed": 1.1,
+    "speed": 1.05,
     "line_pause": 0.1,
     "scene_pause": 0.25
   },
