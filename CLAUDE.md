@@ -161,6 +161,19 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     follows from the one before (その男, それでも, その庭に, こうして, ところが). The name comes as the answer to the
     hook and leads straight into what the hook promised; no card of facts (birth year, title) dropped between two
     sentences of the story.
+  - **The owner's own model for this channel** (26/11/2026: the owner named the subject, "Cha đẻ của đế chế
+    Panasonic", cut Claude's draft himself and sent it back: "Viết như này này"). Its order, sentence by sentence:
+    "the father of the Panasonic empire was a man who left school in the 4th year" → "his name is Matsushita
+    Konosuke" → at 9 sent away to work in Osaka → at 23 started the company on the ground floor of a rented house,
+    three people (he, his wife, her brother) → the first product earned only 10 yen in 4 months, the kimono went
+    to the pawnshop → just as things got going, the Depression: sales halved, the store full of stock → the
+    managers: the only way is to cut half the staff → from his sickbed he decided: nobody dismissed, full pay →
+    everyone gave up holidays to sell, the stock was gone in 2 months → his saying, quoted → "that company is
+    Panasonic today, 8 trillion yen of sales" → a question to the viewer. **What the owner cut: the teaser after
+    the hook** (「しかも、会社がつぶれかけたとき、彼は社員を一人も辞めさせませんでした」): no line that announces
+    what comes later; after the hook the name, then the life in order, plain facts with ages and figures. Four
+    drafts on 安藤百福 (a whole life in a long narration; a teaser of two mysteries; a card of name, birth year and
+    title cut into the story; a hook on the product instead of the founder) were turned down before this one.
   Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
   by content"; ask the owner or say the choice in one line, never borrow another channel's rule.
 - **Hearing a video without captions** (26/11/2026): the cloud session can take down speech after all.
