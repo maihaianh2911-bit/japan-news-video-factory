@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-26",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.2,
+    "line_pause": 0.1,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "speaker": "もち子さん",
+  "stage": "find",
+  "title": "皇室を去る姉を抱きしめた佳子さま",
+  "issue": 84,
+  "source": "文春オンライン、週刊女性PRIME、日刊ゲンダイ、NEWSポストセブン",
+  "style": "magazine",
+  "scenes": [
+    {
+      "label": "姉妹",
+      "era": "2021年10月26日",
+      "headline": "姉を抱きしめた\n佳子さま",
+      "lines": [
+        {
+          "text": "皇室を去る姉の眞子さんを、佳子さまは報道陣の前で、強く抱きしめました。",
+          "say": "こうしつを、さる、あねの、まこさんを、かこさまは、ほうどうじんの、まえで、つよく、だきしめました。",
+          "quote": true
+        },
+        {
+          "text": "その2年前、佳子さまが書いたある一文は、両親への反発だとして「佳子の乱」と報じられました。",
+          "say": "そのにねんまえ、かこさまが、かいた、ある、いちぶんは、りょうしんへの、はんぱつだとして、かこのらん、と、ほうじられました。"
+        }
+      ]
+    },
+    {
+      "label": "婚約内定",
+      "era": "2017年9月",
+      "headline": "眞子さまと\n小室圭さん",
+      "lines": [
+        {
+          "text": "眞子さんと小室圭さんの婚約内定が発表されたのは、2017年のことでした。",
+          "say": "まこさんと、こむろけいさんの、こんやくないていが、はっぴょうされたのは、にせんじゅうななねんの、ことでした。"
+        }
+      ]
+    },
+    {
+      "label": "延期",
+      "era": "2018年2月",
+      "headline": "結婚は延期に",
+      "lines": [
+        {
+          "text": "ところが小室さんの母親の金銭トラブルが報じられ、結婚は延期されます。",
+          "say": "ところが、こむろさんの、ははおやの、きんせんトラブルが、ほうじられ、けっこんは、えんきされます。"
+        }
+      ]
+    },
+    {
+      "label": "父の言葉",
+      "era": "2018年11月",
+      "headline": "秋篠宮さまの\n誕生日会見",
+      "lines": [
+        {
+          "text": "父の秋篠宮さまも、多くの人が納得し喜ぶ状況でなければ、婚約の儀は行えないと語ります。",
+          "say": "ちちの、あきしののみやさまも、おおくのひとが、なっとくし、よろこぶ、じょうきょうでなければ、こんやくのぎは、おこなえないと、かたります。"
+        }
+      ]
+    },
+    {
+      "label": "追い詰められて",
+      "era": "2021年",
+      "headline": "心の病と\n診断されるまで",
+      "lines": [
+        {
+          "text": "反対の声は消えず、眞子さんは、心の病と診断されるほど追い詰められていきます。",
+          "say": "はんたいのこえは、きえず、まこさんは、こころのやまいと、しんだんされるほど、おいつめられていきます。"
+        }
+      ]
+    },
+    {
+      "label": "皇室を離れて",
+      "era": "2021年10月26日",
+      "headline": "一時金を辞退し\n皇室を離れる",
+      "lines": [
+        {
+          "text": "それでも眞子さんは、皇族として初めて一時金を辞退し、2021年10月、皇室を離れました。",
+          "say": "それでも、まこさんは、こうぞくとして、はじめて、いちじきんを、じたいし、にせんにじゅういちねん、じゅうがつ、こうしつを、はなれました。"
+        }
+      ]
+    },
+    {
+      "label": "大切な存在",
+      "era": "2021年10月26日",
+      "headline": "「とても大切な存在」",
+      "lines": [
+        {
+          "text": "姉を見送った佳子さまは、「姉は、これまでもこれからも、自分にとってとても大切な存在です」と綴っています。",
+          "say": "あねを、みおくった、かこさまは、あねは、これまでも、これからも、じぶんにとって、とても、たいせつな、そんざいです、と、つづっています。"
+        }
+      ]
+    },
+    {
+      "label": "あの一文",
+      "era": "2019年3月",
+      "headline": "2年前の\nあの一文",
+      "lines": [
+        {
+          "text": "そして2年前のあの一文。",
+          "say": "そして、にねんまえの、あの、いちぶん。"
+        },
+        {
+          "text": "「姉の一個人としての希望がかなう形になってほしいと思っています」",
+          "say": "あねの、いちこじんとしての、きぼうが、かなう、かたちに、なってほしいと、おもっています。",
+          "quote": true
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:佳子内親王",
+    "wiki:小室眞子",
+    "wiki:秋篠宮文仁親王",
+    "web:佳子さま 眞子さん 抱きしめ 2021年10月26日 => a young Japanese princess hugging her sister",
+    "page:https://www.news-postseven.com/archives/20211026_1701923.html",
+    "page:https://www.news-postseven.com/archives/20211026_1701899.html",
+    "web:眞子さま 秋篠宮邸 出発 花束 2021年10月26日 => a Japanese woman holding flowers bowing",
+    "web:眞子さま 小室圭さん 婚約内定 記者会見 2017 => a Japanese princess and her fiance at a press conference",
+    "web:小室圭さん 2018 => a young Japanese man in a suit",
+    "web:秋篠宮さま 誕生日 記者会見 2018年11月 => a Japanese prince speaking at a press conference",
+    "web:眞子さま 2021 表情 => a Japanese princess with a serious face",
+    "web:眞子さん 小室圭さん 結婚会見 2021年10月26日 => a Japanese couple at a press conference",
+    "web:佳子さま ICU 卒業 2019年3月 => a young Japanese princess at her university graduation",
+    "web:佳子さま 2019 笑顔 => a young Japanese princess smiling",
+    "web:眞子さま 佳子さま 姉妹 笑顔 => two Japanese princesses smiling together",
+    "file:stories/media/library/akishino/birthday-press-conference-vertical.jpg",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ]
+}
