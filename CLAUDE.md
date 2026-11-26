@@ -174,8 +174,16 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     what comes later; after the hook the name, then the life in order, plain facts with ages and figures. Four
     drafts on 安藤百福 (a whole life in a long narration; a teaser of two mysteries; a card of name, birth year and
     title cut into the story; a hook on the product instead of the founder) were turned down before this one.
-  Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
-  by content"; ask the owner or say the choice in one line, never borrow another channel's rule.
+  - **Its frame is the samples' one, with a narrator of its own** (owner, 26/11/2026, asked whether the frame
+    should be like the samples — a character at the foot, the pictures above, the big title 「…の生みの親」 — or a
+    plain one: "Vẽ nhân vật, đưa propmt đây"). So: `band` with `"host"`, the `masthead` carrying the title. Claude
+    gave the owner the ChatGPT prompts for a character it proposed (a Shiba dog standing like a man, navy suit, red
+    tie, anime style like the samurai; a man in a suit as the alternative): sheet 1 = neutral, talk, point, cross;
+    sheet 2 = present, surprised; pure green, waist up, figures apart, no hand above the head. When the owner
+    sends the two sheets: `python tools/host_cut.py <name> <sheet1>:neutral,talk,point,cross
+    <sheet2>:present,surprised`, look at `sheet.jpg`, then a short trial for the owner before the first video.
+  Not set yet: voice, seal, issue title. The voice follows "Frame and voice by content"; ask the owner or say the
+  choice in one line, never borrow another channel's rule.
 - **Hearing a video without captions** (26/11/2026): the cloud session can take down speech after all.
   `pip install sherpa-onnx numpy`, then `python tools/listen.py <video> [ja|vi|en] [window] [step]` (Whisper
   large-v3-turbo, fetched from a GitHub release, 560 MB; Hugging Face is refused by the network, GitHub is not).
