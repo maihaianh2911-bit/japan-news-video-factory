@@ -26,3 +26,5 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `1985-oxford-bicycle.jpg` | Naruhito dắt xe đạp trên phố Oxford 1985, áo len xanh, khổ dọc lớn | 1321×2000 | asahi.com | 2026-11-24-naruhito-oyamoto |
 | `1980s-oxford-pub-friends.jpg` | Naruhito ngồi bàn ngoài trời ở quán cùng bạn bè thời Oxford (dùng contain) | 800×535 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
 | `1980s-oxford-pub-beer.jpg` | Naruhito nâng cốc bia ở quán rượu Oxford (dùng contain) | 799×616 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
+| `1984-oxford-library-smile.jpg` | Naruhito cười trong thư viện Oxford, áo len xanh (ảnh nhỏ) | 640×422 | asahi.com | 2026-11-26-oxford-futari |
+| `2023-book-thames-tomoni-cover.jpg` | Bìa sách テムズとともに tái bản 4/2023 (ảnh phẳng: depth false, contain) | 684×1000 | amazon.co.jp | 2026-11-26-oxford-futari |

@@ -9,3 +9,5 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2026-paraguay-plane-door.jpg` | Vợ chồng hoàng tử Akishino ở cửa máy bay đi Paraguay 8/2026 | 1200×985 | sankei.com | 2026-11-21-natsuyasumi |
 | `2026-paraguay-president-flags.jpg` | Vợ chồng Akishino với tổng thống Paraguay, hai lá cờ, 8/2026 | 1200×894 | sankei.com | 2026-11-21-natsuyasumi |
 | `birthday-press-conference-vertical.jpg` | Hoàng tử Akishino ở họp báo sinh nhật, khổ dọc | 650×800 | mainichi.jp | 2026-11-24-aiko-kokoro |
+| `2018-birthday-press-conference-vertical.jpg` | Hoàng tử Akishino ở họp báo sinh nhật 11/2018 (nói về lễ đính hôn của Mako), khổ dọc | 564×800 | mainichi.jp | 2026-11-26-kako-dakishime |
+| `2018-birthday-press-conference-with-kiko.jpg` | Vợ chồng Akishino ở họp báo sinh nhật 11/2018 | 799×632 | mainichi.jp | 2026-11-26-kako-dakishime |
