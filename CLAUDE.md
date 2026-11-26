@@ -110,6 +110,15 @@ rule below; the voice and the flute are already new, see above):
 The owner showed a Vietnamese short (a masked presenter at the foot, the pictures above, a big title between them:
 "Cha đẻ của TĐ Phú Cường") and said: "Tao định đẻ thêm 2 loại nội dung cho video này, 1 loại sẽ dành cho doanh nhân,
 chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` frame with a narrator (`"host"`).
+- **The chat of the film and story channel** (owner, 26/11/2026, in the chat where these kinds were set up: "Ở chat
+  này mình sẽ chỉ làm riêng nội dung về phim hoặc là chuyện. Như tao đã nói, mày chỉ cần để ý đến luật chung và luật
+  riêng của kênh này, còn những luật của kênh khác thì không cần quan tâm"): that chat makes film and story videos
+  only (the business and politician kind is for another chat), and follows the rules for every channel (the iron
+  rules with this channel's own length, the rule changes of 19/11/2026, the picture rules of the edit, every picture
+  moves, nothing built before the script is approved, the script shown as one continuous text, a caption for every
+  video, only the finished video sent) and this channel's own rules below. The rules of the other channels do not
+  apply to it: the imperial-family and star rules (もち子さん and the flute, the love theme, about 65 s), the `ts`
+  rules (80 s, read fast), the history rules (drama stills, the samurai).
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
   Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
 - **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
