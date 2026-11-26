@@ -1,0 +1,181 @@
+{
+  "title": "農民から天下人へ 豊臣秀吉",
+  "stage": "find",
+  "date": "2026-11-26",
+  "style": "band",
+  "kicker": "戦国の物語",
+  "masthead": "天下人 秀吉",
+  "speaker": "剣崎雌雄",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "issue": 82,
+  "host": {
+    "name": "samurai",
+    "poses": [
+      "present",
+      "neutral",
+      "point",
+      "cross",
+      "surprised",
+      "point",
+      "neutral"
+    ]
+  },
+  "scenes": [
+    {
+      "label": "天下人",
+      "era": "戦国時代",
+      "headline": "農民から天下人へ",
+      "lines": [
+        {
+          "text": "農民の子として生まれ、天下人にまで上り詰めた男がいます。",
+          "say": "のうみんのことしてうまれ、てんかびとにまで、のぼりつめたおとこがいます。",
+          "quote": true
+        },
+        {
+          "text": "豊臣秀吉です。",
+          "say": "とよとみひでよしです。"
+        }
+      ]
+    },
+    {
+      "label": "尾張",
+      "era": "1537年",
+      "headline": "貧しい農家の子",
+      "lines": [
+        {
+          "text": "一五三七年、尾張の貧しい農家に生まれた秀吉は、少年の頃に家を飛び出し、やがて織田信長に仕えます。",
+          "say": "せんごひゃくさんじゅうななねん、おわりの、まずしいのうかにうまれた、ひでよしは、しょうねんのころに、いえをとびだし、やがて、おだのぶながに、つかえます。"
+        }
+      ]
+    },
+    {
+      "label": "草履取り",
+      "era": "織田家",
+      "headline": "温めた草履",
+      "lines": [
+        {
+          "text": "最初の仕事は、信長の草履を持つ雑用係でした。",
+          "say": "さいしょのしごとは、のぶながの、ぞうりをもつ、ざつようがかりでした。"
+        },
+        {
+          "text": "冬の朝、懐で温めた草履を差し出して、信長に気に入られたという話は、今も語り継がれています。",
+          "say": "ふゆのあさ、ふところで、あたためたぞうりを、さしだして、のぶながに、きにいられたというはなしは、いまも、かたりつがれています。"
+        }
+      ]
+    },
+    {
+      "label": "金ヶ崎",
+      "era": "1570年",
+      "headline": "誰もやらない仕事を",
+      "lines": [
+        {
+          "text": "そこから秀吉は、誰もやりたがらない仕事を次々と引き受けていきます。",
+          "say": "そこから、ひでよしは、だれもやりたがらない、しごとを、つぎつぎと、ひきうけていきます。"
+        },
+        {
+          "text": "金ヶ崎では、全軍が逃げる中で最も危ない殿を務め、生きて帰りました。",
+          "say": "かねがさきでは、ぜんぐんがにげるなかで、もっともあぶない、しんがりをつとめ、いきてかえりました。"
+        },
+        {
+          "text": "三十代の終わりには、ついに長浜城の主となります。",
+          "say": "さんじゅうだいのおわりには、ついに、ながはまじょうの、あるじとなります。"
+        }
+      ]
+    },
+    {
+      "label": "本能寺",
+      "era": "1582年",
+      "headline": "主君の死",
+      "lines": [
+        {
+          "text": "そして一五八二年、本能寺の変。",
+          "say": "そして、せんごひゃくはちじゅうにねん、ほんのうじのへん。"
+        },
+        {
+          "text": "主君の死を知った秀吉は、二百キロを十日足らずで駆け戻り、山崎で明智光秀を討ちました。",
+          "say": "しゅくんのしをしった、ひでよしは、にひゃくキロを、とおかたらずで、かけもどり、やまざきで、あけちみつひでを、うちました。"
+        }
+      ]
+    },
+    {
+      "label": "関白",
+      "era": "1585年",
+      "headline": "農民出身の関白",
+      "lines": [
+        {
+          "text": "三年後、秀吉は関白に任じられます。",
+          "say": "さんねんご、ひでよしは、かんぱくに、にんじられます。"
+        },
+        {
+          "text": "農民の出身で関白となったのは、日本の歴史で秀吉ただ一人です。",
+          "say": "のうみんのしゅっしんで、かんぱくとなったのは、にほんのれきしで、ひでよし、ただひとりです。"
+        },
+        {
+          "text": "一五九〇年には小田原の北条氏を降し、ついに天下を一つにまとめました。",
+          "say": "せんごひゃくきゅうじゅうねんには、おだわらの、ほうじょうしをくだし、ついに、てんかを、ひとつにまとめました。"
+        }
+      ]
+    },
+    {
+      "label": "辞世",
+      "era": "1598年",
+      "headline": "夢のまた夢",
+      "lines": [
+        {
+          "text": "けれど、六十二歳で世を去る時に残した歌は、天下人とは思えないものでした。",
+          "say": "けれど、ろくじゅうにさいで、よをさるときに、のこしたうたは、てんかびととは、おもえないものでした。"
+        },
+        {
+          "text": "「露と落ち、露と消えにし我が身かな。浪速のことも、夢のまた夢」",
+          "say": "つゆとおち、つゆときえにし、わがみかな。なにわのことも、ゆめのまたゆめ。",
+          "quote": true
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:豊臣秀吉",
+    "wiki:中村公園",
+    "wiki:長浜城 (近江国)",
+    "wiki:大坂城",
+    "wiki:伏見城",
+    "wiki:小田原城",
+    "wiki:豊国神社 (京都市)",
+    "web:豊臣兄弟 池松壮亮 秀吉 場面写真",
+    "web:豊臣兄弟 池松壮亮 藤吉郎 草履",
+    "web:豊臣兄弟 第1回 藤吉郎 少年 中村",
+    "web:豊臣兄弟 長浜城 秀吉 城主",
+    "web:豊臣兄弟 中国大返し 秀吉",
+    "web:豊臣兄弟 関白 秀吉 場面写真",
+    "web:豊臣兄弟 池松壮亮 秀吉 => a samurai lord in close-up, face clearly visible",
+    "web:秀吉 草履 温める 浮世絵",
+    "web:豊臣秀吉 関白 肖像画",
+    "web:大阪城 天守閣 夕景",
+    "web:伏見城 模擬天守",
+    "web:小田原城 天守 外観",
+    "web:豊臣秀吉 辞世の句 露と落ち",
+    "web:中村公園 豊国神社 秀吉 生誕地",
+    "web:長浜城 天守 琵琶湖",
+    "file:stories/media/library/toyotomi-hideyoshi/kodaiji-portrait.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-armor.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-yamazaki.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-kanegasaki.jpg",
+    "file:stories/media/library/oda-nobunaga/drama-toyotomi-oguri-fan-large.jpg",
+    "file:stories/media/library/kanegasaki-1570/drama-toyotomi-retreat-forest.jpg",
+    "file:stories/media/library/honnoji/gate-kyoto-today.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano"
+  ]
+}

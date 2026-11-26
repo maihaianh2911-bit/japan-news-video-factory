@@ -175,6 +175,15 @@ videos by their frame and by the name in the seal:
   `"fit": "contain"`; the headline in white and the pale gold captions under the band; the hook quote big and white
   under the band. No text lies on the picture, so a face is never under text; the rule left is that the face stays
   inside the band during the move. First video: `nobunaga-honnoji` (version 3).
+- **The narrator ("host")** (owner, 26/11/2026, from a short he liked: "kiểu có 1 con nhân vật ở dưới, còn hình chạy
+  ở trên"; trial approved: "Ổn"): a story in the `band` frame may carry `"host": {"name": "samurai", "poses": [one
+  per scene]}`. The picture band moves up and becomes 16:9 (1080×608 from y 410), the headline and captions sit under
+  it, and the narrator stands at the foot (640 px high, waist up): the scene's gesture for its first 2.2 s, then the
+  calm pose with the mouth opening and closing while the voice speaks, a light sway. Poses: `neutral`, `talk` (the
+  same with the mouth open), `point`, `cross`, `present`, `surprised`. The character was drawn by ChatGPT for the
+  owner (an adult samurai in red and black armour, crescent helmet); `tools/host_cut.py` cut the six poses out of
+  the green sheets into `stories/media/host/samurai/`. A new narrator: draw the same six poses on pure green, waist
+  up, then `python tools/host_cut.py <name> <sheet>:<pose>,… …`. First video: `2026-11-26-hideyoshi`.
 - **Every picture moves** (owner, 24/11/2026: "nhớ phải luôn cho ảnh chuyển động"): no `hold`; a tall picture in the
   band gets `push-in` with its `focus` on the face (a `rise` starts at its foot, with the face out of the band).
   Vary the cuts between scenes (`slide`, `zoom`, `flash`, `dip`, `hard`; owner: "có thể thêm hiệu ứng chuyển cảnh").
