@@ -139,8 +139,28 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     teaser in the second sentence that pays off late), not a list of the events of a life.
   - **Subjects the Japanese audience recognises at once**: a person, a company, a brand or a product everyone in
     Japan knows.
+  - **61 to 65 seconds, written like the owner's three samples** (owner, 26/11/2026, sending three 36-second
+    Vietnamese shorts of the TikTok channel @chadecua — "Cha đẻ của Con Cưng", "… Three O'Clock", "… Tập đoàn Sơn
+    Hải": "Học cách viết, nhưng của nó chỉ 36s, của mình phải 61-65s"). This replaces the 61–120 s above. How
+    those shorts are written (their words were taken down with `tools/listen.py`):
+    1. the first words are the title, "the father of <brand>" (`<ブランド>の生みの親`), with the one striking thing
+       about the brand or the founder in the same sentence ("famous for daring to guarantee its motorways for
+       10 years", "owns 10 cafés open day and night in her early thirties");
+    2. the founder at once: name, birth year, title, one credential that surprises (a PhD in the USA, captain of
+       the champion Robocon team, a former policeman);
+    3. the year it began and where it stands today in hard figures (700 shops, 4,000 billion đồng of revenue, a
+       flagship at a named place), the contrast of the start and today ("began with less than 1 billion");
+    4. one decision or turn in a line (paid the deposit for the shop with no business plan);
+    5. one saying of the founder, quoted;
+    6. the last line asks the viewer ("What do you think of <brand>?").
+    Plain, quick, news-like sentences, each one a fact; the brand everyone knows leads, not the life story. With
+    61–65 s instead of 36 there is room for two turns of the story more, told as plainly.
   Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
   by content"; ask the owner or say the choice in one line, never borrow another channel's rule.
+- **Hearing a video without captions** (26/11/2026): the cloud session can take down speech after all.
+  `pip install sherpa-onnx numpy`, then `python tools/listen.py <video> [ja|vi|en] [window] [step]` (Whisper
+  large-v3-turbo, fetched from a GitHub release, 560 MB; Hugging Face is refused by the network, GitHub is not).
+  Over loud music a window can come back as a made-up line: run it twice (windows 20/15 and 13/9) and join.
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
   Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
 - **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
