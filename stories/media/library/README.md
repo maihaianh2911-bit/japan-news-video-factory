@@ -65,7 +65,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
 | [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 10 |
-| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 4 |
+| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 16 |
 | [uesugi-kenshin](uesugi-kenshin/README.md) | 1 |
 | [watabe-ken](watabe-ken/README.md) | 5 |
 | [yamanakako](yamanakako/README.md) | 1 |
