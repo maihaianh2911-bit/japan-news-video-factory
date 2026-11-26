@@ -13,27 +13,65 @@
     "face": true
   },
   "speaker": "もち子さん",
-  "stage": "find",
+  "stage": "render",
   "title": "「このまま時間が止まってくれたら」両陛下、思い出のオックスフォードへ",
   "issue": 83,
   "source": "プレジデントオンライン、女性セブンプラス、女性自身、日テレNEWS",
-  "style": "full",
+  "style": "album",
   "scenes": [
     {
       "label": "留学の日々",
-      "era": "1983年",
+      "era": "1983年〜1985年",
       "headline": "天皇陛下の\nイギリス留学",
       "lines": [
         {
           "text": "天皇陛下が「このまま時間が止まってくれたら」と書いたのは、イギリス留学の日々でした。",
           "say": "てんのうへいかが、このまま、じかんが、とまってくれたら、と、かいたのは、イギリス、りゅうがくの、ひびでした。",
           "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "1-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.28
+          ]
         },
+        {
+          "pick": "10-6",
+          "move": "pull-back",
+          "focus": [
+            0.45,
+            0.35
+          ]
+        }
+      ],
+      "why": "Mở đầu: Thiên hoàng thời trẻ dắt xe đạp trên phố Oxford 1985 (khổ dọc lớn), rồi cười trong thư viện."
+    },
+    {
+      "label": "雅子さまの留学",
+      "era": "1988年",
+      "headline": "雅子さまにとっても\n思い出の地",
+      "lines": [
         {
           "text": "そこは、のちに妻となる雅子さまが、学びを途中で終えた場所でもあります。",
           "say": "そこは、のちに、つまとなる、まさこさまが、まなびを、とちゅうで、おえた、ばしょでもあります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-3",
+          "move": "push-in",
+          "focus": [
+            0.38,
+            0.25
+          ]
+        }
+      ],
+      "why": "Bà Masako thời học ở Oxford, áo măng tô, đi trên đường.",
+      "cut": "fade"
     },
     {
       "label": "自由な2年間",
@@ -44,7 +82,21 @@
           "text": "23歳の陛下は、自分で洗濯や買い物をする、初めての自由な2年間を過ごしました。",
           "say": "にじゅうさんさいの、へいかは、じぶんで、せんたくや、かいものをする、はじめての、じゆうな、にねんかんを、すごしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "2-1",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "3-1",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Lễ nhập học Oxford 1983, rồi nâng cốc bia ở quán: hai năm tự do.",
+      "cut": "slide"
     },
     {
       "label": "同じ街へ",
@@ -55,7 +107,19 @@
           "text": "その3年後、外務省に入った雅子さまが、同じオックスフォードに留学します。",
           "say": "そのさんねんご、がいむしょうに、はいった、まさこさまが、おなじ、オックスフォードに、りゅうがくします。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Bà Masako trẻ ở Oxford trả lời phóng viên, áo măng tô.",
+      "cut": "dip"
     },
     {
       "label": "途切れた留学",
@@ -66,18 +130,48 @@
           "text": "けれど論文を書き上げる前に、研修を終えて帰国しました。",
           "say": "けれど、ろんぶんを、かきあげるまえに、けんしゅうを、おえて、きこくしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ]
+        }
+      ],
+      "why": "Tháp cổng Balliol College, trường của bà Masako.",
+      "cut": "zoom"
     },
     {
       "label": "あとがき",
-      "era": "2023年",
+      "era": "1993年 ― 2023年",
       "headline": "「雅子とともに」\n留学記のあとがき",
       "lines": [
         {
           "text": "結婚から30年。陛下は留学記のあとがきに、雅子とともにもう一度イギリスを訪れたいと綴ります。",
           "say": "けっこんから、さんじゅうねん。へいかは、りゅうがくきの、あとがきに、まさことともに、もういちど、イギリスを、おとずれたいと、つづります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "13-2",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Ngày cưới 1993, rồi bìa cuốn 'テムズとともに' tái bản 2023.",
+      "cut": "fade"
     },
     {
       "label": "二人で",
@@ -88,7 +182,19 @@
           "text": "その願いは翌年の夏にかない、二人はそれぞれのカレッジを訪ねました。",
           "say": "そのねがいは、よくねんの、なつに、かない、ふたりは、それぞれの、カレッジを、たずねました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-5",
+          "move": "pull-back",
+          "focus": [
+            0.3,
+            0.35
+          ]
+        }
+      ],
+      "why": "Hai người ở sân Merton College 6/2024.",
+      "cut": "slide"
     },
     {
       "label": "思い出の地",
@@ -99,7 +205,27 @@
           "text": "陛下は、雅子と二人で思い出の地に立てて本当に幸せだった、と語っています。",
           "say": "へいかは、まさこと、ふたりで、おもいでの、ちに、たてて、ほんとうに、しあわせだった、と、かたっています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-7",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "16-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.5
+          ]
+        }
+      ],
+      "why": "Hai người cười bên nhau ở Oxford, rồi vẫy tay từ cửa sổ phòng cũ.",
+      "cut": "fade"
     },
     {
       "label": "名誉博士号",
@@ -114,7 +240,24 @@
           "text": "陛下とおそろいの赤いガウン姿の雅子さま。34年前に途切れた留学が、ようやく完結した瞬間でした。",
           "say": "へいかと、おそろいの、あかい、ガウンすがたの、まさこさま。さんじゅうよねんまえに、とぎれた、りゅうがくが、ようやく、かんけつした、しゅんかんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-4",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "10-20",
+          "move": "pull-back",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        }
+      ],
+      "why": "Hai người trong áo choàng đỏ giống nhau ở lễ trao bằng 28/6/2024.",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -141,5 +284,9 @@
     "page:https://mi-mollet.com/articles/-/50051",
     "page:https://president.jp/articles/-/68853",
     "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+  ],
+  "music": {
+    "pick": "23-1",
+    "volume": 0.7
+  }
 }

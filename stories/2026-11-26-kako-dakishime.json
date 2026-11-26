@@ -13,7 +13,7 @@
     "face": true
   },
   "speaker": "もち子さん",
-  "stage": "find",
+  "stage": "render",
   "title": "皇室を去る姉を抱きしめた佳子さま",
   "issue": 84,
   "source": "文春オンライン、週刊女性PRIME、日刊ゲンダイ、NEWSポストセブン",
@@ -28,12 +28,55 @@
           "text": "皇室を去る姉の眞子さんを、佳子さまは報道陣の前で、強く抱きしめました。",
           "say": "こうしつを、さる、あねの、まこさんを、かこさまは、ほうどうじんの、まえで、つよく、だきしめました。",
           "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "4-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
         },
+        {
+          "pick": "4-6",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Mở đầu: Kako ôm chặt chị Mako sáng 26/10/2021 (ảnh lớn), rồi cái ôm khi cha mẹ đứng nhìn."
+    },
+    {
+      "label": "佳子の乱",
+      "era": "2019年3月",
+      "headline": "「佳子の乱」と\n呼ばれた一文",
+      "lines": [
         {
           "text": "その2年前、佳子さまが書いたある一文は、両親への反発だとして「佳子の乱」と報じられました。",
           "say": "そのにねんまえ、かこさまが、かいた、ある、いちぶんは、りょうしんへの、はんぱつだとして、かこのらん、と、ほうじられました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "13-2",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Kako tốt nghiệp ICU 3/2019, lúc viết câu bị gọi là 'cuộc nổi loạn'."
     },
     {
       "label": "婚約内定",
@@ -44,7 +87,16 @@
           "text": "眞子さんと小室圭さんの婚約内定が発表されたのは、2017年のことでした。",
           "say": "まこさんと、こむろけいさんの、こんやくないていが、はっぴょうされたのは、にせんじゅうななねんの、ことでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-2",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Mako và Komuro cười ở họp báo đính hôn 9/2017.",
+      "cut": "fade"
     },
     {
       "label": "延期",
@@ -55,7 +107,19 @@
           "text": "ところが小室さんの母親の金銭トラブルが報じられ、結婚は延期されます。",
           "say": "ところが、こむろさんの、ははおやの、きんせんトラブルが、ほうじられ、けっこんは、えんきされます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-9",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Komuro giữa đám đông phóng viên ở sân bay 8/2018.",
+      "cut": "slide"
     },
     {
       "label": "父の言葉",
@@ -66,7 +130,27 @@
           "text": "父の秋篠宮さまも、多くの人が納得し喜ぶ状況でなければ、婚約の儀は行えないと語ります。",
           "say": "ちちの、あきしののみやさまも、おおくのひとが、なっとくし、よろこぶ、じょうきょうでなければ、こんやくのぎは、おこなえないと、かたります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-4",
+          "move": "pull-back",
+          "focus": [
+            0.4,
+            0.3
+          ]
+        }
+      ],
+      "why": "Hoàng tử Akishino ở họp báo sinh nhật 11/2018, rồi cùng bà Kiko.",
+      "cut": "dip"
     },
     {
       "label": "追い詰められて",
@@ -77,7 +161,16 @@
           "text": "反対の声は消えず、眞子さんは、心の病と診断されるほど追い詰められていきます。",
           "say": "はんたいのこえは、きえず、まこさんは、こころのやまいと、しんだんされるほど、おいつめられていきます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-7",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Mako cúi mặt bên Komuro ở họp báo 26/10/2021.",
+      "cut": "fade"
     },
     {
       "label": "皇室を離れて",
@@ -88,7 +181,27 @@
           "text": "それでも眞子さんは、皇族として初めて一時金を辞退し、2021年10月、皇室を離れました。",
           "say": "それでも、まこさんは、こうぞくとして、はじめて、いちじきんを、じたいし、にせんにじゅういちねん、じゅうがつ、こうしつを、はなれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-17",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "12-17",
+          "move": "pull-back",
+          "focus": [
+            0.56,
+            0.0
+          ]
+        }
+      ],
+      "why": "Mako cúi chào cha mẹ khi rời nhà, rồi đứng cạnh chồng ở họp báo 26/10/2021.",
+      "cut": "zoom"
     },
     {
       "label": "大切な存在",
@@ -99,7 +212,24 @@
           "text": "姉を見送った佳子さまは、「姉は、これまでもこれからも、自分にとってとても大切な存在です」と綴っています。",
           "say": "あねを、みおくった、かこさまは、あねは、これまでも、これからも、じぶんにとって、とても、たいせつな、そんざいです、と、つづっています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "15-9",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Hai chị em chụp ảnh tự sướng cười bên hoa, rồi mặc kimono nhìn nhau.",
+      "cut": "fade"
     },
     {
       "label": "あの一文",
@@ -115,7 +245,27 @@
           "say": "あねの、いちこじんとしての、きぼうが、かなう、かたちに、なってほしいと、おもっています。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-15",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        },
+        {
+          "pick": "13-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        }
+      ],
+      "why": "Kako tốt nghiệp ICU 3/2019, lúc viết câu ấy.",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -136,5 +286,9 @@
     "web:眞子さま 佳子さま 姉妹 笑顔 => two Japanese princesses smiling together",
     "file:stories/media/library/akishino/birthday-press-conference-vertical.jpg",
     "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+  ],
+  "music": {
+    "pick": "17-1",
+    "volume": 0.7
+  }
 }
