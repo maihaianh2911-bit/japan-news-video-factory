@@ -52,6 +52,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [otani-yoshitsugu](otani-yoshitsugu/README.md) | 1 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 15 |
+| [sasaki-nozomi](sasaki-nozomi/README.md) | 9 |
+| [sasaki-watabe](sasaki-watabe/README.md) | 2 |
 | [sekigahara-1600](sekigahara-1600/README.md) | 4 |
 | [showa-tenno](showa-tenno/README.md) | 1 |
 | [takeda-shingen](takeda-shingen/README.md) | 29 |
@@ -60,5 +62,6 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 10 |
 | [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 3 |
 | [uesugi-kenshin](uesugi-kenshin/README.md) | 1 |
+| [watabe-ken](watabe-ken/README.md) | 5 |
 | [yamanakako](yamanakako/README.md) | 1 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
