@@ -1,6 +1,6 @@
 {
  "title": "パナソニックの生みの親 松下幸之助",
- "stage": "find",
+ "stage": "render",
  "date": "2026-11-26",
  "style": "band",
  "kicker": "創業者の物語",
@@ -45,7 +45,23 @@
      "text": "男の名は、松下幸之助。",
      "say": "男の名は、まつしたこうのすけ。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "7-9",
+     "move": "push-in",
+     "focus": [
+      0.6,
+      0.19
+     ]
+    },
+    {
+     "pick": "7-18",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Mở bằng ảnh màu ông Konosuke cười (ảnh nét nhất), rồi chân dung chính diện khi đọc tên"
   },
   {
    "label": "9歳",
@@ -56,7 +72,19 @@
      "text": "9歳で親元を離れ、大阪へ働きに出されます。",
      "say": "きゅうさいで、おやもとを離れ、大阪へ、働きに出されます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "8-7",
+     "move": "push-in",
+     "focus": [
+      0.25,
+      0.4
+     ]
+    }
+   ],
+   "why": "Cậu bé Konosuke thời đi ở, đứng cạnh bà chủ tiệm xe đạp",
+   "cut": "slide"
   },
   {
    "label": "最初の製品",
@@ -67,7 +95,24 @@
      "text": "22歳で独立して作った最初の製品は、4か月でわずか10円しか売れず、着物を質に入れてしのぎます。",
      "say": "にじゅうにさいで独立して作った、最初の製品は、よんかげつで、わずかじゅうえんしか売れず、着物を、しちに入れて、しのぎます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "8-10",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "14-1",
+     "move": "pan-right",
+     "focus": [
+      0.45,
+      0.4
+     ]
+    }
+   ],
+   "why": "Konosuke thời trẻ mặc kimono, rồi mô hình ông tự tay làm hàng ở bảo tàng Panasonic",
+   "cut": "zoom"
   },
   {
    "label": "創業",
@@ -78,7 +123,27 @@
      "text": "それでも翌年、妻と、まだ15歳だったその弟の3人だけで、借家の一階に会社を興しました。",
      "say": "それでも翌年、妻と、まだじゅうごさいだった、その弟の、さんにんだけで、しゃくやのいっかいに、会社をおこしました。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "1-3",
+     "move": "push-in",
+     "focus": [
+      0.4,
+      0.3
+     ]
+    },
+    {
+     "pick": "14-2",
+     "move": "pan-left",
+     "focus": [
+      0.4,
+      0.5
+     ]
+    }
+   ],
+   "why": "Ảnh những người lập xưởng (Konosuke, em vợ Toshio, vợ Mumeno), rồi căn nhà khởi nghiệp dựng lại ở bảo tàng",
+   "cut": "dip"
   },
   {
    "label": "世界恐慌",
@@ -92,7 +157,27 @@
     {
      "text": "幹部は、社員を半分に減らすしかないと訴えます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "15-18",
+     "move": "pull-back",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    {
+     "pick": "11-13",
+     "move": "pan-right",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Đám đông trước sàn chứng khoán New York năm 1929, rồi các món hàng Matsushita thời đó",
+   "cut": "flash"
   },
   {
    "label": "決断",
@@ -107,7 +192,24 @@
      "text": "すると全員が休みを返上して売り歩き、2か月で在庫は消えます。",
      "say": "すると全員が、休みを返上して売り歩き、にかげつで、ざいこは消えます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "7-2",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "13-4",
+     "move": "pull-back",
+     "focus": [
+      0.6,
+      0.5
+     ]
+    }
+   ],
+   "why": "Chân dung Konosuke khoảng năm 1929, rồi cảnh ông nói trước toàn thể nhân viên",
+   "cut": "hard"
   },
   {
    "label": "経営の神様",
@@ -122,7 +224,27 @@
      "say": "まつしたでんきは、人をつくるところでございます。あわせて、電気器具を、つくっております。",
      "quote": true
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "19-1",
+     "move": "pull-back",
+     "focus": [
+      0.45,
+      0.35
+     ]
+    },
+    {
+     "pick": "18-7",
+     "move": "push-in",
+     "focus": [
+      0.15,
+      0.04
+     ]
+    }
+   ],
+   "why": "Konosuke đang nói trước micro, rồi cận mặt ông lúc về già giơ tay giảng giải",
+   "cut": "fade"
   },
   {
    "label": "現在",
@@ -136,7 +258,27 @@
     {
      "text": "あなたの家には、パナソニックの製品がいくつありますか。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "21-10",
+     "move": "rise",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "pick": "22-9",
+     "move": "push-in",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Trụ sở Panasonic ở Kadoma hôm nay, rồi dãy đồ điện Panasonic",
+   "cut": "zoom"
   }
  ],
  "searches": [
@@ -165,5 +307,9 @@
   "music:Gymnopédie Satie piano",
   "music:Chopin Nocturne piano",
   "music:Debussy Clair de lune piano"
- ]
+ ],
+ "music": {
+  "pick": "25-2",
+  "volume": 0.7
+ }
 }

@@ -48,6 +48,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [mako-komuro](mako-komuro/README.md) | 5 |
 | [masako](masako/README.md) | 18 |
 | [masako-aiko](masako-aiko/README.md) | 14 |
+| [matsushita-konosuke](matsushita-konosuke/README.md) | 9 |
 | [michiko](michiko/README.md) | 4 |
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
@@ -64,6 +65,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [osaka-1615](osaka-1615/README.md) | 4 |
 | [otani-yoshitsugu](otani-yoshitsugu/README.md) | 1 |
 | [oxford](oxford/README.md) | 1 |
+| [panasonic](panasonic/README.md) | 5 |
 | [sanada-yukimura](sanada-yukimura/README.md) | 15 |
 | [sasaki-nozomi](sasaki-nozomi/README.md) | 9 |
 | [sasaki-watabe](sasaki-watabe/README.md) | 2 |
