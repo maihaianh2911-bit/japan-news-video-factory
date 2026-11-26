@@ -127,8 +127,17 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   đâu. Đừng dùng luật của kênh phim vào đây"). So everything below in this section that says "these two kinds" is
   **the film channel's only**: the long source rewritten to 2–3 minutes, the 5-second hook of moving footage, the
   length up to 180 s, the narrator frame, and Claude's proposals (the "father of …" angle, the seal, the issue
-  title, a narrator character). None of it is used for the business and politician channel; until the owner gives
-  its rules, only the rules for every channel hold there, and nothing is drafted or built on a guess.
+  title, a narrator character). None of it is used for the business and politician channel; beside its own rules
+  only the rules for every channel hold there. **Its own rules, as the owner gives them** (26/11/2026: "Kịch bản sẽ
+  do m viết, độ dài thì từ 61-120s, chọn những thứ có độ nhận diện cao với khán giả nhật bản"):
+  - **Claude writes the script** (the owner does not send a source): Claude chooses the person and the story,
+    checks every fact and quote in press or official sources, and shows the script for approval before anything
+    is built.
+  - **61 to 120 seconds.**
+  - **Subjects the Japanese audience recognises at once**: a person, a company, a brand or a product everyone in
+    Japan knows.
+  Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
+  by content"; ask the owner or say the choice in one line, never borrow another channel's rule.
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
   Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
 - **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
