@@ -463,6 +463,26 @@ def load_story(path, pictures=None):
     return release, beats, photos
 
 
+DONE_LIST = Path(__file__).resolve().parent.parent / "DA-LAM.md"
+
+
+def done_warnings(path):
+    """A story that goes to its render stands in DA-LAM.md, the list of every video made (owner, 26/11/2026: the
+    videos are deleted from GitHub once saved, "nhưng lưu cái gì lại để khỏi dựng nhầm 1 video 2 lần"): the list is
+    what keeps a story from being told twice. A sample or a trial (mau-…, …-test-…, …-thu-…) is not listed."""
+    name = Path(path).stem
+    if name.startswith("mau-") or "-test-" in name or "-thu-" in name:
+        return []
+    try:
+        if json.loads(Path(path).read_text(encoding="utf-8")).get("stage") != "render":
+            return []
+        listed = f"`{name}`" in DONE_LIST.read_text(encoding="utf-8")
+    except (OSError, ValueError, AttributeError):
+        return []
+    return [] if listed else [f"this story is not in {DONE_LIST.name} (the list of every video made): add its line "
+                              f"to its kind's table in this push, so that no story is told twice"]
+
+
 def main():
     if len(sys.argv) not in (2, 3):
         sys.exit("usage: python -m news.custom stories/<name>.json [<find folder>]")
@@ -474,7 +494,7 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
-    for warning in hook_warnings(data):
+    for warning in hook_warnings(data) + done_warnings(sys.argv[1]):
         print(f"warning: {warning}")
     caption = caption_path(sys.argv[1])
     if caption.exists():

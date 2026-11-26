@@ -114,6 +114,9 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
 - The reading and the length, before anything is rendered (common rules 22 and 23): `pip install -q pyopenjtalk`,
   then `python tools/readings.py stories/<name>.json`. Read every line's kana (names, numbers, kanji with several
   readings) and write a wrong one `{"text": …, "say": "kana"}`; under 63 s estimated, add true details now; over 65 s, cut (common rule 3).
+- **No story twice**: before writing the story file, read `DA-LAM.md` (the list of every video made, by kind): a
+  story that is already there is not made again — say so on the issue (🤖) and stop. In the push that sets `stage:
+  "render"`, add the story's line to its kind's table (`python -m news.custom` warns when it is missing).
 - Commit `[jnews #N] kịch bản`, push, remove `jnews-busy`. (Picture search ~2 min; you are called at `jnews-pick`.)
 
 ## 2. `jnews-pick` → pictures, then `stage: "render"`

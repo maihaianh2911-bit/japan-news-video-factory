@@ -145,7 +145,17 @@ minutes; the voice 青山龍星 (no `"speaker"` key); **loud: every new story ca
 26/11/2026, asked whether the imperial-family and star videos, until then at 1, should come up to the other
 kinds: "có, tăng tiếng của mọi video"); the five effects `fx`; the script approved before anything is built; the
 checks before the render; the caption. **A story already told is not told again, on any kind** (the same person
-may come back, the same story may not): look through `stories/` before proposing one.
+may come back, the same story may not). **The list of every video made is `DA-LAM.md`**, at the root of `main`, one
+table a kind (owner, 26/11/2026: "xoá hết video cũ đi", and before, of the other repo: "xoá tất cả video đi (t đã lưu
+cả rồi), nhưng lưu cái gì lại để khỏi dựng nhầm 1 video 2 lần"): **read it before proposing or accepting a story**,
+and tell the owner when the story is already there instead of making it again; **in the push that sets `stage:
+"render"`, add the story's line** at the foot of its kind's table (date, Japanese title, the idea in Vietnamese, the
+issue, the story's name between backticks; `python -m news.custom` warns of a story at stage render that is not in
+the list). The videos on the `renders` branch are deleted once the owner has saved them (all of them on
+26/11/2026: Run workflow → "Dọn video cũ" with `keep_days` 0), so a link to an old video no longer works; the story
+files stay in `stories/`, and **the picture library stays** (owner, 26/11/2026: "kho ảnh đã đc chọn thì để lại nhé"):
+it is on `main` (`stories/media/library/`), and the picks of every reviewed video go into it before its video is
+deleted (common rule 18).
 
 | Kind | Issue title (label) | Seal (`kicker`) | `pace`: speed, line pause, scene pause | Music |
 | --- | --- | --- | --- | --- |
