@@ -2,9 +2,9 @@
   "date": "2026-11-26",
   "kicker": "皇室の物語",
   "pace": {
-    "speed": 1.2,
-    "line_pause": 0.1,
-    "scene_pause": 0.2
+    "speed": 1.3,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
   },
   "fx": {
     "motion": true,
