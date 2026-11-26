@@ -18,9 +18,9 @@ it stands in that channel's own section.
    of the older text is gone). Under 61 s: add true scenes and details of the same story, never padding, and tell
    the owner what was added. Only exception: a trial or sample video — the owner says so, or the issue title or
    notes say `thử`, `mẫu`, `test` or `demo`.
-3. **How long a video is, is its channel's own rule** (about 65 s for the imperial-family and star videos, at most
-   about 80 s for `ts`, 61–65 s for the business channel, 2–3 minutes for the film channel). A channel that names
-   no length: at most 160 seconds.
+3. **Every video is 61–65 seconds; only the film channel is longer, 2–3 minutes** (owner, 26/11/2026: "trừ phim
+   ra, còn lại cho về hết 61-65s"; before, each channel had its own length: `ts` up to 80 s, history up to 138 s).
+   A script that runs longer is cut to its main thread and its most gripping details, never delivered long.
 4. **A channel's own rules are for that channel only** (owner, 26/11/2026: "Đừng dùng luật của kênh phim vào
    đây"). A new channel that has no rules of its own yet follows these common rules and nothing else; ask the
    owner for the rest, never borrow another channel's rule.
@@ -84,9 +84,15 @@ it stands in that channel's own section.
     into a video yet: that needs new code and a trial the owner approves.
 
 **E. Frame, voice, music**
-21. **The frame, the voice and its speed, and the music are the channel's own rule.** A channel without a fixed
-    frame turns the five frames by content ("Frame and voice by content"), never one frame for every video in a
-    row. A channel's voice changes only after the owner has heard a trial and chosen.
+21. **One voice for every channel: 青山龍星** (owner, 26/11/2026: "quay hết về giọng nam cũ của kênh hoàng gia";
+    before, the voice could change with the story). No `"speaker"` key in a new story; another voice only in a
+    trial the owner asks for. **No channel has a fixed frame, and the look is never a hard rule** (owner,
+    26/11/2026: "tao ko muốn có luật cứng như kiểu khung hay full hình… vì luật cứng thì có video phù hợp có
+    video ko phù hợp"): the frame, the narrator character, the moves and the cuts are chosen for each video by
+    its pictures and its story ("Frame and voice by content"). Where a channel's own rules name a frame (history
+    `band`, `ts` `full`), that is where to start, not a must; say in one line which frame and why. Two things
+    the engine ties: a narrator character stands only in the `band` frame, and `full` needs tall, sharp pictures.
+    The speed of the voice and the music are the channel's own rule.
 
 **F. Checks and delivery — check before the render, render once** (owner, 26/11/2026: a check that comes only
 after the render means rendering again, "như thế sẽ mất thêm nhiều hạn mức")
@@ -96,8 +102,8 @@ Before the render (no render is spent):
     as the voice engine's dictionary reads it. Look at names, numbers and kanji with several readings; a wrong
     one is written `{"text": …, "say": "<kana>"}` in the story, and the tool is run again.
 23. **The length.** The same tool estimates the voice from that reading and the real speed of the voice (measured
-    on 34 videos: 0.5 s off on average, 1.8 s at most), never from the written characters. Write for 2–3 seconds
-    over 61: the tool warns under 63 s.
+    on 34 videos: 0.5 s off on average, 1.8 s at most), never from the written characters. Aim at an
+    estimate of 63–64 s: the tool warns under 63 s and over 65 s (only the film channel is longer, common rule 3).
 24. **The pictures.** Rule 19 on the preview (the stills of every scene and `tools/review_picks.py`), and every
     `warning:` of the preview settled (a cut face, text over a face); and no face that is very small.
 25. **The caption** is written and checked (`python -m news.captions`) before the render, and pushed with it.
@@ -125,8 +131,9 @@ Asked whether one frame for every video makes TikTok see "mass-produced content"
 luân phiên, xem nội dung hợp với khung nào thì làm với khung đó, voice thì có thể tùy biến nam nữ ở voicevox, hợp là
 đc". (What was explained to the owner: the frame alone is not the main risk; a slideshow of still pictures with a
 machine voice and press photos, barely changed, is what gets flagged as unoriginal; TikTok publishes no exact rule.)
-- **The frame fits the story, and changes from video to video**: never the same frame for every video of a day or
-  of a channel in a row. The five frames that turn (owner, 25/11/2026: "M có thể tự làm vài khung nữa, t nghĩ
+- **The frame fits the story: no channel has a fixed frame** (common rule 21, owner 26/11/2026). It is chosen
+  for each video by its pictures and its story; when two frames fit as well, take the one the channel's last
+  video did not use, so that a channel does not look mass-produced. The five frames to choose from (owner, 25/11/2026: "M có thể tự làm vài khung nữa, t nghĩ
   khoảng 5 khung đổi liên thiên là ổn"; `"album"` and `"magazine"` made that day): `"story"` (old newspaper: Showa
   and old photographs, a story told in the past), `"full"` (the picture fills the screen: tall, sharp modern photos,
   a person's face), `"band"` (blurred picture behind a wide band: landscape press photos and TV stills, history),
@@ -136,34 +143,28 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   conference). `"paper"` and `"history"` stay for their own uses. In `album` and `magazine` no text lies on the
   picture (the quote stands under it, like `band`), and no credits are printed (they are in `credits.txt`). The same story may not suit `full` if its pictures are small or wide: then `band` or
   `story`. Say in the issue which frame and why (one line).
-- **The voice fits the story**: a story key `"speaker"` names the VOICEVOX voice, `"<name>"` (its ノーマル style)
-  or `"<name>/<style>"`; without it the voice is 青山龍星. A gentle female voice for a mother-and-daughter or a
-  princess's story, a calm male one for an emperor, war or history, a lively one for a light story — and vary it
-  across videos too. Calm voices that suit narration: female 冥鳴ひまり, 四国めたん, 春日部つむぎ, No.7
-  (`No.7/アナウンス` or `/読み聞かせ`); male 青山龍星, 玄野武宏, 白上虎太郎, 剣崎雌雄, 雀松朱司. The render
-  credits it as `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the
-  video description). A name the engine does not have stops the voice step with the list of the voices it has:
-  copy the exact name from it. Listen to the first video in a new voice before using it again. Owner, 26/11/2026, of 剣崎雌雄 at speed 1.15: "đọc nhanh hơi bị cướp chữ, nghe nhiều chữ dính vào nhau": that voice
-  is fast by nature, so it reads at `"speed": 1.0`, with short pauses (`"line_pause": 0.08`, `"scene_pause": 0.2`; 0.2/0.35 was
-  "khoảng nghỉ lại hơi dài"); check the speed of every new voice. A scene may have its
-  own `"speaker"` too (a sampler of voices, a quote in another voice); the credit then names every voice used.
-  Owner, 25/11/2026, after two trials (冥鳴ひまり with a classical shakuhachi, No.7 読み聞かせ with a modern one):
-  "ko hay, cả 2 giọng lẫn sáo đều ko, dùng sáo tao gửi này, còn giọng thì tìm lại" — those two voices and those two
-  Commons flute pieces are not used; the owner's own flute is `stories/media/music/owner-flute-1.mp3` (58.7 s,
-  `"music:file:stories/media/music/owner-flute-1.mp3"` as a search, credited 提供音源), and the voice is chosen
-  from a sampler video of 13 voices (`stories/2026-11-25-test-voice-samples.json`) by the owner.
-- **The voice and the music of the imperial-family and star videos (`[Tin Nhật]`)** — on 25/11/2026 the owner
-  heard the sampler (an mp3 of the 13 voices over the flute) and chose "giọng nữ số 1" = もち子さん; on 26/11/2026,
-  after two videos in it, the owner turned it down: "Giọng đ hay, quay về giọng cũ đi". **The voice is 青山龍星
-  again** (no `"speaker"` key) at the pace of the owner's model script, `"pace": {"speed": 1.25, "line_pause":
-  0.05, "scene_pause": 0.15}` (26/11/2026: two scripts of about 335 written characters ran 69 s at 1.2 with the
-  longer pauses, over the owner's 62–66 s). The owner's flute stays:
-  the search `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece joined three times
-  with 4-second cross-fades, 168 s, so that it never jumps where it would loop) and `"music": {"pick": "<k>-1",
-  "volume": 0.7}`. Do not try another voice for this channel unless the owner asks.
-  The gentle piano stays for the other channels (history, `ts`, …) until the owner says otherwise. When
-  the owner wants voices compared, send an **mp3** (the owner, 25/11/2026: "làm file mp3 trc, chốt voice đã") with
-  the time each voice starts, not a video.
+- **One voice for every channel: 青山龍星** (owner, 26/11/2026: "quay hết về giọng nam cũ của kênh hoàng gia";
+  common rule 21). A new story carries no `"speaker"` key (without it the voice is 青山龍星). What came before, so
+  that nobody goes back to it: on 25/11/2026 the owner allowed the voice to change with the story ("voice thì có
+  thể tùy biến nam nữ ở voicevox, hợp là đc") and chose もち子さん for the imperial-family and star videos from a
+  sampler of 13 voices; on 26/11/2026, after two videos in it: "Giọng đ hay, quay về giọng cũ đi". 冥鳴ひまり and
+  No.7 読み聞かせ were turned down too ("ko hay"), and the history videos tried 剣崎雌雄 (at speed 1.15: "đọc nhanh
+  hơi bị cướp chữ, nghe nhiều chữ dính vào nhau") and 玄野武宏. None of these is used any more.
+- **Another voice is tried only when the owner asks**: the story key `"speaker"` names a VOICEVOX voice,
+  `"<name>"` (its ノーマル style) or `"<name>/<style>"`, and a scene may have its own `"speaker"` (a sampler of
+  voices). A name the engine does not have stops the voice step with the list of the voices it has: copy the
+  exact name from it. When the owner wants voices compared, send an **mp3** (owner, 25/11/2026: "làm file mp3
+  trc, chốt voice đã") with the time each voice starts, not a video. The render credits the voice as
+  `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the video
+  description).
+- **The speed and the music of the imperial-family and star videos (`[Tin Nhật]`)**: the pace of the owner's
+  model script, `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}` (26/11/2026: two scripts of
+  about 335 written characters ran 69 s at 1.2 with the longer pauses, over the owner's 62–66 s), and the owner's
+  flute (owner, 25/11/2026, after two trials with flute pieces of Commons: "dùng sáo tao gửi này"): the search
+  `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece
+  `stories/media/music/owner-flute-1.mp3` joined three times with 4-second cross-fades, 168 s, so that it never
+  jumps where it would loop; credited 提供音源) and `"music": {"pick": "<k>-1", "volume": 0.7}`. The gentle piano
+  stays for the other channels (history, `ts`, …) until the owner says otherwise.
 
 ## The growth plan (owner, 25/11/2026: the latest videos got no views; "Ok từ ngày mai hãy cải thiện")
 Claude gave the owner the likely causes (weak first two seconds; a machine voice; 65–80-second Shorts on a new
@@ -177,7 +178,7 @@ rule below; the voice and the flute are already new, see above):
   picture is the most striking face of the story and moves from the first frame (`push-in` or `punch-in`, never
   `hold`).
 - **No length test**: Claude had proposed alternating 30–40-second videos; the owner refused (25/11/2026, angry: "Sao
-  lại 36s. Video k đc dưới 60s cơ mà"). Every video stays over 61 s, about 65 s (common rules 2 and 3).
+  lại 36s. Video k đc dưới 60s cơ mà"). Every video stays over 61 s: 61–65 s (common rules 2 and 3).
 - **One theme for this channel**: the love and married life of famous people (couples, a marriage, a loss, a
   promise kept), the kind of story that has drawn views on these channels (`masako-rikon`); no beauty tips or
   gossip lists on it (another channel, if the owner opens one).
@@ -194,8 +195,8 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   này mình sẽ chỉ làm riêng nội dung về phim hoặc là chuyện. Như tao đã nói, mày chỉ cần để ý đến luật chung và luật
   riêng của kênh này, còn những luật của kênh khác thì không cần quan tâm"): that chat makes film and story videos
   only (the business and politician kind is for another chat), and follows the rules for every channel (the common rules at the top of this file) and this channel's own rules below. The rules of the other channels do not
-  apply to it: the imperial-family and star rules (もち子さん and the flute, the love theme, about 65 s), the `ts`
-  rules (80 s, read fast), the history rules (drama stills, the samurai).
+  apply to it: the imperial-family and star rules (the flute, the love theme), the `ts`
+  rules (the whole life, read fast), the history rules (drama stills, the samurai).
 - **The chat of the business and politician channel** (owner, 26/11/2026, in a second chat opened for it: "Kênh này
   sẽ làm về doanh nhân, chính trị gia như tao đã dán ở chat khác"): that chat makes videos of business people,
   politicians and the like only (films and stories are for the chat above). **Only the subject is settled: the
@@ -272,7 +273,8 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   - **Length in practice**: 青山龍星 at speed 1.25 reads about 8.8 kana a second, faster than the 6.5 × speed of the
     estimate: a script estimated at 65 s came out at 59.5 s. For 61–65 s write about 540–560 kana (about 470–490
     written characters), and read the real length after the voice step before telling the owner a number.
-  Not set yet by the owner: voice and seal (the choices above stand in). Never borrow another channel's rule.
+  Not set yet by the owner: the seal (the choice above stands in); the voice is 青山龍星 as on every channel
+  (common rule 21). Never borrow another channel's rule.
 - **The `renders` branch is heavy** (26/11/2026): its first `git fetch --depth 1` in a fresh session downloads about
   10 GB and takes about 10 minutes; start it in the background as soon as a story is pushed, and never run two
   fetches at once (the second fails on `shallow.lock`). A find stage with 22 `web:` searches took 13 minutes.
@@ -294,8 +296,8 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   long script); Claude writes a new script of **2–3 minutes** from it, shown in the chat and approved before anything
   is built; **the first about 5 seconds (the hook) are moving footage** from the owner's video, everything after is
   still pictures (frames of the owner's video, `tools/video_frames.py`, and the searches).
-- **Length**: 2–3 minutes are the owner's words for these two kinds, so up to 180 s here (the owner was told that
-  the iron rule of that time said 160 s and that Claude reads this as "these two kinds only"; the other kinds keep 160 s).
+- **Length**: 2–3 minutes are the owner's words for the film channel, so up to 180 s here; it is the only kind
+  longer than 61–65 s (common rule 3, owner 26/11/2026: "trừ phim ra, còn lại cho về hết 61-65s").
 - **Not settled yet** (Claude's proposals, the owner has not answered): the seals `成功者の物語` and `映画の裏話`; the
   issue titles `[Doanh nhân] …` and `[Phim] …`; a narrator character for each kind (the samurai is for history;
   proposed for films: a cinema attendant in uniform holding popcorn), drawn by ChatGPT on green like the samurai.
@@ -370,7 +372,8 @@ videos by their frame and by the name in the seal:
   on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
   the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
   pastes in the video's description; say so when giving the links.
-- `"style": "band"` — **the frame of the history videos from 24/11/2026** (owner, showing a short he liked:
+- `"style": "band"` — **the frame the history videos start from since 24/11/2026** (where to start, not a must,
+  since 26/11/2026: common rule 21; owner, showing a short he liked:
   "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang"; approved on a 30-second trial: "Dựng đi"): the
   scene's own picture, blurred and dark, fills the frame; at the top the `kicker` small between two gold rules and
   the story's `"masthead"` (a big title of at most 9 characters, e.g. `本能寺の変`) with a small red diamond under it;
@@ -406,9 +409,9 @@ videos by their frame and by the name in the seal:
 - **The channel "Tiểu sử nhân vật nổi tiếng"** (biographies of famous people), short name **`ts`** (owner,
   24/11/2026: "Cho cái này vào 1 kênh riêng nhé, đặt tên là tiểu sử nhân vật nổi tiếng đi, viết tắt kênh ts"): the
   life of one person from childhood to fame, real pictures of every age, in the `"style": "full"` frame (owner, same
-  day: "Làm kiểu để ảnh full màn hình"), seal `人物伝`, `"voice": 2.4` (as the other kinds above), gentle piano at 0.7. **At most about
-  80 seconds** (owner, of the first cut at 133 s: "Bình thường chỉ 80s là cao thôi mà"): about 400 written
-  characters of script; and **read fast**: `"pace": {"speed": 1.3, "line_pause": 0.05, "scene_pause": 0.15}`
+  day: "Làm kiểu để ảnh full màn hình"; where to start, not a must, since 26/11/2026: common rule 21), seal `人物伝`, `"voice": 2.4` (as the other kinds above), gentle piano at 0.7. **61–65 seconds**
+  (common rule 3 since 26/11/2026; before: at most about 80 s, the owner of the first cut at 133 s: "Bình thường
+  chỉ 80s là cao thôi mà"); and **read fast**: `"pace": {"speed": 1.3, "line_pause": 0.05, "scene_pause": 0.15}`
   (owner: "ban nãy đọc nghe rề rà quá, đọc nhanh như mấy thể loại khác"; 1.2 with pauses was too slow). Its issues are titled
   `[TS] <Japanese headline> — <Vietnamese idea>` with the label `ts` (not `jnews`; handled in the chat like the
   `lich-su` kinds above). The format came from a source video the owner sent (a short on Putin's life); the owner
@@ -506,7 +509,7 @@ kèm caption cho mỗi video"):
    quote of a real person and tell it as a fact (the telling may be dramatised, and a rumour is told plainly, its ※ note in the
    caption: common rules 9 and 10). Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
-   characters a second at speed 1.0 plus the pauses (common rules 2 and 3: over 61 s, the channel's own length). Tell the owner in the chat what you
+   characters a second at speed 1.0 plus the pauses (common rules 2 and 3: 61–65 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
    - **The first line is the hook of common rules 12 and 12b** (one complete sentence a stranger understands:
@@ -554,7 +557,7 @@ kèm caption cho mỗi video"):
      sau cũng chỉ làm 65s thôi"; `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}`).
    Examples: `stories/2026-11-17-masako-rikon.json`, `stories/2026-11-17-aiko-kenya.json`.
 3. Then as "When the owner pastes a script" above (the issue body holds the source words, the notes say they were
-   rewritten), with the frame and the voice that fit the story ("Frame and voice by content", 25/11/2026; `"story"` was used for every source video from 15/11 to 24/11) and a fitting `kicker` (e.g. `皇室の物語`
+   rewritten), with the frame that fits the story and the voice 青山龍星 ("Frame and voice by content", 25/11/2026; `"story"` was used for every source video from 15/11 to 24/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
    searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
    6 seconds of words (1 is enough under that, common rule 17).

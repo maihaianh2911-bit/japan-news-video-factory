@@ -3,13 +3,13 @@
 > **The common rules (owner, 26/11/2026; full text at the top of `CLAUDE.md`) come before everything in this
 > file.** The ones that stop a video: (1) voice, script lines, subtitles and on-screen text are in **Japanese**,
 > never another language; (2) vertical, **never under 61 seconds**, except a trial or sample video (the owner says
-> so, or the title or notes say `thử`, `mẫu`, `test`, `demo`); (3) the length is the channel's own rule, at most
-> 160 seconds where it names none. And **check before the render, render once** (rules 22–27): the reading of
+> so, or the title or notes say `thử`, `mẫu`, `test`, `demo`); (3) **61–65 seconds**, only the film channel
+> longer (2–3 minutes); and the voice is 青山龍星 on every channel (rule 21). And **check before the render, render once** (rules 22–27): the reading of
 > every line and the length (`python tools/readings.py`), the pictures and the caption come before the render;
 > after it, one overall look at the finished video, the faults fixed in one push.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
-result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice (青山龍星 by default, or the story's `"speaker"`: `CLAUDE.md`, "Frame and voice by content"), captions timed to the
+result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星 (every channel, common rule 21; a `"speaker"` only in a trial the owner asks for), captions timed to the
 voice. The story format, the picture rules and the preview are in `CLAUDE.md` (steps 1–4); this file says what to
 do at each label. Machine steps: `.github/workflows/news-video.yml`; results: `renders` branch, folder `<name>/`.
 
@@ -112,7 +112,7 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
 - Check: `pip install -q -r requirements.txt` if needed, then `python -m news.custom stories/<name>.json`.
 - The reading and the length, before anything is rendered (common rules 22 and 23): `pip install -q pyopenjtalk`,
   then `python tools/readings.py stories/<name>.json`. Read every line's kana (names, numbers, kanji with several
-  readings) and write a wrong one `{"text": …, "say": "kana"}`; under 63 s estimated, add true details now.
+  readings) and write a wrong one `{"text": …, "say": "kana"}`; under 63 s estimated, add true details now; over 65 s, cut (common rule 3).
 - Commit `[jnews #N] kịch bản`, push, remove `jnews-busy`. (Picture search ~2 min; you are called at `jnews-pick`.)
 
 ## 2. `jnews-pick` → pictures, then `stage: "render"`

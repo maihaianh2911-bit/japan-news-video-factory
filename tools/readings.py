@@ -27,6 +27,7 @@ VOICES = {"青山龍星": 1.0, "もち子さん": 1.08, "剣崎雌雄": 0.99, "�
 DEFAULT_VOICE = "青山龍星"
 DEFAULT_SPEED = 0.96          # news/custom.py: the speed of a story without "pace"
 MINIMUM, MARGIN = 61.0, 2.0   # common rule 2, and the margin of common rule 23
+MAXIMUM = 65.0                # common rule 3 (owner, 26/11/2026: every video 61–65 s, the film channel excepted)
 KANA = re.compile(r"[ァ-ヺー]")
 PAUSES = re.compile(r"[、，,。！？!?]")
 LINE_END = "。．.！？!?」』）) 　"
@@ -73,6 +74,14 @@ def main(path):
         print(f"warning: under {MINIMUM + MARGIN:g} s: the video must pass {MINIMUM:g} s (common rule 2) with a "
               f"margin of {MARGIN:g} s (common rule 23): add true details of the same story before the render "
               f"(a trial or sample video is the exception)")
+    if seconds > MAXIMUM:
+        print(f"warning: over {MAXIMUM:g} s: every video is {MINIMUM:g}–{MAXIMUM:g} s (common rule 3): cut it to the main "
+              f"thread before the render (only the film channel, 2–3 minutes, is longer)")
+    others = sorted({(scene.get("speaker") or story.get("speaker") or DEFAULT_VOICE).split("/")[0]
+                     for scene in scenes} - {DEFAULT_VOICE})
+    if others:
+        print(f"warning: the voice is {', '.join(others)}: every channel reads in {DEFAULT_VOICE} (common rule 21); "
+              f"another voice only in a trial the owner asks for")
 
 
 if __name__ == "__main__":
