@@ -26,8 +26,9 @@
    "cross",
    "point",
    "neutral",
-   "point",
    "cross",
+   "point",
+   "neutral",
    "point"
   ]
  },
@@ -144,6 +145,30 @@
    ],
    "why": "Ảnh những người lập xưởng (Konosuke, em vợ Toshio, vợ Mumeno), rồi căn nhà khởi nghiệp dựng lại ở bảo tàng",
    "cut": "dip"
+  },
+  {
+   "label": "ヒット",
+   "era": "1918年",
+   "headline": "最初のヒット商品",
+   "lines": [
+    {
+     "text": "最初に当たったのは、電球のソケットに差し込む、小さなプラグでした。",
+     "say": "最初に当たったのは、電球のソケットに差し込む、小さなプラグでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "11-2",
+     "move": "push-in",
+     "focus": [
+      0.75,
+      0.5
+     ],
+     "depth": false
+    }
+   ],
+   "why": "Chiếc phích cắm vặn vào đui đèn, món hàng đầu tiên bán chạy (ảnh của Panasonic)",
+   "cut": "fade"
   },
   {
    "label": "世界恐慌",
