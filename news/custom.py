@@ -205,9 +205,9 @@ def validate(data, name=None):
             problems.append(f'"host": "poses" is one pose per scene, each one of {", ".join(HOST_POSES)}, got {poses!r}')
         if data.get("style") != "band":
             problems.append('"host" works with "style": "band" only')
-    if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 9:
-        problems.append(f'"masthead": the big title at the top of the "band" frame, 9 characters at most, got '
-                        f'{len(data["masthead"])}')
+    if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 12:
+        problems.append(f'"masthead": the big title at the top of the "band" frame, 12 characters at most (9 keep '
+                        f'it at its full size, a longer one is drawn smaller), got {len(data["masthead"])}')
     if data.get("style", "news") not in STYLES:
         problems.append(f'"style" must be one of {", ".join(STYLES)}, got {data.get("style")!r}')
     searches = data.get("searches", [])
