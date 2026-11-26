@@ -16,7 +16,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 79,
   "scenes": [
     {
