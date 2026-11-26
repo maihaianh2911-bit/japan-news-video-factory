@@ -1,49 +1,124 @@
 # japan-news-video-factory — notes for Claude
 
-## Iron rules (owner, 16/11/2026) — they come before everything else in this file
-1. **The video is in the channel's language: Japanese (tiếng Nhật).** The voice is a Japanese VOICEVOX voice (青山龍星 by default; since 25/11/2026 a male or female voice chosen per video, see "Frame and voice by content"), and the script lines, subtitles and
-   on-screen text are in Japanese (tiếng Nhật). A script that arrives in another language is translated faithfully into Japanese (tiếng Nhật)
-   first. Never a voice or text of another language: check the language of `lines` and the voice before the voice
-   step, and again on the finished video. A video in the wrong language is not delivered: fix it and render again.
-2. **No video under 60 seconds.** Before the voice step, estimate the length from the script (use the seconds per
-   line of this channel's earlier videos); after the voice step, read the real length of the speech (the machine
-   comment gives it). If the video would be under 60 seconds, **write the script longer** (more true facts and
-   detail on the same subject, in the owner's tone, nothing invented) until it passes 60 seconds, tell the owner on
-   the issue what was added, and only then go on (a script may be changed for this as for any improvement, see the
-   rule changes of 19/11/2026). Never render or deliver a video under 60 seconds. Only exception: a trial or sample video — the owner says so,
-   or the issue title or notes say `thử`, `mẫu`, `test` or `demo`.
-3. **Every video is vertical (1080×1920), longer than 61 seconds and at most 160 seconds** (owner, 18/11/2026:
-   "tất cả các kênh đều làm dạng dọc, 80-160s thôi"; changed by the owner on 19/11/2026: "không cần ép 80s, chỉ cần
-   trên 61s"). Do not lengthen a script only to reach 80 s: a script the owner cut stays cut as long as it passes
-   61 s. Under 61 s add true scenes and details of the same story (never padding); over 160 s cut repetition.
-   Trial or sample videos are the exception, as in rule 2.
+## The common rules — every channel of this repo (owner, 26/11/2026)
+The owner asked for one list of the rules that hold for every channel, went through it in a chat and said "đẩy bản
+quy tắc chung của mày thay cho bản cũ đi" (26/11/2026). It replaces the "Iron rules" of 16/11/2026 and "The owner's
+rule changes of 19/11/2026", and **it wins over any older sentence in this file or in `AGENT_JNEWS.md`**. The rules
+keep the numbers the owner saw in the chat (12b included). Where an older sentence says "iron rule 1, 2, 3", read
+common rules 1, 2, 3; "rule change 1 … 6" are common rules 7, 10, 9, 11, 20, 17. What differs from channel to
+channel (the length, the hook pattern, the frame, the voice and its speed, the music, the issue title) is not here:
+it stands in that channel's own section.
 
-## The owner's rule changes of 19/11/2026 — they win over any older sentence in this file or in `AGENT_JNEWS.md`
-The owner read the list of the hard rules and said of six of them "mấy cái này ko hợp lí", then chose what replaces
-each (the same in every repo of the owner's Japanese channels):
-1. **A script the owner sends may be improved** (owner: "Sửa cả kịch bản tao gửi"): Claude may cut, add and rewrite
-   it so that it is better and more gripping (the writing rules of "When the owner sends an original video" apply
-   to it too), keeping the owner's story and main idea. It is no longer translated sentence by sentence and left
-   as it is. Say in the chat or on the issue what was changed.
-2. **Rumours and unconfirmed details may be told on every channel** (owner: "Dùng tin đồn ở mọi kênh"), and the
-   posting caption says so in a ※ note (which part is a rumour, what is known). **No hedging words in the
-   narration** (owner, 24/11/2026: "phần đính chính sẽ ghi ở caption, đừng ghi vào video"; 25/11/2026: "Tao đéo thích
-   từ nghe nói với hình như cc gì cả"): no 「…といいます」「…と噂されています」「…らしい」「…ようです」; a fact or a
-   quote a press article reports is told plainly, and only the ※ note of the caption says what is unconfirmed.
-3. **The telling may be dramatised** (owner: "Thêm thắt cho kịch tính"): feelings, a narrator's lead-in, suspense,
-   the order of the telling. The one line that stays: an event or a quote of a real person is never made up and
-   told as a fact.
-4. **The ending is free** (owner: "Tự do, miễn hay"): whatever ends this story best — a line that stays, a last
-   surprising detail, a return to the opening, a question to the viewer, a lead to the next video. No fixed form,
-   and not the same one on every video.
-5. **The voice and the music of a video the owner sends may be used**, as its pictures and footage are (owner:
-   "Được dùng cả nhạc và giọng"). The owner was told the risk: music under copyright is recognised by YouTube
-   (a muted video, lost revenue, a strike), and the more of the source a video carries, the more it counts as
-   reused content. The engine cannot put a sound of the source into a video yet (its music comes from a `music:`
-   search, its voice from VOICEVOX): like moving footage, that needs new code and a trial the owner approves.
-6. **Pictures a scene** (owner: "nếu nội dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"): a
-   scene whose words last over 6 seconds has at least two pictures; under 6 seconds one is enough; more is free
-   (before: two a scene). About 6.5 kana-reading characters a second at speed 1.0, so about 47 at speed 1.2.
+**A. Iron rules**
+1. **The video is in Japanese (tiếng Nhật)**: the voice (a Japanese VOICEVOX voice), the script lines, the
+   subtitles and the on-screen text. A script in another language is put into Japanese first. Check the language
+   of `lines` and the voice before the voice step, and again on the finished video. A video in the wrong language
+   is not delivered: fix it and render again.
+2. **Vertical (1080×1920), and never under 61 seconds** (owner, 19/11/2026: "chỉ cần trên 61s"; the "60 seconds"
+   of the older text is gone). Under 61 s: add true scenes and details of the same story, never padding, and tell
+   the owner what was added. Only exception: a trial or sample video — the owner says so, or the issue title or
+   notes say `thử`, `mẫu`, `test` or `demo`.
+3. **How long a video is, is its channel's own rule** (about 65 s for the imperial-family and star videos, at most
+   about 80 s for `ts`, 61–65 s for the business channel, 2–3 minutes for the film channel). A channel that names
+   no length: at most 160 seconds.
+4. **A channel's own rules are for that channel only** (owner, 26/11/2026: "Đừng dùng luật của kênh phim vào
+   đây"). A new channel that has no rules of its own yet follows these common rules and nothing else; ask the
+   owner for the rest, never borrow another channel's rule.
+
+**B. The script**
+5. **Nothing is built before the owner approves the script** (owner, 21/11/2026: "đã chốt kịch bản đâu mà dựng").
+   A script Claude wrote or changed is shown in the chat; no issue, no story file, no push and no search before a
+   clear yes ("ok", "chốt", "dựng đi"). A remark about the script ("cuốn hơn", "61s thôi") asks for a new draft.
+   (An issue the owner opens from the form with a script is the go-ahead for that script: unattended, Claude says
+   on the issue what it changed.)
+6. **A script is shown as one continuous text**: the Japanese in one piece, then its Vietnamese meaning in one
+   piece; never cut into numbered scenes or bullet points (owner, 18/11/2026).
+7. **A script the owner sends may be improved** (owner, 19/11/2026: "Sửa cả kịch bản tao gửi"): cut, add, rewrite
+   so that it is better and more gripping, keeping the owner's story and main idea. Say what was changed.
+8. **A story, never an encyclopedia**: told like a storyteller, every sentence a new idea (nothing said twice),
+   the sentences linked into one flowing narration. If the story itself is not gripping, say so and propose
+   another one instead of sending a dull script.
+9. **The telling may be dramatised** (feelings, a narrator's lead-in, suspense, the order of the telling); **an
+   event or a quote of a real person is never made up and told as a fact.**
+10. **Rumours and unconfirmed details may be told. The narration has no hedging words** (owner, 24–25/11/2026:
+    no 「…といいます」「…と噂されています」「…らしい」「…ようです」); **what is unconfirmed is said in the posting
+    caption only**, in a ※ note (which part is a rumour, what is known). Asked on 26/11/2026 whether the narration
+    should name its source for a grave claim about a living person, the owner said: "ko, ghi vào caption thôi".
+11. **The ending is free** (owner, 19/11/2026: "Tự do, miễn hay"), and not the same form on every video. An ending
+    that comes back to the opening brings something new; it never reads the opening line again.
+
+**C. The hook**
+12. **What the hook says.** The first line is one complete sentence that someone who has never heard of the story
+    understands: who, what happened, and the one thing of the story worth remembering (a contrast, a number, or a
+    real quote). A name the Japanese audience recognises at once stands in the first line; an unknown name comes
+    later. A channel with a hook pattern of its own follows it (the business channel: 「…の生みの親」).
+12b. **How long the hook is.** About 44–48 characters (the three videos over 100k views), at most 4 rows, 56
+    characters, printed big on the first picture (`"quote": true`). A hook read for more than 5 seconds needs two
+    pictures in the first scene.
+13. **The hook is on screen from the very first frame; the first picture moves from the first frame** (`push-in`
+    or `punch-in`, never `hold`) **and stays at most 5 seconds.** (Since 26/11/2026 for every channel; it was the
+    star channel's rule.)
+
+**D. The pictures** (the detail of 15 and 16, and what the machine watches: "The picture rules of the edit" below)
+14. **Real pictures only, never a picture an image generator made up** (ChatGPT and the like). Claude looks at
+    every picture itself. A colourised copy of a real black-and-white photograph is a real picture (owner,
+    26/11/2026: "ảnh có màu ko tính là ảnh AI"). The narrator characters the owner had drawn (the samurai, the
+    Shiba) are the one exception: they present the story.
+15. **The first picture is the best of the video**: sharp, the face of the main person clear (or a place or a
+    thing the Japanese audience recognises at once), right for the hook line, a photograph (not a newspaper page,
+    a document or a collage with text), the face in the upper half of the frame.
+16. **Faces**: the whole face stays in the frame while the picture zooms or pans; no text lies over a face; in a
+    picture of several people the one spoken of is the clearest; never a picture in which that person's face is
+    very small.
+17. **Every scene has its own fitting picture; a scene whose words last over 6 seconds has at least two** (about
+    6.5 kana a second at speed 1.0); **every picture moves** (no `hold`). A picture with a logo, a watermark or
+    burnt-in text, or a small blurred copy, is left out.
+18. **The picture library first** (`python tools/library.py`), the searches for what it lacks; a pick that passed
+    the review is kept in the library. When no picture passes, search again or tell the owner which scene lacks
+    one: a poor picture is never taken just to be done.
+19. **The picture review before the render**: every pick is checked against the words spoken while it is on
+    screen and against the title and page of its source (the right person, the right event).
+20. **The pictures, the footage, the voice and the music of a video the owner sends may be used** (owner,
+    19/11/2026). The owner was told the risk (music under copyright is recognised by YouTube; the more of the
+    source a video carries, the more it counts as reused content). The engine cannot put a sound of the source
+    into a video yet: that needs new code and a trial the owner approves.
+
+**E. Frame, voice, music**
+21. **The frame, the voice and its speed, and the music are the channel's own rule.** A channel without a fixed
+    frame turns the five frames by content ("Frame and voice by content"), never one frame for every video in a
+    row. A channel's voice changes only after the owner has heard a trial and chosen.
+
+**F. Checks and delivery — check before the render, render once** (owner, 26/11/2026: a check that comes only
+after the render means rendering again, "như thế sẽ mất thêm nhiều hạn mức")
+
+Before the render (no render is spent):
+22. **The reading.** `python tools/readings.py stories/<name>.json` (`pip install pyopenjtalk`) prints every line
+    as the voice engine's dictionary reads it. Look at names, numbers and kanji with several readings; a wrong
+    one is written `{"text": …, "say": "<kana>"}` in the story, and the tool is run again.
+23. **The length.** The same tool estimates the voice from that reading and the real speed of the voice (measured
+    on 34 videos: 0.5 s off on average, 1.8 s at most), never from the written characters. Write for 2–3 seconds
+    over 61: the tool warns under 63 s.
+24. **The pictures.** Rule 19 on the preview (the stills of every scene and `tools/review_picks.py`), and every
+    `warning:` of the preview settled (a cut face, text over a face); and no face that is very small.
+25. **The caption** is written and checked (`python -m news.captions`) before the render, and pushed with it.
+
+After the render (light):
+26. **One overall look at the finished video, start to end, once**: one frame a second on sheets (`ffmpeg -i
+    video.mp4 -vf "fps=1,scale=320:-1,tile=6x3" sheet-%02d.jpg`: the moves, the text, the faces), and the
+    machine's numbers (the real length over 61 s, the right voice). Not a second and a third viewing. Take the
+    one file, not the whole `renders` branch (10 GB): `gh api "repos/maihaianh2911-bit/japan-news-video-factory/
+    contents/<name>/video.mp4?ref=renders" -H "Accept: application/vnd.github.raw" > video.mp4` (a file under
+    100 MB; `status.json`, `sources.json` and `subtitles.srt` the same way).
+27. **Faults found there are gathered, fixed in one push and rendered again once.** A fault of the caption alone:
+    push the caption alone (only the caption is published, the video is not made again).
+28. **Listening to the video** (`tools/listen.py`) only for the first video in a new voice, or when a name is not
+    in the dictionary.
+
+Delivery:
+29. **Only the finished video is sent**: the video file and its caption file in the chat, with the links. No
+    previews, stills or progress pictures.
+30. **Once a week, for each channel**, the owner sends the numbers of 3–5 videos (views, viewed against swiped
+    away, average % viewed); Claude writes what got views into that channel's own rules.
 
 ## Frame and voice by content (owner, 25/11/2026) — for every channel of this repo
 Asked whether one frame for every video makes TikTok see "mass-produced content", the owner decided: "M tự đổi
@@ -96,13 +171,13 @@ channel; one channel mixing every topic; a mass-produced look) and a two-week pl
 26/11/2026, for every new video of **the stars channel** (the chat that makes videos of famous people — Showa
 stars, actors, singers, athletes — whose issues are titled `[Tin Nhật]` too; the imperial-family chat has its own
 rule below; the voice and the flute are already new, see above):
-- **The first two seconds decide.** The opening quote tells the whole idea, as the hook rule below says (the
+- **The first two seconds decide** (common rule 13 since 26/11/2026: every channel). The opening quote tells the whole idea, as the hook rule below says (the
   three videos over 100k views of the imperial channel had hooks of 44–48 characters on 4 rows), and with `fx` the engine shows
   it **from the very first frame**, larger when it is short (`draw_quote(…, hook=True)`, all frames). The first
   picture is the most striking face of the story and moves from the first frame (`push-in` or `punch-in`, never
   `hold`).
 - **No length test**: Claude had proposed alternating 30–40-second videos; the owner refused (25/11/2026, angry: "Sao
-  lại 36s. Video k đc dưới 60s cơ mà"). Every video stays over 61 s, about 65 s (iron rules 2 and 3).
+  lại 36s. Video k đc dưới 60s cơ mà"). Every video stays over 61 s, about 65 s (common rules 2 and 3).
 - **One theme for this channel**: the love and married life of famous people (couples, a marriage, a loss, a
   promise kept), the kind of story that has drawn views on these channels (`masako-rikon`); no beauty tips or
   gossip lists on it (another channel, if the owner opens one).
@@ -118,10 +193,7 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
 - **The chat of the film and story channel** (owner, 26/11/2026, in the chat where these kinds were set up: "Ở chat
   này mình sẽ chỉ làm riêng nội dung về phim hoặc là chuyện. Như tao đã nói, mày chỉ cần để ý đến luật chung và luật
   riêng của kênh này, còn những luật của kênh khác thì không cần quan tâm"): that chat makes film and story videos
-  only (the business and politician kind is for another chat), and follows the rules for every channel (the iron
-  rules with this channel's own length, the rule changes of 19/11/2026, the picture rules of the edit, every picture
-  moves, nothing built before the script is approved, the script shown as one continuous text, a caption for every
-  video, only the finished video sent) and this channel's own rules below. The rules of the other channels do not
+  only (the business and politician kind is for another chat), and follows the rules for every channel (the common rules at the top of this file) and this channel's own rules below. The rules of the other channels do not
   apply to it: the imperial-family and star rules (もち子さん and the flute, the love theme, about 65 s), the `ts`
   rules (80 s, read fast), the history rules (drama stills, the samurai).
 - **The chat of the business and politician channel** (owner, 26/11/2026, in a second chat opened for it: "Kênh này
@@ -223,15 +295,14 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   is built; **the first about 5 seconds (the hook) are moving footage** from the owner's video, everything after is
   still pictures (frames of the owner's video, `tools/video_frames.py`, and the searches).
 - **Length**: 2–3 minutes are the owner's words for these two kinds, so up to 180 s here (the owner was told that
-  iron rule 3 says 160 s and that Claude reads this as "these two kinds only"; the other kinds keep 160 s).
+  the iron rule of that time said 160 s and that Claude reads this as "these two kinds only"; the other kinds keep 160 s).
 - **Not settled yet** (Claude's proposals, the owner has not answered): the seals `成功者の物語` and `映画の裏話`; the
   issue titles `[Doanh nhân] …` and `[Phim] …`; a narrator character for each kind (the samurai is for history;
   proposed for films: a cinema attendant in uniform holding popcorn), drawn by ChatGPT on green like the samurai.
 - **What the engine lacks for it**: a clip comes from Commons or from an https address only (`video:` in
   `news/find.py`): the hook clip of the owner's video needs `video:file:stories/media/<story>/<name>.mp4`, to be
-  added and tried on the first source video (the owner approves the trial). The cloud session has no speech-to-text
-  (the model's host is refused by the network): the words of a source video are read from its burnt-in captions;
-  when it has none, ask the owner for the script as text.
+  added and tried on the first source video (the owner approves the trial). The words of a source video are read from its burnt-in captions; when it has
+  none, `tools/listen.py` takes its speech down (above); only if that fails, ask the owner for the script as text.
 - A first script was drafted before the owner described this way of working (火垂るの墓, about 70 s, in the chat of
   26/11/2026, not approved): it is rewritten to 2–3 minutes from the owner's source when it comes.
 
@@ -379,7 +450,7 @@ The owner is Vietnamese and not technical: answer in short, simple Vietnamese, n
 "mày" (you); answer the same way, "tao" for yourself and "mày" for them. Their standing decisions
 are in `maihaianh2911-bit/japan-video-factory` → `docs/HANDOVER.md` (real pictures only, Claude looks at every
 picture, quality is not traded for usage; a script the owner sends was translated faithfully and never cut or
-rewritten until 19/11/2026: it may now be improved, rule change 1 above).
+rewritten until 19/11/2026: it may now be improved, common rule 7).
 
 **The chat of the `[Tin Nhật]` channel makes videos of the Japanese imperial family only** (owner, 25/11/2026: "Chat
 này vẫn chỉ làm hoàng gia nhật"; before, angry at a story of a singer: "mày làm hoàng gia nhật cơ mà"): stories
@@ -429,13 +500,14 @@ kèm caption cho mỗi video"):
    more gripping. Open with one hook line printed big (`"quote": true`, e.g. 「夫の葬儀にさえ、参列を許されなかった
    妃がいる。」), keep the rhythm tight, end with a line that stays. You may cut repetition and add a few true,
    well-known details on the same subject (dates, ages, what became of a person); never make up an event or a
-   quote of a real person and tell it as a fact (the telling may be dramatised, a rumour told as one: rule
-   changes 2 and 3 above). Keep the quotes of the people as they are. Read it fast like the source:
+   quote of a real person and tell it as a fact (the telling may be dramatised, and a rumour is told plainly, its ※ note in the
+   caption: common rules 9 and 10). Keep the quotes of the people as they are. Read it fast like the source:
    `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
-   characters a second at speed 1.0 plus the pauses (iron rule 3: over 61 s, at most 160 s). Tell the owner in the chat what you
+   characters a second at speed 1.0 plus the pauses (common rules 2 and 3: over 61 s, the channel's own length). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
-   - **The first line (about 5 seconds) says the whole story and what it means, plainly**, so that the viewer
+   - **The first line is the hook of common rules 12 and 12b** (one complete sentence a stranger understands:
+     who, what happened, the one thing worth remembering; about 44–48 characters), so that the viewer
      remembers it and stays: 「離婚を申し出た雅子さまに、皇太子さまが返した答えは、『僕は、皇太子である前に、君の夫だ』。
      この話は、二人の愛の証として、長く語り継がれてきました。」, 「愛子さまは、母である皇后雅子さまと同じように、とても
      優しい方です。それがよく伝わるのが、…ある午餐会での出来事です。」 Then tell the story. The ending is free (owner,
@@ -459,14 +531,15 @@ kèm caption cho mỗi video"):
      **Show the owner a script the same way: one continuous text** (the Japanese in one piece, then its Vietnamese
      meaning in one piece), never cut into numbered scenes or bullet points (owner, 18/11/2026: "Kịch bản phải
      liền mạch, nói bao nhiêu lần rồi, đừng bao giờ chia đoạn ra như thế"). The scenes exist only for the pictures.
-   - A story the sources do not confirm is framed **once** (e.g. 「長く語り継がれてきた話です」, 「…と口にしたといいます」
-     at the key line), not on every line.
-   - Under 60 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
+   - A story the sources do not confirm is told plainly, without hedging words; what is unconfirmed is said in
+     the ※ note of the caption (common rule 10; until 24/11/2026 it was framed once in the narration).
+   - Under 61 seconds: add scenes and feelings of the same story, never encyclopedic padding (number of trees,
      treaty years). Do not end every video with 「あなたはどう感じますか？」.
    - A source video too thin for a story (a few captions, no events): tell the owner before making it.
    - Owner, 17/11/2026: the love story (`masako-rikon`: a request for divorce, his answer, the proof, the two
      side by side in 2019) was the only video with views. When a source story has a love, couple or
-     mother-and-child side, lead with it in the first line and build the story on it (true facts only).
+     mother-and-child side, lead with it in the first line and build the story on it (true facts only). This is
+     the rule of the imperial-family and star chats, not a common one (owner, 26/11/2026).
    - **The owner's model script** (24/11/2026, "học tập cách viết này", for the scripts Claude writes on its own
      as for the rest; it was about Takeuchi Yuko's widower): (1) the hook gives the time since the event, the
      person and the striking fact ("6 years since Takeuchi Yuko died, her husband Nakabayashi Taiki has not
@@ -481,7 +554,7 @@ kèm caption cho mỗi video"):
    rewritten), with the frame and the voice that fit the story ("Frame and voice by content", 25/11/2026; `"story"` was used for every source video from 15/11 to 24/11) and a fitting `kicker` (e.g. `皇室の物語`
    for a story about the imperial family), a `wiki:` search for every person and place of the story, then `web:`
    searches (2–3 per scene, Japanese words; with a wish ` => …` where it helps), 2 pictures for a scene over
-   6 seconds of words (1 is enough under that, rule change 6).
+   6 seconds of words (1 is enough under that, common rule 17).
    **The pictures and the footage of a video the owner sends may be used, its voice and music too** (owner, 16/11/2026: "lấy cái nào
    đẹp"; 19/11/2026, for every repo: "nếu repo nào đc dựng bằng cách remix video hoặc tao có gửi video, có thể
    sử dụng hình ảnh/video trong video tao gửi"). The owner's video is a picture source like the searches:
@@ -492,7 +565,7 @@ kèm caption cho mỗi video"):
    background) or left. Prefer a web copy of the same picture when it is larger. Moving footage (a clip inside a
    scene) is allowed by the owner too, but the frames of this engine show still pictures only: a clip needs new
    frame code and a trial the owner approves first; until then take stills. The source's voice and music are
-   allowed since 19/11/2026 as well (rule change 5: the risk was told, and the engine cannot do it yet).
+   allowed since 19/11/2026 as well (common rule 20: the risk was told, and the engine cannot do it yet).
    Names the voice may misread get a `say` in kana.
 4. Write the posting caption (every video has one, owner 16/11/2026), see "Posting caption" below. Push it with
    the story.
@@ -512,7 +585,7 @@ ask the owner to allow `main`.
      Claude after each step).
    - `scenes`: one idea each. `label` (short tag), `headline` (≤ 2 lines, `\n` between; longer ones get a smaller
      font, up to 3 lines), `lines` (a list: the script, in Japanese, sentence by sentence — the
-     owner's script as improved, rule change 1), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
+     owner's script as improved, common rule 7), optional `value` (a big figure such as `0.5％`) and `evidence` (small text).
      Where they appear: on a picture scene, headline, then value, then evidence under each other below the picture
      (evidence only if it fits above the captions — the preview prints a warning when it does not); on a text card
      (no picture), headline, value, then evidence. A card shows nothing else: no title, so give a text card an

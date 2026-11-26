@@ -1,13 +1,12 @@
 # Japanese news videos from an issue — runbook for Claude
 
-> **Iron rules (owner, 16/11/2026; full text at the top of `CLAUDE.md`).** (1) Voice, script lines, subtitles and
-> on-screen text are in **Japanese**, never another language; check before the voice step and on the finished video.
-> (2) **No video under 60 seconds**: estimate before the voice step and read the real speech length after it; if it
-> would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
-> issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
-> owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
-> (3) **Vertical, over 61 seconds and at most 160** (owner, 18/11/2026: all channels; 19/11/2026: "không cần ép 80s,
-> chỉ cần trên 61s"): never lengthen a script only to reach 80 seconds.
+> **The common rules (owner, 26/11/2026; full text at the top of `CLAUDE.md`) come before everything in this
+> file.** The ones that stop a video: (1) voice, script lines, subtitles and on-screen text are in **Japanese**,
+> never another language; (2) vertical, **never under 61 seconds**, except a trial or sample video (the owner says
+> so, or the title or notes say `thử`, `mẫu`, `test`, `demo`); (3) the length is the channel's own rule, at most
+> 160 seconds where it names none. And **check before the render, render once** (rules 22–27): the reading of
+> every line and the length (`python tools/readings.py`), the pictures and the caption come before the render;
+> after it, one overall look at the finished video, the faults fixed in one push.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
 result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice (青山龍星 by default, or the story's `"speaker"`: `CLAUDE.md`, "Frame and voice by content"), captions timed to the
@@ -59,9 +58,9 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   1) next to Commons ones. Skip pictures with a watermark, a logo or text burnt in, or a small blurred copy.
 - The script is the owner's: put it into Japanese and **improve it** (owner, 19/11/2026: "Sửa cả kịch bản tao gửi";
   before: translated faithfully, nothing cut or added). You may cut, add, reorder and rewrite so that it is better
-  and more gripping, keeping the owner's story and main idea; rumours may be told as rumours and the telling
-  dramatised, but no event or quote of a real person is made up and told as a fact (`CLAUDE.md`, the rule changes
-  of 19/11/2026). Say on the issue what you changed. Write proper names the canonical way.
+  and more gripping, keeping the owner's story and main idea; rumours may be told (plainly, without hedging words: the ※ note of the
+  caption says what is unconfirmed) and the telling dramatised, but no event or quote of a real person is made up
+  and told as a fact (`CLAUDE.md`, common rules 9 and 10). Say on the issue what you changed. Write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
 - How to write the searches (17/11/2026; syntax in `CLAUDE.md` step 1), in this order:
@@ -110,6 +109,9 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
   library picture that fits a scene; then the `wiki:`, `web:` and other searches as usual, for what the library
   lacks and for better pictures.
 - Check: `pip install -q -r requirements.txt` if needed, then `python -m news.custom stories/<name>.json`.
+- The reading and the length, before anything is rendered (common rules 22 and 23): `pip install -q pyopenjtalk`,
+  then `python tools/readings.py stories/<name>.json`. Read every line's kana (names, numbers, kanji with several
+  readings) and write a wrong one `{"text": …, "say": "kana"}`; under 63 s estimated, add true details now.
 - Commit `[jnews #N] kịch bản`, push, remove `jnews-busy`. (Picture search ~2 min; you are called at `jnews-pick`.)
 
 ## 2. `jnews-pick` → pictures, then `stage: "render"`
@@ -209,7 +211,9 @@ stories/mau-boj.json <find folder of mau-boj> <out>` (`moves.jpg`, `cuts.jpg`, `
 
 ## 3. `jnews-check` → done
 Fetch `<name>/` (its `status.json` must have your commit). Look at `stills/sheet.jpg` and read `subtitles.srt`
-against the script. Push a corrected story only for a real fault (a cut face, the wrong subject, a misread word:
+against the script, then take **one overall look at the finished video, once** (common rule 26: one frame a second
+on sheets, start to end). Gather every fault and fix them in one push, for one new render (common rule 27). Push a
+corrected story only for a real fault (a cut face, the wrong subject, a misread word:
 write it `{"text": …, "say": "kana"}`; with `fx`, a picture bent by the depth effect: give it `"depth": false`).
 With `fx`, the headlines of the stills are in the display typeface (a mincho with strong contrast); if they are in
 the usual one, or the run log of the render says `warning: depth effect off`, an effect could not be installed:
