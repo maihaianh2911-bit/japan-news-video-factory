@@ -44,6 +44,10 @@ it stands in that channel's own section.
     no 「…といいます」「…と噂されています」「…らしい」「…ようです」); **what is unconfirmed is said in the posting
     caption only**, in a ※ note (which part is a rumour, what is known). Asked on 26/11/2026 whether the narration
     should name its source for a grave claim about a living person, the owner said: "ko, ghi vào caption thôi".
+    Again on 26/11/2026: "cho phép sử dụng tin đồn, k ép phải đúng 100% sự thật, sẽ ghi ở caption sau" — a rumour
+    someone has told (the press, social media, the owner's source video) may be used; Claude only never makes one up
+    (rule 9). A narrator's line such as 「長く語り継がれてきました」 is not a hedge and may stay (owner, of the hook
+    of `masako-rikon` with 「僕は、皇太子である前に、君の夫だ」: "2 câu đó rất hay"): it adds feeling, not doubt.
 11. **The ending is free** (owner, 19/11/2026: "Tự do, miễn hay"), and not the same form on every video. An ending
     that comes back to the opening brings something new; it never reads the opening line again.
 
@@ -574,7 +578,7 @@ kèm caption cho mỗi video"):
    well-known details on the same subject (dates, ages, what became of a person); never make up an event or a
    quote of a real person and tell it as a fact (the telling may be dramatised, and a rumour is told plainly, its ※ note in the
    caption: common rules 9 and 10). Keep the quotes of the people as they are. Read it fast like the source:
-   `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`; estimate the length at about 6.5 kana-reading
+   the pace of the kind (the table of "The rules of each kind of video": 1.25, 0.05, 0.15); estimate the length with `tools/readings.py` (common rule 23), not at about 6.5 kana-reading
    characters a second at speed 1.0 plus the pauses (common rules 2 and 3: 61–65 s). Tell the owner in the chat what you
    added. Example: `stories/2026-11-16-nobuko.json` and the four other stories of 16/11.
    How to write it (owner, 17/11/2026, after finding the scripts of that morning dull):
