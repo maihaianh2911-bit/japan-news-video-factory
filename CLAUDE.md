@@ -146,8 +146,13 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   the owner sends no source, Claude researches the film (facts a press article reports, checked by a search), writes
   the 2–3 minute script itself and shows it for approval. Such a video has no source video for the 5-second hook:
   ask the owner for a short clip of the film, else the hook is a still that moves.
-- First script: 火垂るの墓, "why even the toughest people cry" (about 2 min 30 s at speed 1.2; a 70-second draft came
-  before the owner gave the length), shown in the chat of 26/11/2026, waiting for the owner's yes.
+- First script: 火垂るの墓, "why even the toughest people cry" (about 2 min 30 s at speed 1.2). The first long
+  version answered the question with a list of reasons and behind-the-scenes facts (the first line of the film, the
+  5-year-old voice, no villain, the author's sister, the poster, the last shot): the owner said only "ko hay"
+  (26/11/2026). Claude's reading, not the owner's words: it was an essay, not a story. The second version tells the
+  film itself as a story (the lie about the mother, the fireflies, the grave, the marbles, the watermelon) and
+  leads everything to one line, Setsuko's last 「兄ちゃん、おおきに」, then the author's real sister; shown in the
+  chat, waiting for the owner's yes.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
