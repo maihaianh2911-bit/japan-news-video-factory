@@ -27,6 +27,7 @@ VOICES = {"青山龍星": 1.0, "もち子さん": 1.08, "剣崎雌雄": 0.99, "�
 DEFAULT_VOICE = "青山龍星"
 DEFAULT_SPEED = 0.96          # news/custom.py: the speed of a story without "pace"
 MINIMUM, MARGIN = 61.0, 2.0   # common rule 2, and the margin of common rule 23
+LOUD = 2.4                    # "voice" of every new story (CLAUDE.md, "The rules of each kind of video")
 MAXIMUM = 65.0                # common rule 3 (owner, 26/11/2026: every video 61–65 s, the film channel excepted)
 KANA = re.compile(r"[ァ-ヺー]")
 PAUSES = re.compile(r"[、，,。！？!?]")
@@ -77,6 +78,9 @@ def main(path):
     if seconds > MAXIMUM:
         print(f"warning: over {MAXIMUM:g} s: every video is {MINIMUM:g}–{MAXIMUM:g} s (common rule 3): cut it to the main "
               f"thread before the render (only the film channel, 2–3 minutes, is longer)")
+    if float(story.get("voice", 1.0)) < LOUD:
+        print(f'warning: the sound is at {float(story.get("voice", 1.0)):g}: every new story carries "voice": {LOUD:g} '
+              f'(owner, 26/11/2026: every video is loud)')
     others = sorted({(scene.get("speaker") or story.get("speaker") or DEFAULT_VOICE).split("/")[0]
                      for scene in scenes} - {DEFAULT_VOICE})
     if others:

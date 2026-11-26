@@ -91,11 +91,12 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   does: `CLAUDE.md` step 1). On the contact sheets `s27` says how crisp a picture is (under `s12`: soft). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
   `"depth": false` in its picture entry. Stories made before 17/11 are not changed: add `fx` to an old story only
   when the owner asks for that video to be made again with the effects.
-- Voice and music: the voice is 青山龍星 (no `"speaker"` key; the owner turned もち子さん down on 26/11/2026: "Giọng
-  đ hay, quay về giọng cũ đi"), and every **new** story carries the owner's flute,
-  `"music:file:stories/media/music/owner-flute-1-long.mp3"` as a search and `"music": {"pick": "<k>-1", "volume":
-  0.7}` (`CLAUDE.md`, "Frame and voice by content"). The frame
-  changes from video to video by content (`story`, `full`, `band`, `album`, `magazine`).
+- Voice, sound, music and frame (`CLAUDE.md`, "The rules of each kind of video"): the voice is 青山龍星 (no
+  `"speaker"` key); every **new** story carries `"voice": 2.4` (owner, 26/11/2026: "có, tăng tiếng của mọi video")
+  and the owner's flute, `"music:file:stories/media/music/owner-flute-1-long.mp3"` as a search and `"music":
+  {"pick": "<k>-1", "volume": 0.7}`. The frame of an imperial-family video is one of three in turn (`story`,
+  `album`, `magazine`; never more than two videos in a row in the same one); a star video takes any of the five
+  (`story`, `full`, `band`, `album`, `magazine`) by its pictures.
 - Quality is not traded for usage: preview before rendering.
 
 ## 1. `jnews-plan` → `stories/<name>.json`
