@@ -155,6 +155,11 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     6. the last line asks the viewer ("What do you think of <brand>?").
     Plain, quick, news-like sentences, each one a fact; the brand everyone knows leads, not the life story. With
     61–65 s instead of 36 there is room for two turns of the story more, told as plainly.
+    **Plain does not mean unlinked** (owner, 26/11/2026, of 「…失った男でした。その名は、安藤百福。1910年生まれ、
+    日清食品の創業者です。理事長を務めていた信用組合が破綻し…」: "Chuyển đoạn kiểu đéo gì vậy"): every sentence
+    follows from the one before (その男, それでも, その庭に, こうして, ところが). The name comes as the answer to the
+    hook and leads straight into what the hook promised; no card of facts (birth year, title) dropped between two
+    sentences of the story.
   Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
   by content"; ask the owner or say the choice in one line, never borrow another channel's rule.
 - **Hearing a video without captions** (26/11/2026): the cloud session can take down speech after all.
