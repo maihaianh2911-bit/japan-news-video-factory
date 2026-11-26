@@ -30,7 +30,9 @@
     "music:Chopin Nocturne piano",
     "file:stories/media/2026-11-26-seria-top4/v-mop-daidokoro.mp4",
     "file:stories/media/2026-11-26-seria-top4/v-pouch-kyappu.mp4",
-    "file:stories/media/2026-11-26-seria-top4/v-zaru-nabe2.mp4"
+    "file:stories/media/2026-11-26-seria-top4/v-zaru-nabe2.mp4",
+    "file:stories/media/2026-11-26-seria-top4/web-tong.jpg",
+    "file:stories/media/2026-11-26-seria-top4/v-zaru-ageru.mp4"
   ],
   "scenes": [
     {
@@ -41,7 +43,33 @@
           "text": "トップ4！知らなきゃヤバい、マジで便利なセリアの神商品。",
           "say": "トップフォー！知らなきゃヤバい、マジで便利なセリアの神商品。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "15-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "10-8",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "9-15",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: ảnh ghép 4 món, lối vào tiệm Seria, rồi bên trong tiệm."
     },
     {
       "label": "第4位",
@@ -52,8 +80,45 @@
           "text": "第4位は、ミニモップ。持ち手を握るだけで、スポンジの水がギュッと絞れて、手はまったく汚れません。",
           "say": "だいよんいは、ミニモップ。持ち手を握るだけで、スポンジの水がギュッと絞れて、手はまったく汚れません。"
         },
-        "お風呂の壁や窓の水滴も、ひと拭きでスッキリ。テーブルに水の跡も残らず、小さいから、置き場所にも困りません。"
-      ]
+        {
+          "text": "お風呂の壁や窓の水滴も、ひと拭きでスッキリ。テーブルに水の跡も残らず、小さいから、置き場所にも困りません。",
+          "say": "お風呂の壁や窓のすいてきも、ひと拭きでスッキリ。テーブルに水の跡も残らず、小さいから、置き場所にも困りません。"
+        }
+      ],
+      "product": {
+        "pick": "1-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "1-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "1-7",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Cây lau mini: lau mặt ướt, lau bếp (phim gốc), miếng bọt biển."
     },
     {
       "label": "第3位",
@@ -68,7 +133,41 @@
           "text": "注ぐか、挟むか、2通りの使い方ができて、旅行の荷物が驚くほど軽くなります。",
           "say": "注ぐか、挟むか、ふたとおりの使い方ができて、旅行の荷物が驚くほど軽くなります。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "3-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "3-17",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-13",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Túi chiết: 3 túi màu, tay cầm gói túi, túi ghi tên từng loại."
     },
     {
       "label": "第2位",
@@ -77,10 +176,44 @@
       "lines": [
         {
           "text": "第2位は、ミニゆでザル。鍋の縁に引っ掛けて使えるから、少しのパスタや野菜なら、ザルごと引き上げるだけで水切り完了。",
-          "say": "だいにいは、ミニゆでザル。鍋の縁に引っ掛けて使えるから、少しのパスタや野菜なら、ザルごと引き上げるだけで水切り完了。"
+          "say": "だいにいは、ミニゆでザル。なべのふちに引っ掛けて使えるから、少しのパスタや野菜なら、ザルごと引き上げるだけで水切り完了。"
         },
         "ゆで時間の違う麺も、同時に仕分けられます。"
-      ]
+      ],
+      "product": {
+        "pick": "5-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "5-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "5-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Rổ luộc mini: rổ móc trong chảo, nhấc cả rổ lên (phim gốc), rổ nhỏ."
     },
     {
       "label": "第1位",
@@ -93,7 +226,41 @@
         },
         "輪ゴムやクリップ、鍵の収納にもぴったり。玄関のドアに貼っておけば、出かけるときの忘れ物も防げます。",
         "次にセリアへ行ったら、ぜひ探してみてください。"
-      ]
+      ],
+      "product": {
+        "pick": "7-6",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "7-15",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-19",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Hộp nam châm: hộp dính tủ lạnh đựng dây thun, mở nắp, 2 màu trắng đen."
     }
   ]
 }

@@ -34,7 +34,8 @@
     "music:Debussy Clair de lune piano",
     "file:stories/media/2026-11-26-daiso-top4/v-band-maku.mp4",
     "file:stories/media/2026-11-26-daiso-top4/v-yoki-kasane.mp4",
-    "file:stories/media/2026-11-26-daiso-top4/v-yoki-futa.mp4"
+    "file:stories/media/2026-11-26-daiso-top4/v-yoki-futa.mp4",
+    "file:stories/media/2026-11-26-daiso-top4/web-tong.jpg"
   ],
   "scenes": [
     {
@@ -45,7 +46,33 @@
           "text": "トップ4！1000円払っても買って損なし、ダイソーの神商品。",
           "say": "トップフォー！せんえん払っても買って損なし、ダイソーの神商品。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "19-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "13-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "14-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: ảnh ghép 4 món, mặt tiền tiệm Daiso, rồi bên trong tiệm."
     },
     {
       "label": "第4位",
@@ -57,7 +84,49 @@
           "say": "だいよんいは、食品保存用のシリコンバンド。袋の口にくるっと巻くだけで、空気を抜いて、しっかり密閉。野菜の保存に、もうラップはいりません。"
         },
         "輪ゴムより丈夫で、洗えば何度でも使えて、冷蔵庫の整理にも役立ちます。"
-      ]
+      ],
+      "product": {
+        "pick": "1-17",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "1-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "16-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "1-15",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Dây silicon: dây buộc miệng túi, quấn dây (phim gốc), túi đồ khô, tay cầm túi rau."
     },
     {
       "label": "第3位",
@@ -69,7 +138,49 @@
           "say": "だいさんいは、キッチン透明冷蔵庫容器。中身がひと目で見えるから、冷蔵庫の中を探し回る手間がなくなります。"
         },
         "重ねて収納できて、場所も取りません。見た目もきれいで、買い置きの食材管理が楽になると評判です。"
-      ]
+      ],
+      "product": {
+        "pick": "4-11",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "4-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "17-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "4-15",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "18-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Hộp trong suốt: hộp trong tủ lạnh, xếp chồng (phim gốc), rổ rau có nắp, đậy nắp (phim gốc)."
     },
     {
       "label": "第2位",
@@ -81,7 +192,49 @@
           "say": "だいにいは、クッションシール。お皿を重ねるときの、あのカチカチ音、気になりませんか？これを貼れば、滑り止めになって、音も静かに。"
         },
         "家具の傷も防げるから、賃貸の部屋にもうれしい。目立たないので、インテリアの邪魔もしません。"
-      ]
+      ],
+      "product": {
+        "pick": "7-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "7-19",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-4",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "7-5",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Miếng đệm: tấm đệm trên tay, đệm dán trong tủ giày, cầm gói đệm, sắp dán ở lối vào."
     },
     {
       "label": "第1位",
@@ -97,7 +250,49 @@
           "say": "皮むきもカットもこなすむっつの機能で、料理の幅が広がり、時短にもなると話題の神商品です。"
         },
         "気になった商品は、売り切れる前にチェックしてみてください。"
-      ]
+      ],
+      "product": {
+        "pick": "10-3",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "10-14",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-9",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "10-13",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "10-10",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Dụng cụ gọt: gọt cà rốt, cắt, cạo vỏ ngưu bàng, đo mì Ý — nhiều chức năng."
     }
   ]
 }
