@@ -28,7 +28,26 @@
           "quote": true,
           "say": "不倫騒動から6年。ささきのぞみが、わたべけんと離婚しなかった本当の理由に、多くの人が胸を打たれています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-1",
+          "focus": [
+            0.5,
+            0.22
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: Sasaki Nozomi cười, rồi Watabe Ken."
     },
     {
       "label": "婚約",
@@ -40,7 +59,24 @@
           "say": "2017年、わたべけんは、ささきのぞみとの婚約を、テレビの生放送で発表。"
         },
         "翌年には長男が生まれました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "1-1",
+          "focus": [
+            0.58,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ảnh selfie hai vợ chồng Sasaki đăng năm 2017, rồi Sasaki rạng rỡ.",
+      "cut": "slide"
     },
     {
       "label": "不倫報道",
@@ -52,7 +88,25 @@
           "text": "渡部は活動を自粛し、周りの人たちはみな、佐々木に離婚を勧めました。",
           "say": "わたべは活動を自粛し、周りの人たちはみな、ささきに離婚を勧めました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "6-3",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Trang tuần san đưa tin ngoại tình, rồi Watabe.",
+      "cut": "flash"
     },
     {
       "label": "決断",
@@ -64,7 +118,27 @@
           "say": "ささき自身も、最初は離婚がちらついたと明かしています。"
         },
         "けれど、子どもたちへの愛から、彼女は夫にもう一度チャンスを与えることを決めました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-5",
+          "focus": [
+            0.63,
+            0.16
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-8",
+          "focus": [
+            0.5,
+            0.2
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Sasaki trầm tư, rồi dáng đứng dịu dàng.",
+      "cut": "dip"
     },
     {
       "label": "夫への言葉",
@@ -76,7 +150,19 @@
           "text": "「ちゃんと子どもに言うのが、あなたの責任」",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "focus": [
+            0.5,
+            0
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Sasaki, khi nói câu với chồng.",
+      "cut": "fade"
     },
     {
       "label": "謝罪会見",
@@ -92,7 +178,32 @@
           "say": "わたべが仕事を失っていた間、家計を支えたのは、ささきでした。"
         },
         "復帰できたのは、騒動から1年8か月後のことです。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-2",
+          "focus": [
+            0.45,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-6",
+          "focus": [
+            0.53,
+            0.62
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "8-6",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Watabe họp báo xin lỗi 12/2020, Sasaki đi làm nuôi nhà, Watabe quay lại TV năm 2022.",
+      "cut": "slide"
     },
     {
       "label": "反響",
@@ -105,7 +216,35 @@
           "text": "一方で渡部には、「家事を手伝え」という声も相次ぎました。",
           "say": "一方で、わたべには、家事を手伝え、という声も相次ぎました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "focus": [
+            0.26,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "6-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Sasaki trên chương trình năm 2025, Sasaki cười, rồi Watabe.",
+      "cut": "zoom"
     },
     {
       "label": "今の気持ち",
@@ -117,7 +256,27 @@
           "text": "「いまだに許してはいないです。今は経過観察中。許すことはできないと思う」",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-5",
+          "focus": [
+            0.63,
+            0.17
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-5",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Sasaki, câu trả lời về chồng.",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -137,6 +296,11 @@
     "web:佐々木希 真剣 表情 => a serious Japanese actress",
     "web:週刊文春 渡部建 不倫 => a Japanese weekly magazine cover",
     "web:アンジャッシュ 渡部建 児嶋一哉 => two Japanese comedians on stage",
-    "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+    "music:file:stories/media/music/owner-flute-1-long.mp3",
+    "file:stories/media/2026-11-26-sasaki-watabe/insta-2017.jpg"
+  ],
+  "music": {
+    "pick": "17-1",
+    "volume": 0.7
+  }
 }
