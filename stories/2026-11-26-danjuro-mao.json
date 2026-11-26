@@ -16,7 +16,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 81,
   "searches": [
     "wiki:小林麻央",
@@ -54,7 +54,26 @@
           "text": "父の再婚について聞かれた、12歳の娘の答えに、多くの人が胸を打たれました。",
           "say": "父の再婚について聞かれた、じゅうにさいの娘の答えに、多くの人が、胸を打たれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-12",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-6",
+          "focus": [
+            0.54,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: Mao cười rạng rỡ, rồi hai vợ chồng mặc kimono."
     },
     {
       "label": "別れ",
@@ -69,7 +88,27 @@
           "text": "翌日の会見で、夫は何度も涙で言葉を詰まらせました。",
           "say": "よくじつの会見で、夫は、何度も、涙で言葉を詰まらせました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-9",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-16",
+          "focus": [
+            0.32,
+            0.57
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mao, rồi Ebizo khóc ở họp báo 23/6/2017.",
+      "cut": "dip"
     },
     {
       "label": "子どもたち",
@@ -80,7 +119,19 @@
           "text": "残されたのは、5歳の長女・麗禾ちゃんと、4歳の長男・勸玄くんです。",
           "say": "残されたのは、ごさいの長女、れいかちゃんと、よんさいの長男、かんげんくんです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-17",
+          "focus": [
+            0.57,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ảnh gia đình khi hai con còn nhỏ.",
+      "cut": "fade"
     },
     {
       "label": "再婚",
@@ -95,7 +146,24 @@
           "text": "いちばんの壁は、娘の麗禾だと明かします。",
           "say": "いちばんの壁は、娘の、れいかだと明かします。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-15",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-11",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Danjuro với hai con trong chương trình 2024, rồi Reika.",
+      "cut": "slide"
     },
     {
       "label": "娘の答え",
@@ -115,7 +183,32 @@
           "say": "私と弟のママは、まおさんだから、と。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-19",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-19",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Reika trong chương trình 3/1/2024, Reika, rồi mẹ Mao.",
+      "cut": "zoom"
     },
     {
       "label": "反響",
@@ -126,7 +219,19 @@
           "text": "ネットには「大人すぎる」という声が相次ぎました。",
           "say": "ネットには、大人すぎる、という声が、相次ぎました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-13",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Reika, người ta khen 'trưởng thành quá'.",
+      "cut": "fade"
     },
     {
       "label": "命日",
@@ -142,7 +247,24 @@
           "say": "不安しかなかった、あの日から、はちねん。子供達が、まっすぐ育ってくれている事が、私の誇りです。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-15",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Danjuro, rồi ba bố con năm 2025.",
+      "cut": "dip"
     },
     {
       "label": "思い出の場所",
@@ -158,7 +280,25 @@
           "say": "ママと、結婚式したところだよ。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Danjuro và con trai năm 2025, rồi ảnh cưới năm 2010.",
+      "cut": "slide"
     }
-  ]
+  ],
+  "music": {
+    "pick": "19-1",
+    "volume": 0.7
+  }
 }
