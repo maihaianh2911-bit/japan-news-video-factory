@@ -121,10 +121,14 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   rules (80 s, read fast), the history rules (drama stills, the samurai).
 - **The chat of the business and politician channel** (owner, 26/11/2026, in a second chat opened for it: "Kênh này
   sẽ làm về doanh nhân, chính trị gia như tao đã dán ở chat khác"): that chat makes videos of business people,
-  politicians and the like only (films and stories are for the chat above). What the owner set for this kind was
-  said in the film chat, and is in this section. Claude's reading, which the owner has not said in these words for
-  this chat: the same split as the film chat — the rules for every channel and this kind's own rules, not the rules
-  of the other channels.
+  politicians and the like only (films and stories are for the chat above). **Only the subject is settled: the
+  owner has not given this channel's own rules yet.** Claude first took the film channel's way of working for it
+  and was corrected (owner, 26/11/2026: "Không đúng, đấy là luật riêng của kênh phim mà. Còn luật của mày tao đã ra
+  đâu. Đừng dùng luật của kênh phim vào đây"). So everything below in this section that says "these two kinds" is
+  **the film channel's only**: the long source rewritten to 2–3 minutes, the 5-second hook of moving footage, the
+  length up to 180 s, the narrator frame, and Claude's proposals (the "father of …" angle, the seal, the issue
+  title, a narrator character). None of it is used for the business and politician channel; until the owner gives
+  its rules, only the rules for every channel hold there, and nothing is drafted or built on a guess.
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
   Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
 - **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
