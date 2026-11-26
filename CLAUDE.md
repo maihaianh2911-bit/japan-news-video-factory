@@ -142,8 +142,12 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   added and tried on the first source video (the owner approves the trial). The cloud session has no speech-to-text
   (the model's host is refused by the network): the words of a source video are read from its burnt-in captions;
   when it has none, ask the owner for the script as text.
-- A first script was drafted before the owner described this way of working (火垂るの墓, about 70 s, in the chat of
-  26/11/2026, not approved): it is rewritten to 2–3 minutes from the owner's source when it comes.
+- **Claude writes scripts on its own too** (owner, 26/11/2026: "khả năng m cũng sẽ phải tự viết kịch bản"): when
+  the owner sends no source, Claude researches the film (facts a press article reports, checked by a search), writes
+  the 2–3 minute script itself and shows it for approval. Such a video has no source video for the 5-second hook:
+  ask the owner for a short clip of the film, else the hook is a still that moves.
+- First script: 火垂るの墓, "why even the toughest people cry" (about 2 min 30 s at speed 1.2; a 70-second draft came
+  before the owner gave the length), shown in the chat of 26/11/2026, waiting for the owner's yes.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one
 Each rule is a question a look at the picture answers with yes or no. A picture that fails one is not used as it
