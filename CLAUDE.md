@@ -143,7 +143,8 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     Vietnamese shorts of the TikTok channel @chadecua — "Cha đẻ của Con Cưng", "… Three O'Clock", "… Tập đoàn Sơn
     Hải": "Học cách viết, nhưng của nó chỉ 36s, của mình phải 61-65s"). This replaces the 61–120 s above. How
     those shorts are written (their words were taken down with `tools/listen.py`):
-    1. the first words are the title, "the father of <brand>" (`<ブランド>の生みの親`), with the one striking thing
+    1. **a must** (owner, 26/11/2026, of a draft that opened on the product instead: "Hook bắt buộc: cha đẻ của
+       ...."): the first words are the title, "the father of <brand>" (`<ブランド>の生みの親`), with the one striking thing
        about the brand or the founder in the same sentence ("famous for daring to guarantee its motorways for
        10 years", "owns 10 cafés open day and night in her early thirties");
     2. the founder at once: name, birth year, title, one credential that surprises (a PhD in the USA, captain of
