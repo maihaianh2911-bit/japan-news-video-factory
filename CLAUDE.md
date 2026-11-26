@@ -133,7 +133,10 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   - **Claude writes the script** (the owner does not send a source): Claude chooses the person and the story,
     checks every fact and quote in press or official sources, and shows the script for approval before anything
     is built.
-  - **61 to 120 seconds.**
+  - **61 to 120 seconds.** The first script (安藤百福, about 107 s, the whole life beat by beat) was turned down
+    (owner, 26/11/2026: "Quá dài dòng, thiếu cuốn hút, k giữ chân đc ng xem, giảm xuống, 65s thôi"). Claude's
+    reading: write about 65 s unless the owner asks for more, one line of tension from the hook to the end (a
+    teaser in the second sentence that pays off late), not a list of the events of a life.
   - **Subjects the Japanese audience recognises at once**: a person, a company, a brand or a product everyone in
     Japan knows.
   Nothing else is set for it yet (frame, voice, seal, issue title): the frame and the voice follow "Frame and voice
