@@ -12,6 +12,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 
 from . import faces
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
+from .enhance import SOFT, sharp
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
@@ -186,6 +187,8 @@ def voice_levels(wav, frames):
 #   "text":   the tag, the headline and a quote come in piece by piece; the caption darkens as it is spoken
 #   "face":   a display typeface for the large text (headline, quote, year, captions): a font file, or true for
 #             $NEWS_DISPLAY_FONT / fonts/ShipporiMinchoB1-ExtraBold.ttf (SIL Open Font License)
+#   "enhance": every picked picture is lit when it is dull and enlarged by Real-ESRGAN when it is small, before
+#             it goes into the frame (news/enhance.py; done where the story is read, news/custom.py)
 FX = {}
 DISPLAY_FONT = ""
 
@@ -598,6 +601,7 @@ def move_warning(photo, seconds=5.0, height=PHOTO_HEIGHT):
 # In the "story" frame the headline is printed on the foot of the picture and the hook line higher still: a face
 # whose middle lies in that part is under the text. The first picture is the best one of the video.
 HEADLINE_ZONE, HOOK_ZONE, HOOK_SIDE = 0.22, 0.34, 900
+HOOK_SIDE_ENHANCED = 640   # a first picture that "fx": enhance enlarged may be this small, not smaller
 FULL_LINE = 0.6   # "full": the text stands from about three fifths of the frame down: a face ends above it
 
 
@@ -680,12 +684,19 @@ def hook_warnings(photo):
     """The first picture of a video (the hook, about its first 5 seconds) is its best one: large and sharp, a
     photograph and not a page, a document or a collage (owner, 19/11/2026)."""
     said = []
-    if min(photo.image.size) < HOOK_SIDE:
-        said.append(f"the hook: the first picture is small ({photo.image.width}x{photo.image.height}, under "
-                    f"{HOOK_SIDE} px on one side), it will look soft: open on the best picture of the video")
+    width, height = photo.source or photo.image.size   # the size of the file, before "fx": enhance enlarged it
+    side = HOOK_SIDE_ENHANCED if photo.source else HOOK_SIDE
+    if min(width, height) < side:
+        said.append(f"the hook: the first picture is small ({width}x{height}, under {side} px on one side"
+                    + (", even enlarged by the model" if photo.source else "")
+                    + "), it will look soft: open on the best picture of the video")
     if photo.fit == "contain" or not photo.depth:
         said.append("the hook: the first picture is shown whole or marked flat (a document, a page, a collage): "
                     "open on a photograph of the person, the place or the thing")
+    crisp = sharp(photo.image)
+    if crisp < SOFT:
+        said.append(f"the hook: the first picture looks soft (sharpness {crisp}, under {SOFT}): look at it in "
+                    f"full size, and open on a crisper picture if it is blurred")
     return said
 
 

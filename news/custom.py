@@ -24,8 +24,8 @@ STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazin
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 56   # characters of a quote line: 4 rows (owner, 21/11/2026: 3 rows, 42; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng")
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
-FX_KEYS = {"motion", "depth", "text", "face"}
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds", "enhance"}
+FX_KEYS = {"motion", "depth", "text", "face", "enhance"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
 PACE_KEYS = {"speed", "line_pause", "scene_pause"}
@@ -156,6 +156,9 @@ def check_photo(photo, where, searches):
             problems.append(f'{where}: "focus" must be [x, y] with numbers from 0 to 1, got {focus!r}')
     if "fit" in photo and photo["fit"] not in ("cover", "contain"):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
+    if "enhance" in photo and not isinstance(photo["enhance"], bool):
+        problems.append(f'{where}: "enhance" must be true or false (false: this picture is left as it is, not lit '
+                        f'and not enlarged), got {photo["enhance"]!r}')
     if "depth" in photo and not isinstance(photo["depth"], bool):
         problems.append(f'{where}: "depth" must be true or false (false: a flat picture such as a document), got {photo["depth"]!r}')
     if "tone" in photo and photo["tone"] not in TONES:
@@ -236,7 +239,8 @@ def validate(data, name=None):
     fx = data.get("fx")
     if fx is not None:
         if not isinstance(fx, dict):
-            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
+            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true, '
+                            f'"enhance": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
     # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits), of the story or of one scene
@@ -445,11 +449,17 @@ def load_story(path, pictures=None):
                                                footage))
                     continue
                 with Image.open(Path(pictures) / entry["file"]) as original:
-                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), tone)
+                    image = ImageOps.exif_transpose(original).convert("RGB")
+                source = ()
+                if (data.get("fx") or {}).get("enhance") and pick.get("enhance", True):
+                    from .enhance import enhanced   # lit, and enlarged by the model when it is small
+                    source, image = image.size, enhanced(image)
+                image = toned(image, tone)
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                           pick.get("fit", "cover"), pick.get("move", ""), pick.get("depth", True)))
+                                           pick.get("fit", "cover"), pick.get("move", ""), pick.get("depth", True),
+                                           source=source))
     return release, beats, photos
 
 

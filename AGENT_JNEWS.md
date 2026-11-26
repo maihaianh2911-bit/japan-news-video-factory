@@ -84,10 +84,11 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
 - Two pictures for a scene whose words last over 6 seconds, one is enough under that (owner, 19/11/2026: "nếu nội
   dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"; two a scene before): `"photo"` as a list,
   `CLAUDE.md` step 3.
-- Picture effects on (owner, 17/11/2026): every **new** story carries
-  `"fx": {"motion": true, "depth": true, "text": true, "face": true}` (camera rhythm, light depth in the pictures,
-  text that comes in with the voice and a caption that darkens as it is read, the display typeface; what each does:
-  `CLAUDE.md` step 1). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
+- Picture effects on (owner, 17/11/2026; `enhance` 26/11/2026): every **new** story carries
+  `"fx": {"motion": true, "depth": true, "text": true, "face": true, "enhance": true}` (camera rhythm, light depth
+  in the pictures, text that comes in with the voice and a caption that darkens as it is read, the display
+  typeface, and every picked picture lit when it is dull and enlarged by Real-ESRGAN when it is small; what each
+  does: `CLAUDE.md` step 1). On the contact sheets `s27` says how crisp a picture is (under `s12`: soft). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
   `"depth": false` in its picture entry. Stories made before 17/11 are not changed: add `fx` to an old story only
   when the owner asks for that video to be made again with the effects.
 - Voice and music: the voice is 青山龍星 (no `"speaker"` key; the owner turned もち子さん down on 26/11/2026: "Giọng

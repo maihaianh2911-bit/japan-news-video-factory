@@ -72,6 +72,7 @@ from lxml import html
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from .custom import GEO, StoryError, read, search_parts
+from .enhance import sharp
 from .sources import USER_AGENT, fetch
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
@@ -446,6 +447,11 @@ def keep(entries, load, k, out, seen, limit, workers=3, repeats=False):
         record["file"] = f"{k}-{len(kept) + 1}.jpg"
         seen[record["file"]] = made["mark"]
         (out / record["file"]).write_bytes(made["data"])
+        try:   # how crisp it is at the size the frame shows it (news/enhance.py): under 12 it is soft
+            with Image.open(BytesIO(made["data"])) as picture:
+                record["sharp"] = sharp(picture)
+        except Exception:
+            pass
         kept.append(record)
     return kept
 
@@ -720,7 +726,8 @@ def sheet(entries, out, path):
             board.paste(picture, (index % 4 * 380 + (380 - picture.width) // 2, index // 4 * 400 + 10))
         where = entry["license"].replace("Public domain", "PD") or entry.get("artist", "")
         fit = f"~{entry['match']:.2f}  " if "match" in entry else ""   # how well it shows the wish (no "≈" in the font)
-        label = f"#{index + 1}  {fit}{entry['width']}x{entry['height']}  {where}"
+        crisp = f"s{entry['sharp']}  " if "sharp" in entry else ""       # how crisp it is (under s12: soft)
+        label = f"#{index + 1}  {fit}{crisp}{entry['width']}x{entry['height']}  {where}"
         ImageDraw.Draw(board).text((index % 4 * 380 + 10, index // 4 * 400 + 374), label[:40], fill="#ffd25a", font=face)
     board.save(path, quality=85)
 

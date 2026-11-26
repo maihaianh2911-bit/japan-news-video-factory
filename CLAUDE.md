@@ -341,8 +341,11 @@ video, and two near-identical pictures are not put side by side", and "the last 
 A picture may be used again where it fits.
 
 **What the machine watches** (the preview `python -m news --story … --stills …` prints a `warning:` for each; settle
-every one before the render): the first picture under 900 px on one side, or shown whole / marked flat (rules 1 and
-4); a face cut by the frame or leaving it during the move, with the `"focus"` that keeps it when there is one
+every one before the render): the first picture under 900 px on one side (under 640 px when `"fx": enhance`
+enlarges it), looking soft (its sharpness under 12), or shown whole / marked flat (rules 1 and 4). **The picture
+search says how crisp every found picture is** (26/11/2026): `"sharp"` in `index.json` and `s27` on the contact
+sheet, about 5 (soft, blurred) to 60 and more (crisp, full of detail), under 12 soft; it counts edges, so a plain
+studio portrait scores lower than a crowd: a hint to open the picture in full size, not a verdict. Then a face cut by the frame or leaving it during the move, with the `"focus"` that keeps it when there is one
 (rule 6); a face under the headline or the hook line, or in the lower half of the first picture (rules 5 and 7).
 The faces are found by `news/faces.py` (YuNet of OpenCV Zoo, the model is `news/face_yunet.onnx`); it needs
 `pip install opencv-python-headless numpy`, and without it the preview says `note: faces not checked`: then look
@@ -604,9 +607,18 @@ ask the owner to allow `main`.
      Satie piano`; index.json gives title, `seconds` and licence; the piece loops, fades in and out, about 17 dB
      under the voice, credited on screen and in credits.txt); `"pace": {"speed": 0.92, "line_pause": 0.35,
      "scene_pause": 0.5}` (slower voice, silence after each line, more around a quote and at the end of a scene).
-   - `"fx": {"motion": true, "depth": true, "text": true, "face": true}`: the picture effects. **The owner
-     switched them on for this channel on 17/11/2026: every new story carries this line with all four**; stories
-     made before are not changed (a story without `fx` renders exactly as before). What each one does:
+   - `"fx": {"motion": true, "depth": true, "text": true, "face": true, "enhance": true}`: the picture effects.
+     **The owner switched the first four on for this channel on 17/11/2026 and the fifth on 26/11/2026 ("đẩy công
+     cụ lên luôn, cho vào bước phù hợp"): every new story carries this line with all five**; stories made before
+     are not changed (a story without `fx` renders exactly as before). What each one does:
+     - `enhance` (`news/enhance.py`): before a picked picture goes into the frame, in the preview as in the
+       render, a dull one gets its light back (a light stretch, the colours kept) and a small one (shorter side
+       under 1100 px) is enlarged by Real-ESRGAN, mixed 60/40 with the plain enlargement so that skin keeps its
+       grain (the model alone looked painted on faces). 5–7 seconds a small picture, about 40 seconds a video.
+       The model is in the repository (`news/upscale_x4.onnx`, BSD 3-Clause); it needs numpy and onnxruntime, as
+       `depth` does, and without them the run log says `warning: enhance effect off` and the picture is enlarged
+       the plain way. A picture that must stay as it is gets `"enhance": false` in its picture entry. **It does
+       not save a poor picture**: one that is blurred or under about 640 px is still changed for a better one;
      - `motion`: the camera has a light rhythm, a little quicker at first, and keeps moving to the end of the
        picture (owner, 19/11/2026: "nhiều ảnh trông như không chuyển động gì": the moves are now 25–45 % for
        `push-in`/`pull-back`, `close-up` keeps closing in, `hold` drifts; no picture may look still);

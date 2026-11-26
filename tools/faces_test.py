@@ -18,6 +18,11 @@ def photo(size=(1600, 1200), **options):
     return Photo(Image.new("RGB", size, "#777777"), "https://example.jp/", "t", "example.jp", "", "", **options)
 
 
+def with_image(picture, image):
+    from dataclasses import replace
+    return replace(picture, image=image)
+
+
 def said(picture, box, **options):
     real = faces.find
     faces.find = lambda image: [box] if box else []
@@ -65,8 +70,14 @@ def main():
     assert "lies under" not in said(photo(tall, move="hold"), middle, height=render.PHOTO_HEIGHT)
     assert "lies under" not in said(photo(tall, move="hold"), low, height=render.PHOTO_HEIGHT)
     render.use_style("story")
-    # the first picture: large, and a photograph
-    assert render.hook_warnings(photo((1600, 1200))) == []
+    # the first picture: large, crisp, and a photograph
+    crisp = Image.effect_noise((1600, 1200), 60).convert("RGB")
+    assert render.hook_warnings(with_image(photo(), crisp)) == []
+    assert "the first picture looks soft" in render.hook_warnings(photo((1600, 1200)))[-1]   # one flat tone
+    # enlarged by "fx": enhance (its `source` is the size of the file): it may be smaller, down to 640 px
+    assert not any("is small" in line for line in render.hook_warnings(photo((1600, 1200), source=(960, 720))))
+    assert "the first picture is small (600x450, under 640 px on one side, even enlarged by the model" in \
+        render.hook_warnings(photo((1600, 1200), source=(600, 450)))[0]
     assert "the first picture is small (800x600" in render.hook_warnings(photo((800, 600)))[0]
     assert "shown whole or marked flat" in render.hook_warnings(photo(fit="contain"))[0]
     assert "shown whole or marked flat" in render.hook_warnings(photo(depth=False))[0]

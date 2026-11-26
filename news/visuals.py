@@ -33,6 +33,7 @@ class Photo:
     move: str = ""                            # a name of news/edits.py MOVES; "" = the automatic choice
     depth: bool = True                        # False: a flat picture (a document, a collage): no parallax with "fx"
     footage: object = None                    # Footage: the picture is a clip (image is then its middle frame)
+    source: tuple = ()                        # the size of the file when "fx": enhance enlarged it (news/enhance.py)
 
     def credit(self):
         record = {key: getattr(self, key)
