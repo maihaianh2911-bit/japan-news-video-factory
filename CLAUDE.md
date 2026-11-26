@@ -76,14 +76,15 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   Commons flute pieces are not used; the owner's own flute is `stories/media/music/owner-flute-1.mp3` (58.7 s,
   `"music:file:stories/media/music/owner-flute-1.mp3"` as a search, credited 提供音源), and the voice is chosen
   from a sampler video of 13 voices (`stories/2026-11-25-test-voice-samples.json`) by the owner.
-- **The voice and the music of the imperial-family and star videos (`[Tin Nhật]`), from 25/11/2026** — the owner
-  heard the sampler (an mp3 of the 13 voices over the flute) and chose: "giọng nữ số 1" = **もち子さん**. Every new
-  story of this channel carries `"speaker": "もち子さん"` and the owner's flute: the search
-  `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece joined three times with 4-second
-  cross-fades, 168 s, so that it never jumps where it would loop) and `"music": {"pick": "<k>-1", "volume": 0.7}`. もち子さん reads slower than 青山龍星: at speed 1.2 two scripts of about
-  335 written characters came out at 72–74 s, so these stories carry `"pace": {"speed": 1.3, "line_pause": 0.05,
-  "scene_pause": 0.15}` (26/11/2026: the same scripts then ran 66–67 s; the owner keeps videos at about 62–66 s).
-  The gentle piano and 青山龍星 stay for the other channels (history, `ts`, …) until the owner says otherwise. When
+- **The voice and the music of the imperial-family and star videos (`[Tin Nhật]`)** — on 25/11/2026 the owner
+  heard the sampler (an mp3 of the 13 voices over the flute) and chose "giọng nữ số 1" = もち子さん; on 26/11/2026,
+  after two videos in it, the owner turned it down: "Giọng đ hay, quay về giọng cũ đi". **The voice is 青山龍星
+  again** (no `"speaker"` key) at the usual pace `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`
+  (about 335 written characters ≈ 62–64 s; もち子さん read slower and needed speed 1.3). The owner's flute stays:
+  the search `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece joined three times
+  with 4-second cross-fades, 168 s, so that it never jumps where it would loop) and `"music": {"pick": "<k>-1",
+  "volume": 0.7}`. Do not try another voice for this channel unless the owner asks.
+  The gentle piano stays for the other channels (history, `ts`, …) until the owner says otherwise. When
   the owner wants voices compared, send an **mp3** (the owner, 25/11/2026: "làm file mp3 trc, chốt voice đã") with
   the time each voice starts, not a video.
 
