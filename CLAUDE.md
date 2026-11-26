@@ -80,8 +80,9 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
 - **The voice and the music of the imperial-family and star videos (`[Tin Nhật]`)** — on 25/11/2026 the owner
   heard the sampler (an mp3 of the 13 voices over the flute) and chose "giọng nữ số 1" = もち子さん; on 26/11/2026,
   after two videos in it, the owner turned it down: "Giọng đ hay, quay về giọng cũ đi". **The voice is 青山龍星
-  again** (no `"speaker"` key) at the usual pace `"pace": {"speed": 1.2, "line_pause": 0.1, "scene_pause": 0.2}`
-  (about 335 written characters ≈ 62–64 s; もち子さん read slower and needed speed 1.3). The owner's flute stays:
+  again** (no `"speaker"` key) at the pace of the owner's model script, `"pace": {"speed": 1.25, "line_pause":
+  0.05, "scene_pause": 0.15}` (26/11/2026: two scripts of about 335 written characters ran 69 s at 1.2 with the
+  longer pauses, over the owner's 62–66 s). The owner's flute stays:
   the search `"music:file:stories/media/music/owner-flute-1-long.mp3"` (the 58.7-second piece joined three times
   with 4-second cross-fades, 168 s, so that it never jumps where it would loop) and `"music": {"pick": "<k>-1",
   "volume": 0.7}`. Do not try another voice for this channel unless the owner asks.
