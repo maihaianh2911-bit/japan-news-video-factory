@@ -9,3 +9,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `kodaiji-portrait.jpg` | Chân dung Toyotomi Hideyoshi chùa Kōdai-ji, khổ dọc | 960×1734 | Kanō Mitsunobu / Public domain | 2026-11-24-nobunaga-honnoji |
 | `drama-toyotomi-ikematsu-armor.jpg` | Phim 豊臣兄弟!: Hideyoshi (Ikematsu Sōsuke) mặc giáp chắp vá | 1200×800 | crank-in.net | 2026-11-24-nobunaga-honnoji |
 | `drama-toyotomi-ikematsu-yamazaki.jpg` | Phim 豊臣兄弟!: Hideyoshi (Ikematsu Sōsuke) trước trận Yamazaki, ảnh lớn | 2400×1600 | iza.ne.jp | 2026-11-24-nobunaga-honnoji |
+| `drama-toyotomi-ikematsu-kanegasaki.jpg` | Phim 豊臣兄弟!: Hideyoshi (Ikematsu) và Hidenaga chặn hậu ở Kanegasaki, cờ vàng | 900×600 | lmaga.jp | 2026-11-26-nobunaga-top3 |
