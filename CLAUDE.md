@@ -119,6 +119,12 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
   video, only the finished video sent) and this channel's own rules below. The rules of the other channels do not
   apply to it: the imperial-family and star rules (もち子さん and the flute, the love theme, about 65 s), the `ts`
   rules (80 s, read fast), the history rules (drama stills, the samurai).
+- **The chat of the business and politician channel** (owner, 26/11/2026, in a second chat opened for it: "Kênh này
+  sẽ làm về doanh nhân, chính trị gia như tao đã dán ở chat khác"): that chat makes videos of business people,
+  politicians and the like only (films and stories are for the chat above). What the owner set for this kind was
+  said in the film chat, and is in this section. Claude's reading, which the owner has not said in these words for
+  this chat: the same split as the film chat — the rules for every channel and this kind's own rules, not the rules
+  of the other channels.
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
   Japanese audience knows. Not the whole life from childhood (that is the `ts` channel): one feat, one decision.
 - **Films and stories = film reviews.** Claude warned that in Japan a video telling a whole film with its footage is
