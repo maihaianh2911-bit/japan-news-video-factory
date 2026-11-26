@@ -110,6 +110,76 @@ def use_style(name):
     style = STYLES[name]
 
 
+# --- "host": a narrator character in the lower part of the "band" frame (owner, 26/11/2026, from a short he liked:
+# "kiểu có 1 con nhân vật ở dưới, còn hình chạy ở trên"). The story names it: "host": {"name": "samurai",
+# "poses": [one per scene]}; its pictures are stories/media/host/<name>/<pose>.png (transparent, waist up, made by
+# tools/host_cut.py from the sheets the owner had drawn). The picture band moves up and gets shorter (16:9), the
+# headline and the captions sit under it, the character stands at the foot, sways a little, moves its mouth while
+# the voice speaks, and opens each scene with the scene's gesture.
+HOST = None
+HOST_POSES = ("neutral", "talk", "point", "cross", "present", "surprised")
+HOST_TOP, HOST_PICTURE = 410, 608        # the picture band in the host frame: from y 410, 1080x608 (16:9)
+HOST_CAPTION_CENTRE, HOST_QUOTE_CENTRE = 1196, 1160
+HOST_FIGURE_HEIGHT, HOST_GESTURE = 640, 2.2   # the character's height on screen; how long a gesture is held
+HOST_IMAGES = {}
+
+
+def use_host(host):
+    """Switch the "band" frame to its narrator form (or back to the plain band when `host` is None)."""
+    global HOST, BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE
+    HOST = dict(host) if host else None
+    if HOST:
+        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = HOST_TOP, HOST_PICTURE, HOST_QUOTE_CENTRE
+    else:
+        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = 470, 780, 1490
+    BOXES["band"] = (BAND_TOP, BAND_HEIGHT)
+    band_shade.cache_clear()
+
+
+def host_image(pose):
+    name = HOST["name"]
+    if (name, pose) not in HOST_IMAGES:
+        image = Image.open(Path("stories/media/host") / name / f"{pose}.png").convert("RGBA")
+        scale = HOST_FIGURE_HEIGHT / image.height
+        HOST_IMAGES[name, pose] = image.resize((round(image.width * scale), HOST_FIGURE_HEIGHT),
+                                               Image.Resampling.LANCZOS)
+    return HOST_IMAGES[name, pose]
+
+
+def draw_host(frame, scene_number, age, speaking, frame_index):
+    """The narrator at the foot of the frame: the scene's gesture for its first seconds, then the calm pose with the
+    mouth opening and closing while the voice speaks (`speaking`), a light sway all the time."""
+    poses = HOST.get("poses") or []
+    gesture = poses[scene_number] if scene_number < len(poses) else "neutral"
+    if gesture != "neutral" and age < HOST_GESTURE:
+        pose = gesture
+    else:
+        pose = "talk" if speaking and (frame_index // 4) % 2 == 0 else "neutral"
+    figure = host_image(pose)
+    sway = math.sin(frame_index / FPS * math.pi) * 6
+    x = (W - figure.width) // 2
+    frame.paste(figure, (x, H - figure.height + round(abs(sway))), figure)
+
+
+def voice_levels(wav, frames):
+    """For each video frame, whether the voice is speaking (loud enough), from the voice wav."""
+    import wave
+    import array
+    with wave.open(str(wav), "rb") as sound:
+        rate, width, channels = sound.getframerate(), sound.getsampwidth(), sound.getnchannels()
+        data = sound.readframes(sound.getnframes())
+    if width != 2:
+        return [False] * frames
+    samples = array.array("h", data)[::channels]
+    step = rate / FPS
+    levels = []
+    for index in range(frames):
+        chunk = samples[int(index * step):int((index + 1) * step)]
+        levels.append((sum(value * value for value in chunk[::8]) / max(1, len(chunk[::8]))) ** 0.5 if chunk else 0.0)
+    loud = sorted(levels)[int(len(levels) * 0.9)] if levels else 0.0
+    return [level > loud * 0.18 for level in levels]
+
+
 # Picture effects of a story ("fx" in stories/<name>.json), all off by default:
 #   "motion": the camera has a rhythm (quick at first, then settling) instead of one even speed
 #   "depth":  pictures that fill the frame get a light parallax from a depth map (news/depth.py)
@@ -331,6 +401,8 @@ def page_area():
 
 
 def caption_centre():
+    if HOST and style.layout == "band":
+        return HOST_CAPTION_CENTRE
     return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
@@ -965,7 +1037,7 @@ def band_layout(beat, release, has_photo, demo):
             text(draw, 90, y + 50, evidence, evidence_size, style.card_ink, bold=False)
         return image, layer, [part for part in parts if part]
     blocks = []
-    headline, size = fit(beat.headline, 960, 70, 2, smallest=46)
+    headline, size = fit(beat.headline, 960, 56 if HOST else 70, 1 if HOST else 2, smallest=40)
     blocks.append((headline, size, style.text, True, 16))
     if beat.value:
         value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
@@ -973,7 +1045,7 @@ def band_layout(beat, release, has_photo, demo):
     if beat.evidence:
         evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
         blocks.append((evidence, evidence_size, style.muted, False, 10))
-    y = BAND_TOP + BAND_HEIGHT + 44
+    y = BAND_TOP + BAND_HEIGHT + (30 if HOST else 44)
     order = 0
     for value, size, colour, bold, spacing in blocks:
         for row, line in enumerate(value.splitlines()):
@@ -1133,7 +1205,7 @@ def magazine_layout(beat, release, has_photo, demo):
         else:
             era(draw)
     blocks = []
-    headline, size = fit(beat.headline, 960, 70, 2, smallest=46)
+    headline, size = fit(beat.headline, 960, 56 if HOST else 70, 1 if HOST else 2, smallest=40)
     blocks.append((headline, size, style.text, True, 14))
     if beat.value:
         value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
@@ -1661,6 +1733,8 @@ def draw_quote(image, line, age, hook=False):
         largest = 96 if style.layout in ("full", "band") else 84
         if hook and FX.get("text"):   # the opening line: larger when it is short enough
             largest = HOOK_SIZE[style.layout]
+        if HOST and style.layout == "band":   # the narrator frame: the words sit between the picture and the character
+            largest = 80
         words, size = fit("".join(pieces), 960, largest, QUOTE_ROWS, smallest=52)
     else:
         words, size = fit(joined, 920, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
@@ -1925,6 +1999,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     cue = 0
     frame_index = 0
     held, owners = held_quotes(beats, captions, quotes)
+    speaking = voice_levels(wav, math.ceil(duration * FPS) + 2) if HOST else []
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
         try:
             for number, scene in enumerate(scenes):
@@ -1938,6 +2013,9 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     QUOTE_ON = bool(quotes[shown] or kept)
                     frame = frame_at(scenes, number, moment)
                     QUOTE_ON = False
+                    if HOST and style.layout == "band":   # the narrator stands in front of the scene, under the words
+                        draw_host(frame, number, moment - scene.start,
+                                  speaking[frame_index] if frame_index < len(speaking) else False, frame_index)
                     # the opening line of the video (scene 1's quote) is there from the first frame
                     opening = quotes[0][0] if quotes[0] and number == 0 else None
                     if kept:
@@ -1977,6 +2055,8 @@ def stills(beats, release, photos, out):
             QUOTE_ON = 0 in beat.quotes and (number == 0 or held)
             frame = scene.render(10 * (number + 0.5) / count)
             QUOTE_ON = False
+            if HOST and style.layout == "band":
+                draw_host(frame, index, 0.5 if number == 0 else 9.0, number % 2 == 1, 0)
             if 0 in beat.quotes and (number == 0 or held):
                 draw_quote(frame, beat.lines[0], 3.0, hook=index == 0)
             if held and number and len(beat.lines) > 1:   # under the quote, a line spoken while this picture is on

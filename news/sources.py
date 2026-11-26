@@ -53,6 +53,7 @@ class Release:
     voice: float = 1.0           # how loud the finished sound is (render.use_voice): 1.7 = 70 % louder
     masthead: str = ""           # "band" frame: the big title at the top of the video (the kicker stands above it)
     speaker: str = ""            # VOICEVOX voice "<name>" or "<name>/<style>" ("" = 青山龍星/ノーマル, voice.SPEAKER)
+    host: object = None          # "band" frame: a narrator character at the foot ({"name": …, "poses": [...]}), or None
 
 
 def compact(value):

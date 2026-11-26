@@ -19,7 +19,7 @@ from .story import Beat
 from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx", "voice", "masthead", "speaker"}
+              "music", "pace", "fx", "voice", "masthead", "speaker", "host"}
 STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazine")
 SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker"}
 LINE_KEYS = {"text", "say", "quote"}
@@ -191,6 +191,20 @@ def validate(data, name=None):
     problems += text_problem(data.get("source_url"), '"source_url"', required=False)
     problems += text_problem(data.get("kicker"), '"kicker"', required=False)
     problems += text_problem(data.get("masthead"), '"masthead"', required=False)
+    host = data.get("host")
+    if host is not None:
+        from .render import HOST_POSES
+        poses = host.get("poses") if isinstance(host, dict) else None
+        name = host.get("name") if isinstance(host, dict) else None
+        if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name or ""):
+            problems.append(f'"host": {{"name": "<folder in stories/media/host>", "poses": [one per scene]}}, got {host!r}')
+        elif not (Path("stories/media/host") / name / "neutral.png").exists():
+            problems.append(f'"host": no pictures in stories/media/host/{name}/ (tools/host_cut.py makes them)')
+        if not isinstance(poses, list) or len(poses) != len(data.get("scenes") or []) or not all(
+                pose in HOST_POSES for pose in poses):
+            problems.append(f'"host": "poses" is one pose per scene, each one of {", ".join(HOST_POSES)}, got {poses!r}')
+        if data.get("style") != "band":
+            problems.append('"host" works with "style": "band" only')
     if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 9:
         problems.append(f'"masthead": the big title at the top of the "band" frame, 9 characters at most, got '
                         f'{len(data["masthead"])}')
@@ -397,7 +411,7 @@ def load_story(path, pictures=None):
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
                       float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)),
-                      data.get("masthead", ""), data.get("speaker", ""))
+                      data.get("masthead", ""), data.get("speaker", ""), data.get("host"))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
