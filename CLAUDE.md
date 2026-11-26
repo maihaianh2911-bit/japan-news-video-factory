@@ -187,8 +187,23 @@ chính trị gia v...v, 1 loại sẽ là phim/truyện". Both use the `band` fr
     sheet 2 = present, surprised; pure green, waist up, figures apart, no hand above the head. When the owner
     sends the two sheets: `python tools/host_cut.py <name> <sheet1>:neutral,talk,point,cross
     <sheet2>:present,surprised`, look at `sheet.jpg`, then a short trial for the owner before the first video.
-  Not set yet: voice, seal, issue title. The voice follows "Frame and voice by content"; ask the owner or say the
-  choice in one line, never borrow another channel's rule.
+  - **How the first video was made** (`2026-11-26-panasonic-konosuke`, issue #85; the owner approved the script
+    with "Chốt, cho đẩy" and sent sheet 1 of the character; these are Claude's choices where the owner set nothing,
+    kept until the owner says otherwise): issue `[Doanh nhân] <Japanese title> — <Vietnamese idea>` with the label
+    `doanh-nhan` (not `jnews`; `jnews-busy` while working, `jnews-done` after, as the `lich-su` kinds); `"style":
+    "band"`, `"host": {"name": "shiba", …}`, `"kicker": "創業者の物語"`, `"masthead": "<ブランド>の生みの親"` (the
+    check now allows 12 characters: over 9 the title is drawn smaller, 11 characters still stand at about 85 px);
+    the default voice 青山龍星 at `"pace": {"speed": 1.25, "line_pause": 0.05, "scene_pause": 0.15}`, `"voice": 2.4`,
+    piano at 0.7. **The narrator `shiba`** (a Shiba dog in a navy suit, drawn by ChatGPT from Claude's prompt) has
+    four poses so far: `neutral`, `talk`, `point`, `cross`; `present` and `surprised` wait for the owner's second
+    sheet, so do not name them in `poses` until `stories/media/host/shiba/` has them.
+  - **Length in practice**: 青山龍星 at speed 1.25 reads about 8.8 kana a second, faster than the 6.5 × speed of the
+    estimate: a script estimated at 65 s came out at 59.5 s. For 61–65 s write about 540–560 kana (about 470–490
+    written characters), and read the real length after the voice step before telling the owner a number.
+  Not set yet by the owner: voice and seal (the choices above stand in). Never borrow another channel's rule.
+- **The `renders` branch is heavy** (26/11/2026): its first `git fetch --depth 1` in a fresh session downloads about
+  10 GB and takes about 10 minutes; start it in the background as soon as a story is pushed, and never run two
+  fetches at once (the second fails on `shallow.lock`). A find stage with 22 `web:` searches took 13 minutes.
 - **Hearing a video without captions** (26/11/2026): the cloud session can take down speech after all.
   `pip install sherpa-onnx numpy`, then `python tools/listen.py <video> [ja|vi|en] [window] [step]` (Whisper
   large-v3-turbo, fetched from a GitHub release, 560 MB; Hugging Face is refused by the network, GitHub is not).
