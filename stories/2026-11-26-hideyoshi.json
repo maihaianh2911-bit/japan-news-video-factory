@@ -9,8 +9,8 @@
   "voice": 2.4,
   "pace": {
     "speed": 1.0,
-    "line_pause": 0.2,
-    "scene_pause": 0.35
+    "line_pause": 0.08,
+    "scene_pause": 0.2
   },
   "fx": {
     "motion": true,
