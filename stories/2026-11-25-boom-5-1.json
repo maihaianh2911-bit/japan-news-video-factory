@@ -92,22 +92,6 @@
       },
       "photo": [
         {
-          "pick": "2-1",
-          "focus": [
-            0.5,
-            0.5
-          ],
-          "move": "push-in"
-        },
-        {
-          "pick": "2-3",
-          "focus": [
-            0.5,
-            0.5
-          ],
-          "move": "pan-right"
-        },
-        {
           "pick": "1-5",
           "focus": [
             0.5,
@@ -116,15 +100,23 @@
           "move": "push-in"
         },
         {
+          "pick": "2-4",
+          "focus": [
+            0.5,
+            0.55
+          ],
+          "move": "rise"
+        },
+        {
           "pick": "2-16",
           "focus": [
             0.5,
             0.6
           ],
-          "move": "rise"
+          "move": "fall"
         }
       ],
-      "why": "Bỏng ngô Garrett: tiệm Harajuku, hàng dài, bỏng ngô, rồi tòa nhà vắng."
+      "why": "Bỏng ngô Garrett: bỏng ngô cận cảnh, tiệm Harajuku có người xếp hàng, rồi tòa nhà vắng."
     },
     {
       "label": "第4位",
