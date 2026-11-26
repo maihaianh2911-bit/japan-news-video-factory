@@ -132,7 +132,7 @@ def use_host(host):
     if HOST:
         BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = HOST_TOP, HOST_PICTURE, HOST_QUOTE_CENTRE
     else:
-        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = 470, 780, 1490
+        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = 410, 608, 1205
     BOXES["band"] = (BAND_TOP, BAND_HEIGHT)
     band_shade.cache_clear()
 
@@ -372,7 +372,7 @@ INK_TOP, INK_HEIGHT = 0, 1480           # "history": the picture from the top of
 INK_GOLD = "#d9b96a"
 FULL_TEXT_CENTRE, FULL_TEXT_FOOT, OUTLINE = 1300, 1420, "#140e08"   # "full": the middle of the headline and of a
 # quote, the lowest their foot may come (the captions run under it), the colour of the text's outline
-BAND_TOP, BAND_HEIGHT = 470, 780       # "band": the picture in a wide band across the middle (about 7:5)
+BAND_TOP, BAND_HEIGHT = 410, 608       # "band": the picture in a wide band across the middle (about 7:5)
 # "album": the picture is made full width (W x ALBUM_HEIGHT) and set into the print at ALBUM_W x ALBUM_SHOWN
 ALBUM_X, ALBUM_TOP, ALBUM_W, ALBUM_SHOWN = 80, 196, 920, 1000
 ALBUM_HEIGHT = round(ALBUM_SHOWN * W / ALBUM_W)
@@ -406,7 +406,7 @@ def page_area():
 def caption_centre():
     if HOST and style.layout == "band":
         return HOST_CAPTION_CENTRE
-    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1252, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -1006,15 +1006,15 @@ def band_layout(beat, release, has_photo, demo):
     def masthead(d):
         size = 38
         width = font(size).getlength(kicker)
-        y = 132 if title else 210
+        y = 200 if title else 210
         d.text((W // 2, y), kicker, font=font(size), fill=BAND_IVORY, anchor="mm")
         for x0, x1 in ((70, W // 2 - width / 2 - 26), (W // 2 + width / 2 + 26, W - 70)):
             d.line((x0, y, x1, y), fill=BAND_GOLD, width=2)
         if title:
-            words, title_size = fit(title, 940, 112, 1, smallest=72)
-            d.text((W // 2 + 3, 262 + 5), words, font=font(title_size), fill=(0, 0, 0, 150), anchor="mm")
-            d.text((W // 2, 262), words, font=font(title_size), fill="#ffffff", anchor="mm")
-        y = 352 if title else 262
+            words, title_size = fit(title, 940, 100, 1, smallest=72)
+            d.text((W // 2 + 3, 290 + 5), words, font=font(title_size), fill=(0, 0, 0, 150), anchor="mm")
+            d.text((W // 2, 290), words, font=font(title_size), fill="#ffffff", anchor="mm")
+        y = 372 if title else 262
         d.line((W // 2 - 150, y, W // 2 - 22, y), fill=BAND_GOLD, width=2)
         d.line((W // 2 + 22, y, W // 2 + 150, y), fill=BAND_GOLD, width=2)
         d.polygon(((W // 2, y - 10), (W // 2 + 10, y), (W // 2, y + 10), (W // 2 - 10, y)), fill="#c23a26")
@@ -1048,7 +1048,9 @@ def band_layout(beat, release, has_photo, demo):
             text(draw, 90, y + 50, evidence, evidence_size, style.card_ink, bold=False)
         return image, layer, [part for part in parts if part]
     blocks = []
-    headline, size = fit(beat.headline, 960, 56 if HOST else 70, 1 if HOST else 2, smallest=40)
+    # one row, between the picture and the captions: the text stays above the part of the screen TikTok covers
+    headline, size = fit(beat.headline if HOST else beat.headline.replace("\n", ""), 960 if HOST else 820,
+                         56 if HOST else 62, 1, smallest=40)
     blocks.append((headline, size, style.text, True, 16))
     if beat.value:
         value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
@@ -1056,7 +1058,7 @@ def band_layout(beat, release, has_photo, demo):
     if beat.evidence:
         evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
         blocks.append((evidence, evidence_size, style.muted, False, 10))
-    y = BAND_TOP + BAND_HEIGHT + (30 if HOST else 44)
+    y = BAND_TOP + BAND_HEIGHT + (30 if HOST else 34)
     order = 0
     for value, size, colour, bold, spacing in blocks:
         for row, line in enumerate(value.splitlines()):
@@ -1746,7 +1748,10 @@ def draw_quote(image, line, age, hook=False):
             largest = HOOK_SIZE[style.layout]
         if HOST and style.layout == "band":   # the narrator frame: the words sit between the picture and the character
             largest = 80
-        words, size = fit("".join(pieces), 960, largest, QUOTE_ROWS, smallest=52)
+        wide = 790 if style.layout == "band" else 960   # "band": clear of the icons TikTok lays on the right
+        words, size = fit("".join(pieces), wide, largest, QUOTE_ROWS, smallest=52)
+        while style.layout == "band" and size > 52 and block_height(words, size, 22) > BAND_QUOTE_ROOM:
+            words, size = fit("".join(pieces), wide, size - 4, QUOTE_ROWS, smallest=52)
     else:
         words, size = fit(joined, 920, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
                           smallest=52)
@@ -1799,7 +1804,8 @@ def draw_full_quote(image, rows, size, block, age):
         image.paste(strip, (0, y - 24 + index * (size + 22) + round(30 * (1 - shown))), strip)
 
 
-BAND_QUOTE_CENTRE = 1490
+BAND_QUOTE_CENTRE = 1205
+BAND_QUOTE_ROOM = 340   # the hook stands between the picture and the part of the screen TikTok covers
 
 
 def draw_band_quote(image, rows, size, block, age):
