@@ -9,7 +9,7 @@
 > after it, one overall look at the finished video, the faults fixed in one push.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
-result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星 (every channel, common rule 21; a `"speaker"` only in a trial the owner asks for), captions timed to the
+result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星 (every channel, common rule 21: the machine reads every video in it, a `"speaker"` key is not read), captions timed to the
 voice. The story format, the picture rules and the preview are in `CLAUDE.md` (steps 1–4); this file says what to
 do at each label. Machine steps: `.github/workflows/news-video.yml`; results: `renders` branch, folder `<name>/`.
 

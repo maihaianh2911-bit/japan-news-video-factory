@@ -243,13 +243,10 @@ def validate(data, name=None):
                             f'"enhance": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
-    # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits), of the story or of one scene
-    for where, speaker in [("story", data.get("speaker", ""))] + [
-            (f"scene {number}", scene.get("speaker", "")) for number, scene in enumerate(data.get("scenes") or [], 1)
-            if isinstance(scene, dict)]:
-        if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
-            problems.append(f'{where}: "speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. '
-                            f'"四国めたん" or "玄野武宏/ノーマル"), got {speaker!r}')
+    # "speaker" (the trials of 25–26/11/2026) is not read any more: every video is read by 青山龍星 (voice_warnings)
+    for where, speaker in speakers_named(data):
+        if not isinstance(speaker, str):
+            problems.append(f'{where}: "speaker" must be text, got {speaker!r} (better: leave it out)')
     voice = data.get("voice", 1.0)
     if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
         problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
@@ -298,6 +295,25 @@ def validate(data, name=None):
             problems += check_photos(scene["photo"], where, searches)
         problems += cut_problems(scene, where)
     return problems
+
+
+def speakers_named(data):
+    """(where, value) of every "speaker" key of a story and of its scenes."""
+    found = [("story", data["speaker"])] if "speaker" in data else []
+    for number, scene in enumerate(data.get("scenes") or [], 1):
+        if isinstance(scene, dict) and "speaker" in scene:
+            found.append((f"scene {number}", scene["speaker"]))
+    return found
+
+
+def voice_warnings(data):
+    """One voice for every channel, 青山龍星, held by the machine (owner, 27/11/2026: "Ép tất cả các kênh quay về giọng
+    nhật cũ, k đổi lung tung nữa, giọng nam cũ của kênh hoàng gia nhật ấy"): the voice step does not read "speaker"
+    (`news/voice.py`), so a story naming another voice still comes out in 青山龍星. A warning, not a problem: the
+    stories made in the voices tried on 25–26/11/2026 keep their key, and a story file changed is rendered again."""
+    return [f'{where}: "speaker": {speaker!r} is not used: every video is read by 青山龍星 (owner, 27/11/2026); '
+            f'leave the key out' for where, speaker in speakers_named(data)
+            if isinstance(speaker, str) and speaker.split("/")[0] not in ("", "青山龍星")]
 
 
 def hook_warnings(data):
@@ -499,7 +515,7 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
-    for warning in hook_warnings(data) + done_warnings(sys.argv[1]):
+    for warning in voice_warnings(data) + hook_warnings(data) + done_warnings(sys.argv[1]):
         print(f"warning: {warning}")
     caption = caption_path(sys.argv[1])
     if caption.exists():

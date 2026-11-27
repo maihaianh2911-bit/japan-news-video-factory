@@ -143,13 +143,15 @@ def request(path, *, params=None, data=None):
         return response.read()
 
 
-SPEAKER, STYLE = "青山龍星", "ノーマル"   # the channel's voice until 25/11/2026; a story may name another ("speaker")
+SPEAKER, STYLE = "青山龍星", "ノーマル"   # the one voice of every channel; a story's "speaker" is ignored
 
 
 def voice_name(choice=""):
-    """(name, style) of a story's "speaker": "<name>" (its ノーマル style) or "<name>/<style>"; "" is the default."""
-    name, _, style = (choice or f"{SPEAKER}/{STYLE}").partition("/")
-    return name, style or STYLE
+    """(name, style) of the voice: always 青山龍星/ノーマル, whatever the story or a scene names. The owner, 27/11/2026:
+    "Ép tất cả các kênh quay về giọng nhật cũ, k đổi lung tung nữa, giọng nam cũ của kênh hoàng gia nhật ấy" (the
+    voices tried on 25–26/11/2026 were turned down one after the other): a `"speaker"` key left in a story is not
+    read, so no video can come out in another voice (`python -m news.custom` warns of the key)."""
+    return SPEAKER, STYLE
 
 
 def voice_credit(choice="", others=()):
@@ -163,16 +165,11 @@ def voice_credit(choice="", others=()):
 
 
 def speaker_id(choice=""):
+    """The engine's id of the one voice (`voice_name`: `choice` is not read)."""
     name, wanted = voice_name(choice)
     speakers = json.loads(request("/speakers"))
     found = next((style["id"] for speaker in speakers if speaker["name"] == name
                   for style in speaker["styles"] if style["name"] == wanted), None)
-    for whole in ([name] if "/" not in (choice or "/") else []) + ([choice] if choice and "/" in choice else []):
-        if found is None:   # a name alone (its first style when it has no ノーマル), or a name with a "/" in it (小夜/SAYO)
-            found = next((style["id"] for speaker in speakers if speaker["name"] == whole
-                          for style in speaker["styles"] if style["name"] == STYLE), None) or next(
-                (speaker["styles"][0]["id"] for speaker in speakers if speaker["name"] == whole and speaker["styles"]),
-                None)
     if found is None:
         available = ", ".join(f"{speaker['name']}/{style['name']}" for speaker in speakers for style in speaker["styles"])
         raise RuntimeError(f"VOICEVOX voice {name}/{wanted} not found in this engine. Available: {available}")
@@ -183,14 +180,13 @@ def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0, 
     """The voice of every line, one after the other, with `line_pause` seconds of silence after each line (a quote
     also gets one before it and a longer one after it) and `scene_pause` more at the end of each scene.
     `exact` ("fx": text): a caption starts when the voice reaches it, not at its share of the characters.
-    `speaker_choice`: the story's "speaker" (a VOICEVOX voice), "" for the channel's usual one."""
+    `speaker_choice` and a scene's "speaker" are not read: every line is read by 青山龍星 (`voice_name`)."""
     ids = {}
 
-    def voice_of(beat):   # a scene may have its own voice ("speaker" in the scene)
-        choice = getattr(beat, "speaker", "") or speaker_choice
-        if choice not in ids:
-            ids[choice] = speaker_id(choice)
-        return ids[choice]
+    def voice_of(beat):   # the one voice for every scene, asked of the engine once
+        if "id" not in ids:
+            ids["id"] = speaker_id()
+        return ids["id"]
 
     captions = []
     intervals = []

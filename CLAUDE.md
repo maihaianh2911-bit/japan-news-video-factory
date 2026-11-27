@@ -90,9 +90,12 @@ it stands in that channel's own section.
     into a video yet: that needs new code and a trial the owner approves.
 
 **E. Frame, voice, music**
-21. **One voice for every channel: 青山龍星** (owner, 26/11/2026: "quay hết về giọng nam cũ của kênh hoàng gia";
-    before, the voice could change with the story). No `"speaker"` key in a new story; another voice only in a
-    trial the owner asks for. **No channel has a fixed frame, and the look is never a hard rule** (owner,
+21. **One voice for every channel: 青山龍星, held by the machine** (owner, 26/11/2026: "quay hết về giọng nam cũ của
+    kênh hoàng gia"; 27/11/2026, after videos of that day still came out in もち子さん and 玄野武宏: "Ép tất cả các
+    kênh quay về giọng nhật cũ, k đổi lung tung nữa, giọng nam cũ của kênh hoàng gia nhật ấy"). The voice step
+    reads every line with 青山龍星/ノーマル whatever the story says: a `"speaker"` key is not read
+    (`news/voice.py`, `voice_name`; `python -m news.custom` warns of it), so leave it out. No voice trials and no
+    other voice offered to the owner. **No channel has a fixed frame, and the look is never a hard rule** (owner,
     26/11/2026: "tao ko muốn có luật cứng như kiểu khung hay full hình… vì luật cứng thì có video phù hợp có
     video ko phù hợp"): the frame, the narrator character, the moves and the cuts are chosen for each video by
     its pictures and its story ("Frame and voice by content"). Where a channel's own rules name a frame (history
@@ -410,20 +413,19 @@ machine voice and press photos, barely changed, is what gets flagged as unorigin
   conference). `"paper"` and `"history"` stay for their own uses. In `album` and `magazine` no text lies on the
   picture (the quote stands under it, like `band`), and no credits are printed (they are in `credits.txt`). The same story may not suit `full` if its pictures are small or wide: then `band` or
   `story`. Say in the issue which frame and why (one line).
-- **One voice for every channel: 青山龍星** (owner, 26/11/2026: "quay hết về giọng nam cũ của kênh hoàng gia";
-  common rule 21). A new story carries no `"speaker"` key (without it the voice is 青山龍星). What came before, so
+- **One voice for every channel: 青山龍星, held by the machine since 27/11/2026** (owner, 26/11/2026: "quay hết về
+  giọng nam cũ của kênh hoàng gia"; 27/11/2026: "Ép tất cả các kênh quay về giọng nhật cũ, k đổi lung tung nữa";
+  common rule 21). A new story carries no `"speaker"` key; one that does still comes out in 青山龍星. What came before, so
   that nobody goes back to it: on 25/11/2026 the owner allowed the voice to change with the story ("voice thì có
   thể tùy biến nam nữ ở voicevox, hợp là đc") and chose もち子さん for the imperial-family and star videos from a
   sampler of 13 voices; on 26/11/2026, after two videos in it: "Giọng đ hay, quay về giọng cũ đi". 冥鳴ひまり and
   No.7 読み聞かせ were turned down too ("ko hay"), and the history videos tried 剣崎雌雄 (at speed 1.15: "đọc nhanh
   hơi bị cướp chữ, nghe nhiều chữ dính vào nhau") and 玄野武宏. None of these is used any more.
-- **Another voice is tried only when the owner asks**: the story key `"speaker"` names a VOICEVOX voice,
-  `"<name>"` (its ノーマル style) or `"<name>/<style>"`, and a scene may have its own `"speaker"` (a sampler of
-  voices). A name the engine does not have stops the voice step with the list of the voices it has: copy the
-  exact name from it. When the owner wants voices compared, send an **mp3** (owner, 25/11/2026: "làm file mp3
-  trc, chốt voice đã") with the time each voice starts, not a video. The render credits the voice as
-  `VOICEVOX:<name>` on screen and in `credits.txt` (VOICEVOX asks for that credit; keep it in the video
-  description).
+- **No other voice, not even in a trial** (owner, 27/11/2026: "k đổi lung tung nữa"): the voice step does not read
+  `"speaker"` (of the story or of a scene; the stories of the voices tried on 25–26/11/2026 keep the key, which is
+  not read: a story file changed is rendered again, so they were not edited), and no voice sampler or mp3 of voices
+  is made any more. The render credits the voice as `VOICEVOX:青山龍星` on screen and in `credits.txt` (VOICEVOX
+  asks for that credit; keep it in the video description). Another voice needs the owner to lift this rule first.
 - The speed and the music of each kind: "The rules of each kind of video" above.
 
 ## The picture rules of the edit (owner, 19/11/2026: "hook 5s đầu phải là ảnh đẹp, rồi ảnh k bị mất mặt") — approved one by one

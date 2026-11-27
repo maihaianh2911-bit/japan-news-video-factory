@@ -14,8 +14,9 @@ Common rules 22 and 23 (`CLAUDE.md`, owner 26/11/2026: check before the render, 
        seconds = (0.0975 × kana + 0.425 × commas + 0.59 × lines) ÷ speed × voice
                  + line_pause × lines + scene_pause × scenes
    `commas`: every 、 and every 。？！ inside a line (each is a pause of the voice; a `say` written with a comma
-   after every word reads much slower). `voice`: 1 for 青山龍星; もち子さん 1.08 (4 videos); 剣崎雌雄 0.99 and
-   玄野武宏 0.94 (one video each); a voice not measured yet counts 1: after its first video, add its factor here.
+   after every word reads much slower). `voice`: 1 for 青山龍星, the one voice of every video since 27/11/2026 (a
+   "speaker" key is not read); the factors of the voices tried before (もち子さん 1.08, 剣崎雌雄 0.99, 玄野武宏
+   0.94) stay in VOICES for the record only.
 """
 import json
 import re
@@ -49,12 +50,9 @@ def main(path):
     line_pause, scene_pause = float(pace.get("line_pause", 0.0)), float(pace.get("scene_pause", 0.0))
     scenes = story.get("scenes") or []
     seconds = kana = commas = lines = 0
-    unmeasured = set()
     for number, scene in enumerate(scenes, 1):
-        name = (scene.get("speaker") or story.get("speaker") or DEFAULT_VOICE).split("/")[0]
-        if name not in VOICES:
-            unmeasured.add(name)
-        print(f"\n{number}. {scene.get('label', '')}" + (f"  [{name}]" if scene.get("speaker") else ""))
+        name = DEFAULT_VOICE   # the one voice: a "speaker" key is not read (news/voice.py, owner 27/11/2026)
+        print(f"\n{number}. {scene.get('label', '')}")
         for line in scene.get("lines") or []:
             text = spoken(line)
             reading = pyopenjtalk.g2p(text, kana=True)
@@ -65,12 +63,12 @@ def main(path):
             print(f"   {shown}")
             print(f"   → {reading}" + ("   (say)" if not isinstance(line, str) and line.get("say") else ""))
         seconds += scene_pause
-    voice = (story.get("speaker") or DEFAULT_VOICE).split("/")[0]
+    voice = DEFAULT_VOICE
     print(f"\n{kana} kana, {commas} pauses, {lines} lines, {len(scenes)} scenes; {voice} at speed {speed:g}"
           f" (pauses {line_pause:g} / {scene_pause:g})")
     print(f"estimated voice: {seconds:.1f} s")
-    for name in sorted(unmeasured):
-        print(f"note: the voice {name} was never measured (counted like {DEFAULT_VOICE}): the estimate is rough")
+    if '"speaker"' in Path(path).read_text(encoding="utf-8"):
+        print(f'note: "speaker" is not read: every video is read by {DEFAULT_VOICE} (owner, 27/11/2026); leave the key out')
     if seconds < MINIMUM + MARGIN:
         print(f"warning: under {MINIMUM + MARGIN:g} s: the video must pass {MINIMUM:g} s (common rule 2) with a "
               f"margin of {MARGIN:g} s (common rule 23): add true details of the same story before the render "

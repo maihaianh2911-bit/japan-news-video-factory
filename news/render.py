@@ -2107,7 +2107,7 @@ def use_voice(volume):
 
 
 def use_speaker(choice):
-    """The voice credit printed on the frames follows the story's VOICEVOX voice ("speaker"; "" = 青山龍星)."""
+    """The voice credit printed on the frames: always VOICEVOX:青山龍星 (`voice.voice_name`: "speaker" is not read)."""
     global VOICE_CREDIT
     from .voice import voice_credit
     VOICE_CREDIT = voice_credit(choice)
