@@ -20,8 +20,8 @@ from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
               "music", "pace", "fx", "voice", "masthead", "speaker", "host"}
-STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazine")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker"}
+STYLES = ("news", "paper", "story", "history", "full", "band", "slide", "album", "magazine")
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker", "points"}
 LINE_KEYS = {"text", "say", "quote"}
 QUOTE_MOST = 56   # characters of a quote line: 4 rows (owner, 21/11/2026: 3 rows, 42; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng")
 PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds", "enhance"}
@@ -272,6 +272,10 @@ def validate(data, name=None):
             problems.append(f"{where} must be an object")
             continue
         problems += unknown(scene, SCENE_KEYS, where)
+        points = scene.get("points")
+        if points is not None and (not isinstance(points, list) or not 1 <= len(points) <= 3 or not all(
+                isinstance(point, str) and 1 <= len(point) <= 16 for point in points)):
+            problems.append(f'{where}: "points" is a list of 1 to 3 short texts (16 characters at most), got {points!r}')
         problems += text_problem(scene.get("headline"), f'{where}: "headline"')
         for key in ("label", "value", "evidence", "era"):
             problems += text_problem(scene.get(key), f'{where}: "{key}"', required=False)
@@ -427,7 +431,8 @@ def load_story(path, pictures=None):
                           scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else (),
                           scene.get("cut", ""), scene.get("why", ""), scene.get("era", ""),
                           tuple(number for number, line in enumerate(scene["lines"])
-                                if isinstance(line, dict) and line.get("quote")), scene.get("speaker", "")))
+                                if isinstance(line, dict) and line.get("quote")), scene.get("speaker", ""),
+                          tuple(scene.get("points") or ())))
         if picks:
             if found is None:
                 raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "

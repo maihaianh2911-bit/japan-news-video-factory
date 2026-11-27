@@ -8,7 +8,7 @@ import re
 import subprocess
 
 import budoux
-from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
+from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont, ImageOps
 
 from . import faces
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
@@ -102,6 +102,15 @@ STYLES = {
                       photo_tag_text="#111111", value="#c8102e", card="#f2f0eb", card_ink="#111111",
                       card_muted="#6b6b6b", rule="#d8d4cc", caption_box="", caption_text="#1b1b1b", grain=False,
                       layout="magazine"),
+    # "slide" (owner, 27/11/2026, from a short he showed: "kiểu dựng 1 bên có hình ảnh, 1 bên là chữ … hợp làm kiểu
+    # video có số liệu nhiều"): a light presentation card over the blurred picture; the title in yellow at the top,
+    # in the card a small header, the headline in black and red with numbered boxes (01, 02, 03) on the left, the
+    # picture in a window on the right, the captions in a dark pill, a ticker running under the card.
+    "slide": Style(family="Sans", background="#1a1a1a", text="#151515", muted="#555555", accent="#c8231b",
+                   tag="#c8231b", tag_text="#ffffff", photo_bed="#111111", photo_tag="#111111",
+                   photo_tag_text="#ffffff", value="#c8231b", card="#e8e5de", card_ink="#151515",
+                   card_muted="#555555", rule="#c9c4ba", caption_box="#161616", caption_text="#ffffff", grain=False,
+                   layout="slide"),
 }
 style = STYLES["news"]
 
@@ -377,8 +386,14 @@ BAND_TOP, BAND_HEIGHT = 470, 780       # "band": the picture in a wide band acro
 ALBUM_X, ALBUM_TOP, ALBUM_W, ALBUM_SHOWN = 80, 196, 920, 1000
 ALBUM_HEIGHT = round(ALBUM_SHOWN * W / ALBUM_W)
 MAG_HEIGHT = 1130                      # "magazine": the picture across the top of the page
+# "slide": the card, the picture window in it (the picture is made W x SLIDE_HEIGHT, then set in at SLIDE_PW x SLIDE_PH)
+SLIDE_CARD = (36, 620, W - 36, 1510)
+SLIDE_PX, SLIDE_PY, SLIDE_PW, SLIDE_PH = 424, 790, 594, 400
+SLIDE_HEIGHT = round(SLIDE_PH * W / SLIDE_PW)
+SLIDE_YELLOW = "#ffd21f"
 BOXES = {"story": (STORY_TOP, STORY_HEIGHT), "ink": (INK_TOP, INK_HEIGHT), "full": (0, H),
-         "band": (BAND_TOP, BAND_HEIGHT), "album": (ALBUM_TOP, ALBUM_HEIGHT), "magazine": (0, MAG_HEIGHT)}
+         "band": (BAND_TOP, BAND_HEIGHT), "album": (ALBUM_TOP, ALBUM_HEIGHT), "magazine": (0, MAG_HEIGHT),
+         "slide": (0, SLIDE_HEIGHT)}
 ON_PICTURE = ("story", "ink", "full")   # frames whose headline and quote are printed on the picture
 
 
@@ -396,7 +411,7 @@ def page_area():
     """The part of the frame that turns like a page, goes dark in a dip (the rest stays)."""
     if style.layout == "band":   # the title at the top stays while the scene changes under it
         return (0, BAND_TOP - 90, W, H)
-    if style.layout == "full" or style.layout == "magazine":
+    if style.layout in ("full", "magazine", "slide"):
         return (0, 0, W, H)
     if style.layout == "album":   # the kicker at the top stays
         return (0, 150, W, H)
@@ -406,7 +421,8 @@ def page_area():
 def caption_centre():
     if HOST and style.layout == "band":
         return HOST_CAPTION_CENTRE
-    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590, "album": 1652, "magazine": 1622}.get(style.layout, 1598)
+    return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590, "album": 1652, "magazine": 1622,
+            "slide": 1392}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
 MOTIONS = ("in", "right", "out", "left")   # one per picture, in turn
@@ -1237,9 +1253,115 @@ def magazine_layout(beat, release, has_photo, demo):
     return image, layer, [part for part in parts if part]
 
 
+@lru_cache(maxsize=1)
+def slide_card():
+    """The light card of the "slide" frame, with a faint grid of dots and a soft shadow, as an RGBA layer."""
+    x0, y0, x1, y1 = SLIDE_CARD
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    shadow = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(shadow).rounded_rectangle((x0 + 6, y0 + 14, x1 + 6, y1 + 14), radius=26, fill=150)
+    shadow = shadow.filter(ImageFilter.GaussianBlur(18))
+    layer.paste((0, 0, 0, 255), (0, 0), shadow)
+    card = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(card)
+    draw.rounded_rectangle(SLIDE_CARD, radius=26, fill=style.card)
+    for y in range(y0 + 24, y1 - 10, 22):
+        for x in range(x0 + 20, x1 - 10, 22):
+            draw.ellipse((x - 1, y - 1, x + 1, y + 1), fill="#cdc8bd")
+    layer.alpha_composite(card)
+    return layer
+
+
+def slide_window(picture):
+    """The picture set in its window: a dark frame with three dots on its bar, the picture under it."""
+    bar = 34
+    window = Image.new("RGB", (SLIDE_PW + 12, SLIDE_PH + bar + 12), "#101010")
+    draw = ImageDraw.Draw(window)
+    for index, colour in enumerate(("#ff5f57", "#febc2e", "#28c840")):
+        draw.ellipse((16 + index * 22, 12, 28 + index * 22, 24), fill=colour)
+    window.paste(picture.resize((SLIDE_PW, SLIDE_PH), Image.Resampling.BICUBIC), (6, bar + 6))
+    return window
+
+
+def slide_backdrop(picture):
+    """Behind the card: the scene's picture, blurred, greyed and dark, filling the frame."""
+    pw, ph = picture.size
+    cw = ph * W / H
+    small = picture.resize((27, 48), Image.Resampling.BILINEAR, box=(max(0, (pw - cw) / 2), 0, min(pw, (pw + cw) / 2), ph))
+    soft = small.filter(ImageFilter.GaussianBlur(2.2)).resize((W, H), Image.Resampling.BICUBIC)
+    grey = ImageOps.grayscale(soft).convert("RGB")
+    return Image.blend(soft, grey, 0.6).point(lambda level: round(level * 0.5))
+
+
+@lru_cache(maxsize=4)
+def slide_ticker(words):
+    """The line of words that runs under the card, long enough to scroll."""
+    face = font(26, bold=True)
+    piece_width = round(face.getlength(words))
+    strip = Image.new("RGBA", (piece_width * 6, 44), (12, 12, 12, 235))
+    draw = ImageDraw.Draw(strip)
+    for index in range(6):
+        draw.text((index * piece_width, 22), words, font=face, fill="#e8e5de", anchor="lm")
+    return strip, piece_width
+
+
+def slide_layout(beat, release, has_photo, demo):
+    """The "slide" frame. The card, the picture window, the title at the top and the ticker are drawn by
+    Scene.render; here: the card's header (a red square, the kicker, a red rule, the era on the right), the
+    headline (its first row black, the next red) and the numbered boxes, which come in one after the other."""
+    animated, parts = bool(FX.get("text")) and has_photo, []
+    image = Image.new("RGB", (W, H), style.background)
+    x0, y0, x1, y1 = SLIDE_CARD
+    kicker = release.kicker or "日本の物語"
+
+    def header(d):
+        d.rounded_rectangle((x0 + 34, y0 + 30, x0 + 74, y0 + 70), radius=8, fill=style.accent)
+        d.text((x0 + 54, y0 + 50), "史", font=font(26), fill="#ffffff", anchor="mm")
+        d.text((x0 + 88, y0 + 50), kicker, font=font(30), fill=style.card_ink, anchor="lm")
+        d.rectangle((x0 + 34, y0 + 92, x0 + 330, y0 + 96), fill=style.accent)
+        d.rectangle((x0 + 330, y0 + 93, x1 - 34, y0 + 95), fill=style.rule)
+        if beat.era:
+            era, size = fit(beat.era, 360, 30, 1, smallest=22)
+            d.text((x1 - 34, y0 + 50), era, font=font(size), fill=style.card_muted, anchor="rm")
+
+    parts.append(piece("fixed", header))
+    if demo:
+        parts.append(piece("fixed", lambda d: text(d, W - 60, 40, "動作確認", 24, GOLD, anchor="rt")))
+    layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    rows = [row for row in beat.headline.split("\n") if row.strip()] or [beat.headline]
+    y = y0 + 132
+    order = 0
+    for index, row in enumerate(rows[:3]):
+        words, size = fit(row, SLIDE_PX - 24 - (x0 + 34), 60 if beat.points else 72, 1, smallest=30)
+        colour = style.card_ink if index == 0 else style.accent
+        paint = lambda d, words=words, y=y, size=size, colour=colour: d.text((x0 + 34, y), words, font=font(size),
+                                                                          fill=colour)
+        if animated:
+            parts.append(piece("row", paint, order))
+            order += 1
+        else:
+            paint(ImageDraw.Draw(layer))
+        y += size + 14
+    top = max(y + 26, SLIDE_PY + 120)
+    for index, point in enumerate(beat.points[:3]):
+        box = (x0 + 30, top + index * 92, SLIDE_PX - 20, top + index * 92 + 74)
+
+        def paint(d, box=box, index=index, point=point):
+            d.rounded_rectangle((box[0] + 5, box[1] + 6, box[2] + 5, box[3] + 6), radius=12, fill=(40, 40, 40, 255))
+            d.rounded_rectangle(box, radius=12, fill="#ffffff", outline="#1b1b1b", width=3)
+            d.text((box[0] + 18, (box[1] + box[3]) // 2), f"{index + 1:02}", font=font(30),
+                   fill=(style.accent, "#1d3fc4", "#178a3a")[index], anchor="lm")
+            words, size = fit(point, box[2] - box[0] - 84, 32, 1, smallest=20)
+            d.text((box[0] + 70, (box[1] + box[3]) // 2), words, font=font(size), fill=style.card_ink, anchor="lm")
+        parts.append(piece("point", paint, index))
+    return image, layer, [part for part in parts if part]
+
+
 def layout(beat, release, has_photo, demo):
     """The page of a scene: the background (what stays still) and the scene's text on a transparent layer
     (it slides in at the start of the scene)."""
+    if style.layout == "slide":
+        return slide_layout(beat, release, has_photo, demo)
     if style.layout == "album":
         return album_layout(beat, release, has_photo, demo)
     if style.layout == "magazine":
@@ -1334,6 +1456,7 @@ class Scene:
         self.cut = beat.cut
         # how long the scene takes to arrive: a punch-in on its first picture waits for it
         self.arrival = 0.0 if not index else CUT_SECONDS[beat.cut] if beat.cut else TRANSITION
+        self.release = release
         self.background, text_layer, self.parts = layout(beat, release, bool(self.photos), demo)
         self.top, self.height = photo_box()
         # the text layer is pasted over the picture each frame: keep only the part that holds text
@@ -1382,6 +1505,11 @@ class Scene:
                 frame.paste(picture, (0, self.top), ink_mask(self.height))
             elif style.layout == "album":   # the picture set into the print, a little smaller than it was made
                 frame.paste(picture.resize((ALBUM_W, ALBUM_SHOWN), Image.Resampling.BICUBIC), (ALBUM_X, ALBUM_TOP))
+            elif style.layout == "slide":   # the card over the blurred picture, the picture in its window
+                frame = slide_backdrop(picture)
+                frame.paste(slide_card(), (0, 0), slide_card())
+                frame.paste(slide_window(picture), (SLIDE_PX - 6, SLIDE_PY - 40))
+                self.draw_slide_extras(frame, moment)
             elif style.layout == "band":   # the picture over its own blurred copy, between two thin gold lines
                 frame = band_backdrop(picture)
                 frame.paste(picture, (0, self.top))
@@ -1396,9 +1524,9 @@ class Scene:
         for kind, part, at, _ in self.parts:   # what never moves: the seal and the year of the "history" page
             if kind == "fixed":
                 frame.paste(part, at, part)
-        if QUOTE_ON:   # a quote stands on the picture: the headline comes in after it
+        if QUOTE_ON and style.layout != "slide":   # a quote stands on the picture: the headline comes in after it
             self.quiet_until = moment
-            if style.layout in ("full", "band", "album", "magazine"):   # the tag (the era) comes in all the same
+            if style.layout in ("full", "band", "album", "magazine", "slide"):   # the tag (the era) comes in all the same
                 self.draw_parts(frame, age, only="tag")
         else:
             age = moment - max(self.start, getattr(self, "quiet_until", self.start))
@@ -1406,7 +1534,7 @@ class Scene:
             layer = faded(self.text, amount) if amount < 1 else self.text
             frame.paste(layer, (self.text_at[0], self.text_at[1] + round(36 * (1 - amount))), layer)
             self.draw_parts(frame, age)
-        if photo and style.layout not in ("full", "band", "album", "magazine"):   # these: credits.txt only
+        if photo and style.layout not in ("full", "band", "album", "magazine", "slide"):   # these: credits.txt only
             draw = ImageDraw.Draw(frame)
             creator = photo.creator if len(photo.creator) <= 36 else photo.creator[:34] + "…"   # the full credit is in credits.txt
             credit = ("映像  " if photo.footage else "写真  ") + creator + (f" / {photo.license}" if photo.license else "")
@@ -1420,6 +1548,33 @@ class Scene:
         return frame
 
 
+    def draw_slide_extras(self, frame, moment):
+        """The "slide" frame: the title in yellow at the top (not while a quote stands there), the numbered boxes
+        coming in one after the other through the scene, the ticker running under the card."""
+        release = self.release
+        if not QUOTE_ON:
+            title = release.masthead or release.kicker or ""
+            if title:
+                words, size = fit(title, 980, 118, 1, smallest=60)
+                draw = ImageDraw.Draw(frame)
+                draw.text((W // 2, 370), words, font=font(size), fill=SLIDE_YELLOW, anchor="mm",
+                          stroke_width=7, stroke_fill="#141414")
+        points = [part for part in self.parts if part[0] == "point"]
+        span = self.end - self.start
+        for kind, part, (x, y), order in points:
+            arrive = 0.6 + order * max(1.0, span * 0.55 / max(1, len(points)))
+            amount = ease((moment - self.start - arrive) / 0.35)
+            if amount <= 0:
+                continue
+            shift = round((1 - amount) * 60)
+            shown = faded(part, amount) if amount < 1 else part
+            frame.paste(shown, (x - shift, y), shown)
+        words = f"{release.kicker} ・ {release.masthead} ・ " if release.masthead else f"{release.kicker} ・ "
+        strip, width = slide_ticker(words * 3)
+        offset = round(moment * 90) % (width * 3 // 3 or 1)
+        piece_ = strip.crop((offset, 0, offset + W, strip.height))
+        frame.paste(piece_, (0, SLIDE_CARD[3] + 26), piece_)
+
     def draw_parts(self, frame, age, only=None):
         """The scene's text coming in piece by piece ("fx": text): the tag is wiped in from the left, a red rule is
         drawn, then each row of the headline rises into its place from behind its own lower edge. `only`: draw the
@@ -1428,7 +1583,7 @@ class Scene:
         if style.layout == "full":   # the picture is seen alone a moment first, then the text comes (owner, 21/11/2026)
             start += 0.15
         for kind, picture, (x, y), order in self.parts:
-            if kind == "fixed" or only and kind != only:
+            if kind in ("fixed", "point") or only and kind != only:
                 continue
             if kind in ("tag", "rule"):
                 amount = ease((age - start - (0.0 if kind == "tag" else 0.12)) / (0.3 if kind == "tag" else 0.4))
@@ -1720,7 +1875,7 @@ def ink_quote_band(height):
     return band
 
 
-HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108}   # a short opening line, printed larger
+HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108, "slide": 100}   # a short opening line, printed larger
 
 
 def draw_quote(image, line, age, hook=False):
@@ -1740,7 +1895,7 @@ def draw_quote(image, line, age, hook=False):
     # 4 rows at most (owner, 21/11/2026: 3 rows; 25/11/2026, after the three videos with the most views had hooks of
     # 44-48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng"): more pieces are run together and wrapped
     joined = "\n".join(pieces) if len(pieces) <= QUOTE_ROWS else "".join(pieces)
-    if style.layout in ("full", "band", "album", "magazine"):   # as large as the rows allow
+    if style.layout in ("full", "band", "album", "magazine", "slide"):   # as large as the rows allow
         largest = 96 if style.layout in ("full", "band") else 84
         if hook and FX.get("text"):   # the opening line: larger when it is short enough
             largest = HOOK_SIZE[style.layout]
@@ -1756,6 +1911,8 @@ def draw_quote(image, line, age, hook=False):
         return draw_full_quote(image, rows, size, block, age)
     if style.layout == "band":
         return draw_band_quote(image, rows, size, block, age)
+    if style.layout == "slide":
+        return draw_slide_quote(image, rows, size, block, age)
     if style.layout in ("album", "magazine"):
         return draw_page_quote(image, rows, size, block, age)
     band_height = min(height, block + 330)
@@ -1800,6 +1957,20 @@ def draw_full_quote(image, rows, size, block, age):
 
 
 BAND_QUOTE_CENTRE = 1490
+
+
+def draw_slide_quote(image, rows, size, block, age):
+    """A quote in the "slide" frame: big and yellow above the card, in the place of the title."""
+    y = min(370 - block // 2, SLIDE_CARD[1] - 30 - block)
+    for index, row in enumerate(rows):
+        shown = ease((age - 0.1 - 0.2 * index) / 0.4) if FX.get("text") else ease(age / QUOTE_IN)
+        if shown <= 0:
+            continue
+        ink = Image.new("RGBA", (W, size + 60), (0, 0, 0, 0))
+        ImageDraw.Draw(ink).text((W // 2, 24), row, font=font(size), fill=SLIDE_YELLOW, anchor="mt",
+                                 stroke_width=7, stroke_fill="#141414")
+        ink = faded(ink, shown) if shown < 1 else ink
+        image.paste(ink, (0, y - 24 + index * (size + 22) + round(24 * (1 - shown))), ink)
 
 
 def draw_band_quote(image, rows, size, block, age):

@@ -28,6 +28,7 @@ class Beat:
     era: str = ""               # "story" frame: the year of the scene, shown at the top ("1921年")
     quotes: tuple[int, ...] = ()   # indexes of the lines shown as a big quote over the picture
     speaker: str = ""           # the VOICEVOX voice of this scene when it differs from the story's ("speaker")
+    points: tuple[str, ...] = ()   # "slide" frame: the numbered boxes (01, 02, 03) beside the picture
 
 
 def japanese_date(release):

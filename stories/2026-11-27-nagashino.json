@@ -1,0 +1,211 @@
+{
+  "title": "長篠の戦い 八時間で一万人を失った最強騎馬隊",
+  "date": "2026-11-27",
+  "stage": "find",
+  "issue": 98,
+  "style": "slide",
+  "kicker": "戦国の物語",
+  "masthead": "長篠の戦い",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "searches": [
+    "file:stories/media/library/takeda-shingen/film-kagemusha-cavalry.jpg",
+    "file:stories/media/library/takeda-shingen/takeda-cavalry-illustration.jpg",
+    "file:stories/media/library/takeda-shingen/film-furinkazan-shingen-horse.jpg",
+    "file:stories/media/library/oda-nobunaga/drama-toyotomi-oguri-fan-large.jpg",
+    "file:stories/media/library/oda-nobunaga/drama-kirin-sometani-portrait.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/drama-ieyasu-matsumoto-armor-closeup.jpg",
+    "wiki:長篠の戦い",
+    "wiki:武田勝頼",
+    "wiki:設楽原",
+    "web:長篠の戦い 馬防柵 復元 設楽原",
+    "web:長篠合戦のぼりまつり 火縄銃 演武",
+    "web:どうする家康 長篠 場面写真",
+    "web:どうする家康 武田勝頼 眞栄田郷敦",
+    "web:影武者 黒澤明 長篠 騎馬隊 => samurai cavalry charging with banners",
+    "web:長篠の戦い 鉄砲隊 ドラマ 場面写真 => a line of samurai musketeers firing matchlock guns",
+    "web:武田騎馬隊 突撃 ドラマ => samurai cavalry charging",
+    "wiki:山県昌景",
+    "wiki:馬場信春",
+    "web:長篠設楽原 古戦場 今",
+    "web:武田勝頼 天目山 景徳院",
+    "music:Gymnopédie Satie piano"
+  ],
+  "music": {
+    "pick": "21-1",
+    "volume": 0.7
+  },
+  "scenes": [
+    {
+      "label": "フック",
+      "era": "1575年",
+      "headline": "八時間で\n一万人",
+      "points": [
+        "戦い 約8時間",
+        "武田方の死者 1万人"
+      ],
+      "lines": [
+        {
+          "text": "戦国最強の騎馬隊は、わずか八時間で一万人を失いました。",
+          "quote": true,
+          "say": "せんごくさいきょうのきばたいは、わずかはちじかんでいちまんにんをうしないました。"
+        }
+      ]
+    },
+    {
+      "label": "兵力",
+      "era": "1575年5月",
+      "headline": "織田・徳川\n対 武田",
+      "points": [
+        "織田・徳川 38,000",
+        "武田 15,000",
+        "兵力の差 2倍以上"
+      ],
+      "lines": [
+        {
+          "text": "1575年、三河の設楽原。",
+          "say": "せんごひゃくななじゅうごねん、みかわのしたらがはら。"
+        },
+        {
+          "text": "織田・徳川の連合軍はおよそ3万8千。",
+          "say": "おだ・とくがわのれんごうぐんはおよそさんまんはっせん。"
+        },
+        {
+          "text": "迎え撃つ武田勝頼の軍は、およそ1万5千。",
+          "say": "むかえうつたけだかつよりのぐんは、およそいちまんごせん。"
+        },
+        "数では二倍以上の差でした。"
+      ]
+    },
+    {
+      "label": "勝頼",
+      "era": "武田勝頼",
+      "headline": "信玄の息子\n武田勝頼",
+      "points": [
+        "父・信玄の死から2年",
+        "長篠城の兵 500"
+      ],
+      "lines": [
+        {
+          "text": "勝頼は、あの武田信玄の息子。",
+          "say": "かつよりは、あの武田信玄のむすこ。"
+        },
+        {
+          "text": "父の死から2年、守る兵わずか500の長篠城を囲んでいました。",
+          "say": "ちちのしからにねん、まもるへいわずかごひゃくのながしのじょうをかこんでいました。"
+        },
+        {
+          "text": "そこへ駆けつけたのが、信長と家康の大軍です。",
+          "say": "そこへかけつけたのが、のぶながといえやすのたいぐんです。"
+        }
+      ]
+    },
+    {
+      "label": "騎馬隊",
+      "era": "武田軍",
+      "headline": "戦国最強の\n騎馬隊",
+      "points": [
+        "武田の騎馬隊"
+      ],
+      "lines": [
+        "それでも武田軍には、戦国最強と呼ばれた騎馬隊がありました。"
+      ]
+    },
+    {
+      "label": "信長の備え",
+      "era": "織田軍",
+      "headline": "信長の\n備え",
+      "points": [
+        "鉄砲 3,000丁",
+        "馬防柵 約2km"
+      ],
+      "lines": [
+        {
+          "text": "信長が用意したのは、鉄砲3千丁と、長さ2キロにわたる馬防柵です。",
+          "say": "のぶながが用意したのは、てっぽうさんぜんちょうと、ながさにキロにわたるばぼうさくです。"
+        }
+      ]
+    },
+    {
+      "label": "奇襲",
+      "era": "夜明け前",
+      "headline": "背後の砦を\n奇襲",
+      "points": [
+        "徳川の別働隊",
+        "背後の砦を落とす"
+      ],
+      "lines": [
+        "その夜明け前、徳川の別働隊が武田軍の背後の砦を奇襲して落とし、武田軍は前に出るしかなくなりました。"
+      ]
+    },
+    {
+      "label": "突撃",
+      "era": "設楽原",
+      "headline": "柵への\n突撃",
+      "points": [
+        "夜明けに開戦",
+        "戦い 約8時間"
+      ],
+      "lines": [
+        {
+          "text": "夜明けに始まった戦いで、武田軍は柵に向かって何度も突撃を繰り返します。",
+          "say": "よあけにはじまったたたかいで、たけだぐんはさくにむかってなんども突撃をくりかえします。"
+        },
+        {
+          "text": "戦いはおよそ8時間。",
+          "say": "たたかいはおよそはちじかん。"
+        }
+      ]
+    },
+    {
+      "label": "損害",
+      "era": "武田方",
+      "headline": "武田方の\n損害",
+      "points": [
+        "死者 1万人",
+        "軍の 3分の2",
+        "重臣 10人以上"
+      ],
+      "lines": [
+        {
+          "text": "武田方の死者は一万人、軍の三分の二を失いました。",
+          "say": "たけだがたのししゃはいちまんにん、ぐんのさんぶんのにをうしないました。"
+        },
+        {
+          "text": "討ち死にした重臣は、山県昌景、馬場信春、内藤昌豊など、名のある武将だけで10人を超えます。",
+          "say": "うちじにしたじゅうしんは、やまがたまさかげ、ばばのぶはる、ないとうまさとよなど、なのあるぶしょうだけでじゅうにんをこえます。"
+        }
+      ]
+    },
+    {
+      "label": "その後",
+      "era": "1582年",
+      "headline": "七年後\n武田家滅亡",
+      "points": [
+        "1582年 武田家滅亡"
+      ],
+      "lines": [
+        {
+          "text": "勝頼自身も、わずかな供回りとともに逃げ帰りました。",
+          "say": "かつより自身も、わずかなともまわりとともににげかえりました。"
+        },
+        {
+          "text": "それから7年後、武田家は滅びました。",
+          "say": "それからななねんご、たけだけはほろびました。"
+        },
+        "長篠の戦いは、刀と馬の時代が、鉄砲の時代に変わった一日でした。"
+      ]
+    }
+  ]
+}
