@@ -85,7 +85,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 27/11/2026 | 妻を失って2年、後を追うように旅立った野村克也 | Nomura Katsuya mất 2 năm sau vợ Sachiyo, lời cảm ơn chưa nói được | #91 | `2026-11-27-nomura-sachiyo` |
 | 27/11/2026 | 乳がんから11年、北斗晶と佐々木健介 | 11 năm sau ung thư vú, Hokuto Akira vẫn cười bên chồng Kensuke | #92 | `2026-11-27-hokuto-kensuke` |
 
-## Lịch sử (13 video)
+## Lịch sử (16 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
@@ -102,6 +102,9 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 24/11/2026 | 甲斐の虎・武田信玄 戦果トップ3 | Top 3 chiến tích huy hoàng nhất của mãnh hổ xứ Kai Takeda Shingen | #77 | `2026-11-24-shingen-top3` |
 | 26/11/2026 | 第六天魔王・織田信長 最も苦しんだ戦いトップ3 | Top 3 trận chiến khó khăn nhất của Oda Nobunaga | #80 | `2026-11-26-nobunaga-top3` |
 | 26/11/2026 | 農民から天下人へ 豊臣秀吉 | Hideyoshi: từ con nhà nông lên ngôi thiên hạ | #82 | `2026-11-26-hideyoshi` |
+| 27/11/2026 | 主君を討ち、神として祀られた男 明智光秀 | Mitsuhide: giết chủ, rồi được thờ như thần | #89 | `2026-11-27-mitsuhide` |
+| 27/11/2026 | 耐えて天下を取った男 徳川家康 | Ieyasu: nhẫn nhịn mà lấy được thiên hạ | #90 | `2026-11-27-ieyasu` |
+| 27/11/2026 | 長篠の戦い 八時間で一万人を失った最強騎馬隊 | Trận Nagashino: kỵ binh mạnh nhất mất 1 vạn người trong 8 giờ (thử khung slide) | #98 | `2026-11-27-nagashino` |
 
 ## Luật ngầm (1 video)
 

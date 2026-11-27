@@ -1,7 +1,7 @@
 {
   "title": "長篠の戦い 八時間で一万人を失った最強騎馬隊",
   "date": "2026-11-27",
-  "stage": "find",
+  "stage": "render",
   "issue": 98,
   "style": "slide",
   "kicker": "戦国の物語",
@@ -61,7 +61,19 @@
           "quote": true,
           "say": "せんごくさいきょうのきばたいは、わずかはちじかんでいちまんにんをうしないました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "cut": "hard",
+      "why": "Mở bằng cận mặt Katsuyori đội mũ lông đỏ."
     },
     {
       "label": "兵力",
@@ -86,7 +98,32 @@
           "say": "むかえうつたけだかつよりのぐんは、およそいちまんごせん。"
         },
         "数では二倍以上の差でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-3",
+          "move": "pan-right",
+          "depth": false
+        },
+        {
+          "pick": "12-17",
+          "move": "push-in",
+          "focus": [
+            0.55,
+            0.3
+          ]
+        },
+        {
+          "pick": "13-12",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.3
+          ]
+        }
+      ],
+      "cut": "slide",
+      "why": "Chiến trường, rồi Nobunaga, rồi Katsuyori."
     },
     {
       "label": "勝頼",
@@ -109,7 +146,27 @@
           "text": "そこへ駆けつけたのが、信長と家康の大軍です。",
           "say": "そこへかけつけたのが、のぶながといえやすのたいぐんです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-10",
+          "move": "push-in",
+          "focus": [
+            0.35,
+            0.35
+          ]
+        },
+        {
+          "pick": "6-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        }
+      ],
+      "cut": "zoom",
+      "why": "Katsuyori bên cha Shingen, rồi Ieyasu kéo tới."
     },
     {
       "label": "騎馬隊",
@@ -120,7 +177,19 @@
       ],
       "lines": [
         "それでも武田軍には、戦国最強と呼ばれた騎馬隊がありました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "cut": "flash",
+      "why": "Đoàn kỵ binh Takeda phi tới."
     },
     {
       "label": "信長の備え",
@@ -135,7 +204,23 @@
           "text": "信長が用意したのは、鉄砲3千丁と、長さ2キロにわたる馬防柵です。",
           "say": "のぶながが用意したのは、てっぽうさんぜんちょうと、ながさにキロにわたるばぼうさくです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-5",
+          "move": "pan-left",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "10-15",
+          "move": "pan-right"
+        }
+      ],
+      "cut": "slide",
+      "why": "Súng hỏa mai và hàng rào chắn ngựa."
     },
     {
       "label": "奇襲",
@@ -147,7 +232,23 @@
       ],
       "lines": [
         "その夜明け前、徳川の別働隊が武田軍の背後の砦を奇襲して落とし、武田軍は前に出るしかなくなりました。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-5",
+          "move": "push-in"
+        },
+        {
+          "pick": "14-5",
+          "move": "pan-left",
+          "focus": [
+            0.7,
+            0.4
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Đồn phía sau bị đánh úp lúc trời chưa sáng."
     },
     {
       "label": "突撃",
@@ -166,7 +267,27 @@
           "text": "戦いはおよそ8時間。",
           "say": "たたかいはおよそはちじかん。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-1",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "13-20",
+          "move": "push-in",
+          "focus": [
+            0.8,
+            0.2
+          ]
+        }
+      ],
+      "cut": "flash",
+      "why": "Quân Takeda xông lên."
     },
     {
       "label": "損害",
@@ -186,7 +307,34 @@
           "text": "討ち死にした重臣は、山県昌景、馬場信春、内藤昌豊など、名のある武将だけで10人を超えます。",
           "say": "うちじにしたじゅうしんは、やまがたまさかげ、ばばのぶはる、ないとうまさとよなど、なのあるぶしょうだけでじゅうにんをこえます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "16-4",
+          "move": "push-in",
+          "focus": [
+            0.82,
+            0.3
+          ]
+        },
+        {
+          "pick": "17-2",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.3
+          ],
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "18-4",
+          "move": "pan-right",
+          "depth": false
+        }
+      ],
+      "cut": "hard",
+      "why": "Tổn thất: các tướng lớn tử trận."
     },
     {
       "label": "その後",
@@ -205,7 +353,31 @@
           "say": "それからななねんご、たけだけはほろびました。"
         },
         "長篠の戦いは、刀と馬の時代が、鉄砲の時代に変わった一日でした。"
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "13-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "20-7",
+          "move": "push-in"
+        },
+        {
+          "pick": "11-3",
+          "move": "pan-right",
+          "focus": [
+            0.6,
+            0.5
+          ]
+        }
+      ],
+      "cut": "dip",
+      "why": "Katsuyori cuối đời, chùa Keitoku-in, và thời của súng."
     }
   ]
 }
