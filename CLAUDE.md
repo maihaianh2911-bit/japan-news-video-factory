@@ -334,6 +334,10 @@ deleted (common rule 18).
     estimate: a script estimated at 65 s came out at 59.5 s. For 61–65 s write about 540–560 kana (about 470–490
     written characters), and read the real length after the voice step before telling the owner a number. `python tools/readings.py` gives the
     estimate from the reading now (common rule 23).
+  - **Check the readings by listening** (second video, `2026-11-27-daiso-yano`, issue #93, 64.4 s): after a render
+    run `tools/listen.py <video> ja 13 9` and read it against the script. It caught 暇 read as いとま in
+    「値札を付ける暇がありません」; the `say` now writes ひま. Words to write in kana in `say` from the start: 暇,
+    質 (しち/しつ), 借家, 夜逃げ, 値札, 銭失い, 度外視, 罵る, numbers with 店 or 億円.
   Not set yet by the owner: the seal (the choice above stands in); the voice is 青山龍星 as on every channel
   (common rule 21). Never borrow another channel's rule.
 - **Business people, politicians and the like**: the "father of …" angle of the sample (「ユニクロを作った男」), people the
