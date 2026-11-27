@@ -53,7 +53,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 26/11/2026 | 皇室を去る姉を抱きしめた佳子さま | Kako ôm chị Mako ngày rời Hoàng gia và câu viết "nổi loạn" 2 năm trước | #84 | `2026-11-26-kako-dakishime` |
 | 27/11/2026 | 即位パレードで雅子さまが涙をぬぐった場所 | Hoàng hậu Masako lau nước mắt gần Bộ Ngoại giao trong lễ diễu hành đăng quang 2019 | #88 | `2026-11-27-masako-parade-namida` |
 
-## Sao, người nổi tiếng (23 video)
+## Sao, người nổi tiếng (24 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
@@ -80,6 +80,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 24/11/2026 | DAIGOと北川景子、結婚10年 | lời cầu hôn 3 chữ KSK | #71 | `2026-11-24-daigo-kitagawa` |
 | 26/11/2026 | 佐々木希が離婚しなかった理由 | vì sao Sasaki Nozomi không ly hôn Watabe Ken | #79 | `2026-11-26-sasaki-watabe` |
 | 26/11/2026 | 小林麻央さんが旅立って9年、團十郎が再婚しない理由 | 9 năm sau khi Kobayashi Mao mất, Danjuro vẫn chưa tái hôn vì con gái | #81 | `2026-11-26-danjuro-mao` |
+| 27/11/2026 | トップ3！芸能人がプロデュースして大コケした悲惨な飲食店 | Quán của Hamaie, Katsumi-Sayuri, Motoki Daisuke thất bại | #97 | `2026-11-27-geinin-koke-top3` |
 
 ## Lịch sử (13 video)
 
@@ -130,7 +131,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 24/11/2026 | 史上最悪の大災害 第10位 タイタニック号の沈没 | Titanic và người Nhật duy nhất sống sót | #67 | — |
 | 24/11/2026 | 史上最悪の大災害 第9位 ニオス湖の悲劇 | Hồ Nyos: khí độc giết hơn 1.700 người trong một đêm | #76 | — |
 
-## Đồ dùng (7 video)
+## Đồ dùng (8 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
@@ -141,6 +142,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 25/11/2026 | トップ10！大流行してたのに一瞬で見なくなったもの パート2(5〜1位) | Món từng gây sốt rồi biến mất, phần 2 | #78 | — |
 | 26/11/2026 | トップ4！1000円払っても買って損なし ダイソーの神商品 | Kênh đồ dùng: 4 món Daiso đáng mua | #86 | — |
 | 26/11/2026 | トップ4！マジで便利なセリアの神商品 | Kênh đồ dùng: 4 món Seria tiện lợi (bản top 4) | #87 | — |
+| 27/11/2026 | トップ3！一度は行くべき食べ放題チェーン店 | Kênh đồ dùng: 3 chuỗi quán buffet (Yuzuan, One-Karubi, Gyukaku) | #96 | `2026-11-27-tabehoudai-top3` |
 
 ## Phim, truyện (0 video)
 
