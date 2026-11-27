@@ -14,7 +14,7 @@
     "face": true,
     "enhance": true
   },
-  "stage": "find",
+  "stage": "render",
   "title": "秋篠宮さまのプロポーズは大学近くの交差点",
   "issue": 94,
   "source": "文春オンライン、プレジデントオンライン",
@@ -30,7 +30,26 @@
           "quote": true
         }
       ],
-      "era": "1986年6月"
+      "era": "1986年 ― 1990年",
+      "photo": [
+        {
+          "pick": "15-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.25
+          ]
+        },
+        {
+          "pick": "10-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Mở đầu: lễ cưới 1990, bà Kiko cười chỉnh tóc cho Hoàng tử (ảnh lớn, hai mặt rõ), rồi ngã tư gần Đại học Gakushuin."
     },
     {
       "label": "返事",
@@ -41,7 +60,16 @@
           "say": "そして、きこさまの、へんじは、はい、では、ありませんでした。"
         }
       ],
-      "era": "1986年6月"
+      "era": "1989年9月",
+      "photo": [
+        {
+          "pick": "5-6",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Hai người cười ở họp báo đính hôn 9/1989.",
+      "cut": "fade"
     },
     {
       "label": "出会い",
@@ -52,7 +80,19 @@
           "say": "ふたりが、であったのは、せんきゅうひゃくはちじゅうごねん、がくしゅういんだいがくの、こうないにある、しょてんです。"
         }
       ],
-      "era": "1985年"
+      "era": "1985年",
+      "photo": [
+        {
+          "pick": "9-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Khuôn viên Đại học Gakushuin.",
+      "cut": "dip"
     },
     {
       "label": "先輩と後輩",
@@ -63,7 +103,27 @@
           "say": "あきしののみやさまは、にねんせい、きこさまは、にゅうがくしたばかりの、いちねんせいでした。"
         }
       ],
-      "era": "1985年"
+      "era": "1985年",
+      "photo": [
+        {
+          "pick": "8-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "8-3",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Hoàng tử Aya và bà Kiko thời sinh viên đi trong trường, rồi bà Kiko năm nhất ôm sách.",
+      "cut": "slide"
     },
     {
       "label": "職員住宅",
@@ -74,7 +134,27 @@
           "say": "きこさまは、だいがくきょうじゅの、むすめで、かぞくと、くらしていたのは、だいがくの、しょくいんじゅうたくでした。"
         }
       ],
-      "era": "1980年代"
+      "era": "1980年代",
+      "photo": [
+        {
+          "pick": "11-5",
+          "move": "push-in",
+          "focus": [
+            0.44,
+            0.0
+          ]
+        },
+        {
+          "pick": "11-4",
+          "move": "pull-back",
+          "focus": [
+            0.6,
+            0.3
+          ]
+        }
+      ],
+      "why": "Bà Kiko và cha (giáo sư Kawashima) trước khu nhà, rồi hai cha con ở cửa nhà ở nhân viên.",
+      "cut": "fade"
     },
     {
       "label": "プロポーズ",
@@ -85,7 +165,24 @@
           "say": "よくねんの、ろくがつ、ゆうがたの、こうさてんで、あきしののみやさまは、わたしと、いっしょに、なってくれませんか、と、きりだします。"
         }
       ],
-      "era": "1986年6月26日"
+      "era": "1986年6月26日",
+      "photo": [
+        {
+          "pick": "10-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "5-3",
+          "move": "push-in",
+          "fit": "contain"
+        }
+      ],
+      "why": "Ngã tư gần trường, rồi hai người ngồi cạnh nhau ở họp báo.",
+      "cut": "zoom"
     },
     {
       "label": "3年の待ち",
@@ -96,7 +193,27 @@
           "say": "ところが、しょうわてんのうの、びょうきと、ほうぎょが、かさなり、こんやくの、はっぴょうは、さんねんごまで、まつことに、なりました。"
         }
       ],
-      "era": "1989年"
+      "era": "1989年",
+      "photo": [
+        {
+          "pick": "13-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "14-2",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Thiên hoàng Chiêu Hòa những năm cuối, rồi lễ tang 2/1989.",
+      "cut": "dip"
     },
     {
       "label": "結婚",
@@ -107,7 +224,27 @@
           "say": "せんきゅうひゃくきゅうじゅうねん、にじゅうさんさいの、きこさまは、しょくいんじゅうたくから、こうしつへ、とつぎ、さんエルディーケーの、プリンセスと、よばれます。"
         }
       ],
-      "era": "1990年6月29日"
+      "era": "1990年6月29日",
+      "photo": [
+        {
+          "pick": "6-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "15-4",
+          "move": "pull-back",
+          "focus": [
+            0.32,
+            0.0
+          ]
+        }
+      ],
+      "why": "Bà Kiko thời 'công nương 3 phòng' cười, rồi hai người trong lễ phục ngày cưới 1990.",
+      "cut": "fade"
     },
     {
       "label": "答え",
@@ -118,7 +255,24 @@
           "say": "あの、こうさてんで、きこさまが、かえした、ことばは、よく、かんがえさせて、いただけませんか。その、こたえが、よねんごの、けっこんしきの、えがおでした。"
         }
       ],
-      "era": "1990年6月29日"
+      "era": "1990年6月29日",
+      "photo": [
+        {
+          "pick": "5-9",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "15-6",
+          "move": "pull-back",
+          "focus": [
+            0.6,
+            0.25
+          ]
+        }
+      ],
+      "why": "Nụ cười của bà Kiko trên xe ngày cưới, rồi khoảnh khắc bà chỉnh tóc cho chồng.",
+      "cut": "slide"
     }
   ],
   "searches": [
@@ -142,5 +296,9 @@
     "page:https://president.jp/articles/-/115404",
     "page:https://bunshun.jp/articles/-/80130",
     "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+  ],
+  "music": {
+    "pick": "20-1",
+    "volume": 0.7
+  }
 }

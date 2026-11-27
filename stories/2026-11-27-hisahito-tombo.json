@@ -14,7 +14,7 @@
     "face": true,
     "enhance": true
   },
-  "stage": "find",
+  "stage": "render",
   "title": "17歳の悠仁さまが書いたトンボの論文",
   "issue": 95,
   "source": "国立科学博物館研究報告、Newsweek日本版、プレジデントオンライン",
@@ -30,7 +30,26 @@
           "quote": true
         }
       ],
-      "era": "2023年"
+      "era": "2023年",
+      "photo": [
+        {
+          "pick": "6-4",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "7-4",
+          "move": "pull-back",
+          "focus": [
+            0.55,
+            0.4
+          ]
+        }
+      ],
+      "why": "Mở đầu: Hisahito 17 tuổi đứng trong vườn (ảnh dọc lớn, Cơ quan Nội chính công bố 9/2023), rồi cậu ngồi xem cỏ trong vườn."
     },
     {
       "label": "赤坂御用地",
@@ -41,7 +60,19 @@
           "say": "その、けんきゅうの、ぶたいは、じたくのある、あかさかごようちの、にわでした。"
         }
       ],
-      "era": "赤坂御用地"
+      "era": "赤坂御用地",
+      "photo": [
+        {
+          "pick": "10-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Gia đình Akishino cúi xem bên bờ ao trong vườn Akasaka.",
+      "cut": "fade"
     },
     {
       "label": "幼稚園児",
@@ -52,7 +83,19 @@
           "say": "ちょうさが、はじまったのは、にせんじゅうにねん。ひさひとさまは、まだ、ようちえんじでした。"
         }
       ],
-      "era": "2012年"
+      "era": "2012年",
+      "photo": [
+        {
+          "pick": "8-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        }
+      ],
+      "why": "Hisahito hồi nhỏ ngồi chơi khối gỗ.",
+      "cut": "dip"
     },
     {
       "label": "ヤゴから",
@@ -63,7 +106,27 @@
           "say": "いけや、ぼうかようの、すいそうまで、みてまわり、ようちゅうを、そだてて、うかさせては、しゅるいを、たしかめていきました。"
         }
       ],
-      "era": "2012年〜2022年"
+      "era": "幼いころ",
+      "photo": [
+        {
+          "pick": "8-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-6",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Hisahito bò sát mặt đất quan sát, rồi chuồn chuồn đang lột xác.",
+      "cut": "slide"
     },
     {
       "label": "38種類",
@@ -74,7 +137,19 @@
           "say": "じゅうねん、かけて、みつけたのは、さんじゅうはっしゅるい。"
         }
       ],
-      "era": "2022年"
+      "era": "2022年",
+      "photo": [
+        {
+          "pick": "8-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Hisahito đứng bên mương nước nhìn xuống.",
+      "cut": "fade"
     },
     {
       "label": "オツネントンボ",
@@ -85,7 +160,19 @@
           "say": "そのなかには、とうきょう、にじゅうさんくでは、ぜつめつの、きけんが、もっとも、たかいとされる、オツネントンボも、いました。"
         }
       ],
-      "era": "2022年"
+      "era": "2022年",
+      "photo": [
+        {
+          "pick": "12-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Loài chuồn chuồn Otsunen.",
+      "cut": "zoom"
     },
     {
       "label": "20年前",
@@ -96,7 +183,19 @@
           "say": "にじゅうねんまえの、せんもんかの、ちょうさでは、にじゅうよんしゅるいでした。"
         }
       ],
-      "era": "2002年〜2004年"
+      "era": "2012年〜2022年",
+      "photo": [
+        {
+          "pick": "12-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Chuồn chuồn kim trên lá.",
+      "cut": "fade"
     },
     {
       "label": "国立科学博物館",
@@ -107,7 +206,19 @@
           "say": "この、リストに、おどろいた、こくりつかがくはくぶつかんの、けんきゅうしゃが、ろんぶんにすることを、すすめます。"
         }
       ],
-      "era": "2022年"
+      "era": "2022年",
+      "photo": [
+        {
+          "pick": "3-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Tòa nhà Bảo tàng Khoa học Quốc gia ở Ueno.",
+      "cut": "dip"
     },
     {
       "label": "論文",
@@ -118,7 +229,27 @@
           "say": "にせんにじゅうさんねん、ひさひとさまを、ひっとうちょしゃとする、にじゅうごページの、ろんぶんが、がくじゅつしに、のりました。"
         }
       ],
-      "era": "2023年11月"
+      "era": "2023年11月",
+      "photo": [
+        {
+          "pick": "6-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        },
+        {
+          "pick": "7-9",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Hisahito 18 tuổi, rồi cậu cười trong vườn.",
+      "cut": "slide"
     },
     {
       "label": "四代目",
@@ -129,7 +260,34 @@
           "say": "そうそふの、しょうわてんのうは、ねんきん、そふの、じょうこうさまは、ハゼ、ちちの、あきしののみやさまは、ニワトリ。ひさひとさまは、いきものを、けんきゅうする、よんだいめなのです。"
         }
       ],
-      "era": "昭和 ― 令和"
+      "era": "昭和 ― 令和",
+      "photo": [
+        {
+          "pick": "14-2",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "15-3",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "16-5",
+          "move": "push-in",
+          "fit": "contain"
+        },
+        {
+          "pick": "9-9",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.25
+          ]
+        }
+      ],
+      "why": "Kính hiển vi và mẫu vật của Thiên hoàng Chiêu Hòa ở bảo tàng, Thượng hoàng nghiên cứu cá bống, Hoàng tử Akishino bên chuồng gà, rồi Hisahito.",
+      "cut": "fade"
     }
   ],
   "searches": [
@@ -151,5 +309,9 @@
     "web:秋篠宮さま ニワトリ 研究 => a Japanese prince with chickens",
     "web:悠仁さま 筑波大学 2025 => a Japanese young man in a suit at a university",
     "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+  ],
+  "music": {
+    "pick": "18-1",
+    "volume": 0.7
+  }
 }
