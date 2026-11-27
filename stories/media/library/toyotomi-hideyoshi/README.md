@@ -22,3 +22,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `nagahama-castle.jpg` | Thành Nagahama (Shiga) hôm nay | 1920×1280 | 663highland / CC BY 2.5 | 2026-11-26-hideyoshi |
 | `osaka-castle-dusk.jpg` | Thành Osaka lúc chạng vạng | 1200×800 | blog.osakanight.com | 2026-11-26-hideyoshi |
 | `osaka-castle-from-above.jpg` | Thành Osaka nhìn từ trên cao, cao ốc phía sau | 1920×1257 | 663highland / CC BY 2.5 | 2026-11-26-hideyoshi |
+| `drama-ieyasu-muro-enthroned.jpg` | Phim どうする家康: Hideyoshi (Muro Tsuyoshi) ngồi trên cao mặc giáp | 1250×834 | thetv.jp | 2026-11-27-ieyasu |
