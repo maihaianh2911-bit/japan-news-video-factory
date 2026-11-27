@@ -18,7 +18,7 @@
     "face": true,
     "enhance": true
   },
-  "stage": "find",
+  "stage": "render",
   "scenes": [
     {
       "label": "涙",
@@ -30,7 +30,26 @@
           "say": "そくいパレードで、まさこさまが、なみだを、ぬぐったのは、かつて、がいこうかんとして、はたらいた、がいむしょうの、すぐそばでした。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-2",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "16-5",
+          "move": "pull-back",
+          "focus": [
+            0.35,
+            0.5
+          ]
+        }
+      ],
+      "why": "Mở đầu: Hoàng hậu lau nước mắt trên xe mui trần 10/11/2019 (ảnh lớn, nét), rồi tòa nhà Bộ Ngoại giao có biển tên."
     },
     {
       "label": "26年",
@@ -41,7 +60,19 @@
           "text": "その涙には、26年分の思いが詰まっていました。",
           "say": "そのなみだには、にじゅうろくねんぶんの、おもいが、つまっていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "22-10",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        }
+      ],
+      "why": "Bà Masako lau nước mắt bên Thiên hoàng trên xe diễu hành.",
+      "cut": "fade"
     },
     {
       "label": "外交官",
@@ -52,7 +83,27 @@
           "text": "ハーバード大学を卒業し、外務省に入った雅子さまは、将来を期待された外交官でした。",
           "say": "ハーバードだいがくを、そつぎょうし、がいむしょうに、はいった、まさこさまは、しょうらいを、きたいされた、がいこうかんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "move": "push-in",
+          "focus": [
+            0.62,
+            0.35
+          ]
+        },
+        {
+          "pick": "18-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Lễ tốt nghiệp Harvard, rồi bà Masako thời làm ở Bộ Ngoại giao.",
+      "cut": "dip"
     },
     {
       "label": "決意",
@@ -63,7 +114,27 @@
           "text": "けれど、「僕が一生、全力でお守りしますから」という皇太子さまの言葉に心を決め、その道を手放します。",
           "say": "けれど、ぼくが、いっしょう、ぜんりょくで、おまもりしますから、という、こうたいしさまの、ことばに、こころを、きめ、そのみちを、てばなします。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "17-4",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Bà Masako cười ở họp báo đính hôn 1/1993, rồi ôm hoa rời Bộ Ngoại giao.",
+      "cut": "fade"
     },
     {
       "label": "療養",
@@ -78,7 +149,27 @@
           "text": "公務を休むたびに、厳しい批判も浴び続けます。",
           "say": "こうむを、やすむたびに、きびしい、ひはんも、あびつづけます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        },
+        {
+          "pick": "5-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Thời công bố bệnh 2004, rồi bà nhìn ra cửa kính xe, vẻ mệt mỏi.",
+      "cut": "dip"
     },
     {
       "label": "皇后に",
@@ -89,7 +180,19 @@
           "text": "それから15年。2019年、雅子さまは皇后になりました。",
           "say": "それから、じゅうごねん。にせんじゅうきゅうねん、まさこさまは、こうごうに、なりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.2
+          ]
+        }
+      ],
+      "why": "Chân dung chính thức 2019: Thiên hoàng và Hoàng hậu đứng cạnh nhau.",
+      "cut": "zoom"
     },
     {
       "label": "祝福",
@@ -100,7 +203,27 @@
           "text": "秋のパレードには、およそ12万人が集まり、沿道は祝福の歓声に包まれます。",
           "say": "あきの、パレードには、およそ、じゅうにまんにんが、あつまり、えんどうは、しゅくふくの、かんせいに、つつまれます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "22-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-12",
+          "move": "pull-back",
+          "focus": [
+            0.55,
+            0.4
+          ]
+        }
+      ],
+      "why": "Đám đông hai bên đường giơ máy chụp, rồi hai người vẫy tay giữa rừng cờ.",
+      "cut": "slide"
     },
     {
       "label": "目頭",
@@ -111,7 +234,27 @@
           "text": "国会の前では、目頭を押さえる姿もありました。",
           "say": "こっかいの、まえでは、めがしらを、おさえる、すがたも、ありました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Xe diễu hành qua tòa Quốc hội, rồi Hoàng hậu ấn khóe mắt.",
+      "cut": "fade"
     },
     {
       "label": "祝福",
@@ -122,7 +265,24 @@
           "text": "夢を手放したあの場所で、雅子さまを待っていたのは、批判ではなく、祝福でした。",
           "say": "ゆめを、てばなした、あのばしょで、まさこさまを、まっていたのは、ひはんではなく、しゅくふくでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "11-14",
+          "move": "push-in",
+          "focus": [
+            0.72,
+            0.3
+          ]
+        },
+        {
+          "pick": "11-10",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hoàng hậu cười vẫy tay giữa cờ, rồi hai người cười bên nhau trên xe.",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -151,5 +311,9 @@
     "page:https://bunshun.jp/articles/-/15527",
     "page:https://www.nippon.com/ja/japan-topics/c06116/",
     "music:file:stories/media/music/owner-flute-1-long.mp3"
-  ]
+  ],
+  "music": {
+    "pick": "25-1",
+    "volume": 0.7
+  }
 }
