@@ -16,7 +16,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 92,
   "searches": [
     "wiki:北斗晶",
@@ -51,7 +51,23 @@
         {
           "text": "その陰には、夫が涙ながらに口にした、ひとつの言葉がありました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "punch-in"
+        },
+        {
+          "pick": "4-17",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: hai vợ chồng cười rạng rỡ trong lễ thề nguyện lại, rồi cận mặt cười."
     },
     {
       "label": "発覚",
@@ -65,7 +81,24 @@
         {
           "text": "しこりは2センチ。リンパへの転移も疑われていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-10",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "5-11",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hokuto, rồi gương mặt lo âu khi kể bệnh năm 2015.",
+      "cut": "dip"
     },
     {
       "label": "決意",
@@ -80,7 +113,16 @@
           "text": "「5年先、10年先を生きるために長い闘いに入ります」。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-15",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hokuto năm phát hiện ung thư, câu viết trên blog.",
+      "cut": "fade"
     },
     {
       "label": "夫の涙",
@@ -95,7 +137,21 @@
           "text": "「チャコがいなかったら、俺は生きていけない。俺が死ぬまで横にいてほしい」。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-1",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "6-4",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Họp báo ra viện 10/2015: chồng đặt tay lên lưng vợ, rồi chồng lau nước mắt.",
+      "cut": "slide"
     },
     {
       "label": "丸刈り",
@@ -109,7 +165,24 @@
         {
           "text": "その姿に、家族はみんなで大笑いしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "focus": [
+            0.55,
+            0.19
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-5",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hokuto cạo trọc cười bên chồng, rồi cả nhà cười.",
+      "cut": "flash"
     },
     {
       "label": "誓い",
@@ -119,7 +192,27 @@
         {
           "text": "そして2024年の暮れ、結婚30年を前に、二人はもう一度、愛を誓い合う式を挙げます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-3",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "8-9",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Lễ thề nguyện lại cuối 2024.",
+      "cut": "dip"
     },
     {
       "label": "30年",
@@ -129,7 +222,25 @@
         {
           "text": "去年、結婚30年を迎えた二人の写真には、「憧れ」「理想の夫婦」という声があふれました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-20",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        },
+        {
+          "pick": "4-5",
+          "focus": [
+            0.56,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bài đăng 'kết hôn 30 năm', rồi ảnh selfie hai vợ chồng.",
+      "cut": "slide"
     },
     {
       "label": "10年",
@@ -143,7 +254,31 @@
           "text": "その10年を、彼女は夫の隣で生き抜きました。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-9",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai vợ chồng bên nhau bây giờ.",
+      "cut": "fade"
     }
-  ]
+  ],
+  "music": {
+    "pick": "17-1",
+    "volume": 0.7
+  }
 }
