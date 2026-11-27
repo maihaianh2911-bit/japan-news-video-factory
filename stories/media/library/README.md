@@ -17,6 +17,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [bhumibol](bhumibol/README.md) | 1 |
 | [daigo](daigo/README.md) | 2 |
 | [daigo-kitagawa](daigo-kitagawa/README.md) | 3 |
+| [daiso](daiso/README.md) | 4 |
 | [danjuro-children](danjuro-children/README.md) | 7 |
 | [danjuro-mao](danjuro-mao/README.md) | 3 |
 | [enthronement-parade-2019](enthronement-parade-2019/README.md) | 2 |
@@ -82,3 +83,4 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [watabe-ken](watabe-ken/README.md) | 5 |
 | [yamanakako](yamanakako/README.md) | 1 |
 | [yamazaki-1582](yamazaki-1582/README.md) | 2 |
+| [yano-hirotake](yano-hirotake/README.md) | 9 |
