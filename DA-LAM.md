@@ -53,7 +53,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 26/11/2026 | 皇室を去る姉を抱きしめた佳子さま | Kako ôm chị Mako ngày rời Hoàng gia và câu viết "nổi loạn" 2 năm trước | #84 | `2026-11-26-kako-dakishime` |
 | 27/11/2026 | 即位パレードで雅子さまが涙をぬぐった場所 | Hoàng hậu Masako lau nước mắt gần Bộ Ngoại giao trong lễ diễu hành đăng quang 2019 | #88 | `2026-11-27-masako-parade-namida` |
 
-## Sao, người nổi tiếng (23 video)
+## Sao, người nổi tiếng (25 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
@@ -80,6 +80,8 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 24/11/2026 | DAIGOと北川景子、結婚10年 | lời cầu hôn 3 chữ KSK | #71 | `2026-11-24-daigo-kitagawa` |
 | 26/11/2026 | 佐々木希が離婚しなかった理由 | vì sao Sasaki Nozomi không ly hôn Watabe Ken | #79 | `2026-11-26-sasaki-watabe` |
 | 26/11/2026 | 小林麻央さんが旅立って9年、團十郎が再婚しない理由 | 9 năm sau khi Kobayashi Mao mất, Danjuro vẫn chưa tái hôn vì con gái | #81 | `2026-11-26-danjuro-mao` |
+| 27/11/2026 | 妻を失って2年、後を追うように旅立った野村克也 | Nomura Katsuya mất 2 năm sau vợ Sachiyo, lời cảm ơn chưa nói được | #91 | `2026-11-27-nomura-sachiyo` |
+| 27/11/2026 | 乳がんから11年、北斗晶と佐々木健介 | 11 năm sau ung thư vú, Hokuto Akira vẫn cười bên chồng Kensuke | #92 | `2026-11-27-hokuto-kensuke` |
 
 ## Lịch sử (13 video)
 
