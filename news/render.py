@@ -13,6 +13,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter, ImageFont
 from .clips import WARN as CLIP_WARN, close_all as close_clips
 from . import faces
 from .edits import AUTO_CUT, CUTS, MOVES, edit_list
+from .enhance import SOFT, sharp
 from .story import VOICE_CREDIT, japanese_date
 
 W, H, FPS = 1080, 1920, 30
@@ -118,12 +119,84 @@ def use_style(name):
     style = STYLES[name]
 
 
+# --- "host": a narrator character in the lower part of the "band" frame (owner, 26/11/2026, from a short he liked:
+# "kiểu có 1 con nhân vật ở dưới, còn hình chạy ở trên"). The story names it: "host": {"name": "samurai",
+# "poses": [one per scene]}; its pictures are stories/media/host/<name>/<pose>.png (transparent, waist up, made by
+# tools/host_cut.py from the sheets the owner had drawn). The picture band moves up and gets shorter (16:9), the
+# headline and the captions sit under it, the character stands at the foot, sways a little, moves its mouth while
+# the voice speaks, and opens each scene with the scene's gesture.
+HOST = None
+HOST_POSES = ("neutral", "talk", "point", "cross", "present", "surprised")
+HOST_TOP, HOST_PICTURE = 410, 608        # the picture band in the host frame: from y 410, 1080x608 (16:9)
+HOST_CAPTION_CENTRE, HOST_QUOTE_CENTRE = 1196, 1160
+HOST_FIGURE_HEIGHT, HOST_GESTURE = 640, 2.2   # the character's height on screen; how long a gesture is held
+HOST_IMAGES = {}
+
+
+def use_host(host):
+    """Switch the "band" frame to its narrator form (or back to the plain band when `host` is None)."""
+    global HOST, BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE
+    HOST = dict(host) if host else None
+    if HOST:
+        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = HOST_TOP, HOST_PICTURE, HOST_QUOTE_CENTRE
+    else:
+        BAND_TOP, BAND_HEIGHT, BAND_QUOTE_CENTRE = 470, 780, 1490
+    BOXES["band"] = (BAND_TOP, BAND_HEIGHT)
+    band_shade.cache_clear()
+
+
+def host_image(pose):
+    name = HOST["name"]
+    if (name, pose) not in HOST_IMAGES:
+        image = Image.open(Path("stories/media/host") / name / f"{pose}.png").convert("RGBA")
+        scale = HOST_FIGURE_HEIGHT / image.height
+        HOST_IMAGES[name, pose] = image.resize((round(image.width * scale), HOST_FIGURE_HEIGHT),
+                                               Image.Resampling.LANCZOS)
+    return HOST_IMAGES[name, pose]
+
+
+def draw_host(frame, scene_number, age, speaking, frame_index):
+    """The narrator at the foot of the frame: the scene's gesture for its first seconds, then the calm pose with the
+    mouth opening and closing while the voice speaks (`speaking`), a light sway all the time."""
+    poses = HOST.get("poses") or []
+    gesture = poses[scene_number] if scene_number < len(poses) else "neutral"
+    if gesture != "neutral" and age < HOST_GESTURE:
+        pose = gesture
+    else:
+        pose = "talk" if speaking and (frame_index // 4) % 2 == 0 else "neutral"
+    figure = host_image(pose)
+    sway = math.sin(frame_index / FPS * math.pi) * 6
+    x = (W - figure.width) // 2
+    frame.paste(figure, (x, H - figure.height + round(abs(sway))), figure)
+
+
+def voice_levels(wav, frames):
+    """For each video frame, whether the voice is speaking (loud enough), from the voice wav."""
+    import wave
+    import array
+    with wave.open(str(wav), "rb") as sound:
+        rate, width, channels = sound.getframerate(), sound.getsampwidth(), sound.getnchannels()
+        data = sound.readframes(sound.getnframes())
+    if width != 2:
+        return [False] * frames
+    samples = array.array("h", data)[::channels]
+    step = rate / FPS
+    levels = []
+    for index in range(frames):
+        chunk = samples[int(index * step):int((index + 1) * step)]
+        levels.append((sum(value * value for value in chunk[::8]) / max(1, len(chunk[::8]))) ** 0.5 if chunk else 0.0)
+    loud = sorted(levels)[int(len(levels) * 0.9)] if levels else 0.0
+    return [level > loud * 0.18 for level in levels]
+
+
 # Picture effects of a story ("fx" in stories/<name>.json), all off by default:
 #   "motion": the camera has a rhythm (quick at first, then settling) instead of one even speed
 #   "depth":  pictures that fill the frame get a light parallax from a depth map (news/depth.py)
 #   "text":   the tag, the headline and a quote come in piece by piece; the caption darkens as it is spoken
 #   "face":   a display typeface for the large text (headline, quote, year, captions): a font file, or true for
 #             $NEWS_DISPLAY_FONT / fonts/ShipporiMinchoB1-ExtraBold.ttf (SIL Open Font License)
+#   "enhance": every picked picture is lit when it is dull and enlarged by Real-ESRGAN when it is small, before
+#             it goes into the frame (news/enhance.py; done where the story is read, news/custom.py)
 FX = {}
 DISPLAY_FONT = ""
 
@@ -343,6 +416,8 @@ def page_area():
 
 
 def caption_centre():
+    if HOST and style.layout == "band":
+        return HOST_CAPTION_CENTRE
     return {"story": 1590, "ink": 1614, "full": 1560, "band": 1590, "album": 1652, "magazine": 1622, "goods": GOODS_CAPTION_Y}.get(style.layout, 1598)
 TEXT_IN, CAPTION_IN, PHOTO_FADE, TRANSITION = 0.45, 0.2, 0.5, 0.5   # seconds
 HOOK_SECONDS = 5.0   # the first picture of a video with "fx" stays at most this long (owner, 21/11/2026)
@@ -483,7 +558,9 @@ def named_photo(photo, t, name, seconds, height=PHOTO_HEIGHT, delay=0.0):
     p = paced(t)   # the steady moves follow the rhythm of the camera; reveal and punch-in have their own
     (fx, fy) = photo.focus
     if photo.fit == "contain":   # the whole picture: it grows, shrinks or stays
-        small = 1 - clamp(0.035 * seconds, 0.10, 0.18)
+        # a quarter or more in size (owner, 25/11/2026: a whole picture growing by a tenth looked still, mostly in
+        # the "album" print, which is smaller than the frame)
+        small = 1 - clamp(0.05 * seconds, 0.22, 0.32)
         size = {"push-in": small + (1 - small) * min(1, p), "pull-back": 1 - (1 - small) * min(1, p)}.get(name, 1.0)
         return whole_photo(photo.image, (size - 0.86) / 0.14, height)
     image = with_depth(photo, name, t if name in ("reveal", "punch-in") else p)
@@ -551,6 +628,7 @@ def clip_frame(photo, seconds):
 # In the "story" frame the headline is printed on the foot of the picture and the hook line higher still: a face
 # whose middle lies in that part is under the text. The first picture is the best one of the video.
 HEADLINE_ZONE, HOOK_ZONE, HOOK_SIDE = 0.22, 0.34, 900
+HOOK_SIDE_ENHANCED = 640   # a first picture that "fx": enhance enlarged may be this small, not smaller
 FULL_LINE = 0.6   # "full": the text stands from about three fifths of the frame down: a face ends above it
 
 
@@ -633,12 +711,19 @@ def hook_warnings(photo):
     """The first picture of a video (the hook, about its first 5 seconds) is its best one: large and sharp, a
     photograph and not a page, a document or a collage (owner, 19/11/2026)."""
     said = []
-    if min(photo.image.size) < HOOK_SIDE:
-        said.append(f"the hook: the first picture is small ({photo.image.width}x{photo.image.height}, under "
-                    f"{HOOK_SIDE} px on one side), it will look soft: open on the best picture of the video")
+    width, height = photo.source or photo.image.size   # the size of the file, before "fx": enhance enlarged it
+    side = HOOK_SIDE_ENHANCED if photo.source else HOOK_SIDE
+    if min(width, height) < side:
+        said.append(f"the hook: the first picture is small ({width}x{height}, under {side} px on one side"
+                    + (", even enlarged by the model" if photo.source else "")
+                    + "), it will look soft: open on the best picture of the video")
     if photo.fit == "contain" or (not photo.depth and not photo.clip):   # a clip never gets the depth effect
         said.append("the hook: the first picture is shown whole or marked flat (a document, a page, a collage): "
                     "open on a photograph of the person, the place or the thing")
+    crisp = sharp(photo.image)
+    if crisp < SOFT:
+        said.append(f"the hook: the first picture looks soft (sharpness {crisp}, under {SOFT}): look at it in "
+                    f"full size, and open on a crisper picture if it is blurred")
     return said
 
 
@@ -1061,7 +1146,7 @@ def band_layout(beat, release, has_photo, demo):
             text(draw, 90, y + 50, evidence, evidence_size, style.card_ink, bold=False)
         return image, layer, [part for part in parts if part]
     blocks = []
-    headline, size = fit(beat.headline, 960, 70, 2, smallest=46)
+    headline, size = fit(beat.headline, 960, 56 if HOST else 70, 1 if HOST else 2, smallest=40)
     blocks.append((headline, size, style.text, True, 16))
     if beat.value:
         value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
@@ -1069,7 +1154,7 @@ def band_layout(beat, release, has_photo, demo):
     if beat.evidence:
         evidence, evidence_size = fit(beat.evidence, 960, 34, 2, bold=False, smallest=26)
         blocks.append((evidence, evidence_size, style.muted, False, 10))
-    y = BAND_TOP + BAND_HEIGHT + 44
+    y = BAND_TOP + BAND_HEIGHT + (30 if HOST else 44)
     order = 0
     for value, size, colour, bold, spacing in blocks:
         for row, line in enumerate(value.splitlines()):
@@ -1229,7 +1314,7 @@ def magazine_layout(beat, release, has_photo, demo):
         else:
             era(draw)
     blocks = []
-    headline, size = fit(beat.headline, 960, 70, 2, smallest=46)
+    headline, size = fit(beat.headline, 960, 56 if HOST else 70, 1 if HOST else 2, smallest=40)
     blocks.append((headline, size, style.text, True, 14))
     if beat.value:
         value, value_size = fit(beat.value, 960, 84, 1, smallest=52)
@@ -1788,6 +1873,7 @@ def draw_captions(image, caption, age=1.0, span=None, marks=()):
 QUOTE_IN = 0.35
 
 
+QUOTE_ROWS = 4     # the rows a quote may take (owner, 25/11/2026)
 QUOTE_ON = False   # set by encode()/stills() while a quote is shown: the scene's own text waits meanwhile
 
 
@@ -1817,22 +1903,36 @@ def ink_quote_band(height):
     return band
 
 
-def draw_quote(image, line, age):
+HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108}   # a short opening line, printed larger
+
+
+def draw_quote(image, line, age, hook=False):
     """A quote printed big while it is spoken. The picture stays bright: the main picture is what keeps the
     viewer (owner, 17/11/2026), so only the foot of the picture gets a soft dark band, the words stand on it
-    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice."""
+    between two short red rules, and the scene's headline waits (QUOTE_ON) so that nothing is drawn twice.
+    `hook`: the opening line of the video. With "fx": text it is all there from the first frame, larger when it is
+    short (owner, 25/11/2026, on the growth plan: the first two seconds decide whether a Short is watched)."""
     top, height = photo_box()
+    if hook and FX.get("text"):
+        age = max(age, 3.0)
     amount = ease(age / QUOTE_IN) if age < QUOTE_IN else 1.0
     if amount <= 0:
         return
     # break where the captions break (after a comma, between phrases), each piece on its own line if it fits
     pieces = [row for chunk in caption_chunks(line) for row in chunk.splitlines()]
-    # 3 rows at most (owner, 21/11/2026): more pieces than that are run together and wrapped into 3 rows
-    joined = "\n".join(pieces) if len(pieces) <= 3 else "".join(pieces)
-    if style.layout in ("full", "band", "album", "magazine"):   # as large as three rows allow
-        words, size = fit("".join(pieces), 960, 96 if style.layout in ("full", "band") else 84, 3, smallest=52)
+    # 4 rows at most (owner, 21/11/2026: 3 rows; 25/11/2026, after the three videos with the most views had hooks of
+    # 44-48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng"): more pieces are run together and wrapped
+    joined = "\n".join(pieces) if len(pieces) <= QUOTE_ROWS else "".join(pieces)
+    if style.layout in ("full", "band", "album", "magazine"):   # as large as the rows allow
+        largest = 96 if style.layout in ("full", "band") else 84
+        if hook and FX.get("text"):   # the opening line: larger when it is short enough
+            largest = HOOK_SIZE[style.layout]
+        if HOST and style.layout == "band":   # the narrator frame: the words sit between the picture and the character
+            largest = 80
+        words, size = fit("".join(pieces), 960, largest, QUOTE_ROWS, smallest=52)
     else:
-        words, size = fit(joined, 920, 92, min(3, max(len(pieces), 2)), smallest=52)
+        words, size = fit(joined, 920, 104 if hook and FX.get("text") else 92, min(QUOTE_ROWS, max(len(pieces), 2)),
+                          smallest=52)
     rows = words.splitlines()
     block = block_height(words, size, 22)
     if style.layout == "full":
@@ -2077,7 +2177,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     QUOTE_ON = False
     scenes[0].__dict__.pop("quiet_until", None)   # the cover must not hold back the first scene's text
     if quotes[0]:
-        draw_quote(cover, quotes[0][0], 1.0)
+        draw_quote(cover, quotes[0][0], 1.0, hook=True)
     else:
         draw_captions(cover, captions[0].text)
     cover.save(out / "cover.jpg", quality=92)
@@ -2093,6 +2193,7 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
     cue = 0
     frame_index = 0
     held, owners = held_quotes(beats, captions, quotes)
+    speaking = voice_levels(wav, math.ceil(duration * FPS) + 2) if HOST else []
     with subprocess.Popen(cmd, stdin=subprocess.PIPE) as process:
         try:
             for number, scene in enumerate(scenes):
@@ -2106,10 +2207,16 @@ def encode(beats, release, photos, demo, intervals, captions, wav, out):
                     QUOTE_ON = bool(quotes[shown] or kept)
                     frame = frame_at(scenes, number, moment)
                     QUOTE_ON = False
+                    if HOST and style.layout == "band":   # the narrator stands in front of the scene, under the words
+                        draw_host(frame, number, moment - scene.start,
+                                  speaking[frame_index] if frame_index < len(speaking) else False, frame_index)
+                    # the opening line of the video (scene 1's quote) is there from the first frame
+                    opening = quotes[0][0] if quotes[0] and number == 0 else None
                     if kept:
-                        draw_quote(frame, kept[0], moment - kept[1])
+                        draw_quote(frame, kept[0], moment - kept[1], hook=kept[0] is opening)
                     if quotes[shown]:
-                        draw_quote(frame, quotes[shown][0], moment - quotes[shown][1])
+                        draw_quote(frame, quotes[shown][0], moment - quotes[shown][1],
+                                   hook=quotes[shown][0] is opening)
                     else:
                         draw_captions(frame, captions[shown].text, moment - captions[shown].start,
                                       captions[shown].end - captions[shown].start,
@@ -2144,8 +2251,10 @@ def stills(beats, release, photos, out):
             QUOTE_ON = 0 in beat.quotes and (number == 0 or held)
             frame = scene.render(10 * (number + 0.5) / count)
             QUOTE_ON = False
+            if HOST and style.layout == "band":
+                draw_host(frame, index, 0.5 if number == 0 else 9.0, number % 2 == 1, 0)
             if 0 in beat.quotes and (number == 0 or held):
-                draw_quote(frame, beat.lines[0], 3.0)
+                draw_quote(frame, beat.lines[0], 3.0, hook=index == 0)
             if held and number and len(beat.lines) > 1:   # under the quote, a line spoken while this picture is on
                 draw_captions(frame, caption_chunks(beat.lines[min(number, len(beat.lines) - 1)])[0])
             elif not (0 in beat.quotes and (number == 0 or held)):

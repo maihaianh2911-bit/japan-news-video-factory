@@ -152,9 +152,14 @@ def voice_name(choice=""):
     return name, style or STYLE
 
 
-def voice_credit(choice=""):
-    """The credit VOICEVOX asks for, on screen and in credits.txt: "VOICEVOX:<name>"."""
-    return f"VOICEVOX:{voice_name(choice)[0]}"
+def voice_credit(choice="", others=()):
+    """The credit VOICEVOX asks for, on screen and in credits.txt: "VOICEVOX:<name>" (each voice once)."""
+    names = []
+    for one in (choice, *others):
+        name = voice_name(one)[0]
+        if name not in names:
+            names.append(name)
+    return "、".join(f"VOICEVOX:{name}" for name in names)
 
 
 def speaker_id(choice=""):
@@ -162,6 +167,12 @@ def speaker_id(choice=""):
     speakers = json.loads(request("/speakers"))
     found = next((style["id"] for speaker in speakers if speaker["name"] == name
                   for style in speaker["styles"] if style["name"] == wanted), None)
+    for whole in ([name] if "/" not in (choice or "/") else []) + ([choice] if choice and "/" in choice else []):
+        if found is None:   # a name alone (its first style when it has no ノーマル), or a name with a "/" in it (小夜/SAYO)
+            found = next((style["id"] for speaker in speakers if speaker["name"] == whole
+                          for style in speaker["styles"] if style["name"] == STYLE), None) or next(
+                (speaker["styles"][0]["id"] for speaker in speakers if speaker["name"] == whole and speaker["styles"]),
+                None)
     if found is None:
         available = ", ".join(f"{speaker['name']}/{style['name']}" for speaker in speakers for style in speaker["styles"])
         raise RuntimeError(f"VOICEVOX voice {name}/{wanted} not found in this engine. Available: {available}")
@@ -173,7 +184,14 @@ def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0, 
     also gets one before it and a longer one after it) and `scene_pause` more at the end of each scene.
     `exact` ("fx": text): a caption starts when the voice reaches it, not at its share of the characters.
     `speaker_choice`: the story's "speaker" (a VOICEVOX voice), "" for the channel's usual one."""
-    speaker = speaker_id(speaker_choice)
+    ids = {}
+
+    def voice_of(beat):   # a scene may have its own voice ("speaker" in the scene)
+        choice = getattr(beat, "speaker", "") or speaker_choice
+        if choice not in ids:
+            ids[choice] = speaker_id(choice)
+        return ids[choice]
+
     captions = []
     intervals = []
     position = 0.0
@@ -189,6 +207,7 @@ def narration(beats, destination: Path, speed, line_pause=0.0, scene_pause=0.0, 
 
         for beat in beats:
             start = position
+            speaker = voice_of(beat)
             for index, line in enumerate(beat.lines):
                 if index in beat.quotes and index:
                     silence(line_pause)

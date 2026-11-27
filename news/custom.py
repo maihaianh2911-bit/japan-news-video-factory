@@ -20,13 +20,13 @@ from .story import Beat
 from .visuals import Footage, Photo
 
 STORY_KEYS = {"stage", "title", "date", "source", "source_url", "searches", "scenes", "issue", "style", "kicker",
-              "music", "pace", "fx", "voice", "masthead", "speaker"}
+              "music", "pace", "fx", "voice", "masthead", "speaker", "host"}
 STYLES = ("news", "paper", "story", "history", "full", "band", "album", "magazine", "goods")
-SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "product"}
+SCENE_KEYS = {"label", "headline", "lines", "value", "evidence", "photo", "cut", "why", "era", "speaker", "product"}
 LINE_KEYS = {"text", "say", "quote"}
-QUOTE_MOST = 42   # characters of a quote line: 3 rows on the picture (owner, 21/11/2026)
-PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds"}
-FX_KEYS = {"motion", "depth", "text", "face"}
+QUOTE_MOST = 56   # characters of a quote line: 4 rows (owner, 21/11/2026: 3 rows, 42; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng")
+PHOTO_KEYS = {"pick", "focus", "fit", "move", "tone", "depth", "start", "seconds", "enhance"}
+FX_KEYS = {"motion", "depth", "text", "face", "enhance"}
 TONES = ("sepia", "mono", "color")
 MUSIC_KEYS = {"pick", "volume", "start"}
 PACE_KEYS = {"speed", "line_pause", "scene_pause"}
@@ -160,6 +160,9 @@ def check_photo(photo, where, searches):
             problems.append(f'{where}: "focus" must be [x, y] with numbers from 0 to 1, got {focus!r}')
     if "fit" in photo and photo["fit"] not in ("cover", "contain"):
         problems.append(f'{where}: "fit" must be "cover" or "contain", got {photo["fit"]!r}')
+    if "enhance" in photo and not isinstance(photo["enhance"], bool):
+        problems.append(f'{where}: "enhance" must be true or false (false: this picture is left as it is, not lit '
+                        f'and not enlarged), got {photo["enhance"]!r}')
     if "depth" in photo and not isinstance(photo["depth"], bool):
         problems.append(f'{where}: "depth" must be true or false (false: a flat picture such as a document), got {photo["depth"]!r}')
     if "start" in photo and (not isinstance(photo["start"], (int, float)) or isinstance(photo["start"], bool)
@@ -199,9 +202,23 @@ def validate(data, name=None):
     problems += text_problem(data.get("source_url"), '"source_url"', required=False)
     problems += text_problem(data.get("kicker"), '"kicker"', required=False)
     problems += text_problem(data.get("masthead"), '"masthead"', required=False)
-    if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 9:
-        problems.append(f'"masthead": the big title at the top of the "band" frame, 9 characters at most, got '
-                        f'{len(data["masthead"])}')
+    host = data.get("host")
+    if host is not None:
+        from .render import HOST_POSES
+        poses = host.get("poses") if isinstance(host, dict) else None
+        name = host.get("name") if isinstance(host, dict) else None
+        if not isinstance(name, str) or not re.fullmatch(r"[a-z0-9-]+", name or ""):
+            problems.append(f'"host": {{"name": "<folder in stories/media/host>", "poses": [one per scene]}}, got {host!r}')
+        elif not (Path("stories/media/host") / name / "neutral.png").exists():
+            problems.append(f'"host": no pictures in stories/media/host/{name}/ (tools/host_cut.py makes them)')
+        if not isinstance(poses, list) or len(poses) != len(data.get("scenes") or []) or not all(
+                pose in HOST_POSES for pose in poses):
+            problems.append(f'"host": "poses" is one pose per scene, each one of {", ".join(HOST_POSES)}, got {poses!r}')
+        if data.get("style") != "band":
+            problems.append('"host" works with "style": "band" only')
+    if isinstance(data.get("masthead"), str) and len(data["masthead"]) > 12:
+        problems.append(f'"masthead": the big title at the top of the "band" frame, 12 characters at most (9 keep '
+                        f'it at its full size, a longer one is drawn smaller), got {len(data["masthead"])}')
     if data.get("style", "news") not in STYLES:
         problems.append(f'"style" must be one of {", ".join(STYLES)}, got {data.get("style")!r}')
     searches = data.get("searches", [])
@@ -230,13 +247,17 @@ def validate(data, name=None):
     fx = data.get("fx")
     if fx is not None:
         if not isinstance(fx, dict):
-            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true}}, got {fx!r}')
+            problems.append(f'"fx" must be {{"motion": true, "depth": true, "text": true, "face": true, '
+                            f'"enhance": true}}, got {fx!r}')
         else:
             problems += unknown(fx, FX_KEYS, "fx")
-    speaker = data.get("speaker", "")   # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits)
-    if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
-        problems.append(f'"speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. "四国めたん" or '
-                        f'"玄野武宏/ノーマル"), got {speaker!r}')
+    # the VOICEVOX voice (owner, 25/11/2026: male or female, whichever fits), of the story or of one scene
+    for where, speaker in [("story", data.get("speaker", ""))] + [
+            (f"scene {number}", scene.get("speaker", "")) for number, scene in enumerate(data.get("scenes") or [], 1)
+            if isinstance(scene, dict)]:
+        if not isinstance(speaker, str) or (speaker and not re.fullmatch(r"[^/\s]{1,30}(/[^/\s]{1,20})?", speaker)):
+            problems.append(f'{where}: "speaker" must be a VOICEVOX voice "<name>" or "<name>/<style>" (e.g. '
+                            f'"四国めたん" or "玄野武宏/ノーマル"), got {speaker!r}')
     voice = data.get("voice", 1.0)
     if not isinstance(voice, (int, float)) or isinstance(voice, bool) or not 0.5 <= voice <= 2.5:
         problems.append(f'"voice" must be a number from 0.5 to 2.5 (1.7 = 70 % louder), got {voice!r}')
@@ -289,7 +310,8 @@ def validate(data, name=None):
 
 def hook_warnings(data):
     """The hook rules of 21/11/2026 for a story with "fx" (owner: "quá dài rồi, chỉ nên để 3 dòng thôi, ảnh hook
-    đầu không quá 5s"): a quote is printed on at most 3 rows, so it has at most QUOTE_MOST characters; and the
+    đầu không quá 5s"; 25/11/2026: "Cho phép kể hết ý chứ k ép xuống 3 dòng" → 4 rows): a quote is printed on at
+    most 4 rows, so it has at most QUOTE_MOST characters; and the
     first picture stays at most 5 seconds, so a first scene read longer than that needs a second picture (about
     0.15 s a character). Warnings, not problems: stories finished before the rule still validate."""
     scenes = data.get("scenes")
@@ -299,7 +321,7 @@ def hook_warnings(data):
     for number, scene in enumerate(scenes, 1):
         for index, line in enumerate(scene.get("lines") or [], 1) if isinstance(scene, dict) else ():
             if isinstance(line, dict) and line.get("quote") and len(line.get("text") or "") > QUOTE_MOST:
-                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 3 rows, so at most "
+                warnings.append(f"scene {number}, line {index}: a quote is printed on at most 4 rows, so at most "
                                 f"{QUOTE_MOST} characters (this one has {len(line['text'])}): make the quote the first "
                                 f"part of the sentence and give the rest as the next line, not a quote")
     first = scenes[0]
@@ -411,7 +433,7 @@ def load_story(path, pictures=None):
                       data.get("source", ""), (), data.get("style", "news"), data.get("kicker", ""), music,
                       float(pace.get("speed", 0.96)), float(pace.get("line_pause", 0.0)),
                       float(pace.get("scene_pause", 0.0)), data.get("fx"), float(data.get("voice", 1.0)),
-                      data.get("masthead", ""), data.get("speaker", ""))
+                      data.get("masthead", ""), data.get("speaker", ""), data.get("host"))
     report_without_picture(data)
     beats, photos = [], {}
     for index, scene in enumerate(data["scenes"]):
@@ -423,7 +445,7 @@ def load_story(path, pictures=None):
                           scene.get("value", ""), scene.get("evidence", ""), tuple(say) if say != lines else (),
                           scene.get("cut", ""), scene.get("why", ""), scene.get("era", ""),
                           tuple(number for number, line in enumerate(scene["lines"])
-                                if isinstance(line, dict) and line.get("quote"))))
+                                if isinstance(line, dict) and line.get("quote")), scene.get("speaker", "")))
         if picks:
             if found is None:
                 raise StoryError(f"Scene {index + 1} picks picture {picks[0]['pick']}, but no find folder with "
@@ -454,13 +476,38 @@ def load_story(path, pictures=None):
                                                footage, role=pick.get("role", "")))
                     continue
                 with Image.open(Path(pictures) / entry["file"]) as original:
-                    image = toned(ImageOps.exif_transpose(original).convert("RGB"), tone)
+                    image = ImageOps.exif_transpose(original).convert("RGB")
+                source = ()
+                if (data.get("fx") or {}).get("enhance") and pick.get("enhance", True):
+                    from .enhance import enhanced   # lit, and enlarged by the model when it is small
+                    source, image = image.size, enhanced(image)
+                image = toned(image, tone)
                 photos[index].append(Photo(image, entry["page"], entry["title"].removeprefix("File:"),
                                            entry.get("artist") or "Wikimedia Commons", entry.get("license", ""),
                                            entry.get("license_url", ""), tuple(pick.get("focus", (0.5, 0.5))),
-                                           pick.get("fit", "cover"), pick.get("move", ""),
-                                           pick.get("depth", True), role=pick.get("role", "")))
+                                           pick.get("fit", "cover"), pick.get("move", ""), pick.get("depth", True),
+                                           source=source, role=pick.get("role", "")))
     return release, beats, photos
+
+
+DONE_LIST = Path(__file__).resolve().parent.parent / "DA-LAM.md"
+
+
+def done_warnings(path):
+    """A story that goes to its render stands in DA-LAM.md, the list of every video made (owner, 26/11/2026: the
+    videos are deleted from GitHub once saved, "nhưng lưu cái gì lại để khỏi dựng nhầm 1 video 2 lần"): the list is
+    what keeps a story from being told twice. A sample or a trial (mau-…, …-test-…, …-thu-…) is not listed."""
+    name = Path(path).stem
+    if name.startswith("mau-") or "-test-" in name or "-thu-" in name:
+        return []
+    try:
+        if json.loads(Path(path).read_text(encoding="utf-8")).get("stage") != "render":
+            return []
+        listed = f"`{name}`" in DONE_LIST.read_text(encoding="utf-8")
+    except (OSError, ValueError, AttributeError):
+        return []
+    return [] if listed else [f"this story is not in {DONE_LIST.name} (the list of every video made): add its line "
+                              f"to its kind's table in this push, so that no story is told twice"]
 
 
 def main():
@@ -474,7 +521,7 @@ def main():
     except StoryError as error:
         sys.exit(f"error: {error}")
     report_without_picture(data)
-    for warning in hook_warnings(data):
+    for warning in hook_warnings(data) + done_warnings(sys.argv[1]):
         print(f"warning: {warning}")
     caption = caption_path(sys.argv[1])
     if caption.exists():

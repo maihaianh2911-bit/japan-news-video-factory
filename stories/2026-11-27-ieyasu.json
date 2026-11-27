@@ -1,0 +1,156 @@
+{
+  "title": "耐えて天下を取った男 徳川家康",
+  "stage": "find",
+  "date": "2026-11-27",
+  "style": "band",
+  "kicker": "戦国の物語",
+  "masthead": "徳川家康",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.08,
+    "scene_pause": 0.2
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "issue": 90,
+  "scenes": [
+    {
+      "label": "徳川家康",
+      "era": "戦国時代",
+      "headline": "耐えて天下を取った男",
+      "lines": [
+        {
+          "text": "六歳で人質に出され、妻と長男を失い、天下を取ったのは六十歳を過ぎてからでした。",
+          "say": "ろくさいで、ひとじちにだされ、つまと、ちょうなんをうしない、てんかをとったのは、ろくじっさいを、すぎてからでした。",
+          "quote": true
+        },
+        {
+          "text": "徳川家康です。",
+          "say": "とくがわいえやすです。"
+        }
+      ]
+    },
+    {
+      "label": "人質",
+      "era": "1547年",
+      "headline": "六歳の人質",
+      "lines": [
+        {
+          "text": "三河の小さな大名の家に生まれた家康は、六歳で今川家へ人質に出されます。",
+          "say": "みかわの、ちいさな、だいみょうのいえにうまれた、いえやすは、ろくさいで、いまがわけへ、ひとじちにだされます。"
+        },
+        {
+          "text": "ところが途中で裏切りにあい、織田家に売り渡されてしまいました。",
+          "say": "ところが、とちゅうで、うらぎりにあい、おだけに、うりわたされてしまいました。"
+        }
+      ]
+    },
+    {
+      "label": "桶狭間",
+      "era": "1560年",
+      "headline": "十九歳の自由",
+      "lines": [
+        {
+          "text": "今川家に移ってからも人質の暮らしは続き、自由になったのは十九歳、桶狭間で今川義元が討たれた時でした。",
+          "say": "いまがわけに、うつってからも、ひとじちのくらしはつづき、じゆうになったのは、じゅうきゅうさい、おけはざまで、いまがわよしもとが、うたれたときでした。"
+        }
+      ]
+    },
+    {
+      "label": "三方ヶ原",
+      "era": "1572年",
+      "headline": "生涯最大の敗北",
+      "lines": [
+        {
+          "text": "三十一歳の冬、三方ヶ原で武田信玄に大敗し、命からがら浜松城へ逃げ帰ります。",
+          "say": "さんじゅういっさいのふゆ、みかたがはらで、たけだしんげんに、たいはいし、いのちからがら、はままつじょうへ、にげかえります。"
+        }
+      ]
+    },
+    {
+      "label": "信康",
+      "era": "1579年",
+      "headline": "妻と長男を失って",
+      "lines": [
+        {
+          "text": "三十八歳の時には、織田信長に疑いをかけられ、妻の築山殿を死なせ、二十一歳の長男・信康に切腹を命じなければなりませんでした。",
+          "say": "さんじゅうはっさいのときには、おだのぶながに、うたがいをかけられ、つまの、つきやまどのを、しなせ、にじゅういっさいの、ちょうなん、のぶやすに、せっぷくを、めいじなければ、なりませんでした。"
+        }
+      ]
+    },
+    {
+      "label": "忍耐",
+      "era": "1584年",
+      "headline": "じっと時を待つ",
+      "lines": [
+        {
+          "text": "信長が倒れた後も、家康は豊臣秀吉に頭を下げ、じっと時を待ちます。",
+          "say": "のぶながが、たおれたあとも、いえやすは、とよとみひでよしに、あたまをさげ、じっと、ときをまちます。"
+        }
+      ]
+    },
+    {
+      "label": "天下",
+      "era": "1600年",
+      "headline": "六十二歳の将軍",
+      "lines": [
+        {
+          "text": "秀吉が亡くなって二年、五十九歳で関ヶ原の戦いに勝ち、六十二歳で征夷大将軍となりました。",
+          "say": "ひでよしが、なくなってにねん、ごじゅうきゅうさいで、せきがはらのたたかいにかち、ろくじゅうにさいで、せいいたいしょうぐんと、なりました。"
+        }
+      ]
+    },
+    {
+      "label": "江戸",
+      "era": "1616年",
+      "headline": "二百六十年の世",
+      "lines": [
+        {
+          "text": "七十五歳で世を去るまでに、家康は徳川の世の土台を築きます。",
+          "say": "ななじゅうごさいで、よをさるまでに、いえやすは、とくがわのよの、どだいを、きずきます。"
+        },
+        {
+          "text": "その世は、二百六十年続きました。",
+          "say": "そのよは、にひゃくろくじゅうねん、つづきました。"
+        }
+      ]
+    }
+  ],
+  "searches": [
+    "wiki:徳川家康",
+    "wiki:岡崎城",
+    "wiki:浜松城",
+    "wiki:築山殿",
+    "wiki:松平信康",
+    "wiki:日光東照宮",
+    "wiki:久能山東照宮",
+    "wiki:駿府城",
+    "web:どうする家康 松本潤 家康 場面写真",
+    "web:どうする家康 竹千代 人質 場面写真",
+    "web:どうする家康 三方ヶ原 場面写真",
+    "web:どうする家康 瀬名 有村架純 場面写真",
+    "web:どうする家康 信康 細田佳央太 切腹",
+    "web:どうする家康 秀吉 ムロツヨシ 家康",
+    "web:どうする家康 関ヶ原 松本潤 場面写真",
+    "web:どうする家康 将軍 家康 晩年 場面写真",
+    "web:どうする家康 最終回 家康",
+    "web:どうする家康 松本潤 家康 => a samurai lord in close-up, face clearly visible",
+    "web:岡崎城 天守 外観",
+    "web:日光東照宮 陽明門",
+    "web:久能山東照宮 家康 墓所",
+    "file:stories/media/library/tokugawa-ieyasu/kano-tanyu-portrait-full.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/shikami-portrait.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/drama-ieyasu-matsumoto-fleeing.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/drama-kirin-kazama-young-armor.jpg",
+    "file:stories/media/library/okehazama-1560/drama-kirin-imagawa-army.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/golden-fan-umajirushi.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano"
+  ]
+}

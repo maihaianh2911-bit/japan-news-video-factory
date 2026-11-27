@@ -9,7 +9,7 @@ import tempfile
 import wave
 
 from .custom import StoryError, load_story
-from .render import encode, stills, use_fx, use_speaker, use_style, use_voice, write_subtitles
+from .render import encode, stills, use_fx, use_host, use_speaker, use_style, use_voice, write_subtitles
 from .sources import JST, discover, get_release
 from .story import build_story
 from .visuals import find_photos
@@ -70,6 +70,7 @@ def main():
         use_style(release.style)
         use_fx(release.fx)
         use_voice(release.voice)
+        use_host(getattr(release, "host", None))
         use_speaker(getattr(release, "speaker", ""))
         if args.stills:
             args.stills.mkdir(parents=True, exist_ok=True)
@@ -121,7 +122,7 @@ def main():
         "release": {"url": release.url, "published": release.published.isoformat(),
                     "publisher": release.publisher, "title": release.title},
         "photos": [photo.credit() for photo in photos],
-        "voice_credit": voice_credit(getattr(release, "speaker", "")),
+        "voice_credit": voice_credit(getattr(release, "speaker", ""), [beat.speaker for beat in beats if beat.speaker]),
         "music": release.music.credit() if release.music else None,
         "scenes": [
             dict(asdict(beat),

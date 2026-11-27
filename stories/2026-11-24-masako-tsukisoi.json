@@ -4,7 +4,7 @@
   "title": "批判されても娘と学校へ通った雅子さま",
   "date": "2026-11-24",
   "source": "文春オンライン、週刊女性PRIME",
-  "style": "story",
+  "style": "magazine",
   "kicker": "皇室の物語",
   "pace": {
     "speed": 1.2,
@@ -311,10 +311,12 @@
     "file:stories/media/library/aiko/smile-closeup-navy.jpg",
     "file:stories/media/library/masako/2002-baby-aiko-sofa.jpg",
     "music:Gymnopédie Satie piano",
-    "music:Chopin Nocturne piano"
+    "music:Chopin Nocturne piano",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
   ],
   "music": {
-    "pick": "21-4",
+    "pick": "23-1",
     "volume": 0.7
-  }
+  },
+  "speaker": "もち子さん"
 }

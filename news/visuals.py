@@ -36,6 +36,7 @@ class Photo:
     clip: object = None                       # a news.clips.Clip: a moving picture (image is its first frame)
     tone: str = "color"                       # the tone given to each frame of a clip ("sepia", "mono")
     role: str = ""                            # "product": the card of the product in the "goods" frame
+    source: tuple = ()                        # the size of the file when "fx": enhance enlarged it (news/enhance.py)
 
     def credit(self):
         record = {key: getattr(self, key)

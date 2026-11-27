@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-27",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "voice": 2.4,
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "stage": "find",
+  "title": "17歳の悠仁さまが書いたトンボの論文",
+  "issue": 95,
+  "source": "国立科学博物館研究報告、Newsweek日本版、プレジデントオンライン",
+  "style": "magazine",
+  "scenes": [
+    {
+      "label": "トンボの論文",
+      "headline": "17歳の\n学術論文",
+      "lines": [
+        {
+          "text": "将来の天皇となる悠仁さまは、17歳で、トンボの学術論文を発表しました。",
+          "say": "しょうらいの、てんのうとなる、ひさひとさまは、じゅうななさいで、トンボの、がくじゅつろんぶんを、はっぴょうしました。",
+          "quote": true
+        }
+      ],
+      "era": "2023年"
+    },
+    {
+      "label": "赤坂御用地",
+      "headline": "研究の舞台は\n自宅の庭",
+      "lines": [
+        {
+          "text": "その研究の舞台は、自宅のある赤坂御用地の庭でした。",
+          "say": "その、けんきゅうの、ぶたいは、じたくのある、あかさかごようちの、にわでした。"
+        }
+      ],
+      "era": "赤坂御用地"
+    },
+    {
+      "label": "幼稚園児",
+      "headline": "幼稚園から\n始まった調査",
+      "lines": [
+        {
+          "text": "調査が始まったのは2012年。悠仁さまは、まだ幼稚園児でした。",
+          "say": "ちょうさが、はじまったのは、にせんじゅうにねん。ひさひとさまは、まだ、ようちえんじでした。"
+        }
+      ],
+      "era": "2012年"
+    },
+    {
+      "label": "ヤゴから",
+      "headline": "幼虫を育てて\n種類を確かめる",
+      "lines": [
+        {
+          "text": "池や防火用の水槽まで見て回り、幼虫を育てて羽化させては、種類を確かめていきました。",
+          "say": "いけや、ぼうかようの、すいそうまで、みてまわり、ようちゅうを、そだてて、うかさせては、しゅるいを、たしかめていきました。"
+        }
+      ],
+      "era": "2012年〜2022年"
+    },
+    {
+      "label": "38種類",
+      "headline": "10年で\n38種類",
+      "lines": [
+        {
+          "text": "10年かけて見つけたのは、38種類。",
+          "say": "じゅうねん、かけて、みつけたのは、さんじゅうはっしゅるい。"
+        }
+      ],
+      "era": "2022年"
+    },
+    {
+      "label": "オツネントンボ",
+      "headline": "絶滅危惧の\nオツネントンボ",
+      "lines": [
+        {
+          "text": "その中には、東京23区では絶滅の危険が最も高いとされる、オツネントンボもいました。",
+          "say": "そのなかには、とうきょう、にじゅうさんくでは、ぜつめつの、きけんが、もっとも、たかいとされる、オツネントンボも、いました。"
+        }
+      ],
+      "era": "2022年"
+    },
+    {
+      "label": "20年前",
+      "headline": "専門家の調査は\n24種類",
+      "lines": [
+        {
+          "text": "20年前の専門家の調査では、24種類でした。",
+          "say": "にじゅうねんまえの、せんもんかの、ちょうさでは、にじゅうよんしゅるいでした。"
+        }
+      ],
+      "era": "2002年〜2004年"
+    },
+    {
+      "label": "国立科学博物館",
+      "headline": "研究者が\n論文を勧める",
+      "lines": [
+        {
+          "text": "このリストに驚いた国立科学博物館の研究者が、論文にすることを勧めます。",
+          "say": "この、リストに、おどろいた、こくりつかがくはくぶつかんの、けんきゅうしゃが、ろんぶんにすることを、すすめます。"
+        }
+      ],
+      "era": "2022年"
+    },
+    {
+      "label": "論文",
+      "headline": "25ページの\n論文",
+      "lines": [
+        {
+          "text": "2023年、悠仁さまを筆頭著者とする25ページの論文が、学術誌に載りました。",
+          "say": "にせんにじゅうさんねん、ひさひとさまを、ひっとうちょしゃとする、にじゅうごページの、ろんぶんが、がくじゅつしに、のりました。"
+        }
+      ],
+      "era": "2023年11月"
+    },
+    {
+      "label": "四代目",
+      "headline": "生き物を研究する\n四代目",
+      "lines": [
+        {
+          "text": "曾祖父の昭和天皇は粘菌、祖父の上皇さまはハゼ、父の秋篠宮さまはニワトリ。悠仁さまは、生き物を研究する四代目なのです。",
+          "say": "そうそふの、しょうわてんのうは、ねんきん、そふの、じょうこうさまは、ハゼ、ちちの、あきしののみやさまは、ニワトリ。ひさひとさまは、いきものを、けんきゅうする、よんだいめなのです。"
+        }
+      ],
+      "era": "昭和 ― 令和"
+    }
+  ],
+  "searches": [
+    "wiki:悠仁親王",
+    "wiki:赤坂御用地",
+    "wiki:国立科学博物館",
+    "wiki:オツネントンボ",
+    "file:stories/media/library/hisahito/2025-press-conference-vertical.jpg",
+    "web:悠仁さま 17歳 誕生日 2023 => a Japanese teenage prince smiling",
+    "web:悠仁さま トンボ 論文 => a Japanese teenage prince",
+    "web:悠仁さま 幼少期 虫取り => a small Japanese boy catching insects with a net",
+    "web:悠仁さま 6歳 誕生日 2012 => a small Japanese boy smiling",
+    "web:赤坂御用地 池 => a pond surrounded by trees in a Japanese garden",
+    "web:トンボ 羽化 ヤゴ => a dragonfly emerging from its larval skin",
+    "web:オツネントンボ => a slender brown damselfly on a twig",
+    "web:赤坂御用地のトンボ相 論文 => the first page of a scientific paper",
+    "web:昭和天皇 粘菌 研究 顕微鏡 => an elderly Japanese emperor looking into a microscope",
+    "web:上皇さま ハゼ 研究 => an elderly Japanese man studying fish specimens",
+    "web:秋篠宮さま ニワトリ 研究 => a Japanese prince with chickens",
+    "web:悠仁さま 筑波大学 2025 => a Japanese young man in a suit at a university",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ]
+}

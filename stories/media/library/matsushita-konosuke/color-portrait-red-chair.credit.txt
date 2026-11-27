@@ -1,0 +1,3 @@
+php.co.jp
+https://www.php.co.jp/books/konosukeselect/
+松下幸之助選集」シリーズ｜PHP研究所

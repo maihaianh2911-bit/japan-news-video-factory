@@ -1,0 +1,298 @@
+{
+  "title": "小林麻央さんが旅立って9年、團十郎が再婚しない理由",
+  "date": "2026-11-26",
+  "style": "album",
+  "kicker": "家族の物語",
+  "source": "デイリースポーツ、J-CAST ニュース、ABEMA TIMES",
+  "speaker": "もち子さん",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "stage": "render",
+  "issue": 81,
+  "searches": [
+    "wiki:小林麻央",
+    "wiki:市川團十郎 (13代目)",
+    "web:小林麻央",
+    "web:小林麻央 市川海老蔵 夫婦",
+    "web:小林麻央 海老蔵 結婚会見 2010",
+    "web:海老蔵 会見 2017年6月23日 麻央",
+    "web:小林麻央 ブログ 笑顔",
+    "web:市川團十郎 麗禾 勸玄",
+    "web:成田屋に、ござりまする 麗禾",
+    "web:堀越麗禾",
+    "web:市川團十郎 2025",
+    "web:市川團十郎 勸玄 2025",
+    "web:十三代目市川團十郎白猿 襲名",
+    "page:https://www.daily.co.jp/gossip/2024/01/03/0017190268.shtml",
+    "page:https://www.daily.co.jp/gossip/2017/06/23/0010307475.shtml",
+    "page:https://www.j-cast.com/2025/06/23505381.html",
+    "web:市川新之助 勸玄 襲名",
+    "web:小林麻央 キャスター",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ],
+  "scenes": [
+    {
+      "label": "麻央と團十郎",
+      "era": "2017年 ― 2026年",
+      "headline": "妻が遺した\n『愛してる』",
+      "lines": [
+        {
+          "text": "小林麻央さんが『愛してる』と言って旅立って9年。夫の市川團十郎は、今も再婚していません。",
+          "say": "こばやしまおさんが『愛してる』と言って旅立って9年。夫のいちかわだんじゅうろうは、今も再婚していません。",
+          "quote": true
+        },
+        {
+          "text": "父の再婚について聞かれた、12歳の娘の答えに、多くの人が胸を打たれました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-12",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-6",
+          "focus": [
+            0.54,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: Mao cười rạng rỡ, rồi hai vợ chồng mặc kimono."
+    },
+    {
+      "label": "別れ",
+      "era": "2017年",
+      "headline": "34歳の別れ",
+      "lines": [
+        {
+          "text": "2017年6月、乳がんと闘っていた麻央さんは、34歳で亡くなりました。",
+          "say": "2017年6月、乳がんと闘っていたまおさんは、34歳で亡くなりました。"
+        },
+        {
+          "text": "翌日の会見で、夫は何度も涙で言葉を詰まらせました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-9",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-16",
+          "focus": [
+            0.32,
+            0.57
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mao, rồi Ebizo khóc ở họp báo 23/6/2017.",
+      "cut": "dip"
+    },
+    {
+      "label": "子どもたち",
+      "era": "2017年",
+      "headline": "残された\n二人の子ども",
+      "lines": [
+        {
+          "text": "残されたのは、5歳の長女・麗禾ちゃんと、4歳の長男・勸玄くんです。",
+          "say": "残されたのは、5歳の長女れいかちゃんと、4歳の長男かんげんくんです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-17",
+          "focus": [
+            0.57,
+            0
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Ảnh gia đình khi hai con còn nhỏ.",
+      "cut": "fade"
+    },
+    {
+      "label": "再婚",
+      "era": "2024年",
+      "headline": "「結婚はないよ」",
+      "lines": [
+        {
+          "text": "2024年、番組で再婚について聞かれると、團十郎は「結婚はないよ」と即答。",
+          "say": "2024年、番組で再婚について聞かれると、だんじゅうろうは「結婚はないよ」と即答。"
+        },
+        {
+          "text": "いちばんの壁は、娘の麗禾だと明かします。",
+          "say": "いちばんの壁は、娘のれいかだと明かします。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "9-15",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "12-11",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Danjuro với hai con trong chương trình 2024, rồi Reika.",
+      "cut": "slide"
+    },
+    {
+      "label": "娘の答え",
+      "era": "2024年",
+      "headline": "12歳の娘の答え",
+      "lines": [
+        {
+          "text": "その麗禾さんは、父の再婚は祝うと言いながら、目を伏せました。",
+          "say": "そのれいかさんは、父の再婚は祝うと言いながら、目を伏せました。"
+        },
+        {
+          "text": "「新しいママだよ」と言われても、仲良くはできないかもしれない。"
+        },
+        {
+          "text": "私と弟のママは、麻央さんだから、と。",
+          "say": "私と弟のママは、まおさんだから、と。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "9-5",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "10-19",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "3-19",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Reika trong chương trình 3/1/2024, Reika, rồi mẹ Mao.",
+      "cut": "zoom"
+    },
+    {
+      "label": "反響",
+      "era": "2024年",
+      "headline": "「大人すぎる」",
+      "lines": [
+        {
+          "text": "ネットには「大人すぎる」という声が相次ぎました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "10-13",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Reika, người ta khen 'trưởng thành quá'.",
+      "cut": "fade"
+    },
+    {
+      "label": "命日",
+      "era": "2025年6月",
+      "headline": "命日に綴った言葉",
+      "lines": [
+        {
+          "text": "去年の命日、團十郎はこう綴りました。",
+          "say": "去年の命日、だんじゅうろうはこうつづりました。"
+        },
+        {
+          "text": "「不安しかなかったあの日から8年、子供達が真っ直ぐ育ってくれている事が私の誇りです」",
+          "say": "「不安しかなかったあの日から8年、子供達がまっすぐ育ってくれている事が私の誇りです」",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-7",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-15",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Danjuro, rồi ba bố con năm 2025.",
+      "cut": "dip"
+    },
+    {
+      "label": "思い出の場所",
+      "era": "2025年秋",
+      "headline": "思い出の場所",
+      "lines": [
+        {
+          "text": "その秋、息子とあるホテルを訪れた日のブログのタイトルは、"
+        },
+        {
+          "text": "「ママと結婚式したところだよ」。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-3",
+          "fit": "contain",
+          "move": "push-in"
+        },
+        {
+          "pick": "3-1",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Danjuro và con trai năm 2025, rồi ảnh cưới năm 2010.",
+      "cut": "slide"
+    }
+  ],
+  "music": {
+    "pick": "19-1",
+    "volume": 0.7
+  }
+}

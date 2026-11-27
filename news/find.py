@@ -23,6 +23,8 @@ For every entry of "searches" not searched before:
 - "file:stories/media/<story>/<name>.jpg": a picture kept in the repository (e.g. cut out of the owner's source
   video, owner 16/11/2026), credited as 元動画 (the source video). "file:stories/media/<story>/<name>.mp4" is a moving
   picture, a clip of the source video (news/clips.py): copied as <k>-1.mp4 beside a still of its middle, <k>-1.jpg.
+- "music:file:stories/media/<…>.mp3": a piece kept in the repository (the owner's own, 25/11/2026), credited by
+  the first line of <name>.credit.txt beside it.
 - "music:<words>": recordings on Wikimedia Commons (public domain, CC0, CC BY, CC BY-SA), up to 4 files of at most
   12 MB, for a quiet piece under the voice (story key "music"). No sheet: index.json gives title, length, licence.
 
@@ -72,6 +74,7 @@ from lxml import html
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 from .custom import GEO, StoryError, read, search_parts
+from .enhance import sharp
 from .sources import USER_AGENT, fetch
 
 COMMONS = "https://commons.wikimedia.org/w/api.php"
@@ -446,6 +449,11 @@ def keep(entries, load, k, out, seen, limit, workers=3, repeats=False):
         record["file"] = f"{k}-{len(kept) + 1}.jpg"
         seen[record["file"]] = made["mark"]
         (out / record["file"]).write_bytes(made["data"])
+        try:   # how crisp it is at the size the frame shows it (news/enhance.py): under 12 it is soft
+            with Image.open(BytesIO(made["data"])) as picture:
+                record["sharp"] = sharp(picture)
+        except Exception:
+            pass
         kept.append(record)
     return kept
 
@@ -720,7 +728,8 @@ def sheet(entries, out, path):
             board.paste(picture, (index % 4 * 380 + (380 - picture.width) // 2, index // 4 * 400 + 10))
         where = entry["license"].replace("Public domain", "PD") or entry.get("artist", "")
         fit = f"~{entry['match']:.2f}  " if "match" in entry else ""   # how well it shows the wish (no "≈" in the font)
-        label = f"#{index + 1}  {fit}{entry['width']}x{entry['height']}  {where}"
+        crisp = f"s{entry['sharp']}  " if "sharp" in entry else ""       # how crisp it is (under s12: soft)
+        label = f"#{index + 1}  {fit}{crisp}{entry['width']}x{entry['height']}  {where}"
         ImageDraw.Draw(board).text((index % 4 * 380 + 10, index // 4 * 400 + 374), label[:40], fill="#ffd25a", font=face)
     board.save(path, quality=85)
 
@@ -762,7 +771,27 @@ def seconds_of(path):
         return None
 
 
+MUSIC_FILES = {".mp3": "mp3", ".ogg": "ogg", ".oga": "ogg", ".wav": "wav", ".flac": "flac", ".m4a": "m4a"}
+
+
+def music_file(path, k, out):
+    """A piece kept in the repository (owner, 25/11/2026: "dùng sáo tao gửi này"): "music:file:stories/media/…",
+    credited by the first line of <name>.credit.txt beside it."""
+    source = (REPO / path).resolve()
+    if not str(source).startswith(str((REPO / "stories" / "media").resolve()) + "/") or not source.is_file() \
+            or source.suffix.lower() not in MUSIC_FILES:
+        raise Unusable(f"music:file: must name an audio file under stories/media/, got {path!r}")
+    credit = source.with_suffix(".credit.txt")
+    artist = credit.read_text(encoding="utf-8").strip().splitlines()[0] if credit.is_file() else "提供音源"
+    name = f"{k}-1.{MUSIC_FILES[source.suffix.lower()]}"
+    (out / name).write_bytes(source.read_bytes())
+    return [{"title": source.name, "page": "", "license": "", "license_url": "", "artist": artist,
+             "description": f"kept in the repository: {path}", "file": name, "seconds": seconds_of(out / name)}]
+
+
 def music_find(query, k, out):
+    if query.startswith("file:"):
+        return music_file(query[len("file:"):].strip(), k, out)
     kept = []
     for result in music_search(query):
         if len(kept) == MUSIC_KEEP:

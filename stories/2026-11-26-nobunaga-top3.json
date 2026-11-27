@@ -1,0 +1,368 @@
+{
+  "title": "第六天魔王・織田信長 最も苦しんだ戦いトップ3",
+  "stage": "render",
+  "date": "2026-11-26",
+  "style": "band",
+  "kicker": "戦国の物語",
+  "masthead": "信長 苦戦TOP3",
+  "speaker": "玄野武宏",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.15,
+    "line_pause": 0.1,
+    "scene_pause": 0.25
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true
+  },
+  "issue": 80,
+  "scenes": [
+    {
+      "label": "第六天魔王",
+      "era": "戦国時代",
+      "headline": "苦しんだ戦いトップ3",
+      "lines": [
+        {
+          "text": "第六天魔王・織田信長、最も苦しんだ戦いトップスリー。",
+          "say": "だいろくてんまおう、おだのぶなが、もっともくるしんだたたかい、トップスリー。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng Nobunaga (Oguri Shun) cận mặt, ảnh lớn"
+    },
+    {
+      "label": "第三位",
+      "era": "1570年9月",
+      "headline": "第三位　志賀の陣",
+      "lines": [
+        {
+          "text": "第三位、志賀の陣。",
+          "say": "だいさんい、しがのじん。",
+          "quote": true
+        },
+        {
+          "text": "一五七〇年九月、浅井・朝倉の連合軍およそ三万が、信長の留守を突いて近江の宇佐山城に攻め寄せます。",
+          "say": "せんごひゃくななじゅうねん、くがつ、あざい、あさくらの、れんごうぐん、およそさんまんが、のぶながのるすをついて、おうみの、うさやまじょうに、せめよせます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-5",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "16-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.35
+          ]
+        }
+      ],
+      "why": "Trượt sang hạng 3: núi Hiei, cảnh phim tập 覚悟の比叡山",
+      "cut": "slide"
+    },
+    {
+      "label": "第三位",
+      "era": "1570年9月",
+      "headline": "弟の討ち死に",
+      "lines": [
+        {
+          "text": "城を守る森可成と、信長の弟・信治が討ち死にしました。",
+          "say": "しろをまもる、もりよしなりと、のぶながのおとうと、のぶはるが、うちじにしました。"
+        },
+        {
+          "text": "急いで戻った信長に対し、連合軍は比叡山に立てこもり、にらみ合いは三か月に及びます。",
+          "say": "いそいでもどった、のぶながにたいし、れんごうぐんは、ひえいざんにたてこもり、にらみあいは、さんかげつにおよびます。"
+        },
+        {
+          "text": "最後は天皇と将軍の仲立ちで、信長は和睦を結ぶしかありませんでした。",
+          "say": "さいごは、てんのうと、しょうぐんの、なかだちで、のぶながは、わぼくをむすぶしか、ありませんでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "18-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "13-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Tối dần: chùa trên núi Hiei nơi liên quân cố thủ, Nobunaga gườm gườm",
+      "cut": "dip"
+    },
+    {
+      "label": "第二位",
+      "era": "1570年4月",
+      "headline": "第二位　金ヶ崎の退き口",
+      "lines": [
+        {
+          "text": "第二位、金ヶ崎の退き口。",
+          "say": "だいにい、かねがさきの、のきくち。",
+          "quote": true
+        },
+        {
+          "text": "同じ年の四月、信長は三万の兵で越前の朝倉を攻めていました。",
+          "say": "おなじとしの、しがつ、のぶながは、さんまんのへいで、えちぜんの、あさくらを、せめていました。"
+        },
+        {
+          "text": "そこへ届いたのは、妹お市の夫・浅井長政が裏切ったという知らせ。",
+          "say": "そこへとどいたのは、いもうと、おいちのおっと、あざいながまさが、うらぎったという、しらせ。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "36-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        },
+        {
+          "pick": "11-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Phóng vào hạng 2: VS Nobunaga–Nagamasa có tên, rồi Oichi (Miyazaki Aoi)",
+      "cut": "zoom"
+    },
+    {
+      "label": "第二位",
+      "era": "1570年4月",
+      "headline": "挟み撃ち",
+      "lines": [
+        {
+          "text": "前に朝倉、後ろに浅井、挟み撃ちの危機です。",
+          "say": "まえにあさくら、うしろにあざい、はさみうちの、ききです。"
+        },
+        {
+          "text": "信長は全軍を置いて退却を決め、わずか十人ほどの供と山道を抜け、京へ逃げ帰りました。",
+          "say": "のぶながは、ぜんぐんをおいて、たいきゃくをきめ、わずかじゅうにんほどのともと、やまみちをぬけ、きょうへ、にげかえりました。"
+        },
+        {
+          "text": "殿を務めた一人が、木下藤吉郎、のちの豊臣秀吉です。",
+          "say": "しんがりをつとめたひとりが、きのしたとうきちろう、のちの、とよとみひでよしです。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "12-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.15
+          ]
+        },
+        {
+          "pick": "19-1",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "12-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Lóe sáng: quân Oda rút chạy trong rừng, đường núi Kutsuki, Hideyoshi chặn hậu",
+      "cut": "flash"
+    },
+    {
+      "label": "第一位",
+      "era": "1570〜1580年",
+      "headline": "第一位　石山合戦",
+      "lines": [
+        {
+          "text": "第一位、石山合戦。",
+          "say": "だいいちい、いしやまかっせん。",
+          "quote": true
+        },
+        {
+          "text": "相手は大坂の石山本願寺と、全国の一向宗の門徒たち。",
+          "say": "あいては、おおさかの、いしやまほんがんじと、ぜんこくの、いっこうしゅうの、もんとたち。"
+        },
+        {
+          "text": "戦いは一五七〇年から一五八〇年まで、十一年に及びます。",
+          "say": "たたかいは、せんごひゃくななじゅうねんから、せんごひゃくはちじゅうねんまで、じゅういちねんにおよびます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "20-2",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "26-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Phóng vào hạng 1: bản đồ thành Ishiyama Hongan-ji, cờ của tín đồ Ikkō",
+      "cut": "zoom"
+    },
+    {
+      "label": "第一位",
+      "era": "1576年",
+      "headline": "焼かれた水軍",
+      "lines": [
+        {
+          "text": "一五七六年には、本願寺へ兵糧を運ぶ毛利水軍に焙烙火矢で船を焼かれ、織田水軍は大敗しました。",
+          "say": "せんごひゃくななじゅうろくねんには、ほんがんじへ、ひょうろうをはこぶ、もうりすいぐんに、ほうろくひやで、ふねをやかれ、おだすいぐんは、たいはいしました。"
+        },
+        {
+          "text": "二年後、信長は鉄で覆ったといわれる六隻の大船を造らせ、毛利水軍を打ち破ります。",
+          "say": "にねんご、のぶながは、てつでおおったといわれる、ろくせきの、おおぶねをつくらせ、もうりすいぐんを、うちやぶります。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "21-18",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "depth": false
+        },
+        {
+          "pick": "22-5",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "22-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Lóe sáng: tranh thủy chiến Kizugawaguchi, mô hình tàu bọc sắt, tàu phục dựng trên vịnh",
+      "cut": "flash"
+    },
+    {
+      "label": "その後",
+      "era": "1580年",
+      "headline": "十一年の終わり",
+      "lines": [
+        {
+          "text": "最後は天皇の仲立ちで本願寺が大坂を明け渡し、十一年の戦いが終わりました。",
+          "say": "さいごは、てんのうの、なかだちで、ほんがんじが、おおさかを、あけわたし、じゅういちねんのたたかいが、おわりました。"
+        },
+        {
+          "text": "それから二年後、信長は本能寺で命を落とします。",
+          "say": "それからにねんご、のぶながは、ほんのうじで、いのちをおとします。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "13-15",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "32-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Tối dần: Nobunaga lần cuối, rồi cổng chùa Honnō-ji hôm nay",
+      "cut": "dip"
+    }
+  ],
+  "searches": [
+    "wiki:志賀の陣",
+    "wiki:金ヶ崎の戦い",
+    "wiki:石山合戦",
+    "wiki:浅井長政",
+    "wiki:お市の方",
+    "wiki:比叡山延暦寺",
+    "wiki:宇佐山城",
+    "wiki:木津川口の戦い",
+    "wiki:顕如",
+    "web:豊臣兄弟 浅井長政 場面写真",
+    "web:豊臣兄弟 お市 場面写真",
+    "web:豊臣兄弟 金ヶ崎 場面写真",
+    "web:豊臣兄弟 小栗旬 信長 場面写真 => a samurai lord in close-up, face clearly visible",
+    "web:豊臣兄弟 池松壮亮 秀吉 殿 金ヶ崎",
+    "web:豊臣兄弟 朝倉義景 場面写真",
+    "web:豊臣兄弟 比叡山 志賀 場面写真",
+    "web:金ヶ崎城跡 敦賀",
+    "web:比叡山 延暦寺 根本中堂",
+    "web:朽木 山道 鯖街道",
+    "web:石山本願寺 大坂 絵図",
+    "web:木津川口の戦い 絵 焙烙火矢",
+    "web:鉄甲船 九鬼嘉隆 復元 模型",
+    "web:安宅船 戦国 水軍 絵",
+    "web:浅井長政 肖像画",
+    "web:お市の方 肖像画",
+    "web:一向一揆 門徒 旗 進者往生極楽",
+    "web:本願寺 顕如 肖像",
+    "file:stories/media/library/oda-nobunaga/drama-toyotomi-oguri-closeup.jpg",
+    "file:stories/media/library/oda-nobunaga/drama-toyotomi-oguri-standing.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-armor.jpg",
+    "file:stories/media/library/oda-nobunaga/chokoji-portrait-full-scroll.jpg",
+    "file:stories/media/library/honnoji/gate-kyoto-today.jpg",
+    "music:Gymnopédie Satie piano",
+    "music:Chopin Nocturne piano",
+    "music:Debussy Clair de lune piano",
+    "file:stories/media/2026-11-26-nobunaga-top3/vs-nobunaga-nagamasa.jpg"
+  ],
+  "music": {
+    "pick": "33-4",
+    "volume": 0.7
+  }
+}

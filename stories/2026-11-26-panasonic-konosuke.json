@@ -1,0 +1,345 @@
+{
+ "title": "パナソニックの生みの親 松下幸之助",
+ "stage": "render",
+ "date": "2026-11-26",
+ "style": "band",
+ "kicker": "創業者の物語",
+ "masthead": "パナソニックの生みの親",
+ "voice": 2.4,
+ "pace": {
+  "speed": 1.25,
+  "line_pause": 0.05,
+  "scene_pause": 0.15
+ },
+ "fx": {
+  "motion": true,
+  "depth": true,
+  "text": true,
+  "face": true
+ },
+ "issue": 85,
+ "host": {
+  "name": "shiba",
+  "poses": [
+   "point",
+   "neutral",
+   "cross",
+   "point",
+   "neutral",
+   "cross",
+   "point",
+   "neutral",
+   "point"
+  ]
+ },
+ "scenes": [
+  {
+   "label": "生みの親",
+   "headline": "小学校4年で中退",
+   "lines": [
+    {
+     "text": "巨大企業パナソニックの生みの親は、小学校を4年で中退した男でした。",
+     "say": "巨大企業、パナソニックのうみのおやは、小学校を、よねんで中退した男でした。",
+     "quote": true
+    },
+    {
+     "text": "男の名は、松下幸之助。",
+     "say": "男の名は、まつしたこうのすけ。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "7-9",
+     "move": "push-in",
+     "focus": [
+      0.6,
+      0.19
+     ]
+    },
+    {
+     "pick": "7-18",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Mở bằng ảnh màu ông Konosuke cười (ảnh nét nhất), rồi chân dung chính diện khi đọc tên"
+  },
+  {
+   "label": "9歳",
+   "era": "1904年",
+   "headline": "9歳で大阪へ奉公に",
+   "lines": [
+    {
+     "text": "9歳で親元を離れ、大阪へ働きに出されます。",
+     "say": "きゅうさいで、おやもとを離れ、大阪へ、働きに出されます。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "8-7",
+     "move": "push-in",
+     "focus": [
+      0.25,
+      0.4
+     ]
+    }
+   ],
+   "why": "Cậu bé Konosuke thời đi ở, đứng cạnh bà chủ tiệm xe đạp",
+   "cut": "slide"
+  },
+  {
+   "label": "最初の製品",
+   "era": "1917年",
+   "headline": "4か月で売上10円",
+   "lines": [
+    {
+     "text": "22歳で独立して作った最初の製品は、4か月でわずか10円しか売れず、着物を質に入れてしのぎます。",
+     "say": "にじゅうにさいで独立して作った、最初の製品は、よんかげつで、わずかじゅうえんしか売れず、着物を、しちに入れて、しのぎます。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "8-10",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "14-1",
+     "move": "pan-right",
+     "focus": [
+      0.45,
+      0.4
+     ]
+    }
+   ],
+   "why": "Konosuke thời trẻ mặc kimono, rồi mô hình ông tự tay làm hàng ở bảo tàng Panasonic",
+   "cut": "zoom"
+  },
+  {
+   "label": "創業",
+   "era": "1918年",
+   "headline": "たった3人の創業",
+   "lines": [
+    {
+     "text": "それでも翌年、妻と、まだ15歳だったその弟の3人だけで、借家の一階に会社を興しました。",
+     "say": "それでも翌年、妻と、まだじゅうごさいだった、その弟の、さんにんだけで、しゃくやのいっかいに、会社をおこしました。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "1-3",
+     "move": "push-in",
+     "focus": [
+      0.4,
+      0.3
+     ]
+    },
+    {
+     "pick": "14-2",
+     "move": "pan-left",
+     "focus": [
+      0.4,
+      0.5
+     ]
+    }
+   ],
+   "why": "Ảnh những người lập xưởng (Konosuke, em vợ Toshio, vợ Mumeno), rồi căn nhà khởi nghiệp dựng lại ở bảo tàng",
+   "cut": "dip"
+  },
+  {
+   "label": "ヒット",
+   "era": "1918年",
+   "headline": "最初のヒット商品",
+   "lines": [
+    {
+     "text": "最初に当たったのは、電球のソケットに差し込む、小さなプラグでした。",
+     "say": "最初に当たったのは、電球のソケットに差し込む、小さなプラグでした。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "11-2",
+     "move": "push-in",
+     "focus": [
+      0.75,
+      0.5
+     ],
+     "depth": false
+    }
+   ],
+   "why": "Chiếc phích cắm vặn vào đui đèn, món hàng đầu tiên bán chạy (ảnh của Panasonic)",
+   "cut": "fade"
+  },
+  {
+   "label": "世界恐慌",
+   "era": "1929年",
+   "headline": "売上は半分、倉庫は在庫の山",
+   "lines": [
+    {
+     "text": "ようやく軌道に乗ったころ、世界恐慌で売上は半分に落ち、倉庫は在庫であふれました。",
+     "say": "ようやく軌道に乗ったころ、世界恐慌で、うりあげは半分に落ち、倉庫は、ざいこであふれました。"
+    },
+    {
+     "text": "幹部は、社員を半分に減らすしかないと訴えます。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "15-18",
+     "move": "pull-back",
+     "focus": [
+      0.5,
+      0.6
+     ]
+    },
+    {
+     "pick": "11-13",
+     "move": "pan-right",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Đám đông trước sàn chứng khoán New York năm 1929, rồi các món hàng Matsushita thời đó",
+   "cut": "flash"
+  },
+  {
+   "label": "決断",
+   "era": "1929年",
+   "headline": "一人も解雇しない",
+   "lines": [
+    {
+     "text": "けれど病床の幸之助は、誰も解雇せず、給料も全額払うと決めました。",
+     "say": "けれど、びょうしょうのこうのすけは、誰も解雇せず、給料も全額払うと決めました。"
+    },
+    {
+     "text": "すると全員が休みを返上して売り歩き、2か月で在庫は消えます。",
+     "say": "すると全員が、休みを返上して売り歩き、にかげつで、ざいこは消えます。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "7-2",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "13-4",
+     "move": "pull-back",
+     "focus": [
+      0.6,
+      0.5
+     ]
+    }
+   ],
+   "why": "Chân dung Konosuke khoảng năm 1929, rồi cảnh ông nói trước toàn thể nhân viên",
+   "cut": "hard"
+  },
+  {
+   "label": "経営の神様",
+   "headline": "経営の神様の言葉",
+   "lines": [
+    {
+     "text": "のちに「経営の神様」と呼ばれた幸之助は、こう語っています。",
+     "say": "のちに、経営の神様と呼ばれたこうのすけは、こう語っています。"
+    },
+    {
+     "text": "「松下電器は人をつくるところでございます。",
+     "say": "まつしたでんきは、人をつくるところでございます。",
+     "quote": true
+    },
+    {
+     "text": "あわせて電気器具をつくっております」",
+     "say": "あわせて、電気器具を、つくっております。",
+     "quote": true
+    }
+   ],
+   "photo": [
+    {
+     "pick": "19-1",
+     "move": "pull-back",
+     "focus": [
+      0.45,
+      0.35
+     ]
+    },
+    {
+     "pick": "18-7",
+     "move": "push-in",
+     "focus": [
+      0.15,
+      0.04
+     ]
+    }
+   ],
+   "why": "Konosuke đang nói trước micro, rồi cận mặt ông lúc về già giơ tay giảng giải",
+   "cut": "fade"
+  },
+  {
+   "label": "現在",
+   "era": "現在",
+   "headline": "売上8兆円のパナソニック",
+   "lines": [
+    {
+     "text": "その会社は今、売上8兆円のパナソニックです。",
+     "say": "その会社は今、うりあげ、はっちょうえんのパナソニックです。"
+    },
+    {
+     "text": "あなたの家には、パナソニックの製品がいくつありますか。"
+    }
+   ],
+   "photo": [
+    {
+     "pick": "21-10",
+     "move": "rise",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "pick": "22-9",
+     "move": "push-in",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Trụ sở Panasonic ở Kadoma hôm nay, rồi dãy đồ điện Panasonic",
+   "cut": "zoom"
+  }
+ ],
+ "searches": [
+  "wiki:松下幸之助",
+  "wiki:パナソニックホールディングス",
+  "wiki:松下むめの",
+  "wiki:井植歳男",
+  "wiki:パナソニックミュージアム",
+  "wiki:昭和恐慌",
+  "web:松下幸之助 肖像 写真",
+  "web:松下幸之助 若い頃 写真",
+  "web:松下幸之助 少年時代 丁稚奉公 五代自転車商会 写真",
+  "web:松下幸之助 生誕の地 和歌山 千旦",
+  "web:松下幸之助 改良ソケット アタッチメントプラグ 二灯用差込みプラグ 写真",
+  "web:松下電気器具製作所 創業の家 大開町 1918年",
+  "web:松下幸之助 むめの 井植歳男 創業時 写真",
+  "web:パナソニックミュージアム 創業の家 再現 作業場",
+  "web:昭和恐慌 1929年 失業者 写真",
+  "web:松下電器 昭和4年 大開町 本店 工場 写真",
+  "web:松下電器 昭和初期 従業員 集合写真",
+  "web:松下幸之助 1932年 創業記念式 命知 写真",
+  "web:松下幸之助 晩年 笑顔 写真",
+  "web:松下幸之助 銅像 パナソニックミュージアム",
+  "web:パナソニック 本社 門真 外観",
+  "web:パナソニック 家電 売り場 製品 ずらり",
+  "music:Gymnopédie Satie piano",
+  "music:Chopin Nocturne piano",
+  "music:Debussy Clair de lune piano"
+ ],
+ "music": {
+  "pick": "25-2",
+  "volume": 0.7
+ }
+}

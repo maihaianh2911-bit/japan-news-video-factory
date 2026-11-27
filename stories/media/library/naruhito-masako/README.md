@@ -27,3 +27,12 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2001-hospital-leaving-newborn.jpg` | Ra viện Cơ quan Nội chính 12/2001: Thái tử đi cạnh, bà Masako bế con (dùng contain) | 2000×1452 | asahi.com | 2026-11-24-arigatou |
 | `2002-press-conference-tears.jpg` | Họp báo 4/2002 sau khi sinh Aiko, hai người ngồi, hoa (dùng contain) | 750×498 | bunshun.jp | 2026-11-24-arigatou |
 | `car-night-window.jpg` | Hai vợ chồng trong xe ban đêm, bà Masako nhìn ra cửa kính (dùng contain) | 750×500 | bunshun.jp | 2026-11-24-arigatou |
+| `2024-oxford-merton-quad.jpg` | Hai người ở sân Merton College, Oxford 28/6/2024 | 1200×879 | sankei.com | 2026-11-26-oxford-futari |
+| `2024-oxford-close-smile.jpg` | Hai người cười bên nhau ở Oxford 6/2024, cận, ảnh lớn | 1920×1080 | newsdig.tbs.co.jp | 2026-11-26-oxford-futari |
+| `2024-oxford-window-waving.jpg` | Hai người vẫy tay từ cửa sổ phòng cũ của Thiên hoàng ở Merton 6/2024 | 1080×809 | x.com | 2026-11-26-oxford-futari |
+| `2024-oxford-red-gowns-standing.jpg` | Hai người áo choàng đỏ mũ đen, lễ trao bằng Oxford 28/6/2024 (ảnh ngang, dùng contain) | 1920×1080 | newsdig.tbs.co.jp | 2026-11-26-oxford-futari |
+| `2024-oxford-red-gowns-walking.jpg` | Hai người áo choàng đỏ đi bộ ở Oxford 28/6/2024 | 1200×834 | sankei.com | 2026-11-26-oxford-futari |
+| `2019-parade-tears-car.jpg` | Hoàng hậu lau nước mắt bên Thiên hoàng trên xe diễu hành 10/11/2019 | 1328×886 | friday.kodansha.co.jp | 2026-11-27-masako-parade-namida |
+| `2019-parade-waving-flags.jpg` | Hai người vẫy tay giữa rừng cờ, lễ diễu hành 10/11/2019, ảnh lớn | 2000×1373 | asahi.com | 2026-11-27-masako-parade-namida |
+| `2019-parade-smiling-car.jpg` | Hai người cười trên xe mui trần, lễ diễu hành 10/11/2019 (dùng contain) | 1280×800 | bunshun.jp | 2026-11-27-masako-parade-namida |
+| `2004-car-with-baby-aiko.jpg` | Thời bà Masako công bố bệnh: hai người và bé Aiko trong xe, bà cười | 1200×801 | jprime.jp | 2026-11-27-masako-parade-namida |

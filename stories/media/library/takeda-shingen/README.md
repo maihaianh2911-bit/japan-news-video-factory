@@ -25,3 +25,13 @@ Dùng trong kịch bản bằng tìm kiếm `file:stories/media/library/takeda-s
 | `uesugi-kenshin-portrait.jpg` | Chân dung Uesugi Kenshin | 768×1164 | Unknown authorUnknown author / Public domain |
 | `unpoji-hall.jpg` | Chùa Unpō-ji, nơi giữ lá cờ thật | 1920×1440 | さかおり (talk) / CC BY-SA 3.0 |
 | `hook-full-kabuto-and-flag.jpg` | Ảnh mở đầu khổ dọc kín màn hình (khung `full`): tranh mũ sừng + lá cờ, mặt ở nửa trên — đã dùng cho video Phong Lâm Hỏa Sơn | 1260×2240 | Wikimedia Commons（歌川国芳 Public domain／孫子の旗 復元 Haa900 CC0） |
+| `vs-shingen-ieyasu-names.jpg` | Ảnh ghép VS có tên: Shingen (Abe Hiroshi) và Ieyasu (Matsumoto Jun), phim どうする家康 | 1296×936 | unknown | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-abe-white-helmet.jpg` | Phim どうする家康: Shingen (Abe Hiroshi) đội mũ lông trắng, cận mặt (1200x675) | 1200×675 | oricon.co.jp | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-abe-portrait.jpg` | Phim どうする家康: Shingen (Abe Hiroshi) đầu trọc râu đen, cận mặt | 1200×799 | oricon.co.jp | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-abe-forest.jpg` | Phim どうする家康: Shingen ngồi giữa rừng, áo trắng | 1200×800 | oricon.co.jp | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-abe-helmet-snow.jpg` | Phim どうする家康: Shingen mũ lông trắng, giơ tay | 900×600 | encount.press | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-mikatagahara-abe.jpg` | Phim どうする家康 tập 三方ヶ原: Shingen cận mặt | 1920×1080 | nhk-ondemand.jp | 2026-11-24-shingen-top3 |
+| `drama-furinkazan-kansuke-uchino.jpg` | Phim 風林火山: quân sư Yamamoto Kansuke (Uchino Seiyō) che một mắt | 1280×960 | sikon.exblog.jp | 2026-11-24-shingen-top3 |
+| `saijosan-view-kawanakajima.jpg` | Núi Saijo nhìn xuống bình nguyên Kawanakajima hôm nay | 1200×904 | chunichi.co.jp | 2026-11-24-shingen-top3 |
+| `grave-kofu.jpg` | Mộ Takeda Shingen ở Kōfu hôm nay | 1200×800 | ohakakiwame.jp | 2026-11-24-shingen-top3 |
+| `mikatagahara-snow-ukiyoe.jpg` | Tranh khắc gỗ trận Mikatagahara giữa tuyết | 1280×720 | mag.japaaan.com | 2026-11-24-shingen-top3 |

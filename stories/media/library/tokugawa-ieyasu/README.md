@@ -15,3 +15,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `film-sekigahara-yakusho-portrait.jpg` | Phim 関ヶ原 2017: Ieyasu (Yakusho Kōji) đội mũ đen, cận mặt | 960×640 | ameblo.jp | 2026-11-24-sekigahara |
 | `film-sekigahara-yakusho-shouting.jpg` | Phim 関ヶ原 2017: Ieyasu (Yakusho Kōji) gào lên giữa quân | 640×426 | cinemacafe.net | 2026-11-24-sekigahara |
 | `drama-kirin-kazama-young-armor.jpg` | Phim 麒麟がくる: Ieyasu trẻ (Matsudaira Motoyasu, Kazama Shunsuke) mặc giáp | 2400×1601 | tvfan.kyodo.co.jp | 2026-11-24-okehazama |
+| `drama-ieyasu-matsumoto-fleeing.jpg` | Phim どうする家康: Ieyasu (Matsumoto Jun) bò chạy ở Mikatagahara | 1284×856 | thetv.jp | 2026-11-24-shingen-top3 |

@@ -1,0 +1,319 @@
+{
+  "title": "即位パレードで雅子さまが涙をぬぐった場所",
+  "date": "2026-11-27",
+  "issue": 88,
+  "source": "NEWSポストセブン、FRIDAY、文春オンライン、nippon.com",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "voice": 2.4,
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "stage": "render",
+  "scenes": [
+    {
+      "label": "涙",
+      "era": "2019年11月10日",
+      "headline": "即位パレードの\n雅子さま",
+      "lines": [
+        {
+          "text": "即位パレードで雅子さまが涙をぬぐったのは、かつて外交官として働いた外務省のすぐそばでした。",
+          "say": "そくいパレードで、まさこさまが、なみだを、ぬぐったのは、かつて、がいこうかんとして、はたらいた、がいむしょうの、すぐそばでした。",
+          "quote": true
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-2",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "16-5",
+          "move": "pull-back",
+          "focus": [
+            0.35,
+            0.5
+          ]
+        }
+      ],
+      "why": "Mở đầu: Hoàng hậu lau nước mắt trên xe mui trần 10/11/2019 (ảnh lớn, nét), rồi tòa nhà Bộ Ngoại giao có biển tên."
+    },
+    {
+      "label": "26年",
+      "era": "1993年 ― 2019年",
+      "headline": "26年分の思い",
+      "lines": [
+        {
+          "text": "その涙には、26年分の思いが詰まっていました。",
+          "say": "そのなみだには、にじゅうろくねんぶんの、おもいが、つまっていました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "22-10",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        }
+      ],
+      "why": "Bà Masako lau nước mắt bên Thiên hoàng trên xe diễu hành.",
+      "cut": "fade"
+    },
+    {
+      "label": "外交官",
+      "era": "1987年",
+      "headline": "期待された\n外交官",
+      "lines": [
+        {
+          "text": "ハーバード大学を卒業し、外務省に入った雅子さまは、将来を期待された外交官でした。",
+          "say": "ハーバードだいがくを、そつぎょうし、がいむしょうに、はいった、まさこさまは、しょうらいを、きたいされた、がいこうかんでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "17-1",
+          "move": "push-in",
+          "focus": [
+            0.62,
+            0.35
+          ]
+        },
+        {
+          "pick": "18-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Lễ tốt nghiệp Harvard, rồi bà Masako thời làm ở Bộ Ngoại giao.",
+      "cut": "dip"
+    },
+    {
+      "label": "決意",
+      "era": "1993年",
+      "headline": "「一生、全力で\nお守りします」",
+      "lines": [
+        {
+          "text": "けれど、「僕が一生、全力でお守りしますから」という皇太子さまの言葉に心を決め、その道を手放します。",
+          "say": "けれど、ぼくが、いっしょう、ぜんりょくで、おまもりしますから、という、こうたいしさまの、ことばに、こころを、きめ、そのみちを、てばなします。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "17-4",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Bà Masako cười ở họp báo đính hôn 1/1993, rồi ôm hoa rời Bộ Ngoại giao.",
+      "cut": "fade"
+    },
+    {
+      "label": "療養",
+      "era": "2004年",
+      "headline": "長い療養と\n批判",
+      "lines": [
+        {
+          "text": "ところが皇室に入ると、お世継ぎを望む声が重くのしかかり、心の病で長い療養に入りました。",
+          "say": "ところが、こうしつに、はいると、およつぎを、のぞむ、こえが、おもく、のしかかり、こころのやまいで、ながい、りょうように、はいりました。"
+        },
+        {
+          "text": "公務を休むたびに、厳しい批判も浴び続けます。",
+          "say": "こうむを、やすむたびに、きびしい、ひはんも、あびつづけます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "19-6",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.35
+          ]
+        },
+        {
+          "pick": "5-1",
+          "move": "pull-back",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Thời công bố bệnh 2004, rồi bà nhìn ra cửa kính xe, vẻ mệt mỏi.",
+      "cut": "dip"
+    },
+    {
+      "label": "皇后に",
+      "era": "2019年5月1日",
+      "headline": "皇后・雅子さま",
+      "lines": [
+        {
+          "text": "それから15年。2019年、雅子さまは皇后になりました。",
+          "say": "それから、じゅうごねん。にせんじゅうきゅうねん、まさこさまは、こうごうに、なりました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "move": "push-in",
+          "focus": [
+            0.6,
+            0.2
+          ]
+        }
+      ],
+      "why": "Chân dung chính thức 2019: Thiên hoàng và Hoàng hậu đứng cạnh nhau.",
+      "cut": "zoom"
+    },
+    {
+      "label": "祝福",
+      "era": "2019年11月10日",
+      "headline": "沿道を埋めた\n12万人",
+      "lines": [
+        {
+          "text": "秋のパレードには、およそ12万人が集まり、沿道は祝福の歓声に包まれます。",
+          "say": "あきの、パレードには、およそ、じゅうにまんにんが、あつまり、えんどうは、しゅくふくの、かんせいに、つつまれます。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "22-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-12",
+          "move": "pull-back",
+          "focus": [
+            0.55,
+            0.4
+          ]
+        }
+      ],
+      "why": "Đám đông hai bên đường giơ máy chụp, rồi hai người vẫy tay giữa rừng cờ.",
+      "cut": "slide"
+    },
+    {
+      "label": "目頭",
+      "era": "2019年11月10日",
+      "headline": "国会の前で",
+      "lines": [
+        {
+          "text": "国会の前では、目頭を押さえる姿もありました。",
+          "say": "こっかいの、まえでは、めがしらを、おさえる、すがたも、ありました。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "15-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        },
+        {
+          "pick": "11-8",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Xe diễu hành qua tòa Quốc hội, rồi Hoàng hậu ấn khóe mắt.",
+      "cut": "fade"
+    },
+    {
+      "label": "祝福",
+      "era": "2019年11月10日",
+      "headline": "批判ではなく\n祝福を",
+      "lines": [
+        {
+          "text": "夢を手放したあの場所で、雅子さまを待っていたのは、批判ではなく、祝福でした。",
+          "say": "ゆめを、てばなした、あのばしょで、まさこさまを、まっていたのは、ひはんではなく、しゅくふくでした。"
+        }
+      ],
+      "photo": [
+        {
+          "pick": "11-14",
+          "move": "push-in",
+          "focus": [
+            0.72,
+            0.3
+          ]
+        },
+        {
+          "pick": "11-10",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Hoàng hậu cười vẫy tay giữa cờ, rồi hai người cười bên nhau trên xe.",
+      "cut": "dip"
+    }
+  ],
+  "searches": [
+    "file:stories/media/library/naruhito-masako/2019-enthronement-parade-waving.jpg",
+    "file:stories/media/library/masako/diplomat-red-jacket.jpg",
+    "file:stories/media/library/masako/1993-engagement-yellow-smile-vertical.jpg",
+    "file:stories/media/library/naruhito-masako/1993-engagement-shy-smile.jpg",
+    "file:stories/media/library/masako/car-window-tired.jpg",
+    "file:stories/media/library/naruhito-masako/2019-chokennogi-speech.jpg",
+    "file:stories/media/library/naruhito-masako/2019-official-portrait-standing.jpg",
+    "file:stories/media/library/naruhito-masako/1993-parade-waving-open-car.jpg",
+    "wiki:外務省",
+    "wiki:国会議事堂",
+    "web:祝賀御列の儀 雅子さま 涙 2019 => a Japanese empress wiping tears in an open car",
+    "web:祝賀御列の儀 雅子さま ティアラ 笑顔 => the Japanese empress in a tiara smiling and waving from an open car",
+    "web:祝賀御列の儀 皇后雅子さま 目頭 => a Japanese empress in a tiara touching her eyes",
+    "web:祝賀御列の儀 沿道 群衆 日の丸 => crowds lining a street waving small Japanese flags",
+    "web:祝賀御列の儀 国会議事堂 前 オープンカー => an open car motorcade passing a large government building",
+    "web:外務省 庁舎 霞が関 => the Ministry of Foreign Affairs building in Tokyo",
+    "web:小和田雅子 ハーバード大学 卒業 => a young Japanese woman at a university graduation",
+    "web:小和田雅子 外務省 1987 => a young Japanese woman diplomat in a suit",
+    "web:雅子さま 療養 2004 表情 => a Japanese princess with a sad face",
+    "web:雅子さま 皇后 2019 笑顔 => the Japanese empress smiling warmly",
+    "page:https://www.news-postseven.com/archives/20191115_1487121.html",
+    "page:https://friday.kodansha.co.jp/article/79229",
+    "page:https://bunshun.jp/articles/-/15527",
+    "page:https://www.nippon.com/ja/japan-topics/c06116/",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ],
+  "music": {
+    "pick": "25-1",
+    "volume": 0.7
+  }
+}

@@ -22,3 +22,11 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `2002-baby-aiko-sofa.jpg` | Bà Masako cười với bé Aiko cười trên sofa (dùng contain) | 800×612 | mainichi.jp | 2026-11-24-naruhito-oyamoto |
 | `1990s-kimono-smile.jpg` | Bà Masako kimono vàng nhạt, thập niên 1990, cận mặt | 800×800 | j7p.jp | 2026-11-24-arigatou |
 | `1999-magazine-blue-hat.jpg` | Trang tạp chí '1999年の雅子さま', mũ xanh (ảnh phẳng) | 945×1200 | paypayfleamarket.yahoo.co.jp | 2026-11-24-arigatou |
+| `1989-oxford-trench-coat.jpg` | Bà Masako thời học ở Oxford (1988–1990), áo măng tô, đi trên đường | 1633×1229 | otonano-shumatsu.com | 2026-11-26-oxford-futari |
+| `1989-oxford-microphones-closeup.jpg` | Bà Masako trẻ ở Oxford trả lời phóng viên, cận mặt (khổ dọc) | 816×1199 | news.livedoor.com | 2026-11-26-oxford-futari |
+| `2019-parade-wiping-tears-tiara.jpg` | Hoàng hậu lau nước mắt trên xe mui trần, vương miện, lễ diễu hành 10/11/2019, ảnh lớn nét (ảnh mở đầu) | 2000×1449 | asahi.com | 2026-11-27-masako-parade-namida |
+| `2019-parade-pressing-eyes.jpg` | Hoàng hậu ấn khóe mắt trên xe diễu hành 10/11/2019, cận | 749×535 | bunshun.jp | 2026-11-27-masako-parade-namida |
+| `2019-parade-smile-waving-flags.jpg` | Hoàng hậu cười vẫy tay giữa cờ, lễ diễu hành 10/11/2019 (Thiên hoàng ở mép trái) | 1300×1126 | nikkansports.com | 2026-11-27-masako-parade-namida |
+| `1985-harvard-graduation.jpg` | Bà Masako tốt nghiệp Đại học Harvard 1985, áo choàng, cùng người thân (ảnh nhỏ) | 750×520 | bunshun.jp | 2026-11-27-masako-parade-namida |
+| `1987-mofa-black-white.jpg` | Bà Masako thời làm ở Bộ Ngoại giao, ảnh đen trắng, cầm tài liệu | 750×764 | jbpress.ismedia.jp | 2026-11-27-masako-parade-namida |
+| `1993-leaving-mofa-bouquet.jpg` | Bà Masako ôm hoa rời Bộ Ngoại giao ngày chào từ biệt 1993, ảnh lớn | 2000×1288 | asahi.com | 2026-11-27-masako-parade-namida |

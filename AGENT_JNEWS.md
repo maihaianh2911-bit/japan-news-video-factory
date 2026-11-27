@@ -1,16 +1,15 @@
 # Japanese news videos from an issue — runbook for Claude
 
-> **Iron rules (owner, 16/11/2026; full text at the top of `CLAUDE.md`).** (1) Voice, script lines, subtitles and
-> on-screen text are in **Japanese**, never another language; check before the voice step and on the finished video.
-> (2) **No video under 60 seconds**: estimate before the voice step and read the real speech length after it; if it
-> would be under 60 seconds, write the script longer (true facts on the same subject, nothing invented), say on the
-> issue what was added, then go on. Never render or deliver under 60 seconds, except a trial or sample video (the
-> owner says so, or the title or notes say `thử`, `mẫu`, `test`, `demo`).
-> (3) **Vertical, over 61 seconds and at most 160** (owner, 18/11/2026: all channels; 19/11/2026: "không cần ép 80s,
-> chỉ cần trên 61s"): never lengthen a script only to reach 80 seconds.
+> **The common rules (owner, 26/11/2026; full text at the top of `CLAUDE.md`) come before everything in this
+> file.** The ones that stop a video: (1) voice, script lines, subtitles and on-screen text are in **Japanese**,
+> never another language; (2) vertical, **never under 61 seconds**, except a trial or sample video (the owner says
+> so, or the title or notes say `thử`, `mẫu`, `test`, `demo`); (3) **61–65 seconds**, only the film channel
+> longer (2–3 minutes); and the voice is 青山龍星 on every channel (rule 21). And **check before the render, render once** (rules 22–27): the reading of
+> every line and the length (`python tools/readings.py`), the pictures and the caption come before the render;
+> after it, one overall look at the finished video, the faults fixed in one push.
 
 The owner (Vietnamese, not technical) opens an issue `[Tin Nhật] …` with a script (Vietnamese or Japanese). The
-result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice (青山龍星 by default, or the story's `"speaker"`: `CLAUDE.md`, "Frame and voice by content"), captions timed to the
+result is a vertical news short (1080×1920): news frame, real pictures, VOICEVOX voice 青山龍星 (every channel, common rule 21; a `"speaker"` only in a trial the owner asks for), captions timed to the
 voice. The story format, the picture rules and the preview are in `CLAUDE.md` (steps 1–4); this file says what to
 do at each label. Machine steps: `.github/workflows/news-video.yml`; results: `renders` branch, folder `<name>/`.
 
@@ -59,9 +58,9 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
   1) next to Commons ones. Skip pictures with a watermark, a logo or text burnt in, or a small blurred copy.
 - The script is the owner's: put it into Japanese and **improve it** (owner, 19/11/2026: "Sửa cả kịch bản tao gửi";
   before: translated faithfully, nothing cut or added). You may cut, add, reorder and rewrite so that it is better
-  and more gripping, keeping the owner's story and main idea; rumours may be told as rumours and the telling
-  dramatised, but no event or quote of a real person is made up and told as a fact (`CLAUDE.md`, the rule changes
-  of 19/11/2026). Say on the issue what you changed. Write proper names the canonical way.
+  and more gripping, keeping the owner's story and main idea; rumours may be told (plainly, without hedging words: the ※ note of the
+  caption says what is unconfirmed) and the telling dramatised, but no event or quote of a real person is made up
+  and told as a fact (`CLAUDE.md`, common rules 9 and 10). Say on the issue what you changed. Write proper names the canonical way.
 - Every scene gets its own fitting picture (owner, 12/11): 2–3 searches per scene from the start, search again until
   each scene has one. A text card only for pure figures, and the closing comment says which scenes have none and why.
 - How to write the searches (17/11/2026; syntax in `CLAUDE.md` step 1), in this order:
@@ -85,12 +84,19 @@ gh api "repos/$R/issues?state=open&labels=jnews&per_page=50" --jq '[.[] | select
 - Two pictures for a scene whose words last over 6 seconds, one is enough under that (owner, 19/11/2026: "nếu nội
   dung quá 6s thì phải tìm 2 ảnh, dưới 6s thì 1 ảnh cũng đc, tự do"; two a scene before): `"photo"` as a list,
   `CLAUDE.md` step 3.
-- Picture effects on (owner, 17/11/2026): every **new** story carries
-  `"fx": {"motion": true, "depth": true, "text": true, "face": true}` (camera rhythm, light depth in the pictures,
-  text that comes in with the voice and a caption that darkens as it is read, the display typeface; what each does:
-  `CLAUDE.md` step 1). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
+- Picture effects on (owner, 17/11/2026; `enhance` 26/11/2026): every **new** story carries
+  `"fx": {"motion": true, "depth": true, "text": true, "face": true, "enhance": true}` (camera rhythm, light depth
+  in the pictures, text that comes in with the voice and a caption that darkens as it is read, the display
+  typeface, and every picked picture lit when it is dull and enlarged by Real-ESRGAN when it is small; what each
+  does: `CLAUDE.md` step 1). On the contact sheets `s27` says how crisp a picture is (under `s12`: soft). A flat picture (a document, a newspaper page, a collage, a chart, a screenshot) gets
   `"depth": false` in its picture entry. Stories made before 17/11 are not changed: add `fx` to an old story only
   when the owner asks for that video to be made again with the effects.
+- Voice, sound, music and frame (`CLAUDE.md`, "The rules of each kind of video"): the voice is 青山龍星 (no
+  `"speaker"` key); every **new** story carries `"voice": 2.4` (owner, 26/11/2026: "có, tăng tiếng của mọi video")
+  and the owner's flute, `"music:file:stories/media/music/owner-flute-1-long.mp3"` as a search and `"music":
+  {"pick": "<k>-1", "volume": 0.7}`. The frame of an imperial-family video is one of three in turn (`story`,
+  `album`, `magazine`; never more than two videos in a row in the same one); a star video takes any of the five
+  (`story`, `full`, `band`, `album`, `magazine`) by its pictures.
 - Quality is not traded for usage: preview before rendering.
 
 ## 1. `jnews-plan` → `stories/<name>.json`
@@ -105,6 +111,12 @@ Read the issue form (Kịch bản, Nguồn tin, Ngày của tin, Ghi chú) and t
   library picture that fits a scene; then the `wiki:`, `web:` and other searches as usual, for what the library
   lacks and for better pictures.
 - Check: `pip install -q -r requirements.txt` if needed, then `python -m news.custom stories/<name>.json`.
+- The reading and the length, before anything is rendered (common rules 22 and 23): `pip install -q pyopenjtalk`,
+  then `python tools/readings.py stories/<name>.json`. Read every line's kana (names, numbers, kanji with several
+  readings) and write a wrong one `{"text": …, "say": "kana"}`; under 63 s estimated, add true details now; over 65 s, cut (common rule 3).
+- **No story twice**: before writing the story file, read `DA-LAM.md` (the list of every video made, by kind): a
+  story that is already there is not made again — say so on the issue (🤖) and stop. In the push that sets `stage:
+  "render"`, add the story's line to its kind's table (`python -m news.custom` warns when it is missing).
 - Commit `[jnews #N] kịch bản`, push, remove `jnews-busy`. (Picture search ~2 min; you are called at `jnews-pick`.)
 
 ## 2. `jnews-pick` → pictures, then `stage: "render"`
@@ -204,7 +216,9 @@ stories/mau-boj.json <find folder of mau-boj> <out>` (`moves.jpg`, `cuts.jpg`, `
 
 ## 3. `jnews-check` → done
 Fetch `<name>/` (its `status.json` must have your commit). Look at `stills/sheet.jpg` and read `subtitles.srt`
-against the script. Push a corrected story only for a real fault (a cut face, the wrong subject, a misread word:
+against the script, then take **one overall look at the finished video, once** (common rule 26: one frame a second
+on sheets, start to end). Gather every fault and fix them in one push, for one new render (common rule 27). Push a
+corrected story only for a real fault (a cut face, the wrong subject, a misread word:
 write it `{"text": …, "say": "kana"}`; with `fx`, a picture bent by the depth effect: give it `"depth": false`).
 With `fx`, the headlines of the stills are in the display typeface (a mincho with strong contrast); if they are in
 the usual one, or the run log of the render says `warning: depth effect off`, an effect could not be installed:

@@ -164,7 +164,8 @@ def order(out):
     assert [entry["image"].rsplit("/", 1)[1] for entry in kept] == [f"{n}.jpg" for n in (0, 1, 2, 4, 6, *range(8, 23))]
     assert [entry["file"] for entry in kept] == [f"4-{n}.jpg" for n in range(1, 21)] and notes == {}
     assert list(kept[1]) == ["title", "page", "image", "width", "height", "license", "license_url", "artist",
-                             "description", "file"] and kept[1]["artist"] == "a.example", kept[1]
+                             "description", "file", "sharp"] and kept[1]["artist"] == "a.example", kept[1]
+    assert 0 <= kept[1]["sharp"] <= 99, kept[1]   # how crisp the kept picture is (news/enhance.py)
     assert (kept[0]["width"], kept[0]["height"]) == (500, 800) == Image.open(out / "4-1.jpg").size   # stood up
     assert took < 0.15 * 24 * 0.6, f"24 pictures of 0.15 s took {took:.2f} s: not loaded side by side"
     return took
