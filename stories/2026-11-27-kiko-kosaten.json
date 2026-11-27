@@ -1,0 +1,146 @@
+{
+  "date": "2026-11-27",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "voice": 2.4,
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "stage": "find",
+  "title": "秋篠宮さまのプロポーズは大学近くの交差点",
+  "issue": 94,
+  "source": "文春オンライン、プレジデントオンライン",
+  "style": "album",
+  "scenes": [
+    {
+      "label": "交差点",
+      "headline": "プロポーズは\n交差点で",
+      "lines": [
+        {
+          "text": "秋篠宮さまが紀子さまにプロポーズした場所は、大学近くの、ありふれた交差点でした。",
+          "say": "あきしののみやさまが、きこさまに、プロポーズした、ばしょは、だいがくちかくの、ありふれた、こうさてんでした。",
+          "quote": true
+        }
+      ],
+      "era": "1986年6月"
+    },
+    {
+      "label": "返事",
+      "headline": "「はい」ではない\n返事",
+      "lines": [
+        {
+          "text": "そして紀子さまの返事は、「はい」ではありませんでした。",
+          "say": "そして、きこさまの、へんじは、はい、では、ありませんでした。"
+        }
+      ],
+      "era": "1986年6月"
+    },
+    {
+      "label": "出会い",
+      "headline": "学習院大学の\n書店で",
+      "lines": [
+        {
+          "text": "二人が出会ったのは1985年、学習院大学の構内にある書店です。",
+          "say": "ふたりが、であったのは、せんきゅうひゃくはちじゅうごねん、がくしゅういんだいがくの、こうないにある、しょてんです。"
+        }
+      ],
+      "era": "1985年"
+    },
+    {
+      "label": "先輩と後輩",
+      "headline": "2年生と\n1年生",
+      "lines": [
+        {
+          "text": "秋篠宮さまは2年生、紀子さまは入学したばかりの1年生でした。",
+          "say": "あきしののみやさまは、にねんせい、きこさまは、にゅうがくしたばかりの、いちねんせいでした。"
+        }
+      ],
+      "era": "1985年"
+    },
+    {
+      "label": "職員住宅",
+      "headline": "大学教授の娘",
+      "lines": [
+        {
+          "text": "紀子さまは大学教授の娘で、家族と暮らしていたのは、大学の職員住宅でした。",
+          "say": "きこさまは、だいがくきょうじゅの、むすめで、かぞくと、くらしていたのは、だいがくの、しょくいんじゅうたくでした。"
+        }
+      ],
+      "era": "1980年代"
+    },
+    {
+      "label": "プロポーズ",
+      "headline": "「私と一緒に\nなってくれませんか」",
+      "lines": [
+        {
+          "text": "翌年の6月、夕方の交差点で、秋篠宮さまは「私と一緒になってくれませんか」と切り出します。",
+          "say": "よくねんの、ろくがつ、ゆうがたの、こうさてんで、あきしののみやさまは、わたしと、いっしょに、なってくれませんか、と、きりだします。"
+        }
+      ],
+      "era": "1986年6月26日"
+    },
+    {
+      "label": "3年の待ち",
+      "headline": "昭和の終わりと\n婚約発表",
+      "lines": [
+        {
+          "text": "ところが、昭和天皇の病気と崩御が重なり、婚約の発表は3年後まで待つことになりました。",
+          "say": "ところが、しょうわてんのうの、びょうきと、ほうぎょが、かさなり、こんやくの、はっぴょうは、さんねんごまで、まつことに、なりました。"
+        }
+      ],
+      "era": "1989年"
+    },
+    {
+      "label": "結婚",
+      "headline": "3LDKの\nプリンセス",
+      "lines": [
+        {
+          "text": "1990年、23歳の紀子さまは、職員住宅から皇室へ嫁ぎ、「3LDKのプリンセス」と呼ばれます。",
+          "say": "せんきゅうひゃくきゅうじゅうねん、にじゅうさんさいの、きこさまは、しょくいんじゅうたくから、こうしつへ、とつぎ、さんエルディーケーの、プリンセスと、よばれます。"
+        }
+      ],
+      "era": "1990年6月29日"
+    },
+    {
+      "label": "答え",
+      "headline": "4年後の\n答え",
+      "lines": [
+        {
+          "text": "あの交差点で紀子さまが返した言葉は、「よく考えさせていただけませんか」。その答えが、4年後の結婚式の笑顔でした。",
+          "say": "あの、こうさてんで、きこさまが、かえした、ことばは、よく、かんがえさせて、いただけませんか。その、こたえが、よねんごの、けっこんしきの、えがおでした。"
+        }
+      ],
+      "era": "1990年6月29日"
+    }
+  ],
+  "searches": [
+    "wiki:文仁親王妃紀子",
+    "wiki:秋篠宮文仁親王",
+    "wiki:学習院大学",
+    "file:stories/media/library/akishino/2018-birthday-press-conference-with-kiko.jpg",
+    "web:秋篠宮さま 紀子さま 婚約内定 記者会見 1989 => a young Japanese prince and his fiancee smiling at a press conference",
+    "web:紀子さま 1989 婚約 笑顔 => a young Japanese woman smiling",
+    "web:礼宮さま 学生時代 1985 => a young Japanese prince as a university student",
+    "web:川嶋紀子 学生時代 => a young Japanese woman student",
+    "web:学習院大学 目白キャンパス => a university campus in Tokyo",
+    "web:目白通り 交差点 学習院大学前 => a street crossing in Tokyo",
+    "web:紀子さま 川嶋辰彦 家族 1989 => a Japanese family of three standing together",
+    "web:学習院 共同住宅 紀子さま 3LDK => an apartment building",
+    "web:昭和天皇 1988 晩年 => an elderly Japanese emperor",
+    "web:大喪の礼 1989 => a Japanese imperial funeral procession",
+    "web:秋篠宮さま 紀子さま 結婚の儀 1990 十二単 => a Japanese royal wedding in traditional court robes",
+    "web:秋篠宮ご夫妻 結婚 パレード 1990 => a young Japanese royal couple waving from an open car",
+    "web:紀子スマイル 1990 => a young Japanese princess smiling in a tiara",
+    "page:https://president.jp/articles/-/115404",
+    "page:https://bunshun.jp/articles/-/80130",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ]
+}

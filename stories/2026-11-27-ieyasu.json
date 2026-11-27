@@ -1,6 +1,6 @@
 {
   "title": "耐えて天下を取った男 徳川家康",
-  "stage": "find",
+  "stage": "render",
   "date": "2026-11-27",
   "style": "band",
   "kicker": "戦国の物語",
@@ -33,7 +33,26 @@
           "text": "徳川家康です。",
           "say": "とくがわいえやすです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-13",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        },
+        {
+          "pick": "15-6",
+          "move": "push-in",
+          "focus": [
+            0.7,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng Ieyasu (Matsumoto Jun) mặc giáp cận mặt, rồi Ieyasu và Tadakatsu ra trận"
     },
     {
       "label": "人質",
@@ -48,7 +67,27 @@
           "text": "ところが途中で裏切りにあい、織田家に売り渡されてしまいました。",
           "say": "ところが、とちゅうで、うらぎりにあい、おだけに、うりわたされてしまいました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-12",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-15",
+          "move": "push-in",
+          "focus": [
+            0.64,
+            0
+          ]
+        }
+      ],
+      "why": "Trượt sang: Takechiyo bé nhỏ ngước nhìn, đứng giữa người lớn ở đất khách",
+      "cut": "slide"
     },
     {
       "label": "桶狭間",
@@ -59,7 +98,27 @@
           "text": "今川家に移ってからも人質の暮らしは続き、自由になったのは十九歳、桶狭間で今川義元が討たれた時でした。",
           "say": "いまがわけに、うつってからも、ひとじちのくらしはつづき、じゆうになったのは、じゅうきゅうさい、おけはざまで、いまがわよしもとが、うたれたときでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-3",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "26-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Phóng vào: Ieyasu trẻ giữa đồng cỏ, đại quân Imagawa",
+      "cut": "zoom"
     },
     {
       "label": "三方ヶ原",
@@ -70,7 +129,25 @@
           "text": "三十一歳の冬、三方ヶ原で武田信玄に大敗し、命からがら浜松城へ逃げ帰ります。",
           "say": "さんじゅういっさいのふゆ、みかたがはらで、たけだしんげんに、たいはいし、いのちからがら、はままつじょうへ、にげかえります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "24-1",
+          "move": "push-in",
+          "focus": [
+            0,
+            0
+          ]
+        },
+        {
+          "pick": "23-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Lóe sáng: Ieyasu bò chạy ở Mikatagahara, bức tranh nhăn mặt",
+      "cut": "flash"
     },
     {
       "label": "信康",
@@ -81,7 +158,27 @@
           "text": "三十八歳の時には、織田信長に疑いをかけられ、妻の築山殿を死なせ、二十一歳の長男・信康に切腹を命じなければなりませんでした。",
           "say": "さんじゅうはっさいのときには、おだのぶながに、うたがいをかけられ、つまの、つきやまどのを、しなせ、にじゅういっさいの、ちょうなん、のぶやすに、せっぷくを、めいじなければ、なりませんでした。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "12-3",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.4
+          ]
+        },
+        {
+          "pick": "13-11",
+          "move": "push-in",
+          "focus": [
+            0.55,
+            0.35
+          ]
+        }
+      ],
+      "why": "Tối dần: phu nhân Tsukiyama (Arimura Kasumi), con trai Nobuyasu",
+      "cut": "dip"
     },
     {
       "label": "忍耐",
@@ -92,7 +189,25 @@
           "text": "信長が倒れた後も、家康は豊臣秀吉に頭を下げ、じっと時を待ちます。",
           "say": "のぶながが、たおれたあとも、いえやすは、とよとみひでよしに、あたまをさげ、じっと、ときをまちます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "14-13",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "14-9",
+          "move": "pull-back",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Trượt sang: Hideyoshi (Muro Tsuyoshi) ngồi trên cao, Ieyasu bên cạnh Hideyoshi",
+      "cut": "slide"
     },
     {
       "label": "天下",
@@ -103,7 +218,27 @@
           "text": "秀吉が亡くなって二年、五十九歳で関ヶ原の戦いに勝ち、六十二歳で征夷大将軍となりました。",
           "say": "ひでよしが、なくなってにねん、ごじゅうきゅうさいで、せきがはらのたたかいにかち、ろくじゅうにさいで、せいいたいしょうぐんと、なりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "15-6",
+          "move": "push-in",
+          "focus": [
+            0.7,
+            0.25
+          ]
+        },
+        {
+          "pick": "9-5",
+          "move": "push-in",
+          "focus": [
+            0.45,
+            0.3
+          ]
+        }
+      ],
+      "why": "Phóng vào: Sekigahara, Ieyasu già trong doanh trại",
+      "cut": "zoom"
     },
     {
       "label": "江戸",
@@ -118,7 +253,25 @@
           "text": "その世は、二百六十年続きました。",
           "say": "そのよは、にひゃくろくじゅうねん、つづきました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "20-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "22-1",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Tối dần: đền Tōshōgū ở Nikkō, chân dung thật Ieyasu",
+      "cut": "dip"
     }
   ],
   "searches": [
@@ -152,5 +305,9 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano"
-  ]
+  ],
+  "music": {
+    "pick": "30-2",
+    "volume": 0.7
+  }
 }

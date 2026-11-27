@@ -1,6 +1,6 @@
 {
   "title": "主君を討ち、神として祀られた男 明智光秀",
-  "stage": "find",
+  "stage": "render",
   "date": "2026-11-27",
   "style": "band",
   "kicker": "戦国の物語",
@@ -46,7 +46,26 @@
           "text": "けれど今も、光秀を神として祀る町があります。",
           "say": "けれどいまも、みつひでを、かみとしてまつる、まちがあります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-1",
+          "move": "push-in",
+          "focus": [
+            0.46,
+            0.3
+          ]
+        },
+        {
+          "pick": "8-5",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Mở bằng Mitsuhide (Hasegawa Hiroki) dưới trời xanh, rồi Mitsuhide mặc giáp"
     },
     {
       "label": "謎の前半生",
@@ -61,7 +80,27 @@
           "text": "越前の朝倉家に身を寄せ、やがて将軍・足利義昭の家臣となり、そこから織田信長に仕えました。",
           "say": "えちぜんの、あさくらけに、みをよせ、やがて、しょうぐん、あしかがよしあきの、かしんとなり、そこから、おだのぶながに、つかえました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-4",
+          "move": "push-in",
+          "focus": [
+            0.55,
+            0.2
+          ]
+        },
+        {
+          "pick": "8-7",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        }
+      ],
+      "why": "Trượt sang: Mitsuhide thời trẻ lang bạt, rồi trầm ngâm",
+      "cut": "slide"
     },
     {
       "label": "坂本城",
@@ -80,7 +119,27 @@
           "text": "琵琶湖のほとりの坂本城です。",
           "say": "びわこのほとりの、さかもとじょうです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-10",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "16-13",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.4
+          ]
+        }
+      ],
+      "why": "Phóng vào: Mitsuhide rút kiếm, tượng Mitsuhide ở thành Sakamoto bên hồ Biwa",
+      "cut": "zoom"
     },
     {
       "label": "福知山",
@@ -95,7 +154,27 @@
           "text": "洪水に苦しむ町のために堤を造り、町の人々の税を免じたのも光秀です。",
           "say": "こうずいにくるしむ、まちのために、つつみをつくり、まちのひとびとの、ぜいをめんじたのも、みつひでです。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "17-17",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "18-17",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Tối dần: thành Fukuchiyama, con sông nơi ông đắp đê",
+      "cut": "dip"
     },
     {
       "label": "本能寺",
@@ -115,7 +194,35 @@
           "text": "信長は炎の中で命を落としました。",
           "say": "のぶながは、ほのおのなかで、いのちをおとしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "9-1",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-1",
+          "move": "push-in",
+          "focus": [
+            0.4,
+            0.3
+          ]
+        },
+        {
+          "pick": "10-17",
+          "move": "pan-right",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        }
+      ],
+      "why": "Lóe sáng: quân cờ hoa cát cánh, Mitsuhide cầm kiếm, chùa Honnō-ji cháy",
+      "cut": "flash"
     },
     {
       "label": "山崎",
@@ -130,7 +237,28 @@
           "text": "山崎の戦いで秀吉に敗れ、逃げる途中、小栗栖の竹やぶで命を落としました。",
           "say": "やまざきのたたかいで、ひでよしにやぶれ、にげるとちゅう、おぐるすの、たけやぶで、いのちをおとしました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-2",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.45
+          ]
+        },
+        {
+          "pick": "26-1",
+          "move": "fall",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "depth": false
+        }
+      ],
+      "why": "Tối dần: Mitsuhide một mình trên lưng ngựa, bình phong trận Yamazaki",
+      "cut": "dip"
     },
     {
       "label": "御霊神社",
@@ -145,7 +273,25 @@
           "text": "それでも福知山の御霊神社では、光秀は今も、町を守る神として祀られています。",
           "say": "それでも、ふくちやまの、ごりょうじんじゃでは、みつひでは、いまも、まちをまもる、かみとして、まつられています。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "19-6",
+          "move": "push-in",
+          "focus": [
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "pick": "8-17",
+          "move": "push-in",
+          "fit": "contain",
+          "depth": false
+        }
+      ],
+      "why": "Phóng vào: đền Goryō ở Fukuchiyama hôm nay, rồi Mitsuhide lần cuối",
+      "cut": "zoom"
     }
   ],
   "searches": [
@@ -178,5 +324,9 @@
     "music:Gymnopédie Satie piano",
     "music:Chopin Nocturne piano",
     "music:Debussy Clair de lune piano"
-  ]
+  ],
+  "music": {
+    "pick": "28-2",
+    "volume": 0.7
+  }
 }
