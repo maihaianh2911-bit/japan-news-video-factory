@@ -7,3 +7,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | File | Nội dung | Cỡ | Nguồn | Video |
 |---|---|---|---|---|
 | `child-rocking-horse.jpg` | Thiên hoàng Showa hồi nhỏ, mũ bèo trắng, cưỡi ngựa gỗ, ảnh trong khung oval (khổ dọc) | 960×1200 | sankei.com | 2026-11-24-naruhito-oyamoto |
+| `microscope-display-museum.jpg` | Kính hiển vi và hộp mẫu vật của Thiên hoàng Chiêu Hòa trưng bày ở bảo tàng (ảnh nhỏ, contain) | 640×478 | tokyo-np.co.jp | 2026-11-27-hisahito-tombo |

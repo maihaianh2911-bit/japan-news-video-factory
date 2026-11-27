@@ -7,3 +7,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | File | Nội dung | Cỡ | Nguồn | Video |
 |---|---|---|---|---|
 | `child-kimono-hakama.jpg` | Thượng hoàng Akihito hồi nhỏ, tóc ngố, kimono và hakama trắng, đứng (khổ dọc) | 980×1424 | fujingaho.jp | 2026-11-24-naruhito-oyamoto |
+| `1970s-goby-research.jpg` | Thượng hoàng thời làm Thái tử nghiên cứu cá bống bên kính hiển vi (dùng contain) | 470×600 | jiji.com | 2026-11-27-hisahito-tombo |
