@@ -16,3 +16,9 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `film-sekigahara-yakusho-shouting.jpg` | Phim 関ヶ原 2017: Ieyasu (Yakusho Kōji) gào lên giữa quân | 640×426 | cinemacafe.net | 2026-11-24-sekigahara |
 | `drama-kirin-kazama-young-armor.jpg` | Phim 麒麟がくる: Ieyasu trẻ (Matsudaira Motoyasu, Kazama Shunsuke) mặc giáp | 2400×1601 | tvfan.kyodo.co.jp | 2026-11-24-okehazama |
 | `drama-ieyasu-matsumoto-fleeing.jpg` | Phim どうする家康: Ieyasu (Matsumoto Jun) bò chạy ở Mikatagahara | 1284×856 | thetv.jp | 2026-11-24-shingen-top3 |
+| `drama-ieyasu-matsumoto-armor-closeup.jpg` | Phim どうする家康: Ieyasu (Matsumoto Jun) mặc giáp cận mặt (900x600) | 900×600 | encount.press | 2026-11-27-ieyasu |
+| `drama-ieyasu-sekigahara-armor.jpg` | Phim どうする家康: Ieyasu và Honda Tadakatsu mặc giáp ở Sekigahara | 1200×800 | oricon.co.jp | 2026-11-27-ieyasu |
+| `drama-ieyasu-takechiyo-hostage.jpg` | Phim どうする家康: Takechiyo bé ngước nhìn (thời làm con tin) | 1200×675 | realsound.jp | 2026-11-27-ieyasu |
+| `drama-ieyasu-young-grass.jpg` | Phim どうする家康: Ieyasu trẻ giữa đồng cỏ | 600×400 | tvfan.kyodo.co.jp | 2026-11-27-ieyasu |
+| `drama-ieyasu-old-camp.jpg` | Phim どうする家康: Ieyasu già trong doanh trại (logo NHK góc phải) | 640×427 | tvguide.or.jp | 2026-11-27-ieyasu |
+| `nikko-yomeimon.jpg` | Cổng Yōmeimon đền Tōshōgū ở Nikkō | 2400×1800 | nikko-kankou.org | 2026-11-27-ieyasu |

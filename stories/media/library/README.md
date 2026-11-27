@@ -7,7 +7,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | Chủ đề | Số ảnh |
 |---|---|
 | [aiko](aiko/README.md) | 12 |
-| [akechi-mitsuhide](akechi-mitsuhide/README.md) | 4 |
+| [akechi-mitsuhide](akechi-mitsuhide/README.md) | 14 |
 | [akihito](akihito/README.md) | 1 |
 | [akihito-michiko](akihito-michiko/README.md) | 2 |
 | [akishino](akishino/README.md) | 5 |
@@ -26,6 +26,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
 | [hisahito](hisahito/README.md) | 1 |
+| [hokuto-kensuke](hokuto-kensuke/README.md) | 10 |
 | [honnoji](honnoji/README.md) | 2 |
 | [ichikawa-danjuro](ichikawa-danjuro/README.md) | 2 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
@@ -51,6 +52,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [mako-komuro](mako-komuro/README.md) | 5 |
 | [masako](masako/README.md) | 24 |
 | [masako-aiko](masako-aiko/README.md) | 14 |
+| [matsudaira-nobuyasu](matsudaira-nobuyasu/README.md) | 1 |
 | [matsushita-konosuke](matsushita-konosuke/README.md) | 9 |
 | [michiko](michiko/README.md) | 4 |
 | [miura-kihara](miura-kihara/README.md) | 9 |
@@ -62,6 +64,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 22 |
 | [naruhito-masako](naruhito-masako/README.md) | 30 |
+| [nomura-sachiyo](nomura-sachiyo/README.md) | 11 |
 | [oda-nobunaga](oda-nobunaga/README.md) | 16 |
 | [oichi](oichi/README.md) | 1 |
 | [okehazama-1560](okehazama-1560/README.md) | 5 |
@@ -77,8 +80,9 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [takeda-shingen](takeda-shingen/README.md) | 29 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
-| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 10 |
-| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 16 |
+| [tokugawa-ieyasu](tokugawa-ieyasu/README.md) | 16 |
+| [toyotomi-hideyoshi](toyotomi-hideyoshi/README.md) | 17 |
+| [tsukiyama-dono](tsukiyama-dono/README.md) | 1 |
 | [uesugi-kenshin](uesugi-kenshin/README.md) | 1 |
 | [watabe-ken](watabe-ken/README.md) | 5 |
 | [yamanakako](yamanakako/README.md) | 1 |
