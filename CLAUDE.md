@@ -245,6 +245,12 @@ deleted (common rule 18).
     Shun in `豊臣兄弟！`, Yukimura = Sakai Masato in `真田丸`), found through the press galleries of the episode
     (`page:` of a cinematoday / thetv gallery, `web:<drama> <episode> 場面写真`); two or three real pictures (the
     place today, the real portrait) keep it true;
+  - **more old paintings, fewer drama stills** (owner, 27/11/2026, told that the stills of NHK or a film company can
+    bring a copyright strike on YouTube: "ok, tăng ảnh tranh cổ, từ video sau thôi"): from the video after
+    `nagashino`, the scenes in the middle lean on old pictures free of rights (folding screens such as 長篠合戦図屏風,
+    ukiyo-e of Kuniyoshi and Yoshitoshi, the old portraits; `wiki:` and Commons, `jps:`) and on the places today; a
+    few drama stills remain where a face must be shown, the first picture still a drama still or a fine photograph
+    (the must above);
   - a hook with the name everyone knows and a number or a contrast (「二十七歳の織田信長は、わずか二千の兵で、
     二万五千の大軍を打ち破りました。」).
 - The seal by the period of the story: `戦国の物語` / `江戸の物語`.
