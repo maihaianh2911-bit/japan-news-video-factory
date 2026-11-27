@@ -164,6 +164,7 @@
         0
       ],
       "speaker": "",
+      "points": [],
       "image_url": "https://www.sankei.com/article/20230906-DFM2DNI775LBBKHCWGI3Y5IF74/",
       "image_urls": [
         "https://www.sankei.com/article/20230906-DFM2DNI775LBBKHCWGI3Y5IF74/",
@@ -187,6 +188,7 @@
       "era": "赤坂御用地",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://bunshun.jp/articles/photo/73078",
       "image_urls": [
         "https://bunshun.jp/articles/photo/73078"
@@ -206,9 +208,10 @@
       ],
       "cut": "dip",
       "why": "Hisahito hồi nhỏ ngồi chơi khối gỗ.",
-      "era": "2012年",
+      "era": "幼いころ",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://news.line.me/detail/oa-shujoprime/rn0c9xiprop5?mediadetail=1",
       "image_urls": [
         "https://news.line.me/detail/oa-shujoprime/rn0c9xiprop5?mediadetail=1"
@@ -228,9 +231,10 @@
       ],
       "cut": "slide",
       "why": "Hisahito bò sát mặt đất quan sát, rồi chuồn chuồn đang lột xác.",
-      "era": "幼いころ",
+      "era": "2012年〜2022年",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://jisin.jp/koushitsu/2368045/2/",
       "image_urls": [
         "https://jisin.jp/koushitsu/2368045/2/",
@@ -254,6 +258,7 @@
       "era": "2022年",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://mainichi.jp/graphs/20180906/hpj/00m/040/001000g/20180906hpj00m040004000q",
       "image_urls": [
         "https://mainichi.jp/graphs/20180906/hpj/00m/040/001000g/20180906hpj00m040004000q"
@@ -276,6 +281,7 @@
       "era": "2022年",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://fujisawasanctuary.com/post-26440/",
       "image_urls": [
         "https://fujisawasanctuary.com/post-26440/"
@@ -295,9 +301,10 @@
       ],
       "cut": "fade",
       "why": "Chuồn chuồn kim trên lá.",
-      "era": "2012年〜2022年",
+      "era": "2002年〜2004年",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://hanamokusanpo.jp/other_book/39832",
       "image_urls": [
         "https://hanamokusanpo.jp/other_book/39832"
@@ -320,6 +327,7 @@
       "era": "2022年",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://commons.wikimedia.org/wiki/File:NMNC01s3200.jpg",
       "image_urls": [
         "https://commons.wikimedia.org/wiki/File:NMNC01s3200.jpg"
@@ -342,6 +350,7 @@
       "era": "2023年11月",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://news.ntv.co.jp/category/society/99b0834727aa47ff90224f762812ee1f",
       "image_urls": [
         "https://news.ntv.co.jp/category/society/99b0834727aa47ff90224f762812ee1f",
@@ -365,6 +374,7 @@
       "era": "昭和 ― 令和",
       "quotes": [],
       "speaker": "",
+      "points": [],
       "image_url": "https://www.tokyo-np.co.jp/article/108035",
       "image_urls": [
         "https://www.tokyo-np.co.jp/article/108035",
