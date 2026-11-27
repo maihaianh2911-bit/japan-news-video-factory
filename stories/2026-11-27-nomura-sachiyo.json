@@ -1,7 +1,7 @@
 {
   "title": "妻を失って2年、後を追うように旅立った野村克也",
   "date": "2026-11-27",
-  "style": "story",
+  "style": "band",
   "kicker": "夫婦の物語",
   "source": "デイリースポーツ、現代ビジネス、Number",
   "speaker": "もち子さん",
@@ -16,7 +16,7 @@
     "text": true,
     "face": true
   },
-  "stage": "find",
+  "stage": "render",
   "issue": 91,
   "searches": [
     "wiki:野村克也",
@@ -51,7 +51,26 @@
         {
           "text": "妻が最後に残した言葉と、彼がとうとう言えなかったひと言があります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-17",
+          "focus": [
+            0.5,
+            0
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-2",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: bà Sachiyo ôm ông Nomura, rồi ông hôn má vợ."
     },
     {
       "label": "最期の朝",
@@ -62,7 +81,27 @@
           "text": "2017年12月8日の明け方、沙知代さんは「手を握って」と頼み、野村はその手を握りました。",
           "say": "2017年12月8日の明け方、さちよさんは「手を握って」と頼み、のむらはその手を握りました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-1",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-6",
+          "focus": [
+            0.54,
+            0.06
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hai vợ chồng đứng sát bên nhau, khoác tay.",
+      "cut": "dip"
     },
     {
       "label": "最後の言葉",
@@ -77,7 +116,24 @@
           "text": "それが最後の言葉でした。85歳でした。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "4-14",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Bà Sachiyo, câu cuối cùng, 85 tuổi.",
+      "cut": "fade"
     },
     {
       "label": "野球か女か",
@@ -87,7 +143,25 @@
         {
           "text": "40年前、「野球を取るか、女を取るか」と迫られ、「女を取ります」と答えて監督の座を失った男です。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "5-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-13",
+          "fit": "contain",
+          "move": "push-in",
+          "tone": "sepia"
+        }
+      ],
+      "why": "Nomura thời Nankai, rồi ảnh đen trắng hai người thập niên 1970.",
+      "cut": "flash"
     },
     {
       "label": "さみしいね",
@@ -95,12 +169,29 @@
       "headline": "見せなかった涙",
       "lines": [
         {
-          "text": "妻を失ってから、人前で涙は見せませんでした。"
+          "text": "妻を失ってから一度も泣かなかったと、本人は書き残しています。"
         },
         {
           "text": "けれど、ことあるごとに「さみしいね」とこぼしていました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-1",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "6-19",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nomura ở lễ tưởng niệm, rồi nửa năm sau 'cô đơn quá'.",
+      "cut": "dip"
     },
     {
       "label": "ありがとう",
@@ -117,7 +208,30 @@
           "text": "『ありがとうを言えなくて』。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-5",
+          "focus": [
+            0.57,
+            0
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-4",
+          "fit": "contain",
+          "move": "pull-back"
+        },
+        {
+          "pick": "8-1",
+          "fit": "contain",
+          "move": "push-in",
+          "depth": false
+        }
+      ],
+      "why": "Lễ tưởng niệm, bàn thờ hoa, bìa sách.",
+      "cut": "slide"
     },
     {
       "label": "いいコンビ",
@@ -128,7 +242,16 @@
           "text": "息子の克則さんは、両親を「いいコンビだった」と振り返ります。",
           "say": "息子のかつのりさんは、両親を「いいコンビだった」と振り返ります。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "7-15",
+          "fit": "contain",
+          "move": "push-in"
+        }
+      ],
+      "why": "Nomura và con trai Katsunori.",
+      "cut": "fade"
     },
     {
       "label": "旅立ち",
@@ -143,7 +266,29 @@
           "text": "死因は、妻と同じ心不全でした。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-10",
+          "focus": [
+            0.62,
+            0.07
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-4",
+          "fit": "contain",
+          "move": "pull-back"
+        }
+      ],
+      "why": "Nomura những năm cuối, rồi hai vợ chồng trong lễ phục.",
+      "cut": "dip"
     }
-  ]
+  ],
+  "music": {
+    "pick": "17-1",
+    "volume": 0.7
+  },
+  "masthead": "ノムさんとサッチー"
 }

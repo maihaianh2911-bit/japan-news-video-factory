@@ -1,6 +1,6 @@
 {
  "title": "ダイソーの生みの親 矢野博丈",
- "stage": "find",
+ "stage": "render",
  "date": "2026-11-27",
  "style": "band",
  "kicker": "創業者の物語",
@@ -45,7 +45,23 @@
      "text": "男の名は、矢野博丈。",
      "say": "男の名は、やのひろたけ。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "6-10",
+     "move": "push-in",
+     "focus": [
+      0.35,
+      0.25
+     ]
+    },
+    {
+     "pick": "11-8",
+     "fit": "contain",
+     "move": "pull-back"
+    }
+   ],
+   "why": "Mở bằng ảnh ông Yano mặc vest (nét, rõ mặt), rồi cận mặt ông cười khi đọc tên"
   },
   {
    "label": "転職",
@@ -55,7 +71,19 @@
      "text": "夜逃げのあとも、セールスマンやちり紙交換など、9回も仕事を変えます。",
      "say": "よにげのあとも、セールスマンや、ちりがみこうかんなど、きゅうかいも仕事を変えます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "9-8",
+     "move": "push-in",
+     "focus": [
+      0.22,
+      0.05
+     ]
+    }
+   ],
+   "why": "Ông Yano đang kể chuyện, phía sau là hàng hóa",
+   "cut": "slide"
   },
   {
    "label": "矢野商店",
@@ -66,7 +94,16 @@
      "text": "1972年、雑貨を車に積んで売り歩く「矢野商店」を始めました。",
      "say": "せんきゅうひゃくななじゅうにねん、雑貨を車に積んで売り歩く、やのしょうてんを始めました。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "6-13",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "why": "Ảnh cũ nhóm bán hàng rong thời đầu của ông Yano",
+   "cut": "zoom"
   },
   {
    "label": "100円",
@@ -90,7 +127,35 @@
      "text": "これが、100円均一の始まりでした。",
      "say": "これが、ひゃくえんきんいつの始まりでした。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "4-2",
+     "move": "push-in",
+     "focus": [
+      0.45,
+      0.3
+     ]
+    },
+    {
+     "pick": "3-1",
+     "move": "pull-back",
+     "focus": [
+      0.45,
+      0.35
+     ]
+    },
+    {
+     "pick": "12-10",
+     "move": "pull-back",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Ông Yano kể chuyện, lúc ông trả lời, rồi tấm biển 100 yên đời cũ",
+   "cut": "dip"
   },
   {
    "label": "火事",
@@ -103,7 +168,24 @@
     {
      "text": "保険にも入っていませんでした。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "4-3",
+     "move": "push-in",
+     "focus": [
+      0.45,
+      0.35
+     ]
+    },
+    {
+     "pick": "9-7",
+     "fit": "contain",
+     "move": "push-in"
+    }
+   ],
+   "why": "Ông Yano trầm ngâm nhìn xa, rồi chân dung nghiêm nghị",
+   "cut": "flash"
   },
   {
    "label": "決意",
@@ -126,7 +208,29 @@
      "text": "利益を度外視して、100円でも質のいい品物を並べ続けます。",
      "say": "利益を、どがいしして、ひゃくえんでも、しつのいい品物を並べ続けます。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "9-3",
+     "fit": "contain",
+     "move": "push-in"
+    },
+    {
+     "pick": "6-7",
+     "fit": "contain",
+     "move": "pull-back"
+    },
+    {
+     "pick": "9-1",
+     "move": "pull-back",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    }
+   ],
+   "why": "Ông Yano bên kệ hàng, cận mặt lúc nói câu quyết tâm, rồi cảnh ông soi kỹ một món hàng",
+   "cut": "hard"
   },
   {
    "label": "100円の男",
@@ -141,7 +245,27 @@
      "text": "「100円の男」と呼ばれた矢野は、2024年、80歳で世を去ります。",
      "say": "ひゃくえんのおとこ、と呼ばれたやのは、にせんにじゅうよねん、はちじっさいで世を去ります。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "14-9",
+     "move": "rise",
+     "focus": [
+      0.5,
+      0.4
+     ]
+    },
+    {
+     "pick": "9-10",
+     "move": "push-in",
+     "focus": [
+      0.4,
+      0.35
+     ]
+    }
+   ],
+   "why": "Cửa hàng Daiso ở Đài Bắc, rồi ông Yano lúc về già",
+   "cut": "fade"
   },
   {
    "label": "現在",
@@ -156,7 +280,24 @@
      "text": "あなたがダイソーでよく買うものは、何ですか。",
      "say": "あなたがダイソーでよく買うものは、なんですか。"
     }
-   ]
+   ],
+   "photo": [
+    {
+     "pick": "12-3",
+     "fit": "contain",
+     "move": "pull-back"
+    },
+    {
+     "pick": "8-15",
+     "move": "push-in",
+     "focus": [
+      0.5,
+      0.5
+     ]
+    }
+   ],
+   "why": "Cửa hàng Daiso lớn hôm nay, rồi bên trong đầy hàng",
+   "cut": "zoom"
   }
  ],
  "searches": [
@@ -179,5 +320,9 @@
   "music:Gymnopédie Satie piano",
   "music:Chopin Nocturne piano",
   "music:Debussy Clair de lune piano"
- ]
+ ],
+ "music": {
+  "pick": "18-2",
+  "volume": 0.7
+ }
 }
