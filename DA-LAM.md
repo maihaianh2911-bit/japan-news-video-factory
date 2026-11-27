@@ -8,7 +8,7 @@ một dòng ở cuối bảng của loại đó, cùng lúc đẩy kịch bản 
 Cùng một người thì được làm tiếp, cùng một chuyện thì không.
 
 
-## Hoàng gia Nhật (39 video)
+## Hoàng gia Nhật (40 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
@@ -51,6 +51,7 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | 24/11/2026 | 「生まれてきてくれてありがとう」と「生んでくれてありがとう」 | Lời cảm ơn của mẹ và câu đáp của Aiko 20 năm sau | #75 | `2026-11-24-arigatou` |
 | 26/11/2026 | 「このまま時間が止まってくれたら」両陛下、思い出のオックスフォードへ | Thiên hoàng và Hoàng hậu trở lại Oxford, việc học dang dở của bà Masako trọn vẹn sau 34 năm | #83 | `2026-11-26-oxford-futari` |
 | 26/11/2026 | 皇室を去る姉を抱きしめた佳子さま | Kako ôm chị Mako ngày rời Hoàng gia và câu viết "nổi loạn" 2 năm trước | #84 | `2026-11-26-kako-dakishime` |
+| 27/11/2026 | 即位パレードで雅子さまが涙をぬぐった場所 | Hoàng hậu Masako lau nước mắt gần Bộ Ngoại giao trong lễ diễu hành đăng quang 2019 | #88 | `2026-11-27-masako-parade-namida` |
 
 ## Sao, người nổi tiếng (23 video)
 
