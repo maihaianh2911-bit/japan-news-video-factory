@@ -1,5 +1,5 @@
 {
-  "stage": "find",
+  "stage": "render",
   "issue": 97,
   "title": "芸能人がプロデュースして大コケした悲惨な飲食店トップ3",
   "date": "2026-11-27",
@@ -47,7 +47,18 @@
           "say": "トップスリー！げいのうじんがプロデュースしておおコケした、ひさんな飲食店。",
           "quote": true
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "8-4",
+          "focus": [
+            0.5,
+            0.3
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Mở đầu: bộ đôi Katsumi-Sayuri với tô mì của mình (ảnh nét, mặt ở nửa trên)."
     },
     {
       "label": "第3位",
@@ -63,7 +74,42 @@
           "text": "カルピス1杯で2時間粘る人が続出し、売上はまったく伸びません。入店時に2000円分のチケットを買う仕組みにすると、今度は大不評。わずか10カ月ほどで閉店し、濱家さんはオーナーに頭を下げたといいます。",
           "say": "カルピスいっぱいで、にじかん粘る人が続出し、売上はまったく伸びません。入店時に、にせんえんぶんのチケットを買う仕組みにすると、今度はだいふひょう。わずかじゅっかげつほどで閉店し、はまいえさんはオーナーに頭を下げたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "3-6",
+          "focus": [
+            0.4,
+            0.4
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "2-1",
+          "focus": [
+            0.5,
+            0.25
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "4-6",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "3-4",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Hamaie hồi trẻ ở quán 'Meshizakaya Hamaie', chân dung, ly Calpis, rồi Hamaie kể chuyện thất bại."
     },
     {
       "label": "第2位",
@@ -79,7 +125,42 @@
           "text": "けれど売上は伸びず、大阪の店はわずか7カ月で閉店。千葉に出した店は、2カ月ちょっとで閉まりました。",
           "say": "けれど売上は伸びず、大阪の店はわずかななかげつで閉店。千葉に出した店は、にかげつちょっとで閉まりました。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "6-12",
+          "focus": [
+            0.55,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-2",
+          "focus": [
+            0.24,
+            0.0
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "8-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "7-17",
+          "focus": [
+            0.5,
+            0.4
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Sayuri, mặt tiền quán mì hồng ở Miyakojima, bên trong quán màu hồng, hình Sayuri ở cửa kính."
     },
     {
       "label": "第1位",
@@ -99,7 +180,42 @@
           "text": "さらに広尾店では、店長が勝手にスープを変え、白いはずのスープが、真っ赤になっていたといいます。",
           "say": "さらにひろおてんでは、店長が勝手にスープを変え、白いはずのスープが、真っ赤になっていたといいます。"
         }
-      ]
+      ],
+      "photo": [
+        {
+          "pick": "10-10",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-8",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "12-17",
+          "focus": [
+            0.5,
+            0.35
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-19",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Motoki, quán Genpuku có khách xếp hàng, Motoki lúc kể lý do, tô mì nước trắng của Genpuku."
     }
   ]
 }

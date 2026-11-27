@@ -32,7 +32,8 @@
     "file:stories/media/2026-11-27-tabehoudai-top3/v-yuzu-nabe.mp4",
     "file:stories/media/2026-11-27-tabehoudai-top3/v-one-yaki.mp4",
     "file:stories/media/2026-11-27-tabehoudai-top3/v-one-reimen.mp4",
-    "file:stories/media/2026-11-27-tabehoudai-top3/v-gyu-yaki.mp4"
+    "file:stories/media/2026-11-27-tabehoudai-top3/v-gyu-yaki.mp4",
+    "file:stories/media/2026-11-27-tabehoudai-top3/web-tong.jpg"
   ],
   "scenes": [
     {
@@ -43,7 +44,33 @@
           "text": "トップ3！一度は行くべき、食べ放題チェーン店。",
           "say": "トップスリー！一度は行くべき、食べ放題チェーン店。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "16-1",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "9-3",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "1-11",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        }
+      ],
+      "why": "Mở đầu: ảnh ghép 3 quán, thịt nướng trên than, rồi sushi và thịt bò nhúng lẩu."
     },
     {
       "label": "第3位",
@@ -55,7 +82,49 @@
           "say": "だいさんいは、ゆずあん。やきにくきんぐと同じ会社が手がける、しゃぶしゃぶとお寿司の食べ放題で、全国にひゃくてんぽ以上あります。"
         },
         "だしを何種類か選べて、お寿司まで食べ放題に入っているのが最大の強み。野菜もたっぷりで、家族連れにも、大人のグループにもぴったり。特に平日ランチのコスパは優秀です。"
-      ]
+      ],
+      "product": {
+        "pick": "2-13",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "1-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "11-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "3-15",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "12-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "Yuzuan: mâm buffet, sushi (phim gốc), nồi lẩu 2 ngăn nước dùng, nhúng lẩu (phim gốc)."
     },
     {
       "label": "第2位",
@@ -70,7 +139,49 @@
           "text": "名物の「ワンカルビ」をはじめ、食べ応えのあるメニューがずらり。関西生まれで、今では関東や九州にも広がり、リピーターが多いのも納得です。",
           "say": "名物のワンカルビをはじめ、たべごたえのあるメニューがずらり。関西生まれで、今では関東や九州にも広がり、リピーターが多いのも納得です。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "5-5",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "4-2",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "13-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "4-17",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "14-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        }
+      ],
+      "why": "One-Karubi: thịt cắt dày, nướng (phim gốc), miếng One-Karubi nổi tiếng, mì lạnh (phim gốc)."
     },
     {
       "label": "第1位",
@@ -89,7 +200,49 @@
           "text": "初めての焼肉食べ放題にも、久しぶりの一軒にも外れなし。どの世代と行っても文句が出にくい、まさに鉄板の存在です。",
           "say": "初めての焼肉食べ放題にも、久しぶりのいっけんにもはずれなし。どの世代と行っても文句が出にくい、まさにてっぱんの存在です。"
         }
-      ]
+      ],
+      "product": {
+        "pick": "8-17",
+        "focus": [
+          0.5,
+          0.5
+        ]
+      },
+      "photo": [
+        {
+          "pick": "9-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        },
+        {
+          "pick": "15-1",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "hold"
+        },
+        {
+          "pick": "7-8",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "pull-back"
+        },
+        {
+          "pick": "9-20",
+          "focus": [
+            0.5,
+            0.5
+          ],
+          "move": "push-in"
+        }
+      ],
+      "why": "Gyukaku: thịt nướng trên than, gắp thịt (phim gốc), đĩa thịt các phần, bàn tiệc buffet."
     }
   ]
 }
