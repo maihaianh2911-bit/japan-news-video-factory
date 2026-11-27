@@ -98,7 +98,8 @@ it stands in that channel's own section.
     its pictures and its story ("Frame and voice by content"). Where a channel's own rules name a frame (history
     `band`, `ts` `full`), that is where to start, not a must; say in one line which frame and why. One exception the owner made
     (26/11/2026): the imperial-family kind keeps a set of three frames and turns among them (its block in "The
-    rules of each kind of video"). Two things
+    rules of each kind of video"); the history kind has one frame for each of its three kinds of content (owner,
+    27/11/2026: "chốt 3 khung cho 3 loại nội dung", its block). Two things
     the engine ties: a narrator character stands only in the `band` frame, and `full` needs tall, sharp pictures.
     The speed of the voice and the music are the channel's own rule.
 
@@ -227,16 +228,23 @@ deleted (common rule 18).
   angry: "cái hook mở đầu quan trọng nhất mà lại để cái tranh cổ rõ xấu"); the gentle piano (above).
 - **One battle or one decision a video** (61–65 s since 26/11/2026; the earlier videos ran 63–138 s). A "top 3"
   (`shingen-top3`, `nobunaga-top3`) keeps two sentences an item.
+- **Must — three frames for three kinds of content** (owner, 27/11/2026: "chốt 3 khung cho 3 loại nội dung"):
+  - **a battle, two sides against each other, a "top 3"** → `band` with a `masthead`, no narrator (`sekigahara`,
+    `okehazama`, `shingen-top3`, `nobunaga-top3`);
+  - **the story of one person** (a life, a turn of a life) → `band` with the samurai narrator (`"host": {"name":
+    "samurai", …}`; `hideyoshi`, `mitsuhide`; `ieyasu` of 27/11 was made before this rule, without it);
+  - **a video full of figures** (troops, guns, the dead, the years) → `"slide"` with `"points"` in its scenes
+    (`nagashino`, the trial approved on 27/11/2026). The hook there is printed smaller than the yellow title of the
+    battle (owner: "cho chữ hook nhỏ lại, chữ tên trận để to").
+  Say in the issue which of the three and why (one line).
 - **To start from**:
-  - the `band` frame with a `masthead` (owner, 24/11/2026: "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh
-    ngang"), another frame when the pictures of the video ask for it;
+  - the `masthead` (a big title of at most 9 characters, the battle or the person; owner, 24/11/2026: "lịch sử dựng
+    dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang");
   - **drama stills first** (owner, 24/11/2026: "nên dùng nhiều hình ảnh phim ảnh hơn"): the people of a history
     story are shown mostly by stills of one taiga drama (one face per person for the whole video: Nobunaga = Oguri
     Shun in `豊臣兄弟！`, Yukimura = Sakai Masato in `真田丸`), found through the press galleries of the episode
     (`page:` of a cinematoday / thetv gallery, `web:<drama> <episode> 場面写真`); two or three real pictures (the
     place today, the real portrait) keep it true;
-  - the samurai narrator (`"host": {"name": "samurai", …}`, trial approved on 26/11/2026: "Ổn") when it fits the
-    video, not on every one;
   - a hook with the name everyone knows and a number or a contrast (「二十七歳の織田信長は、わずか二千の兵で、
     二万五千の大軍を打ち破りました。」).
 - The seal by the period of the story: `戦国の物語` / `江戸の物語`.
@@ -478,6 +486,15 @@ videos by their frame and by the name in the seal:
   on the picture (owner, 24/11/2026, of the small lines at the foot: "m ghi những cái gì ở góc cuối màn hình vậy"):
   the source, the voice (VOICEVOX:青山龍星), the music and the pictures are all in `credits.txt`, which the owner
   pastes in the video's description; say so when giving the links.
+- `"style": "slide"` (owner, 27/11/2026, from a short he showed, "hợp làm kiểu video có số liệu nhiều"; trial
+  `2026-11-27-nagashino`, issue #98, then "chốt 3 khung cho 3 loại nội dung"): the scene's picture blurred and dark
+  behind; a light card (y 620–1510) with the `kicker` and a red rule at its head, the `era` on the right; on the right
+  of the card the picture in a dark window with three dots (594×400); on the left the headline (first row black,
+  the next red) and the scene's `"points"` — a list of 1–3 short strings (16 characters at most), numbered boxes
+  01/02/03 that come in one after the other through the scene (`"points": ["織田・徳川 38,000", "武田 15,000"]`);
+  the captions on a black pill at the foot of the card; above the card the `masthead` big in yellow (the hook in its
+  place while it is read, smaller); a line of words running under the card. The foot of the screen stays empty for
+  TikTok's own buttons and text. No text lies on the picture.
 - `"style": "band"` — **the frame the history videos start from since 24/11/2026** (where to start, not a must,
   since 26/11/2026: common rule 21; owner, showing a short he liked:
   "lịch sử dựng dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang"; approved on a 30-second trial: "Dựng đi"): the

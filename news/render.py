@@ -1875,7 +1875,8 @@ def ink_quote_band(height):
     return band
 
 
-HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108, "slide": 100}   # a short opening line, printed larger
+HOOK_SIZE = {"full": 124, "band": 124, "album": 108, "magazine": 108, "slide": 72}   # a short opening line, printed larger
+# "slide": the hook smaller than the title of the battle (owner, 27/11/2026: "cho chữ hook nhỏ lại, chữ tên trận để to")
 
 
 def draw_quote(image, line, age, hook=False):
@@ -1896,7 +1897,7 @@ def draw_quote(image, line, age, hook=False):
     # 44-48 characters on 4 rows: "Cho phép kể hết ý chứ k ép xuống 3 dòng"): more pieces are run together and wrapped
     joined = "\n".join(pieces) if len(pieces) <= QUOTE_ROWS else "".join(pieces)
     if style.layout in ("full", "band", "album", "magazine", "slide"):   # as large as the rows allow
-        largest = 96 if style.layout in ("full", "band") else 84
+        largest = 96 if style.layout in ("full", "band") else 72 if style.layout == "slide" else 84
         if hook and FX.get("text"):   # the opening line: larger when it is short enough
             largest = HOOK_SIZE[style.layout]
         if HOST and style.layout == "band":   # the narrator frame: the words sit between the picture and the character
