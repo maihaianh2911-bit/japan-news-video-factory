@@ -26,6 +26,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
 | [hisahito](hisahito/README.md) | 1 |
+| [hokuto-kensuke](hokuto-kensuke/README.md) | 10 |
 | [honnoji](honnoji/README.md) | 2 |
 | [ichikawa-danjuro](ichikawa-danjuro/README.md) | 2 |
 | [iijima-ai](iijima-ai/README.md) | 2 |
@@ -63,6 +64,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 22 |
 | [naruhito-masako](naruhito-masako/README.md) | 30 |
+| [nomura-sachiyo](nomura-sachiyo/README.md) | 11 |
 | [oda-nobunaga](oda-nobunaga/README.md) | 16 |
 | [oichi](oichi/README.md) | 1 |
 | [okehazama-1560](okehazama-1560/README.md) | 5 |
