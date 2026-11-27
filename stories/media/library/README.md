@@ -22,7 +22,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [enthronement-parade-2019](enthronement-parade-2019/README.md) | 2 |
 | [gaimusho](gaimusho/README.md) | 1 |
 | [gakushuin](gakushuin/README.md) | 2 |
-| [hamaie-takaichi](hamaie-takaichi/README.md) | 2 |
+| [hamaie-ryuichi](hamaie-ryuichi/README.md) | 2 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
 | [hisahito](hisahito/README.md) | 1 |
