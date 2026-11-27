@@ -2537,5 +2537,22 @@
     "seconds": 2.23
    }
   ]
+ },
+ {
+  "k": 16,
+  "query": "file:stories/media/2026-11-27-tabehoudai-top3/web-tong.jpg",
+  "results": [
+   {
+    "title": "web-tong.jpg",
+    "page": "",
+    "width": 1220,
+    "height": 1220,
+    "license": "",
+    "license_url": "",
+    "artist": "kakogawa-note.com、teraokaseiko.com、sagamiharand.com、r.gnavi.co.jp",
+    "description": "composed from other pictures: stories/media/2026-11-27-tabehoudai-top3/web-tong.jpg",
+    "file": "16-1.jpg"
+   }
+  ]
  }
 ]
