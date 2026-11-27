@@ -19,6 +19,8 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [daigo-kitagawa](daigo-kitagawa/README.md) | 3 |
 | [danjuro-children](danjuro-children/README.md) | 7 |
 | [danjuro-mao](danjuro-mao/README.md) | 3 |
+| [enthronement-parade-2019](enthronement-parade-2019/README.md) | 2 |
+| [gaimusho](gaimusho/README.md) | 1 |
 | [gakushuin](gakushuin/README.md) | 2 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
@@ -46,7 +48,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kumamoto-2026](kumamoto-2026/README.md) | 2 |
 | [kunaicho](kunaicho/README.md) | 1 |
 | [mako-komuro](mako-komuro/README.md) | 5 |
-| [masako](masako/README.md) | 18 |
+| [masako](masako/README.md) | 24 |
 | [masako-aiko](masako-aiko/README.md) | 14 |
 | [matsushita-konosuke](matsushita-konosuke/README.md) | 9 |
 | [michiko](michiko/README.md) | 4 |
@@ -58,7 +60,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
 | [nakata-takehito](nakata-takehito/README.md) | 2 |
 | [naruhito](naruhito/README.md) | 22 |
-| [naruhito-masako](naruhito-masako/README.md) | 26 |
+| [naruhito-masako](naruhito-masako/README.md) | 30 |
 | [oda-nobunaga](oda-nobunaga/README.md) | 16 |
 | [oichi](oichi/README.md) | 1 |
 | [okehazama-1560](okehazama-1560/README.md) | 5 |
