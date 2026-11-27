@@ -22,3 +22,4 @@ video và credits.txt, dòng sau là trang gốc). Ảnh web thuộc bản quy�
 | `drama-toyotomi-oguri-fan-large.jpg` | Phim 豊臣兄弟!: Nobunaga (Oguri Shun) cầm quạt, cận mặt, ảnh lớn 2400x1600 | 2400×1600 | tvfan.kyodo.co.jp | 2026-11-26-nobunaga-top3 |
 | `drama-toyotomi-oguri-dark-hall.jpg` | Phim 豊臣兄弟!: Nobunaga trong điện tối, gườm gườm | 1200×800 | crank-in.net | 2026-11-26-nobunaga-top3 |
 | `drama-toyotomi-oguri-standing-hall.jpg` | Phim 豊臣兄弟!: Nobunaga đứng trong điện, quân lính quỳ | 1220×813 | chunichi.co.jp | 2026-11-26-nobunaga-top3 |
+| `drama-ieyasu-okada-armor.jpg` | Phim どうする家康: Nobunaga (Okada Junichi) áo giáp vàng, cận mặt | 1200×800 | oricon.co.jp | 2026-11-27-nagashino |

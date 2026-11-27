@@ -62,6 +62,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
 | [mori-ranmaru](mori-ranmaru/README.md) | 2 |
 | [museum](museum/README.md) | 1 |
+| [nagashino-1575](nagashino-1575/README.md) | 9 |
 | [nakao-akira](nakao-akira/README.md) | 2 |
 | [nakao-ikenami](nakao-ikenami/README.md) | 6 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
@@ -69,7 +70,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [naruhito](naruhito/README.md) | 22 |
 | [naruhito-masako](naruhito-masako/README.md) | 30 |
 | [nomura-sachiyo](nomura-sachiyo/README.md) | 11 |
-| [oda-nobunaga](oda-nobunaga/README.md) | 16 |
+| [oda-nobunaga](oda-nobunaga/README.md) | 17 |
 | [oichi](oichi/README.md) | 1 |
 | [okehazama-1560](okehazama-1560/README.md) | 5 |
 | [osaka-1615](osaka-1615/README.md) | 4 |
@@ -81,6 +82,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [sasaki-watabe](sasaki-watabe/README.md) | 2 |
 | [sekigahara-1600](sekigahara-1600/README.md) | 4 |
 | [showa-tenno](showa-tenno/README.md) | 2 |
+| [takeda-katsuyori](takeda-katsuyori/README.md) | 8 |
 | [takeda-shingen](takeda-shingen/README.md) | 29 |
 | [thai-people](thai-people/README.md) | 1 |
 | [thailand](thailand/README.md) | 2 |
