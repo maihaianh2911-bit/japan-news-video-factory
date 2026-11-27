@@ -22,6 +22,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [enthronement-parade-2019](enthronement-parade-2019/README.md) | 2 |
 | [gaimusho](gaimusho/README.md) | 1 |
 | [gakushuin](gakushuin/README.md) | 2 |
+| [hamaie-takaichi](hamaie-takaichi/README.md) | 2 |
 | [hanae-mori](hanae-mori/README.md) | 1 |
 | [hieizan](hieizan/README.md) | 2 |
 | [hisahito](hisahito/README.md) | 1 |
@@ -38,6 +39,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [kanda-uno](kanda-uno/README.md) | 1 |
 | [kanegasaki-1570](kanegasaki-1570/README.md) | 1 |
 | [kanie-keizo](kanie-keizo/README.md) | 1 |
+| [katsumi-sayuri](katsumi-sayuri/README.md) | 2 |
 | [kitagawa-keiko](kitagawa-keiko/README.md) | 1 |
 | [kitano-takeshi](kitano-takeshi/README.md) | 4 |
 | [kobayakawa-hideaki](kobayakawa-hideaki/README.md) | 3 |
@@ -55,6 +57,7 @@ list` và `python tools/library.py sheet <chủ đề>` trước khi viết tìm
 | [miura-kihara](miura-kihara/README.md) | 9 |
 | [mori-mitsuko](mori-mitsuko/README.md) | 1 |
 | [mori-ranmaru](mori-ranmaru/README.md) | 2 |
+| [motoki-daisuke](motoki-daisuke/README.md) | 2 |
 | [nakao-akira](nakao-akira/README.md) | 2 |
 | [nakao-ikenami](nakao-ikenami/README.md) | 6 |
 | [nakata-atsuhito](nakata-atsuhito/README.md) | 3 |
