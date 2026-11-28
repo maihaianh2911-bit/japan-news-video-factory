@@ -240,6 +240,9 @@ deleted (common rule 18).
     (`nagashino`, the trial approved on 27/11/2026). The hook there is printed smaller than the yellow title of the
     battle (owner: "cho chữ hook nhỏ lại, chữ tên trận để to").
   Say in the issue which of the three and why (one line).
+  **Since 28/11/2026 two of them** (owner: "làm 2 loại, bỏ loại 2 đi"): the samurai narrator kind is dropped; the
+  history videos are battles (`band`) and videos full of figures (`slide`), and the samurai stays in
+  `stories/media/host/samurai/` unused unless the owner brings it back.
 - **To start from**:
   - the `masthead` (a big title of at most 9 characters, the battle or the person; owner, 24/11/2026: "lịch sử dựng
     dạng này đẹp hơn, vì mình toàn tìm đc ảnh ngang");

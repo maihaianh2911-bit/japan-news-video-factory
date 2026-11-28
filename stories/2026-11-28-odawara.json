@@ -1,0 +1,184 @@
+{
+  "title": "小田原征伐 二十二万で北条百年を終わらせた秀吉",
+  "date": "2026-11-28",
+  "stage": "find",
+  "issue": 100,
+  "style": "slide",
+  "kicker": "戦国の物語",
+  "masthead": "小田原征伐",
+  "voice": 2.4,
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "searches": [
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-yamazaki.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-ikematsu-golden-hall.jpg",
+    "file:stories/media/library/toyotomi-hideyoshi/drama-toyotomi-lords-bowing.jpg",
+    "file:stories/media/library/tokugawa-ieyasu/drama-ieyasu-matsumoto-armor-closeup.jpg",
+    "wiki:小田原城",
+    "wiki:石垣山城",
+    "wiki:小田原征伐",
+    "wiki:北条氏政",
+    "wiki:淀殿",
+    "wiki:千利休",
+    "wiki:上杉謙信",
+    "wiki:武田信玄",
+    "web:小田原城 天守閣 => a white Japanese castle keep under a blue sky",
+    "web:小田原城 総構 堀 土塁",
+    "web:石垣山一夜城 石垣 遺構",
+    "web:小田原合戦 錦絵 => an old Japanese woodblock print of samurai",
+    "web:江戸図屏風 => an old Japanese folding screen painting of a city",
+    "web:小田原城 空撮",
+    "jps:小田原",
+    "music:Debussy Clair de lune piano"
+  ],
+  "music": {
+    "pick": "20-1",
+    "volume": 0.7
+  },
+  "scenes": [
+    {
+      "label": "フック",
+      "era": "1590年",
+      "headline": "22万で\n北条を囲む",
+      "points": [
+        "豊臣軍 22万",
+        "北条家 約100年",
+        "包囲 約100日"
+      ],
+      "lines": [
+        {
+          "text": "豊臣秀吉は、二十二万の大軍で、百年続いた北条家をわずか百日で降伏させました。",
+          "quote": true,
+          "say": "とよとみひでよしは、にじゅうにまんのたいぐんで、ひゃくねんつづいたほうじょうけをわずかひゃくにちでこうふくさせました。"
+        }
+      ]
+    },
+    {
+      "label": "小田原城",
+      "era": "1590年",
+      "headline": "巨大な\n小田原城",
+      "points": [
+        "天下統一 最後の敵",
+        "総構え 周囲約9km"
+      ],
+      "lines": [
+        {
+          "text": "1590年、天下統一の最後に残ったのが、関東の北条家です。",
+          "say": "せんごひゃくきゅうじゅうねん、てんかとういつのさいごにのこったのが、かんとうのほうじょうけです。"
+        },
+        "本拠の小田原城は、町全体を周囲九キロの堀と土塁で囲んだ巨大な城でした。"
+      ]
+    },
+    {
+      "label": "難攻不落",
+      "era": "北条家",
+      "headline": "謙信も信玄も\n落とせず",
+      "points": [
+        "上杉謙信 1561年",
+        "武田信玄 1569年",
+        "北条の兵 約5万"
+      ],
+      "lines": [
+        "かつて上杉謙信も武田信玄も、この城を囲みながら落とせずに引き上げています。",
+        {
+          "text": "北条の兵はおよそ5万、城にこもれば勝てると考えたのです。",
+          "say": "ほうじょうのへいはおよそごまん、しろにこもればかてるとかんがえたのです。"
+        }
+      ]
+    },
+    {
+      "label": "石垣山",
+      "era": "石垣山",
+      "headline": "見下ろす山に\n城を築く",
+      "points": [
+        "築城 約80日",
+        "石垣の城"
+      ],
+      "lines": [
+        "ところが秀吉は、力攻めをしませんでした。",
+        {
+          "text": "小田原城を見下ろす石垣山に、およそ80日で石垣の城を築き、完成すると周りの木を一気に切り倒させます。",
+          "say": "おだわらじょうをみおろすいしがきやまに、およそはちじゅうにちでいしがきのしろをきずき、かんせいするとまわりのきをいっきにきりたおさせます。"
+        }
+      ]
+    },
+    {
+      "label": "一夜城",
+      "era": "石垣山",
+      "headline": "石垣山\n一夜城",
+      "points": [
+        "一夜で現れた城"
+      ],
+      "lines": [
+        "北条方から見れば、一夜にして山の上に城が現れたのです。",
+        {
+          "text": "これが石垣山一夜城です。",
+          "say": "これがいしがきやまいちやじょうです。"
+        }
+      ]
+    },
+    {
+      "label": "余裕",
+      "era": "豊臣軍",
+      "headline": "秀吉の\n余裕",
+      "points": [
+        "淀殿を呼ぶ",
+        "千利休の茶会",
+        "北条の支城が落城"
+      ],
+      "lines": [
+        "秀吉は陣中に淀殿を呼び寄せ、千利休に茶会を開かせて、余裕を見せつけます。",
+        "関東各地の北条の城は次々と落とされていきます。"
+      ]
+    },
+    {
+      "label": "評定",
+      "era": "小田原城内",
+      "headline": "決まらない\n会議",
+      "points": [
+        "小田原評定"
+      ],
+      "lines": [
+        "城の中では、戦うか降伏するか、話し合いがいつまでも続きました。",
+        "結論の出ない会議を「小田原評定」と呼ぶのは、ここからです。"
+      ]
+    },
+    {
+      "label": "降伏",
+      "era": "1590年7月",
+      "headline": "北条家\n降伏",
+      "points": [
+        "包囲 約100日",
+        "北条氏政 切腹"
+      ],
+      "lines": [
+        {
+          "text": "囲まれておよそ百日、北条家はついに降伏し、当主の父・北条氏政は切腹しました。",
+          "say": "かこまれておよそひゃくにち、ほうじょうけはついにこうふくし、とうしゅのちち・ほうじょううじまさはせっぷくしました。"
+        }
+      ]
+    },
+    {
+      "label": "江戸",
+      "era": "その後",
+      "headline": "家康と\n江戸",
+      "points": [
+        "関東 → 徳川家康",
+        "本拠は江戸"
+      ],
+      "lines": [
+        "そして空いた関東を与えられた徳川家康が本拠としたのが、まだ小さな町だった江戸でした。"
+      ]
+    }
+  ]
+}
