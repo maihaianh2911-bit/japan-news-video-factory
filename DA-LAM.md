@@ -124,11 +124,12 @@ Cùng một người thì được làm tiếp, cùng một chuyện thì không
 | --- | --- | --- | --- | --- |
 | 24/11/2026 | 親の手で育てられた初めての天皇 | Thiên hoàng Naruhito: từ cậu bé được mẹ tự nuôi đến lúc lên ngôi | #66 | `2026-11-24-naruhito-oyamoto` |
 
-## Doanh nhân, chính trị gia (1 video)
+## Doanh nhân, chính trị gia (2 video)
 
 | Ngày | Chuyện (tiếng Nhật) | Ý chính | Phiếu | Tên kịch bản |
 | --- | --- | --- | --- | --- |
 | 26/11/2026 | パナソニックの生みの親 松下幸之助 | Cha đẻ của đế chế Panasonic | #85 | `2026-11-26-panasonic-konosuke` |
+| 27/11/2026 | ダイソーの生みの親 矢野博丈 | Cha đẻ của Daiso: ôm nợ bỏ trốn, đổi việc 9 lần, rồi bán đồng giá 100 yên | #93 | `2026-11-27-daiso-yano` |
 
 ## Thảm họa (2 video)
 
