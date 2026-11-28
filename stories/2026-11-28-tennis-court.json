@@ -1,0 +1,157 @@
+{
+  "title": "軽井沢のテニスコートで上皇さまが敗れた相手",
+  "date": "2026-11-28",
+  "issue": 103,
+  "source": "現代ビジネス、週刊女性PRIME、J-CAST、nippon.com",
+  "style": "story",
+  "kicker": "皇室の物語",
+  "pace": {
+    "speed": 1.25,
+    "line_pause": 0.05,
+    "scene_pause": 0.15
+  },
+  "voice": 2.4,
+  "fx": {
+    "motion": true,
+    "depth": true,
+    "text": true,
+    "face": true,
+    "enhance": true
+  },
+  "stage": "find",
+  "scenes": [
+    {
+      "label": "テニスコート",
+      "headline": "テニスコートで\n敗れた相手",
+      "lines": [
+        {
+          "text": "皇太子だった上皇さまが、軽井沢のテニスコートで敗れた相手、それがのちの妻、美智子さまでした。",
+          "say": "こうたいしだった、じょうこうさまが、かるいざわの、テニスコートで、やぶれた、あいて、それが、のちの、つま、みちこさまでした。",
+          "quote": true
+        }
+      ],
+      "era": "1957年8月"
+    },
+    {
+      "label": "25年後",
+      "headline": "25年後に\n贈り合った「賞」",
+      "lines": [
+        {
+          "text": "そして25年後、二人は互いに、ある「賞」を贈り合います。",
+          "say": "そして、にじゅうごねんご、ふたりは、たがいに、ある、しょうを、おくりあいます。"
+        }
+      ],
+      "era": "1957年 ― 1984年"
+    },
+    {
+      "label": "軽井沢",
+      "headline": "軽井沢の\nテニス大会",
+      "lines": [
+        {
+          "text": "1957年の夏、23歳の皇太子は、テニス大会で正田美智子さんのペアと対戦します。",
+          "say": "せんきゅうひゃくごじゅうななねんの、なつ、にじゅうさんさいの、こうたいしは、テニスたいかいで、しょうだみちこさんの、ペアと、たいせんします。"
+        }
+      ],
+      "era": "1957年8月"
+    },
+    {
+      "label": "敗戦",
+      "headline": "粘り強い\n相手",
+      "lines": [
+        {
+          "text": "どんな球も粘り強く拾い返され、皇太子のペアは負けました。",
+          "say": "どんな、たまも、ねばりづよく、ひろいかえされ、こうたいしの、ペアは、まけました。"
+        }
+      ],
+      "era": "1957年8月"
+    },
+    {
+      "label": "テニス",
+      "headline": "テニスが\n結んだ二人",
+      "lines": [
+        {
+          "text": "この試合から、二人はテニスを通じて親しくなります。",
+          "say": "このしあいから、ふたりは、テニスを、つうじて、したしくなります。"
+        }
+      ],
+      "era": "1957年"
+    },
+    {
+      "label": "民間出身",
+      "headline": "前例のない\n皇太子妃",
+      "lines": [
+        {
+          "text": "けれど美智子さんは民間の出身。皇族でも華族でもない皇太子妃は、前例がありません。",
+          "say": "けれど、みちこさんは、みんかんの、しゅっしん。こうぞくでも、かぞくでもない、こうたいしひは、ぜんれいが、ありません。"
+        }
+      ],
+      "era": "1958年"
+    },
+    {
+      "label": "婚約",
+      "headline": "婚約決定",
+      "lines": [
+        {
+          "text": "反対の声もあるなか、翌年、婚約が決まります。",
+          "say": "はんたいの、こえも、あるなか、よくねん、こんやくが、きまります。"
+        }
+      ],
+      "era": "1958年11月27日"
+    },
+    {
+      "label": "婚約会見",
+      "headline": "「とてもご誠実で」",
+      "lines": [
+        {
+          "text": "会見で美智子さんは、皇太子のことを「とてもご誠実で、ご信頼申し上げられる方」と語りました。",
+          "say": "かいけんで、みちこさんは、こうたいしのことを、とても、ごせいじつで、ごしんらい、もうしあげられる、かた、と、かたりました。"
+        }
+      ],
+      "era": "1958年11月27日"
+    },
+    {
+      "label": "成婚",
+      "headline": "沿道に\n53万人",
+      "lines": [
+        {
+          "text": "成婚パレードには、53万人もの人々が詰めかけました。",
+          "say": "せいこんパレードには、ごじゅうさんまんにんもの、ひとびとが、つめかけました。"
+        }
+      ],
+      "era": "1959年4月10日"
+    },
+    {
+      "label": "銀婚式",
+      "headline": "「努力賞」と\n「感謝状」",
+      "lines": [
+        {
+          "text": "そして結婚25年の会見。上皇さまは美智子さまに「努力賞」を、美智子さまは上皇さまに「感謝状」を贈りたいと語ったのです。",
+          "say": "そして、けっこん、にじゅうごねんの、かいけん。じょうこうさまは、みちこさまに、どりょくしょうを、みちこさまは、じょうこうさまに、かんしゃじょうを、おくりたいと、かたったのです。"
+        }
+      ],
+      "era": "1984年"
+    }
+  ],
+  "searches": [
+    "wiki:上皇明仁",
+    "wiki:上皇后美智子",
+    "wiki:軽井沢会テニスコート",
+    "file:stories/media/library/akihito-michiko/1959-wedding-carriage.jpg",
+    "file:stories/media/library/michiko/1960s-naruhito-baby-window.jpg",
+    "web:皇太子 美智子さん テニス 軽井沢 1957 => a young Japanese couple playing tennis",
+    "web:皇太子 正田美智子 テニスコート 写真 => a young Japanese prince and a young woman on a tennis court",
+    "web:皇太子明仁 テニス 1950年代 => a young Japanese prince holding a tennis racket",
+    "web:正田美智子 テニス ラケット => a young Japanese woman with a tennis racket",
+    "web:正田美智子 1958 婚約 => a young Japanese woman smiling in the 1950s",
+    "web:美智子さま 婚約会見 1958年11月27日 => a young Japanese woman at a press conference",
+    "web:ミッチーブーム 1958 => crowds of Japanese people in the 1950s",
+    "web:皇太子ご成婚 1959 パレード 馬車 沿道 => a royal carriage procession with huge crowds",
+    "web:美智子さま 1959 ローブデコルテ ティアラ => a young Japanese princess in a white gown and tiara",
+    "web:皇太子ご夫妻 銀婚式 1984 記者会見 => a Japanese crown prince and princess at a press conference in the 1980s",
+    "web:上皇ご夫妻 テニス 笑顔 => an elderly Japanese couple playing tennis",
+    "web:軽井沢 テニスコート 上皇 => a tennis court surrounded by trees",
+    "page:https://gendai.media/articles/-/139708",
+    "page:https://www.jprime.jp/articles/-/13155",
+    "music:file:stories/media/music/owner-flute-1-long.mp3"
+  ]
+}
